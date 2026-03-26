@@ -1,7 +1,7 @@
 ---
 title: Azure Sitemanager SDK for .NET
 description: Reference for Azure Sitemanager SDK for .NET
-ms.date: 03/25/2026
+ms.date: 03/26/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: sitemanager
