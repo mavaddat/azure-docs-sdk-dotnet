@@ -1,7 +1,7 @@
 ---
 title: Azure Secretsstoreextension SDK for .NET
 description: Reference for Azure Secretsstoreextension SDK for .NET
-ms.date: 03/30/2026
+ms.date: 03/31/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: secretsstoreextension

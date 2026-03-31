@@ -1,7 +1,7 @@
 ---
 title: Azure Workloads SDK for .NET
 description: Reference for Azure Workloads SDK for .NET
-ms.date: 03/30/2026
+ms.date: 03/31/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: workloads
