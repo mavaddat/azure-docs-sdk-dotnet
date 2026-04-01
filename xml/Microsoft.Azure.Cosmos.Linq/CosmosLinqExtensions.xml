@@ -36,6 +36,7 @@
     <AssemblyVersion>3.39.0.0</AssemblyVersion>
     <AssemblyVersion>3.45.0.0</AssemblyVersion>
     <AssemblyVersion>3.47.0.0</AssemblyVersion>
+    <AssemblyVersion>3.58.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -48,6 +49,94 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
+    <Member MemberName="ArrayContainsAll&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool ArrayContainsAll&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; obj, params object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ArrayContainsAll&lt;T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; obj, object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.ArrayContainsAll``1(System.Collections.Generic.IEnumerable{``0},System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function ArrayContainsAll(Of T) (obj As IEnumerable(Of T), ParamArray values As Object()) As Boolean" />
+      <MemberSignature Language="F#" Value="static member ArrayContainsAll : seq&lt;'T&gt; * obj[] -&gt; bool" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.ArrayContainsAll (obj, values)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+        <Parameter Name="values" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.ParamArray]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.ParamArray&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="obj">The array object</param>
+        <param name="values">values to search</param>
+        <summary>
+            Returns whether all values are present in the array.
+            </summary>
+        <returns>Returns true if all values are present; otherwise, false.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var documentIdQuery = documents.Where(root => root.DocumentId());
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrayContainsAny&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool ArrayContainsAny&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; obj, params object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ArrayContainsAny&lt;T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; obj, object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.ArrayContainsAny``1(System.Collections.Generic.IEnumerable{``0},System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function ArrayContainsAny(Of T) (obj As IEnumerable(Of T), ParamArray values As Object()) As Boolean" />
+      <MemberSignature Language="F#" Value="static member ArrayContainsAny : seq&lt;'T&gt; * obj[] -&gt; bool" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.ArrayContainsAny (obj, values)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+        <Parameter Name="values" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.ParamArray]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.ParamArray&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="obj">The array object</param>
+        <param name="values">values to search</param>
+        <summary>
+            Returns whether any values are present in the array.
+            </summary>
+        <returns>Returns true if any values are present; otherwise, false.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var documentIdQuery = documents.Where(root => root.DocumentId());
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
     <Member MemberName="AverageAsync">
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;decimal&gt;&gt; AverageAsync (this System.Linq.IQueryable&lt;decimal&gt; source, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Response`1&lt;valuetype System.Decimal&gt;&gt; AverageAsync(class System.Linq.IQueryable`1&lt;valuetype System.Decimal&gt; source, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -57,7 +146,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Decimal&gt;&gt;</ReturnType>
@@ -85,7 +174,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Double&gt;&gt;</ReturnType>
@@ -113,7 +202,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Double&gt;&gt;</ReturnType>
@@ -141,7 +230,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Double&gt;&gt;</ReturnType>
@@ -169,7 +258,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Decimal&gt;&gt;&gt;</ReturnType>
@@ -197,7 +286,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Double&gt;&gt;&gt;</ReturnType>
@@ -225,7 +314,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Double&gt;&gt;&gt;</ReturnType>
@@ -253,7 +342,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Double&gt;&gt;&gt;</ReturnType>
@@ -281,7 +370,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Single&gt;&gt;&gt;</ReturnType>
@@ -309,7 +398,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Single&gt;&gt;</ReturnType>
@@ -337,7 +426,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Int32&gt;&gt;</ReturnType>
@@ -369,7 +458,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -393,6 +482,213 @@
         </example>
       </Docs>
     </Member>
+    <Member MemberName="FullTextContains">
+      <MemberSignature Language="C#" Value="public static bool FullTextContains (this object obj, string search);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool FullTextContains(object obj, string search) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.FullTextContains(System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function FullTextContains (obj As Object, search As String) As Boolean" />
+      <MemberSignature Language="F#" Value="static member FullTextContains : obj * string -&gt; bool" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.FullTextContains (obj, search)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" RefType="this" />
+        <Parameter Name="search" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="obj" />
+        <param name="search">The string to find.</param>
+        <summary>
+            Returns a boolean indicating whether the keyword string expression is contained in a specified property path.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/fulltextcontains.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns true if a given string is contained in the specified property of a document.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.Where(document => document.Name.FullTextContains(<keyword>));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="FullTextContainsAll">
+      <MemberSignature Language="C#" Value="public static bool FullTextContainsAll (this object obj, params string[] searches);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool FullTextContainsAll(object obj, string[] searches) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.FullTextContainsAll(System.Object,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function FullTextContainsAll (obj As Object, ParamArray searches As String()) As Boolean" />
+      <MemberSignature Language="F#" Value="static member FullTextContainsAll : obj * string[] -&gt; bool" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.FullTextContainsAll (obj, searches)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" RefType="this" />
+        <Parameter Name="searches" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.ParamArray]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.ParamArray&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="obj" />
+        <param name="searches">The strings to find.</param>
+        <summary>
+            Returns a boolean indicating whether all of the provided string expressions are contained in a specified property path.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/fulltextcontainsall.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns true if all of the given strings are contained in the specified property of a document.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.Where(document => document.Name.FullTextContainsAll(<keyword1>, <keyword2>, <keyword3>, ...));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="FullTextContainsAny">
+      <MemberSignature Language="C#" Value="public static bool FullTextContainsAny (this object obj, params string[] searches);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool FullTextContainsAny(object obj, string[] searches) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.FullTextContainsAny(System.Object,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function FullTextContainsAny (obj As Object, ParamArray searches As String()) As Boolean" />
+      <MemberSignature Language="F#" Value="static member FullTextContainsAny : obj * string[] -&gt; bool" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.FullTextContainsAny (obj, searches)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" RefType="this" />
+        <Parameter Name="searches" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.ParamArray]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.ParamArray&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="obj" />
+        <param name="searches">The strings to find.</param>
+        <summary>
+            Returns a boolean indicating whether any of the provided string expressions are contained in a specified property path.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/fulltextcontainsany.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns true if any of the given strings are contained in the specified property of a document.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.Where(document => document.Name.FullTextContainsAny(<keyword1>, <keyword2>, <keyword3>, ...));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="FullTextScore&lt;TSource&gt;">
+      <MemberSignature Language="C#" Value="public static double FullTextScore&lt;TSource&gt; (this TSource obj, params string[] terms);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 FullTextScore&lt;TSource&gt;(!!TSource obj, string[] terms) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.FullTextScore``1(``0,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function FullTextScore(Of TSource) (obj As TSource, ParamArray terms As String()) As Double" />
+      <MemberSignature Language="F#" Value="static member FullTextScore : 'Source * string[] -&gt; double" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.FullTextScore (obj, terms)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="obj" Type="TSource" RefType="this" />
+        <Parameter Name="terms" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.ParamArray]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.ParamArray&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">To be added.</typeparam>
+        <param name="obj" />
+        <param name="terms">A nonempty array of string literals.</param>
+        <summary>
+            Returns a BM25 score value that can only be used in an ORDER BY RANK function to sort results from highest relevancy to lowest relevancy.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/fulltextscore.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns a BM25 score value that can only be used in an ORDER BY RANK clause.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.OrderByRank(document => document.Name.FullTextScore([<keyword1>], [keyword2]));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIndexMetrics&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static string GetIndexMetrics&lt;T&gt; (this Microsoft.Azure.Cosmos.Response&lt;T&gt; response);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetIndexMetrics&lt;T&gt;(class Microsoft.Azure.Cosmos.Response`1&lt;!!T&gt; response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.GetIndexMetrics``1(Microsoft.Azure.Cosmos.Response{``0})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetIndexMetrics(Of T) (response As Response(Of T)) As String" />
+      <MemberSignature Language="F#" Value="static member GetIndexMetrics : Microsoft.Azure.Cosmos.Response&lt;'T&gt; -&gt; string" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.GetIndexMetrics response" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="response" Type="Microsoft.Azure.Cosmos.Response&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="response">The query Response.</param>
+        <summary>
+            This extension method returns the Index Metrics for a given Response object. The index utilization metrics is to be used for debugging purposes only. 
+            This result is only available if QueryRequestOptions.PopulateIndexMetrics is set to true.Returns null if the index metrics is not available in the response.
+            </summary>
+        <returns>A string represents the Index Metrics.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+            This example shows a common usage of this function.
+            <code language="c#"><![CDATA[
+            QueryRequestOptions queryRequestOption = new QueryRequestOptions() { PopulateIndexMetrics = true };
+            Response<int> response = await this.Container.GetLinqQueryable<T>(requestOptions: queryRequestOption).Select(item => item.Id).CountAsync(cancellationToken);
+            string indexMetrics = response.GetIndexMetrics();
+            ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="IsArray">
       <MemberSignature Language="C#" Value="public static bool IsArray (this object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsArray(object obj) cil managed" />
@@ -402,7 +698,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -435,7 +731,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -468,7 +764,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -501,7 +797,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -534,7 +830,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -567,7 +863,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -600,7 +896,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -635,7 +931,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -668,7 +964,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;TSource&gt;&gt;</ReturnType>
@@ -700,7 +996,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;TSource&gt;&gt;</ReturnType>
@@ -723,6 +1019,48 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="OrderByRank&lt;TSource,TKey&gt;">
+      <MemberSignature Language="C#" Value="public static System.Linq.IOrderedQueryable&lt;TSource&gt; OrderByRank&lt;TSource,TKey&gt; (this System.Linq.IQueryable&lt;TSource&gt; source, System.Linq.Expressions.Expression&lt;Func&lt;TSource,TKey&gt;&gt; scoreFunction);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Linq.IOrderedQueryable`1&lt;!!TSource&gt; OrderByRank&lt;TSource, TKey&gt;(class System.Linq.IQueryable`1&lt;!!TSource&gt; source, class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!!TSource, !!TKey&gt;&gt; scoreFunction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.OrderByRank``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function OrderByRank(Of TSource, TKey) (source As IQueryable(Of TSource), scoreFunction As Expression(Of Func(Of TSource, TKey))) As IOrderedQueryable(Of TSource)" />
+      <MemberSignature Language="F#" Value="static member OrderByRank : System.Linq.IQueryable&lt;'Source&gt; * System.Linq.Expressions.Expression&lt;Func&lt;'Source, 'Key&gt;&gt; -&gt; System.Linq.IOrderedQueryable&lt;'Source&gt;" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.OrderByRank (source, scoreFunction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IOrderedQueryable&lt;TSource&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TKey" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable&lt;TSource&gt;" RefType="this" />
+        <Parameter Name="scoreFunction" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TSource,TKey&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">To be added.</typeparam>
+        <typeparam name="TKey">To be added.</typeparam>
+        <param name="source"> A sequence of values to order.</param>
+        <param name="scoreFunction">A scoring function.</param>
+        <summary>
+            This optional ORDER BY RANK clause sorts scoring functions by their rank. It's used specifically for scoring functions like VectorDistance, FullTextScore, and RRF.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/order-by-rank.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns the sequence with the elements ordered according to the rank of the scoring functions.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.OrderByRank(document => document.Name.FullTextScore(<keyword>));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
     <Member MemberName="RegexMatch">
       <MemberSignature Language="C#" Value="public static bool RegexMatch (this object obj, string regularExpression);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool RegexMatch(object obj, string regularExpression) cil managed" />
@@ -732,7 +1070,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -768,7 +1106,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -797,6 +1135,83 @@
         </example>
       </Docs>
     </Member>
+    <Member MemberName="RRF">
+      <MemberSignature Language="C#" Value="public static double RRF (params double[] scoringFunctions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 RRF(float64[] scoringFunctions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.RRF(System.Double[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function RRF (ParamArray scoringFunctions As Double()) As Double" />
+      <MemberSignature Language="F#" Value="static member RRF : double[] -&gt; double" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.RRF scoringFunctions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scoringFunctions" Type="System.Double[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.ParamArray]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.ParamArray&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="scoringFunctions">the scoring functions to combine. Valid functions are FullTextScore and VectorDistance</param>
+        <summary>
+            This system function is used to combine two or more scores provided by other scoring functions.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/rrf.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns the the combined scores of the scoring functions.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.OrderByRank(document => document.RRF(document.Name.FullTextScore(<keyword1>), document.Address.FullTextScore(<keyword2>)));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="RRF">
+      <MemberSignature Language="C#" Value="public static double RRF (double[] scoringFunctions, double[] weights);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 RRF(float64[] scoringFunctions, float64[] weights) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.RRF(System.Double[],System.Double[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function RRF (scoringFunctions As Double(), weights As Double()) As Double" />
+      <MemberSignature Language="F#" Value="static member RRF : double[] * double[] -&gt; double" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.RRF (scoringFunctions, weights)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scoringFunctions" Type="System.Double[]" />
+        <Parameter Name="weights" Type="System.Double[]" />
+      </Parameters>
+      <Docs>
+        <param name="scoringFunctions">the scoring functions to combine. Valid functions are FullTextScore and VectorDistance. </param>
+        <param name="weights">the weights to use for scoring functions</param>
+        <summary>
+            This system function is used to combine two or more scores provided by other scoring functions.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/rrf.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns the the combined scores of the scoring functions.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.OrderByRank(document => document.RRF(document.Name.FullTextScore(<keyword1>), document.Address.FullTextScore(<keyword2>)));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
     <Member MemberName="SumAsync">
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;decimal&gt;&gt; SumAsync (this System.Linq.IQueryable&lt;decimal&gt; source, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Response`1&lt;valuetype System.Decimal&gt;&gt; SumAsync(class System.Linq.IQueryable`1&lt;valuetype System.Decimal&gt; source, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -806,7 +1221,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Decimal&gt;&gt;</ReturnType>
@@ -834,7 +1249,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Double&gt;&gt;</ReturnType>
@@ -862,7 +1277,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Int32&gt;&gt;</ReturnType>
@@ -890,7 +1305,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Int64&gt;&gt;</ReturnType>
@@ -918,7 +1333,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Decimal&gt;&gt;&gt;</ReturnType>
@@ -946,7 +1361,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Double&gt;&gt;&gt;</ReturnType>
@@ -974,7 +1389,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Int32&gt;&gt;&gt;</ReturnType>
@@ -1002,7 +1417,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Int64&gt;&gt;&gt;</ReturnType>
@@ -1030,7 +1445,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Nullable&lt;System.Single&gt;&gt;&gt;</ReturnType>
@@ -1058,7 +1473,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Response&lt;System.Single&gt;&gt;</ReturnType>
@@ -1086,7 +1501,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator&lt;T&gt;</ReturnType>
@@ -1124,7 +1539,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.QueryDefinition</ReturnType>
@@ -1162,7 +1577,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator</ReturnType>
@@ -1189,6 +1604,126 @@
              IOrderedQueryable<ToDoActivity> linqQueryable = this.Container.GetItemLinqQueryable<ToDoActivity>();
              using (FeedIterator setIterator = linqQueryable.Where(item => (item.taskNum < 100)).ToStreamIterator())
              ]]></code></example>
+      </Docs>
+    </Member>
+    <Member MemberName="VectorDistance">
+      <MemberSignature Language="C#" Value="public static double VectorDistance (this byte[] vector1, byte[] vector2, bool isBruteForce, Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 VectorDistance(unsigned int8[] vector1, unsigned int8[] vector2, bool isBruteForce, class Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions/VectorDistanceOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistance(System.Byte[],System.Byte[],System.Boolean,Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function VectorDistance (vector1 As Byte(), vector2 As Byte(), isBruteForce As Boolean, options As CosmosLinqExtensions.VectorDistanceOptions) As Double" />
+      <MemberSignature Language="F#" Value="static member VectorDistance : byte[] * byte[] * bool * Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions -&gt; double" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistance (vector1, vector2, isBruteForce, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Byte[]" RefType="this" />
+        <Parameter Name="vector2" Type="System.Byte[]" />
+        <Parameter Name="isBruteForce" Type="System.Boolean" />
+        <Parameter Name="options" Type="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions+VectorDistanceOptions" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">The first vector.</param>
+        <param name="vector2">The second vector.</param>
+        <param name="isBruteForce">A boolean specifying how the computed value is used in an ORDER BY expression. If true, then brute force is used. A value of false uses any index defined on the vector property, if it exists. </param>
+        <param name="options">An JSON formatted object literal used to specify options for the vector distance calculation. </param>
+        <summary>
+            Returns the similarity score between two specified vectors.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/vectordistance.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns the similarity score between two specified vectors.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.Select(document => document.vector1.VectorDistance(<vector2>, true, new VectorDistanceOptions() { DistanceFunction = DistanceFunction.Cosine, DataType = VectorDataType.Int8}));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="VectorDistance">
+      <MemberSignature Language="C#" Value="public static double VectorDistance (this sbyte[] vector1, sbyte[] vector2, bool isBruteForce, Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 VectorDistance(int8[] vector1, int8[] vector2, bool isBruteForce, class Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions/VectorDistanceOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistance(System.SByte[],System.SByte[],System.Boolean,Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function VectorDistance (vector1 As SByte(), vector2 As SByte(), isBruteForce As Boolean, options As CosmosLinqExtensions.VectorDistanceOptions) As Double" />
+      <MemberSignature Language="F#" Value="static member VectorDistance : sbyte[] * sbyte[] * bool * Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions -&gt; double" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistance (vector1, vector2, isBruteForce, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.SByte[]" RefType="this" />
+        <Parameter Name="vector2" Type="System.SByte[]" />
+        <Parameter Name="isBruteForce" Type="System.Boolean" />
+        <Parameter Name="options" Type="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions+VectorDistanceOptions" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">The first vector.</param>
+        <param name="vector2">The second vector.</param>
+        <param name="isBruteForce">A boolean specifying how the computed value is used in an ORDER BY expression. If true, then brute force is used. A value of false uses any index defined on the vector property, if it exists. </param>
+        <param name="options">An JSON formatted object literal used to specify options for the vector distance calculation. </param>
+        <summary>
+            Returns the similarity score between two specified vectors.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/vectordistance.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns the similarity score between two specified vectors.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.Select(document => document.vector1.VectorDistance(<vector2>, true, new VectorDistanceOptions() { DistanceFunction = DistanceFunction.Cosine, DataType = VectorDataType.Uint8}));
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="VectorDistance">
+      <MemberSignature Language="C#" Value="public static double VectorDistance (this float[] vector1, float[] vector2, bool isBruteForce, Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 VectorDistance(float32[] vector1, float32[] vector2, bool isBruteForce, class Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions/VectorDistanceOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistance(System.Single[],System.Single[],System.Boolean,Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function VectorDistance (vector1 As Single(), vector2 As Single(), isBruteForce As Boolean, options As CosmosLinqExtensions.VectorDistanceOptions) As Double" />
+      <MemberSignature Language="F#" Value="static member VectorDistance : single[] * single[] * bool * Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistanceOptions -&gt; double" Usage="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions.VectorDistance (vector1, vector2, isBruteForce, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Single[]" RefType="this" />
+        <Parameter Name="vector2" Type="System.Single[]" />
+        <Parameter Name="isBruteForce" Type="System.Boolean" />
+        <Parameter Name="options" Type="Microsoft.Azure.Cosmos.Linq.CosmosLinqExtensions+VectorDistanceOptions" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">The first vector.</param>
+        <param name="vector2">The second vector.</param>
+        <param name="isBruteForce">A boolean specifying how the computed value is used in an ORDER BY expression. If true, then brute force is used. A value of false uses any index defined on the vector property, if it exists. </param>
+        <param name="options">An JSON formatted object literal used to specify options for the vector distance calculation. </param>
+        <summary>
+            Returns the similarity score between two specified vectors.
+            For more information, see https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/vectordistance.
+            This method is to be used in LINQ expressions only and will be evaluated on server.
+            There's no implementation provided in the client library.
+            </summary>
+        <returns>Returns the similarity score between two specified vectors.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code><![CDATA[
+            var matched = documents.Select(document => document.vector1.VectorDistance(<vector2>, true, new VectorDistanceOptions() { DistanceFunction = DistanceFunction.Cosine, DataType = VectorDataType.Float32}));
+            ]]></code>
+        </example>
       </Docs>
     </Member>
   </Members>

@@ -36,6 +36,7 @@
     <AssemblyVersion>3.39.0.0</AssemblyVersion>
     <AssemblyVersion>3.45.0.0</AssemblyVersion>
     <AssemblyVersion>3.47.0.0</AssemblyVersion>
+    <AssemblyVersion>3.58.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -46,9 +47,9 @@
             Represents script operations on an Azure Cosmos container.
             </summary>
     <remarks>To be added.</remarks>
-    <altmember cref="T:Microsoft.Azure.Cosmos.Scripts.TriggerProperties" />
     <altmember cref="T:Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties" />
     <altmember cref="T:Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties" />
+    <altmember cref="T:Microsoft.Azure.Cosmos.Scripts.TriggerProperties" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -59,7 +60,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -76,7 +77,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse&gt;</ReturnType>
@@ -135,6 +136,81 @@
              ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="CreateStoredProcedureStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; CreateStoredProcedureStreamAsync (Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties storedProcedureProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; CreateStoredProcedureStreamAsync(class Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties storedProcedureProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.CreateStoredProcedureStreamAsync(Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateStoredProcedureStreamAsync (storedProcedureProperties As StoredProcedureProperties, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member CreateStoredProcedureStreamAsync : Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.CreateStoredProcedureStreamAsync (storedProcedureProperties, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="storedProcedureProperties" Type="Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="storedProcedureProperties">The Stored Procedure to create.</param>
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+             Creates a stored procedure as an asynchronous operation in the Azure Cosmos DB service.
+             </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" /> containing the created stored procedure</returns>
+        <remarks>To be added.</remarks>
+        <example>
+              This creates and executes a stored procedure that appends a string to the first item returned from the query.
+             <code language="c#"><![CDATA[
+             string sprocBody = @"function simple(prefix)
+                {
+                    var collection = getContext().getCollection();
+            
+                    // Query documents and take 1st item.
+                    var isAccepted = collection.queryDocuments(
+                    collection.getSelfLink(),
+                    'SELECT * FROM root r',
+                    function(err, feed, options) {
+                        if (err)throw err;
+            
+                        // Check the feed and if it's empty, set the body to 'no docs found',
+                        // Otherwise just take 1st element from the feed.
+                        if (!feed || !feed.length) getContext().getResponse().setBody(""no docs found"");
+                        else getContext().getResponse().setBody(prefix + JSON.stringify(feed[0]));
+                    });
+            
+                    if (!isAccepted) throw new Error(""The query wasn't accepted by the server. Try again/use continuation token between API and script."");
+                }";
+                
+             Scripts scripts = this.container.Scripts;
+             StoredProcedureProperties storedProcedure = new StoredProcedureProperties(id, sprocBody);
+             ResponseMessage storedProcedureResponse = await scripts.CreateStoredProcedureStreamAsync(storedProcedure);
+             
+             // Execute the stored procedure
+             ResponseMessage sprocResponse = await scripts.ExecuteStoredProcedureStreamAsync(
+                                     sprocId,
+                                     new PartitionKey(testPartitionId),
+                                     new dynamic[] {"myPrefixString", "myPostfixString"});
+                                     
+             if (!response.IsSuccessStatusCode)
+             {
+                 //Handle and log exception
+                 return;
+             }
+             using (StreamReader sr = new StreamReader(sprocResponse.Content))
+             {
+                 string stringResponse = await sr.ReadToEndAsync();
+                 Console.WriteLine(stringResponse);
+              }
+             
+             ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="CreateTriggerAsync">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.TriggerResponse&gt; CreateTriggerAsync (Microsoft.Azure.Cosmos.Scripts.TriggerProperties triggerProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.TriggerResponse&gt; CreateTriggerAsync(class Microsoft.Azure.Cosmos.Scripts.TriggerProperties triggerProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -144,7 +220,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.TriggerResponse&gt;</ReturnType>
@@ -199,6 +275,72 @@
              ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="CreateTriggerStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; CreateTriggerStreamAsync (Microsoft.Azure.Cosmos.Scripts.TriggerProperties triggerProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; CreateTriggerStreamAsync(class Microsoft.Azure.Cosmos.Scripts.TriggerProperties triggerProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.CreateTriggerStreamAsync(Microsoft.Azure.Cosmos.Scripts.TriggerProperties,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateTriggerStreamAsync (triggerProperties As TriggerProperties, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member CreateTriggerStreamAsync : Microsoft.Azure.Cosmos.Scripts.TriggerProperties * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.CreateTriggerStreamAsync (triggerProperties, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="triggerProperties" Type="Microsoft.Azure.Cosmos.Scripts.TriggerProperties" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="triggerProperties">The <see cref="T:Microsoft.Azure.Cosmos.Scripts.TriggerProperties" /> object.</param>
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+             Creates a trigger as an asynchronous operation in the Azure Cosmos DB service.
+             </summary>
+        <returns>A task object representing the service response for the asynchronous operation.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+              This creates a trigger then uses the trigger in a create item.
+             <code language="c#"><![CDATA[
+             Scripts scripts = this.container.Scripts;
+             ResponseMessage triggerResponse = await scripts.CreateTriggerStreamAsync(
+                 new TriggerProperties
+                 {
+                     Id = "addTax",
+                     Body = @"function AddTax() {
+                         var item = getContext().getRequest().getBody();
+            
+                         // calculate the tax.
+                         item.tax = item.cost * .15;
+            
+                         // Update the request -- this is what is going to be inserted.
+                         getContext().getRequest().setBody(item);
+                     }",
+                     TriggerOperation = TriggerOperation.All,
+                     TriggerType = TriggerType.Pre
+                 });
+                 
+             if (!triggerResponse.IsSuccessStatusCode)
+             {
+                 //Handle and log exception
+                 return;
+             }
+             
+             ItemRequestOptions options = new ItemRequestOptions()
+             {
+                 PreTriggers = new List<string>() { "addTax" },
+             };
+            
+             // Create a new item with trigger set in the request options
+             ItemResponse<dynamic> createdItem = await this.container.Items.CreateItemAsync<dynamic>(item.status, item, options);
+             double itemTax = createdItem.Resource.tax;
+             ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="CreateUserDefinedFunctionAsync">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt; CreateUserDefinedFunctionAsync (Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties userDefinedFunctionProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt; CreateUserDefinedFunctionAsync(class Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties userDefinedFunctionProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -208,7 +350,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt;</ReturnType>
@@ -262,6 +404,71 @@
              ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="CreateUserDefinedFunctionStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; CreateUserDefinedFunctionStreamAsync (Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties userDefinedFunctionProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; CreateUserDefinedFunctionStreamAsync(class Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties userDefinedFunctionProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.CreateUserDefinedFunctionStreamAsync(Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateUserDefinedFunctionStreamAsync (userDefinedFunctionProperties As UserDefinedFunctionProperties, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member CreateUserDefinedFunctionStreamAsync : Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.CreateUserDefinedFunctionStreamAsync (userDefinedFunctionProperties, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userDefinedFunctionProperties" Type="Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="userDefinedFunctionProperties">The <see cref="T:Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties" /> object.</param>
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+             Creates a user defined function as an asynchronous operation in the Azure Cosmos DB service.
+             </summary>
+        <returns>A task object representing the service response for the asynchronous operation.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+              This creates a user defined function then uses the function in an item query.
+             <code language="c#"><![CDATA[
+             Scripts scripts = this.container.Scripts;
+             ResponseMessage response =await scripts.UserDefinedFunctions.CreateUserDefinedFunctionStreamAsync(
+                 new UserDefinedFunctionProperties 
+                 { 
+                     Id = "calculateTax", 
+                     Body = @"function(amt) { return amt * 0.05; }" 
+                 });
+            
+             if (!response.IsSuccessStatusCode)
+             {
+                 //Handle and log exception
+                 return;
+             }
+             
+             QueryDefinition sqlQuery = new QueryDefinition(
+                 "SELECT VALUE udf.calculateTax(t.cost) FROM toDoActivity t where t.cost > @expensive and t.status = @status")
+                 .WithParameter("@expensive", 9000)
+                 .WithParameter("@status", "Done");
+            
+             using (FeedIterator<double> setIterator = this.container.Items.GetItemsQueryIterator<double>(
+                 sqlQueryDefinition: sqlQuery,
+                 partitionKey: "Done")
+             {
+                 while (setIterator.HasMoreResults)
+                 {
+                     foreach (var tax in await setIterator.ReadNextAsync())
+                     {
+                         Console.WriteLine(tax);
+                     }
+                 }
+             }
+             ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="DeleteStoredProcedureAsync">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse&gt; DeleteStoredProcedureAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse&gt; DeleteStoredProcedureAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -271,7 +478,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse&gt;</ReturnType>
@@ -288,7 +495,7 @@
         <summary>
             Delete a <see cref="T:Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties" /> from the Azure Cosmos DB service as an asynchronous operation.
             </summary>
-        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" /> which will contain the response to the request issued.</returns>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse" /> which will contain the response to the request issued.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">If <paramref name="id" /> are not set.</exception>
         <exception cref="T:Microsoft.Azure.Cosmos.CosmosException">This exception can encapsulate many different types of errors. To determine the specific error always look at the StatusCode property. Some common codes you may get when creating a Document are:
@@ -298,6 +505,47 @@
             <code language="c#"><![CDATA[
             Scripts scripts = this.container.Scripts;
             StoredProcedureResponse response = await scripts.DeleteStoredProcedureAsync("taxUdfId");
+            if (!response.IsSuccessStatusCode)
+            {
+                //Handle and log exception
+                return;
+            }
+            ]]></code></example>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteStoredProcedureStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; DeleteStoredProcedureStreamAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; DeleteStoredProcedureStreamAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.DeleteStoredProcedureStreamAsync(System.String,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function DeleteStoredProcedureStreamAsync (id As String, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteStoredProcedureStreamAsync : string * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.DeleteStoredProcedureStreamAsync (id, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id" />
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+            Deletes a <see cref="T:Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties" /> from the Azure Cosmos service as an asynchronous operation.
+            </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" /> which will contain the response to the request issued.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+            This examples gets a reference to an existing stored procedure and deletes it.
+            <code language="c#"><![CDATA[
+            Scripts scripts = this.container.Scripts;
+            ResponseMessage response = await scripts.DeleteStoredProcedureStreamAsync("taxUdfId");
             ]]></code></example>
       </Docs>
     </Member>
@@ -310,7 +558,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.TriggerResponse&gt;</ReturnType>
@@ -337,6 +585,47 @@
             ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="DeleteTriggerStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; DeleteTriggerStreamAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; DeleteTriggerStreamAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.DeleteTriggerStreamAsync(System.String,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function DeleteTriggerStreamAsync (id As String, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteTriggerStreamAsync : string * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.DeleteTriggerStreamAsync (id, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id" />
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+            Delete a <see cref="T:Microsoft.Azure.Cosmos.Scripts.TriggerProperties" /> from the Azure Cosmos service as an asynchronous operation.
+            </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" />  which will contain information about the request issued.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+            This examples gets a reference to an existing trigger and deletes it.
+            <code language="c#"><![CDATA[
+            Scripts scripts = this.container.Scripts;
+            TriggerResponse response = await scripts.DeleteTriggerStreamAsync("existingId");
+            if (!response.IsSuccessStatusCode)
+            {
+                //Handle and log exception
+                return;
+            }
+            ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="DeleteUserDefinedFunctionAsync">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt; DeleteUserDefinedFunctionAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt; DeleteUserDefinedFunctionAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -346,7 +635,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt;</ReturnType>
@@ -373,6 +662,47 @@
             ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="DeleteUserDefinedFunctionStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; DeleteUserDefinedFunctionStreamAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; DeleteUserDefinedFunctionStreamAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.DeleteUserDefinedFunctionStreamAsync(System.String,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function DeleteUserDefinedFunctionStreamAsync (id As String, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteUserDefinedFunctionStreamAsync : string * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.DeleteUserDefinedFunctionStreamAsync (id, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id" />
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+            Delete a <see cref="T:Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties" /> from the Azure Cosmos DB service as an asynchronous operation.
+            </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" /> which will contain information about the request issued.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+            This examples gets a reference to an existing user defined function and deletes it.
+            <code language="c#"><![CDATA[
+            Scripts scripts = this.container.Scripts;
+            ResponseMessage response = await this.container.DeleteUserDefinedFunctionStreamAsync("existingId");
+            if (!response.IsSuccessStatusCode)
+            {
+                //Handle and log exception
+                return;
+            }
+            ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="ExecuteStoredProcedureAsync&lt;TOutput&gt;">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.StoredProcedureExecuteResponse&lt;TOutput&gt;&gt; ExecuteStoredProcedureAsync&lt;TOutput&gt; (string storedProcedureId, Microsoft.Azure.Cosmos.PartitionKey partitionKey, object[] parameters, Microsoft.Azure.Cosmos.Scripts.StoredProcedureRequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.StoredProcedureExecuteResponse`1&lt;!!TOutput&gt;&gt; ExecuteStoredProcedureAsync&lt;TOutput&gt;(string storedProcedureId, valuetype Microsoft.Azure.Cosmos.PartitionKey partitionKey, object[] parameters, class Microsoft.Azure.Cosmos.Scripts.StoredProcedureRequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -382,7 +712,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.StoredProcedureExecuteResponse&lt;TOutput&gt;&gt;</ReturnType>
@@ -458,7 +788,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
@@ -516,6 +846,11 @@
                                      sprocId,
                                      new PartitionKey(testPartitionId),
                                      new dynamic[] {"myPrefixString", "myPostfixString"});
+             if (!sprocResponse.IsSuccessStatusCode)
+             {
+                 //Handle and log exception
+                 return;
+             }
                                      
              using (StreamReader sr = new StreamReader(sprocResponse.Content))
              {
@@ -535,7 +870,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
@@ -617,7 +952,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator&lt;T&gt;</ReturnType>
@@ -670,7 +1005,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator&lt;T&gt;</ReturnType>
@@ -720,7 +1055,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator</ReturnType>
@@ -776,7 +1111,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator</ReturnType>
@@ -829,7 +1164,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator&lt;T&gt;</ReturnType>
@@ -881,7 +1216,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator&lt;T&gt;</ReturnType>
@@ -931,7 +1266,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator</ReturnType>
@@ -986,7 +1321,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator</ReturnType>
@@ -1025,7 +1360,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator&lt;T&gt;</ReturnType>
@@ -1077,7 +1412,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator&lt;T&gt;</ReturnType>
@@ -1127,7 +1462,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator</ReturnType>
@@ -1182,7 +1517,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.FeedIterator</ReturnType>
@@ -1235,7 +1570,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse&gt;</ReturnType>
@@ -1267,6 +1602,47 @@
             ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="ReadStoredProcedureStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; ReadStoredProcedureStreamAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; ReadStoredProcedureStreamAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.ReadStoredProcedureStreamAsync(System.String,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function ReadStoredProcedureStreamAsync (id As String, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member ReadStoredProcedureStreamAsync : string * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.ReadStoredProcedureStreamAsync (id, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id" />
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+            Reads a <see cref="T:Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties" /> from the Azure Cosmos service as an asynchronous operation.
+            </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" />.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+             This reads an existing stored procedure.
+            <code language="c#"><![CDATA[
+            Scripts scripts = this.container.Scripts;
+            ResponseMessage storedProcedure = await scripts.ReadStoredProcedureStreamAsync("ExistingId");
+            if (!response.IsSuccessStatusCode)
+            {
+                //Handle and log exception
+                return;
+            }
+            ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="ReadTriggerAsync">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.TriggerResponse&gt; ReadTriggerAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.TriggerResponse&gt; ReadTriggerAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -1276,7 +1652,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.TriggerResponse&gt;</ReturnType>
@@ -1308,6 +1684,47 @@
             ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="ReadTriggerStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; ReadTriggerStreamAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; ReadTriggerStreamAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.ReadTriggerStreamAsync(System.String,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function ReadTriggerStreamAsync (id As String, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member ReadTriggerStreamAsync : string * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.ReadTriggerStreamAsync (id, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id" />
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+            Reads a <see cref="T:Microsoft.Azure.Cosmos.Scripts.TriggerProperties" /> from the Azure Cosmos service as an asynchronous operation.
+            </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" /> containing the read resource record.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+             This reads an existing trigger
+            <code language="c#"><![CDATA[
+            Scripts scripts = this.container.Scripts;
+            ResponseMessage response = await scripts.ReadTriggerStreamAsync("ExistingId");
+            if (!response.IsSuccessStatusCode)
+            {
+                //Handle and log exception
+                return;
+            }
+            ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="ReadUserDefinedFunctionAsync">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt; ReadUserDefinedFunctionAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt; ReadUserDefinedFunctionAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -1317,7 +1734,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt;</ReturnType>
@@ -1349,6 +1766,47 @@
             ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="ReadUserDefinedFunctionStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; ReadUserDefinedFunctionStreamAsync (string id, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; ReadUserDefinedFunctionStreamAsync(string id, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.ReadUserDefinedFunctionStreamAsync(System.String,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function ReadUserDefinedFunctionStreamAsync (id As String, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member ReadUserDefinedFunctionStreamAsync : string * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.ReadUserDefinedFunctionStreamAsync (id, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id" />
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+            Reads a <see cref="T:Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties" /> from the Azure Cosmos DB service as an asynchronous operation.
+            </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" /> containing the read resource record.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+             This reads an existing user defined function.
+            <code language="c#"><![CDATA[
+            Scripts scripts = this.container.Scripts;
+            ResponseMessage response = await scripts.ReadUserDefinedFunctionStreamAsync("ExistingId");
+            if (!response.IsSuccessStatusCode)
+            {
+                //Handle and log exception
+                return;
+            }
+            ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="ReplaceStoredProcedureAsync">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse&gt; ReplaceStoredProcedureAsync (Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties storedProcedureProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse&gt; ReplaceStoredProcedureAsync(class Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties storedProcedureProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -1358,7 +1816,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.StoredProcedureResponse&gt;</ReturnType>
@@ -1398,6 +1856,58 @@
              
              Scripts scripts = this.container.Scripts;
              StoredProcedureResponse response = await scripts.ReplaceStoredProcedureAsync(new StoredProcedureProperties("testTriggerId", body));
+             if (!response.IsSuccessStatusCode)
+             {
+                 //Handle and log exception
+                 return;
+             }
+             ]]></code></example>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplaceStoredProcedureStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; ReplaceStoredProcedureStreamAsync (Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties storedProcedureProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; ReplaceStoredProcedureStreamAsync(class Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties storedProcedureProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.ReplaceStoredProcedureStreamAsync(Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function ReplaceStoredProcedureStreamAsync (storedProcedureProperties As StoredProcedureProperties, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member ReplaceStoredProcedureStreamAsync : Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.ReplaceStoredProcedureStreamAsync (storedProcedureProperties, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="storedProcedureProperties" Type="Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="storedProcedureProperties">The Stored Procedure to replace</param>
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+             Replaces a <see cref="T:Microsoft.Azure.Cosmos.Scripts.StoredProcedureProperties" /> in the Azure Cosmos service as an asynchronous operation.
+             </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" />.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+             This examples replaces an existing stored procedure.
+             <code language="c#"><![CDATA[
+             //Updated body
+             string body = @"function AddTax() {
+                 var item = getContext().getRequest().getBody();
+            
+                 // Validate/calculate the tax.
+                 item.tax = item.cost* .15;
+            
+                 // Update the request -- this is what is going to be inserted.
+                 getContext().getRequest().setBody(item);
+             }";
+             
+             Scripts scripts = this.container.Scripts;
+             ResponseMessage response = await scripts.ReplaceStoredProcedureStreamAsync(new StoredProcedureProperties("testTriggerId", body));
              ]]></code></example>
       </Docs>
     </Member>
@@ -1410,7 +1920,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.TriggerResponse&gt;</ReturnType>
@@ -1456,6 +1966,63 @@
              ]]></code></example>
       </Docs>
     </Member>
+    <Member MemberName="ReplaceTriggerStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; ReplaceTriggerStreamAsync (Microsoft.Azure.Cosmos.Scripts.TriggerProperties triggerProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; ReplaceTriggerStreamAsync(class Microsoft.Azure.Cosmos.Scripts.TriggerProperties triggerProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.ReplaceTriggerStreamAsync(Microsoft.Azure.Cosmos.Scripts.TriggerProperties,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function ReplaceTriggerStreamAsync (triggerProperties As TriggerProperties, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member ReplaceTriggerStreamAsync : Microsoft.Azure.Cosmos.Scripts.TriggerProperties * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.ReplaceTriggerStreamAsync (triggerProperties, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="triggerProperties" Type="Microsoft.Azure.Cosmos.Scripts.TriggerProperties" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="triggerProperties">The <see cref="T:Microsoft.Azure.Cosmos.Scripts.TriggerProperties" /> object.</param>
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+             Replaces a <see cref="T:Microsoft.Azure.Cosmos.Scripts.TriggerProperties" /> in the Azure Cosmos service as an asynchronous operation.
+             </summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" />containing the updated resource record.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+             This examples replaces an existing trigger.
+             <code language="c#"><![CDATA[
+             TriggerProperties triggerProperties = new TriggerProperties
+             {
+                 Id = "testTriggerId",
+                 Body = @"function AddTax() {
+                     var item = getContext().getRequest().getBody();
+            
+                     // Validate/calculate the tax.
+                     item.tax = item.cost* .15;
+            
+                     // Update the request -- this is what is going to be inserted.
+                     getContext().getRequest().setBody(item);
+                 }",
+                 TriggerOperation = TriggerOperation.All,
+                 TriggerType = TriggerType.Post
+             };
+             
+             Scripts scripts = this.container.Scripts;
+             ResponseMessage response = await scripts.ReplaceTriggerStreamAsync(triggerSettigs);
+             if (!response.IsSuccessStatusCode)
+             {
+                 //Handle and log exception
+                 return;
+             }
+             ]]></code></example>
+      </Docs>
+    </Member>
     <Member MemberName="ReplaceUserDefinedFunctionAsync">
       <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt; ReplaceUserDefinedFunctionAsync (Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties userDefinedFunctionProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt; ReplaceUserDefinedFunctionAsync(class Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties userDefinedFunctionProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -1465,7 +2032,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionResponse&gt;</ReturnType>
@@ -1498,6 +2065,53 @@
             
             UserDefinedFunctionResponse response = await scripts.ReplaceUserDefinedFunctionAsync(udfProperties);
             UserDefinedFunctionProperties udfProperties = response;
+            ]]></code></example>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplaceUserDefinedFunctionStreamAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt; ReplaceUserDefinedFunctionStreamAsync (Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties userDefinedFunctionProperties, Microsoft.Azure.Cosmos.RequestOptions requestOptions = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.Azure.Cosmos.ResponseMessage&gt; ReplaceUserDefinedFunctionStreamAsync(class Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties userDefinedFunctionProperties, class Microsoft.Azure.Cosmos.RequestOptions requestOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.Scripts.Scripts.ReplaceUserDefinedFunctionStreamAsync(Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties,Microsoft.Azure.Cosmos.RequestOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function ReplaceUserDefinedFunctionStreamAsync (userDefinedFunctionProperties As UserDefinedFunctionProperties, Optional requestOptions As RequestOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseMessage)" />
+      <MemberSignature Language="F#" Value="abstract member ReplaceUserDefinedFunctionStreamAsync : Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties * Microsoft.Azure.Cosmos.RequestOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;" Usage="scripts.ReplaceUserDefinedFunctionStreamAsync (userDefinedFunctionProperties, requestOptions, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.Azure.Cosmos.ResponseMessage&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userDefinedFunctionProperties" Type="Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties" />
+        <Parameter Name="requestOptions" Type="Microsoft.Azure.Cosmos.RequestOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="userDefinedFunctionProperties">The <see cref="T:Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties" /> object.</param>
+        <param name="requestOptions" />
+        <param name="cancellationToken" />
+        <summary>
+            Replaces a <see cref="T:Microsoft.Azure.Cosmos.Scripts.UserDefinedFunctionProperties" /> in the Azure Cosmos DB service as an asynchronous operation.
+            </summary>
+        <returns> A <see cref="T:System.Threading.Tasks.Task" /> containing a <see cref="T:Microsoft.Azure.Cosmos.ResponseMessage" /> containing the updated resource record. </returns>
+        <remarks>To be added.</remarks>
+        <example>
+            This examples replaces an existing user defined function.
+            <code language="c#"><![CDATA[
+            Scripts scripts = this.container.Scripts;
+            UserDefinedFunctionProperties udfProperties = new UserDefinedFunctionProperties
+            {
+                Id = "testUserDefinedFunId",
+                Body = "function(amt) { return amt * 0.15; }",
+            };
+            
+            ResponseMessage response = await scripts.ReplaceUserDefinedFunctionStreamAsync(udfProperties);
+            if (!response.IsSuccessStatusCode)
+            {
+                //Handle and log exception
+                return;
+            }
             ]]></code></example>
       </Docs>
     </Member>

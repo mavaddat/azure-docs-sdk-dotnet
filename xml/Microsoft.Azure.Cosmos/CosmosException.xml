@@ -1,9 +1,9 @@
 <Type Name="CosmosException" FullName="Microsoft.Azure.Cosmos.CosmosException">
-  <TypeSignature Language="C#" Value="public class CosmosException : Exception" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CosmosException extends System.Exception" />
+  <TypeSignature Language="C#" Value="public class CosmosException : Exception, ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CosmosException extends System.Exception implements class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Azure.Cosmos.CosmosException" />
-  <TypeSignature Language="VB.NET" Value="Public Class CosmosException&#xA;Inherits Exception" />
-  <TypeSignature Language="F#" Value="type CosmosException = class&#xA;    inherit Exception" />
+  <TypeSignature Language="VB.NET" Value="Public Class CosmosException&#xA;Inherits Exception&#xA;Implements ICloneable" />
+  <TypeSignature Language="F#" Value="type CosmosException = class&#xA;    inherit Exception&#xA;    interface ICloneable" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
     <AssemblyVersion>3.36.0.0</AssemblyVersion>
@@ -11,11 +11,16 @@
     <AssemblyVersion>3.39.0.0</AssemblyVersion>
     <AssemblyVersion>3.45.0.0</AssemblyVersion>
     <AssemblyVersion>3.47.0.0</AssemblyVersion>
+    <AssemblyVersion>3.58.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Exception</BaseTypeName>
   </Base>
-  <Interfaces />
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
   <Docs>
     <summary>
             The Cosmos Client exception
@@ -32,7 +37,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
@@ -61,7 +66,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -76,6 +81,34 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.CosmosException.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Function Clone () As Object" />
+      <MemberSignature Language="F#" Value="abstract member Clone : unit -&gt; obj&#xA;override this.Clone : unit -&gt; obj" Usage="cosmosException.Clone " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ICloneable.Clone</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a shallow copy of the current exception instance.
+            This ensures that the cloned exception retains the same properties but does not
+            excessively proliferate stack traces or deep-copy unnecessary objects.
+            </summary>
+        <returns>A shallow copy of the current <see cref="T:Microsoft.Azure.Cosmos.CosmosException" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Diagnostics">
       <MemberSignature Language="C#" Value="public virtual Microsoft.Azure.Cosmos.CosmosDiagnostics Diagnostics { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Azure.Cosmos.CosmosDiagnostics Diagnostics" />
@@ -85,7 +118,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.CosmosDiagnostics</ReturnType>
@@ -107,7 +140,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.Headers</ReturnType>
@@ -129,7 +162,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -150,7 +183,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -174,7 +207,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -196,7 +229,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
@@ -218,7 +251,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -239,7 +272,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.HttpStatusCode</ReturnType>
@@ -261,7 +294,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -283,7 +316,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -306,7 +339,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

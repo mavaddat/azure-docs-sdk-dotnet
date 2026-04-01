@@ -1,9 +1,9 @@
 <Type Name="CosmosOperationCanceledException" FullName="Microsoft.Azure.Cosmos.CosmosOperationCanceledException">
-  <TypeSignature Language="C#" Value="public class CosmosOperationCanceledException : OperationCanceledException" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CosmosOperationCanceledException extends System.OperationCanceledException" />
+  <TypeSignature Language="C#" Value="public class CosmosOperationCanceledException : OperationCanceledException, ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CosmosOperationCanceledException extends System.OperationCanceledException implements class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Azure.Cosmos.CosmosOperationCanceledException" />
-  <TypeSignature Language="VB.NET" Value="Public Class CosmosOperationCanceledException&#xA;Inherits OperationCanceledException" />
-  <TypeSignature Language="F#" Value="type CosmosOperationCanceledException = class&#xA;    inherit OperationCanceledException" />
+  <TypeSignature Language="VB.NET" Value="Public Class CosmosOperationCanceledException&#xA;Inherits OperationCanceledException&#xA;Implements ICloneable" />
+  <TypeSignature Language="F#" Value="type CosmosOperationCanceledException = class&#xA;    inherit OperationCanceledException&#xA;    interface ICloneable" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
     <AssemblyVersion>3.36.0.0</AssemblyVersion>
@@ -11,11 +11,16 @@
     <AssemblyVersion>3.39.0.0</AssemblyVersion>
     <AssemblyVersion>3.45.0.0</AssemblyVersion>
     <AssemblyVersion>3.47.0.0</AssemblyVersion>
+    <AssemblyVersion>3.58.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.OperationCanceledException</BaseTypeName>
   </Base>
-  <Interfaces />
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
   <Attributes>
     <Attribute>
       <AttributeName Language="C#">[System.Serializable]</AttributeName>
@@ -40,7 +45,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="originalException" Type="System.OperationCanceledException" />
@@ -64,7 +69,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -79,6 +84,34 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.CosmosOperationCanceledException.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Function Clone () As Object" />
+      <MemberSignature Language="F#" Value="abstract member Clone : unit -&gt; obj&#xA;override this.Clone : unit -&gt; obj" Usage="cosmosOperationCanceledException.Clone " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ICloneable.Clone</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a shallow copy of the current exception instance.
+            This ensures that the cloned exception retains the same properties but does not
+            excessively proliferate stack traces or deep-copy unnecessary objects.
+            </summary>
+        <returns>A shallow copy of the current <see cref="T:Microsoft.Azure.Cosmos.CosmosOperationCanceledException" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Data">
       <MemberSignature Language="C#" Value="public override System.Collections.IDictionary Data { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Data" />
@@ -88,7 +121,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IDictionary</ReturnType>
@@ -109,7 +142,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.CosmosDiagnostics</ReturnType>
@@ -131,7 +164,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Exception</ReturnType>
@@ -153,7 +186,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -180,7 +213,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -201,7 +234,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -222,7 +255,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -243,7 +276,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -264,7 +297,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
-        <AssemblyVersion>3.47.0.0</AssemblyVersion>
+        <AssemblyVersion>3.58.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
