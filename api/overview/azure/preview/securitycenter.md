@@ -1,6 +1,7 @@
 ---
-title: Azure SecurityCenter SDK for .NET
-description: Reference for Azure SecurityCenter SDK for .NET
+title: Azure Securitycenter SDK for .NET
+description: Reference for Azure Securitycenter SDK for .NET
+ms.date: 04/01/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: securitycenter
@@ -8,4 +9,3 @@ ms.service: securitycenter
 # Azure SecurityCenter SDK for .NET - preview
 ## Packages - preview
 [!INCLUDE [packages](securitycenter-index.md)]
-

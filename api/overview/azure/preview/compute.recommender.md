@@ -1,7 +1,7 @@
 ---
 title: Azure Compute.Recommender SDK for .NET
 description: Reference for Azure Compute.Recommender SDK for .NET
-ms.date: 03/31/2026
+ms.date: 04/01/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: compute.recommender
