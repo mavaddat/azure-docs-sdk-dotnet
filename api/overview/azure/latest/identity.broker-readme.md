@@ -1,12 +1,12 @@
 ---
 title: Azure Identity brokered authentication client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.Identity.Broker, entra-id
-ms.date: 02/27/2026
+ms.date: 04/02/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: entra-id
 ---
-# Azure Identity brokered authentication client library for .NET - version 1.4.0 
+# Azure Identity brokered authentication client library for .NET - version 1.5.0 
 
 
 The library extends the `Azure.Identity` library to provide authentication broker support. It includes the necessary dependencies and provides the `InteractiveBrowserCredentialBrokerOptions` class. This options class can be used to create an `InteractiveBrowserCredential` capable of using the system authentication broker in lieu of an embedded web view or the system browser.
@@ -42,7 +42,7 @@ Microsoft accounts (MSA) are personal accounts created by users to access Micros
 
 ## Troubleshooting
 
-See the [troubleshooting guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.4.0/sdk/identity/Azure.Identity/TROUBLESHOOTING.md) for details on how to diagnose various failure scenarios.
+See the [troubleshooting guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.5.0/sdk/identity/Azure.Identity/TROUBLESHOOTING.md) for details on how to diagnose various failure scenarios.
 
 ### Error handling
 
@@ -69,7 +69,7 @@ For more details on dealing with errors arising from failed requests to Microsof
 
 ### Logging
 
-The Azure Identity library provides the same [logging capabilities](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.4.0/sdk/core/Azure.Core/samples/Diagnostics.md#logging) as the rest of the Azure SDK.
+The Azure Identity library provides the same [logging capabilities](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.5.0/sdk/core/Azure.Core/samples/Diagnostics.md#logging) as the rest of the Azure SDK.
 
 The simplest way to see the logs to help debug authentication issues is to enable the console logging.
 
@@ -101,10 +101,10 @@ This ensures that the recommendation of reusing credential instances is always s
 
 ### Additional concepts
 
-[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.4.0/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
-[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.4.0/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
-[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.4.0/sdk/core/Azure.Core/samples/Diagnostics.md) |
-[Mocking](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.4.0/sdk/core/Azure.Core/README.md#mocking) |
+[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.5.0/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
+[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.5.0/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
+[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.5.0/sdk/core/Azure.Core/samples/Diagnostics.md) |
+[Mocking](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity.Broker_1.5.0/sdk/core/Azure.Core/README.md#mocking) |
 [Client lifetime](https://devblogs.microsoft.com/azure-sdk/lifetime-management-and-thread-safety-guarantees-of-azure-sdk-net-clients/)
 
 ## Next steps
@@ -130,8 +130,8 @@ This project has adopted the [Microsoft Open Source Code of Conduct][code_of_con
 
 <!-- LINKS -->
 [azure_sub]: https://azure.microsoft.com/free/dotnet/
-[azure_identity]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Identity.Broker_1.4.0/sdk/identity/Azure.Identity/README.md
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Identity.Broker_1.4.0/sdk/identity/Azure.Identity.Broker/src
+[azure_identity]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Identity.Broker_1.5.0/sdk/identity/Azure.Identity/README.md
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Identity.Broker_1.5.0/sdk/identity/Azure.Identity.Broker/src
 [package]: https://www.nuget.org/packages/Azure.Identity.Broker
 [entraid_doc]: https://learn.microsoft.com/entra/identity/
 [entraid_err_doc]: https://learn.microsoft.com/entra/identity-platform/reference-error-codes
