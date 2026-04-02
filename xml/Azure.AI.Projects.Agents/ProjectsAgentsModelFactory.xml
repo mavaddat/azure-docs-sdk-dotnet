@@ -66,8 +66,8 @@
         <ReturnType>Azure.AI.Projects.Agents.AgentDefinition</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="kind" Type="System.String" />
-        <Parameter Name="contentFilterConfiguration" Type="Azure.AI.Projects.Agents.ContentFilterConfiguration" />
+        <Parameter Name="kind" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentFilterConfiguration" Type="Azure.AI.Projects.Agents.ContentFilterConfiguration" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="kind" />
@@ -131,8 +131,8 @@
         <ReturnType>Azure.AI.Projects.Agents.AgentRecord</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="System.String" />
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="id">To be added.</param>
@@ -157,7 +157,7 @@
         <ReturnType>Azure.AI.Projects.Agents.AgentTool</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="type" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="type" />
@@ -184,13 +184,13 @@
         <ReturnType>Azure.AI.Projects.Agents.AgentVersion</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
-        <Parameter Name="id" Type="System.String" />
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="version" Type="System.String" />
-        <Parameter Name="description" Type="System.String" />
-        <Parameter Name="createdAt" Type="System.DateTimeOffset" />
-        <Parameter Name="definition" Type="Azure.AI.Projects.Agents.AgentDefinition" />
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="id" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="version" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdAt" Type="System.DateTimeOffset" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="definition" Type="Azure.AI.Projects.Agents.AgentDefinition" Index="6" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="metadata">
@@ -226,9 +226,9 @@
         <ReturnType>Azure.AI.Projects.Agents.AgentVersionCreationOptions</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
-        <Parameter Name="description" Type="System.String" />
-        <Parameter Name="definition" Type="Azure.AI.Projects.Agents.AgentDefinition" />
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="definition" Type="Azure.AI.Projects.Agents.AgentDefinition" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="metadata">
@@ -826,13 +826,52 @@
         <ReturnType>Azure.AI.Projects.Agents.HostedAgentDefinition</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="contentFilterConfiguration" Type="Azure.AI.Projects.Agents.ContentFilterConfiguration" />
-        <Parameter Name="tools" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentTool&gt;" />
-        <Parameter Name="versions" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt;" />
-        <Parameter Name="cpu" Type="System.String" />
-        <Parameter Name="memory" Type="System.String" />
-        <Parameter Name="environmentVariables" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
-        <Parameter Name="image" Type="System.String" />
+        <Parameter Name="contentFilterConfiguration" Type="Azure.AI.Projects.Agents.ContentFilterConfiguration" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="tools" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentTool&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="versions" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cpu" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memory" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="environmentVariables" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="image" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="contentFilterConfiguration"> Configuration for Responsible AI (RAI) content filtering and safety features. </param>
+        <param name="tools">
+            An array of tools the hosted agent's model may call while generating a response. You
+            can specify which tool to use by setting the `tool_choice` parameter.
+            </param>
+        <param name="versions"> The protocols that the agent supports for ingress communication of the containers. </param>
+        <param name="cpu"> The CPU configuration for the hosted agent. </param>
+        <param name="memory"> The memory configuration for the hosted agent. </param>
+        <param name="environmentVariables"> Environment variables to set in the hosted agent container. </param>
+        <param name="image"> The image ID for the agent, applicable to image-based hosted agents. </param>
+        <summary> The hosted agent definition. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.HostedAgentDefinition" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostedAgentDefinition">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.HostedAgentDefinition HostedAgentDefinition (Azure.AI.Projects.Agents.ContentFilterConfiguration contentFilterConfiguration = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProjectsAgentTool&gt; tools = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; versions = default, string cpu = default, string memory = default, System.Collections.Generic.IDictionary&lt;string,string&gt; environmentVariables = default, string image = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.HostedAgentDefinition HostedAgentDefinition(class Azure.AI.Projects.Agents.ContentFilterConfiguration contentFilterConfiguration, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentTool&gt; tools, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; versions, string cpu, string memory, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; environmentVariables, string image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.HostedAgentDefinition(Azure.AI.Projects.Agents.ContentFilterConfiguration,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.ProjectsAgentTool},System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.ProtocolVersionRecord},System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function HostedAgentDefinition (Optional contentFilterConfiguration As ContentFilterConfiguration = Nothing, Optional tools As IEnumerable(Of ProjectsAgentTool) = Nothing, Optional versions As IEnumerable(Of ProtocolVersionRecord) = Nothing, Optional cpu As String = Nothing, Optional memory As String = Nothing, Optional environmentVariables As IDictionary(Of String, String) = Nothing, Optional image As String = Nothing) As HostedAgentDefinition" />
+      <MemberSignature Language="F#" Value="static member HostedAgentDefinition : Azure.AI.Projects.Agents.ContentFilterConfiguration * seq&lt;Azure.AI.Projects.Agents.ProjectsAgentTool&gt; * seq&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * string -&gt; Azure.AI.Projects.Agents.HostedAgentDefinition" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.HostedAgentDefinition (contentFilterConfiguration, tools, versions, cpu, memory, environmentVariables, image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.HostedAgentDefinition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentFilterConfiguration" Type="Azure.AI.Projects.Agents.ContentFilterConfiguration" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="tools" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProjectsAgentTool&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="versions" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cpu" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="memory" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="environmentVariables" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="5" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="image" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
         <param name="contentFilterConfiguration"> Configuration for Responsible AI (RAI) content filtering and safety features. </param>
@@ -1162,6 +1201,164 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="ProjectsAgentDefinition">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProjectsAgentDefinition ProjectsAgentDefinition (string kind = default, Azure.AI.Projects.Agents.ContentFilterConfiguration contentFilterConfiguration = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProjectsAgentDefinition ProjectsAgentDefinition(string kind, class Azure.AI.Projects.Agents.ContentFilterConfiguration contentFilterConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentDefinition(System.String,Azure.AI.Projects.Agents.ContentFilterConfiguration)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProjectsAgentDefinition (Optional kind As String = Nothing, Optional contentFilterConfiguration As ContentFilterConfiguration = Nothing) As ProjectsAgentDefinition" />
+      <MemberSignature Language="F#" Value="static member ProjectsAgentDefinition : string * Azure.AI.Projects.Agents.ContentFilterConfiguration -&gt; Azure.AI.Projects.Agents.ProjectsAgentDefinition" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentDefinition (kind, contentFilterConfiguration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentDefinition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kind" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="contentFilterConfiguration" Type="Azure.AI.Projects.Agents.ContentFilterConfiguration" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="kind" />
+        <param name="contentFilterConfiguration"> Configuration for Responsible AI (RAI) content filtering and safety features. </param>
+        <summary>
+            The ProjectsAgentDefinition.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.DeclarativeAgentDefinition" />, <see cref="T:Azure.AI.Projects.Agents.WorkflowAgentDefinition" />, and <see cref="T:Azure.AI.Projects.Agents.HostedAgentDefinition" />.
+            </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.ProjectsAgentDefinition" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectsAgentRecord">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProjectsAgentRecord ProjectsAgentRecord (string id = default, string name = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProjectsAgentRecord ProjectsAgentRecord(string id, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentRecord(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProjectsAgentRecord (Optional id As String = Nothing, Optional name As String = Nothing) As ProjectsAgentRecord" />
+      <MemberSignature Language="F#" Value="static member ProjectsAgentRecord : string * string -&gt; Azure.AI.Projects.Agents.ProjectsAgentRecord" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentRecord (id, name)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentRecord</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="id">To be added.</param>
+        <param name="name">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectsAgentTool">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProjectsAgentTool ProjectsAgentTool (string type = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProjectsAgentTool ProjectsAgentTool(string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentTool(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProjectsAgentTool (Optional type As String = Nothing) As ProjectsAgentTool" />
+      <MemberSignature Language="F#" Value="static member ProjectsAgentTool : string -&gt; Azure.AI.Projects.Agents.ProjectsAgentTool" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentTool type" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentTool</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="type" />
+        <summary>
+            A tool that can be used to generate a response.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.BingGroundingTool" />, <see cref="T:Azure.AI.Projects.Agents.MicrosoftFabricPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.SharepointPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureAISearchTool" />, <see cref="T:Azure.AI.Projects.Agents.OpenAPITool" />, <see cref="T:Azure.AI.Projects.Agents.BingCustomSearchPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.BrowserAutomationPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureFunctionTool" />, <see cref="T:Azure.AI.Projects.Agents.CaptureStructuredOutputsTool" />, <see cref="T:Azure.AI.Projects.Agents.A2APreviewTool" />, and <see cref="T:Azure.AI.Projects.Agents.MemorySearchPreviewTool" />.
+            </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.ProjectsAgentTool" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectsAgentVersion">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProjectsAgentVersion ProjectsAgentVersion (System.Collections.Generic.IDictionary&lt;string,string&gt; metadata = default, string id = default, string name = default, string version = default, string description = default, DateTimeOffset createdAt = default, Azure.AI.Projects.Agents.ProjectsAgentDefinition definition = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProjectsAgentVersion ProjectsAgentVersion(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; metadata, string id, string name, string version, string description, valuetype System.DateTimeOffset createdAt, class Azure.AI.Projects.Agents.ProjectsAgentDefinition definition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentVersion(System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.String,System.String,System.String,System.DateTimeOffset,Azure.AI.Projects.Agents.ProjectsAgentDefinition)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProjectsAgentVersion (Optional metadata As IDictionary(Of String, String) = Nothing, Optional id As String = Nothing, Optional name As String = Nothing, Optional version As String = Nothing, Optional description As String = Nothing, Optional createdAt As DateTimeOffset = Nothing, Optional definition As ProjectsAgentDefinition = Nothing) As ProjectsAgentVersion" />
+      <MemberSignature Language="F#" Value="static member ProjectsAgentVersion : System.Collections.Generic.IDictionary&lt;string, string&gt; * string * string * string * string * DateTimeOffset * Azure.AI.Projects.Agents.ProjectsAgentDefinition -&gt; Azure.AI.Projects.Agents.ProjectsAgentVersion" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentVersion (metadata, id, name, version, description, createdAt, definition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentVersion</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="id" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="name" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="version" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="description" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="createdAt" Type="System.DateTimeOffset" Index="5" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="definition" Type="Azure.AI.Projects.Agents.ProjectsAgentDefinition" Index="6" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">
+            Set of 16 key-value pairs that can be attached to an object. This can be
+            useful for storing additional information about the object in a structured
+            format, and querying for objects via API or the dashboard.
+            Keys are strings with a maximum length of 64 characters. Values are strings
+            with a maximum length of 512 characters.
+            </param>
+        <param name="id"> The unique identifier of the agent version. </param>
+        <param name="name"> The name of the agent. Name can be used to retrieve/update/delete the agent. </param>
+        <param name="version"> The version identifier of the agent. Agents are immutable and every update creates a new version while keeping the name same. </param>
+        <param name="description"> A human-readable description of the agent. </param>
+        <param name="createdAt"> The Unix timestamp (seconds) when the agent was created. </param>
+        <param name="definition" />
+        <summary> The ProjectsAgentVersion. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.ProjectsAgentVersion" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectsAgentVersionCreationOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProjectsAgentVersionCreationOptions ProjectsAgentVersionCreationOptions (System.Collections.Generic.IDictionary&lt;string,string&gt; metadata = default, string description = default, Azure.AI.Projects.Agents.ProjectsAgentDefinition definition = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProjectsAgentVersionCreationOptions ProjectsAgentVersionCreationOptions(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; metadata, string description, class Azure.AI.Projects.Agents.ProjectsAgentDefinition definition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentVersionCreationOptions(System.Collections.Generic.IDictionary{System.String,System.String},System.String,Azure.AI.Projects.Agents.ProjectsAgentDefinition)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProjectsAgentVersionCreationOptions (Optional metadata As IDictionary(Of String, String) = Nothing, Optional description As String = Nothing, Optional definition As ProjectsAgentDefinition = Nothing) As ProjectsAgentVersionCreationOptions" />
+      <MemberSignature Language="F#" Value="static member ProjectsAgentVersionCreationOptions : System.Collections.Generic.IDictionary&lt;string, string&gt; * string * Azure.AI.Projects.Agents.ProjectsAgentDefinition -&gt; Azure.AI.Projects.Agents.ProjectsAgentVersionCreationOptions" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectsAgentVersionCreationOptions (metadata, description, definition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentVersionCreationOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="definition" Type="Azure.AI.Projects.Agents.ProjectsAgentDefinition" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">
+            Set of 16 key-value pairs that can be attached to an object. This can be
+            useful for storing additional information about the object in a structured
+            format, and querying for objects via API or the dashboard.
+            Keys are strings with a maximum length of 64 characters. Values are strings
+            with a maximum length of 512 characters.
+            </param>
+        <param name="description"> A human-readable description of the agent. </param>
+        <param name="definition"> The agent definition. This can be a workflow, hosted agent, or a simple agent definition. </param>
+        <summary> The ProjectsAgentVersionCreationOptions. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.ProjectsAgentVersionCreationOptions" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ProjectWebSearchConfiguration">
       <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProjectWebSearchConfiguration ProjectWebSearchConfiguration (string projectConnectionId = default, string instanceName = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProjectWebSearchConfiguration ProjectWebSearchConfiguration(string projectConnectionId, string instanceName) cil managed" />
@@ -1203,8 +1400,34 @@
         <ReturnType>Azure.AI.Projects.Agents.ProtocolVersionRecord</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="protocol" Type="Azure.AI.Projects.Agents.AgentProtocol" />
-        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="protocol" Type="Azure.AI.Projects.Agents.AgentProtocol" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="version" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="protocol"> The protocol type. </param>
+        <param name="version"> The version string for the protocol, e.g. 'v0.1.1'. </param>
+        <summary> A record mapping for a single protocol and its version. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.ProtocolVersionRecord" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolVersionRecord">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProtocolVersionRecord ProtocolVersionRecord (Azure.AI.Projects.Agents.ProjectsAgentProtocol protocol = default, string version = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProtocolVersionRecord ProtocolVersionRecord(valuetype Azure.AI.Projects.Agents.ProjectsAgentProtocol protocol, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProtocolVersionRecord(Azure.AI.Projects.Agents.ProjectsAgentProtocol,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProtocolVersionRecord (Optional protocol As ProjectsAgentProtocol = Nothing, Optional version As String = Nothing) As ProtocolVersionRecord" />
+      <MemberSignature Language="F#" Value="static member ProtocolVersionRecord : Azure.AI.Projects.Agents.ProjectsAgentProtocol * string -&gt; Azure.AI.Projects.Agents.ProtocolVersionRecord" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProtocolVersionRecord (protocol, version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.ProtocolVersionRecord</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protocol" Type="Azure.AI.Projects.Agents.ProjectsAgentProtocol" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="version" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
         <param name="protocol"> The protocol type. </param>

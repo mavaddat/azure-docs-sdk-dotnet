@@ -47,64 +47,70 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="AddTag">
-      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt; AddTag (string key, string value, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.DeviceRegistry.PolicyResource&gt; AddTag(string key, string value, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.AddTag(System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddTag (key As String, value As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of PolicyResource)" />
-      <MemberSignature Language="F#" Value="abstract member AddTag : string * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&#xA;override this.AddTag : string * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;" Usage="policyResource.AddTag (key, value, cancellationToken)" />
+    <Member MemberName="ActivateBringYourOwnRoot">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation ActivateBringYourOwnRoot (Azure.WaitUntil waitUntil, Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation ActivateBringYourOwnRoot(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.ActivateBringYourOwnRoot(Azure.WaitUntil,Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ActivateBringYourOwnRoot (waitUntil As WaitUntil, content As ActivateBringYourOwnRootRequest, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation" />
+      <MemberSignature Language="F#" Value="abstract member ActivateBringYourOwnRoot : Azure.WaitUntil * Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&#xA;override this.ActivateBringYourOwnRoot : Azure.WaitUntil * Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation" Usage="policyResource.ActivateBringYourOwnRoot (waitUntil, content, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DeviceRegistry</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;</ReturnType>
+        <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="key" Type="System.String" />
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
+        <Parameter Name="content" Type="Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="key"> The key for the tag. </param>
-        <param name="value"> The value for the tag. </param>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="content"> The content of the action request. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Add a tag to the current resource. </summary>
+        <summary>
+            Activates or renews a Bring Your Own Root policy by accepting a customer-provided signed certificate. This is a long-running operation that returns no content upon completion.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}/activateBringYourOwnRoot. </description></item><item><term> Operation Id. </term><description> Policies_ActivateBringYourOwnRoot. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="key" /> or <paramref name="value" /> is null. </exception>
+          <paramref name="content" /> is null. </exception>
       </Docs>
     </Member>
-    <Member MemberName="AddTagAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt; AddTagAsync (string key, string value, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt; AddTagAsync(string key, string value, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.AddTagAsync(System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddTagAsync (key As String, value As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of PolicyResource))" />
-      <MemberSignature Language="F#" Value="abstract member AddTagAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;&#xA;override this.AddTagAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;" Usage="policyResource.AddTagAsync (key, value, cancellationToken)" />
+    <Member MemberName="ActivateBringYourOwnRootAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt; ActivateBringYourOwnRootAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation&gt; ActivateBringYourOwnRootAsync(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.ActivateBringYourOwnRootAsync(Azure.WaitUntil,Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ActivateBringYourOwnRootAsync (waitUntil As WaitUntil, content As ActivateBringYourOwnRootRequest, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation)" />
+      <MemberSignature Language="F#" Value="abstract member ActivateBringYourOwnRootAsync : Azure.WaitUntil * Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;&#xA;override this.ActivateBringYourOwnRootAsync : Azure.WaitUntil * Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;" Usage="policyResource.ActivateBringYourOwnRootAsync (waitUntil, content, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DeviceRegistry</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;</ReturnType>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="key" Type="System.String" />
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
+        <Parameter Name="content" Type="Azure.ResourceManager.DeviceRegistry.Models.ActivateBringYourOwnRootRequest" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="key"> The key for the tag. </param>
-        <param name="value"> The value for the tag. </param>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="content"> The content of the action request. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Add a tag to the current resource. </summary>
+        <summary>
+            Activates or renews a Bring Your Own Root policy by accepting a customer-provided signed certificate. This is a long-running operation that returns no content upon completion.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}/activateBringYourOwnRoot. </description></item><item><term> Operation Id. </term><description> Policies_ActivateBringYourOwnRoot. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="key" /> or <paramref name="value" /> is null. </exception>
+          <paramref name="content" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateResourceIdentifier">
@@ -181,7 +187,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Delete a Policy
-            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-11-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Delete. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -210,7 +216,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Delete a Policy
-            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-11-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Delete. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -236,7 +242,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get a Policy
-            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Get. </description></item><item><term> Default Api Version. </term><description> 2025-11-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Get. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -262,7 +268,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get a Policy
-            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Get. </description></item><item><term> Default Api Version. </term><description> 2025-11-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Get. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -287,62 +293,6 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="RemoveTag">
-      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt; RemoveTag (string key, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.DeviceRegistry.PolicyResource&gt; RemoveTag(string key, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.RemoveTag(System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function RemoveTag (key As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of PolicyResource)" />
-      <MemberSignature Language="F#" Value="abstract member RemoveTag : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&#xA;override this.RemoveTag : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;" Usage="policyResource.RemoveTag (key, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.DeviceRegistry</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="key" Type="System.String" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-      </Parameters>
-      <Docs>
-        <param name="key"> The key for the tag. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Removes a tag by key from the resource. </summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="key" /> is null. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="RemoveTagAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt; RemoveTagAsync (string key, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt; RemoveTagAsync(string key, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.RemoveTagAsync(System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function RemoveTagAsync (key As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of PolicyResource))" />
-      <MemberSignature Language="F#" Value="abstract member RemoveTagAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;&#xA;override this.RemoveTagAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;" Usage="policyResource.RemoveTagAsync (key, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.DeviceRegistry</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="key" Type="System.String" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-      </Parameters>
-      <Docs>
-        <param name="key"> The key for the tag. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Removes a tag by key from the resource. </summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="key" /> is null. </exception>
-      </Docs>
-    </Member>
     <Member MemberName="ResourceType">
       <MemberSignature Language="C#" Value="public static readonly Azure.Core.ResourceType ResourceType;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype Azure.Core.ResourceType ResourceType" />
@@ -362,60 +312,62 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="SetTags">
-      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt; SetTags (System.Collections.Generic.IDictionary&lt;string,string&gt; tags, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.DeviceRegistry.PolicyResource&gt; SetTags(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.SetTags(System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function SetTags (tags As IDictionary(Of String, String), Optional cancellationToken As CancellationToken = Nothing) As Response(Of PolicyResource)" />
-      <MemberSignature Language="F#" Value="abstract member SetTags : System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&#xA;override this.SetTags : System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;" Usage="policyResource.SetTags (tags, cancellationToken)" />
+    <Member MemberName="RevokeIssuer">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation RevokeIssuer (Azure.WaitUntil waitUntil, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation RevokeIssuer(valuetype Azure.WaitUntil waitUntil, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.RevokeIssuer(Azure.WaitUntil,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function RevokeIssuer (waitUntil As WaitUntil, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation" />
+      <MemberSignature Language="F#" Value="abstract member RevokeIssuer : Azure.WaitUntil * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&#xA;override this.RevokeIssuer : Azure.WaitUntil * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation" Usage="policyResource.RevokeIssuer (waitUntil, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DeviceRegistry</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;</ReturnType>
+        <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="tags"> The tags to set on the resource. </param>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Replace the tags on the resource with the given set. </summary>
+        <summary>
+            A long-running resource action.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}/revokeIssuer. </description></item><item><term> Operation Id. </term><description> Policies_RevokeIssuer. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="tags" /> is null. </exception>
       </Docs>
     </Member>
-    <Member MemberName="SetTagsAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt; SetTagsAsync (System.Collections.Generic.IDictionary&lt;string,string&gt; tags, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt; SetTagsAsync(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.SetTagsAsync(System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function SetTagsAsync (tags As IDictionary(Of String, String), Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of PolicyResource))" />
-      <MemberSignature Language="F#" Value="abstract member SetTagsAsync : System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;&#xA;override this.SetTagsAsync : System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;" Usage="policyResource.SetTagsAsync (tags, cancellationToken)" />
+    <Member MemberName="RevokeIssuerAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt; RevokeIssuerAsync (Azure.WaitUntil waitUntil, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation&gt; RevokeIssuerAsync(valuetype Azure.WaitUntil waitUntil, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.PolicyResource.RevokeIssuerAsync(Azure.WaitUntil,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function RevokeIssuerAsync (waitUntil As WaitUntil, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation)" />
+      <MemberSignature Language="F#" Value="abstract member RevokeIssuerAsync : Azure.WaitUntil * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;&#xA;override this.RevokeIssuerAsync : Azure.WaitUntil * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;" Usage="policyResource.RevokeIssuerAsync (waitUntil, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DeviceRegistry</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DeviceRegistry.PolicyResource&gt;&gt;</ReturnType>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="tags"> The tags to set on the resource. </param>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Replace the tags on the resource with the given set. </summary>
+        <summary>
+            A long-running resource action.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}/revokeIssuer. </description></item><item><term> Operation Id. </term><description> Policies_RevokeIssuer. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="tags" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.DeviceRegistry.PolicyData&gt;.Create">
@@ -584,7 +536,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Update a Policy
-            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Update. </description></item><item><term> Default Api Version. </term><description> 2025-11-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Update. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -617,7 +569,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Update a Policy
-            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Update. </description></item><item><term> Default Api Version. </term><description> 2025-11-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/credentials/default/policies/{policyName}. </description></item><item><term> Operation Id. </term><description> Policies_Update. </description></item><item><term> Default Api Version. </term><description> 2026-03-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DeviceRegistry.PolicyResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">

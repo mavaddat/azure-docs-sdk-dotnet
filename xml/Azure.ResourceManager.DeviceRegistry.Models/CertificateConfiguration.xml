@@ -28,11 +28,41 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public CertificateConfiguration (Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration certificateAuthorityConfiguration, Azure.ResourceManager.DeviceRegistry.Models.LeafCertificateConfiguration leafCertificateConfiguration);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration certificateAuthorityConfiguration, class Azure.ResourceManager.DeviceRegistry.Models.LeafCertificateConfiguration leafCertificateConfiguration) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration.#ctor(Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration,Azure.ResourceManager.DeviceRegistry.Models.LeafCertificateConfiguration)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (certificateAuthorityConfiguration As CertificateAuthorityConfiguration, leafCertificateConfiguration As LeafCertificateConfiguration)" />
-      <MemberSignature Language="F#" Value="new Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration : Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration * Azure.ResourceManager.DeviceRegistry.Models.LeafCertificateConfiguration -&gt; Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration" Usage="new Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration (certificateAuthorityConfiguration, leafCertificateConfiguration)" />
+      <MemberSignature Language="C#" Value="public CertificateConfiguration (int leafCertificateValidityPeriodInDays);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 leafCertificateValidityPeriodInDays) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration.#ctor(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (leafCertificateValidityPeriodInDays As Integer)" />
+      <MemberSignature Language="F#" Value="new Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration : int -&gt; Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration" Usage="new Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration leafCertificateValidityPeriodInDays" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DeviceRegistry</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="leafCertificateValidityPeriodInDays" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="leafCertificateValidityPeriodInDays">The validity period in days for leaf certificates.</param>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration" /> for PATCH (update)
+            operations where only the leaf certificate validity period needs to be changed.
+            <para>
+            This constructor does NOT include <c>certificateAuthorityConfiguration</c>, which
+            contains immutable-after-creation properties (<c>keyType</c>, <c>bringYourOwnRoot</c>).
+            The 2026-03-01-preview API rejects these properties on PATCH requests.
+            </para><para>
+            For PUT (create) operations, use the full constructor:
+            <see cref="M:Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration.#ctor(Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration,System.Nullable{System.Int32})" />.
+            </para></summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CertificateConfiguration (Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration certificateAuthorityConfiguration, int? leafCertificateValidityPeriodInDays);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration certificateAuthorityConfiguration, valuetype System.Nullable`1&lt;int32&gt; leafCertificateValidityPeriodInDays) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration.#ctor(Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration,System.Nullable{System.Int32})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (certificateAuthorityConfiguration As CertificateAuthorityConfiguration, leafCertificateValidityPeriodInDays As Nullable(Of Integer))" />
+      <MemberSignature Language="F#" Value="new Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration : Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration * Nullable&lt;int&gt; -&gt; Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration" Usage="new Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration (certificateAuthorityConfiguration, leafCertificateValidityPeriodInDays)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DeviceRegistry</AssemblyName>
@@ -40,15 +70,15 @@
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="certificateAuthorityConfiguration" Type="Azure.ResourceManager.DeviceRegistry.Models.CertificateAuthorityConfiguration" />
-        <Parameter Name="leafCertificateConfiguration" Type="Azure.ResourceManager.DeviceRegistry.Models.LeafCertificateConfiguration" />
+        <Parameter Name="leafCertificateValidityPeriodInDays" Type="System.Nullable&lt;System.Int32&gt;" />
       </Parameters>
       <Docs>
         <param name="certificateAuthorityConfiguration"> The configuration to set up an ICA. </param>
-        <param name="leafCertificateConfiguration"> The leaf certificate configuration. </param>
+        <param name="leafCertificateValidityPeriodInDays"> The validity period in days. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DeviceRegistry.Models.CertificateConfiguration" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="certificateAuthorityConfiguration" /> or <paramref name="leafCertificateConfiguration" /> is null. </exception>
+          <paramref name="certificateAuthorityConfiguration" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="CertificateAuthorityConfiguration">

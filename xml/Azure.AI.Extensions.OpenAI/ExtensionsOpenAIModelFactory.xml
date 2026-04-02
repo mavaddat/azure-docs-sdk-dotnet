@@ -708,7 +708,7 @@
         <ReturnType>Azure.AI.Extensions.OpenAI.MemorySearchItem</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="memoryItem" Type="Azure.AI.Extensions.OpenAI.MemoryOutputItem" />
+        <Parameter Name="memoryItem" Type="Azure.AI.Extensions.OpenAI.MemoryOutputItem" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="memoryItem"> Retrieved memory item. </param>
@@ -732,11 +732,11 @@
         <ReturnType>Azure.AI.Extensions.OpenAI.MemorySearchToolCallResponseItem</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="System.String" />
-        <Parameter Name="agentReference" Type="Azure.AI.Extensions.OpenAI.AgentReference" />
-        <Parameter Name="responseId" Type="System.String" />
-        <Parameter Name="status" Type="Azure.AI.Extensions.OpenAI.MemorySearchToolCallStatus" />
-        <Parameter Name="results" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Extensions.OpenAI.MemorySearchItem&gt;" />
+        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentReference" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="responseId" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="status" Type="Azure.AI.Extensions.OpenAI.MemorySearchToolCallStatus" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="results" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Extensions.OpenAI.MemorySearchItem&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="id" />
@@ -749,6 +749,65 @@
         <param name="results"> The results returned from the memory search. </param>
         <summary> The MemorySearchToolCallResponseItem. </summary>
         <returns> A new <see cref="T:Azure.AI.Extensions.OpenAI.MemorySearchToolCallResponseItem" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemorySearchToolCallResponseItem">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Extensions.OpenAI.MemorySearchToolCallResponseItem MemorySearchToolCallResponseItem (string id = default, Azure.AI.Extensions.OpenAI.AgentReference agentReference = default, string responseId = default, Azure.AI.Extensions.OpenAI.MemorySearchToolCallStatus status = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Extensions.OpenAI.MemoryToolSearchItem&gt; results = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Extensions.OpenAI.MemorySearchToolCallResponseItem MemorySearchToolCallResponseItem(string id, class Azure.AI.Extensions.OpenAI.AgentReference agentReference, string responseId, valuetype Azure.AI.Extensions.OpenAI.MemorySearchToolCallStatus status, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Extensions.OpenAI.MemoryToolSearchItem&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ExtensionsOpenAIModelFactory.MemorySearchToolCallResponseItem(System.String,Azure.AI.Extensions.OpenAI.AgentReference,System.String,Azure.AI.Extensions.OpenAI.MemorySearchToolCallStatus,System.Collections.Generic.IEnumerable{Azure.AI.Extensions.OpenAI.MemoryToolSearchItem})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function MemorySearchToolCallResponseItem (Optional id As String = Nothing, Optional agentReference As AgentReference = Nothing, Optional responseId As String = Nothing, Optional status As MemorySearchToolCallStatus = Nothing, Optional results As IEnumerable(Of MemoryToolSearchItem) = Nothing) As MemorySearchToolCallResponseItem" />
+      <MemberSignature Language="F#" Value="static member MemorySearchToolCallResponseItem : string * Azure.AI.Extensions.OpenAI.AgentReference * string * Azure.AI.Extensions.OpenAI.MemorySearchToolCallStatus * seq&lt;Azure.AI.Extensions.OpenAI.MemoryToolSearchItem&gt; -&gt; Azure.AI.Extensions.OpenAI.MemorySearchToolCallResponseItem" Usage="Azure.AI.Extensions.OpenAI.ExtensionsOpenAIModelFactory.MemorySearchToolCallResponseItem (id, agentReference, responseId, status, results)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Extensions.OpenAI.MemorySearchToolCallResponseItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="agentReference" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="responseId" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="status" Type="Azure.AI.Extensions.OpenAI.MemorySearchToolCallStatus" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="results" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Extensions.OpenAI.MemoryToolSearchItem&gt;" Index="4" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="id" />
+        <param name="agentReference"> The agent that created the item. </param>
+        <param name="responseId"> The response on which the item is created. </param>
+        <param name="status">
+            The status of the memory search tool call. One of `in_progress`,
+            `searching`, `completed`, `incomplete` or `failed`,
+            </param>
+        <param name="results"> The results returned from the memory search. </param>
+        <summary> The MemorySearchToolCallResponseItem. </summary>
+        <returns> A new <see cref="T:Azure.AI.Extensions.OpenAI.MemorySearchToolCallResponseItem" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemoryToolSearchItem">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Extensions.OpenAI.MemoryToolSearchItem MemoryToolSearchItem (Azure.AI.Extensions.OpenAI.MemoryOutputItem memoryItem = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Extensions.OpenAI.MemoryToolSearchItem MemoryToolSearchItem(class Azure.AI.Extensions.OpenAI.MemoryOutputItem memoryItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ExtensionsOpenAIModelFactory.MemoryToolSearchItem(Azure.AI.Extensions.OpenAI.MemoryOutputItem)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function MemoryToolSearchItem (Optional memoryItem As MemoryOutputItem = Nothing) As MemoryToolSearchItem" />
+      <MemberSignature Language="F#" Value="static member MemoryToolSearchItem : Azure.AI.Extensions.OpenAI.MemoryOutputItem -&gt; Azure.AI.Extensions.OpenAI.MemoryToolSearchItem" Usage="Azure.AI.Extensions.OpenAI.ExtensionsOpenAIModelFactory.MemoryToolSearchItem memoryItem" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Extensions.OpenAI.MemoryToolSearchItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="memoryItem" Type="Azure.AI.Extensions.OpenAI.MemoryOutputItem" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="memoryItem"> Retrieved memory item. </param>
+        <summary> A retrieved memory item from memory search. </summary>
+        <returns> A new <see cref="T:Azure.AI.Extensions.OpenAI.MemoryToolSearchItem" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
