@@ -1,12 +1,12 @@
 ---
 title: Azure Provisioning ContainerService client library for .NET
-keywords: Azure, dotnet, SDK, API, Azure.Provisioning.ContainerService, provisioning
-ms.date: 03/03/2026
+keywords: Azure, dotnet, SDK, API, Azure.Provisioning.ContainerService, containerservice
+ms.date: 04/02/2026
 ms.topic: reference
 ms.devlang: dotnet
-ms.service: provisioning
+ms.service: containerservice
 ---
-# Azure Provisioning ContainerService client library for .NET - version 1.0.0-beta.5 
+# Azure Provisioning ContainerService client library for .NET - version 1.0.0-beta.6 
 
 
 Azure.Provisioning.ContainerService simplifies declarative resource provisioning in .NET.
@@ -50,9 +50,9 @@ ProvisioningParameter sshRsaPublicKey = new(nameof(sshRsaPublicKey), typeof(stri
 infra.Add(sshRsaPublicKey);
 
 ContainerServiceManagedCluster aks =
-    new(nameof(aks), ContainerServiceManagedCluster.ResourceVersions.V2024_08_01)
+    new(nameof(aks), ContainerServiceManagedCluster.ResourceVersions.V2026_01_01)
     {
-        ClusterIdentity = new ManagedClusterIdentity { ResourceIdentityType = ManagedServiceIdentityType.SystemAssigned },
+        ClusterIdentity = new ManagedClusterIdentity { IdentityType = ManagedServiceIdentityType.SystemAssigned },
         DnsPrefix = dnsPrefix,
         LinuxProfile =
             new ContainerServiceLinuxProfile
@@ -107,7 +107,7 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 <opencode@microsoft.com> with any other questions or comments.
 
 <!-- LINKS -->
-[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.ContainerService_1.0.0-beta.5/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
+[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.ContainerService_1.0.0-beta.6/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 
