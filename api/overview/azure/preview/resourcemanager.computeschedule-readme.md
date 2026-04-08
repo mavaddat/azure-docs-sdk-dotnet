@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.ResourceManager.ComputeSchedule, computeschedule
-ms.date: 09/12/2025
+ms.date: 04/08/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: computeschedule
@@ -12,13 +12,17 @@ Microsoft Azure ComputeSchedule allows customers to schedule one off operations 
 - Start
 - Deallocate
 - Hibernate
+- Delete
+- Create (including Flex provisioning via `VirtualMachinesExecuteCreateFlex`)
 
 There are 2 groups of schedule type operations that customers can perform on their virtual machines
 
 - `Submit Type Operations`: These type of operations can be scheduled at a later date in the future, up to 14 days ahead.
 - `Execute Type Operations`: These type of operations allow clients to perform operations on their virtual machines immediately.
 
-Other operations include endpoints to get operation status on virtual machines, cancel operations scheduled on virtual machines and get errors that might have occured during operations.
+The `VirtualMachinesExecuteCreateFlex` operation (added in API version `2026-03-01-preview`) enables on-demand flexible VM provisioning with Spot or regular priority, configurable VM size profiles, OS type, and allocation strategy.
+
+Other operations include endpoints to get operation status on virtual machines, cancel operations scheduled on virtual machines and get errors that might have occurred during operations.
 
 This library follows the [new Azure SDK guidelines](https://azure.github.io/azure-sdk/general_introduction.html), and provides many core capabilities:
 
@@ -44,7 +48,7 @@ dotnet add package Azure.ResourceManager.ComputeSchedule
 
 ### Authenticate the Client
 
-To create an authenticated client and start interacting with Microsoft Azure resources, see the [quickstart guide here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.ComputeSchedule_1.2.0-beta.1/doc/dev/mgmt_quickstart.md).
+To create an authenticated client and start interacting with Microsoft Azure resources, see the [quickstart guide here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.ComputeSchedule_1.2.0-beta.2/doc/dev/mgmt_quickstart.md).
 
 ## Key concepts
 
@@ -54,9 +58,9 @@ Key concepts of the Microsoft Azure SDK for .NET can be found [here](https://azu
 
 Documentation is available to help you learn how to use this package:
 
-- [Quickstart](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.ComputeSchedule_1.2.0-beta.1/doc/dev/mgmt_quickstart.md).
+- [Quickstart](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.ComputeSchedule_1.2.0-beta.2/doc/dev/mgmt_quickstart.md).
 - [API References](https://learn.microsoft.com/dotnet/api/?view=azure-dotnet).
-- [Authentication](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.ComputeSchedule_1.2.0-beta.1/sdk/identity/Azure.Identity/README.md).
+- [Authentication](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.ComputeSchedule_1.2.0-beta.2/sdk/identity/Azure.Identity/README.md).
 
 ## Examples
 
@@ -93,6 +97,6 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 <opencode@microsoft.com> with any other questions or comments.
 
 <!-- LINKS -->
-[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.ComputeSchedule_1.2.0-beta.1/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
+[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.ComputeSchedule_1.2.0-beta.2/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
