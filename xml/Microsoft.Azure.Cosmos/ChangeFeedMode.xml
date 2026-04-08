@@ -12,6 +12,7 @@
     <AssemblyVersion>3.45.0.0</AssemblyVersion>
     <AssemblyVersion>3.47.0.0</AssemblyVersion>
     <AssemblyVersion>3.58.0.0</AssemblyVersion>
+    <AssemblyVersion>3.59.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -24,6 +25,36 @@
     <remarks>Use one of the static constructors to generate a ChangeFeedMode option.</remarks>
   </Docs>
   <Members>
+    <Member MemberName="AllVersionsAndDeletes">
+      <MemberSignature Language="C#" Value="public static Microsoft.Azure.Cosmos.ChangeFeedMode AllVersionsAndDeletes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Azure.Cosmos.ChangeFeedMode AllVersionsAndDeletes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Azure.Cosmos.ChangeFeedMode.AllVersionsAndDeletes" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property AllVersionsAndDeletes As ChangeFeedMode" />
+      <MemberSignature Language="F#" Value="static member AllVersionsAndDeletes : Microsoft.Azure.Cosmos.ChangeFeedMode" Usage="Microsoft.Azure.Cosmos.ChangeFeedMode.AllVersionsAndDeletes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Azure.Cosmos.ChangeFeedMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Creates a <see cref="T:Microsoft.Azure.Cosmos.ChangeFeedMode" /> to receive notifications for creations, deletes, as well as all intermediary snapshots for updates.
+            </summary>
+        <value>A <see cref="T:Microsoft.Azure.Cosmos.ChangeFeedMode" />  to receive notifications for insertions, updates, and delete operations.</value>
+        <remarks>
+            A container with a <see cref="T:Microsoft.Azure.Cosmos.ChangeFeedPolicy" /> configured is required. The delete operations will be included only within the configured retention period.
+            When enabling full fidelity mode you will only be able to process change feed events within the retention window configured in the change feed policy of the container.
+            If you attempt to process a change feed after more than the retention window an error(Status Code 400) will be returned because the events for intermediary
+            updates and deletes have vanished.
+            It would still be possible to process changes using <see cref="P:Microsoft.Azure.Cosmos.ChangeFeedMode.Incremental" /> mode even when configuring a full fidelity change feed policy 
+            with retention window on the container and when using Incremental mode it doesn't matter whether your are out of the retention window or not -
+            but no events for deletes or intermediary updates would be included.
+            </remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Incremental">
       <MemberSignature Language="C#" Value="public static Microsoft.Azure.Cosmos.ChangeFeedMode Incremental { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class Microsoft.Azure.Cosmos.ChangeFeedMode Incremental" />
@@ -34,6 +65,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
         <AssemblyVersion>3.58.0.0</AssemblyVersion>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.ChangeFeedMode</ReturnType>
@@ -58,6 +90,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
         <AssemblyVersion>3.58.0.0</AssemblyVersion>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Azure.Cosmos.ChangeFeedMode</ReturnType>

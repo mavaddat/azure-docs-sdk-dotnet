@@ -9,6 +9,7 @@
     <AssemblyVersion>3.45.0.0</AssemblyVersion>
     <AssemblyVersion>3.47.0.0</AssemblyVersion>
     <AssemblyVersion>3.58.0.0</AssemblyVersion>
+    <AssemblyVersion>3.59.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -64,6 +65,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
         <AssemblyVersion>3.58.0.0</AssemblyVersion>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -81,6 +83,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
         <AssemblyVersion>3.58.0.0</AssemblyVersion>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -110,6 +113,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
         <AssemblyVersion>3.58.0.0</AssemblyVersion>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -128,6 +132,70 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="QuantizationByteSize">
+      <MemberSignature Language="C#" Value="public int QuantizationByteSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 QuantizationByteSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Azure.Cosmos.VectorIndexPath.QuantizationByteSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property QuantizationByteSize As Integer" />
+      <MemberSignature Language="F#" Value="member this.QuantizationByteSize : int with get, set" Usage="Microsoft.Azure.Cosmos.VectorIndexPath.QuantizationByteSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonIgnore]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonIgnore&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the quantization byte size for the vector index path. This is only applicable for the quantizedFlat and diskann vector index types.
+            The allowed range for this parameter is between 1 and min(dimensions, 512). 
+            e.g. if dimensions is 256, then allowed range for QuantizationByteSize is between 1 and 256 if dimensions is 1024, 
+            then allowed range for QuantizationByteSize is between 1 and 512
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuantizerType">
+      <MemberSignature Language="C#" Value="public Microsoft.Azure.Cosmos.QuantizerType? QuantizerType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Microsoft.Azure.Cosmos.QuantizerType&gt; QuantizerType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Azure.Cosmos.VectorIndexPath.QuantizerType" />
+      <MemberSignature Language="VB.NET" Value="Public Property QuantizerType As Nullable(Of QuantizerType)" />
+      <MemberSignature Language="F#" Value="member this.QuantizerType : Nullable&lt;Microsoft.Azure.Cosmos.QuantizerType&gt; with get, set" Usage="Microsoft.Azure.Cosmos.VectorIndexPath.QuantizerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[Newtonsoft.Json.JsonProperty(NullValueHandling=Newtonsoft.Json.NullValueHandling.Ignore, PropertyName="quantizerType")]</AttributeName>
+          <AttributeName Language="F#">[&lt;Newtonsoft.Json.JsonProperty(NullValueHandling=Newtonsoft.Json.NullValueHandling.Ignore, PropertyName="quantizerType")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Microsoft.Azure.Cosmos.QuantizerType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the quantizer type for the vector index path. This is only applicable for the quantizedFlat and diskann vector index types.
+            Allowed values are "product" and "spherical".
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Type">
       <MemberSignature Language="C#" Value="public Microsoft.Azure.Cosmos.VectorIndexType Type { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Azure.Cosmos.VectorIndexType Type" />
@@ -138,6 +206,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
         <AssemblyVersion>3.58.0.0</AssemblyVersion>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -170,6 +239,7 @@
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
         <AssemblyVersion>3.58.0.0</AssemblyVersion>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

@@ -1,0 +1,92 @@
+<Type Name="CosmosDbClientMetrics+HistogramBuckets" FullName="Microsoft.Azure.Cosmos.CosmosDbClientMetrics+HistogramBuckets">
+  <TypeSignature Language="C#" Value="public static class CosmosDbClientMetrics.HistogramBuckets" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi abstract sealed beforefieldinit CosmosDbClientMetrics/HistogramBuckets extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Azure.Cosmos.CosmosDbClientMetrics.HistogramBuckets" />
+  <TypeSignature Language="VB.NET" Value="Public Class CosmosDbClientMetrics.HistogramBuckets" />
+  <TypeSignature Language="F#" Value="type CosmosDbClientMetrics.HistogramBuckets = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+    <AssemblyVersion>3.59.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Buckets
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RequestLatencyBuckets">
+      <MemberSignature Language="C#" Value="public static readonly double[] RequestLatencyBuckets;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly float64[] RequestLatencyBuckets" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Azure.Cosmos.CosmosDbClientMetrics.HistogramBuckets.RequestLatencyBuckets" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly RequestLatencyBuckets As Double() " />
+      <MemberSignature Language="F#" Value=" staticval mutable RequestLatencyBuckets : double[]" Usage="Microsoft.Azure.Cosmos.CosmosDbClientMetrics.HistogramBuckets.RequestLatencyBuckets" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            ExplicitBucketBoundaries for "db.client.operation.duration" Metrics.
+            </summary>
+        <remarks>
+          <b>0.001, 0.005, 0.010</b> seconds: Higher Precision at Sub-Millisecond Levels, For high-performance workloads, especially when dealing with microservices or low-latency queries. <br /><b>0.050, 0.100, 0.200</b> seconds: Granularity for Standard Web Applications, These values allow detailed tracking for latencies between 50ms and 200ms, which are common in web applications. Fine-grained buckets in this range help in identifying performance issues before they grow critical, while covering the typical response times expected in Cosmos DB.<br /><b>0.500, 1.000</b> seconds: Wider Range for Intermediate Latencies, Operations that take longer, in the range of 500ms to 1 second, are still important for performance monitoring. By capturing these values, you maintain awareness of potential bottlenecks or slower requests that may need optimization.<br /><b>2.000, 5.000</b> seconds: Capturing Outliers and Slow Queries, It’s important to track outliers that might go beyond 1 second. Having buckets for 2 and 5 seconds enables identification of rare, long-running operations that may require further investigation.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestUnitBuckets">
+      <MemberSignature Language="C#" Value="public static readonly double[] RequestUnitBuckets;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly float64[] RequestUnitBuckets" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Azure.Cosmos.CosmosDbClientMetrics.HistogramBuckets.RequestUnitBuckets" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly RequestUnitBuckets As Double() " />
+      <MemberSignature Language="F#" Value=" staticval mutable RequestUnitBuckets : double[]" Usage="Microsoft.Azure.Cosmos.CosmosDbClientMetrics.HistogramBuckets.RequestUnitBuckets" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            ExplicitBucketBoundaries for "db.cosmosdb.operation.request_charge" Metrics
+            </summary>
+        <remarks>
+          <b>1, 5, 10</b>: Low Usage Levels, These smaller buckets allow for precise tracking of operations that consume a minimal number of Request Units. This is important for lightweight operations, such as basic read requests or small queries, where resource utilization should be optimized. Monitoring these low usage levels can help ensure that the application is not inadvertently using more resources than necessary.<br /><b>25, 50</b>: Moderate Usage Levels, These ranges capture more moderate operations, which are typical in many applications. For example, queries that return a reasonable amount of data or perform standard CRUD operations may fall within these limits. Identifying usage patterns in these buckets can help detect efficiency issues in routine operations.<br /><b>100, 250</b>: Higher Usage Levels, These boundaries represent operations that may require significant resources, such as complex queries or larger transactions. Monitoring RUs in these ranges can help identify performance bottlenecks or costly queries that might lead to throttling.<br /><b>500, 1000</b>: Very High Usage Levels, These buckets capture operations that consume a substantial number of Request Units, which may indicate potentially expensive queries or batch processes. Understanding the frequency and patterns of such high RU usage can be critical in optimizing performance and ensuring the application remains within provisioned throughput limits.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowCountBuckets">
+      <MemberSignature Language="C#" Value="public static readonly double[] RowCountBuckets;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly float64[] RowCountBuckets" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Azure.Cosmos.CosmosDbClientMetrics.HistogramBuckets.RowCountBuckets" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly RowCountBuckets As Double() " />
+      <MemberSignature Language="F#" Value=" staticval mutable RowCountBuckets : double[]" Usage="Microsoft.Azure.Cosmos.CosmosDbClientMetrics.HistogramBuckets.RowCountBuckets" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            ExplicitBucketBoundaries for "db.client.response.row_count" Metrics
+            </summary>
+        <remarks>
+          <b>10, 50, 100</b>: Small Response Sizes, These buckets are useful for capturing scenarios where only a small number of items are returned. Such small queries are common in real-time or interactive applications where performance and quick responses are critical. They also help in tracking the efficiency of operations that should return minimal data, minimizing resource usage.<br /><b>250, 500, 1000</b>: Moderate Response Sizes, These values represent typical workloads where moderate amounts of data are returned in each query. This is useful for applications that need to return more information, such as data analytics or reporting systems. Tracking these ranges helps identify whether the system is optimized for these relatively larger data sets and if they lead to any performance degradation.<br /><b>2000, 5000</b>: Larger Response Sizes, These boundaries capture scenarios where the query returns large datasets, often used in batch processing or in-depth analytical queries. These larger page sizes can potentially increase memory or CPU usage and may lead to longer query execution times, making it important to track performance in these ranges.<br /><b>10000</b>: Very Large Response Sizes (Outliers), This boundary is included to capture rare, very large response sizes. Such queries can put significant strain on system resources, including memory, CPU, and network bandwidth, and can often lead to performance issues such as high latency or even network drops.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

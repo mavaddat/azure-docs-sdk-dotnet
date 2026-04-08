@@ -1,0 +1,110 @@
+<Type Name="NetworkMetricsOptions" FullName="Microsoft.Azure.Cosmos.NetworkMetricsOptions">
+  <TypeSignature Language="C#" Value="public class NetworkMetricsOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NetworkMetricsOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Azure.Cosmos.NetworkMetricsOptions" />
+  <TypeSignature Language="VB.NET" Value="Public Class NetworkMetricsOptions" />
+  <TypeSignature Language="F#" Value="type NetworkMetricsOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+    <AssemblyVersion>3.59.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents the configuration options for collecting metrics related to Cosmos DB network operations.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NetworkMetricsOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Azure.Cosmos.NetworkMetricsOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomDimensions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; CustomDimensions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; CustomDimensions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Azure.Cosmos.NetworkMetricsOptions.CustomDimensions" />
+      <MemberSignature Language="VB.NET" Value="Public Property CustomDimensions As IDictionary(Of String, String)" />
+      <MemberSignature Language="F#" Value="member this.CustomDimensions : System.Collections.Generic.IDictionary&lt;string, string&gt; with get, set" Usage="Microsoft.Azure.Cosmos.NetworkMetricsOptions.CustomDimensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a collection of custom dimensions to include in the network metrics. Each dimension is defined as a key-value pair.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <example>
+          <code language="c#"><![CDATA[
+            var telemetryOptions = new NetworkMetricsOptions
+            {
+                CustomDimensions = new Dictionary<string, string>
+                {
+                    { "Region", "EastUS" },
+                }
+            };
+            ]]></code>
+        </example>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeRoutingId">
+      <MemberSignature Language="C#" Value="public bool? IncludeRoutingId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IncludeRoutingId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Azure.Cosmos.NetworkMetricsOptions.IncludeRoutingId" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeRoutingId As Nullable(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.IncludeRoutingId : Nullable&lt;bool&gt; with get, set" Usage="Microsoft.Azure.Cosmos.NetworkMetricsOptions.IncludeRoutingId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <para>
+            Gets or sets a value indicating whether the routing ID (e.g., PK Range ID for Gateway Mode or Partition/Replica information for Direct Mode, if available) 
+            should be included in the network metrics.
+            </para>
+            By default, Routing Id information is not included as a dimension in the network metrics.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <para>
+            Enabling this option provides greater diagnostic granularity, allowing you to identify issues 
+            with specific Partition Key Range IDs, replicas, or partitions. 
+            However, including the routing ID as a dimension increases the cardinality of metrics. This can result 
+            in significantly higher storage costs and generate a large number of metrics with low sample counts, 
+            making analysis more challenging.
+            </para>
+          <para>
+            Carefully evaluate whether the additional granularity is necessary 
+            for your use case, as it may lead to increased resource consumption and complexity.
+            </para>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,121 @@
+<Type Name="ReadConsistencyStrategy" FullName="Microsoft.Azure.Cosmos.ReadConsistencyStrategy">
+  <TypeSignature Language="C#" Value="public enum ReadConsistencyStrategy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ReadConsistencyStrategy extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Azure.Cosmos.ReadConsistencyStrategy" />
+  <TypeSignature Language="VB.NET" Value="Public Enum ReadConsistencyStrategy" />
+  <TypeSignature Language="F#" Value="type ReadConsistencyStrategy = " />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+    <AssemblyVersion>3.59.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>
+            Represents the read consistency strategies supported by the Azure Cosmos DB service.
+            The requested strategy can be chosen independent of the account's default consistency level.
+            </summary>
+    <remarks>
+      <para>
+            When set, <see cref="T:Microsoft.Azure.Cosmos.ReadConsistencyStrategy" /> takes precedence over <see cref="T:Microsoft.Azure.Cosmos.ConsistencyLevel" />
+            for read and query operations. The strategy is honored in Direct connectivity mode.
+            </para>
+      <para>
+        <see cref="F:Microsoft.Azure.Cosmos.ReadConsistencyStrategy.GlobalStrong" /> is only valid for accounts configured with Strong consistency.
+            </para>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Eventual">
+      <MemberSignature Language="C#" Value="Eventual" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Azure.Cosmos.ReadConsistencyStrategy Eventual = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Azure.Cosmos.ReadConsistencyStrategy.Eventual" />
+      <MemberSignature Language="VB.NET" Value="Eventual" />
+      <MemberSignature Language="F#" Value="Eventual = 1" Usage="Microsoft.Azure.Cosmos.ReadConsistencyStrategy.Eventual" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Azure.Cosmos.ReadConsistencyStrategy</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary>
+            Eventual consistency - reads from a single random secondary replica.
+            This strategy also covers  <see cref="F:Microsoft.Azure.Cosmos.ConsistencyLevel.ConsistentPrefix" /> consistency level behavior,
+            as both use the same underlying read mechanism (single replica read).
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalStrong">
+      <MemberSignature Language="C#" Value="GlobalStrong" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Azure.Cosmos.ReadConsistencyStrategy GlobalStrong = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Azure.Cosmos.ReadConsistencyStrategy.GlobalStrong" />
+      <MemberSignature Language="VB.NET" Value="GlobalStrong" />
+      <MemberSignature Language="F#" Value="GlobalStrong = 4" Usage="Microsoft.Azure.Cosmos.ReadConsistencyStrategy.GlobalStrong" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Azure.Cosmos.ReadConsistencyStrategy</ReturnType>
+      </ReturnValue>
+      <MemberValue>4</MemberValue>
+      <Docs>
+        <summary>
+            Quorum read with GCLSN barrier - returns the latest version across all regions.
+            Only valid for accounts configured with Strong consistency.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LatestCommitted">
+      <MemberSignature Language="C#" Value="LatestCommitted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Azure.Cosmos.ReadConsistencyStrategy LatestCommitted = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Azure.Cosmos.ReadConsistencyStrategy.LatestCommitted" />
+      <MemberSignature Language="VB.NET" Value="LatestCommitted" />
+      <MemberSignature Language="F#" Value="LatestCommitted = 3" Usage="Microsoft.Azure.Cosmos.ReadConsistencyStrategy.LatestCommitted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Azure.Cosmos.ReadConsistencyStrategy</ReturnType>
+      </ReturnValue>
+      <MemberValue>3</MemberValue>
+      <Docs>
+        <summary>
+            Quorum read with GLSN barrier - returns the latest committed version in the current read region.
+            This is the read consistency equivalent of <see cref="F:Microsoft.Azure.Cosmos.ConsistencyLevel.BoundedStaleness" />.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Session">
+      <MemberSignature Language="C#" Value="Session" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Azure.Cosmos.ReadConsistencyStrategy Session = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Azure.Cosmos.ReadConsistencyStrategy.Session" />
+      <MemberSignature Language="VB.NET" Value="Session" />
+      <MemberSignature Language="F#" Value="Session = 2" Usage="Microsoft.Azure.Cosmos.ReadConsistencyStrategy.Session" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Azure.Cosmos.Client</AssemblyName>
+        <AssemblyVersion>3.59.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Azure.Cosmos.ReadConsistencyStrategy</ReturnType>
+      </ReturnValue>
+      <MemberValue>2</MemberValue>
+      <Docs>
+        <summary>
+            Session consistency - monotonic reads, writes and read-your-writes guarantees within a session.
+            Requires a session token obtained from prior write operations to ensure read-your-writes semantics.
+            See <see cref="P:Microsoft.Azure.Cosmos.Headers.Session" /> for how session tokens are propagated.
+            </summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
