@@ -1,7 +1,7 @@
 ---
 title: Azure Servicegroups SDK for .NET
 description: Reference for Azure Servicegroups SDK for .NET
-ms.date: 04/14/2026
+ms.date: 04/15/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: servicegroups
