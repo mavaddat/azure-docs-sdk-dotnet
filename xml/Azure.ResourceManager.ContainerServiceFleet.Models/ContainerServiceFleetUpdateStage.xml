@@ -186,6 +186,39 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="MaxConcurrency">
+      <MemberSignature Language="C#" Value="public string MaxConcurrency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MaxConcurrency" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.ContainerServiceFleet.Models.ContainerServiceFleetUpdateStage.MaxConcurrency" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxConcurrency As String" />
+      <MemberSignature Language="F#" Value="member this.MaxConcurrency : string with get, set" Usage="Azure.ResourceManager.ContainerServiceFleet.Models.ContainerServiceFleetUpdateStage.MaxConcurrency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ContainerServiceFleet</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The max number of upgrades that can run concurrently across all groups in this stage.
+            Acts as a ceiling (and not a quota) for the number of concurrent upgrades within the stage you want to tolerate at a time.
+            Actual concurrency may be lower depending on group-level concurrency limits or individual member conditions.
+            Stage maxConcurrency has a min value of "1".
+            Accepts either:
+                • A fixed count, e.g., "3"
+                • A percentage, e.g., "25%" (range 1–100). Percentage is of the total number of clusters across all groups in the stage.
+                  Fractional results are rounded down. A minimum of 1 upgrade is enforced.
+            Examples:
+                • "3"     --&gt; up to 3 clusters from this stage upgrade at once (across all groups).
+                • "100%"  --&gt; “all at once”; up to all clusters in this stage upgrade at the same time.
+                • "25%"   --&gt; up to 25% of the stage’s total clusters upgrade at the same time.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Name">
       <MemberSignature Language="C#" Value="public string Name { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Name" />
