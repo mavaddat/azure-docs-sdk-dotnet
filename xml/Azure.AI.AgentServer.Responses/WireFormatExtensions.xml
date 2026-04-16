@@ -1,0 +1,82 @@
+<Type Name="WireFormatExtensions" FullName="Azure.AI.AgentServer.Responses.WireFormatExtensions">
+  <TypeSignature Language="C#" Value="public static class WireFormatExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit WireFormatExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Responses.WireFormatExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module WireFormatExtensions" />
+  <TypeSignature Language="F#" Value="type WireFormatExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Extension methods for translating between model types that share the same
+            underlying JSON wire contract. The Azure Responses models and the OpenAI
+            .NET SDK models are wire-compatible — OpenAI payloads are generally a subset
+            while Azure Responses is a superset with additional item types and extensions.
+            <para><strong>Important:</strong> Only use this for types whose JSON serialization
+            is wire-compatible. If the source and target types do not share the same JSON
+            schema (property names, discriminators, structure), deserialization may
+            silently produce incomplete objects or throw.
+            </para></summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Translate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static Azure.AI.AgentServer.Responses.WireFormatData Translate&lt;T&gt; (this T model) where T : System.ClientModel.Primitives.IPersistableModel&lt;T&gt;;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype Azure.AI.AgentServer.Responses.WireFormatData Translate&lt;(class System.ClientModel.Primitives.IPersistableModel`1&lt;!!T&gt;) T&gt;(!!T model) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.WireFormatExtensions.Translate``1(``0)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function Translate(Of T As IPersistableModel(Of T)) (model As T) As WireFormatData" />
+      <MemberSignature Language="F#" Value="static member Translate : 'T -&gt; Azure.AI.AgentServer.Responses.WireFormatData (requires 'T :&gt; System.ClientModel.Primitives.IPersistableModel&lt;'T&gt;)" Usage="Azure.AI.AgentServer.Responses.WireFormatExtensions.Translate model" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.WireFormatData</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+          <Constraints>
+            <InterfaceName>System.ClientModel.Primitives.IPersistableModel&lt;T&gt;</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="T" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="model">To be added.</param>
+        <summary>
+             Serializes <paramref name="model" /> to its JSON wire format, returning
+             an intermediate <see cref="T:Azure.AI.AgentServer.Responses.WireFormatData" /> that can be deserialized
+             as a different (wire-compatible) model type via
+             <see cref="M:Azure.AI.AgentServer.Responses.WireFormatData.To``1" />.
+             </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <example>
+          <code>
+             // Azure Item → OpenAI ResponseItem
+             ResponseItem openAiItem = ourItem.Translate().To&lt;ResponseItem&gt;();
+            
+             // OpenAI StreamingResponseUpdate → Azure ResponseStreamEvent
+             ResponseStreamEvent evt = update.Translate().To&lt;ResponseStreamEvent&gt;();
+             </code>
+        </example>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

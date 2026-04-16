@@ -1,0 +1,170 @@
+<Type Name="TextResponse" FullName="Azure.AI.AgentServer.Responses.TextResponse">
+  <TypeSignature Language="C#" Value="public class TextResponse : System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextResponse extends System.Object implements class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Responses.TextResponse" />
+  <TypeSignature Language="VB.NET" Value="Public Class TextResponse&#xA;Implements IAsyncEnumerable(Of ResponseStreamEvent)" />
+  <TypeSignature Language="F#" Value="type TextResponse = class&#xA;    interface IAsyncEnumerable&lt;ResponseStreamEvent&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            A high-level convenience that produces a complete text-message response stream.
+            Implements <see cref="T:System.Collections.Generic.IAsyncEnumerable`1" /> so it can be
+            returned directly from <see cref="M:Azure.AI.AgentServer.Responses.ResponseHandler.CreateAsync(Azure.AI.AgentServer.Responses.Models.CreateResponse,Azure.AI.AgentServer.Responses.ResponseContext,System.Threading.CancellationToken)" />.
+            <para>
+            Handles the full SSE lifecycle automatically:
+            <c>response.created</c> → <c>response.in_progress</c> → message/content events
+            → <c>response.completed</c>.
+            </para><para>
+            Use the <see cref="M:Azure.AI.AgentServer.Responses.TextResponse.#ctor(Azure.AI.AgentServer.Responses.ResponseContext,Azure.AI.AgentServer.Responses.Models.CreateResponse,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.String}},System.Action{Azure.AI.AgentServer.Responses.Models.ResponseObject})" />
+            constructor when you have the complete text available (or can produce it in a single async call).
+            Use the <see cref="M:Azure.AI.AgentServer.Responses.TextResponse.#ctor(Azure.AI.AgentServer.Responses.ResponseContext,Azure.AI.AgentServer.Responses.Models.CreateResponse,System.Func{System.Threading.CancellationToken,System.Collections.Generic.IAsyncEnumerable{System.String}},System.Action{Azure.AI.AgentServer.Responses.Models.ResponseObject})" />
+            constructor when text arrives incrementally (e.g., token-by-token from an LLM).
+            </para></summary>
+    <remarks>To be added.</remarks>
+    <example>
+            Simplest usage — return a single text string:
+            <code>
+            return new TextResponse(context, request,
+                createText: ct =&gt; Task.FromResult("Hello!"));
+            </code></example>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextResponse (Azure.AI.AgentServer.Responses.ResponseContext context, Azure.AI.AgentServer.Responses.Models.CreateResponse request, Func&lt;System.Threading.CancellationToken,System.Collections.Generic.IAsyncEnumerable&lt;string&gt;&gt; createTextStream, Action&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt;? configure = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.AI.AgentServer.Responses.ResponseContext context, class Azure.AI.AgentServer.Responses.Models.CreateResponse request, class System.Func`2&lt;valuetype System.Threading.CancellationToken, class System.Collections.Generic.IAsyncEnumerable`1&lt;string&gt;&gt; createTextStream, class System.Action`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseObject&gt; configure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.TextResponse.#ctor(Azure.AI.AgentServer.Responses.ResponseContext,Azure.AI.AgentServer.Responses.Models.CreateResponse,System.Func{System.Threading.CancellationToken,System.Collections.Generic.IAsyncEnumerable{System.String}},System.Action{Azure.AI.AgentServer.Responses.Models.ResponseObject})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (context As ResponseContext, request As CreateResponse, createTextStream As Func(Of CancellationToken, IAsyncEnumerable(Of String)), Optional configure As Action(Of ResponseObject) = Nothing)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.AgentServer.Responses.TextResponse : Azure.AI.AgentServer.Responses.ResponseContext * Azure.AI.AgentServer.Responses.Models.CreateResponse * Func&lt;System.Threading.CancellationToken, System.Collections.Generic.IAsyncEnumerable&lt;string&gt;&gt; * Action&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt; -&gt; Azure.AI.AgentServer.Responses.TextResponse" Usage="new Azure.AI.AgentServer.Responses.TextResponse (context, request, createTextStream, configure)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Responses.ResponseContext" />
+        <Parameter Name="request" Type="Azure.AI.AgentServer.Responses.Models.CreateResponse" />
+        <Parameter Name="createTextStream" Type="System.Func&lt;System.Threading.CancellationToken,System.Collections.Generic.IAsyncEnumerable&lt;System.String&gt;&gt;" />
+        <Parameter Name="configure" Type="System.Action&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt;">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 2, 1 })]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 2, 1 })&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="context">The response context (provides the response ID).</param>
+        <param name="request">The incoming create-response request.</param>
+        <param name="createTextStream">
+            A delegate that returns an async enumerable of text chunks.
+            Called after <c>response.created</c> and <c>response.in_progress</c> have been emitted.
+            </param>
+        <param name="configure">
+            An optional callback to configure the <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseObject" /> before
+            <c>response.created</c> is emitted.
+            </param>
+        <summary>
+            Creates a <see cref="T:Azure.AI.AgentServer.Responses.TextResponse" /> that produces a text message
+            from a stream of text chunks (e.g., tokens from an LLM).
+            Each chunk is emitted as a <c>response.output_text.delta</c> event.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextResponse (Azure.AI.AgentServer.Responses.ResponseContext context, Azure.AI.AgentServer.Responses.Models.CreateResponse request, Func&lt;System.Threading.CancellationToken,System.Threading.Tasks.Task&lt;string&gt;&gt; createText, Action&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt;? configure = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.AI.AgentServer.Responses.ResponseContext context, class Azure.AI.AgentServer.Responses.Models.CreateResponse request, class System.Func`2&lt;valuetype System.Threading.CancellationToken, class System.Threading.Tasks.Task`1&lt;string&gt;&gt; createText, class System.Action`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseObject&gt; configure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.TextResponse.#ctor(Azure.AI.AgentServer.Responses.ResponseContext,Azure.AI.AgentServer.Responses.Models.CreateResponse,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.String}},System.Action{Azure.AI.AgentServer.Responses.Models.ResponseObject})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (context As ResponseContext, request As CreateResponse, createText As Func(Of CancellationToken, Task(Of String)), Optional configure As Action(Of ResponseObject) = Nothing)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.AgentServer.Responses.TextResponse : Azure.AI.AgentServer.Responses.ResponseContext * Azure.AI.AgentServer.Responses.Models.CreateResponse * Func&lt;System.Threading.CancellationToken, System.Threading.Tasks.Task&lt;string&gt;&gt; * Action&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt; -&gt; Azure.AI.AgentServer.Responses.TextResponse" Usage="new Azure.AI.AgentServer.Responses.TextResponse (context, request, createText, configure)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Responses.ResponseContext" />
+        <Parameter Name="request" Type="Azure.AI.AgentServer.Responses.Models.CreateResponse" />
+        <Parameter Name="createText" Type="System.Func&lt;System.Threading.CancellationToken,System.Threading.Tasks.Task&lt;System.String&gt;&gt;" />
+        <Parameter Name="configure" Type="System.Action&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt;">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 2, 1 })]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 2, 1 })&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="context">The response context (provides the response ID).</param>
+        <param name="request">The incoming create-response request.</param>
+        <param name="createText">
+            An async delegate that produces the complete response text.
+            Called after <c>response.created</c> and <c>response.in_progress</c> have been emitted,
+            so the client sees progress before the potentially slow text generation begins.
+            </param>
+        <param name="configure">
+            An optional callback to configure the <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseObject" /> (e.g., set
+            <c>Temperature</c>, <c>Instructions</c>, <c>Metadata</c>) before
+            <c>response.created</c> is emitted.
+            </param>
+        <summary>
+            Creates a <see cref="T:Azure.AI.AgentServer.Responses.TextResponse" /> that produces a single text message
+            from a complete string.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsyncEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IAsyncEnumerator&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; GetAsyncEnumerator (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IAsyncEnumerator`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; GetAsyncEnumerator(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.TextResponse.GetAsyncEnumerator(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetAsyncEnumerator (Optional cancellationToken As CancellationToken = Nothing) As IAsyncEnumerator(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="abstract member GetAsyncEnumerator : System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerator&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;&#xA;override this.GetAsyncEnumerator : System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerator&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="textResponse.GetAsyncEnumerator cancellationToken" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.Generic.IAsyncEnumerable`1.GetAsyncEnumerator(System.Threading.CancellationToken)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.TextResponse+&lt;GetAsyncEnumerator&gt;d__7))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.TextResponse+&lt;GetAsyncEnumerator&gt;d__7))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IAsyncEnumerator&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> that may be used to cancel the asynchronous iteration.</param>
+        <summary>Returns an enumerator that iterates asynchronously through the collection.</summary>
+        <returns>An enumerator that can be used to iterate asynchronously through the collection.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,158 @@
+<Type Name="OutputItemBuilder&lt;T&gt;" FullName="Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class OutputItemBuilder&lt;T&gt; where T : OutputItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OutputItemBuilder`1&lt;(class Azure.AI.AgentServer.Responses.Models.OutputItem) T&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" />
+  <TypeSignature Language="VB.NET" Value="Public Class OutputItemBuilder(Of T)" />
+  <TypeSignature Language="F#" Value="type OutputItemBuilder&lt;'T (requires 'T :&gt; OutputItem)&gt; = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Constraints>
+        <BaseTypeName>Azure.AI.AgentServer.Responses.Models.OutputItem</BaseTypeName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T">The concrete <see cref="T:Azure.AI.AgentServer.Responses.Models.OutputItem" /> subtype this builder handles.</typeparam>
+    <summary>
+            Base class for output item builders. Provides common fields, properties,
+            and <see cref="M:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.EmitAdded(`0)" /> / <see cref="M:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.EmitDone(`0)" />
+            methods that handle event construction and output tracking.
+            Can also be used directly for output item types that have no streaming
+            sub-events (no deltas, no status transitions).
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OutputItemBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for mocking.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitAdded">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent EmitAdded (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent EmitAdded(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.EmitAdded(`0)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitAdded (item As T) As ResponseOutputItemAddedEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitAdded : 'T -&gt; Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent&#xA;override this.EmitAdded : 'T -&gt; Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent" Usage="outputItemBuilder.EmitAdded item" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">The output item to include in the event.</param>
+        <summary>
+            Produces a <c>response.output_item.added</c> event wrapping the given item.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent" /> for this output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitDone">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent EmitDone (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent EmitDone(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.EmitDone(`0)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitDone (item As T) As ResponseOutputItemDoneEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitDone : 'T -&gt; Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent&#xA;override this.EmitDone : 'T -&gt; Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent" Usage="outputItemBuilder.EmitDone item" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">The completed output item to include in the event.</param>
+        <summary>
+            Produces a <c>response.output_item.done</c> event wrapping the given item
+            and tracks it in the response's output list.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent" /> for this output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemId">
+      <MemberSignature Language="C#" Value="public string ItemId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ItemId" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.ItemId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ItemId As String" />
+      <MemberSignature Language="F#" Value="member this.ItemId : string" Usage="Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;'T (requires 'T :&gt; Azure.AI.AgentServer.Responses.Models.OutputItem)&gt;.ItemId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The auto-generated item ID for this output item.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputIndex">
+      <MemberSignature Language="C#" Value="public long OutputIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 OutputIndex" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.OutputIndex" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OutputIndex As Long" />
+      <MemberSignature Language="F#" Value="member this.OutputIndex : int64" Usage="Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;'T (requires 'T :&gt; Azure.AI.AgentServer.Responses.Models.OutputItem)&gt;.OutputIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The output index assigned to this output item.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

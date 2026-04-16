@@ -1,0 +1,82 @@
+<Type Name="ResponseHandler" FullName="Azure.AI.AgentServer.Responses.ResponseHandler">
+  <TypeSignature Language="C#" Value="public abstract class ResponseHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ResponseHandler extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Responses.ResponseHandler" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ResponseHandler" />
+  <TypeSignature Language="F#" Value="type ResponseHandler = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Defines the contract for handling response creation requests.
+            Override this class and register it in DI to provide your agent logic.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ResponseHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseHandler.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; CreateAsync (Azure.AI.AgentServer.Responses.Models.CreateResponse request, Azure.AI.AgentServer.Responses.ResponseContext context, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; CreateAsync(class Azure.AI.AgentServer.Responses.Models.CreateResponse request, class Azure.AI.AgentServer.Responses.ResponseContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseHandler.CreateAsync(Azure.AI.AgentServer.Responses.Models.CreateResponse,Azure.AI.AgentServer.Responses.ResponseContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateAsync (request As CreateResponse, context As ResponseContext, cancellationToken As CancellationToken) As IAsyncEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="abstract member CreateAsync : Azure.AI.AgentServer.Responses.Models.CreateResponse * Azure.AI.AgentServer.Responses.ResponseContext * System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseHandler.CreateAsync (request, context, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="Azure.AI.AgentServer.Responses.Models.CreateResponse" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Responses.ResponseContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="request">
+            The pre-processed creation request. Mode flags (<c>stream</c>, <c>background</c>)
+            have been consumed by the SDK and are not present.
+            </param>
+        <param name="context">
+            Provides the response identifier via <see cref="P:Azure.AI.AgentServer.Responses.ResponseContext.ResponseId" />.
+            Use <see cref="T:Azure.AI.AgentServer.Responses.ResponseEventStream" /> to build and emit events.
+            </param>
+        <param name="cancellationToken">
+            A cancellation token that is triggered on client disconnect (in non-background mode)
+            or explicit cancel request.
+            </param>
+        <summary>
+            Processes a response creation request and yields the full event stream.
+            </summary>
+        <returns>
+            An async enumerable of events comprising the full response event stream,
+            including both lifecycle events and content events.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

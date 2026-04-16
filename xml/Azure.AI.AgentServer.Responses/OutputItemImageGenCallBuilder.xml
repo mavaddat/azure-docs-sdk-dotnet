@@ -1,0 +1,216 @@
+<Type Name="OutputItemImageGenCallBuilder" FullName="Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder">
+  <TypeSignature Language="C#" Value="public class OutputItemImageGenCallBuilder : Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemImageGenToolCall&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OutputItemImageGenCallBuilder extends Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemImageGenToolCall&gt;" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder" />
+  <TypeSignature Language="VB.NET" Value="Public Class OutputItemImageGenCallBuilder&#xA;Inherits OutputItemBuilder(Of OutputItemImageGenToolCall)" />
+  <TypeSignature Language="F#" Value="type OutputItemImageGenCallBuilder = class&#xA;    inherit OutputItemBuilder&lt;OutputItemImageGenToolCall&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemImageGenToolCall&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">Azure.AI.AgentServer.Responses.Models.OutputItemImageGenToolCall</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 1 })]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 1 })&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Scoped builder for an <c>image_generation_call</c> output item. Provides methods
+            for lifecycle events and streaming partial image data.
+            <para>
+            The typical lifecycle is:
+            <see cref="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitAdded" /> → <see cref="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitInProgress" /> → <see cref="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitGenerating" /> →
+            zero or more <see cref="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitPartialImage(System.String)" /> → <see cref="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitCompleted" /> →
+            <see cref="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitDone(System.String)" />. The final <see cref="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitDone(System.String)" /> call carries the
+            base64-encoded image result.
+            </para></summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OutputItemImageGenCallBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder" /> for mocking.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitAdded">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent EmitAdded ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent EmitAdded() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitAdded" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitAdded () As ResponseOutputItemAddedEvent" />
+      <MemberSignature Language="F#" Value="override this.EmitAdded : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent" Usage="outputItemImageGenCallBuilder.EmitAdded " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Produces a <c>response.output_item.added</c> event with an in-progress image generation item.
+            The item is emitted with an empty result and <c>in_progress</c> status.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseOutputItemAddedEvent" /> for this image generation call.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitCompleted">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallCompletedEvent EmitCompleted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallCompletedEvent EmitCompleted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitCompleted" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitCompleted () As ResponseImageGenCallCompletedEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitCompleted : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallCompletedEvent&#xA;override this.EmitCompleted : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallCompletedEvent" Usage="outputItemImageGenCallBuilder.EmitCompleted " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallCompletedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Produces a <c>response.image_gen_call.completed</c> event.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallCompletedEvent" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitDone">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent EmitDone (string result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent EmitDone(string result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitDone(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitDone (result As String) As ResponseOutputItemDoneEvent" />
+      <MemberSignature Language="F#" Value="override this.EmitDone : string -&gt; Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent" Usage="outputItemImageGenCallBuilder.EmitDone result" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="result">
+            The base64-encoded image data (PNG, JPEG, or WebP). Clients decode this value with
+            <c>Convert.FromBase64String(result)</c> to obtain the raw image bytes.
+            <para>
+            To produce the value from a byte array:
+            <c>Convert.ToBase64String(imageBytes)</c>.
+            </para><para>
+            To produce the value from a file:
+            <c>Convert.ToBase64String(File.ReadAllBytes("image.png"))</c>.
+            </para></param>
+        <summary>
+            Produces a <c>response.output_item.done</c> event with a completed image generation item
+            containing the final image result.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseOutputItemDoneEvent" /> for this image generation call.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitGenerating">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallGeneratingEvent EmitGenerating ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallGeneratingEvent EmitGenerating() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitGenerating" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitGenerating () As ResponseImageGenCallGeneratingEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitGenerating : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallGeneratingEvent&#xA;override this.EmitGenerating : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallGeneratingEvent" Usage="outputItemImageGenCallBuilder.EmitGenerating " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallGeneratingEvent</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Produces a <c>response.image_gen_call.generating</c> event.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallGeneratingEvent" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitInProgress">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallInProgressEvent EmitInProgress ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallInProgressEvent EmitInProgress() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitInProgress" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitInProgress () As ResponseImageGenCallInProgressEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitInProgress : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallInProgressEvent&#xA;override this.EmitInProgress : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallInProgressEvent" Usage="outputItemImageGenCallBuilder.EmitInProgress " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallInProgressEvent</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Produces a <c>response.image_gen_call.in_progress</c> event.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallInProgressEvent" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitPartialImage">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallPartialImageEvent EmitPartialImage (string partialImageB64);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallPartialImageEvent EmitPartialImage(string partialImageB64) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitPartialImage(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitPartialImage (partialImageB64 As String) As ResponseImageGenCallPartialImageEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitPartialImage : string -&gt; Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallPartialImageEvent&#xA;override this.EmitPartialImage : string -&gt; Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallPartialImageEvent" Usage="outputItemImageGenCallBuilder.EmitPartialImage partialImageB64" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallPartialImageEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partialImageB64" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partialImageB64">
+            Base64-encoded partial image data. For example:
+            <c>Convert.ToBase64String(partialPngBytes)</c>.
+            </param>
+        <summary>
+            Produces a <c>response.image_gen_call.partial_image</c> event with the given image data.
+            Partial images allow clients to display progressive rendering while the image is being generated.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseImageGenCallPartialImageEvent" /> with the partial image.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,114 @@
+<Type Name="ResponsesCancellationSignalProvider" FullName="Azure.AI.AgentServer.Responses.ResponsesCancellationSignalProvider">
+  <TypeSignature Language="C#" Value="public abstract class ResponsesCancellationSignalProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ResponsesCancellationSignalProvider extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Responses.ResponsesCancellationSignalProvider" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ResponsesCancellationSignalProvider" />
+  <TypeSignature Language="F#" Value="type ResponsesCancellationSignalProvider = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Provides cancellation signalling for in-flight responses.
+            Extend this class to back cancellation with a custom signalling mechanism
+            (e.g., distributed pub/sub, Redis, message queue).
+            </summary>
+    <remarks>
+      <para>
+            When no custom implementation is registered, the SDK provides an
+            in-memory default that is automatically registered by
+            <c>AddResponsesServer()</c>.
+            </para>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ResponsesCancellationSignalProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesCancellationSignalProvider.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelResponseAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task CancelResponseAsync (string responseId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task CancelResponseAsync(string responseId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesCancellationSignalProvider.CancelResponseAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CancelResponseAsync (responseId As String, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member CancelResponseAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="responsesCancellationSignalProvider.CancelResponseAsync (responseId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="responseId">The unique response identifier.</param>
+        <param name="cancellationToken">A token to cancel the operation.</param>
+        <summary>
+            Signals cancellation for an in-flight response.
+            This method is fire-and-forget safe — it may return before the
+            handler observes the cancellation.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.AI.AgentServer.Responses.ResourceNotFoundException">Thrown if the response does not exist.</exception>
+        <exception cref="T:Azure.AI.AgentServer.Responses.BadRequestException">Thrown if the response is already in a terminal state.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseCancellationTokenAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;System.Threading.CancellationToken&gt; GetResponseCancellationTokenAsync (string responseId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;valuetype System.Threading.CancellationToken&gt; GetResponseCancellationTokenAsync(string responseId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesCancellationSignalProvider.GetResponseCancellationTokenAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetResponseCancellationTokenAsync (responseId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of CancellationToken)" />
+      <MemberSignature Language="F#" Value="abstract member GetResponseCancellationTokenAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.Threading.CancellationToken&gt;" Usage="responsesCancellationSignalProvider.GetResponseCancellationTokenAsync (responseId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Threading.CancellationToken&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="responseId">The unique response identifier.</param>
+        <param name="cancellationToken">A token to cancel the operation.</param>
+        <summary>
+            Returns a <see cref="T:System.Threading.CancellationToken" /> that fires when
+            <see cref="M:Azure.AI.AgentServer.Responses.ResponsesCancellationSignalProvider.CancelResponseAsync(System.String,System.Threading.CancellationToken)" /> is called for the given response.
+            </summary>
+        <returns>A cancellation token linked to the response's cancellation signal.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

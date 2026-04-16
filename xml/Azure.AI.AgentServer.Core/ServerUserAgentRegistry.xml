@@ -1,0 +1,126 @@
+<Type Name="ServerUserAgentRegistry" FullName="Azure.AI.AgentServer.Core.ServerUserAgentRegistry">
+  <TypeSignature Language="C#" Value="public sealed class ServerUserAgentRegistry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServerUserAgentRegistry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.ServerUserAgentRegistry" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ServerUserAgentRegistry" />
+  <TypeSignature Language="F#" Value="type ServerUserAgentRegistry = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Registry that collects user-agent identity segments from protocol packages.
+            Each protocol registers its identity string (e.g., <c>azure-ai-agentserver-responses/1.0.0 (dotnet/10.0)</c>)
+            during route mapping, and the <c>ServerUserAgentMiddleware</c> reads all segments to compose the
+            final <c>x-platform-server</c> response header.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServerUserAgentRegistry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.ServerUserAgentRegistry.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildIdentityString">
+      <MemberSignature Language="C#" Value="public static string BuildIdentityString (string sdkName, System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string BuildIdentityString(string sdkName, class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.ServerUserAgentRegistry.BuildIdentityString(System.String,System.Reflection.Assembly)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function BuildIdentityString (sdkName As String, assembly As Assembly) As String" />
+      <MemberSignature Language="F#" Value="static member BuildIdentityString : string * System.Reflection.Assembly -&gt; string" Usage="Azure.AI.AgentServer.Core.ServerUserAgentRegistry.BuildIdentityString (sdkName, assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkName" Type="System.String" />
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="sdkName">The SDK identifier (e.g., <c>azure-ai-agentserver-responses</c>).</param>
+        <param name="assembly">The assembly to read the version from.</param>
+        <summary>
+            Builds a standard identity string from an SDK name and assembly version.
+            Format: <c>{sdkName}/{version} (dotnet/{major}.{minor})</c>.
+            </summary>
+        <returns>A formatted identity string.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSegments">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IReadOnlyList&lt;string&gt; GetSegments ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IReadOnlyList`1&lt;string&gt; GetSegments() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.ServerUserAgentRegistry.GetSegments" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetSegments () As IReadOnlyList(Of String)" />
+      <MemberSignature Language="F#" Value="member this.GetSegments : unit -&gt; System.Collections.Generic.IReadOnlyList&lt;string&gt;" Usage="serverUserAgentRegistry.GetSegments " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IReadOnlyList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Returns all registered identity segments in registration order.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public void Register (string identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Register(string identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.ServerUserAgentRegistry.Register(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Register (identity As String)" />
+      <MemberSignature Language="F#" Value="member this.Register : string -&gt; unit" Usage="serverUserAgentRegistry.Register identity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identity">The identity string to register (e.g., <c>azure-ai-agentserver-responses/1.0.0 (dotnet/10.0)</c>).</param>
+        <summary>
+            Registers a protocol identity segment. Duplicate values are ignored.
+            This method is thread-safe.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

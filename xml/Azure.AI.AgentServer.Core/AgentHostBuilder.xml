@@ -1,0 +1,278 @@
+<Type Name="AgentHostBuilder" FullName="Azure.AI.AgentServer.Core.AgentHostBuilder">
+  <TypeSignature Language="C#" Value="public sealed class AgentHostBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AgentHostBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.AgentHostBuilder" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class AgentHostBuilder" />
+  <TypeSignature Language="F#" Value="type AgentHostBuilder = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Composable builder for configuring and starting an agent server.
+            Wraps <see cref="T:Microsoft.AspNetCore.Builder.WebApplicationBuilder" />
+            (via <see cref="M:Microsoft.AspNetCore.Builder.WebApplication.CreateSlimBuilder(System.String[])" />) and exposes
+            protocol registration, health checks, tracing, shutdown, and escape hatches.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.AgentHostApp Build ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.AI.AgentServer.Core.AgentHostApp Build() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostBuilder.Build" />
+      <MemberSignature Language="VB.NET" Value="Public Function Build () As AgentHostApp" />
+      <MemberSignature Language="F#" Value="member this.Build : unit -&gt; Azure.AI.AgentServer.Core.AgentHostApp" Usage="agentHostBuilder.Build " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.AgentHostApp</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Finalize configuration and build the runnable <see cref="T:Azure.AI.AgentServer.Core.AgentHostApp" />.
+            </summary>
+        <returns>A configured <see cref="T:Azure.AI.AgentServer.Core.AgentHostApp" /> ready to run.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Configuration">
+      <MemberSignature Language="C#" Value="public Microsoft.Extensions.Configuration.IConfiguration Configuration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Extensions.Configuration.IConfiguration Configuration" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.AgentHostBuilder.Configuration" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Configuration As IConfiguration" />
+      <MemberSignature Language="F#" Value="member this.Configuration : Microsoft.Extensions.Configuration.IConfiguration" Usage="Azure.AI.AgentServer.Core.AgentHostBuilder.Configuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.Configuration.IConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Escape hatch to the underlying configuration.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Configure">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.AgentHostBuilder Configure (Action&lt;Azure.AI.AgentServer.Core.AgentHostOptions&gt; configure);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.AI.AgentServer.Core.AgentHostBuilder Configure(class System.Action`1&lt;class Azure.AI.AgentServer.Core.AgentHostOptions&gt; configure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostBuilder.Configure(System.Action{Azure.AI.AgentServer.Core.AgentHostOptions})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Configure (configure As Action(Of AgentHostOptions)) As AgentHostBuilder" />
+      <MemberSignature Language="F#" Value="member this.Configure : Action&lt;Azure.AI.AgentServer.Core.AgentHostOptions&gt; -&gt; Azure.AI.AgentServer.Core.AgentHostBuilder" Usage="agentHostBuilder.Configure configure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.AgentHostBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configure" Type="System.Action&lt;Azure.AI.AgentServer.Core.AgentHostOptions&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="configure">The configuration callback.</param>
+        <summary>
+            Configure agent server options (port, shutdown timeout, identity).
+            </summary>
+        <returns>This builder for chaining.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureHealth">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.AgentHostBuilder ConfigureHealth (Action&lt;Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder&gt; configure);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.AI.AgentServer.Core.AgentHostBuilder ConfigureHealth(class System.Action`1&lt;class Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder&gt; configure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostBuilder.ConfigureHealth(System.Action{Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ConfigureHealth (configure As Action(Of IHealthChecksBuilder)) As AgentHostBuilder" />
+      <MemberSignature Language="F#" Value="member this.ConfigureHealth : Action&lt;Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder&gt; -&gt; Azure.AI.AgentServer.Core.AgentHostBuilder" Usage="agentHostBuilder.ConfigureHealth configure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.AgentHostBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configure" Type="System.Action&lt;Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="configure">The health check configuration callback.</param>
+        <summary>
+            Add custom health checks alongside the default liveness probe.
+            </summary>
+        <returns>This builder for chaining.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureShutdown">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.AgentHostBuilder ConfigureShutdown (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.AI.AgentServer.Core.AgentHostBuilder ConfigureShutdown(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostBuilder.ConfigureShutdown(System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ConfigureShutdown (timeout As TimeSpan) As AgentHostBuilder" />
+      <MemberSignature Language="F#" Value="member this.ConfigureShutdown : TimeSpan -&gt; Azure.AI.AgentServer.Core.AgentHostBuilder" Usage="agentHostBuilder.ConfigureShutdown timeout" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.AgentHostBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">The maximum duration to wait for in-flight requests during shutdown.</param>
+        <summary>
+            Set the graceful shutdown timeout.
+            This is a convenience shorthand for <c>Configure(o =&gt; o.ShutdownTimeout = timeout)</c>.
+            </summary>
+        <returns>This builder for chaining.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureTracing">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.AgentHostBuilder ConfigureTracing (Action&lt;OpenTelemetry.Trace.TracerProviderBuilder&gt; configure);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.AI.AgentServer.Core.AgentHostBuilder ConfigureTracing(class System.Action`1&lt;class OpenTelemetry.Trace.TracerProviderBuilder&gt; configure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostBuilder.ConfigureTracing(System.Action{OpenTelemetry.Trace.TracerProviderBuilder})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ConfigureTracing (configure As Action(Of TracerProviderBuilder)) As AgentHostBuilder" />
+      <MemberSignature Language="F#" Value="member this.ConfigureTracing : Action&lt;OpenTelemetry.Trace.TracerProviderBuilder&gt; -&gt; Azure.AI.AgentServer.Core.AgentHostBuilder" Usage="agentHostBuilder.ConfigureTracing configure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.AgentHostBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configure" Type="System.Action&lt;OpenTelemetry.Trace.TracerProviderBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="configure">The tracing configuration callback.</param>
+        <summary>
+            Add custom tracing sources or configure the <see cref="T:OpenTelemetry.Trace.TracerProviderBuilder" />.
+            </summary>
+        <returns>This builder for chaining.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterProtocol">
+      <MemberSignature Language="C#" Value="public void RegisterProtocol (string protocolName, Action&lt;Microsoft.AspNetCore.Routing.IEndpointRouteBuilder&gt; endpointMapper);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterProtocol(string protocolName, class System.Action`1&lt;class Microsoft.AspNetCore.Routing.IEndpointRouteBuilder&gt; endpointMapper) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostBuilder.RegisterProtocol(System.String,System.Action{Microsoft.AspNetCore.Routing.IEndpointRouteBuilder})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterProtocol (protocolName As String, endpointMapper As Action(Of IEndpointRouteBuilder))" />
+      <MemberSignature Language="F#" Value="member this.RegisterProtocol : string * Action&lt;Microsoft.AspNetCore.Routing.IEndpointRouteBuilder&gt; -&gt; unit" Usage="agentHostBuilder.RegisterProtocol (protocolName, endpointMapper)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protocolName" Type="System.String" />
+        <Parameter Name="endpointMapper" Type="System.Action&lt;Microsoft.AspNetCore.Routing.IEndpointRouteBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="protocolName">The protocol name (e.g., "Responses", "Invocations").</param>
+        <param name="endpointMapper">Action to map protocol endpoints during the build phase.</param>
+        <summary>
+            Registers a protocol with the builder. Throws if the protocol is already registered.
+            Called by protocol extension methods (e.g., <c>AddResponses</c>, <c>AddInvocations</c>).
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Services">
+      <MemberSignature Language="C#" Value="public Microsoft.Extensions.DependencyInjection.IServiceCollection Services { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Extensions.DependencyInjection.IServiceCollection Services" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.AgentHostBuilder.Services" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Services As IServiceCollection" />
+      <MemberSignature Language="F#" Value="member this.Services : Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Azure.AI.AgentServer.Core.AgentHostBuilder.Services" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Escape hatch to the underlying service collection.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgentRegistry">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.ServerUserAgentRegistry UserAgentRegistry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.AgentServer.Core.ServerUserAgentRegistry UserAgentRegistry" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.AgentHostBuilder.UserAgentRegistry" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserAgentRegistry As ServerUserAgentRegistry" />
+      <MemberSignature Language="F#" Value="member this.UserAgentRegistry : Azure.AI.AgentServer.Core.ServerUserAgentRegistry" Usage="Azure.AI.AgentServer.Core.AgentHostBuilder.UserAgentRegistry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.ServerUserAgentRegistry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Registry for protocol user-agent identity segments appended to the
+            <c>x-platform-server</c> response header. Protocol extensions register
+            their identity during route mapping.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebApplicationBuilder">
+      <MemberSignature Language="C#" Value="public Microsoft.AspNetCore.Builder.WebApplicationBuilder WebApplicationBuilder { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.AspNetCore.Builder.WebApplicationBuilder WebApplicationBuilder" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.AgentHostBuilder.WebApplicationBuilder" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WebApplicationBuilder As WebApplicationBuilder" />
+      <MemberSignature Language="F#" Value="member this.WebApplicationBuilder : Microsoft.AspNetCore.Builder.WebApplicationBuilder" Usage="Azure.AI.AgentServer.Core.AgentHostBuilder.WebApplicationBuilder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.AspNetCore.Builder.WebApplicationBuilder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Access the <see cref="T:Microsoft.AspNetCore.Builder.WebApplicationBuilder" /> for advanced scenarios.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

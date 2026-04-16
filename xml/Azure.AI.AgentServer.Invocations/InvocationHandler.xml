@@ -1,0 +1,180 @@
+<Type Name="InvocationHandler" FullName="Azure.AI.AgentServer.Invocations.InvocationHandler">
+  <TypeSignature Language="C#" Value="public abstract class InvocationHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit InvocationHandler extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Invocations.InvocationHandler" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class InvocationHandler" />
+  <TypeSignature Language="F#" Value="type InvocationHandler = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Base class for handling invocation requests. Only <see cref="M:Azure.AI.AgentServer.Invocations.InvocationHandler.HandleAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />
+            is required. Override the optional methods to opt in to GET, cancel, and
+            OpenAPI endpoints (they return 404 by default).
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InvocationHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationHandler.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task CancelAsync (string invocationId, Microsoft.AspNetCore.Http.HttpRequest request, Microsoft.AspNetCore.Http.HttpResponse response, Azure.AI.AgentServer.Invocations.InvocationContext context, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task CancelAsync(string invocationId, class Microsoft.AspNetCore.Http.HttpRequest request, class Microsoft.AspNetCore.Http.HttpResponse response, class Azure.AI.AgentServer.Invocations.InvocationContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationHandler.CancelAsync(System.String,Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CancelAsync (invocationId As String, request As HttpRequest, response As HttpResponse, context As InvocationContext, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member CancelAsync : string * Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * Azure.AI.AgentServer.Invocations.InvocationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.CancelAsync : string * Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * Azure.AI.AgentServer.Invocations.InvocationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="invocationHandler.CancelAsync (invocationId, request, response, context, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="invocationId" Type="System.String" />
+        <Parameter Name="request" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="response" Type="Microsoft.AspNetCore.Http.HttpResponse" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Invocations.InvocationContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="invocationId">The invocation identifier.</param>
+        <param name="request">The incoming HTTP request.</param>
+        <param name="response">The outgoing HTTP response.</param>
+        <param name="context">Per-request context with isolation keys, headers, and query parameters.</param>
+        <param name="cancellationToken">A token to observe for cancellation.</param>
+        <summary>
+            Handles <c>POST /invocations/{invocationId}/cancel</c>. Returns 404 by default.
+            Override to support cancellation.
+            </summary>
+        <returns>A task representing the async operation.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task GetAsync (string invocationId, Microsoft.AspNetCore.Http.HttpRequest request, Microsoft.AspNetCore.Http.HttpResponse response, Azure.AI.AgentServer.Invocations.InvocationContext context, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task GetAsync(string invocationId, class Microsoft.AspNetCore.Http.HttpRequest request, class Microsoft.AspNetCore.Http.HttpResponse response, class Azure.AI.AgentServer.Invocations.InvocationContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationHandler.GetAsync(System.String,Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAsync (invocationId As String, request As HttpRequest, response As HttpResponse, context As InvocationContext, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member GetAsync : string * Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * Azure.AI.AgentServer.Invocations.InvocationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.GetAsync : string * Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * Azure.AI.AgentServer.Invocations.InvocationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="invocationHandler.GetAsync (invocationId, request, response, context, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="invocationId" Type="System.String" />
+        <Parameter Name="request" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="response" Type="Microsoft.AspNetCore.Http.HttpResponse" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Invocations.InvocationContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="invocationId">The invocation identifier.</param>
+        <param name="request">The incoming HTTP request.</param>
+        <param name="response">The outgoing HTTP response.</param>
+        <param name="context">Per-request context with isolation keys, headers, and query parameters.</param>
+        <param name="cancellationToken">A token to observe for cancellation.</param>
+        <summary>
+            Handles <c>GET /invocations/{invocationId}</c>. Returns 404 by default.
+            Override to support polling for async/LRO invocations.
+            </summary>
+        <returns>A task representing the async operation.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOpenApiAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task GetOpenApiAsync (Microsoft.AspNetCore.Http.HttpRequest request, Microsoft.AspNetCore.Http.HttpResponse response, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task GetOpenApiAsync(class Microsoft.AspNetCore.Http.HttpRequest request, class Microsoft.AspNetCore.Http.HttpResponse response, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationHandler.GetOpenApiAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOpenApiAsync (request As HttpRequest, response As HttpResponse, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member GetOpenApiAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.GetOpenApiAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="invocationHandler.GetOpenApiAsync (request, response, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="response" Type="Microsoft.AspNetCore.Http.HttpResponse" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="request">The incoming HTTP request.</param>
+        <param name="response">The outgoing HTTP response.</param>
+        <param name="cancellationToken">A token to observe for cancellation.</param>
+        <summary>
+            Handles <c>GET /invocations/docs/openapi.json</c>. Returns 404 by default.
+            Override to return an OpenAPI spec for the agent's contract.
+            </summary>
+        <returns>A task representing the async operation.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task HandleAsync (Microsoft.AspNetCore.Http.HttpRequest request, Microsoft.AspNetCore.Http.HttpResponse response, Azure.AI.AgentServer.Invocations.InvocationContext context, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task HandleAsync(class Microsoft.AspNetCore.Http.HttpRequest request, class Microsoft.AspNetCore.Http.HttpResponse response, class Azure.AI.AgentServer.Invocations.InvocationContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationHandler.HandleAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function HandleAsync (request As HttpRequest, response As HttpResponse, context As InvocationContext, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member HandleAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * Azure.AI.AgentServer.Invocations.InvocationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="invocationHandler.HandleAsync (request, response, context, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="response" Type="Microsoft.AspNetCore.Http.HttpResponse" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Invocations.InvocationContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="request">The incoming HTTP request.</param>
+        <param name="response">The outgoing HTTP response.</param>
+        <param name="context">Per-request context with resolved invocation/session IDs, headers, and query parameters.</param>
+        <param name="cancellationToken">A token to observe for cancellation.</param>
+        <summary>
+            Handles a <c>POST /invocations</c> request. Required.
+            </summary>
+        <returns>A task representing the async operation.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

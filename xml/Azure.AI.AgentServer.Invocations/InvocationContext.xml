@@ -1,0 +1,179 @@
+<Type Name="InvocationContext" FullName="Azure.AI.AgentServer.Invocations.InvocationContext">
+  <TypeSignature Language="C#" Value="public sealed class InvocationContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InvocationContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Invocations.InvocationContext" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class InvocationContext" />
+  <TypeSignature Language="F#" Value="type InvocationContext = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Per-request context for an invocation, carrying platform-resolved identifiers,
+            forwarded client headers, and query parameters.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvocationContext (string invocationId, string sessionId, System.Collections.Generic.IReadOnlyDictionary&lt;string,string&gt; clientHeaders, System.Collections.Generic.IReadOnlyDictionary&lt;string,Microsoft.Extensions.Primitives.StringValues&gt; queryParameters, Azure.AI.AgentServer.Core.IsolationContext isolation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string invocationId, string sessionId, class System.Collections.Generic.IReadOnlyDictionary`2&lt;string, string&gt; clientHeaders, class System.Collections.Generic.IReadOnlyDictionary`2&lt;string, valuetype Microsoft.Extensions.Primitives.StringValues&gt; queryParameters, class Azure.AI.AgentServer.Core.IsolationContext isolation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationContext.#ctor(System.String,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,Microsoft.Extensions.Primitives.StringValues},Azure.AI.AgentServer.Core.IsolationContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (invocationId As String, sessionId As String, clientHeaders As IReadOnlyDictionary(Of String, String), queryParameters As IReadOnlyDictionary(Of String, StringValues), isolation As IsolationContext)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.AgentServer.Invocations.InvocationContext : string * string * System.Collections.Generic.IReadOnlyDictionary&lt;string, string&gt; * System.Collections.Generic.IReadOnlyDictionary&lt;string, Microsoft.Extensions.Primitives.StringValues&gt; * Azure.AI.AgentServer.Core.IsolationContext -&gt; Azure.AI.AgentServer.Invocations.InvocationContext" Usage="new Azure.AI.AgentServer.Invocations.InvocationContext (invocationId, sessionId, clientHeaders, queryParameters, isolation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="invocationId" Type="System.String" />
+        <Parameter Name="sessionId" Type="System.String" />
+        <Parameter Name="clientHeaders" Type="System.Collections.Generic.IReadOnlyDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="queryParameters" Type="System.Collections.Generic.IReadOnlyDictionary&lt;System.String,Microsoft.Extensions.Primitives.StringValues&gt;" />
+        <Parameter Name="isolation" Type="Azure.AI.AgentServer.Core.IsolationContext" />
+      </Parameters>
+      <Docs>
+        <param name="invocationId">The resolved invocation ID.</param>
+        <param name="sessionId">The resolved session ID.</param>
+        <param name="clientHeaders">Forwarded <c>x-client-*</c> headers.</param>
+        <param name="queryParameters">All forwarded query parameters.</param>
+        <param name="isolation">Platform isolation context. Use <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" /> when not applicable.</param>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.AI.AgentServer.Invocations.InvocationContext" />.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientHeaders">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IReadOnlyDictionary&lt;string,string&gt; ClientHeaders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IReadOnlyDictionary`2&lt;string, string&gt; ClientHeaders" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Invocations.InvocationContext.ClientHeaders" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ClientHeaders As IReadOnlyDictionary(Of String, String)" />
+      <MemberSignature Language="F#" Value="member this.ClientHeaders : System.Collections.Generic.IReadOnlyDictionary&lt;string, string&gt;" Usage="Azure.AI.AgentServer.Invocations.InvocationContext.ClientHeaders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IReadOnlyDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Read-only dictionary of <c>x-client-*</c> headers forwarded from the request.
+            Keys include the full header name (e.g., <c>x-client-foo</c>).
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvocationId">
+      <MemberSignature Language="C#" Value="public string InvocationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InvocationId" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Invocations.InvocationContext.InvocationId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InvocationId As String" />
+      <MemberSignature Language="F#" Value="member this.InvocationId : string" Usage="Azure.AI.AgentServer.Invocations.InvocationContext.InvocationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The invocation ID. Sourced from the <c>x-agent-invocation-id</c> request header
+            if present, otherwise a generated UUID.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Isolation">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.IsolationContext Isolation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.AgentServer.Core.IsolationContext Isolation" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Invocations.InvocationContext.Isolation" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Isolation As IsolationContext" />
+      <MemberSignature Language="F#" Value="member this.Isolation : Azure.AI.AgentServer.Core.IsolationContext" Usage="Azure.AI.AgentServer.Invocations.InvocationContext.Isolation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.IsolationContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the platform-injected isolation keys for this request.
+            Handlers use these opaque partition keys to scope user-private and
+            conversation-shared state. Returns <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" />
+            when the platform headers are absent (e.g., local development).
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IReadOnlyDictionary&lt;string,Microsoft.Extensions.Primitives.StringValues&gt; QueryParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IReadOnlyDictionary`2&lt;string, valuetype Microsoft.Extensions.Primitives.StringValues&gt; QueryParameters" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Invocations.InvocationContext.QueryParameters" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property QueryParameters As IReadOnlyDictionary(Of String, StringValues)" />
+      <MemberSignature Language="F#" Value="member this.QueryParameters : System.Collections.Generic.IReadOnlyDictionary&lt;string, Microsoft.Extensions.Primitives.StringValues&gt;" Usage="Azure.AI.AgentServer.Invocations.InvocationContext.QueryParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IReadOnlyDictionary&lt;System.String,Microsoft.Extensions.Primitives.StringValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Read-only dictionary of all query parameters forwarded from the caller's
+            request. Per the invocation protocol spec, all query parameters are
+            forwarded unchanged — containers may define additional custom parameters
+            as part of their own contract.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionId">
+      <MemberSignature Language="C#" Value="public string SessionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SessionId" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Invocations.InvocationContext.SessionId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SessionId As String" />
+      <MemberSignature Language="F#" Value="member this.SessionId : string" Usage="Azure.AI.AgentServer.Invocations.InvocationContext.SessionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The session ID. Resolved from <c>agent_session_id</c> query parameter,
+            <c>FOUNDRY_AGENT_SESSION_ID</c> env var, or a generated UUID (in that order).
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1762 @@
+<Type Name="ResponseEventStream" FullName="Azure.AI.AgentServer.Responses.ResponseEventStream">
+  <TypeSignature Language="C#" Value="public class ResponseEventStream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResponseEventStream extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Responses.ResponseEventStream" />
+  <TypeSignature Language="VB.NET" Value="Public Class ResponseEventStream" />
+  <TypeSignature Language="F#" Value="type ResponseEventStream = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Top-level scope for building a streaming response event sequence.
+            Manages the global sequence counter and output index counter, and provides
+            factory methods for creating child scopes (message builders, function call builders).
+            Owns a private <see cref="P:Azure.AI.AgentServer.Responses.ResponseEventStream.Response" /> object that is embedded in emitted events.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ResponseEventStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.AI.AgentServer.Responses.ResponseEventStream" /> for mocking.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResponseEventStream (Azure.AI.AgentServer.Responses.ResponseContext context, Azure.AI.AgentServer.Responses.Models.CreateResponse request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.AI.AgentServer.Responses.ResponseContext context, class Azure.AI.AgentServer.Responses.Models.CreateResponse request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.#ctor(Azure.AI.AgentServer.Responses.ResponseContext,Azure.AI.AgentServer.Responses.Models.CreateResponse)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (context As ResponseContext, request As CreateResponse)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.AgentServer.Responses.ResponseEventStream : Azure.AI.AgentServer.Responses.ResponseContext * Azure.AI.AgentServer.Responses.Models.CreateResponse -&gt; Azure.AI.AgentServer.Responses.ResponseEventStream" Usage="new Azure.AI.AgentServer.Responses.ResponseEventStream (context, request)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Responses.ResponseContext" />
+        <Parameter Name="request" Type="Azure.AI.AgentServer.Responses.Models.CreateResponse" />
+      </Parameters>
+      <Docs>
+        <param name="context">Context providing the response ID.</param>
+        <param name="request">The original create request (used for Model, Instructions, Metadata).</param>
+        <summary>
+            Creates a new event stream that builds its own <see cref="P:Azure.AI.AgentServer.Responses.ResponseEventStream.Response" /> from the request.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItem&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;T&gt; AddOutputItem&lt;T&gt; (string itemId) where T : Azure.AI.AgentServer.Responses.Models.OutputItem;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;!!T&gt; AddOutputItem&lt;(class Azure.AI.AgentServer.Responses.Models.OutputItem) T&gt;(string itemId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItem``1(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItem(Of T As OutputItem) (itemId As String) As OutputItemBuilder(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItem : string -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;'T (requires 'T :&gt; Azure.AI.AgentServer.Responses.Models.OutputItem)&gt; (requires 'T :&gt; Azure.AI.AgentServer.Responses.Models.OutputItem)&#xA;override this.AddOutputItem : string -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;'T (requires 'T :&gt; Azure.AI.AgentServer.Responses.Models.OutputItem)&gt; (requires 'T :&gt; Azure.AI.AgentServer.Responses.Models.OutputItem)" Usage="responseEventStream.AddOutputItem itemId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+          <Constraints>
+            <BaseTypeName>Azure.AI.AgentServer.Responses.Models.OutputItem</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="itemId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">The concrete <see cref="T:Azure.AI.AgentServer.Responses.Models.OutputItem" /> subtype.</typeparam>
+        <param name="itemId">The item ID. Must be in a valid format (use <see cref="T:Azure.AI.AgentServer.Responses.IdGenerator" />).</param>
+        <summary>
+            Creates an output item scope with the next output index.
+            Use for output item types that have no dedicated <c>Add*()</c> factory
+            and no streaming sub-events (no deltas, no status transitions).
+            Call <see cref="M:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.EmitAdded(`0)" /> and
+            <see cref="M:Azure.AI.AgentServer.Responses.OutputItemBuilder`1.EmitDone(`0)" /> on the
+            returned builder, passing the item to each call.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the output item.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="itemId" /> is <c>null</c>.</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="itemId" /> is not in a valid ID format.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemApplyPatchCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCall&gt; AddOutputItemApplyPatchCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCall&gt; AddOutputItemApplyPatchCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemApplyPatchCall" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemApplyPatchCall () As OutputItemBuilder(Of OutputItemApplyPatchToolCall)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemApplyPatchCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCall&gt;&#xA;override this.AddOutputItemApplyPatchCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCall&gt;" Usage="responseEventStream.AddOutputItemApplyPatchCall " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCall&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an apply-patch call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the apply-patch call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemApplyPatchCallOutput">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCallOutput&gt; AddOutputItemApplyPatchCallOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCallOutput&gt; AddOutputItemApplyPatchCallOutput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemApplyPatchCallOutput" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemApplyPatchCallOutput () As OutputItemBuilder(Of OutputItemApplyPatchToolCallOutput)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemApplyPatchCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCallOutput&gt;&#xA;override this.AddOutputItemApplyPatchCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCallOutput&gt;" Usage="responseEventStream.AddOutputItemApplyPatchCallOutput " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemApplyPatchToolCallOutput&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an apply-patch call output result scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the apply-patch call output result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemCodeInterpreterCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemCodeInterpreterCallBuilder AddOutputItemCodeInterpreterCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemCodeInterpreterCallBuilder AddOutputItemCodeInterpreterCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemCodeInterpreterCall" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemCodeInterpreterCall () As OutputItemCodeInterpreterCallBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemCodeInterpreterCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemCodeInterpreterCallBuilder&#xA;override this.AddOutputItemCodeInterpreterCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemCodeInterpreterCallBuilder" Usage="responseEventStream.AddOutputItemCodeInterpreterCall " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemCodeInterpreterCallBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a code interpreter call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemCodeInterpreterCallBuilder" /> for the code interpreter call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemCompaction">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemCompactionBody&gt; AddOutputItemCompaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemCompactionBody&gt; AddOutputItemCompaction() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemCompaction" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemCompaction () As OutputItemBuilder(Of OutputItemCompactionBody)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemCompaction : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemCompactionBody&gt;&#xA;override this.AddOutputItemCompaction : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemCompactionBody&gt;" Usage="responseEventStream.AddOutputItemCompaction " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemCompactionBody&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a compaction output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the compaction output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemComputerCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall&gt; AddOutputItemComputerCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall&gt; AddOutputItemComputerCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemComputerCall" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemComputerCall () As OutputItemBuilder(Of OutputItemComputerToolCall)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemComputerCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall&gt;&#xA;override this.AddOutputItemComputerCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall&gt;" Usage="responseEventStream.AddOutputItemComputerCall " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a computer tool call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the computer tool call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemComputerCallOutput">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallOutputResource&gt; AddOutputItemComputerCallOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallOutputResource&gt; AddOutputItemComputerCallOutput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemComputerCallOutput" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemComputerCallOutput () As OutputItemBuilder(Of OutputItemComputerToolCallOutputResource)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemComputerCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallOutputResource&gt;&#xA;override this.AddOutputItemComputerCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallOutputResource&gt;" Usage="responseEventStream.AddOutputItemComputerCallOutput " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallOutputResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a computer tool call output result scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the computer tool call output result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemCustomToolCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemCustomToolCallBuilder AddOutputItemCustomToolCall (string callId, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemCustomToolCallBuilder AddOutputItemCustomToolCall(string callId, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemCustomToolCall(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemCustomToolCall (callId As String, name As String) As OutputItemCustomToolCallBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemCustomToolCall : string * string -&gt; Azure.AI.AgentServer.Responses.OutputItemCustomToolCallBuilder&#xA;override this.AddOutputItemCustomToolCall : string * string -&gt; Azure.AI.AgentServer.Responses.OutputItemCustomToolCallBuilder" Usage="responseEventStream.AddOutputItemCustomToolCall (callId, name)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemCustomToolCallBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID for the custom tool call.</param>
+        <param name="name">The tool name.</param>
+        <summary>
+            Creates a custom tool call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemCustomToolCallBuilder" /> for the custom tool call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemCustomToolCallOutput">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemCustomToolCallOutput&gt; AddOutputItemCustomToolCallOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemCustomToolCallOutput&gt; AddOutputItemCustomToolCallOutput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemCustomToolCallOutput" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemCustomToolCallOutput () As OutputItemBuilder(Of OutputItemCustomToolCallOutput)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemCustomToolCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemCustomToolCallOutput&gt;&#xA;override this.AddOutputItemCustomToolCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemCustomToolCallOutput&gt;" Usage="responseEventStream.AddOutputItemCustomToolCallOutput " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemCustomToolCallOutput&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a custom tool call output result scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the custom tool call output result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemFileSearchCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemFileSearchCallBuilder AddOutputItemFileSearchCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemFileSearchCallBuilder AddOutputItemFileSearchCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemFileSearchCall" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemFileSearchCall () As OutputItemFileSearchCallBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemFileSearchCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemFileSearchCallBuilder&#xA;override this.AddOutputItemFileSearchCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemFileSearchCallBuilder" Usage="responseEventStream.AddOutputItemFileSearchCall " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemFileSearchCallBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a file search call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemFileSearchCallBuilder" /> for the file search call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemFunctionCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemFunctionCallBuilder AddOutputItemFunctionCall (string name, string callId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemFunctionCallBuilder AddOutputItemFunctionCall(string name, string callId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemFunctionCall(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemFunctionCall (name As String, callId As String) As OutputItemFunctionCallBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemFunctionCall : string * string -&gt; Azure.AI.AgentServer.Responses.OutputItemFunctionCallBuilder&#xA;override this.AddOutputItemFunctionCall : string * string -&gt; Azure.AI.AgentServer.Responses.OutputItemFunctionCallBuilder" Usage="responseEventStream.AddOutputItemFunctionCall (name, callId)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemFunctionCallBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="callId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">The function name.</param>
+        <param name="callId">The call ID for this function call.</param>
+        <summary>
+            Creates a function call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemFunctionCallBuilder" /> for the function call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemFunctionShellCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCall&gt; AddOutputItemFunctionShellCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCall&gt; AddOutputItemFunctionShellCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemFunctionShellCall" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemFunctionShellCall () As OutputItemBuilder(Of OutputItemFunctionShellCall)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemFunctionShellCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCall&gt;&#xA;override this.AddOutputItemFunctionShellCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCall&gt;" Usage="responseEventStream.AddOutputItemFunctionShellCall " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCall&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a function shell call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the function shell call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemFunctionShellCallOutput">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCallOutput&gt; AddOutputItemFunctionShellCallOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCallOutput&gt; AddOutputItemFunctionShellCallOutput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemFunctionShellCallOutput" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemFunctionShellCallOutput () As OutputItemBuilder(Of OutputItemFunctionShellCallOutput)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemFunctionShellCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCallOutput&gt;&#xA;override this.AddOutputItemFunctionShellCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCallOutput&gt;" Usage="responseEventStream.AddOutputItemFunctionShellCallOutput " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemFunctionShellCallOutput&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a function shell call output result scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the function shell call output result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemImageGenCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder AddOutputItemImageGenCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder AddOutputItemImageGenCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemImageGenCall" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemImageGenCall () As OutputItemImageGenCallBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemImageGenCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder&#xA;override this.AddOutputItemImageGenCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder" Usage="responseEventStream.AddOutputItemImageGenCall " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an image generation call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder" /> for the image generation call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemLocalShellCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCall&gt; AddOutputItemLocalShellCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCall&gt; AddOutputItemLocalShellCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemLocalShellCall" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemLocalShellCall () As OutputItemBuilder(Of OutputItemLocalShellToolCall)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemLocalShellCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCall&gt;&#xA;override this.AddOutputItemLocalShellCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCall&gt;" Usage="responseEventStream.AddOutputItemLocalShellCall " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCall&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a local shell call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the local shell call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemLocalShellCallOutput">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallOutput&gt; AddOutputItemLocalShellCallOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallOutput&gt; AddOutputItemLocalShellCallOutput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemLocalShellCallOutput" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemLocalShellCallOutput () As OutputItemBuilder(Of OutputItemLocalShellToolCallOutput)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemLocalShellCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallOutput&gt;&#xA;override this.AddOutputItemLocalShellCallOutput : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallOutput&gt;" Usage="responseEventStream.AddOutputItemLocalShellCallOutput " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallOutput&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a local shell call output result scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the local shell call output result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemMcpApprovalRequest">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalRequest&gt; AddOutputItemMcpApprovalRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalRequest&gt; AddOutputItemMcpApprovalRequest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemMcpApprovalRequest" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemMcpApprovalRequest () As OutputItemBuilder(Of OutputItemMcpApprovalRequest)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemMcpApprovalRequest : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalRequest&gt;&#xA;override this.AddOutputItemMcpApprovalRequest : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalRequest&gt;" Usage="responseEventStream.AddOutputItemMcpApprovalRequest " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalRequest&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an MCP approval request output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the MCP approval request output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemMcpApprovalResponse">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalResponseResource&gt; AddOutputItemMcpApprovalResponse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalResponseResource&gt; AddOutputItemMcpApprovalResponse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemMcpApprovalResponse" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemMcpApprovalResponse () As OutputItemBuilder(Of OutputItemMcpApprovalResponseResource)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemMcpApprovalResponse : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalResponseResource&gt;&#xA;override this.AddOutputItemMcpApprovalResponse : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalResponseResource&gt;" Usage="responseEventStream.AddOutputItemMcpApprovalResponse " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.OutputItemMcpApprovalResponseResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an MCP approval response output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the MCP approval response output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemMcpCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemMcpCallBuilder AddOutputItemMcpCall (string serverLabel, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemMcpCallBuilder AddOutputItemMcpCall(string serverLabel, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemMcpCall(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemMcpCall (serverLabel As String, name As String) As OutputItemMcpCallBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemMcpCall : string * string -&gt; Azure.AI.AgentServer.Responses.OutputItemMcpCallBuilder&#xA;override this.AddOutputItemMcpCall : string * string -&gt; Azure.AI.AgentServer.Responses.OutputItemMcpCallBuilder" Usage="responseEventStream.AddOutputItemMcpCall (serverLabel, name)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemMcpCallBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverLabel" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serverLabel">The MCP server label.</param>
+        <param name="name">The tool name.</param>
+        <summary>
+            Creates an MCP tool call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemMcpCallBuilder" /> for the MCP tool call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemMcpListTools">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemMcpListToolsBuilder AddOutputItemMcpListTools (string serverLabel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemMcpListToolsBuilder AddOutputItemMcpListTools(string serverLabel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemMcpListTools(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemMcpListTools (serverLabel As String) As OutputItemMcpListToolsBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemMcpListTools : string -&gt; Azure.AI.AgentServer.Responses.OutputItemMcpListToolsBuilder&#xA;override this.AddOutputItemMcpListTools : string -&gt; Azure.AI.AgentServer.Responses.OutputItemMcpListToolsBuilder" Usage="responseEventStream.AddOutputItemMcpListTools serverLabel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemMcpListToolsBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverLabel" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serverLabel">The MCP server label.</param>
+        <summary>
+            Creates an MCP list-tools output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemMcpListToolsBuilder" /> for the MCP list-tools output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemMessage">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemMessageBuilder AddOutputItemMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemMessageBuilder AddOutputItemMessage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemMessage" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemMessage () As OutputItemMessageBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemMessage : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemMessageBuilder&#xA;override this.AddOutputItemMessage : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemMessageBuilder" Usage="responseEventStream.AddOutputItemMessage " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemMessageBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a message output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemMessageBuilder" /> for the message output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemReasoningItem">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemReasoningItemBuilder AddOutputItemReasoningItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemReasoningItemBuilder AddOutputItemReasoningItem() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemReasoningItem" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemReasoningItem () As OutputItemReasoningItemBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemReasoningItem : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemReasoningItemBuilder&#xA;override this.AddOutputItemReasoningItem : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemReasoningItemBuilder" Usage="responseEventStream.AddOutputItemReasoningItem " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemReasoningItemBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a reasoning output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemReasoningItemBuilder" /> for the reasoning output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemStructuredOutputs">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.StructuredOutputsOutputItem&gt; AddOutputItemStructuredOutputs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;class Azure.AI.AgentServer.Responses.Models.StructuredOutputsOutputItem&gt; AddOutputItemStructuredOutputs() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemStructuredOutputs" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemStructuredOutputs () As OutputItemBuilder(Of StructuredOutputsOutputItem)" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemStructuredOutputs : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.StructuredOutputsOutputItem&gt;&#xA;override this.AddOutputItemStructuredOutputs : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.StructuredOutputsOutputItem&gt;" Usage="responseEventStream.AddOutputItemStructuredOutputs " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;Azure.AI.AgentServer.Responses.Models.StructuredOutputsOutputItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a structured outputs item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemBuilder`1" /> for the structured outputs item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOutputItemWebSearchCall">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemWebSearchCallBuilder AddOutputItemWebSearchCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemWebSearchCallBuilder AddOutputItemWebSearchCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemWebSearchCall" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AddOutputItemWebSearchCall () As OutputItemWebSearchCallBuilder" />
+      <MemberSignature Language="F#" Value="abstract member AddOutputItemWebSearchCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemWebSearchCallBuilder&#xA;override this.AddOutputItemWebSearchCall : unit -&gt; Azure.AI.AgentServer.Responses.OutputItemWebSearchCallBuilder" Usage="responseEventStream.AddOutputItemWebSearchCall " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.OutputItemWebSearchCallBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a web search call output item scope with the next output index
+            and an auto-generated item ID.
+            </summary>
+        <returns>A new <see cref="T:Azure.AI.AgentServer.Responses.OutputItemWebSearchCallBuilder" /> for the web search call output item.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitCompleted">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseCompletedEvent EmitCompleted (Azure.AI.AgentServer.Responses.Models.ResponseUsage? usage = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseCompletedEvent EmitCompleted(class Azure.AI.AgentServer.Responses.Models.ResponseUsage usage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitCompleted(Azure.AI.AgentServer.Responses.Models.ResponseUsage)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitCompleted (Optional usage As ResponseUsage = Nothing) As ResponseCompletedEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitCompleted : Azure.AI.AgentServer.Responses.Models.ResponseUsage -&gt; Azure.AI.AgentServer.Responses.Models.ResponseCompletedEvent&#xA;override this.EmitCompleted : Azure.AI.AgentServer.Responses.Models.ResponseUsage -&gt; Azure.AI.AgentServer.Responses.Models.ResponseCompletedEvent" Usage="responseEventStream.EmitCompleted usage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseCompletedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usage" Type="Azure.AI.AgentServer.Responses.Models.ResponseUsage">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(2)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(2)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="usage">Optional token usage data to include in the response.</param>
+        <summary>
+            Produces a <c>response.completed</c> event.
+            Sets <c>Status = Completed</c>, <c>CompletedAt</c>, and <c>Usage</c>
+            before creating the event.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseCompletedEvent" /> with the finalized response.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitCreated">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseCreatedEvent EmitCreated (Azure.AI.AgentServer.Responses.Models.ResponseStatus status = Azure.AI.AgentServer.Responses.Models.ResponseStatus.InProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseCreatedEvent EmitCreated(valuetype Azure.AI.AgentServer.Responses.Models.ResponseStatus status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitCreated(Azure.AI.AgentServer.Responses.Models.ResponseStatus)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitCreated (Optional status As ResponseStatus = Azure.AI.AgentServer.Responses.Models.ResponseStatus.InProgress) As ResponseCreatedEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitCreated : Azure.AI.AgentServer.Responses.Models.ResponseStatus -&gt; Azure.AI.AgentServer.Responses.Models.ResponseCreatedEvent&#xA;override this.EmitCreated : Azure.AI.AgentServer.Responses.Models.ResponseStatus -&gt; Azure.AI.AgentServer.Responses.Models.ResponseCreatedEvent" Usage="responseEventStream.EmitCreated status" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseCreatedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.ResponseStatus" />
+      </Parameters>
+      <Docs>
+        <param name="status">
+            The initial response status. Defaults to <see cref="F:Azure.AI.AgentServer.Responses.Models.ResponseStatus.InProgress" />.
+            </param>
+        <summary>
+            Produces a <c>response.created</c> event.
+            Sets <c>Status</c> to the specified value before creating the event.
+            Use <see cref="F:Azure.AI.AgentServer.Responses.Models.ResponseStatus.Queued" /> when the response will go through
+            a queued phase before processing; use <see cref="F:Azure.AI.AgentServer.Responses.Models.ResponseStatus.InProgress" />
+            (the default) to start processing immediately.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseCreatedEvent" /> with the current response snapshot.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitFailed">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseFailedEvent EmitFailed (Azure.AI.AgentServer.Responses.Models.ResponseErrorCode code = Azure.AI.AgentServer.Responses.Models.ResponseErrorCode.ServerError, string message = &quot;An internal server error occurred.&quot;, Azure.AI.AgentServer.Responses.Models.ResponseUsage? usage = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseFailedEvent EmitFailed(valuetype Azure.AI.AgentServer.Responses.Models.ResponseErrorCode code, string message, class Azure.AI.AgentServer.Responses.Models.ResponseUsage usage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitFailed(Azure.AI.AgentServer.Responses.Models.ResponseErrorCode,System.String,Azure.AI.AgentServer.Responses.Models.ResponseUsage)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitFailed (Optional code As ResponseErrorCode = Azure.AI.AgentServer.Responses.Models.ResponseErrorCode.ServerError, Optional message As String = &quot;An internal server error occurred.&quot;, Optional usage As ResponseUsage = Nothing) As ResponseFailedEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitFailed : Azure.AI.AgentServer.Responses.Models.ResponseErrorCode * string * Azure.AI.AgentServer.Responses.Models.ResponseUsage -&gt; Azure.AI.AgentServer.Responses.Models.ResponseFailedEvent&#xA;override this.EmitFailed : Azure.AI.AgentServer.Responses.Models.ResponseErrorCode * string * Azure.AI.AgentServer.Responses.Models.ResponseUsage -&gt; Azure.AI.AgentServer.Responses.Models.ResponseFailedEvent" Usage="responseEventStream.EmitFailed (code, message, usage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseFailedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="Azure.AI.AgentServer.Responses.Models.ResponseErrorCode" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="usage" Type="Azure.AI.AgentServer.Responses.Models.ResponseUsage">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(2)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(2)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="code">The error code. Defaults to <see cref="F:Azure.AI.AgentServer.Responses.Models.ResponseErrorCode.ServerError" />.</param>
+        <param name="message">The error message. Defaults to "An internal server error occurred.".</param>
+        <param name="usage">Optional token usage data to include in the response.</param>
+        <summary>
+            Produces a <c>response.failed</c> event.
+            Sets <c>Status = Failed</c>, <c>CompletedAt</c>, <c>Error</c>,
+            and <c>Usage</c> (if provided) before creating the event.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseFailedEvent" /> with the finalized response.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitIncomplete">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseIncompleteEvent EmitIncomplete (Azure.AI.AgentServer.Responses.Models.ResponseIncompleteDetailsReason? reason = default, Azure.AI.AgentServer.Responses.Models.ResponseUsage? usage = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseIncompleteEvent EmitIncomplete(valuetype System.Nullable`1&lt;valuetype Azure.AI.AgentServer.Responses.Models.ResponseIncompleteDetailsReason&gt; reason, class Azure.AI.AgentServer.Responses.Models.ResponseUsage usage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitIncomplete(System.Nullable{Azure.AI.AgentServer.Responses.Models.ResponseIncompleteDetailsReason},Azure.AI.AgentServer.Responses.Models.ResponseUsage)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitIncomplete (Optional reason As Nullable(Of ResponseIncompleteDetailsReason) = Nothing, Optional usage As ResponseUsage = Nothing) As ResponseIncompleteEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitIncomplete : Nullable&lt;Azure.AI.AgentServer.Responses.Models.ResponseIncompleteDetailsReason&gt; * Azure.AI.AgentServer.Responses.Models.ResponseUsage -&gt; Azure.AI.AgentServer.Responses.Models.ResponseIncompleteEvent&#xA;override this.EmitIncomplete : Nullable&lt;Azure.AI.AgentServer.Responses.Models.ResponseIncompleteDetailsReason&gt; * Azure.AI.AgentServer.Responses.Models.ResponseUsage -&gt; Azure.AI.AgentServer.Responses.Models.ResponseIncompleteEvent" Usage="responseEventStream.EmitIncomplete (reason, usage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseIncompleteEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reason" Type="System.Nullable&lt;Azure.AI.AgentServer.Responses.Models.ResponseIncompleteDetailsReason&gt;" />
+        <Parameter Name="usage" Type="Azure.AI.AgentServer.Responses.Models.ResponseUsage">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(2)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(2)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="reason">Optional reason for incompleteness.</param>
+        <param name="usage">Optional token usage data to include in the response.</param>
+        <summary>
+            Produces a <c>response.incomplete</c> event.
+            Sets <c>Status = Incomplete</c>, <c>CompletedAt</c>, <c>IncompleteDetails</c>,
+            and <c>Usage</c> (if provided) before creating the event.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseIncompleteEvent" /> with the finalized response.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitInProgress">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseInProgressEvent EmitInProgress ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseInProgressEvent EmitInProgress() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitInProgress" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitInProgress () As ResponseInProgressEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitInProgress : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseInProgressEvent&#xA;override this.EmitInProgress : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseInProgressEvent" Usage="responseEventStream.EmitInProgress " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseInProgressEvent</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Produces a <c>response.in_progress</c> event.
+            Sets <c>Status = InProgress</c> before creating the event.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseInProgressEvent" /> with the current response snapshot.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitQueued">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseQueuedEvent EmitQueued ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseQueuedEvent EmitQueued() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitQueued" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EmitQueued () As ResponseQueuedEvent" />
+      <MemberSignature Language="F#" Value="abstract member EmitQueued : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseQueuedEvent&#xA;override this.EmitQueued : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseQueuedEvent" Usage="responseEventStream.EmitQueued " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseQueuedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Produces a <c>response.queued</c> event.
+            Sets <c>Status = Queued</c> before creating the event.
+            </summary>
+        <returns>A <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseQueuedEvent" /> with the current response snapshot.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextSequenceNumber">
+      <MemberSignature Language="C#" Value="public virtual long NextSequenceNumber ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int64 NextSequenceNumber() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.NextSequenceNumber" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function NextSequenceNumber () As Long" />
+      <MemberSignature Language="F#" Value="abstract member NextSequenceNumber : unit -&gt; int64&#xA;override this.NextSequenceNumber : unit -&gt; int64" Usage="responseEventStream.NextSequenceNumber " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Returns the next sequence number for use with manually constructed events.
+            Uses post-increment semantics: returns the current value and then increments.
+            </summary>
+        <returns>The next sequence number.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemApplyPatchCall">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemApplyPatchCall (string callId, Azure.AI.AgentServer.Responses.Models.ApplyPatchCallStatus status, Azure.AI.AgentServer.Responses.Models.ApplyPatchFileOperation operation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemApplyPatchCall(string callId, valuetype Azure.AI.AgentServer.Responses.Models.ApplyPatchCallStatus status, class Azure.AI.AgentServer.Responses.Models.ApplyPatchFileOperation operation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemApplyPatchCall(System.String,Azure.AI.AgentServer.Responses.Models.ApplyPatchCallStatus,Azure.AI.AgentServer.Responses.Models.ApplyPatchFileOperation)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemApplyPatchCall (callId As String, status As ApplyPatchCallStatus, operation As ApplyPatchFileOperation) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemApplyPatchCall : string * Azure.AI.AgentServer.Responses.Models.ApplyPatchCallStatus * Azure.AI.AgentServer.Responses.Models.ApplyPatchFileOperation -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemApplyPatchCall (callId, status, operation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCall&gt;d__59))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCall&gt;d__59))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.ApplyPatchCallStatus" />
+        <Parameter Name="operation" Type="Azure.AI.AgentServer.Responses.Models.ApplyPatchFileOperation" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID for the apply-patch call.</param>
+        <param name="status">The status of the apply-patch call.</param>
+        <param name="operation">The file operation to apply.</param>
+        <summary>
+            Convenience generator that yields the complete apply-patch tool call lifecycle.
+            Apply-patch calls have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemApplyPatchCallOutput">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemApplyPatchCallOutput (string callId, Azure.AI.AgentServer.Responses.Models.ApplyPatchCallOutputStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemApplyPatchCallOutput(string callId, valuetype Azure.AI.AgentServer.Responses.Models.ApplyPatchCallOutputStatus status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemApplyPatchCallOutput(System.String,Azure.AI.AgentServer.Responses.Models.ApplyPatchCallOutputStatus)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemApplyPatchCallOutput (callId As String, status As ApplyPatchCallOutputStatus) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemApplyPatchCallOutput : string * Azure.AI.AgentServer.Responses.Models.ApplyPatchCallOutputStatus -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemApplyPatchCallOutput (callId, status)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCallOutput&gt;d__60))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCallOutput&gt;d__60))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.ApplyPatchCallOutputStatus" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID of the apply-patch call this output is for.</param>
+        <param name="status">The output status.</param>
+        <summary>
+            Convenience generator that yields the complete apply-patch tool call output lifecycle.
+            Apply-patch call outputs have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemCompaction">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemCompaction (string encryptedContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemCompaction(string encryptedContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemCompaction(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemCompaction (encryptedContent As String) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemCompaction : string -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemCompaction encryptedContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCompaction&gt;d__64))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCompaction&gt;d__64))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedContent" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedContent">The encrypted compaction content.</param>
+        <summary>
+            Convenience generator that yields the complete compaction output-item lifecycle.
+            Compaction items have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemComputerCall">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemComputerCall (string callId, Azure.AI.AgentServer.Responses.Models.ComputerAction action, System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; pendingSafetyChecks, Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemComputerCall(string callId, class Azure.AI.AgentServer.Responses.Models.ComputerAction action, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; pendingSafetyChecks, valuetype Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemComputerCall(System.String,Azure.AI.AgentServer.Responses.Models.ComputerAction,System.Collections.Generic.IEnumerable{Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam},Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemComputerCall (callId As String, action As ComputerAction, pendingSafetyChecks As IEnumerable(Of ComputerCallSafetyCheckParam), status As OutputItemComputerToolCallStatus) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemComputerCall : string * Azure.AI.AgentServer.Responses.Models.ComputerAction * seq&lt;Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; * Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemComputerCall (callId, action, pendingSafetyChecks, status)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCall&gt;d__53))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCall&gt;d__53))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="action" Type="Azure.AI.AgentServer.Responses.Models.ComputerAction" />
+        <Parameter Name="pendingSafetyChecks" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt;" />
+        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID of the computer tool call.</param>
+        <param name="action">The computer action to perform.</param>
+        <param name="pendingSafetyChecks">The safety checks that must pass before execution.</param>
+        <param name="status">The status of the computer tool call.</param>
+        <summary>
+            Convenience generator that yields the complete computer tool call output-item lifecycle.
+            Computer call outputs have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemComputerCallOutput">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemComputerCallOutput (string callId, Azure.AI.AgentServer.Responses.Models.ComputerScreenshotImage output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemComputerCallOutput(string callId, class Azure.AI.AgentServer.Responses.Models.ComputerScreenshotImage output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemComputerCallOutput(System.String,Azure.AI.AgentServer.Responses.Models.ComputerScreenshotImage)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemComputerCallOutput (callId As String, output As ComputerScreenshotImage) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemComputerCallOutput : string * Azure.AI.AgentServer.Responses.Models.ComputerScreenshotImage -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemComputerCallOutput (callId, output)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCallOutput&gt;d__54))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCallOutput&gt;d__54))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="output" Type="Azure.AI.AgentServer.Responses.Models.ComputerScreenshotImage" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID of the computer tool call this output is for.</param>
+        <param name="output">The screenshot image output from the computer tool.</param>
+        <summary>
+            Convenience generator that yields the complete computer tool call output resource lifecycle.
+            Computer call outputs have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemCustomToolCallOutput">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemCustomToolCallOutput (string callId, BinaryData output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemCustomToolCallOutput(string callId, class System.BinaryData output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemCustomToolCallOutput(System.String,System.BinaryData)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemCustomToolCallOutput (callId As String, output As BinaryData) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemCustomToolCallOutput : string * BinaryData -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemCustomToolCallOutput (callId, output)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCustomToolCallOutput&gt;d__61))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCustomToolCallOutput&gt;d__61))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="output" Type="System.BinaryData" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID of the custom tool call this output is for.</param>
+        <param name="output">The output data from the custom tool call.</param>
+        <summary>
+            Convenience generator that yields the complete custom tool call output lifecycle.
+            Custom tool call outputs have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemFunctionCall">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionCall (string name, string callId, string arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionCall(string name, string callId, string arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemFunctionCall(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemFunctionCall (name As String, callId As String, arguments As String) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemFunctionCall : string * string * string -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemFunctionCall (name, callId, arguments)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__46))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__46))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">The function name.</param>
+        <param name="callId">The call ID.</param>
+        <param name="arguments">The complete arguments JSON string.</param>
+        <summary>
+            Convenience generator that yields the complete function call output-item lifecycle
+            with arguments from a complete string (S-056).
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → arguments convenience → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemFunctionCall">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionCall (string name, string callId, System.Collections.Generic.IAsyncEnumerable&lt;string&gt; chunks, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionCall(string name, string callId, class System.Collections.Generic.IAsyncEnumerable`1&lt;string&gt; chunks, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemFunctionCall(System.String,System.String,System.Collections.Generic.IAsyncEnumerable{System.String},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function OutputItemFunctionCall (name As String, callId As String, chunks As IAsyncEnumerable(Of String), Optional cancellationToken As CancellationToken = Nothing) As IAsyncEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemFunctionCall : string * string * System.Collections.Generic.IAsyncEnumerable&lt;string&gt; * System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemFunctionCall (name, callId, chunks, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__47))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__47))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="chunks" Type="System.Collections.Generic.IAsyncEnumerable&lt;System.String&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.EnumeratorCancellation]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.EnumeratorCancellation&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="name">The function name.</param>
+        <param name="callId">The call ID.</param>
+        <param name="chunks">An async enumerable of argument chunks.</param>
+        <param name="cancellationToken">A token to cancel iteration.</param>
+        <summary>
+            Convenience generator that yields the complete function call output-item lifecycle
+            with arguments from streaming chunks (S-056, S-058).
+            </summary>
+        <returns>An async enumerable of events: <c>output_item.added</c> → arguments convenience → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemFunctionCallOutput">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionCallOutput (string callId, BinaryData output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionCallOutput(string callId, class System.BinaryData output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemFunctionCallOutput(System.String,System.BinaryData)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemFunctionCallOutput (callId As String, output As BinaryData) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemFunctionCallOutput : string * BinaryData -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemFunctionCallOutput (callId, output)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCallOutput&gt;d__48))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCallOutput&gt;d__48))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="output" Type="System.BinaryData" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID of the function call this output is for.</param>
+        <param name="output">The output data from the function call.</param>
+        <summary>
+            Convenience generator that yields the complete function call output item lifecycle
+            (S-056). Function call outputs have no deltas — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemFunctionShellCall">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionShellCall (string callId, Azure.AI.AgentServer.Responses.Models.FunctionShellAction action, Azure.AI.AgentServer.Responses.Models.LocalShellCallStatus status, Azure.AI.AgentServer.Responses.Models.FunctionShellCallEnvironment environment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionShellCall(string callId, class Azure.AI.AgentServer.Responses.Models.FunctionShellAction action, valuetype Azure.AI.AgentServer.Responses.Models.LocalShellCallStatus status, class Azure.AI.AgentServer.Responses.Models.FunctionShellCallEnvironment environment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemFunctionShellCall(System.String,Azure.AI.AgentServer.Responses.Models.FunctionShellAction,Azure.AI.AgentServer.Responses.Models.LocalShellCallStatus,Azure.AI.AgentServer.Responses.Models.FunctionShellCallEnvironment)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemFunctionShellCall (callId As String, action As FunctionShellAction, status As LocalShellCallStatus, environment As FunctionShellCallEnvironment) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemFunctionShellCall : string * Azure.AI.AgentServer.Responses.Models.FunctionShellAction * Azure.AI.AgentServer.Responses.Models.LocalShellCallStatus * Azure.AI.AgentServer.Responses.Models.FunctionShellCallEnvironment -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemFunctionShellCall (callId, action, status, environment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCall&gt;d__57))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCall&gt;d__57))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="action" Type="Azure.AI.AgentServer.Responses.Models.FunctionShellAction" />
+        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.LocalShellCallStatus" />
+        <Parameter Name="environment" Type="Azure.AI.AgentServer.Responses.Models.FunctionShellCallEnvironment" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID for the function shell call.</param>
+        <param name="action">The function shell action to perform.</param>
+        <param name="status">The status of the function shell call.</param>
+        <param name="environment">The execution environment for the shell call.</param>
+        <summary>
+            Convenience generator that yields the complete function shell call lifecycle.
+            Function shell calls have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemFunctionShellCallOutput">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionShellCallOutput (string callId, Azure.AI.AgentServer.Responses.Models.LocalShellCallOutputStatusEnum status, System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.FunctionShellCallOutputContent&gt; output, long? maxOutputLength = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemFunctionShellCallOutput(string callId, valuetype Azure.AI.AgentServer.Responses.Models.LocalShellCallOutputStatusEnum status, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.FunctionShellCallOutputContent&gt; output, valuetype System.Nullable`1&lt;int64&gt; maxOutputLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemFunctionShellCallOutput(System.String,Azure.AI.AgentServer.Responses.Models.LocalShellCallOutputStatusEnum,System.Collections.Generic.IEnumerable{Azure.AI.AgentServer.Responses.Models.FunctionShellCallOutputContent},System.Nullable{System.Int64})" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemFunctionShellCallOutput (callId As String, status As LocalShellCallOutputStatusEnum, output As IEnumerable(Of FunctionShellCallOutputContent), Optional maxOutputLength As Nullable(Of Long) = Nothing) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemFunctionShellCallOutput : string * Azure.AI.AgentServer.Responses.Models.LocalShellCallOutputStatusEnum * seq&lt;Azure.AI.AgentServer.Responses.Models.FunctionShellCallOutputContent&gt; * Nullable&lt;int64&gt; -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemFunctionShellCallOutput (callId, status, output, maxOutputLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCallOutput&gt;d__58))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCallOutput&gt;d__58))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.LocalShellCallOutputStatusEnum" />
+        <Parameter Name="output" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.FunctionShellCallOutputContent&gt;" />
+        <Parameter Name="maxOutputLength" Type="System.Nullable&lt;System.Int64&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID of the function shell call this output is for.</param>
+        <param name="status">The output status.</param>
+        <param name="output">The output content from the shell call.</param>
+        <param name="maxOutputLength">Optional maximum output length.</param>
+        <summary>
+            Convenience generator that yields the complete function shell call output lifecycle.
+            Function shell call outputs have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemImageGenCall">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemImageGenCall (string resultBase64);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemImageGenCall(string resultBase64) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemImageGenCall(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemImageGenCall (resultBase64 As String) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemImageGenCall : string -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemImageGenCall resultBase64" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemImageGenCall&gt;d__51))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemImageGenCall&gt;d__51))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resultBase64" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resultBase64">
+            The base64-encoded image data (PNG, JPEG, or WebP). For example:
+            <c>Convert.ToBase64String(imageBytes)</c>.
+            </param>
+        <summary>
+            Convenience generator that yields the complete image generation call output-item lifecycle
+            from a final base64-encoded image result.
+            </summary>
+        <returns>
+            An enumerable of events: <c>output_item.added</c> → <c>image_gen_call.in_progress</c> →
+            <c>image_gen_call.generating</c> → <c>image_gen_call.completed</c> → <c>output_item.done</c>.
+            </returns>
+        <remarks>
+            For streaming partial images (progressive rendering), use
+            <see cref="M:Azure.AI.AgentServer.Responses.ResponseEventStream.AddOutputItemImageGenCall" /> to get a builder and call
+            <see cref="M:Azure.AI.AgentServer.Responses.OutputItemImageGenCallBuilder.EmitPartialImage(System.String)" /> between
+            <c>EmitGenerating()</c> and <c>EmitCompleted()</c>.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemLocalShellCall">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemLocalShellCall (string callId, Azure.AI.AgentServer.Responses.Models.LocalShellExecAction action, Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemLocalShellCall(string callId, class Azure.AI.AgentServer.Responses.Models.LocalShellExecAction action, valuetype Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallStatus status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemLocalShellCall(System.String,Azure.AI.AgentServer.Responses.Models.LocalShellExecAction,Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallStatus)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemLocalShellCall (callId As String, action As LocalShellExecAction, status As OutputItemLocalShellToolCallStatus) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemLocalShellCall : string * Azure.AI.AgentServer.Responses.Models.LocalShellExecAction * Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallStatus -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemLocalShellCall (callId, action, status)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCall&gt;d__55))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCall&gt;d__55))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callId" Type="System.String" />
+        <Parameter Name="action" Type="Azure.AI.AgentServer.Responses.Models.LocalShellExecAction" />
+        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.OutputItemLocalShellToolCallStatus" />
+      </Parameters>
+      <Docs>
+        <param name="callId">The call ID for the shell call.</param>
+        <param name="action">The shell exec action to perform.</param>
+        <param name="status">The status of the shell tool call.</param>
+        <summary>
+            Convenience generator that yields the complete local shell tool call lifecycle.
+            Local shell calls have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemLocalShellCallOutput">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemLocalShellCallOutput (string output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemLocalShellCallOutput(string output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemLocalShellCallOutput(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemLocalShellCallOutput (output As String) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemLocalShellCallOutput : string -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemLocalShellCallOutput output" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCallOutput&gt;d__56))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCallOutput&gt;d__56))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="output">The output text from the shell command.</param>
+        <summary>
+            Convenience generator that yields the complete local shell tool call output lifecycle.
+            Local shell call outputs have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemMcpApprovalRequest">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMcpApprovalRequest (string serverLabel, string name, string arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMcpApprovalRequest(string serverLabel, string name, string arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemMcpApprovalRequest(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemMcpApprovalRequest (serverLabel As String, name As String, arguments As String) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemMcpApprovalRequest : string * string * string -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemMcpApprovalRequest (serverLabel, name, arguments)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalRequest&gt;d__62))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalRequest&gt;d__62))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverLabel" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serverLabel">The label of the MCP server.</param>
+        <param name="name">The name of the tool requiring approval.</param>
+        <param name="arguments">The arguments JSON for the tool call.</param>
+        <summary>
+            Convenience generator that yields the complete MCP approval request lifecycle.
+            MCP approval requests have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemMcpApprovalResponse">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMcpApprovalResponse (string approvalRequestId, bool approve);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMcpApprovalResponse(string approvalRequestId, bool approve) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemMcpApprovalResponse(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemMcpApprovalResponse (approvalRequestId As String, approve As Boolean) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemMcpApprovalResponse : string * bool -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemMcpApprovalResponse (approvalRequestId, approve)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalResponse&gt;d__63))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalResponse&gt;d__63))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="approvalRequestId" Type="System.String" />
+        <Parameter Name="approve" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="approvalRequestId">The ID of the approval request being responded to.</param>
+        <param name="approve">Whether the MCP tool call is approved.</param>
+        <summary>
+            Convenience generator that yields the complete MCP approval response lifecycle.
+            MCP approval responses have no intermediate events — only <c>output_item.added</c> and
+            <c>output_item.done</c>.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemMessage">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMessage (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMessage(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemMessage(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function OutputItemMessage (text As String) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemMessage : string -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemMessage text" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">The complete message text.</param>
+        <summary>
+            Convenience generator that yields the complete message output-item lifecycle
+            with a single text content part from a complete string (S-056).
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → text content convenience → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemMessage">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMessage (System.Collections.Generic.IAsyncEnumerable&lt;string&gt; chunks, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMessage(class System.Collections.Generic.IAsyncEnumerable`1&lt;string&gt; chunks, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemMessage(System.Collections.Generic.IAsyncEnumerable{System.String},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function OutputItemMessage (chunks As IAsyncEnumerable(Of String), Optional cancellationToken As CancellationToken = Nothing) As IAsyncEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemMessage : System.Collections.Generic.IAsyncEnumerable&lt;string&gt; * System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemMessage (chunks, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__45))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__45))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chunks" Type="System.Collections.Generic.IAsyncEnumerable&lt;System.String&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.EnumeratorCancellation]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.EnumeratorCancellation&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="chunks">An async enumerable of text chunks.</param>
+        <param name="cancellationToken">A token to cancel iteration.</param>
+        <summary>
+            Convenience generator that yields the complete message output-item lifecycle
+            with a single text content part from streaming chunks (S-056, S-058).
+            </summary>
+        <returns>An async enumerable of events: <c>output_item.added</c> → text content convenience → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemMessage">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMessage (string text, System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.Annotation&gt; annotations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemMessage(string text, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.Annotation&gt; annotations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemMessage(System.String,System.Collections.Generic.IEnumerable{Azure.AI.AgentServer.Responses.Models.Annotation})" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemMessage (text As String, annotations As IEnumerable(Of Annotation)) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemMessage : string * seq&lt;Azure.AI.AgentServer.Responses.Models.Annotation&gt; -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemMessage (text, annotations)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__44))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__44))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="annotations" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.Annotation&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="text">The complete message text.</param>
+        <param name="annotations">The annotations to attach to the text content part.</param>
+        <summary>
+            Convenience generator that yields the complete message output-item lifecycle
+            with a single text content part and annotations (S-056).
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → text content convenience (with annotations) → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemReasoningItem">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemReasoningItem (string summaryText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemReasoningItem(string summaryText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemReasoningItem(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemReasoningItem (summaryText As String) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemReasoningItem : string -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemReasoningItem summaryText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__49))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__49))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="summaryText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="summaryText">The complete summary text.</param>
+        <summary>
+            Convenience generator that yields the complete reasoning output-item lifecycle
+            with a single summary part from a complete string (S-056).
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → summary part convenience → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemReasoningItem">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemReasoningItem (System.Collections.Generic.IAsyncEnumerable&lt;string&gt; chunks, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemReasoningItem(class System.Collections.Generic.IAsyncEnumerable`1&lt;string&gt; chunks, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemReasoningItem(System.Collections.Generic.IAsyncEnumerable{System.String},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function OutputItemReasoningItem (chunks As IAsyncEnumerable(Of String), Optional cancellationToken As CancellationToken = Nothing) As IAsyncEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemReasoningItem : System.Collections.Generic.IAsyncEnumerable&lt;string&gt; * System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemReasoningItem (chunks, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__50))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__50))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IAsyncEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chunks" Type="System.Collections.Generic.IAsyncEnumerable&lt;System.String&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.EnumeratorCancellation]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.EnumeratorCancellation&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="chunks">An async enumerable of summary text chunks.</param>
+        <param name="cancellationToken">A token to cancel iteration.</param>
+        <summary>
+            Convenience generator that yields the complete reasoning output-item lifecycle
+            with a single summary part from streaming chunks (S-056, S-058).
+            </summary>
+        <returns>An async enumerable of events: <c>output_item.added</c> → summary part convenience → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputItemStructuredOutputs">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemStructuredOutputs (BinaryData output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt; OutputItemStructuredOutputs(class System.BinaryData output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.OutputItemStructuredOutputs(System.BinaryData)" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function OutputItemStructuredOutputs (output As BinaryData) As IEnumerable(Of ResponseStreamEvent)" />
+      <MemberSignature Language="F#" Value="member this.OutputItemStructuredOutputs : BinaryData -&gt; seq&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;" Usage="responseEventStream.OutputItemStructuredOutputs output" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemStructuredOutputs&gt;d__52))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemStructuredOutputs&gt;d__52))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.BinaryData" />
+      </Parameters>
+      <Docs>
+        <param name="output">
+            The structured data to return. Use <see cref="M:System.BinaryData.FromObjectAsJson``1(``0,System.Text.Json.JsonSerializerOptions)" />
+            to serialize a strongly typed object, or <see cref="M:System.BinaryData.FromString(System.String)" /> to pass raw JSON.
+            <para>
+            Example:
+            <c>BinaryData.FromObjectAsJson(new { sentiment = "positive", confidence = 0.95 })</c></para></param>
+        <summary>
+            Convenience generator that yields the complete structured outputs item lifecycle.
+            Use this to return any open-ended structured information as a JSON object. This is
+            useful when none of the existing output item types (message, function call, image, etc.)
+            fit your use case — for example, returning analytics results, classification labels,
+            form data, or any custom JSON payload.
+            </summary>
+        <returns>An enumerable of events: <c>output_item.added</c> → <c>output_item.done</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Responses.Models.ResponseObject Response { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.AgentServer.Responses.Models.ResponseObject Response" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Responses.ResponseEventStream.Response" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Response As ResponseObject" />
+      <MemberSignature Language="F#" Value="member this.Response : Azure.AI.AgentServer.Responses.Models.ResponseObject" Usage="Azure.AI.AgentServer.Responses.ResponseEventStream.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseObject" /> object being constructed.
+            Allows the handler to set any <see cref="T:Azure.AI.AgentServer.Responses.Models.ResponseObject" /> property
+            (e.g. <c>Metadata</c>, <c>Instructions</c>, <c>Temperature</c>)
+            before calling <see cref="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitCreated(Azure.AI.AgentServer.Responses.Models.ResponseStatus)" />.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
