@@ -1,6 +1,7 @@
 ---
-title: Azure ResourceGraph SDK for .NET
-description: Reference for Azure ResourceGraph SDK for .NET
+title: Azure Resourcegraph SDK for .NET
+description: Reference for Azure Resourcegraph SDK for .NET
+ms.date: 04/17/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: resourcegraph
@@ -8,4 +9,3 @@ ms.service: resourcegraph
 # Azure ResourceGraph SDK for .NET - preview
 ## Packages - preview
 [!INCLUDE [packages](resourcegraph-index.md)]
-
