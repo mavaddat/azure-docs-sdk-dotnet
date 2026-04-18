@@ -13,7 +13,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to SubscriptionResource. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -29,27 +29,87 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableAdvisorSubscriptionResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="CreateConfiguration">
-      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt; CreateConfiguration (Azure.ResourceManager.Advisor.Models.ConfigurationName configurationName, Azure.ResourceManager.Advisor.Models.ConfigData data, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.Models.ConfigData&gt; CreateConfiguration(valuetype Azure.ResourceManager.Advisor.Models.ConfigurationName configurationName, class Azure.ResourceManager.Advisor.Models.ConfigData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.CreateConfiguration(Azure.ResourceManager.Advisor.Models.ConfigurationName,Azure.ResourceManager.Advisor.Models.ConfigData,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateConfiguration (configurationName As ConfigurationName, data As ConfigData, Optional cancellationToken As CancellationToken = Nothing) As Response(Of ConfigData)" />
-      <MemberSignature Language="F#" Value="abstract member CreateConfiguration : Azure.ResourceManager.Advisor.Models.ConfigurationName * Azure.ResourceManager.Advisor.Models.ConfigData * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;&#xA;override this.CreateConfiguration : Azure.ResourceManager.Advisor.Models.ConfigurationName * Azure.ResourceManager.Advisor.Models.ConfigData * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;" Usage="mockableAdvisorSubscriptionResource.CreateConfiguration (configurationName, data, cancellationToken)" />
+    <Member MemberName="AdvisorPredict">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt; AdvisorPredict (Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt; AdvisorPredict(class Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.AdvisorPredict(Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AdvisorPredict (content As AdvisorPredictionContent, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AdvisorPredictionResult)" />
+      <MemberSignature Language="F#" Value="abstract member AdvisorPredict : Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt;&#xA;override this.AdvisorPredict : Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt;" Usage="mockableAdvisorSubscriptionResource.AdvisorPredict (content, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;</ReturnType>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="configurationName" Type="Azure.ResourceManager.Advisor.Models.ConfigurationName" />
-        <Parameter Name="data" Type="Azure.ResourceManager.Advisor.Models.ConfigData" />
+        <Parameter Name="content" Type="Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="content"> The request body. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Predicts a recommendation.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/predict. </description></item><item><term> Operation Id. </term><description> Advisor_Predict. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="content" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AdvisorPredictAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt;&gt; AdvisorPredictAsync (Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt;&gt; AdvisorPredictAsync(class Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.AdvisorPredictAsync(Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AdvisorPredictAsync (content As AdvisorPredictionContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AdvisorPredictionResult))" />
+      <MemberSignature Language="F#" Value="abstract member AdvisorPredictAsync : Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt;&gt;&#xA;override this.AdvisorPredictAsync : Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt;&gt;" Usage="mockableAdvisorSubscriptionResource.AdvisorPredictAsync (content, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorPredictionResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="Azure.ResourceManager.Advisor.Models.AdvisorPredictionContent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="content"> The request body. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Predicts a recommendation.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/predict. </description></item><item><term> Operation Id. </term><description> Advisor_Predict. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="content" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAdvisorConfigurationInSubscription">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt; CreateAdvisorConfigurationInSubscription (Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName configurationName, Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData data, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt; CreateAdvisorConfigurationInSubscription(valuetype Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName configurationName, class Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.CreateAdvisorConfigurationInSubscription(Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName,Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateAdvisorConfigurationInSubscription (configurationName As AdvisorConfigurationName, data As AdvisorConfigurationData, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AdvisorConfigurationData)" />
+      <MemberSignature Language="F#" Value="abstract member CreateAdvisorConfigurationInSubscription : Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName * Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;&#xA;override this.CreateAdvisorConfigurationInSubscription : Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName * Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;" Usage="mockableAdvisorSubscriptionResource.CreateAdvisorConfigurationInSubscription (configurationName, data, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configurationName" Type="Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName" />
+        <Parameter Name="data" Type="Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
@@ -58,30 +118,30 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Create/Overwrite Azure Advisor configuration and also delete all configurations of contained resource groups.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations/{configurationName}</description></item><item><term>Operation Id</term><description>Configurations_CreateInSubscription</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations/{configurationName}. </description></item><item><term> Operation Id. </term><description> ConfigurationsOperationGroup_CreateInSubscription. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="data" /> is null. </exception>
       </Docs>
     </Member>
-    <Member MemberName="CreateConfigurationAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;&gt; CreateConfigurationAsync (Azure.ResourceManager.Advisor.Models.ConfigurationName configurationName, Azure.ResourceManager.Advisor.Models.ConfigData data, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.Models.ConfigData&gt;&gt; CreateConfigurationAsync(valuetype Azure.ResourceManager.Advisor.Models.ConfigurationName configurationName, class Azure.ResourceManager.Advisor.Models.ConfigData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.CreateConfigurationAsync(Azure.ResourceManager.Advisor.Models.ConfigurationName,Azure.ResourceManager.Advisor.Models.ConfigData,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateConfigurationAsync (configurationName As ConfigurationName, data As ConfigData, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of ConfigData))" />
-      <MemberSignature Language="F#" Value="abstract member CreateConfigurationAsync : Azure.ResourceManager.Advisor.Models.ConfigurationName * Azure.ResourceManager.Advisor.Models.ConfigData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;&gt;&#xA;override this.CreateConfigurationAsync : Azure.ResourceManager.Advisor.Models.ConfigurationName * Azure.ResourceManager.Advisor.Models.ConfigData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;&gt;" Usage="mockableAdvisorSubscriptionResource.CreateConfigurationAsync (configurationName, data, cancellationToken)" />
+    <Member MemberName="CreateAdvisorConfigurationInSubscriptionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;&gt; CreateAdvisorConfigurationInSubscriptionAsync (Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName configurationName, Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData data, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;&gt; CreateAdvisorConfigurationInSubscriptionAsync(valuetype Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName configurationName, class Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.CreateAdvisorConfigurationInSubscriptionAsync(Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName,Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateAdvisorConfigurationInSubscriptionAsync (configurationName As AdvisorConfigurationName, data As AdvisorConfigurationData, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AdvisorConfigurationData))" />
+      <MemberSignature Language="F#" Value="abstract member CreateAdvisorConfigurationInSubscriptionAsync : Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName * Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;&gt;&#xA;override this.CreateAdvisorConfigurationInSubscriptionAsync : Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName * Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;&gt;" Usage="mockableAdvisorSubscriptionResource.CreateAdvisorConfigurationInSubscriptionAsync (configurationName, data, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;&gt;</ReturnType>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="configurationName" Type="Azure.ResourceManager.Advisor.Models.ConfigurationName" />
-        <Parameter Name="data" Type="Azure.ResourceManager.Advisor.Models.ConfigData" />
+        <Parameter Name="configurationName" Type="Azure.ResourceManager.Advisor.Models.AdvisorConfigurationName" />
+        <Parameter Name="data" Type="Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
@@ -90,7 +150,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Create/Overwrite Azure Advisor configuration and also delete all configurations of contained resource groups.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations/{configurationName}</description></item><item><term>Operation Id</term><description>Configurations_CreateInSubscription</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations/{configurationName}. </description></item><item><term> Operation Id. </term><description> ConfigurationsOperationGroup_CreateInSubscription. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -118,7 +178,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Initiates the recommendation generation or computation process for a subscription. This operation is asynchronous. The generated recommendations are stored in a cache in the Advisor service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations</description></item><item><term>Operation Id</term><description>Recommendations_Generate</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Advisor.ResourceRecommendationBaseResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations. </description></item><item><term> Operation Id. </term><description> RecommendationsOperationGroup_Generate. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -144,50 +204,161 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Initiates the recommendation generation or computation process for a subscription. This operation is asynchronous. The generated recommendations are stored in a cache in the Advisor service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations</description></item><item><term>Operation Id</term><description>Recommendations_Generate</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Advisor.ResourceRecommendationBaseResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations. </description></item><item><term> Operation Id. </term><description> RecommendationsOperationGroup_Generate. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetConfigurations">
-      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt; GetConfigurations (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Advisor.Models.ConfigData&gt; GetConfigurations(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetConfigurations(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetConfigurations (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of ConfigData)" />
-      <MemberSignature Language="F#" Value="abstract member GetConfigurations : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;&#xA;override this.GetConfigurations : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;" Usage="mockableAdvisorSubscriptionResource.GetConfigurations cancellationToken" />
+    <Member MemberName="GetAdvisorAssessment">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt; GetAdvisorAssessment (string assessmentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt; GetAdvisorAssessment(string assessmentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorAssessment(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorAssessment (assessmentName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AdvisorAssessmentResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorAssessment : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt;&#xA;override this.GetAdvisorAssessment : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorAssessment (assessmentName, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;</ReturnType>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
+        <Parameter Name="assessmentName" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
+        <param name="assessmentName"> Advisor assessment name. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Retrieve Azure Advisor configurations and also retrieve configurations of contained resource groups.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations</description></item><item><term>Operation Id</term><description>Configurations_ListBySubscription</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.Models.ConfigData" /> that may take multiple service requests to iterate over. </returns>
+            Get an existing Azure Advisor assessment.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/assessments/{assessmentName}. </description></item><item><term> Operation Id. </term><description> AssessmentResults_Get. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assessmentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assessmentName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorAssessmentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt;&gt; GetAdvisorAssessmentAsync (string assessmentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt;&gt; GetAdvisorAssessmentAsync(string assessmentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorAssessmentAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorAssessmentAsync (assessmentName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AdvisorAssessmentResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorAssessmentAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt;&gt;&#xA;override this.GetAdvisorAssessmentAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt;&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorAssessmentAsync (assessmentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorAssessmentResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assessmentName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="assessmentName"> Advisor assessment name. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get an existing Azure Advisor assessment.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/assessments/{assessmentName}. </description></item><item><term> Operation Id. </term><description> AssessmentResults_Get. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assessmentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assessmentName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorAssessments">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Advisor.AdvisorAssessmentCollection GetAdvisorAssessments ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Advisor.AdvisorAssessmentCollection GetAdvisorAssessments() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorAssessments" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorAssessments () As AdvisorAssessmentCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorAssessments : unit -&gt; Azure.ResourceManager.Advisor.AdvisorAssessmentCollection&#xA;override this.GetAdvisorAssessments : unit -&gt; Azure.ResourceManager.Advisor.AdvisorAssessmentCollection" Usage="mockableAdvisorSubscriptionResource.GetAdvisorAssessments " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Advisor.AdvisorAssessmentCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Gets a collection of AdvisorAssessments in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of AdvisorAssessments and their operations over a AdvisorAssessmentResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetConfigurationsAsync">
-      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt; GetConfigurationsAsync (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Advisor.Models.ConfigData&gt; GetConfigurationsAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetConfigurationsAsync(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetConfigurationsAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of ConfigData)" />
-      <MemberSignature Language="F#" Value="abstract member GetConfigurationsAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;&#xA;override this.GetConfigurationsAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;" Usage="mockableAdvisorSubscriptionResource.GetConfigurationsAsync cancellationToken" />
+    <Member MemberName="GetAdvisorAssessmentTypes">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt; GetAdvisorAssessmentTypes (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt; GetAdvisorAssessmentTypes(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorAssessmentTypes(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorAssessmentTypes (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of AdvisorAssessmentType)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorAssessmentTypes : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt;&#xA;override this.GetAdvisorAssessmentTypes : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorAssessmentTypes cancellationToken" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.ConfigData&gt;</ReturnType>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get list of Azure Advisor assessment types.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/assessmentTypes. </description></item><item><term> Operation Id. </term><description> AssessmentTypesOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorAssessmentTypesAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt; GetAdvisorAssessmentTypesAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt; GetAdvisorAssessmentTypesAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorAssessmentTypesAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorAssessmentTypesAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of AdvisorAssessmentType)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorAssessmentTypesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt;&#xA;override this.GetAdvisorAssessmentTypesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorAssessmentTypesAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get list of Azure Advisor assessment types.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/assessmentTypes. </description></item><item><term> Operation Id. </term><description> AssessmentTypesOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.Models.AdvisorAssessmentType" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorConfigurationsBySubscription">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt; GetAdvisorConfigurationsBySubscription (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt; GetAdvisorConfigurationsBySubscription(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorConfigurationsBySubscription(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorConfigurationsBySubscription (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of AdvisorConfigurationData)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorConfigurationsBySubscription : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;&#xA;override this.GetAdvisorConfigurationsBySubscription : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorConfigurationsBySubscription cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
@@ -196,8 +367,316 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Retrieve Azure Advisor configurations and also retrieve configurations of contained resource groups.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations</description></item><item><term>Operation Id</term><description>Configurations_ListBySubscription</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Advisor.Models.ConfigData" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations. </description></item><item><term> Operation Id. </term><description> ConfigurationsOperationGroup_ListBySubscription. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorConfigurationsBySubscriptionAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt; GetAdvisorConfigurationsBySubscriptionAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt; GetAdvisorConfigurationsBySubscriptionAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorConfigurationsBySubscriptionAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorConfigurationsBySubscriptionAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of AdvisorConfigurationData)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorConfigurationsBySubscriptionAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;&#xA;override this.GetAdvisorConfigurationsBySubscriptionAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorConfigurationsBySubscriptionAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Retrieve Azure Advisor configurations and also retrieve configurations of contained resource groups.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations. </description></item><item><term> Operation Id. </term><description> ConfigurationsOperationGroup_ListBySubscription. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.Models.AdvisorConfigurationData" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorResiliencyReview">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt; GetAdvisorResiliencyReview (string reviewId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt; GetAdvisorResiliencyReview(string reviewId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorResiliencyReview(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorResiliencyReview (reviewId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AdvisorResiliencyReviewResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorResiliencyReview : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt;&#xA;override this.GetAdvisorResiliencyReview : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorResiliencyReview (reviewId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reviewId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="reviewId"> Existing review id. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get existing Azure Advisor resiliency review by id.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/resiliencyReviews/{reviewId}. </description></item><item><term> Operation Id. </term><description> ResiliencyReviews_Get. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reviewId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="reviewId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorResiliencyReviewAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt;&gt; GetAdvisorResiliencyReviewAsync (string reviewId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt;&gt; GetAdvisorResiliencyReviewAsync(string reviewId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorResiliencyReviewAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorResiliencyReviewAsync (reviewId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AdvisorResiliencyReviewResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorResiliencyReviewAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt;&gt;&#xA;override this.GetAdvisorResiliencyReviewAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt;&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorResiliencyReviewAsync (reviewId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorResiliencyReviewResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reviewId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="reviewId"> Existing review id. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get existing Azure Advisor resiliency review by id.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/resiliencyReviews/{reviewId}. </description></item><item><term> Operation Id. </term><description> ResiliencyReviews_Get. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reviewId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="reviewId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorResiliencyReviews">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Advisor.AdvisorResiliencyReviewCollection GetAdvisorResiliencyReviews ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Advisor.AdvisorResiliencyReviewCollection GetAdvisorResiliencyReviews() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorResiliencyReviews" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorResiliencyReviews () As AdvisorResiliencyReviewCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorResiliencyReviews : unit -&gt; Azure.ResourceManager.Advisor.AdvisorResiliencyReviewCollection&#xA;override this.GetAdvisorResiliencyReviews : unit -&gt; Azure.ResourceManager.Advisor.AdvisorResiliencyReviewCollection" Usage="mockableAdvisorSubscriptionResource.GetAdvisorResiliencyReviews " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Advisor.AdvisorResiliencyReviewCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Gets a collection of AdvisorResiliencyReviews in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of AdvisorResiliencyReviews and their operations over a AdvisorResiliencyReviewResource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorScoreEntities">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Advisor.AdvisorScoreEntityCollection GetAdvisorScoreEntities ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Advisor.AdvisorScoreEntityCollection GetAdvisorScoreEntities() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorScoreEntities" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorScoreEntities () As AdvisorScoreEntityCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorScoreEntities : unit -&gt; Azure.ResourceManager.Advisor.AdvisorScoreEntityCollection&#xA;override this.GetAdvisorScoreEntities : unit -&gt; Azure.ResourceManager.Advisor.AdvisorScoreEntityCollection" Usage="mockableAdvisorSubscriptionResource.GetAdvisorScoreEntities " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Advisor.AdvisorScoreEntityCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Gets a collection of AdvisorScoreEntities in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of AdvisorScoreEntities and their operations over a AdvisorScoreEntityResource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorScoreEntity">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt; GetAdvisorScoreEntity (string name, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt; GetAdvisorScoreEntity(string name, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorScoreEntity(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorScoreEntity (name As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AdvisorScoreEntityResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorScoreEntity : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt;&#xA;override this.GetAdvisorScoreEntity : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorScoreEntity (name, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The scope of Advisor score entity. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets the advisor score.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/advisorScore/{name}. </description></item><item><term> Operation Id. </term><description> AdvisorScoreEntities_Get. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorScoreEntityAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt;&gt; GetAdvisorScoreEntityAsync (string name, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt;&gt; GetAdvisorScoreEntityAsync(string name, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorScoreEntityAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorScoreEntityAsync (name As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AdvisorScoreEntityResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorScoreEntityAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt;&gt;&#xA;override this.GetAdvisorScoreEntityAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt;&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorScoreEntityAsync (name, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Advisor.AdvisorScoreEntityResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The scope of Advisor score entity. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets the advisor score.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/advisorScore/{name}. </description></item><item><term> Operation Id. </term><description> AdvisorScoreEntities_Get. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorSuppressionContracts">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt; GetAdvisorSuppressionContracts (int? top = default, string skipToken = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt; GetAdvisorSuppressionContracts(valuetype System.Nullable`1&lt;int32&gt; top, string skipToken, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorSuppressionContracts(System.Nullable{System.Int32},System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorSuppressionContracts (Optional top As Nullable(Of Integer) = Nothing, Optional skipToken As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of AdvisorSuppressionContractResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorSuppressionContracts : Nullable&lt;int&gt; * string * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt;&#xA;override this.GetAdvisorSuppressionContracts : Nullable&lt;int&gt; * string * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorSuppressionContracts (top, skipToken, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="top" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="skipToken" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="top"> The number of suppressions per page if a paged version of this API is being used. </param>
+        <param name="skipToken"> The page-continuation token to use with a paged version of this API. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Retrieves the list of snoozed or dismissed suppressions for a subscription. The snoozed or dismissed attribute of a recommendation is referred to as a suppression.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/suppressions. </description></item><item><term> Operation Id. </term><description> SuppressionsOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorSuppressionContractsAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt; GetAdvisorSuppressionContractsAsync (int? top = default, string skipToken = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt; GetAdvisorSuppressionContractsAsync(valuetype System.Nullable`1&lt;int32&gt; top, string skipToken, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorSuppressionContractsAsync(System.Nullable{System.Int32},System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorSuppressionContractsAsync (Optional top As Nullable(Of Integer) = Nothing, Optional skipToken As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of AdvisorSuppressionContractResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorSuppressionContractsAsync : Nullable&lt;int&gt; * string * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt;&#xA;override this.GetAdvisorSuppressionContractsAsync : Nullable&lt;int&gt; * string * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorSuppressionContractsAsync (top, skipToken, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="top" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="skipToken" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="top"> The number of suppressions per page if a paged version of this API is being used. </param>
+        <param name="skipToken"> The page-continuation token to use with a paged version of this API. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Retrieves the list of snoozed or dismissed suppressions for a subscription. The snoozed or dismissed attribute of a recommendation is referred to as a suppression.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/suppressions. </description></item><item><term> Operation Id. </term><description> SuppressionsOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.AdvisorSuppressionContractResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorWorkloads">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt; GetAdvisorWorkloads (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt; GetAdvisorWorkloads(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorWorkloads(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorWorkloads (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of AdvisorWorkload)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorWorkloads : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt;&#xA;override this.GetAdvisorWorkloads : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorWorkloads cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get list of Workloads.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/workloads. </description></item><item><term> Operation Id. </term><description> WorkloadsOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.Models.AdvisorWorkload" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdvisorWorkloadsAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt; GetAdvisorWorkloadsAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt; GetAdvisorWorkloadsAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetAdvisorWorkloadsAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAdvisorWorkloadsAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of AdvisorWorkload)" />
+      <MemberSignature Language="F#" Value="abstract member GetAdvisorWorkloadsAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt;&#xA;override this.GetAdvisorWorkloadsAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt;" Usage="mockableAdvisorSubscriptionResource.GetAdvisorWorkloadsAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.Models.AdvisorWorkload&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get list of Workloads.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/workloads. </description></item><item><term> Operation Id. </term><description> WorkloadsOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.Models.AdvisorWorkload" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -224,7 +703,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Retrieves the status of the recommendation computation or generation process. Invoke this API after calling the generation recommendation. The URI of this API is returned in the Location field of the response header.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations/{operationId}</description></item><item><term>Operation Id</term><description>Recommendations_GetGenerateStatus</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Advisor.ResourceRecommendationBaseResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations/{operationId}. </description></item><item><term> Operation Id. </term><description> RecommendationsOperationGroup_GetGenerateStatus. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -252,68 +731,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Retrieves the status of the recommendation computation or generation process. Invoke this API after calling the generation recommendation. The URI of this API is returned in the Location field of the response header.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations/{operationId}</description></item><item><term>Operation Id</term><description>Recommendations_GetGenerateStatus</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Advisor.ResourceRecommendationBaseResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations/{operationId}. </description></item><item><term> Operation Id. </term><description> RecommendationsOperationGroup_GetGenerateStatus. </description></item><item><term> Default Api Version. </term><description> 2025-05-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="GetSuppressionContracts">
-      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Advisor.SuppressionContractResource&gt; GetSuppressionContracts (int? top = default, string skipToken = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Advisor.SuppressionContractResource&gt; GetSuppressionContracts(valuetype System.Nullable`1&lt;int32&gt; top, string skipToken, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetSuppressionContracts(System.Nullable{System.Int32},System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSuppressionContracts (Optional top As Nullable(Of Integer) = Nothing, Optional skipToken As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of SuppressionContractResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetSuppressionContracts : Nullable&lt;int&gt; * string * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.SuppressionContractResource&gt;&#xA;override this.GetSuppressionContracts : Nullable&lt;int&gt; * string * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Advisor.SuppressionContractResource&gt;" Usage="mockableAdvisorSubscriptionResource.GetSuppressionContracts (top, skipToken, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Advisor.SuppressionContractResource&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="top" Type="System.Nullable&lt;System.Int32&gt;" />
-        <Parameter Name="skipToken" Type="System.String" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-      </Parameters>
-      <Docs>
-        <param name="top"> The number of suppressions per page if a paged version of this API is being used. </param>
-        <param name="skipToken"> The page-continuation token to use with a paged version of this API. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Retrieves the list of snoozed or dismissed suppressions for a subscription. The snoozed or dismissed attribute of a recommendation is referred to as a suppression.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/suppressions</description></item><item><term>Operation Id</term><description>Suppressions_List</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Advisor.SuppressionContractResource" /></description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Advisor.SuppressionContractResource" /> that may take multiple service requests to iterate over. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="GetSuppressionContractsAsync">
-      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.SuppressionContractResource&gt; GetSuppressionContractsAsync (int? top = default, string skipToken = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Advisor.SuppressionContractResource&gt; GetSuppressionContractsAsync(valuetype System.Nullable`1&lt;int32&gt; top, string skipToken, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Advisor.Mocking.MockableAdvisorSubscriptionResource.GetSuppressionContractsAsync(System.Nullable{System.Int32},System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSuppressionContractsAsync (Optional top As Nullable(Of Integer) = Nothing, Optional skipToken As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of SuppressionContractResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetSuppressionContractsAsync : Nullable&lt;int&gt; * string * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.SuppressionContractResource&gt;&#xA;override this.GetSuppressionContractsAsync : Nullable&lt;int&gt; * string * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.SuppressionContractResource&gt;" Usage="mockableAdvisorSubscriptionResource.GetSuppressionContractsAsync (top, skipToken, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Advisor</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Advisor.SuppressionContractResource&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="top" Type="System.Nullable&lt;System.Int32&gt;" />
-        <Parameter Name="skipToken" Type="System.String" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-      </Parameters>
-      <Docs>
-        <param name="top"> The number of suppressions per page if a paged version of this API is being used. </param>
-        <param name="skipToken"> The page-continuation token to use with a paged version of this API. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Retrieves the list of snoozed or dismissed suppressions for a subscription. The snoozed or dismissed attribute of a recommendation is referred to as a suppression.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/suppressions</description></item><item><term>Operation Id</term><description>Suppressions_List</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Advisor.SuppressionContractResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Advisor.SuppressionContractResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
