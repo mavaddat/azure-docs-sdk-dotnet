@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.AI.AgentServer.Core, agentserver
-ms.date: 04/15/2026
+ms.date: 04/19/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: agentserver
@@ -58,7 +58,7 @@ The static entry point. `AgentHost.CreateBuilder()` returns an `AgentHostBuilder
 
 ### AgentHostBuilder
 
-Configures the underlying ASP.NET Core host with sensible defaults: Kestrel on the `PORT` environment variable (or 8088), OpenTelemetry traces and metrics, a `/readiness` health endpoint, and `x-platform-server` user-agent header. Protocol packages use `RegisterProtocol()` to add their endpoints — each protocol registers its identity segment with the `ServerUserAgentRegistry`.
+Configures the underlying ASP.NET Core host with sensible defaults: Kestrel on the `PORT` environment variable (or 8088), OpenTelemetry traces and metrics, a `/readiness` health endpoint, and `x-platform-server` version header. Protocol packages use `RegisterProtocol()` to add their endpoints — each protocol registers its identity segment with the `ServerVersionRegistry`.
 
 ### AgentHostApp
 
@@ -70,7 +70,7 @@ Reads Azure AI Foundry platform variables (`FOUNDRY_*`, `PORT`, `SSE_KEEPALIVE_I
 
 ### Telemetry
 
-OpenTelemetry is configured automatically via `Azure.Monitor.OpenTelemetry.AspNetCore`. The `AgentHostTelemetry` class exposes the shared activity source and meter names (`ResponsesSourceName`, `InvocationsSourceName`, `ResponsesMeterName`, `InvocationsMeterName`) for the Responses and Invocations protocols. OTLP export is enabled when the `OTEL_EXPORTER_OTLP_ENDPOINT` environment variable is set.
+OpenTelemetry is configured automatically via `Azure.Monitor.OpenTelemetry.AspNetCore`. The Responses and Invocations protocols use dedicated activity source names (`Azure.AI.AgentServer.Responses` and `Azure.AI.AgentServer.Invocations`) for distributed tracing. OTLP export is enabled when the `OTEL_EXPORTER_OTLP_ENDPOINT` environment variable is set.
 
 ### Health endpoint
 
@@ -78,7 +78,7 @@ A `/readiness` endpoint is registered by default, responding to liveness and rea
 
 ## Examples
 
-You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.21/sdk/agentserver/Azure.AI.AgentServer.Core/samples).
+You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.22/sdk/agentserver/Azure.AI.AgentServer.Core/samples).
 
 ## Troubleshooting
 
@@ -89,11 +89,11 @@ You can familiarise yourself with different APIs using [Samples](https://github.
 
 ### Logging
 
-The library emits OpenTelemetry traces via the `Azure.AI.AgentServer.Responses` and `Azure.AI.AgentServer.Invocations` activity sources. Enable ASP.NET Core logging in your application configuration to diagnose startup issues.
+The library emits OpenTelemetry traces via the `Azure.AI.AgentServer.Responses` and `Azure.AI.AgentServer.Invocations` activity sources. Inbound request logging is enabled automatically for Tier 1 and Tier 2 setups; for Tier 3, call `AddAgentServerLogging()` and `UseAgentServerLogging()` to enable it. Enable ASP.NET Core logging in your application configuration to diagnose startup issues.
 
 ## Next steps
 
-- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.21/sdk/agentserver/Azure.AI.AgentServer.Core/samples) — Getting started, multi-protocol composition
+- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.22/sdk/agentserver/Azure.AI.AgentServer.Core/samples) — Getting started, multi-protocol composition
 
 ## Contributing
 
@@ -104,10 +104,10 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 <!-- LINKS -->
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.21/sdk/agentserver/Azure.AI.AgentServer.Core/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.22/sdk/agentserver/Azure.AI.AgentServer.Core/src
 [nuget]: https://www.nuget.org/packages/Azure.AI.AgentServer.Core
 [product_doc]: https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agents
-[migration]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.21/sdk/agentserver/Azure.AI.AgentServer.Core/MigrationGuide.md
-[responses]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.21/sdk/agentserver/Azure.AI.AgentServer.Responses
-[invocations]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.21/sdk/agentserver/Azure.AI.AgentServer.Invocations
+[migration]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.22/sdk/agentserver/Azure.AI.AgentServer.Core/MigrationGuide.md
+[responses]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.22/sdk/agentserver/Azure.AI.AgentServer.Responses
+[invocations]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.22/sdk/agentserver/Azure.AI.AgentServer.Invocations
 
