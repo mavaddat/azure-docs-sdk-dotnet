@@ -1,7 +1,7 @@
 ---
 title: Azure Quota SDK for .NET
 description: Reference for Azure Quota SDK for .NET
-ms.date: 04/17/2026
+ms.date: 04/20/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: quota
