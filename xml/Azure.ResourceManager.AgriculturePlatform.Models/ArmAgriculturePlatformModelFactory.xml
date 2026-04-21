@@ -13,7 +13,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -48,7 +48,7 @@
         <param name="storageAccountResourceId"> Storage account resource Id. </param>
         <param name="keyVaultResourceId"> Key vault resource Id. </param>
         <param name="redisCacheResourceId"> Redis cache resource Id. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServiceConfig" />. </summary>
+        <summary> Config of the AgriService resource instance. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServiceConfig" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -79,17 +79,75 @@
         <Parameter Name="sku" Type="Azure.ResourceManager.AgriculturePlatform.Models.AgriculturePlatformSku" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="tags"> The tags. </param>
-        <param name="location"> The location. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <param name="identity"> The managed service identities assigned to this resource. </param>
         <param name="sku"> The SKU (Stock Keeping Unit) assigned to this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.AgriculturePlatform.AgricultureServiceData" />. </summary>
+        <summary> Schema of the AgriService resource from Microsoft.AgriculturePlatform resource provider. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.AgriculturePlatform.AgricultureServiceData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgricultureServicePatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatch AgricultureServicePatch (Azure.ResourceManager.Models.ManagedServiceIdentity identity = default, Azure.ResourceManager.AgriculturePlatform.Models.AgriculturePlatformSku sku = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties properties = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatch AgricultureServicePatch(class Azure.ResourceManager.Models.ManagedServiceIdentity identity, class Azure.ResourceManager.AgriculturePlatform.Models.AgriculturePlatformSku sku, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, class Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.AgriculturePlatform.Models.ArmAgriculturePlatformModelFactory.AgricultureServicePatch(Azure.ResourceManager.Models.ManagedServiceIdentity,Azure.ResourceManager.AgriculturePlatform.Models.AgriculturePlatformSku,System.Collections.Generic.IDictionary{System.String,System.String},Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgricultureServicePatch (Optional identity As ManagedServiceIdentity = Nothing, Optional sku As AgriculturePlatformSku = Nothing, Optional tags As IDictionary(Of String, String) = Nothing, Optional properties As AgricultureServicePatchProperties = Nothing) As AgricultureServicePatch" />
+      <MemberSignature Language="F#" Value="static member AgricultureServicePatch : Azure.ResourceManager.Models.ManagedServiceIdentity * Azure.ResourceManager.AgriculturePlatform.Models.AgriculturePlatformSku * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties -&gt; Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatch" Usage="Azure.ResourceManager.AgriculturePlatform.Models.ArmAgriculturePlatformModelFactory.AgricultureServicePatch (identity, sku, tags, properties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.AgriculturePlatform</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" />
+        <Parameter Name="sku" Type="Azure.ResourceManager.AgriculturePlatform.Models.AgriculturePlatformSku" />
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="properties" Type="Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties" />
+      </Parameters>
+      <Docs>
+        <param name="identity"> The managed service identities assigned to this resource. </param>
+        <param name="sku"> The SKU (Stock Keeping Unit) assigned to this resource. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="properties"> The resource-specific properties for this resource. </param>
+        <summary> The type used for update operations of the AgriServiceResource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatch" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgricultureServicePatchProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties AgricultureServicePatchProperties (Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServiceConfig config = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.AgriculturePlatform.Models.DataConnectorCredentialMap&gt; dataConnectorCredentials = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.AgriculturePlatform.Models.InstalledSolutionMap&gt; installedSolutions = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties AgricultureServicePatchProperties(class Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServiceConfig config, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.AgriculturePlatform.Models.DataConnectorCredentialMap&gt; dataConnectorCredentials, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.AgriculturePlatform.Models.InstalledSolutionMap&gt; installedSolutions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.AgriculturePlatform.Models.ArmAgriculturePlatformModelFactory.AgricultureServicePatchProperties(Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServiceConfig,System.Collections.Generic.IEnumerable{Azure.ResourceManager.AgriculturePlatform.Models.DataConnectorCredentialMap},System.Collections.Generic.IEnumerable{Azure.ResourceManager.AgriculturePlatform.Models.InstalledSolutionMap})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgricultureServicePatchProperties (Optional config As AgricultureServiceConfig = Nothing, Optional dataConnectorCredentials As IEnumerable(Of DataConnectorCredentialMap) = Nothing, Optional installedSolutions As IEnumerable(Of InstalledSolutionMap) = Nothing) As AgricultureServicePatchProperties" />
+      <MemberSignature Language="F#" Value="static member AgricultureServicePatchProperties : Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServiceConfig * seq&lt;Azure.ResourceManager.AgriculturePlatform.Models.DataConnectorCredentialMap&gt; * seq&lt;Azure.ResourceManager.AgriculturePlatform.Models.InstalledSolutionMap&gt; -&gt; Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties" Usage="Azure.ResourceManager.AgriculturePlatform.Models.ArmAgriculturePlatformModelFactory.AgricultureServicePatchProperties (config, dataConnectorCredentials, installedSolutions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.AgriculturePlatform</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="config" Type="Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServiceConfig" />
+        <Parameter Name="dataConnectorCredentials" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.AgriculturePlatform.Models.DataConnectorCredentialMap&gt;" />
+        <Parameter Name="installedSolutions" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.AgriculturePlatform.Models.InstalledSolutionMap&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="config"> Config of the AgriService instance. </param>
+        <param name="dataConnectorCredentials"> Data connector credentials of AgriService instance. </param>
+        <param name="installedSolutions"> AgriService installed solutions. </param>
+        <summary> The updatable properties of the AgriServiceResource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServicePatchProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,7 +175,7 @@
       <Docs>
         <param name="provisioningState"> The status of the last operation. </param>
         <param name="config"> Config of the AgriService instance. </param>
-        <param name="managedOnBehalfOfMoboBrokerResources"> Managed On Behalf Of Configuration. </param>
+        <param name="managedOnBehalfOfMoboBrokerResources"> Associated MoboBrokerResources. </param>
         <param name="dataConnectorCredentials"> Data connector credentials of AgriService instance. </param>
         <param name="installedSolutions"> AgriService installed solutions. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.AgricultureServiceProperties" />. </summary>
@@ -144,7 +202,7 @@
       </Parameters>
       <Docs>
         <param name="solutions"> Agri solutions list. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.AvailableAgriSolutionListResult" />. </summary>
+        <summary> The list of available agri solutions. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.AvailableAgriSolutionListResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -184,7 +242,7 @@
         <param name="accessAzureDataManagerForAgricultureApplicationId"> Entra application Id used to access azure data manager for agriculture instance. </param>
         <param name="accessAzureDataManagerForAgricultureApplicationName"> Entra application name used to access azure data manager for agriculture instance. </param>
         <param name="isValidateInput"> Whether solution inference will validate input. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.DataManagerForAgricultureSolution" />. </summary>
+        <summary> Data Manager for Agriculture solution. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.DataManagerForAgricultureSolution" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -210,7 +268,7 @@
       <Docs>
         <param name="saasOfferId"> Saas offer Id. </param>
         <param name="publisherId"> Publisher Id. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.MarketPlaceOfferDetails" />. </summary>
+        <summary> Marketplace offer details of Agri solution. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.AgriculturePlatform.Models.MarketPlaceOfferDetails" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>

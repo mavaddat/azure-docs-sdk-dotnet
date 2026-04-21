@@ -13,10 +13,48 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
+    <Member MemberName="AstroOfferDetails">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Astro.Models.AstroOfferDetails AstroOfferDetails (string publisherId = default, string offerId = default, string planId = default, string planName = default, string termUnit = default, string termId = default, Azure.ResourceManager.Astro.Models.AstroRenewalMode? renewalMode = default, DateTimeOffset? endOn = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Astro.Models.AstroOfferDetails AstroOfferDetails(string publisherId, string offerId, string planId, string planName, string termUnit, string termId, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Astro.Models.AstroRenewalMode&gt; renewalMode, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; endOn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Astro.Models.ArmAstroModelFactory.AstroOfferDetails(System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{Azure.ResourceManager.Astro.Models.AstroRenewalMode},System.Nullable{System.DateTimeOffset})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AstroOfferDetails (Optional publisherId As String = Nothing, Optional offerId As String = Nothing, Optional planId As String = Nothing, Optional planName As String = Nothing, Optional termUnit As String = Nothing, Optional termId As String = Nothing, Optional renewalMode As Nullable(Of AstroRenewalMode) = Nothing, Optional endOn As Nullable(Of DateTimeOffset) = Nothing) As AstroOfferDetails" />
+      <MemberSignature Language="F#" Value="static member AstroOfferDetails : string * string * string * string * string * string * Nullable&lt;Azure.ResourceManager.Astro.Models.AstroRenewalMode&gt; * Nullable&lt;DateTimeOffset&gt; -&gt; Azure.ResourceManager.Astro.Models.AstroOfferDetails" Usage="Azure.ResourceManager.Astro.Models.ArmAstroModelFactory.AstroOfferDetails (publisherId, offerId, planId, planName, termUnit, termId, renewalMode, endOn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Astro</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Astro.Models.AstroOfferDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="publisherId" Type="System.String" />
+        <Parameter Name="offerId" Type="System.String" />
+        <Parameter Name="planId" Type="System.String" />
+        <Parameter Name="planName" Type="System.String" />
+        <Parameter Name="termUnit" Type="System.String" />
+        <Parameter Name="termId" Type="System.String" />
+        <Parameter Name="renewalMode" Type="System.Nullable&lt;Azure.ResourceManager.Astro.Models.AstroRenewalMode&gt;" />
+        <Parameter Name="endOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="publisherId"> Publisher Id for the marketplace offer. </param>
+        <param name="offerId"> Offer Id for the marketplace offer. </param>
+        <param name="planId"> Plan Id for the marketplace offer. </param>
+        <param name="planName"> Plan Name for the marketplace offer. </param>
+        <param name="termUnit"> Plan Display Name for the marketplace offer. </param>
+        <param name="termId"> Plan Display Name for the marketplace offer. </param>
+        <param name="renewalMode"> Subscription renewal mode. </param>
+        <param name="endOn"> Current subscription end date and time. </param>
+        <summary> Offer details for the marketplace that is selected by the user. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Astro.Models.AstroOfferDetails" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="AstroOrganizationData">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Astro.AstroOrganizationData AstroOrganizationData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.Core.AzureLocation location = default, Azure.ResourceManager.Astro.Models.AstroOrganizationProperties properties = default, Azure.ResourceManager.Models.ManagedServiceIdentity identity = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Astro.AstroOrganizationData AstroOrganizationData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, valuetype Azure.Core.AzureLocation location, class Azure.ResourceManager.Astro.Models.AstroOrganizationProperties properties, class Azure.ResourceManager.Models.ManagedServiceIdentity identity) cil managed" />
@@ -42,16 +80,44 @@
         <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="tags"> The tags. </param>
-        <param name="location"> The location. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <param name="identity"> The managed service identities assigned to this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Astro.AstroOrganizationData" />. </summary>
+        <summary> Organization Resource by Astronomer. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Astro.AstroOrganizationData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AstroOrganizationPatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Astro.Models.AstroOrganizationPatch AstroOrganizationPatch (Azure.ResourceManager.Models.ManagedServiceIdentity identity = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.ResourceManager.Astro.Models.AstroOrganizationUpdateProperties properties = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Astro.Models.AstroOrganizationPatch AstroOrganizationPatch(class Azure.ResourceManager.Models.ManagedServiceIdentity identity, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, class Azure.ResourceManager.Astro.Models.AstroOrganizationUpdateProperties properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Astro.Models.ArmAstroModelFactory.AstroOrganizationPatch(Azure.ResourceManager.Models.ManagedServiceIdentity,System.Collections.Generic.IDictionary{System.String,System.String},Azure.ResourceManager.Astro.Models.AstroOrganizationUpdateProperties)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AstroOrganizationPatch (Optional identity As ManagedServiceIdentity = Nothing, Optional tags As IDictionary(Of String, String) = Nothing, Optional properties As AstroOrganizationUpdateProperties = Nothing) As AstroOrganizationPatch" />
+      <MemberSignature Language="F#" Value="static member AstroOrganizationPatch : Azure.ResourceManager.Models.ManagedServiceIdentity * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.ResourceManager.Astro.Models.AstroOrganizationUpdateProperties -&gt; Azure.ResourceManager.Astro.Models.AstroOrganizationPatch" Usage="Azure.ResourceManager.Astro.Models.ArmAstroModelFactory.AstroOrganizationPatch (identity, tags, properties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Astro</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Astro.Models.AstroOrganizationPatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" />
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="properties" Type="Azure.ResourceManager.Astro.Models.AstroOrganizationUpdateProperties" />
+      </Parameters>
+      <Docs>
+        <param name="identity"> The managed service identities assigned to this resource. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="properties"> The resource-specific properties for this resource. </param>
+        <summary> The type used for update operations of the OrganizationResource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Astro.Models.AstroOrganizationPatch" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -80,7 +146,7 @@
         <param name="user"> Details of the user. </param>
         <param name="provisioningState"> Provisioning state of the resource. </param>
         <param name="partnerOrganizationProperties"> Organization properties. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Astro.Models.AstroOrganizationProperties" />. </summary>
+        <summary> Properties specific to Data Organization resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Astro.Models.AstroOrganizationProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -112,7 +178,7 @@
         <param name="singleSignOnUri"> URL for SSO to be used by the partner to redirect the user to their system. </param>
         <param name="aadDomains"> List of AAD domains fetched from Microsoft Graph for user. </param>
         <param name="provisioningState"> Provisioning State of the resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Astro.Models.AstroSingleSignOnProperties" />. </summary>
+        <summary> Properties specific to Single Sign On Resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Astro.Models.AstroSingleSignOnProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
