@@ -7,13 +7,14 @@
   <AssemblyInfo>
     <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,6 +28,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmission</ReturnType>
@@ -44,7 +46,10 @@
         <param name="previousMonthEmissions"> Total carbon emissions for the previous month’s date range, which is the same period as the specified date range but shifted left by one month (e.g., if the specified range is March - June, the previous month’s range will be Feb - May). The value is measured in kgCO2E. </param>
         <param name="monthOverMonthEmissionsChangeRatio"> The percentage change in carbon emissions between the current and previous DateRange. This is calculated as: (latestMonthEmissions - previousMonthEmissions) / previousMonthEmissions. </param>
         <param name="monthlyEmissionsChangeValue"> The change in carbon emissions between the current and previous period, calculated as: latestMonthEmissions - previousMonthEmissions. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmission" />. </summary>
+        <summary>
+            The basic response for different query report, all query report result will have these information
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionOverallSummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionMonthlySummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemsSummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemsSummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemsSummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemMonthlySummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemMonthlySummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemMonthlySummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionItemDetail" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionItemDetail" />, and <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionItemDetail" />.
+            </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmission" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -59,6 +64,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionAvailableDateRange</ReturnType>
@@ -70,7 +76,7 @@
       <Docs>
         <param name="startOn"> Start date parameter, format is yyyy-MM-dd. </param>
         <param name="endOn"> End date parameter, format is yyyy-MM-dd. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionAvailableDateRange" />. </summary>
+        <summary> Response for available date range of carbon emission data. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionAvailableDateRange" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -85,6 +91,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionItemDetail</ReturnType>
@@ -104,7 +111,7 @@
         <param name="monthlyEmissionsChangeValue"> The change in carbon emissions between the current and previous period, calculated as: latestMonthEmissions - previousMonthEmissions. </param>
         <param name="itemName"> Item name, it can be resource name, resource type name, location, resource group name or subscriptionId. It depends on category type. </param>
         <param name="categoryType"> Item category, see supported type value defined in CategoryTypeEnum. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionItemDetail" />. </summary>
+        <summary> Response for detailed carbon emissions. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionItemDetail" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -119,6 +126,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionListResult</ReturnType>
@@ -129,14 +137,10 @@
         <Parameter Name="subscriptionAccessDecisionList" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.CarbonOptimization.Models.SubscriptionAccessDecision&gt;" />
       </Parameters>
       <Docs>
-        <param name="value">
-            The CarbonEmissionData items on this page
-            Please note <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmission" /> is the base class. According to the scenario, a derived class of the base class might need to be assigned here, or this property needs to be casted to one of the possible derived classes.
-            The available derived classes include <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionItemDetail" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionMonthlySummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionOverallSummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionItemDetail" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemMonthlySummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemsSummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionItemDetail" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemMonthlySummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemsSummary" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemMonthlySummary" /> and <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemsSummary" />.
-            </param>
+        <param name="value"> The CarbonEmissionData items on this page. </param>
         <param name="skipToken"> The pagination token to fetch next page data, it's null or empty if it doesn't have next page data. </param>
-        <param name="subscriptionAccessDecisionList"> The access decision list for each input subscription. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionListResult" />. </summary>
+        <param name="subscriptionAccessDecisionList"> The access decision list for each input subscription . </param>
+        <summary> List of carbon emission results. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionListResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -151,6 +155,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionMonthlySummary</ReturnType>
@@ -170,7 +175,7 @@
         <param name="monthlyEmissionsChangeValue"> The change in carbon emissions between the current and previous period, calculated as: latestMonthEmissions - previousMonthEmissions. </param>
         <param name="date"> The date, representing the month, for which the emissions data is reported, formatted as yyyy-MM-dd (e.g., 2024-03-01). </param>
         <param name="carbonIntensity"> Carbon intensity for the specified month, typically in units of kgCO2E per unit of normalized usage. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionMonthlySummary" />. </summary>
+        <summary> Response for Monthly Carbon Emissions Summary. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionMonthlySummary" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -185,6 +190,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionOverallSummary</ReturnType>
@@ -200,8 +206,34 @@
         <param name="previousMonthEmissions"> Total carbon emissions for the previous month’s date range, which is the same period as the specified date range but shifted left by one month (e.g., if the specified range is March - June, the previous month’s range will be Feb - May). The value is measured in kgCO2E. </param>
         <param name="monthOverMonthEmissionsChangeRatio"> The percentage change in carbon emissions between the current and previous DateRange. This is calculated as: (latestMonthEmissions - previousMonthEmissions) / previousMonthEmissions. </param>
         <param name="monthlyEmissionsChangeValue"> The change in carbon emissions between the current and previous period, calculated as: latestMonthEmissions - previousMonthEmissions. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionOverallSummary" />. </summary>
+        <summary> Response for Overall Carbon Emissions Summary. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionOverallSummary" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CarbonEmissionQueryDateRange">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionQueryDateRange CarbonEmissionQueryDateRange (DateTimeOffset startOn = default, DateTimeOffset endOn = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionQueryDateRange CarbonEmissionQueryDateRange(valuetype System.DateTimeOffset startOn, valuetype System.DateTimeOffset endOn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CarbonOptimization.Models.ArmCarbonOptimizationModelFactory.CarbonEmissionQueryDateRange(System.DateTimeOffset,System.DateTimeOffset)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CarbonEmissionQueryDateRange (Optional startOn As DateTimeOffset = Nothing, Optional endOn As DateTimeOffset = Nothing) As CarbonEmissionQueryDateRange" />
+      <MemberSignature Language="F#" Value="static member CarbonEmissionQueryDateRange : DateTimeOffset * DateTimeOffset -&gt; Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionQueryDateRange" Usage="Azure.ResourceManager.CarbonOptimization.Models.ArmCarbonOptimizationModelFactory.CarbonEmissionQueryDateRange (startOn, endOn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionQueryDateRange</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startOn" Type="System.DateTimeOffset" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="endOn" Type="System.DateTimeOffset" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="startOn"> Start date parameter in yyyy-MM-01 format. Only the first day of each month is accepted. </param>
+        <param name="endOn"> End date parameter in yyyy-MM-01 format. Only the first day of each month is accepted. </param>
+        <summary> Date range to be used with QueryParameter, it should be within 12 months between start and end date. In certain cases, start and end dates must be the same date. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionQueryDateRange" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -215,6 +247,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionQueryFilter</ReturnType>
@@ -236,7 +269,10 @@
         <param name="resourceTypeList"> List of resource types for carbon emissions data. Optional. Each resource type should be specified in lowercase, following the format 'microsoft.{service}/{resourceType}', e.g., 'microsoft.storage/storageaccounts'. </param>
         <param name="locationList"> List of locations(Azure Region Display Name) for carbon emissions data, with each location specified in lowercase (e.g., 'east us'). Optional. You can use the command 'az account list-locations -o table' to find Azure Region Display Names. </param>
         <param name="carbonScopeList"> List of carbon emission scopes. Required. Accepts one or more values from EmissionScopeEnum (e.g., Scope1, Scope2, Scope3) in list form. The output will include the total emissions for the specified scopes. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionQueryFilter" />. </summary>
+        <summary>
+            Shared query filter parameter to configure carbon emissions data queries for all different report type defined in ReportTypeEnum.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.OverallSummaryReportQueryFilter" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.MonthlySummaryReportQueryFilter" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.TopItemsSummaryReportQueryFilter" />, <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.TopItemsMonthlySummaryReportQueryFilter" />, and <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ItemDetailsQueryFilter" />.
+            </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionQueryFilter" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -251,6 +287,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemMonthlySummary</ReturnType>
@@ -272,7 +309,7 @@
         <param name="itemName"> Item name, it can be resource name, resource type name, location, resource group name or subscriptionId. It depends on category type. </param>
         <param name="categoryType"> Item category, see supported type value defined in CategoryTypeEnum. </param>
         <param name="date"> The date, representing the month, for which the emissions data is reported, formatted as yyyy-MM-dd (e.g., 2024-03-01). </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemMonthlySummary" />. </summary>
+        <summary> Response for Top Items Carbon Emissions by Month. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemMonthlySummary" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -287,6 +324,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemsSummary</ReturnType>
@@ -306,7 +344,7 @@
         <param name="monthlyEmissionsChangeValue"> The change in carbon emissions between the current and previous period, calculated as: latestMonthEmissions - previousMonthEmissions. </param>
         <param name="itemName"> The identifier of the item being reported on, which could refer to the resource name, resource type name, location, resource group name, or subscription ID, depending on the specified category type. </param>
         <param name="categoryType"> The category type of the item. This defines which dimension the emissions are aggregated by, and the supported values are defined in CategoryTypeEnum (e.g., Subscription, ResourceGroup, Resource, etc.). </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemsSummary" />. </summary>
+        <summary> Response for Top Items by Category Type. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.CarbonEmissionTopItemsSummary" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -321,6 +359,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.ItemDetailsQueryFilter</ReturnType>
@@ -350,7 +389,7 @@
         <param name="sortDirection"> Direction for sorting results. See supported values in SortDirectionEnum. </param>
         <param name="pageSize"> Number of items to return in one request, max value is 5000. </param>
         <param name="skipToken"> Pagination token for fetching the next page of data. This token is nullable and will be returned in the previous response if additional data pages are available. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ItemDetailsQueryFilter" />. </summary>
+        <summary> Query Parameters for ItemDetailsReport. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ItemDetailsQueryFilter" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -365,6 +404,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.MonthlySummaryReportQueryFilter</ReturnType>
@@ -384,7 +424,7 @@
         <param name="resourceTypeList"> List of resource types for carbon emissions data. Optional. Each resource type should be specified in lowercase, following the format 'microsoft.{service}/{resourceType}', e.g., 'microsoft.storage/storageaccounts'. </param>
         <param name="locationList"> List of locations(Azure Region Display Name) for carbon emissions data, with each location specified in lowercase (e.g., 'east us'). Optional. You can use the command 'az account list-locations -o table' to find Azure Region Display Names. </param>
         <param name="carbonScopeList"> List of carbon emission scopes. Required. Accepts one or more values from EmissionScopeEnum (e.g., Scope1, Scope2, Scope3) in list form. The output will include the total emissions for the specified scopes. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.MonthlySummaryReportQueryFilter" />. </summary>
+        <summary> Query filter parameter to configure MonthlySummaryReport queries. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.MonthlySummaryReportQueryFilter" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -399,6 +439,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.OverallSummaryReportQueryFilter</ReturnType>
@@ -418,7 +459,7 @@
         <param name="resourceTypeList"> List of resource types for carbon emissions data. Optional. Each resource type should be specified in lowercase, following the format 'microsoft.{service}/{resourceType}', e.g., 'microsoft.storage/storageaccounts'. </param>
         <param name="locationList"> List of locations(Azure Region Display Name) for carbon emissions data, with each location specified in lowercase (e.g., 'east us'). Optional. You can use the command 'az account list-locations -o table' to find Azure Region Display Names. </param>
         <param name="carbonScopeList"> List of carbon emission scopes. Required. Accepts one or more values from EmissionScopeEnum (e.g., Scope1, Scope2, Scope3) in list form. The output will include the total emissions for the specified scopes. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.OverallSummaryReportQueryFilter" />. </summary>
+        <summary> Query filter parameter to configure OverallSummaryReport queries. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.OverallSummaryReportQueryFilter" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -433,6 +474,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionItemDetail</ReturnType>
@@ -462,7 +504,7 @@
         <param name="resourceId"> The fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
         <param name="location"> Resource Location (e.g., 'east us'). </param>
         <param name="resourceType"> The type of resource, for example: microsoft.storage/storageaccounts. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionItemDetail" />. </summary>
+        <summary> Response for Resource detailed carbon emissions. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionItemDetail" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -477,6 +519,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemMonthlySummary</ReturnType>
@@ -504,7 +547,7 @@
         <param name="subscriptionId"> Subscription Id. </param>
         <param name="resourceGroup"> Resource Group. </param>
         <param name="resourceId"> The fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemMonthlySummary" />. </summary>
+        <summary> Response for top items carbon emissions by month for resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemMonthlySummary" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -519,6 +562,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemsSummary</ReturnType>
@@ -544,7 +588,7 @@
         <param name="subscriptionId"> Subscription Id. </param>
         <param name="resourceGroup"> Resource group name. </param>
         <param name="resourceId"> Resource Id, The URI of the resource for the Resource Category. This identifies the resource being reported. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemsSummary" />. </summary>
+        <summary> Response for Top Items For Resource Category. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceCarbonEmissionTopItemsSummary" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -559,6 +603,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionItemDetail</ReturnType>
@@ -582,7 +627,7 @@
         <param name="categoryType"> ResourceGroup Item category. </param>
         <param name="subscriptionId"> Subscription Id. </param>
         <param name="resourceGroupId"> Resource Group url, value format is '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}'. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionItemDetail" />. </summary>
+        <summary> Response for Resource Group detailed carbon emissions. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionItemDetail" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -597,6 +642,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemMonthlySummary</ReturnType>
@@ -622,7 +668,7 @@
         <param name="date"> Monthly date string, format is yyyy-MM-dd. </param>
         <param name="subscriptionId"> Subscription Id. </param>
         <param name="resourceGroupId"> Resource Group url, the format is '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}'. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemMonthlySummary" />. </summary>
+        <summary> Response for top items carbon emissions by month for resource group. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemMonthlySummary" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -637,6 +683,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemsSummary</ReturnType>
@@ -660,7 +707,7 @@
         <param name="categoryType"> ResourceGroup Item category. </param>
         <param name="subscriptionId"> Subscription Id. </param>
         <param name="resourceGroupId"> Resource Group url, value format is '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}'. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemsSummary" />. </summary>
+        <summary> Response for Top Items For ResourceGroup. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.ResourceGroupCarbonEmissionTopItemsSummary" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -675,6 +722,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.SubscriptionAccessDecision</ReturnType>
@@ -688,7 +736,7 @@
         <param name="subscriptionId"> Id of Subscription. </param>
         <param name="decision"> Access decision to subscription. </param>
         <param name="denialReason"> The reason why access request got denied. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.SubscriptionAccessDecision" />. </summary>
+        <summary> Access Decision for each Subscription. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.SubscriptionAccessDecision" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -703,6 +751,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.TopItemsMonthlySummaryReportQueryFilter</ReturnType>
@@ -726,7 +775,7 @@
         <param name="carbonScopeList"> List of carbon emission scopes. Required. Accepts one or more values from EmissionScopeEnum (e.g., Scope1, Scope2, Scope3) in list form. The output will include the total emissions for the specified scopes. </param>
         <param name="categoryType"> Specifies the category type to retrieve top-emitting items, aggregated by month. See supported types in CategoryTypeEnum. </param>
         <param name="topItems"> The number of top items to return, based on emissions. Must be between 1 and 10. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.TopItemsMonthlySummaryReportQueryFilter" />. </summary>
+        <summary> Query filter parameter to configure TopItemsMonthlySummaryReport queries. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.TopItemsMonthlySummaryReportQueryFilter" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -741,6 +790,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CarbonOptimization</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.CarbonOptimization.Models.TopItemsSummaryReportQueryFilter</ReturnType>
@@ -764,7 +814,7 @@
         <param name="carbonScopeList"> List of carbon emission scopes. Required. Accepts one or more values from EmissionScopeEnum (e.g., Scope1, Scope2, Scope3) in list form. The output will include the total emissions for the specified scopes. </param>
         <param name="categoryType"> Specifies the category type for which to retrieve top-emitting items. See supported values defined in CategoryTypeEnum. </param>
         <param name="topItems"> The number of top items to return, based on emissions. This value must be between 1 and 10. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.TopItemsSummaryReportQueryFilter" />. </summary>
+        <summary> Query filter parameter to configure TopItemsSummaryReport queries. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.CarbonOptimization.Models.TopItemsSummaryReportQueryFilter" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>

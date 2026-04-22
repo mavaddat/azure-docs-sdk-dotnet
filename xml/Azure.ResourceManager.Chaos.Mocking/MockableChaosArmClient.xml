@@ -8,13 +8,14 @@
     <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to ArmClient. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.ArmClient" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,11 +28,100 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Chaos.Mocking.MockableChaosArmClient" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableChaosArmClient for mocking. </summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChaosCapabilities">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Chaos.ChaosCapabilityCollection GetChaosCapabilities (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Chaos.ChaosCapabilityCollection GetChaosCapabilities(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Chaos.Mocking.MockableChaosArmClient.GetChaosCapabilities(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetChaosCapabilities (scope As ResourceIdentifier) As ChaosCapabilityCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetChaosCapabilities : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Chaos.ChaosCapabilityCollection&#xA;override this.GetChaosCapabilities : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Chaos.ChaosCapabilityCollection" Usage="mockableChaosArmClient.GetChaosCapabilities scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Chaos.ChaosCapabilityCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityResource" /> objects. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChaosCapability">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt; GetChaosCapability (Azure.Core.ResourceIdentifier scope, string capabilityName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt; GetChaosCapability(class Azure.Core.ResourceIdentifier scope, string capabilityName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Chaos.Mocking.MockableChaosArmClient.GetChaosCapability(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetChaosCapability (scope As ResourceIdentifier, capabilityName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of ChaosCapabilityResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetChaosCapability : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt;&#xA;override this.GetChaosCapability : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt;" Usage="mockableChaosArmClient.GetChaosCapability (scope, capabilityName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="capabilityName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="capabilityName"> String that represents a Capability resource name. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get a Capability resource that extends a Target resource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="capabilityName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="capabilityName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChaosCapabilityAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt;&gt; GetChaosCapabilityAsync (Azure.Core.ResourceIdentifier scope, string capabilityName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt;&gt; GetChaosCapabilityAsync(class Azure.Core.ResourceIdentifier scope, string capabilityName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Chaos.Mocking.MockableChaosArmClient.GetChaosCapabilityAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetChaosCapabilityAsync (scope As ResourceIdentifier, capabilityName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of ChaosCapabilityResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetChaosCapabilityAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt;&gt;&#xA;override this.GetChaosCapabilityAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt;&gt;" Usage="mockableChaosArmClient.GetChaosCapabilityAsync (scope, capabilityName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosCapabilityResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="capabilityName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="capabilityName"> String that represents a Capability resource name. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get a Capability resource that extends a Target resource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="capabilityName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="capabilityName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetChaosCapabilityMetadataResource">
@@ -44,6 +134,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Chaos.ChaosCapabilityMetadataResource</ReturnType>
@@ -53,10 +144,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityMetadataResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Chaos.ChaosCapabilityMetadataResource.CreateResourceIdentifier(System.String,Azure.Core.AzureLocation,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityMetadataResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityMetadataResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityMetadataResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -71,6 +159,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Chaos.ChaosCapabilityResource</ReturnType>
@@ -80,10 +169,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Chaos.ChaosCapabilityResource.CreateResourceIdentifier(System.String,System.String,System.String,System.String,System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Chaos.ChaosCapabilityResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -98,6 +184,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -135,6 +222,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Chaos.ChaosExperimentExecutionResource</ReturnType>
@@ -144,10 +232,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosExperimentExecutionResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Chaos.ChaosExperimentExecutionResource.CreateResourceIdentifier(System.String,System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Chaos.ChaosExperimentExecutionResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosExperimentExecutionResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Chaos.ChaosExperimentExecutionResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -162,6 +247,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Chaos.ChaosExperimentResource</ReturnType>
@@ -171,12 +257,73 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosExperimentResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Chaos.ChaosExperimentResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Chaos.ChaosExperimentResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosExperimentResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Chaos.ChaosExperimentResource" /> object. </returns>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChaosTarget">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosTargetResource&gt; GetChaosTarget (Azure.Core.ResourceIdentifier scope, string targetName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Chaos.ChaosTargetResource&gt; GetChaosTarget(class Azure.Core.ResourceIdentifier scope, string targetName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Chaos.Mocking.MockableChaosArmClient.GetChaosTarget(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetChaosTarget (scope As ResourceIdentifier, targetName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of ChaosTargetResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetChaosTarget : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosTargetResource&gt;&#xA;override this.GetChaosTarget : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosTargetResource&gt;" Usage="mockableChaosArmClient.GetChaosTarget (scope, targetName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosTargetResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="targetName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="targetName"> String that represents a Target resource name. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get a Target resource that extends a tracked regional resource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChaosTargetAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosTargetResource&gt;&gt; GetChaosTargetAsync (Azure.Core.ResourceIdentifier scope, string targetName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Chaos.ChaosTargetResource&gt;&gt; GetChaosTargetAsync(class Azure.Core.ResourceIdentifier scope, string targetName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Chaos.Mocking.MockableChaosArmClient.GetChaosTargetAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetChaosTargetAsync (scope As ResourceIdentifier, targetName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of ChaosTargetResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetChaosTargetAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosTargetResource&gt;&gt;&#xA;override this.GetChaosTargetAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosTargetResource&gt;&gt;" Usage="mockableChaosArmClient.GetChaosTargetAsync (scope, targetName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Chaos.ChaosTargetResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="targetName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="targetName"> String that represents a Target resource name. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get a Target resource that extends a tracked regional resource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetChaosTargetMetadataResource">
@@ -189,6 +336,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Chaos.ChaosTargetMetadataResource</ReturnType>
@@ -198,10 +346,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetMetadataResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Chaos.ChaosTargetMetadataResource.CreateResourceIdentifier(System.String,Azure.Core.AzureLocation,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetMetadataResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetMetadataResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetMetadataResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -216,6 +361,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Chaos.ChaosTargetResource</ReturnType>
@@ -225,11 +371,32 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Chaos.ChaosTargetResource.CreateResourceIdentifier(System.String,System.String,System.String,System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChaosTargets">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Chaos.ChaosTargetCollection GetChaosTargets (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Chaos.ChaosTargetCollection GetChaosTargets(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Chaos.Mocking.MockableChaosArmClient.GetChaosTargets(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetChaosTargets (scope As ResourceIdentifier) As ChaosTargetCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetChaosTargets : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Chaos.ChaosTargetCollection&#xA;override this.GetChaosTargets : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Chaos.ChaosTargetCollection" Usage="mockableChaosArmClient.GetChaosTargets scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Chaos.ChaosTargetCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Chaos.ChaosTargetResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -243,6 +410,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Chaos</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
