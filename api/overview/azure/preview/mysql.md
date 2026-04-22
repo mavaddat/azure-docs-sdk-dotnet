@@ -1,7 +1,7 @@
 ---
-title: Azure MySQL SDK for .NET
-description: Reference for Azure MySQL SDK for .NET
-ms.date: 04/21/2026
+title: Azure Mysql SDK for .NET
+description: Reference for Azure Mysql SDK for .NET
+ms.date: 04/22/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: mysql
