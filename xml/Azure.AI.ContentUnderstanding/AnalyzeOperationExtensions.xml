@@ -1,0 +1,59 @@
+<Type Name="AnalyzeOperationExtensions" FullName="Azure.AI.ContentUnderstanding.AnalyzeOperationExtensions">
+  <TypeSignature Language="C#" Value="public static class AnalyzeOperationExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AnalyzeOperationExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.ContentUnderstanding.AnalyzeOperationExtensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module AnalyzeOperationExtensions" />
+  <TypeSignature Language="F#" Value="type AnalyzeOperationExtensions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Extension methods for <see cref="T:Azure.Operation`1" /> returned by
+            <see cref="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeAsync(Azure.WaitUntil,System.String,System.Collections.Generic.IEnumerable{Azure.AI.ContentUnderstanding.AnalysisInput},System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{Azure.AI.ContentUnderstanding.ProcessingLocation},System.Threading.CancellationToken)" />
+            and related methods.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetUsage">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentUnderstanding.AnalyzeUsageDetails? GetUsage (this Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; operation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentUnderstanding.AnalyzeUsageDetails GetUsage(class Azure.Operation`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; operation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.AnalyzeOperationExtensions.GetUsage(Azure.Operation{Azure.AI.ContentUnderstanding.AnalysisResult})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetUsage (operation As Operation(Of AnalysisResult)) As AnalyzeUsageDetails" />
+      <MemberSignature Language="F#" Value="static member GetUsage : Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; -&gt; Azure.AI.ContentUnderstanding.AnalyzeUsageDetails" Usage="Azure.AI.ContentUnderstanding.AnalyzeOperationExtensions.GetUsage operation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentUnderstanding.AnalyzeUsageDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operation" Type="Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="operation">The completed analyze operation.</param>
+        <summary>
+            Gets the usage details from a completed analyze operation.
+            </summary>
+        <returns>
+            The <see cref="T:Azure.AI.ContentUnderstanding.AnalyzeUsageDetails" /> if the operation has completed and usage information is available;
+            <c>null</c> if the operation has not completed or usage data is not present in the response.
+            </returns>
+        <remarks>
+            The REST API returns a <c>usage</c> field as a sibling of <c>result</c> in the LRO response
+            envelope. This extension method reads <c>usage</c> from the operation's final response and
+            deserializes it into an <see cref="T:Azure.AI.ContentUnderstanding.AnalyzeUsageDetails" /> instance. The operation must have completed
+            successfully before calling this method.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

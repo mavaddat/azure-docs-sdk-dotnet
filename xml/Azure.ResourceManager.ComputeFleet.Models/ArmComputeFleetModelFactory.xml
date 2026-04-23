@@ -7,13 +7,14 @@
   <AssemblyInfo>
     <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,6 +28,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError</ReturnType>
@@ -44,7 +46,7 @@
         <param name="message"> The error message. </param>
         <param name="details"> The API error details. </param>
         <param name="innererror"> The API inner error. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError" />. </summary>
+        <summary> ApiError for Fleet. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -59,6 +61,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiErrorInfo</ReturnType>
@@ -72,7 +75,7 @@
         <param name="code"> The error code. </param>
         <param name="target"> The target of the particular error. </param>
         <param name="message"> The error message. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiErrorInfo" />. </summary>
+        <summary> API error base. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiErrorInfo" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -87,6 +90,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.ComputeFleetData</ReturnType>
@@ -104,17 +108,17 @@
         <Parameter Name="plan" Type="Azure.ResourceManager.Models.ArmPlan" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="tags"> The tags. </param>
-        <param name="location"> The location. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <param name="zones"> Zones in which the Compute Fleet is available. </param>
         <param name="identity"> The managed service identities assigned to this resource. </param>
         <param name="plan"> Details of the resource plan. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.ComputeFleetData" />. </summary>
+        <summary> An Compute Fleet resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.ComputeFleetData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -129,6 +133,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetImageReference</ReturnType>
@@ -176,7 +181,13 @@
             Specified the community gallery image unique id for vm deployment. This can be
             fetched from community gallery image GET call.
             </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetImageReference" />. </summary>
+        <summary>
+            Specifies information about the image to use. You can specify information about
+            platform images, marketplace images, or virtual machine images. This element is
+            required when you want to use a platform image, marketplace image, or virtual
+            machine image, but is not used in other creation operations. NOTE: Image
+            reference publisher and offer can only be set when you create the scale set.
+            </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetImageReference" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -191,6 +202,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetInnerError</ReturnType>
@@ -202,71 +214,74 @@
       <Docs>
         <param name="exceptionType"> The exception type. </param>
         <param name="errorDetail"> The internal error message or exception dump. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetInnerError" />. </summary>
+        <summary> Inner error details. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetInnerError" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ComputeFleetProperties">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties ComputeFleetProperties (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState? provisioningState = default, Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile spotPriorityProfile = default, Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile regularPriorityProfile = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; vmSizesProfile = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile computeProfile = default, DateTimeOffset? createdOn = default, string uniqueId = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties ComputeFleetProperties(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt; provisioningState, class Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile spotPriorityProfile, class Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile regularPriorityProfile, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; vmSizesProfile, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile computeProfile, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn, string uniqueId) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetProperties(System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState},Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile,Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile,System.Nullable{System.DateTimeOffset},System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetProperties (Optional provisioningState As Nullable(Of ComputeFleetProvisioningState) = Nothing, Optional spotPriorityProfile As SpotPriorityProfile = Nothing, Optional regularPriorityProfile As RegularPriorityProfile = Nothing, Optional vmSizesProfile As IEnumerable(Of ComputeFleetVmSizeProfile) = Nothing, Optional computeProfile As ComputeFleetComputeProfile = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional uniqueId As String = Nothing) As ComputeFleetProperties" />
-      <MemberSignature Language="F#" Value="static member ComputeFleetProperties : Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt; * Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile * Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile * Nullable&lt;DateTimeOffset&gt; * string -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetProperties (provisioningState, spotPriorityProfile, regularPriorityProfile, vmSizesProfile, computeProfile, createdOn, uniqueId)" />
+    <Member MemberName="ComputeFleetPatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetPatch ComputeFleetPatch (System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.ResourceManager.Models.ManagedServiceIdentity identity = default, Azure.ResourceManager.Models.ArmPlan plan = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties properties = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetPatch ComputeFleetPatch(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, class Azure.ResourceManager.Models.ManagedServiceIdentity identity, class Azure.ResourceManager.Models.ArmPlan plan, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetPatch(System.Collections.Generic.IDictionary{System.String,System.String},Azure.ResourceManager.Models.ManagedServiceIdentity,Azure.ResourceManager.Models.ArmPlan,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetPatch (Optional tags As IDictionary(Of String, String) = Nothing, Optional identity As ManagedServiceIdentity = Nothing, Optional plan As ArmPlan = Nothing, Optional properties As ComputeFleetProperties = Nothing) As ComputeFleetPatch" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetPatch : System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.ResourceManager.Models.ManagedServiceIdentity * Azure.ResourceManager.Models.ArmPlan * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetPatch" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetPatch (tags, identity, plan, properties)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties</ReturnType>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetPatch</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="spotPriorityProfile" Type="Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="regularPriorityProfile" Type="Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="vmSizesProfile" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="computeProfile" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="uniqueId" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="plan" Type="Azure.ResourceManager.Models.ArmPlan" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="properties" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="provisioningState"> The status of the last operation. </param>
-        <param name="spotPriorityProfile"> Configuration Options for Spot instances in Compute Fleet. </param>
-        <param name="regularPriorityProfile"> Configuration Options for Regular instances in Compute Fleet. </param>
-        <param name="vmSizesProfile"> List of VM sizes supported for Compute Fleet. </param>
-        <param name="computeProfile"> Compute Profile to use for running user's workloads. </param>
-        <param name="createdOn"> Specifies the time at which the Compute Fleet is created. </param>
-        <param name="uniqueId"> Specifies the ID which uniquely identifies a Compute Fleet. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties" /> instance for mocking. </returns>
+        <param name="tags"> Resource tags. </param>
+        <param name="identity"> Updatable managed service identity. </param>
+        <param name="plan"> Updatable resource plan. </param>
+        <param name="properties"> RP-specific updatable properties. </param>
+        <summary> Fleet Update Model. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetPatch" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ComputeFleetProperties">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties ComputeFleetProperties (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState? provisioningState = default, Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile spotPriorityProfile = default, Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile regularPriorityProfile = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; vmSizesProfile = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes vmAttributes = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt; additionalLocationsLocationProfiles = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile computeProfile = default, DateTimeOffset? createdOn = default, string uniqueId = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties ComputeFleetProperties (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState? provisioningState = default, Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile spotPriorityProfile = default, Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile regularPriorityProfile = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; vmSizesProfile = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes vmAttributes = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt; additionalLocationsLocationProfiles = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile computeProfile = default, DateTimeOffset? createdOn = default, string uniqueId = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties ComputeFleetProperties(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt; provisioningState, class Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile spotPriorityProfile, class Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile regularPriorityProfile, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; vmSizesProfile, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes vmAttributes, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt; additionalLocationsLocationProfiles, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile computeProfile, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn, string uniqueId) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetProperties(System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState},Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile,Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.LocationProfile},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile,System.Nullable{System.DateTimeOffset},System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetProperties (Optional provisioningState As Nullable(Of ComputeFleetProvisioningState) = Nothing, Optional spotPriorityProfile As SpotPriorityProfile = Nothing, Optional regularPriorityProfile As RegularPriorityProfile = Nothing, Optional vmSizesProfile As IEnumerable(Of ComputeFleetVmSizeProfile) = Nothing, Optional vmAttributes As ComputeFleetVmAttributes = Nothing, Optional additionalLocationsLocationProfiles As IEnumerable(Of LocationProfile) = Nothing, Optional computeProfile As ComputeFleetComputeProfile = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional uniqueId As String = Nothing) As ComputeFleetProperties" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetProperties (Optional provisioningState As Nullable(Of ComputeFleetProvisioningState) = Nothing, Optional spotPriorityProfile As SpotPriorityProfile = Nothing, Optional regularPriorityProfile As RegularPriorityProfile = Nothing, Optional vmSizesProfile As IEnumerable(Of ComputeFleetVmSizeProfile) = Nothing, Optional vmAttributes As ComputeFleetVmAttributes = Nothing, Optional additionalLocationsLocationProfiles As IEnumerable(Of LocationProfile) = Nothing, Optional computeProfile As ComputeFleetComputeProfile = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional uniqueId As String = Nothing) As ComputeFleetProperties" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="static member ComputeFleetProperties : Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt; * Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile * Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes * seq&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile * Nullable&lt;DateTimeOffset&gt; * string -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetProperties (provisioningState, spotPriorityProfile, regularPriorityProfile, vmSizesProfile, vmAttributes, additionalLocationsLocationProfiles, computeProfile, createdOn, uniqueId)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties ComputeFleetProperties (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState? provisioningState, Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile spotPriorityProfile, Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile regularPriorityProfile, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; vmSizesProfile, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes vmAttributes, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt; additionalLocationsLocationProfiles, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile computeProfile, DateTimeOffset? createdOn, string uniqueId);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetProperties (provisioningState As Nullable(Of ComputeFleetProvisioningState), spotPriorityProfile As SpotPriorityProfile, regularPriorityProfile As RegularPriorityProfile, vmSizesProfile As IEnumerable(Of ComputeFleetVmSizeProfile), vmAttributes As ComputeFleetVmAttributes, additionalLocationsLocationProfiles As IEnumerable(Of LocationProfile), computeProfile As ComputeFleetComputeProfile, createdOn As Nullable(Of DateTimeOffset), uniqueId As String) As ComputeFleetProperties" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="spotPriorityProfile" Type="Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="regularPriorityProfile" Type="Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="vmSizesProfile" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt;" Index="3" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="vmAttributes" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes" Index="4" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="additionalLocationsLocationProfiles" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt;" Index="5" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="computeProfile" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile" Index="6" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="7" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="uniqueId" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt;" />
+        <Parameter Name="spotPriorityProfile" Type="Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile" />
+        <Parameter Name="regularPriorityProfile" Type="Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile" />
+        <Parameter Name="vmSizesProfile" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt;" />
+        <Parameter Name="vmAttributes" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes" />
+        <Parameter Name="additionalLocationsLocationProfiles" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt;" />
+        <Parameter Name="computeProfile" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile" />
+        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="uniqueId" Type="System.String" />
       </Parameters>
       <Docs>
         <param name="provisioningState"> The status of the last operation. </param>
@@ -283,6 +298,243 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="ComputeFleetProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties ComputeFleetProperties (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState? provisioningState = default, Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile spotPriorityProfile = default, Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile regularPriorityProfile = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; vmSizesProfile = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes vmAttributes = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt; additionalLocationsLocationProfiles = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile computeProfile = default, DateTimeOffset? createdOn = default, string uniqueId = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetMode? mode = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCapacityType? capacityType = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy zoneAllocationPolicy = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties ComputeFleetProperties(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt; provisioningState, class Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile spotPriorityProfile, class Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile regularPriorityProfile, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; vmSizesProfile, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes vmAttributes, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt; additionalLocationsLocationProfiles, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile computeProfile, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn, string uniqueId, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetMode&gt; mode, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCapacityType&gt; capacityType, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy zoneAllocationPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetProperties(System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState},Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile,Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.LocationProfile},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile,System.Nullable{System.DateTimeOffset},System.String,System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetMode},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCapacityType},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetProperties (Optional provisioningState As Nullable(Of ComputeFleetProvisioningState) = Nothing, Optional spotPriorityProfile As SpotPriorityProfile = Nothing, Optional regularPriorityProfile As RegularPriorityProfile = Nothing, Optional vmSizesProfile As IEnumerable(Of ComputeFleetVmSizeProfile) = Nothing, Optional vmAttributes As ComputeFleetVmAttributes = Nothing, Optional additionalLocationsLocationProfiles As IEnumerable(Of LocationProfile) = Nothing, Optional computeProfile As ComputeFleetComputeProfile = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional uniqueId As String = Nothing, Optional mode As Nullable(Of ComputeFleetMode) = Nothing, Optional capacityType As Nullable(Of ComputeFleetCapacityType) = Nothing, Optional zoneAllocationPolicy As ComputeFleetZoneAllocationPolicy = Nothing) As ComputeFleetProperties" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetProperties : Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt; * Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile * Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes * seq&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile * Nullable&lt;DateTimeOffset&gt; * string * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetMode&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCapacityType&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetProperties (provisioningState, spotPriorityProfile, regularPriorityProfile, vmSizesProfile, vmAttributes, additionalLocationsLocationProfiles, computeProfile, createdOn, uniqueId, mode, capacityType, zoneAllocationPolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="spotPriorityProfile" Type="Azure.ResourceManager.ComputeFleet.Models.SpotPriorityProfile" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="regularPriorityProfile" Type="Azure.ResourceManager.ComputeFleet.Models.RegularPriorityProfile" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="vmSizesProfile" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProfile&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="vmAttributes" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="additionalLocationsLocationProfiles" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocationProfile&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="computeProfile" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetComputeProfile" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="uniqueId" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="mode" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetMode&gt;" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="capacityType" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCapacityType&gt;" Index="10" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="zoneAllocationPolicy" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy" Index="11" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="provisioningState"> The status of the last operation. </param>
+        <param name="spotPriorityProfile"> Configuration Options for Spot instances in Compute Fleet. </param>
+        <param name="regularPriorityProfile"> Configuration Options for Regular instances in Compute Fleet. </param>
+        <param name="vmSizesProfile"> List of VM sizes supported for Compute Fleet. </param>
+        <param name="vmAttributes"> Attribute based Fleet. </param>
+        <param name="additionalLocationsLocationProfiles"> The list of location profiles. </param>
+        <param name="computeProfile"> Compute Profile to use for running user's workloads. </param>
+        <param name="createdOn"> Specifies the time at which the Compute Fleet is created. </param>
+        <param name="uniqueId"> Specifies the ID which uniquely identifies a Compute Fleet. </param>
+        <param name="mode"> Mode of the Fleet. </param>
+        <param name="capacityType">
+            Specifies capacity type for Fleet Regular and Spot priority profiles.
+            capacityType is an immutable property. Once set during Fleet creation, it cannot be updated.
+            Specifying different capacity type for Fleet Regular and Spot priority profiles is not allowed.
+            </param>
+        <param name="zoneAllocationPolicy"> Zone Allocation Policy for Fleet. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetSecurityPostureReference">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityPostureReference ComputeFleetSecurityPostureReference (string id = default, System.Collections.Generic.IEnumerable&lt;string&gt; excludeExtensions = default, bool? isOverridable = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityPostureReference ComputeFleetSecurityPostureReference(string id, class System.Collections.Generic.IEnumerable`1&lt;string&gt; excludeExtensions, valuetype System.Nullable`1&lt;bool&gt; isOverridable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetSecurityPostureReference(System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Boolean})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetSecurityPostureReference (Optional id As String = Nothing, Optional excludeExtensions As IEnumerable(Of String) = Nothing, Optional isOverridable As Nullable(Of Boolean) = Nothing) As ComputeFleetSecurityPostureReference" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetSecurityPostureReference : string * seq&lt;string&gt; * Nullable&lt;bool&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityPostureReference" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetSecurityPostureReference (id, excludeExtensions, isOverridable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityPostureReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="excludeExtensions" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isOverridable" Type="System.Nullable&lt;System.Boolean&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id">
+            The security posture reference id in the form of
+            /CommunityGalleries/{communityGalleryName}/securityPostures/{securityPostureName}/versions/{major.minor.patch}|{major.*}|latest
+            </param>
+        <param name="excludeExtensions">
+            List of virtual machine extension names to exclude when applying the security
+            posture.
+            </param>
+        <param name="isOverridable"> Whether the security posture can be overridden by the user. </param>
+        <summary>
+            Specifies the security posture to be used for all virtual machines in the scale
+            set. Minimum api-version: 2023-03-01
+            </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityPostureReference" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVaultSecretGroup">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup ComputeFleetVaultSecretGroup (Azure.Core.ResourceIdentifier sourceVaultId = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultCertificate&gt; vaultCertificates = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup ComputeFleetVaultSecretGroup(class Azure.Core.ResourceIdentifier sourceVaultId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultCertificate&gt; vaultCertificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVaultSecretGroup(Azure.Core.ResourceIdentifier,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultCertificate})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVaultSecretGroup (Optional sourceVaultId As ResourceIdentifier = Nothing, Optional vaultCertificates As IEnumerable(Of ComputeFleetVaultCertificate) = Nothing) As ComputeFleetVaultSecretGroup" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVaultSecretGroup : Azure.Core.ResourceIdentifier * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultCertificate&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVaultSecretGroup (sourceVaultId, vaultCertificates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceVaultId" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="vaultCertificates" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultCertificate&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="sourceVaultId"> Resource Id. </param>
+        <param name="vaultCertificates"> The list of key vault references in SourceVault which contain certificates. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVirtualMachine">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine ComputeFleetVirtualMachine (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus operationStatus = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine ComputeFleetVirtualMachine(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus operationStatus, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVirtualMachine(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVirtualMachine (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional operationStatus As ComputeFleetVmOperationStatus = Nothing, Optional error As ComputeFleetApiError = Nothing) As ComputeFleetVirtualMachine" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVirtualMachine : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVirtualMachine (id, name, resourceType, systemData, operationStatus, error)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="operationStatus" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="error" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="operationStatus"> This represents the operationStatus of the virtual machine in response to the last operation that was performed on it by Azure Fleet resource. </param>
+        <param name="error"> Error information when `operationStatus` is `Failed`. </param>
+        <summary> An instant Fleet's virtual machine. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmAttributes">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes ComputeFleetVmAttributes (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger vCpuCount = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble memoryInGiB = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble memoryInGiBPerVCpu = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport? localStorageSupport = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble localStorageInGiB = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocalStorageDiskType&gt; localStorageDiskTypes = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger dataDiskCount = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger networkInterfaceCount = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble networkBandwidthInMbps = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport? rdmaSupport = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger rdmaNetworkInterfaceCount = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport? acceleratorSupport = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.AcceleratorManufacturer&gt; acceleratorManufacturers = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.AcceleratorType&gt; acceleratorTypes = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger acceleratorCount = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmCategory&gt; vmCategories = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ArchitectureType&gt; architectureTypes = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.CpuManufacturer&gt; cpuManufacturers = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport? burstableSupport = default, System.Collections.Generic.IEnumerable&lt;string&gt; excludedVmSizes = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes ComputeFleetVmAttributes(class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger vCpuCount, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble memoryInGiB, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble memoryInGiBPerVCpu, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt; localStorageSupport, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble localStorageInGiB, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.LocalStorageDiskType&gt; localStorageDiskTypes, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger dataDiskCount, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger networkInterfaceCount, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble networkBandwidthInMbps, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt; rdmaSupport, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger rdmaNetworkInterfaceCount, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt; acceleratorSupport, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.AcceleratorManufacturer&gt; acceleratorManufacturers, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.AcceleratorType&gt; acceleratorTypes, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger acceleratorCount, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmCategory&gt; vmCategories, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ArchitectureType&gt; architectureTypes, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.CpuManufacturer&gt; cpuManufacturers, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt; burstableSupport, class System.Collections.Generic.IEnumerable`1&lt;string&gt; excludedVmSizes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmAttributes(Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble,System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.LocalStorageDiskType},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble,System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger,System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport},System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.AcceleratorManufacturer},System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.AcceleratorType},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmCategory},System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ArchitectureType},System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.CpuManufacturer},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport},System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmAttributes (Optional vCpuCount As ComputeFleetVmAttributeMinMaxInteger = Nothing, Optional memoryInGiB As ComputeFleetVmAttributeMinMaxDouble = Nothing, Optional memoryInGiBPerVCpu As ComputeFleetVmAttributeMinMaxDouble = Nothing, Optional localStorageSupport As Nullable(Of ComputeFleetVmAttributeSupport) = Nothing, Optional localStorageInGiB As ComputeFleetVmAttributeMinMaxDouble = Nothing, Optional localStorageDiskTypes As IEnumerable(Of LocalStorageDiskType) = Nothing, Optional dataDiskCount As ComputeFleetVmAttributeMinMaxInteger = Nothing, Optional networkInterfaceCount As ComputeFleetVmAttributeMinMaxInteger = Nothing, Optional networkBandwidthInMbps As ComputeFleetVmAttributeMinMaxDouble = Nothing, Optional rdmaSupport As Nullable(Of ComputeFleetVmAttributeSupport) = Nothing, Optional rdmaNetworkInterfaceCount As ComputeFleetVmAttributeMinMaxInteger = Nothing, Optional acceleratorSupport As Nullable(Of ComputeFleetVmAttributeSupport) = Nothing, Optional acceleratorManufacturers As IEnumerable(Of AcceleratorManufacturer) = Nothing, Optional acceleratorTypes As IEnumerable(Of AcceleratorType) = Nothing, Optional acceleratorCount As ComputeFleetVmAttributeMinMaxInteger = Nothing, Optional vmCategories As IEnumerable(Of ComputeFleetVmCategory) = Nothing, Optional architectureTypes As IEnumerable(Of ArchitectureType) = Nothing, Optional cpuManufacturers As IEnumerable(Of CpuManufacturer) = Nothing, Optional burstableSupport As Nullable(Of ComputeFleetVmAttributeSupport) = Nothing, Optional excludedVmSizes As IEnumerable(Of String) = Nothing) As ComputeFleetVmAttributes" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmAttributes : Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble * seq&lt;Azure.ResourceManager.ComputeFleet.Models.LocalStorageDiskType&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt; * seq&lt;Azure.ResourceManager.ComputeFleet.Models.AcceleratorManufacturer&gt; * seq&lt;Azure.ResourceManager.ComputeFleet.Models.AcceleratorType&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmCategory&gt; * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ArchitectureType&gt; * seq&lt;Azure.ResourceManager.ComputeFleet.Models.CpuManufacturer&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt; * seq&lt;string&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmAttributes (vCpuCount, memoryInGiB, memoryInGiBPerVCpu, localStorageSupport, localStorageInGiB, localStorageDiskTypes, dataDiskCount, networkInterfaceCount, networkBandwidthInMbps, rdmaSupport, rdmaNetworkInterfaceCount, acceleratorSupport, acceleratorManufacturers, acceleratorTypes, acceleratorCount, vmCategories, architectureTypes, cpuManufacturers, burstableSupport, excludedVmSizes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vCpuCount" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryInGiB" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryInGiBPerVCpu" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="localStorageSupport" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="localStorageInGiB" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="localStorageDiskTypes" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.LocalStorageDiskType&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="dataDiskCount" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="networkInterfaceCount" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="networkBandwidthInMbps" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxDouble" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="rdmaSupport" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt;" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="rdmaNetworkInterfaceCount" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger" Index="10" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="acceleratorSupport" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt;" Index="11" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="acceleratorManufacturers" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.AcceleratorManufacturer&gt;" Index="12" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="acceleratorTypes" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.AcceleratorType&gt;" Index="13" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="acceleratorCount" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeMinMaxInteger" Index="14" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="vmCategories" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmCategory&gt;" Index="15" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="architectureTypes" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ArchitectureType&gt;" Index="16" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cpuManufacturers" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.CpuManufacturer&gt;" Index="17" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="burstableSupport" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributeSupport&gt;" Index="18" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="excludedVmSizes" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="19" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="vCpuCount"> The range of vCpuCount specified from Min to Max. Must be specified if VMAttributes are specified, either Min or Max is required if specified. </param>
+        <param name="memoryInGiB"> The range of memory specified from Min to Max. Must be specified if VMAttributes are specified, either Min or Max is required if specified. </param>
+        <param name="memoryInGiBPerVCpu"> The range of memory in GiB per vCPU specified from min to max. Optional parameter. Either Min or Max is required if specified. </param>
+        <param name="localStorageSupport">
+            Specifies whether the VMSize supporting local storage should be used to build Fleet or not.
+            Included - Default if not specified as most Azure VMs support local storage.
+            </param>
+        <param name="localStorageInGiB">
+            LocalStorageSupport should be set to "Included" or "Required" to use this VMAttribute. 
+            If localStorageSupport is "Excluded", this VMAttribute can not be used.
+            </param>
+        <param name="localStorageDiskTypes">
+            The local storage disk types specified as a list. LocalStorageSupport should be set to "Included" or "Required" to use this VMAttribute. 
+            If localStorageSupport is "Excluded", this VMAttribute can not be used.
+            </param>
+        <param name="dataDiskCount"> The range of data disk count specified from Min to Max. Optional parameter. Either Min or Max is required if specified. </param>
+        <param name="networkInterfaceCount"> The range of network interface count specified from Min to Max. Optional parameter. Either Min or Max is required if specified. </param>
+        <param name="networkBandwidthInMbps"> The range of network bandwidth in Mbps specified from Min to Max. Optional parameter. Either Min or Max is required if specified. </param>
+        <param name="rdmaSupport"> Specifies whether the VMSize supporting RDMA (Remote Direct Memory Access) should be used to build Fleet or not. </param>
+        <param name="rdmaNetworkInterfaceCount">
+            The range of RDMA (Remote Direct Memory Access) network interface count specified from Min to Max. Optional parameter. Either Min or Max is required if specified.
+            rdmaSupport should be set to "Included" or "Required" to use this VMAttribute. 
+            If rdmaSupport is "Excluded", this VMAttribute can not be used.
+            </param>
+        <param name="acceleratorSupport">
+            Specifies whether the VMSize supporting accelerator should be used to build Fleet or not.
+            acceleratorSupport should be set to "Included" or "Required" to use this VMAttribute. 
+            If acceleratorSupport is "Excluded", this VMAttribute can not be used.
+            </param>
+        <param name="acceleratorManufacturers">
+            The accelerator manufacturers specified as a list. 
+            acceleratorSupport should be set to "Included" or "Required" to use this VMAttribute. 
+            If acceleratorSupport is "Excluded", this VMAttribute can not be used.
+            </param>
+        <param name="acceleratorTypes">
+            The accelerator types specified as a list. acceleratorSupport should be set to "Included" or "Required" to use this VMAttribute. 
+            If acceleratorSupport is "Excluded", this VMAttribute can not be used.
+            </param>
+        <param name="acceleratorCount">
+            The range of accelerator count specified from min to max. Optional parameter. Either Min or Max is required if specified.
+            acceleratorSupport should be set to "Included" or "Required" to use this VMAttribute. 
+            If acceleratorSupport is "Excluded", this VMAttribute can not be used.
+            </param>
+        <param name="vmCategories"> The VM category specified as a list. Optional parameter. </param>
+        <param name="architectureTypes"> The VM architecture types specified as a list. Optional parameter. </param>
+        <param name="cpuManufacturers"> The VM CPU manufacturers specified as a list. Optional parameter. </param>
+        <param name="burstableSupport"> Specifies whether the VMSize supporting burstable capability should be used to build Fleet or not. </param>
+        <param name="excludedVmSizes"> Specifies which VMSizes should be excluded while building Fleet. Optional parameter. </param>
+        <summary> VMAttributes that will be used to filter VMSizes which will be used to build Fleet. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmAttributes" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ComputeFleetVmProfile">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmProfile ComputeFleetVmProfile (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSProfile osProfile = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssStorageProfile storageProfile = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkProfile networkProfile = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityProfile securityProfile = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetBootDiagnostics bootDiagnostics = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProfile extensionProfile = default, string licenseType = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetScheduledEventsProfile scheduledEventsProfile = default, string userData = default, Azure.Core.ResourceIdentifier capacityReservationGroupId = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmGalleryApplication&gt; galleryApplications = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProperties hardwareVmSizeProperties = default, Azure.Core.ResourceIdentifier serviceArtifactReferenceId = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityPostureReference securityPostureReference = default, DateTimeOffset? createdOn = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmProfile ComputeFleetVmProfile(class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSProfile osProfile, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssStorageProfile storageProfile, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkProfile networkProfile, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityProfile securityProfile, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetBootDiagnostics bootDiagnostics, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProfile extensionProfile, string licenseType, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetScheduledEventsProfile scheduledEventsProfile, string userData, class Azure.Core.ResourceIdentifier capacityReservationGroupId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmGalleryApplication&gt; galleryApplications, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmSizeProperties hardwareVmSizeProperties, class Azure.Core.ResourceIdentifier serviceArtifactReferenceId, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetSecurityPostureReference securityPostureReference, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn) cil managed" />
@@ -293,6 +545,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmProfile</ReturnType>
@@ -328,7 +581,13 @@
             Specifies the Security related profile settings for the virtual machines in the
             scale set.
             </param>
-        <param name="bootDiagnostics"> Specifies the boot diagnostic settings state. </param>
+        <param name="bootDiagnostics">
+            Boot Diagnostics is a debugging feature which allows you to view Console Output
+            and Screenshot to diagnose VM status. <b>NOTE</b>: If storageUri is being
+            specified then ensure that the storage account is in the same region and
+            subscription as the VM. You can easily view the output of your console log.
+            Azure also enables you to see a screenshot of the VM from the hypervisor.
+            </param>
         <param name="extensionProfile">
             Specifies a collection of settings for extensions installed on virtual machines
             in the scale set.
@@ -340,9 +599,9 @@
             Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS
             (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for
             Windows
-            Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+            Server](https://learn.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
             &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
-            Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
+            Server](https://learn.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
             &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15
             </param>
         <param name="scheduledEventsProfile"> Specifies Scheduled Event related configurations. </param>
@@ -351,19 +610,16 @@
             encoded. Customer should not pass any secrets in here. Minimum api-version:
             2021-03-01.
             </param>
-        <param name="capacityReservationGroupId">
-            Specifies the capacity reservation related details of a scale set. Minimum
-            api-version: 2021-04-01.
-            </param>
+        <param name="capacityReservationGroupId"> Resource Id. </param>
         <param name="galleryApplications"> Specifies the gallery applications that should be made available to the VM/VMSS. </param>
         <param name="hardwareVmSizeProperties">
-            Specifies the hardware profile related details of a scale set. Minimum
-            api-version: 2021-11-01.
+            Specifies the properties for customizing the size of the virtual machine.
+            Minimum api-version: 2021-11-01. Please follow the instructions in [VM
+            Customization](https://aka.ms/vmcustomization) for more details.
             </param>
         <param name="serviceArtifactReferenceId">
-            Specifies the service artifact reference id used to set same image version for
-            all virtual machines in the scale set when using 'latest' image version.
-            Minimum api-version: 2022-11-01
+            The service artifact reference id in the form of
+            /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/galleries/{galleryName}/serviceArtifacts/{serviceArtifactName}/vmArtifactsProfiles/{vmArtifactsProfilesName}
             </param>
         <param name="securityPostureReference">
             Specifies the security posture to be used for all virtual machines in the scale
@@ -381,24 +637,33 @@
       </Docs>
     </Member>
     <Member MemberName="ComputeFleetVmss">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss ComputeFleetVmss (Azure.Core.ResourceIdentifier id = default, string type = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState operationStatus = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss ComputeFleetVmss (Azure.Core.ResourceIdentifier id = default, string type = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState operationStatus = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss ComputeFleetVmss(class Azure.Core.ResourceIdentifier id, string type, valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState operationStatus, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmss(Azure.Core.ResourceIdentifier,System.String,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmss (Optional id As ResourceIdentifier = Nothing, Optional type As String = Nothing, Optional operationStatus As ComputeFleetProvisioningState = Nothing, Optional error As ComputeFleetApiError = Nothing) As ComputeFleetVmss" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmss (Optional id As ResourceIdentifier = Nothing, Optional type As String = Nothing, Optional operationStatus As ComputeFleetProvisioningState = Nothing, Optional error As ComputeFleetApiError = Nothing) As ComputeFleetVmss" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="static member ComputeFleetVmss : Azure.Core.ResourceIdentifier * string * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmss (id, type, operationStatus, error)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss ComputeFleetVmss (Azure.Core.ResourceIdentifier id, string type, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState operationStatus = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error = default);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmss (id As ResourceIdentifier, type As String, Optional operationStatus As ComputeFleetProvisioningState = Nothing, Optional error As ComputeFleetApiError = Nothing) As ComputeFleetVmss" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="type" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="operationStatus" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="error" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" />
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="operationStatus" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState" />
+        <Parameter Name="error" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError" />
       </Parameters>
       <Docs>
         <param name="id">
@@ -414,34 +679,35 @@
       </Docs>
     </Member>
     <Member MemberName="ComputeFleetVmss">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss ComputeFleetVmss (string id = default, string type = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState operationStatus = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss ComputeFleetVmss(string id, string type, valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState operationStatus, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmss(System.String,System.String,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmss (Optional id As String = Nothing, Optional type As String = Nothing, Optional operationStatus As ComputeFleetProvisioningState = Nothing, Optional error As ComputeFleetApiError = Nothing) As ComputeFleetVmss" />
-      <MemberSignature Language="F#" Value="static member ComputeFleetVmss : string * string * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmss (id, type, operationStatus, error)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss ComputeFleetVmss (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState operationStatus = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss ComputeFleetVmss(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState operationStatus, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmss(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmss (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional operationStatus As ComputeFleetProvisioningState = Nothing, Optional error As ComputeFleetApiError = Nothing) As ComputeFleetVmss" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmss : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmss (id, name, resourceType, systemData, operationStatus, error)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="type" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="operationStatus" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="error" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="operationStatus" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetProvisioningState" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="error" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError" Index="5" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="id">
-            The compute RP resource id of the virtualMachineScaleSet
-            "subscriptions/{subId}/resourceGroups/{rgName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmssName}"
-            </param>
-        <param name="type"> Type of the virtualMachineScaleSet. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="operationStatus"> This represents the operationStatus of the VMSS in response to the last operation that was performed on it by Azure Fleet resource. </param>
         <param name="error"> Error Information when `operationStatus` is `Failed`. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss" />. </summary>
+        <summary> An AzureFleet's virtualMachineScaleSet. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmss" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -456,6 +722,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtension</ReturnType>
@@ -471,8 +738,39 @@
         <param name="name"> The name of the extension. </param>
         <param name="extensionType"> Resource type. </param>
         <param name="properties"> Describes the properties of a Virtual Machine Scale Set Extension. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtension" />. </summary>
+        <summary> Describes a Virtual Machine Scale Set Extension. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtension" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmssExtensionProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProfile ComputeFleetVmssExtensionProfile (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtension&gt; extensions = default, string extensionsTimeBudget = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProfile ComputeFleetVmssExtensionProfile(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtension&gt; extensions, string extensionsTimeBudget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssExtensionProfile(System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtension},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmssExtensionProfile (Optional extensions As IEnumerable(Of ComputeFleetVmssExtension) = Nothing, Optional extensionsTimeBudget As String = Nothing) As ComputeFleetVmssExtensionProfile" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmssExtensionProfile : seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtension&gt; * string -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProfile" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssExtensionProfile (extensions, extensionsTimeBudget)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extensions" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtension&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="extensionsTimeBudget" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="extensions"> The virtual machine scale set child extension resources. </param>
+        <param name="extensionsTimeBudget">
+            Specifies the time alloted for all extensions to start. The time duration
+            should be between 15 minutes and 120 minutes (inclusive) and should be
+            specified in ISO 8601 format. The default value is 90 minutes (PT1H30M).
+            Minimum api-version: 2020-06-01.
+            </param>
+        <summary> Describes a virtual machine scale set extension profile. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProfile" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -486,6 +784,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProperties</ReturnType>
@@ -541,8 +840,487 @@
             The extensions protected settings that are passed by reference, and consumed
             from key vault
             </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProperties" />. </summary>
+        <summary> Describes the properties of a Virtual Machine Scale Set Extension. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssExtensionProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmssIPConfigurationProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfigurationProperties ComputeFleetVmssIPConfigurationProperties (Azure.Core.ResourceIdentifier subnetId = default, bool? isPrimary = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfiguration publicIPAddressConfiguration = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion? privateIPAddressVersion = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt; applicationGatewayBackendAddressPools = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt; applicationSecurityGroups = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt; loadBalancerBackendAddressPools = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt; loadBalancerInboundNatPools = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfigurationProperties ComputeFleetVmssIPConfigurationProperties(class Azure.Core.ResourceIdentifier subnetId, valuetype System.Nullable`1&lt;bool&gt; isPrimary, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfiguration publicIPAddressConfiguration, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion&gt; privateIPAddressVersion, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Resources.Models.WritableSubResource&gt; applicationGatewayBackendAddressPools, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Resources.Models.WritableSubResource&gt; applicationSecurityGroups, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Resources.Models.WritableSubResource&gt; loadBalancerBackendAddressPools, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Resources.Models.WritableSubResource&gt; loadBalancerInboundNatPools) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssIPConfigurationProperties(Azure.Core.ResourceIdentifier,System.Nullable{System.Boolean},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfiguration,System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion},System.Collections.Generic.IEnumerable{Azure.ResourceManager.Resources.Models.WritableSubResource},System.Collections.Generic.IEnumerable{Azure.ResourceManager.Resources.Models.WritableSubResource},System.Collections.Generic.IEnumerable{Azure.ResourceManager.Resources.Models.WritableSubResource},System.Collections.Generic.IEnumerable{Azure.ResourceManager.Resources.Models.WritableSubResource})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmssIPConfigurationProperties (Optional subnetId As ResourceIdentifier = Nothing, Optional isPrimary As Nullable(Of Boolean) = Nothing, Optional publicIPAddressConfiguration As ComputeFleetVmssPublicIPAddressConfiguration = Nothing, Optional privateIPAddressVersion As Nullable(Of ComputeFleetIPVersion) = Nothing, Optional applicationGatewayBackendAddressPools As IEnumerable(Of WritableSubResource) = Nothing, Optional applicationSecurityGroups As IEnumerable(Of WritableSubResource) = Nothing, Optional loadBalancerBackendAddressPools As IEnumerable(Of WritableSubResource) = Nothing, Optional loadBalancerInboundNatPools As IEnumerable(Of WritableSubResource) = Nothing) As ComputeFleetVmssIPConfigurationProperties" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmssIPConfigurationProperties : Azure.Core.ResourceIdentifier * Nullable&lt;bool&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfiguration * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion&gt; * seq&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt; * seq&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt; * seq&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt; * seq&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfigurationProperties" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssIPConfigurationProperties (subnetId, isPrimary, publicIPAddressConfiguration, privateIPAddressVersion, applicationGatewayBackendAddressPools, applicationSecurityGroups, loadBalancerBackendAddressPools, loadBalancerInboundNatPools)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfigurationProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subnetId" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isPrimary" Type="System.Nullable&lt;System.Boolean&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="publicIPAddressConfiguration" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfiguration" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="privateIPAddressVersion" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="applicationGatewayBackendAddressPools" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="applicationSecurityGroups" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="loadBalancerBackendAddressPools" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="loadBalancerInboundNatPools" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Resources.Models.WritableSubResource&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="subnetId">
+            The ARM resource id in the form of
+            /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...
+            </param>
+        <param name="isPrimary">
+            Specifies the primary network interface in case the virtual machine has more
+            than 1 network interface.
+            </param>
+        <param name="publicIPAddressConfiguration"> The publicIPAddressConfiguration. </param>
+        <param name="privateIPAddressVersion">
+            Available from Api-Version 2017-03-30 onwards, it represents whether the
+            specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.  Possible
+            values are: 'IPv4' and 'IPv6'.
+            </param>
+        <param name="applicationGatewayBackendAddressPools">
+            Specifies an array of references to backend address pools of application
+            gateways. A scale set can reference backend address pools of multiple
+            application gateways. Multiple scale sets cannot use the same application
+            gateway.
+            </param>
+        <param name="applicationSecurityGroups"> Specifies an array of references to application security group. </param>
+        <param name="loadBalancerBackendAddressPools">
+            Specifies an array of references to backend address pools of load balancers. A
+            scale set can reference backend address pools of one public and one internal
+            load balancer. Multiple scale sets cannot use the same basic sku load balancer.
+            </param>
+        <param name="loadBalancerInboundNatPools">
+            Specifies an array of references to inbound Nat pools of the load balancers. A
+            scale set can reference inbound nat pools of one public and one internal load
+            balancer. Multiple scale sets cannot use the same basic sku load balancer.
+            </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfigurationProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmssNetworkConfigurationProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfigurationProperties ComputeFleetVmssNetworkConfigurationProperties (bool? isPrimary = default, bool? isAcceleratedNetworkingEnabled = default, bool? isTcpStateTrackingDisabled = default, bool? isFpgaEnabled = default, Azure.Core.ResourceIdentifier networkSecurityGroupId = default, System.Collections.Generic.IEnumerable&lt;string&gt; dnsServers = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfiguration&gt; ipConfigurations = default, bool? isIPForwardingEnabled = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption? deleteOption = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliaryMode? auxiliaryMode = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliarySku? auxiliarySku = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfigurationProperties ComputeFleetVmssNetworkConfigurationProperties(valuetype System.Nullable`1&lt;bool&gt; isPrimary, valuetype System.Nullable`1&lt;bool&gt; isAcceleratedNetworkingEnabled, valuetype System.Nullable`1&lt;bool&gt; isTcpStateTrackingDisabled, valuetype System.Nullable`1&lt;bool&gt; isFpgaEnabled, class Azure.Core.ResourceIdentifier networkSecurityGroupId, class System.Collections.Generic.IEnumerable`1&lt;string&gt; dnsServers, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfiguration&gt; ipConfigurations, valuetype System.Nullable`1&lt;bool&gt; isIPForwardingEnabled, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption&gt; deleteOption, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliaryMode&gt; auxiliaryMode, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliarySku&gt; auxiliarySku) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssNetworkConfigurationProperties(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},Azure.Core.ResourceIdentifier,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfiguration},System.Nullable{System.Boolean},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliaryMode},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliarySku})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmssNetworkConfigurationProperties (Optional isPrimary As Nullable(Of Boolean) = Nothing, Optional isAcceleratedNetworkingEnabled As Nullable(Of Boolean) = Nothing, Optional isTcpStateTrackingDisabled As Nullable(Of Boolean) = Nothing, Optional isFpgaEnabled As Nullable(Of Boolean) = Nothing, Optional networkSecurityGroupId As ResourceIdentifier = Nothing, Optional dnsServers As IEnumerable(Of String) = Nothing, Optional ipConfigurations As IEnumerable(Of ComputeFleetVmssIPConfiguration) = Nothing, Optional isIPForwardingEnabled As Nullable(Of Boolean) = Nothing, Optional deleteOption As Nullable(Of ComputeFleetVmDeleteOption) = Nothing, Optional auxiliaryMode As Nullable(Of ComputeFleetNetworkInterfaceAuxiliaryMode) = Nothing, Optional auxiliarySku As Nullable(Of ComputeFleetNetworkInterfaceAuxiliarySku) = Nothing) As ComputeFleetVmssNetworkConfigurationProperties" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmssNetworkConfigurationProperties : Nullable&lt;bool&gt; * Nullable&lt;bool&gt; * Nullable&lt;bool&gt; * Nullable&lt;bool&gt; * Azure.Core.ResourceIdentifier * seq&lt;string&gt; * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfiguration&gt; * Nullable&lt;bool&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliaryMode&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliarySku&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfigurationProperties" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssNetworkConfigurationProperties (isPrimary, isAcceleratedNetworkingEnabled, isTcpStateTrackingDisabled, isFpgaEnabled, networkSecurityGroupId, dnsServers, ipConfigurations, isIPForwardingEnabled, deleteOption, auxiliaryMode, auxiliarySku)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfigurationProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isPrimary" Type="System.Nullable&lt;System.Boolean&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isAcceleratedNetworkingEnabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isTcpStateTrackingDisabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isFpgaEnabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="networkSecurityGroupId" Type="Azure.Core.ResourceIdentifier" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="dnsServers" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="ipConfigurations" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPConfiguration&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isIPForwardingEnabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="deleteOption" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="auxiliaryMode" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliaryMode&gt;" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="auxiliarySku" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkInterfaceAuxiliarySku&gt;" Index="10" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="isPrimary">
+            Specifies the primary network interface in case the virtual machine has more
+            than 1 network interface.
+            </param>
+        <param name="isAcceleratedNetworkingEnabled"> Specifies whether the network interface is accelerated networking-enabled. </param>
+        <param name="isTcpStateTrackingDisabled"> Specifies whether the network interface is disabled for tcp state tracking. </param>
+        <param name="isFpgaEnabled"> Specifies whether the network interface is FPGA networking-enabled. </param>
+        <param name="networkSecurityGroupId"> Resource Id. </param>
+        <param name="dnsServers"> List of DNS servers IP addresses. </param>
+        <param name="ipConfigurations"> Specifies the IP configurations of the network interface. </param>
+        <param name="isIPForwardingEnabled"> Whether IP forwarding enabled on this NIC. </param>
+        <param name="deleteOption"> Specify what happens to the network interface when the VM is deleted. </param>
+        <param name="auxiliaryMode">
+            Specifies whether the Auxiliary mode is enabled for the Network Interface
+            resource.
+            </param>
+        <param name="auxiliarySku">
+            Specifies whether the Auxiliary sku is enabled for the Network Interface
+            resource.
+            </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfigurationProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmssNetworkProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkProfile ComputeFleetVmssNetworkProfile (Azure.Core.ResourceIdentifier healthProbeId = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfiguration&gt; networkInterfaceConfigurations = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkApiVersion? networkApiVersion = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkProfile ComputeFleetVmssNetworkProfile(class Azure.Core.ResourceIdentifier healthProbeId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfiguration&gt; networkInterfaceConfigurations, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkApiVersion&gt; networkApiVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssNetworkProfile(Azure.Core.ResourceIdentifier,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfiguration},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkApiVersion})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmssNetworkProfile (Optional healthProbeId As ResourceIdentifier = Nothing, Optional networkInterfaceConfigurations As IEnumerable(Of ComputeFleetVmssNetworkConfiguration) = Nothing, Optional networkApiVersion As Nullable(Of ComputeFleetNetworkApiVersion) = Nothing) As ComputeFleetVmssNetworkProfile" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmssNetworkProfile : Azure.Core.ResourceIdentifier * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfiguration&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkApiVersion&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkProfile" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssNetworkProfile (healthProbeId, networkInterfaceConfigurations, networkApiVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="healthProbeId" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="networkInterfaceConfigurations" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkConfiguration&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="networkApiVersion" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetNetworkApiVersion&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="healthProbeId">
+            The ARM resource id in the form of
+            /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...
+            </param>
+        <param name="networkInterfaceConfigurations"> The list of network configurations. </param>
+        <param name="networkApiVersion">
+            specifies the Microsoft.Network API version used when creating networking
+            resources in the Network Interface Configurations for Virtual Machine Scale Set
+            with orchestration mode 'Flexible'
+            </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssNetworkProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmssOSDisk">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk ComputeFleetVmssOSDisk (string name = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCachingType? caching = default, bool? isWriteAcceleratorEnabled = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskCreateOptionType createOption = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiffDiskSettings diffDiskSettings = default, int? diskSizeGB = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetOperatingSystemType? osType = default, Uri imageUri = default, System.Collections.Generic.IEnumerable&lt;string&gt; vhdContainers = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssManagedDisk managedDisk = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskDeleteOptionType? deleteOption = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk ComputeFleetVmssOSDisk(string name, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCachingType&gt; caching, valuetype System.Nullable`1&lt;bool&gt; isWriteAcceleratorEnabled, valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskCreateOptionType createOption, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiffDiskSettings diffDiskSettings, valuetype System.Nullable`1&lt;int32&gt; diskSizeGB, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetOperatingSystemType&gt; osType, class System.Uri imageUri, class System.Collections.Generic.IEnumerable`1&lt;string&gt; vhdContainers, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssManagedDisk managedDisk, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskDeleteOptionType&gt; deleteOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssOSDisk(System.String,System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCachingType},System.Nullable{System.Boolean},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskCreateOptionType,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiffDiskSettings,System.Nullable{System.Int32},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetOperatingSystemType},System.Uri,System.Collections.Generic.IEnumerable{System.String},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssManagedDisk,System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskDeleteOptionType})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmssOSDisk (Optional name As String = Nothing, Optional caching As Nullable(Of ComputeFleetCachingType) = Nothing, Optional isWriteAcceleratorEnabled As Nullable(Of Boolean) = Nothing, Optional createOption As ComputeFleetDiskCreateOptionType = Nothing, Optional diffDiskSettings As ComputeFleetDiffDiskSettings = Nothing, Optional diskSizeGB As Nullable(Of Integer) = Nothing, Optional osType As Nullable(Of ComputeFleetOperatingSystemType) = Nothing, Optional imageUri As Uri = Nothing, Optional vhdContainers As IEnumerable(Of String) = Nothing, Optional managedDisk As ComputeFleetVmssManagedDisk = Nothing, Optional deleteOption As Nullable(Of ComputeFleetDiskDeleteOptionType) = Nothing) As ComputeFleetVmssOSDisk" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmssOSDisk : string * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCachingType&gt; * Nullable&lt;bool&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskCreateOptionType * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiffDiskSettings * Nullable&lt;int&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetOperatingSystemType&gt; * Uri * seq&lt;string&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssManagedDisk * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskDeleteOptionType&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssOSDisk (name, caching, isWriteAcceleratorEnabled, createOption, diffDiskSettings, diskSizeGB, osType, imageUri, vhdContainers, managedDisk, deleteOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="caching" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetCachingType&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isWriteAcceleratorEnabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createOption" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskCreateOptionType" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="diffDiskSettings" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiffDiskSettings" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="diskSizeGB" Type="System.Nullable&lt;System.Int32&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="osType" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetOperatingSystemType&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="imageUri" Type="System.Uri" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="vhdContainers" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="managedDisk" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssManagedDisk" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="deleteOption" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskDeleteOptionType&gt;" Index="10" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The disk name. </param>
+        <param name="caching">
+            Specifies the caching requirements. Possible values are: <b>None,</b><b>ReadOnly,</b><b>ReadWrite.</b> The default values are: **None for Standard
+            storage. ReadOnly for Premium storage.**
+            </param>
+        <param name="isWriteAcceleratorEnabled"> Specifies whether writeAccelerator should be enabled or disabled on the disk. </param>
+        <param name="createOption">
+            Specifies how the virtual machines in the scale set should be created. The only
+            allowed value is: <b>FromImage.</b> This value is used when you are using an image
+            to create the virtual machine. If you are using a platform image, you also use
+            the imageReference element described above. If you are using a marketplace
+            image, you  also use the plan element previously described.
+            </param>
+        <param name="diffDiskSettings">
+            Specifies the ephemeral disk Settings for the operating system disk used by the
+            virtual machine scale set.
+            </param>
+        <param name="diskSizeGB">
+            Specifies the size of an empty data disk in gigabytes. This element can be used
+            to overwrite the size of the disk in a virtual machine image. The property 'diskSizeGB'
+            is the number of bytes x 1024^3 for the disk and the value cannot
+            be larger than 1023.
+            </param>
+        <param name="osType">
+            This property allows you to specify the type of the OS that is included in the
+            disk if creating a VM from user-image or a specialized VHD. Possible values
+            are: <b>Windows,</b><b>Linux.</b></param>
+        <param name="imageUri"> Specifies the virtual hard disk's uri. </param>
+        <param name="vhdContainers">
+            Specifies the container urls that are used to store operating system disks for
+            the scale set.
+            </param>
+        <param name="managedDisk"> The managed disk parameters. </param>
+        <param name="deleteOption">
+            Specifies whether OS Disk should be deleted or detached upon VMSS Flex deletion
+            (This feature is available for VMSS with Flexible OrchestrationMode only).
+            &lt;br&gt;&lt;br&gt; Possible values: &lt;br&gt;&lt;br&gt; <b>Delete</b> If this value is used, the OS
+            disk is deleted when VMSS Flex VM is deleted.&lt;br&gt;&lt;br&gt; <b>Detach</b> If this value
+            is used, the OS disk is retained after VMSS Flex VM is deleted. &lt;br&gt;&lt;br&gt; The
+            default value is set to <b>Delete</b>. For an Ephemeral OS Disk, the default value
+            is set to <b>Delete</b>. User cannot change the delete option for Ephemeral OS
+            Disk.
+            </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmssOSProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSProfile ComputeFleetVmssOSProfile (string computerNamePrefix = default, string adminUsername = default, string adminPassword = default, string customData = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration windowsConfiguration = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetLinuxConfiguration linuxConfiguration = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup&gt; secrets = default, bool? areExtensionOperationsAllowed = default, bool? isGuestProvisionSignalRequired = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSProfile ComputeFleetVmssOSProfile(string computerNamePrefix, string adminUsername, string adminPassword, string customData, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration windowsConfiguration, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetLinuxConfiguration linuxConfiguration, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup&gt; secrets, valuetype System.Nullable`1&lt;bool&gt; areExtensionOperationsAllowed, valuetype System.Nullable`1&lt;bool&gt; isGuestProvisionSignalRequired) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssOSProfile(System.String,System.String,System.String,System.String,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetLinuxConfiguration,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup},System.Nullable{System.Boolean},System.Nullable{System.Boolean})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmssOSProfile (Optional computerNamePrefix As String = Nothing, Optional adminUsername As String = Nothing, Optional adminPassword As String = Nothing, Optional customData As String = Nothing, Optional windowsConfiguration As ComputeFleetWindowsConfiguration = Nothing, Optional linuxConfiguration As ComputeFleetLinuxConfiguration = Nothing, Optional secrets As IEnumerable(Of ComputeFleetVaultSecretGroup) = Nothing, Optional areExtensionOperationsAllowed As Nullable(Of Boolean) = Nothing, Optional isGuestProvisionSignalRequired As Nullable(Of Boolean) = Nothing) As ComputeFleetVmssOSProfile" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmssOSProfile : string * string * string * string * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetLinuxConfiguration * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup&gt; * Nullable&lt;bool&gt; * Nullable&lt;bool&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSProfile" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssOSProfile (computerNamePrefix, adminUsername, adminPassword, customData, windowsConfiguration, linuxConfiguration, secrets, areExtensionOperationsAllowed, isGuestProvisionSignalRequired)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="computerNamePrefix" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="adminUsername" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="adminPassword" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="customData" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="windowsConfiguration" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="linuxConfiguration" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetLinuxConfiguration" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="secrets" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVaultSecretGroup&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="areExtensionOperationsAllowed" Type="System.Nullable&lt;System.Boolean&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isGuestProvisionSignalRequired" Type="System.Nullable&lt;System.Boolean&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="computerNamePrefix">
+            Specifies the computer name prefix for all of the virtual machines in the scale
+            set. Computer name prefixes must be 1 to 15 characters long.
+            </param>
+        <param name="adminUsername">
+            Specifies the name of the administrator account. &lt;br&gt;&lt;br&gt; **Windows-only
+            restriction:<b> Cannot end in "." &lt;br&gt;&lt;br&gt; </b>Disallowed values:**
+            "administrator", "admin", "user", "user1", "test", "user2", "test1", "user3",
+            "admin1", "1", "123", "a", "actuser", "adm", "admin2", "aspnet", "backup",
+            "console", "david", "guest", "john", "owner", "root", "server", "sql",
+            "support", "support_388945a0", "sys", "test2", "test3", "user4", "user5".
+            &lt;br&gt;&lt;br&gt; <b>Minimum-length (Linux):</b> 1  character &lt;br&gt;&lt;br&gt; **Max-length
+            (Linux):<b> 64 characters &lt;br&gt;&lt;br&gt; </b>Max-length (Windows):** 20 characters
+            </param>
+        <param name="adminPassword">
+            Specifies the password of the administrator account. &lt;br&gt;&lt;br&gt; **Minimum-length
+            (Windows):<b> 8 characters &lt;br&gt;&lt;br&gt; </b>Minimum-length (Linux):** 6 characters
+            &lt;br&gt;&lt;br&gt; <b>Max-length (Windows):</b> 123 characters &lt;br&gt;&lt;br&gt; **Max-length
+            (Linux):<b> 72 characters &lt;br&gt;&lt;br&gt; </b>Complexity requirements:** 3 out of 4
+            conditions below need to be fulfilled &lt;br&gt; Has lower characters &lt;br&gt;Has upper
+            characters &lt;br&gt; Has a digit &lt;br&gt; Has a special character (Regex match [\W_])
+            &lt;br&gt;&lt;br&gt; <b>Disallowed values:</b> "abc@123", "P@$$w0rd", "P@ssw0rd",
+            "P@ssword123", "Pa$$word", "pass@word1", "Password!", "Password1",
+            "Password22", "iloveyou!" &lt;br&gt;&lt;br&gt; For resetting the password, see [How to
+            reset the Remote Desktop service or its login password in a Windows
+            VM](https://learn.microsoft.com/troubleshoot/azure/virtual-machines/reset-rdp)
+            &lt;br&gt;&lt;br&gt; For resetting root password, see [Manage users, SSH, and check or
+            repair disks on Azure Linux VMs using the VMAccess
+            Extension](https://learn.microsoft.com/troubleshoot/azure/virtual-machines/troubleshoot-ssh-connection)
+            </param>
+        <param name="customData">
+            Specifies a base-64 encoded string of custom data. The base-64 encoded string
+            is decoded to a binary array that is saved as a file on the Virtual Machine.
+            The maximum length of the binary array is 65535 bytes. For using cloud-init for
+            your VM, see [Using cloud-init to customize a Linux VM during
+            creation](https://learn.microsoft.com/azure/virtual-machines/linux/using-cloud-init)
+            </param>
+        <param name="windowsConfiguration"> Specifies Windows operating system settings on the virtual machine. </param>
+        <param name="linuxConfiguration">
+            Specifies the Linux operating system settings on the virtual machine. For a
+            list of supported Linux distributions, see [Linux on Azure-Endorsed
+            Distributions](https://learn.microsoft.com/azure/virtual-machines/linux/endorsed-distros).
+            </param>
+        <param name="secrets">
+            Specifies set of certificates that should be installed onto the virtual
+            machines in the scale set. To install certificates on a virtual machine it is
+            recommended to use the [Azure Key Vault virtual machine extension for
+            Linux](https://learn.microsoft.com/azure/virtual-machines/extensions/key-vault-linux)
+            or the [Azure Key Vault virtual machine extension for
+            Windows](https://learn.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
+            </param>
+        <param name="areExtensionOperationsAllowed">
+            Specifies whether extension operations should be allowed on the virtual machine
+            scale set. This may only be set to False when no extensions are present on the
+            virtual machine scale set.
+            </param>
+        <param name="isGuestProvisionSignalRequired"> Optional property which must either be set to True or omitted. </param>
+        <summary> Describes a virtual machine scale set OS profile. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmssPublicIPAddressConfigurationProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfigurationProperties ComputeFleetVmssPublicIPAddressConfigurationProperties (int? idleTimeoutInMinutes = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressDnsSettings dnsSettings = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPTag&gt; ipTags = default, Azure.Core.ResourceIdentifier publicIPPrefixId = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion? publicIPAddressVersion = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption? deleteOption = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfigurationProperties ComputeFleetVmssPublicIPAddressConfigurationProperties(valuetype System.Nullable`1&lt;int32&gt; idleTimeoutInMinutes, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressDnsSettings dnsSettings, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPTag&gt; ipTags, class Azure.Core.ResourceIdentifier publicIPPrefixId, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion&gt; publicIPAddressVersion, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption&gt; deleteOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssPublicIPAddressConfigurationProperties(System.Nullable{System.Int32},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressDnsSettings,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPTag},Azure.Core.ResourceIdentifier,System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmssPublicIPAddressConfigurationProperties (Optional idleTimeoutInMinutes As Nullable(Of Integer) = Nothing, Optional dnsSettings As ComputeFleetVmssPublicIPAddressDnsSettings = Nothing, Optional ipTags As IEnumerable(Of ComputeFleetVmssIPTag) = Nothing, Optional publicIPPrefixId As ResourceIdentifier = Nothing, Optional publicIPAddressVersion As Nullable(Of ComputeFleetIPVersion) = Nothing, Optional deleteOption As Nullable(Of ComputeFleetVmDeleteOption) = Nothing) As ComputeFleetVmssPublicIPAddressConfigurationProperties" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmssPublicIPAddressConfigurationProperties : Nullable&lt;int&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressDnsSettings * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPTag&gt; * Azure.Core.ResourceIdentifier * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfigurationProperties" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssPublicIPAddressConfigurationProperties (idleTimeoutInMinutes, dnsSettings, ipTags, publicIPPrefixId, publicIPAddressVersion, deleteOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfigurationProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="idleTimeoutInMinutes" Type="System.Nullable&lt;System.Int32&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="dnsSettings" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressDnsSettings" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="ipTags" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssIPTag&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="publicIPPrefixId" Type="Azure.Core.ResourceIdentifier" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="publicIPAddressVersion" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetIPVersion&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="deleteOption" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmDeleteOption&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="idleTimeoutInMinutes"> The idle timeout of the public IP address. </param>
+        <param name="dnsSettings"> The dns settings to be applied on the publicIP addresses . </param>
+        <param name="ipTags"> The list of IP tags associated with the public IP address. </param>
+        <param name="publicIPPrefixId"> Resource Id. </param>
+        <param name="publicIPAddressVersion">
+            Available from Api-Version 2019-07-01 onwards, it represents whether the
+            specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible
+            values are: 'IPv4' and 'IPv6'.
+            </param>
+        <param name="deleteOption"> Specify what happens to the public IP when the VM is deleted. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssPublicIPAddressConfigurationProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetVmssStorageProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssStorageProfile ComputeFleetVmssStorageProfile (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetImageReference imageReference = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk osDisk = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssDataDisk&gt; dataDisks = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskControllerType? diskControllerType = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssStorageProfile ComputeFleetVmssStorageProfile(class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetImageReference imageReference, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk osDisk, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssDataDisk&gt; dataDisks, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskControllerType&gt; diskControllerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssStorageProfile(Azure.ResourceManager.ComputeFleet.Models.ComputeFleetImageReference,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssDataDisk},System.Nullable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskControllerType})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVmssStorageProfile (Optional imageReference As ComputeFleetImageReference = Nothing, Optional osDisk As ComputeFleetVmssOSDisk = Nothing, Optional dataDisks As IEnumerable(Of ComputeFleetVmssDataDisk) = Nothing, Optional diskControllerType As Nullable(Of ComputeFleetDiskControllerType) = Nothing) As ComputeFleetVmssStorageProfile" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVmssStorageProfile : Azure.ResourceManager.ComputeFleet.Models.ComputeFleetImageReference * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssDataDisk&gt; * Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskControllerType&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssStorageProfile" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVmssStorageProfile (imageReference, osDisk, dataDisks, diskControllerType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssStorageProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageReference" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetImageReference" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="osDisk" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssOSDisk" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="dataDisks" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssDataDisk&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="diskControllerType" Type="System.Nullable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetDiskControllerType&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="imageReference">
+            Specifies information about the image to use. You can specify information about
+            platform images, marketplace images, or virtual machine images. This element is
+            required when you want to use a platform image, marketplace image, or virtual
+            machine image, but is not used in other creation operations.
+            </param>
+        <param name="osDisk">
+            Specifies information about the operating system disk used by the virtual
+            machines in the scale set. For more information about disks, see [About disks
+            and VHDs for Azure virtual
+            machines](https://learn.microsoft.com/azure/virtual-machines/managed-disks-overview).
+            </param>
+        <param name="dataDisks">
+            Specifies the parameters that are used to add data disks to the virtual
+            machines in the scale set. For more information about disks, see [About disks
+            and VHDs for Azure virtual
+            machines](https://learn.microsoft.com/azure/virtual-machines/managed-disks-overview).
+            </param>
+        <param name="diskControllerType"> Specifies the disk controller type configured for the virtual machines in the scale set. Minimum api-version: 2022-08-01. </param>
+        <summary> Describes a virtual machine scale set storage profile. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmssStorageProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetWindowsConfiguration">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration ComputeFleetWindowsConfiguration (bool? isVmAgentProvisioned = default, bool? isAutomaticUpdatesEnabled = default, string timeZone = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.WindowsSetupAdditionalInformation&gt; additionalUnattendContent = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmGuestPatchSettings patchSettings = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWinRMListener&gt; winRMListeners = default, bool? isVmAgentPlatformUpdatesEnabled = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration ComputeFleetWindowsConfiguration(valuetype System.Nullable`1&lt;bool&gt; isVmAgentProvisioned, valuetype System.Nullable`1&lt;bool&gt; isAutomaticUpdatesEnabled, string timeZone, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.WindowsSetupAdditionalInformation&gt; additionalUnattendContent, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmGuestPatchSettings patchSettings, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWinRMListener&gt; winRMListeners, valuetype System.Nullable`1&lt;bool&gt; isVmAgentPlatformUpdatesEnabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetWindowsConfiguration(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.WindowsSetupAdditionalInformation},Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmGuestPatchSettings,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWinRMListener},System.Nullable{System.Boolean})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetWindowsConfiguration (Optional isVmAgentProvisioned As Nullable(Of Boolean) = Nothing, Optional isAutomaticUpdatesEnabled As Nullable(Of Boolean) = Nothing, Optional timeZone As String = Nothing, Optional additionalUnattendContent As IEnumerable(Of WindowsSetupAdditionalInformation) = Nothing, Optional patchSettings As ComputeFleetVmGuestPatchSettings = Nothing, Optional winRMListeners As IEnumerable(Of ComputeFleetWinRMListener) = Nothing, Optional isVmAgentPlatformUpdatesEnabled As Nullable(Of Boolean) = Nothing) As ComputeFleetWindowsConfiguration" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetWindowsConfiguration : Nullable&lt;bool&gt; * Nullable&lt;bool&gt; * string * seq&lt;Azure.ResourceManager.ComputeFleet.Models.WindowsSetupAdditionalInformation&gt; * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmGuestPatchSettings * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWinRMListener&gt; * Nullable&lt;bool&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetWindowsConfiguration (isVmAgentProvisioned, isAutomaticUpdatesEnabled, timeZone, additionalUnattendContent, patchSettings, winRMListeners, isVmAgentPlatformUpdatesEnabled)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isVmAgentProvisioned" Type="System.Nullable&lt;System.Boolean&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isAutomaticUpdatesEnabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="timeZone" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="additionalUnattendContent" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.WindowsSetupAdditionalInformation&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="patchSettings" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmGuestPatchSettings" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="winRMListeners" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWinRMListener&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isVmAgentPlatformUpdatesEnabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="isVmAgentProvisioned">
+            Indicates whether virtual machine agent should be provisioned on the virtual
+            machine. When this property is not specified in the request body, it is set to
+            true by default. This will ensure that VM Agent is installed on the VM so that
+            extensions can be added to the VM later.
+            </param>
+        <param name="isAutomaticUpdatesEnabled">
+            Indicates whether Automatic Updates is enabled for the Windows virtual machine.
+            Default value is true. For virtual machine scale sets, this property can be
+            updated and updates will take effect on OS reprovisioning.
+            </param>
+        <param name="timeZone">
+            Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time".
+            Possible values can be
+            [TimeZoneInfo.Id](https://learn.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id)
+            value from time zones returned by
+            [TimeZoneInfo.GetSystemTimeZones](https://learn.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
+            </param>
+        <param name="additionalUnattendContent">
+            Specifies additional base-64 encoded XML formatted information that can be
+            included in the Unattend.xml file, which is used by Windows Setup.
+            </param>
+        <param name="patchSettings"> [Preview Feature] Specifies settings related to VM Guest Patching on Windows. </param>
+        <param name="winRMListeners"> The list of Windows Remote Management listeners. </param>
+        <param name="isVmAgentPlatformUpdatesEnabled">
+            Indicates whether VMAgent Platform Updates is enabled for the Windows virtual
+            machine. Default value is false.
+            </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetWindowsConfiguration" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeFleetZoneAllocationPolicy">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy ComputeFleetZoneAllocationPolicy (Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneDistributionStrategy distributionStrategy = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ZonePreference&gt; zonePreferences = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy ComputeFleetZoneAllocationPolicy(valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneDistributionStrategy distributionStrategy, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ComputeFleet.Models.ZonePreference&gt; zonePreferences) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetZoneAllocationPolicy(Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneDistributionStrategy,System.Collections.Generic.IEnumerable{Azure.ResourceManager.ComputeFleet.Models.ZonePreference})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetZoneAllocationPolicy (Optional distributionStrategy As ComputeFleetZoneDistributionStrategy = Nothing, Optional zonePreferences As IEnumerable(Of ZonePreference) = Nothing) As ComputeFleetZoneAllocationPolicy" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetZoneAllocationPolicy : Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneDistributionStrategy * seq&lt;Azure.ResourceManager.ComputeFleet.Models.ZonePreference&gt; -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetZoneAllocationPolicy (distributionStrategy, zonePreferences)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="distributionStrategy" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneDistributionStrategy" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="zonePreferences" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ComputeFleet.Models.ZonePreference&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="distributionStrategy"> Distribution strategy used for zone allocation policy. </param>
+        <param name="zonePreferences"> Zone preferences, required when zone distribution strategy is Prioritized. </param>
+        <summary> ZoneAllocationPolicy for Compute Fleet. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetZoneAllocationPolicy" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

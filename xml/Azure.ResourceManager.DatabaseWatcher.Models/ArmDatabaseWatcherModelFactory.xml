@@ -13,7 +13,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -39,12 +39,12 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherAlertRuleProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherAlertRuleData" />. </summary>
+        <summary> Concrete proxy resource types can be created by aliasing this type using a specific property type. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherAlertRuleData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -78,7 +78,7 @@
         <param name="provisioningState"> The provisioning state of the alert rule resource. </param>
         <param name="alertRuleTemplateId"> The template ID associated with alert rule resource. </param>
         <param name="alertRuleTemplateVersion"> The alert rule template version. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherAlertRuleProperties" />. </summary>
+        <summary> The generic properties of the alert rule proxy resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherAlertRuleProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -108,15 +108,15 @@
         <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="tags"> The tags. </param>
-        <param name="location"> The location. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <param name="identity"> The managed service identities assigned to this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherData" />. </summary>
+        <summary> The DatabaseWatcherProviderHub resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -143,12 +143,12 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherHealthValidationProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherHealthValidationData" />. </summary>
+        <summary> Concrete proxy resource types can be created by aliasing this type using a specific property type. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherHealthValidationData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -184,7 +184,7 @@
         <param name="recommendationUri"> The URL related to resolving the issue. </param>
         <param name="relatedResourceId"> The resource ID of the Azure resource related to the issue. </param>
         <param name="relatedResourceType"> The type of the Azure resource related to the issue. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherHealthValidationIssue" />. </summary>
+        <summary> The model of a health validation issue. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherHealthValidationIssue" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -216,8 +216,36 @@
         <param name="status"> The current health validation status. </param>
         <param name="issues"> The list of issues found by health validation. </param>
         <param name="provisioningState"> The provisioning state of the health validation resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherHealthValidationProperties" />. </summary>
+        <summary> The generic properties of the health validation resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherHealthValidationProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DatabaseWatcherPatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherPatch DatabaseWatcherPatch (Azure.ResourceManager.Models.ManagedServiceIdentity identity = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherUpdateProperties properties = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherPatch DatabaseWatcherPatch(class Azure.ResourceManager.Models.ManagedServiceIdentity identity, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, class Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherUpdateProperties properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DatabaseWatcher.Models.ArmDatabaseWatcherModelFactory.DatabaseWatcherPatch(Azure.ResourceManager.Models.ManagedServiceIdentity,System.Collections.Generic.IDictionary{System.String,System.String},Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherUpdateProperties)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DatabaseWatcherPatch (Optional identity As ManagedServiceIdentity = Nothing, Optional tags As IDictionary(Of String, String) = Nothing, Optional properties As DatabaseWatcherUpdateProperties = Nothing) As DatabaseWatcherPatch" />
+      <MemberSignature Language="F#" Value="static member DatabaseWatcherPatch : Azure.ResourceManager.Models.ManagedServiceIdentity * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherUpdateProperties -&gt; Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherPatch" Usage="Azure.ResourceManager.DatabaseWatcher.Models.ArmDatabaseWatcherModelFactory.DatabaseWatcherPatch (identity, tags, properties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DatabaseWatcher</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherPatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" />
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="properties" Type="Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherUpdateProperties" />
+      </Parameters>
+      <Docs>
+        <param name="identity"> The managed service identities assigned to this resource. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="properties"> The resource-specific properties for this resource. </param>
+        <summary> The type used for update operations of the Watcher. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherPatch" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -246,7 +274,7 @@
         <param name="status"> The monitoring collection status of the watcher. </param>
         <param name="provisioningState"> The provisioning state of the resource watcher. </param>
         <param name="defaultAlertRuleIdentityResourceId"> The resource ID of a user-assigned managed identity that will be assigned to a new alert rule. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherProperties" />. </summary>
+        <summary> The RP specific properties of the resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -273,12 +301,12 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherSharedPrivateLinkResourceProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherSharedPrivateLinkResourceData" />. </summary>
+        <summary> Concrete proxy resource types can be created by aliasing this type using a specific property type. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherSharedPrivateLinkResourceData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -312,7 +340,7 @@
         <param name="dnsZone"> The DNS zone segment to be included in the DNS name of the shared private link. Value is required for Azure Data Explorer clusters and SQL managed instances, and must be omitted for SQL logical servers and key vaults. The value is the second segment of the host FQDN name of the resource that the shared private link resource is for. For example: if the host name is 'adx-cluster-21187695.eastus.kusto.windows.net', then the value is 'eastus'; if the host name is 'sql-mi-23961134.767d5869f605.database.windows.net', then the value is '767d5869f605'. </param>
         <param name="status"> Status of the shared private link resource. Can be Pending, Approved, Rejected or Disconnected. </param>
         <param name="provisioningState"> The provisioning state of the resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherSharedPrivateLinkResourceProperties" />. </summary>
+        <summary> The generic properties of a Shared Private Link resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherSharedPrivateLinkResourceProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -339,16 +367,12 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherTargetProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="properties">
-            The resource-specific properties for this resource.
-            Please note <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherTargetProperties" /> is the base class. According to the scenario, a derived class of the base class might need to be assigned here, or this property needs to be casted to one of the possible derived classes.
-            The available derived classes include <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlDBSingleDatabaseTargetProperties" />, <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlDBElasticPoolTargetProperties" /> and <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlMITargetProperties" />.
-            </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherTargetData" />. </summary>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="properties"> The resource-specific properties for this resource. </param>
+        <summary> Concrete proxy resource types can be created by aliasing this type using a specific property type. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.DatabaseWatcherTargetData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -380,7 +404,10 @@
         <param name="targetVault"> To use SQL authentication when connecting to targets, specify the vault where the login name and password secrets are stored. </param>
         <param name="connectionServerName"> The FQDN host name of the server to use in the connection string when connecting to a target. For example, for an Azure SQL logical server in the Azure commercial cloud, the value might be 'sql-logical-server-22092780.database.windows.net'; for an Azure SQL managed instance in the Azure commercial cloud, the value might be 'sql-mi-39441134.767d5869f605.database.windows.net'. Port number and instance name must be specified separately. </param>
         <param name="provisioningState"> The provisioning state of the resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherTargetProperties" />. </summary>
+        <summary>
+            The generic properties of a target.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlDBSingleDatabaseTargetProperties" />, <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlDBElasticPoolTargetProperties" />, and <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlMITargetProperties" />.
+            </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.DatabaseWatcherTargetProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -416,7 +443,7 @@
         <param name="sqlEpResourceId"> The Azure resource ID of an Azure SQL DB elastic pool target. </param>
         <param name="anchorDatabaseResourceId"> The Azure resource ID of the anchor database used to connect to an elastic pool. </param>
         <param name="readIntent"> Set to true to monitor a high availability replica of specified target, if any. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlDBElasticPoolTargetProperties" />. </summary>
+        <summary> The properties specific to an elastic pool in Azure SQL Database. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlDBElasticPoolTargetProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -450,7 +477,7 @@
         <param name="provisioningState"> The provisioning state of the resource. </param>
         <param name="sqlDbResourceId"> The Azure resource ID of an Azure SQL DB database target. </param>
         <param name="readIntent"> Set to true to monitor a high availability replica of specified target, if any. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlDBSingleDatabaseTargetProperties" />. </summary>
+        <summary> The properties specific to a database in Azure SQL Database. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlDBSingleDatabaseTargetProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -486,7 +513,7 @@
         <param name="sqlMiResourceId"> The Azure resource ID of an Azure SQL Managed Instance target. </param>
         <param name="connectionTcpPort"> The TCP port number to optionally use in the connection string when connecting to an Azure SQL Managed Instance target. </param>
         <param name="readIntent"> Set to true to monitor a high availability replica of specified target, if any. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlMITargetProperties" />. </summary>
+        <summary> The properties specific to Azure SQL Managed Instance targets. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DatabaseWatcher.Models.SqlMITargetProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>

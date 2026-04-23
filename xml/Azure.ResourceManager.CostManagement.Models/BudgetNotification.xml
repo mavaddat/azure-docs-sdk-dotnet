@@ -1,0 +1,528 @@
+<Type Name="BudgetNotification" FullName="Azure.ResourceManager.CostManagement.Models.BudgetNotification">
+  <TypeSignature Language="C#" Value="public class BudgetNotification : System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;, System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BudgetNotification extends System.Object implements class System.ClientModel.Primitives.IJsonModel`1&lt;class Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;, class System.ClientModel.Primitives.IPersistableModel`1&lt;class Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;" />
+  <TypeSignature Language="DocId" Value="T:Azure.ResourceManager.CostManagement.Models.BudgetNotification" />
+  <TypeSignature Language="VB.NET" Value="Public Class BudgetNotification&#xA;Implements IJsonModel(Of BudgetNotification), IPersistableModel(Of BudgetNotification)" />
+  <TypeSignature Language="F#" Value="type BudgetNotification = class&#xA;    interface IJsonModel&lt;BudgetNotification&gt;&#xA;    interface IPersistableModel&lt;BudgetNotification&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ClientModel.Primitives.IPersistableModel&lt;T&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            The notification associated with a budget.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BudgetNotification (bool enabled, Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType operator, float threshold, System.Collections.Generic.IEnumerable&lt;string&gt; contactEmails);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool enabled, valuetype Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType operator, float32 threshold, class System.Collections.Generic.IEnumerable`1&lt;string&gt; contactEmails) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.#ctor(System.Boolean,Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType,System.Single,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (enabled As Boolean, operator As BudgetNotificationOperatorType, threshold As Single, contactEmails As IEnumerable(Of String))" />
+      <MemberSignature Language="F#" Value="new Azure.ResourceManager.CostManagement.Models.BudgetNotification : bool * Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType * single * seq&lt;string&gt; -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification" Usage="new Azure.ResourceManager.CostManagement.Models.BudgetNotification (enabled, operator, threshold, contactEmails)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enabled" Type="System.Boolean" />
+        <Parameter Name="operator" Type="Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType" />
+        <Parameter Name="threshold" Type="System.Single" />
+        <Parameter Name="contactEmails" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="enabled">
+            The notification is enabled or not.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            </param>
+        <param name="operator">
+            The comparison operator.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            Supported operators for <b>CategoryType: Cost</b><list type="bullet"><item><description>GreaterThan</description></item><item><description>GreaterThanOrEqualTo</description></item></list>
+            Supported operators for <b>CategoryType: ReservationUtilization</b><list type="bullet"><item><description>LessThan</description></item></list></param>
+        <param name="threshold">
+            Threshold value associated with a notification. It is always percent with a maximum of 2 decimal places.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            <b>CategoryType: Cost</b> - Must be between 0 and 1000. Notification is sent when the cost exceeded the threshold.
+            <b>CategoryType: ReservationUtilization</b> - Must be between 0 and 100. Notification is sent when a reservation has a utilization percentage below the threshold.
+            </param>
+        <param name="contactEmails">
+            Email addresses to send the notification to when the threshold is breached. Must have at least one contact email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at least one contact email specified.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            </param>
+        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CostManagement.Models.BudgetNotification" />. </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contactEmails" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContactEmails">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; ContactEmails { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; ContactEmails" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.ContactEmails" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContactEmails As IList(Of String)" />
+      <MemberSignature Language="F#" Value="member this.ContactEmails : System.Collections.Generic.IList&lt;string&gt;" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.ContactEmails" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Email addresses to send the notification to when the threshold is breached. Must have at least one contact email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at least one contact email specified.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContactGroups">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; ContactGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; ContactGroups" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.ContactGroups" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContactGroups As IList(Of String)" />
+      <MemberSignature Language="F#" Value="member this.ContactGroups : System.Collections.Generic.IList&lt;string&gt;" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.ContactGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Subscription or Resource Group scopes only. Action groups to send the notification to when the threshold is exceeded. Must be provided as a fully qualified Azure resource id.
+            Supported for CategoryType(s): Cost.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContactRoles">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; ContactRoles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; ContactRoles" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.ContactRoles" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContactRoles As IList(Of String)" />
+      <MemberSignature Language="F#" Value="member this.ContactRoles : System.Collections.Generic.IList&lt;string&gt;" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.ContactRoles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Subscription or Resource Group scopes only. Contact roles to send the notification to when the threshold is breached.
+            Supported for CategoryType(s): Cost.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.Enabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property Enabled As Boolean" />
+      <MemberSignature Language="F#" Value="member this.Enabled : bool with get, set" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The notification is enabled or not.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Frequency">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.CostManagement.Models.Frequency? Frequency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.CostManagement.Models.Frequency&gt; Frequency" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.Frequency" />
+      <MemberSignature Language="VB.NET" Value="Public Property Frequency As Nullable(Of Frequency)" />
+      <MemberSignature Language="F#" Value="member this.Frequency : Nullable&lt;Azure.ResourceManager.CostManagement.Models.Frequency&gt; with get, set" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.Frequency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.ResourceManager.CostManagement.Models.Frequency&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Frequency of a notification. Represents how long the notification will be silent after triggering an alert for a threshold breach. If not specified, the frequency will be set by default based on the timeGrain (Weekly when timeGrain: Last7Days, Monthly when timeGrain: Last30Days).
+            Supported for CategoryType(s): ReservationUtilization.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JsonModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.ResourceManager.CostManagement.Models.BudgetNotification JsonModelCreateCore (ref System.Text.Json.Utf8JsonReader reader, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.ResourceManager.CostManagement.Models.BudgetNotification JsonModelCreateCore(valuetype System.Text.Json.Utf8JsonReader&amp; reader, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.JsonModelCreateCore(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function JsonModelCreateCore (ByRef reader As Utf8JsonReader, options As ModelReaderWriterOptions) As BudgetNotification" />
+      <MemberSignature Language="F#" Value="abstract member JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification&#xA;override this.JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification" Usage="budgetNotification.JsonModelCreateCore (reader, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.CostManagement.Models.BudgetNotification</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JsonModelWriteCore">
+      <MemberSignature Language="C#" Value="protected virtual void JsonModelWriteCore (System.Text.Json.Utf8JsonWriter writer, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void JsonModelWriteCore(class System.Text.Json.Utf8JsonWriter writer, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.JsonModelWriteCore(System.Text.Json.Utf8JsonWriter,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub JsonModelWriteCore (writer As Utf8JsonWriter, options As ModelReaderWriterOptions)" />
+      <MemberSignature Language="F#" Value="abstract member JsonModelWriteCore : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit&#xA;override this.JsonModelWriteCore : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit" Usage="budgetNotification.JsonModelWriteCore (writer, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Text.Json.Utf8JsonWriter" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="writer"> The JSON writer. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locale">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.CostManagement.Models.CultureCode? Locale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.CostManagement.Models.CultureCode&gt; Locale" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.Locale" />
+      <MemberSignature Language="VB.NET" Value="Public Property Locale As Nullable(Of CultureCode)" />
+      <MemberSignature Language="F#" Value="member this.Locale : Nullable&lt;Azure.ResourceManager.CostManagement.Models.CultureCode&gt; with get, set" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.Locale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.ResourceManager.CostManagement.Models.CultureCode&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Language in which the recipient will receive the notification,
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operator">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType Operator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType Operator" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.Operator" />
+      <MemberSignature Language="VB.NET" Value="Public Property Operator As BudgetNotificationOperatorType" />
+      <MemberSignature Language="F#" Value="member this.Operator : Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType with get, set" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.Operator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.CostManagement.Models.BudgetNotificationOperatorType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The comparison operator.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            Supported operators for <b>CategoryType: Cost</b><list type="bullet"><item><description>GreaterThan</description></item><item><description>GreaterThanOrEqualTo</description></item></list>
+            Supported operators for <b>CategoryType: ReservationUtilization</b><list type="bullet"><item><description>LessThan</description></item></list></summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.ResourceManager.CostManagement.Models.BudgetNotification PersistableModelCreateCore (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.ResourceManager.CostManagement.Models.BudgetNotification PersistableModelCreateCore(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.PersistableModelCreateCore(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelCreateCore (data As BinaryData, options As ModelReaderWriterOptions) As BudgetNotification" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification&#xA;override this.PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification" Usage="budgetNotification.PersistableModelCreateCore (data, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.CostManagement.Models.BudgetNotification</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.BinaryData" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelWriteCore">
+      <MemberSignature Language="C#" Value="protected virtual BinaryData PersistableModelWriteCore (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.BinaryData PersistableModelWriteCore(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.PersistableModelWriteCore(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelWriteCore (options As ModelReaderWriterOptions) As BinaryData" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData&#xA;override this.PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData" Usage="budgetNotification.PersistableModelWriteCore options" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create">
+      <MemberSignature Language="C#" Value="Azure.ResourceManager.CostManagement.Models.BudgetNotification IJsonModel&lt;BudgetNotification&gt;.Create (ref System.Text.Json.Utf8JsonReader reader, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class Azure.ResourceManager.CostManagement.Models.BudgetNotification System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create(valuetype System.Text.Json.Utf8JsonReader&amp; reader, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.System#ClientModel#Primitives#IJsonModel&lt;Azure#ResourceManager#CostManagement#Models#BudgetNotification&gt;#Create(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Function Create (ByRef reader As Utf8JsonReader, options As ModelReaderWriterOptions) As BudgetNotification Implements IJsonModel(Of BudgetNotification).Create" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification&#xA;override this.System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification" Usage="budgetNotification.System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create (reader, options)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IJsonModel`1.Create(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.CostManagement.Models.BudgetNotification</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write">
+      <MemberSignature Language="C#" Value="void IJsonModel&lt;BudgetNotification&gt;.Write (System.Text.Json.Utf8JsonWriter writer, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write(class System.Text.Json.Utf8JsonWriter writer, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.System#ClientModel#Primitives#IJsonModel&lt;Azure#ResourceManager#CostManagement#Models#BudgetNotification&gt;#Write(System.Text.Json.Utf8JsonWriter,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Sub Write (writer As Utf8JsonWriter, options As ModelReaderWriterOptions) Implements IJsonModel(Of BudgetNotification).Write" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit&#xA;override this.System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit" Usage="budgetNotification.System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write (writer, options)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IJsonModel`1.Write(System.Text.Json.Utf8JsonWriter,System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Text.Json.Utf8JsonWriter" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="writer"> The JSON writer. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create">
+      <MemberSignature Language="C#" Value="Azure.ResourceManager.CostManagement.Models.BudgetNotification IPersistableModel&lt;BudgetNotification&gt;.Create (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class Azure.ResourceManager.CostManagement.Models.BudgetNotification System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.System#ClientModel#Primitives#IPersistableModel&lt;Azure#ResourceManager#CostManagement#Models#BudgetNotification&gt;#Create(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Function Create (data As BinaryData, options As ModelReaderWriterOptions) As BudgetNotification Implements IPersistableModel(Of BudgetNotification).Create" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification&#xA;override this.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.CostManagement.Models.BudgetNotification" Usage="budgetNotification.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Create (data, options)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IPersistableModel`1.Create(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.CostManagement.Models.BudgetNotification</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.BinaryData" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.GetFormatFromOptions">
+      <MemberSignature Language="C#" Value="string IPersistableModel&lt;BudgetNotification&gt;.GetFormatFromOptions (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.GetFormatFromOptions(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.System#ClientModel#Primitives#IPersistableModel&lt;Azure#ResourceManager#CostManagement#Models#BudgetNotification&gt;#GetFormatFromOptions(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Function GetFormatFromOptions (options As ModelReaderWriterOptions) As String Implements IPersistableModel(Of BudgetNotification).GetFormatFromOptions" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.GetFormatFromOptions : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; string&#xA;override this.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.GetFormatFromOptions : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; string" Usage="budgetNotification.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.GetFormatFromOptions options" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IPersistableModel`1.GetFormatFromOptions(System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write">
+      <MemberSignature Language="C#" Value="BinaryData IPersistableModel&lt;BudgetNotification&gt;.Write (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.BinaryData System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CostManagement.Models.BudgetNotification.System#ClientModel#Primitives#IPersistableModel&lt;Azure#ResourceManager#CostManagement#Models#BudgetNotification&gt;#Write(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Function Write (options As ModelReaderWriterOptions) As BinaryData Implements IPersistableModel(Of BudgetNotification).Write" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData&#xA;override this.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData" Usage="budgetNotification.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.CostManagement.Models.BudgetNotification&gt;.Write options" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IPersistableModel`1.Write(System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Threshold">
+      <MemberSignature Language="C#" Value="public float Threshold { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Threshold" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.Threshold" />
+      <MemberSignature Language="VB.NET" Value="Public Property Threshold As Single" />
+      <MemberSignature Language="F#" Value="member this.Threshold : single with get, set" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.Threshold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Threshold value associated with a notification. It is always percent with a maximum of 2 decimal places.
+            Supported for CategoryType(s): Cost, ReservationUtilization.
+            <b>CategoryType: Cost</b> - Must be between 0 and 1000. Notification is sent when the cost exceeded the threshold.
+            <b>CategoryType: ReservationUtilization</b> - Must be between 0 and 100. Notification is sent when a reservation has a utilization percentage below the threshold.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThresholdType">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.CostManagement.Models.ThresholdType? ThresholdType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.CostManagement.Models.ThresholdType&gt; ThresholdType" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CostManagement.Models.BudgetNotification.ThresholdType" />
+      <MemberSignature Language="VB.NET" Value="Public Property ThresholdType As Nullable(Of ThresholdType)" />
+      <MemberSignature Language="F#" Value="member this.ThresholdType : Nullable&lt;Azure.ResourceManager.CostManagement.Models.ThresholdType&gt; with get, set" Usage="Azure.ResourceManager.CostManagement.Models.BudgetNotification.ThresholdType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CostManagement</AssemblyName>
+        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.ResourceManager.CostManagement.Models.ThresholdType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The type of threshold.
+            Supported for CategoryType(s): Cost.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
