@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.AI.AgentServer.Invocations, agentserver
-ms.date: 04/19/2026
+ms.date: 04/23/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: agentserver
@@ -82,11 +82,11 @@ Provides request metadata to the handler. All properties are read-only and resol
 ### Customizing the host
 
 When you need to add services, configure middleware, or compose multiple protocols on a single host, see the hosting tier samples:
-- [Tier 1 hosting customization](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample5_Tier1HostingCustomize.md)
-- [Tier 2 builder](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample6_Tier2HostingBuilder.md)
-- [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md)
+- [Tier 1 hosting customization](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample5_Tier1HostingCustomize.md)
+- [Tier 2 builder](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample6_Tier2HostingBuilder.md)
+- [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md)
 
-`InvocationsServerOptions` can be configured via the `AddInvocationsServer(options => { ... })` delegate on any tier. See the [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md) sample for a complete example.
+`InvocationsServerOptions` can be configured via the `AddInvocationsServer(options => { ... })` delegate on any tier. See the [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md) sample for a complete example.
 
 ### Handler lifetime
 
@@ -94,7 +94,7 @@ Handlers registered via `AddInvocations<THandler>()` or `InvocationsServer.Run<T
 
 ## Examples
 
-You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples).
+You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples).
 
 ## Troubleshooting
 
@@ -109,9 +109,9 @@ The library emits OpenTelemetry traces via the `Azure.AI.AgentServer.Invocations
 
 ## Next steps
 
-- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples) — Getting started, custom operations
-- [Azure.AI.AgentServer.Core](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Core) — Shared hosting foundation
-- [Azure.AI.AgentServer.Responses](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Responses) — Responses protocol implementation
+- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples) — Getting started, custom operations
+- [Azure.AI.AgentServer.Core](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Core) — Shared hosting foundation
+- [Azure.AI.AgentServer.Responses](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Responses) — Responses protocol implementation
 
 ## Contributing
 
@@ -122,7 +122,7 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 <!-- LINKS -->
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.2/sdk/agentserver/Azure.AI.AgentServer.Invocations/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/src
 [nuget]: https://www.nuget.org/packages/Azure.AI.AgentServer.Invocations
 [product_doc]: https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agents
 
