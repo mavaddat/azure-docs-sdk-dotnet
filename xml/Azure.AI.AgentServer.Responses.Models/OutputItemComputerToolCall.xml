@@ -28,11 +28,11 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public OutputItemComputerToolCall (string id, string callId, Azure.AI.AgentServer.Responses.Models.ComputerAction action, System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; pendingSafetyChecks, Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus status);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string id, string callId, class Azure.AI.AgentServer.Responses.Models.ComputerAction action, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; pendingSafetyChecks, valuetype Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus status) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall.#ctor(System.String,System.String,Azure.AI.AgentServer.Responses.Models.ComputerAction,System.Collections.Generic.IEnumerable{Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam},Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (id As String, callId As String, action As ComputerAction, pendingSafetyChecks As IEnumerable(Of ComputerCallSafetyCheckParam), status As OutputItemComputerToolCallStatus)" />
-      <MemberSignature Language="F#" Value="new Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall : string * string * Azure.AI.AgentServer.Responses.Models.ComputerAction * seq&lt;Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; * Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus -&gt; Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall" Usage="new Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall (id, callId, action, pendingSafetyChecks, status)" />
+      <MemberSignature Language="C#" Value="public OutputItemComputerToolCall (string id, string callId, System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; pendingSafetyChecks, Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string id, string callId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; pendingSafetyChecks, valuetype Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall.#ctor(System.String,System.String,System.Collections.Generic.IEnumerable{Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam},Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (id As String, callId As String, pendingSafetyChecks As IEnumerable(Of ComputerCallSafetyCheckParam), status As ItemComputerToolCallStatus)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall : string * string * seq&lt;Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt; * Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus -&gt; Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall" Usage="new Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall (id, callId, pendingSafetyChecks, status)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
@@ -41,14 +41,12 @@
       <Parameters>
         <Parameter Name="id" Type="System.String" />
         <Parameter Name="callId" Type="System.String" />
-        <Parameter Name="action" Type="Azure.AI.AgentServer.Responses.Models.ComputerAction" />
         <Parameter Name="pendingSafetyChecks" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.ComputerCallSafetyCheckParam&gt;" />
-        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus" />
+        <Parameter Name="status" Type="Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus" />
       </Parameters>
       <Docs>
         <param name="id"> The unique ID of the computer call. </param>
         <param name="callId"> An identifier used when responding to the tool call with output. </param>
-        <param name="action" />
         <param name="pendingSafetyChecks"> The pending safety checks for the computer call. </param>
         <param name="status">
             The status of the item. One of `in_progress`, `completed`, or
@@ -57,7 +55,7 @@
         <summary> Initializes a new instance of <see cref="T:Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="id" />, <paramref name="callId" />, <paramref name="action" /> or <paramref name="pendingSafetyChecks" /> is null. </exception>
+          <paramref name="id" />, <paramref name="callId" /> or <paramref name="pendingSafetyChecks" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="Action">
@@ -76,6 +74,26 @@
       </ReturnValue>
       <Docs>
         <summary> Gets or sets the Action. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Actions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Azure.AI.AgentServer.Responses.Models.ComputerAction&gt; Actions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class Azure.AI.AgentServer.Responses.Models.ComputerAction&gt; Actions" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall.Actions" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Actions As IList(Of ComputerAction)" />
+      <MemberSignature Language="F#" Value="member this.Actions : System.Collections.Generic.IList&lt;Azure.AI.AgentServer.Responses.Models.ComputerAction&gt;" Usage="Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall.Actions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Azure.AI.AgentServer.Responses.Models.ComputerAction&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets the Actions. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -242,18 +260,18 @@
       </Docs>
     </Member>
     <Member MemberName="Status">
-      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus Status { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus Status" />
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus Status { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus Status" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall.Status" />
-      <MemberSignature Language="VB.NET" Value="Public Property Status As OutputItemComputerToolCallStatus" />
-      <MemberSignature Language="F#" Value="member this.Status : Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus with get, set" Usage="Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall.Status" />
+      <MemberSignature Language="VB.NET" Value="Public Property Status As ItemComputerToolCallStatus" />
+      <MemberSignature Language="F#" Value="member this.Status : Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus with get, set" Usage="Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCall.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.AgentServer.Responses.Models.OutputItemComputerToolCallStatus</ReturnType>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ItemComputerToolCallStatus</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>

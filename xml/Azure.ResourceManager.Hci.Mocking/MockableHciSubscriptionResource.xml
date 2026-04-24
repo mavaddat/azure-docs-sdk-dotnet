@@ -9,13 +9,14 @@
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.1.0</AssemblyVersion>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to SubscriptionResource. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,28 +28,84 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableHciSubscriptionResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetGalleryImages">
-      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.GalleryImageResource&gt; GetGalleryImages (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.GalleryImageResource&gt; GetGalleryImages(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetGalleryImages(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetGalleryImages (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of GalleryImageResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetGalleryImages : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.GalleryImageResource&gt;&#xA;override this.GetGalleryImages : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.GalleryImageResource&gt;" Usage="mockableHciSubscriptionResource.GetGalleryImages cancellationToken" />
+    <Member MemberName="GetBySubscriptionLocationResource">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt; GetBySubscriptionLocationResource (Azure.Core.AzureLocation location, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt; GetBySubscriptionLocationResource(valuetype Azure.Core.AzureLocation location, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetBySubscriptionLocationResource(Azure.Core.AzureLocation,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetBySubscriptionLocationResource (location As AzureLocation, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of HciKubernetesVersion)" />
+      <MemberSignature Language="F#" Value="abstract member GetBySubscriptionLocationResource : Azure.Core.AzureLocation * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt;&#xA;override this.GetBySubscriptionLocationResource : Azure.Core.AzureLocation * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt;" Usage="mockableHciSubscriptionResource.GetBySubscriptionLocationResource (location, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.GalleryImageResource&gt;</ReturnType>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The name of the Azure region. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            List all kubernetes versions.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/kubernetesVersions. </description></item><item><term> Operation Id. </term><description> KubernetesVersions_ListBySubscriptionLocationResource. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.Models.HciKubernetesVersion" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBySubscriptionLocationResourceAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt; GetBySubscriptionLocationResourceAsync (Azure.Core.AzureLocation location, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt; GetBySubscriptionLocationResourceAsync(valuetype Azure.Core.AzureLocation location, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetBySubscriptionLocationResourceAsync(Azure.Core.AzureLocation,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetBySubscriptionLocationResourceAsync (location As AzureLocation, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of HciKubernetesVersion)" />
+      <MemberSignature Language="F#" Value="abstract member GetBySubscriptionLocationResourceAsync : Azure.Core.AzureLocation * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt;&#xA;override this.GetBySubscriptionLocationResourceAsync : Azure.Core.AzureLocation * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt;" Usage="mockableHciSubscriptionResource.GetBySubscriptionLocationResourceAsync (location, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.Models.HciKubernetesVersion&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The name of the Azure region. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            List all kubernetes versions.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/kubernetesVersions. </description></item><item><term> Operation Id. </term><description> KubernetesVersions_ListBySubscriptionLocationResource. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.Models.HciKubernetesVersion" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevicePools">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.DevicePoolResource&gt; GetDevicePools (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.DevicePoolResource&gt; GetDevicePools(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetDevicePools(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevicePools (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of DevicePoolResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetDevicePools : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.DevicePoolResource&gt;&#xA;override this.GetDevicePools : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.DevicePoolResource&gt;" Usage="mockableHciSubscriptionResource.GetDevicePools cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.DevicePoolResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
@@ -56,25 +113,25 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Lists all of the gallery images in the specified subscription. Use the nextLink property in the response to get the next page of gallery images.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/galleryImages</description></item><item><term>Operation Id</term><description>GalleryImages_ListAll</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.GalleryImageResource" /> that may take multiple service requests to iterate over. </returns>
+            List all device pools in a subscription.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/devicePools. </description></item><item><term> Operation Id. </term><description> DevicePools_ListBySubscription. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.DevicePoolResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetGalleryImagesAsync">
-      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.GalleryImageResource&gt; GetGalleryImagesAsync (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.GalleryImageResource&gt; GetGalleryImagesAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetGalleryImagesAsync(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetGalleryImagesAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of GalleryImageResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetGalleryImagesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.GalleryImageResource&gt;&#xA;override this.GetGalleryImagesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.GalleryImageResource&gt;" Usage="mockableHciSubscriptionResource.GetGalleryImagesAsync cancellationToken" />
+    <Member MemberName="GetDevicePoolsAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.DevicePoolResource&gt; GetDevicePoolsAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.DevicePoolResource&gt; GetDevicePoolsAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetDevicePoolsAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevicePoolsAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of DevicePoolResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetDevicePoolsAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.DevicePoolResource&gt;&#xA;override this.GetDevicePoolsAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.DevicePoolResource&gt;" Usage="mockableHciSubscriptionResource.GetDevicePoolsAsync cancellationToken" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.GalleryImageResource&gt;</ReturnType>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.DevicePoolResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
@@ -82,9 +139,61 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Lists all of the gallery images in the specified subscription. Use the nextLink property in the response to get the next page of gallery images.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/galleryImages</description></item><item><term>Operation Id</term><description>GalleryImages_ListAll</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Hci.GalleryImageResource" /> that may take multiple service requests to iterate over. </returns>
+            List all device pools in a subscription.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/devicePools. </description></item><item><term> Operation Id. </term><description> DevicePools_ListBySubscription. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.DevicePoolResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEdgeMachines">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.EdgeMachineResource&gt; GetEdgeMachines (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.EdgeMachineResource&gt; GetEdgeMachines(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetEdgeMachines(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEdgeMachines (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of EdgeMachineResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetEdgeMachines : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.EdgeMachineResource&gt;&#xA;override this.GetEdgeMachines : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.EdgeMachineResource&gt;" Usage="mockableHciSubscriptionResource.GetEdgeMachines cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.EdgeMachineResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            List all edge machines in a subscription.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/edgeMachines. </description></item><item><term> Operation Id. </term><description> EdgeMachines_ListBySubscription. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.EdgeMachineResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEdgeMachinesAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.EdgeMachineResource&gt; GetEdgeMachinesAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.EdgeMachineResource&gt; GetEdgeMachinesAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetEdgeMachinesAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEdgeMachinesAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of EdgeMachineResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetEdgeMachinesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.EdgeMachineResource&gt;&#xA;override this.GetEdgeMachinesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.EdgeMachineResource&gt;" Usage="mockableHciSubscriptionResource.GetEdgeMachinesAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.EdgeMachineResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            List all edge machines in a subscription.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/edgeMachines. </description></item><item><term> Operation Id. </term><description> EdgeMachines_ListBySubscription. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.EdgeMachineResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,8 +206,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.HciClusterResource&gt;</ReturnType>
@@ -110,7 +219,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             List all HCI clusters in a subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/clusters</description></item><item><term>Operation Id</term><description>Clusters_ListBySubscription</description></item><item><term>Default Api Version</term><description>2024-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Hci.HciClusterResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/clusters. </description></item><item><term> Operation Id. </term><description> Clusters_ListBySubscription. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.HciClusterResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -124,8 +233,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.HciClusterResource&gt;</ReturnType>
@@ -137,268 +246,376 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             List all HCI clusters in a subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/clusters</description></item><item><term>Operation Id</term><description>Clusters_ListBySubscription</description></item><item><term>Default Api Version</term><description>2024-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Hci.HciClusterResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Hci.HciClusterResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/clusters. </description></item><item><term> Operation Id. </term><description> Clusters_ListBySubscription. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.HciClusterResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetLogicalNetworks">
-      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.LogicalNetworkResource&gt; GetLogicalNetworks (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.LogicalNetworkResource&gt; GetLogicalNetworks(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetLogicalNetworks(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetLogicalNetworks (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of LogicalNetworkResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetLogicalNetworks : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.LogicalNetworkResource&gt;&#xA;override this.GetLogicalNetworks : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.LogicalNetworkResource&gt;" Usage="mockableHciSubscriptionResource.GetLogicalNetworks cancellationToken" />
+    <Member MemberName="GetOsImage">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Hci.OsImageResource&gt; GetOsImage (Azure.Core.AzureLocation location, string osImageName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Hci.OsImageResource&gt; GetOsImage(valuetype Azure.Core.AzureLocation location, string osImageName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetOsImage(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOsImage (location As AzureLocation, osImageName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of OsImageResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetOsImage : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Hci.OsImageResource&gt;&#xA;override this.GetOsImage : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Hci.OsImageResource&gt;" Usage="mockableHciSubscriptionResource.GetOsImage (location, osImageName, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.LogicalNetworkResource&gt;</ReturnType>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Hci.OsImageResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="osImageName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
+        <param name="location"> The location for the resource. </param>
+        <param name="osImageName"> The name of the OsImage. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Lists all of the logical networks in the specified subscription. Use the nextLink property in the response to get the next page of logical networks.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/logicalNetworks</description></item><item><term>Operation Id</term><description>LogicalNetworks_ListAll</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.LogicalNetworkResource" /> that may take multiple service requests to iterate over. </returns>
+            Get a os image.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/osImages/{osImageName}. </description></item><item><term> Operation Id. </term><description> OsImages_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="osImageName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="osImageName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOsImageAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.OsImageResource&gt;&gt; GetOsImageAsync (Azure.Core.AzureLocation location, string osImageName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Hci.OsImageResource&gt;&gt; GetOsImageAsync(valuetype Azure.Core.AzureLocation location, string osImageName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetOsImageAsync(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOsImageAsync (location As AzureLocation, osImageName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of OsImageResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetOsImageAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.OsImageResource&gt;&gt;&#xA;override this.GetOsImageAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.OsImageResource&gt;&gt;" Usage="mockableHciSubscriptionResource.GetOsImageAsync (location, osImageName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.OsImageResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="osImageName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The location for the resource. </param>
+        <param name="osImageName"> The name of the OsImage. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get a os image.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/osImages/{osImageName}. </description></item><item><term> Operation Id. </term><description> OsImages_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="osImageName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="osImageName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOsImages">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Hci.OsImageCollection GetOsImages (Azure.Core.AzureLocation location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Hci.OsImageCollection GetOsImages(valuetype Azure.Core.AzureLocation location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetOsImages(Azure.Core.AzureLocation)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOsImages (location As AzureLocation) As OsImageCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetOsImages : Azure.Core.AzureLocation -&gt; Azure.ResourceManager.Hci.OsImageCollection&#xA;override this.GetOsImages : Azure.Core.AzureLocation -&gt; Azure.ResourceManager.Hci.OsImageCollection" Usage="mockableHciSubscriptionResource.GetOsImages location" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Hci.OsImageCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The location for the resource. </param>
+        <summary> Gets a collection of OsImages in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of OsImages and their operations over a OsImageResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetLogicalNetworksAsync">
-      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.LogicalNetworkResource&gt; GetLogicalNetworksAsync (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.LogicalNetworkResource&gt; GetLogicalNetworksAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetLogicalNetworksAsync(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetLogicalNetworksAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of LogicalNetworkResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetLogicalNetworksAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.LogicalNetworkResource&gt;&#xA;override this.GetLogicalNetworksAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.LogicalNetworkResource&gt;" Usage="mockableHciSubscriptionResource.GetLogicalNetworksAsync cancellationToken" />
+    <Member MemberName="GetPlatformUpdate">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Hci.PlatformUpdateResource&gt; GetPlatformUpdate (Azure.Core.AzureLocation location, string platformUpdateName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Hci.PlatformUpdateResource&gt; GetPlatformUpdate(valuetype Azure.Core.AzureLocation location, string platformUpdateName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetPlatformUpdate(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetPlatformUpdate (location As AzureLocation, platformUpdateName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of PlatformUpdateResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetPlatformUpdate : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Hci.PlatformUpdateResource&gt;&#xA;override this.GetPlatformUpdate : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Hci.PlatformUpdateResource&gt;" Usage="mockableHciSubscriptionResource.GetPlatformUpdate (location, platformUpdateName, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.LogicalNetworkResource&gt;</ReturnType>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Hci.PlatformUpdateResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="platformUpdateName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
+        <param name="location"> The location for the resource. </param>
+        <param name="platformUpdateName"> The name of the PlatformUpdate. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Lists all of the logical networks in the specified subscription. Use the nextLink property in the response to get the next page of logical networks.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/logicalNetworks</description></item><item><term>Operation Id</term><description>LogicalNetworks_ListAll</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Hci.LogicalNetworkResource" /> that may take multiple service requests to iterate over. </returns>
+            Get a platform update.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/platformUpdates/{platformUpdateName}. </description></item><item><term> Operation Id. </term><description> PlatformUpdates_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="platformUpdateName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="platformUpdateName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformUpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.PlatformUpdateResource&gt;&gt; GetPlatformUpdateAsync (Azure.Core.AzureLocation location, string platformUpdateName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Hci.PlatformUpdateResource&gt;&gt; GetPlatformUpdateAsync(valuetype Azure.Core.AzureLocation location, string platformUpdateName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetPlatformUpdateAsync(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetPlatformUpdateAsync (location As AzureLocation, platformUpdateName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of PlatformUpdateResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetPlatformUpdateAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.PlatformUpdateResource&gt;&gt;&#xA;override this.GetPlatformUpdateAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.PlatformUpdateResource&gt;&gt;" Usage="mockableHciSubscriptionResource.GetPlatformUpdateAsync (location, platformUpdateName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.PlatformUpdateResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="platformUpdateName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The location for the resource. </param>
+        <param name="platformUpdateName"> The name of the PlatformUpdate. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get a platform update.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/platformUpdates/{platformUpdateName}. </description></item><item><term> Operation Id. </term><description> PlatformUpdates_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="platformUpdateName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="platformUpdateName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformUpdates">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Hci.PlatformUpdateCollection GetPlatformUpdates (Azure.Core.AzureLocation location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Hci.PlatformUpdateCollection GetPlatformUpdates(valuetype Azure.Core.AzureLocation location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetPlatformUpdates(Azure.Core.AzureLocation)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetPlatformUpdates (location As AzureLocation) As PlatformUpdateCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetPlatformUpdates : Azure.Core.AzureLocation -&gt; Azure.ResourceManager.Hci.PlatformUpdateCollection&#xA;override this.GetPlatformUpdates : Azure.Core.AzureLocation -&gt; Azure.ResourceManager.Hci.PlatformUpdateCollection" Usage="mockableHciSubscriptionResource.GetPlatformUpdates location" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Hci.PlatformUpdateCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The location for the resource. </param>
+        <summary> Gets a collection of PlatformUpdates in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of PlatformUpdates and their operations over a PlatformUpdateResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetMarketplaceGalleryImages">
-      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt; GetMarketplaceGalleryImages (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt; GetMarketplaceGalleryImages(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetMarketplaceGalleryImages(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMarketplaceGalleryImages (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of MarketplaceGalleryImageResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetMarketplaceGalleryImages : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt;&#xA;override this.GetMarketplaceGalleryImages : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt;" Usage="mockableHciSubscriptionResource.GetMarketplaceGalleryImages cancellationToken" />
+    <Member MemberName="GetUpdateContent">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Hci.UpdateContentResource&gt; GetUpdateContent (Azure.Core.AzureLocation location, string updateContentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Hci.UpdateContentResource&gt; GetUpdateContent(valuetype Azure.Core.AzureLocation location, string updateContentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetUpdateContent(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUpdateContent (location As AzureLocation, updateContentName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of UpdateContentResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetUpdateContent : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Hci.UpdateContentResource&gt;&#xA;override this.GetUpdateContent : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Hci.UpdateContentResource&gt;" Usage="mockableHciSubscriptionResource.GetUpdateContent (location, updateContentName, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt;</ReturnType>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Hci.UpdateContentResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="updateContentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
+        <param name="location"> The location for the resource. </param>
+        <param name="updateContentName"> The name of the UpdateContent. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Lists all of the marketplace gallery images in the specified subscription. Use the nextLink property in the response to get the next page of marketplace gallery images.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/marketplaceGalleryImages</description></item><item><term>Operation Id</term><description>MarketplaceGalleryImages_ListAll</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.MarketplaceGalleryImageResource" /> that may take multiple service requests to iterate over. </returns>
+            Gets content for an update.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/updateContents/{updateContentName}. </description></item><item><term> Operation Id. </term><description> UpdateContents_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="updateContentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="updateContentName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUpdateContentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.UpdateContentResource&gt;&gt; GetUpdateContentAsync (Azure.Core.AzureLocation location, string updateContentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Hci.UpdateContentResource&gt;&gt; GetUpdateContentAsync(valuetype Azure.Core.AzureLocation location, string updateContentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetUpdateContentAsync(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUpdateContentAsync (location As AzureLocation, updateContentName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of UpdateContentResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetUpdateContentAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.UpdateContentResource&gt;&gt;&#xA;override this.GetUpdateContentAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.UpdateContentResource&gt;&gt;" Usage="mockableHciSubscriptionResource.GetUpdateContentAsync (location, updateContentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.UpdateContentResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="updateContentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The location for the resource. </param>
+        <param name="updateContentName"> The name of the UpdateContent. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets content for an update.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/updateContents/{updateContentName}. </description></item><item><term> Operation Id. </term><description> UpdateContents_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="updateContentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="updateContentName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUpdateContents">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Hci.UpdateContentCollection GetUpdateContents (Azure.Core.AzureLocation location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Hci.UpdateContentCollection GetUpdateContents(valuetype Azure.Core.AzureLocation location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetUpdateContents(Azure.Core.AzureLocation)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUpdateContents (location As AzureLocation) As UpdateContentCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetUpdateContents : Azure.Core.AzureLocation -&gt; Azure.ResourceManager.Hci.UpdateContentCollection&#xA;override this.GetUpdateContents : Azure.Core.AzureLocation -&gt; Azure.ResourceManager.Hci.UpdateContentCollection" Usage="mockableHciSubscriptionResource.GetUpdateContents location" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Hci.UpdateContentCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The location for the resource. </param>
+        <summary> Gets a collection of UpdateContents in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of UpdateContents and their operations over a UpdateContentResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GetMarketplaceGalleryImagesAsync">
-      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt; GetMarketplaceGalleryImagesAsync (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt; GetMarketplaceGalleryImagesAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetMarketplaceGalleryImagesAsync(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMarketplaceGalleryImagesAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of MarketplaceGalleryImageResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetMarketplaceGalleryImagesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt;&#xA;override this.GetMarketplaceGalleryImagesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt;" Usage="mockableHciSubscriptionResource.GetMarketplaceGalleryImagesAsync cancellationToken" />
+    <Member MemberName="GetValidatedSolutionRecipe">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt; GetValidatedSolutionRecipe (Azure.Core.AzureLocation location, string validatedSolutionRecipeName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt; GetValidatedSolutionRecipe(valuetype Azure.Core.AzureLocation location, string validatedSolutionRecipeName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetValidatedSolutionRecipe(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetValidatedSolutionRecipe (location As AzureLocation, validatedSolutionRecipeName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of ValidatedSolutionRecipeResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetValidatedSolutionRecipe : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt;&#xA;override this.GetValidatedSolutionRecipe : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt;" Usage="mockableHciSubscriptionResource.GetValidatedSolutionRecipe (location, validatedSolutionRecipeName, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.MarketplaceGalleryImageResource&gt;</ReturnType>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="validatedSolutionRecipeName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
+        <param name="location"> The location for the resource. </param>
+        <param name="validatedSolutionRecipeName"> The name of the ValidatedSolutionRecipe. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Lists all of the marketplace gallery images in the specified subscription. Use the nextLink property in the response to get the next page of marketplace gallery images.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/marketplaceGalleryImages</description></item><item><term>Operation Id</term><description>MarketplaceGalleryImages_ListAll</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Hci.MarketplaceGalleryImageResource" /> that may take multiple service requests to iterate over. </returns>
+            Get a validated solution recipe.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/validatedSolutionRecipes/{validatedSolutionRecipeName}. </description></item><item><term> Operation Id. </term><description> ValidatedSolutionRecipes_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="validatedSolutionRecipeName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="validatedSolutionRecipeName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
-    <Member MemberName="GetNetworkInterfaces">
-      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.NetworkInterfaceResource&gt; GetNetworkInterfaces (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.NetworkInterfaceResource&gt; GetNetworkInterfaces(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetNetworkInterfaces(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetNetworkInterfaces (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of NetworkInterfaceResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetNetworkInterfaces : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.NetworkInterfaceResource&gt;&#xA;override this.GetNetworkInterfaces : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.NetworkInterfaceResource&gt;" Usage="mockableHciSubscriptionResource.GetNetworkInterfaces cancellationToken" />
+    <Member MemberName="GetValidatedSolutionRecipeAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt;&gt; GetValidatedSolutionRecipeAsync (Azure.Core.AzureLocation location, string validatedSolutionRecipeName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt;&gt; GetValidatedSolutionRecipeAsync(valuetype Azure.Core.AzureLocation location, string validatedSolutionRecipeName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetValidatedSolutionRecipeAsync(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetValidatedSolutionRecipeAsync (location As AzureLocation, validatedSolutionRecipeName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of ValidatedSolutionRecipeResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetValidatedSolutionRecipeAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt;&gt;&#xA;override this.GetValidatedSolutionRecipeAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt;&gt;" Usage="mockableHciSubscriptionResource.GetValidatedSolutionRecipeAsync (location, validatedSolutionRecipeName, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.NetworkInterfaceResource&gt;</ReturnType>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Hci.ValidatedSolutionRecipeResource&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="validatedSolutionRecipeName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
+        <param name="location"> The location for the resource. </param>
+        <param name="validatedSolutionRecipeName"> The name of the ValidatedSolutionRecipe. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Lists all of the network interfaces in the specified subscription. Use the nextLink property in the response to get the next page of network interfaces.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/networkInterfaces</description></item><item><term>Operation Id</term><description>NetworkInterfaces_ListAll</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.NetworkInterfaceResource" /> that may take multiple service requests to iterate over. </returns>
+            Get a validated solution recipe.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/locations/{location}/validatedSolutionRecipes/{validatedSolutionRecipeName}. </description></item><item><term> Operation Id. </term><description> ValidatedSolutionRecipes_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="validatedSolutionRecipeName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="validatedSolutionRecipeName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
-    <Member MemberName="GetNetworkInterfacesAsync">
-      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.NetworkInterfaceResource&gt; GetNetworkInterfacesAsync (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.NetworkInterfaceResource&gt; GetNetworkInterfacesAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetNetworkInterfacesAsync(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetNetworkInterfacesAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of NetworkInterfaceResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetNetworkInterfacesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.NetworkInterfaceResource&gt;&#xA;override this.GetNetworkInterfacesAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.NetworkInterfaceResource&gt;" Usage="mockableHciSubscriptionResource.GetNetworkInterfacesAsync cancellationToken" />
+    <Member MemberName="GetValidatedSolutionRecipes">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Hci.ValidatedSolutionRecipeCollection GetValidatedSolutionRecipes (Azure.Core.AzureLocation location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Hci.ValidatedSolutionRecipeCollection GetValidatedSolutionRecipes(valuetype Azure.Core.AzureLocation location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetValidatedSolutionRecipes(Azure.Core.AzureLocation)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetValidatedSolutionRecipes (location As AzureLocation) As ValidatedSolutionRecipeCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetValidatedSolutionRecipes : Azure.Core.AzureLocation -&gt; Azure.ResourceManager.Hci.ValidatedSolutionRecipeCollection&#xA;override this.GetValidatedSolutionRecipes : Azure.Core.AzureLocation -&gt; Azure.ResourceManager.Hci.ValidatedSolutionRecipeCollection" Usage="mockableHciSubscriptionResource.GetValidatedSolutionRecipes location" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.NetworkInterfaceResource&gt;</ReturnType>
+        <ReturnType>Azure.ResourceManager.Hci.ValidatedSolutionRecipeCollection</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Lists all of the network interfaces in the specified subscription. Use the nextLink property in the response to get the next page of network interfaces.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/networkInterfaces</description></item><item><term>Operation Id</term><description>NetworkInterfaces_ListAll</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Hci.NetworkInterfaceResource" /> that may take multiple service requests to iterate over. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="GetStorageContainers">
-      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.StorageContainerResource&gt; GetStorageContainers (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.StorageContainerResource&gt; GetStorageContainers(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetStorageContainers(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetStorageContainers (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of StorageContainerResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetStorageContainers : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.StorageContainerResource&gt;&#xA;override this.GetStorageContainers : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.StorageContainerResource&gt;" Usage="mockableHciSubscriptionResource.GetStorageContainers cancellationToken" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.StorageContainerResource&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Lists all of the storage containers in the specified subscription. Use the nextLink property in the response to get the next page of storage containers.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/storageContainers</description></item><item><term>Operation Id</term><description>StorageContainers_ListAll</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.StorageContainerResource" /> that may take multiple service requests to iterate over. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="GetStorageContainersAsync">
-      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.StorageContainerResource&gt; GetStorageContainersAsync (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.StorageContainerResource&gt; GetStorageContainersAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetStorageContainersAsync(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetStorageContainersAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of StorageContainerResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetStorageContainersAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.StorageContainerResource&gt;&#xA;override this.GetStorageContainersAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.StorageContainerResource&gt;" Usage="mockableHciSubscriptionResource.GetStorageContainersAsync cancellationToken" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.StorageContainerResource&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Lists all of the storage containers in the specified subscription. Use the nextLink property in the response to get the next page of storage containers.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/storageContainers</description></item><item><term>Operation Id</term><description>StorageContainers_ListAll</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Hci.StorageContainerResource" /> that may take multiple service requests to iterate over. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="GetVirtualHardDisks">
-      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Hci.VirtualHardDiskResource&gt; GetVirtualHardDisks (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Hci.VirtualHardDiskResource&gt; GetVirtualHardDisks(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetVirtualHardDisks(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetVirtualHardDisks (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of VirtualHardDiskResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetVirtualHardDisks : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.VirtualHardDiskResource&gt;&#xA;override this.GetVirtualHardDisks : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Hci.VirtualHardDiskResource&gt;" Usage="mockableHciSubscriptionResource.GetVirtualHardDisks cancellationToken" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Hci.VirtualHardDiskResource&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Lists all of the virtual hard disks in the specified subscription. Use the nextLink property in the response to get the next page of virtual hard disks.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/virtualHardDisks</description></item><item><term>Operation Id</term><description>VirtualHardDisks_ListAll</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Hci.VirtualHardDiskResource" /> that may take multiple service requests to iterate over. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="GetVirtualHardDisksAsync">
-      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.VirtualHardDiskResource&gt; GetVirtualHardDisksAsync (System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Hci.VirtualHardDiskResource&gt; GetVirtualHardDisksAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Hci.Mocking.MockableHciSubscriptionResource.GetVirtualHardDisksAsync(System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetVirtualHardDisksAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of VirtualHardDiskResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetVirtualHardDisksAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.VirtualHardDiskResource&gt;&#xA;override this.GetVirtualHardDisksAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.VirtualHardDiskResource&gt;" Usage="mockableHciSubscriptionResource.GetVirtualHardDisksAsync cancellationToken" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Hci</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Hci.VirtualHardDiskResource&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Lists all of the virtual hard disks in the specified subscription. Use the nextLink property in the response to get the next page of virtual hard disks.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/virtualHardDisks</description></item><item><term>Operation Id</term><description>VirtualHardDisks_ListAll</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Hci.VirtualHardDiskResource" /> that may take multiple service requests to iterate over. </returns>
+        <param name="location"> The location for the resource. </param>
+        <summary> Gets a collection of ValidatedSolutionRecipes in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of ValidatedSolutionRecipes and their operations over a ValidatedSolutionRecipeResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

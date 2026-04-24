@@ -9,6 +9,7 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
@@ -26,10 +27,9 @@
   </Interfaces>
   <Docs>
     <summary>
-            A Class representing a DevCenterCatalog along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetDevCenterCatalogResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.DevCenter.DevCenterResource" /> using the GetDevCenterCatalog method.
+            A class representing a DevCenterCatalog along with the instance operations that can be performed on it.
+            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /> from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetResource method.
+            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.DevCenter.DevCenterResource" /> using the GetDevCenterCatalogs method.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -43,10 +43,69 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of DevCenterCatalogResource for mocking. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation Connect (Azure.WaitUntil waitUntil, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation Connect(valuetype Azure.WaitUntil waitUntil, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.Connect(Azure.WaitUntil,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Connect (waitUntil As WaitUntil, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation" />
+      <MemberSignature Language="F#" Value="abstract member Connect : Azure.WaitUntil * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&#xA;override this.Connect : Azure.WaitUntil * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation" Usage="devCenterCatalogResource.Connect (waitUntil, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Connects a catalog to enable syncing.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}/connect. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Connect. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt; ConnectAsync (Azure.WaitUntil waitUntil, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation&gt; ConnectAsync(valuetype Azure.WaitUntil waitUntil, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.ConnectAsync(Azure.WaitUntil,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ConnectAsync (waitUntil As WaitUntil, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation)" />
+      <MemberSignature Language="F#" Value="abstract member ConnectAsync : Azure.WaitUntil * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;&#xA;override this.ConnectAsync : Azure.WaitUntil * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;" Usage="devCenterCatalogResource.ConnectAsync (waitUntil, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Connects a catalog to enable syncing.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}/connect. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Connect. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -60,6 +119,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Core.ResourceIdentifier</ReturnType>
@@ -75,7 +135,7 @@
         <param name="resourceGroupName"> The resourceGroupName. </param>
         <param name="devCenterName"> The devCenterName. </param>
         <param name="catalogName"> The catalogName. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /> instance. </summary>
+        <summary> Generate the resource identifier for this resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -90,6 +150,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevCenter.DevCenterCatalogData</ReturnType>
@@ -111,6 +172,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
@@ -125,7 +187,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Deletes a catalog resource.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}</description></item><item><term>Operation Id</term><description>Catalogs_Delete</description></item><item><term>Default Api Version</term><description>2023-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Delete. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -140,6 +202,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
@@ -154,7 +217,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Deletes a catalog resource.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}</description></item><item><term>Operation Id</term><description>Catalogs_Delete</description></item><item><term>Default Api Version</term><description>2023-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Delete. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -169,6 +232,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogResource&gt;</ReturnType>
@@ -179,8 +243,8 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets a catalog
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}</description></item><item><term>Operation Id</term><description>Catalogs_Get</description></item><item><term>Default Api Version</term><description>2023-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /></description></item></list></summary>
+            Gets a catalog.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -195,6 +259,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogResource&gt;&gt;</ReturnType>
@@ -205,8 +270,303 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets a catalog
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}</description></item><item><term>Operation Id</term><description>Catalogs_Get</description></item><item><term>Default Api Version</term><description>2023-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /></description></item></list></summary>
+            Gets a catalog.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogEnvironmentDefinition">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt; GetDevCenterCatalogEnvironmentDefinition (string environmentDefinitionName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt; GetDevCenterCatalogEnvironmentDefinition(string environmentDefinitionName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogEnvironmentDefinition(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogEnvironmentDefinition (environmentDefinitionName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of DevCenterCatalogEnvironmentDefinitionResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogEnvironmentDefinition : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt;&#xA;override this.GetDevCenterCatalogEnvironmentDefinition : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt;" Usage="devCenterCatalogResource.GetDevCenterCatalogEnvironmentDefinition (environmentDefinitionName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="environmentDefinitionName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="environmentDefinitionName"> The name of the Environment Definition. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets an environment definition from the catalog. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="environmentDefinitionName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="environmentDefinitionName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogEnvironmentDefinitionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt;&gt; GetDevCenterCatalogEnvironmentDefinitionAsync (string environmentDefinitionName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt;&gt; GetDevCenterCatalogEnvironmentDefinitionAsync(string environmentDefinitionName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogEnvironmentDefinitionAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogEnvironmentDefinitionAsync (environmentDefinitionName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of DevCenterCatalogEnvironmentDefinitionResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogEnvironmentDefinitionAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt;&gt;&#xA;override this.GetDevCenterCatalogEnvironmentDefinitionAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt;&gt;" Usage="devCenterCatalogResource.GetDevCenterCatalogEnvironmentDefinitionAsync (environmentDefinitionName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="environmentDefinitionName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="environmentDefinitionName"> The name of the Environment Definition. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets an environment definition from the catalog. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="environmentDefinitionName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="environmentDefinitionName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogEnvironmentDefinitions">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionCollection GetDevCenterCatalogEnvironmentDefinitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionCollection GetDevCenterCatalogEnvironmentDefinitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogEnvironmentDefinitions" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogEnvironmentDefinitions () As DevCenterCatalogEnvironmentDefinitionCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogEnvironmentDefinitions : unit -&gt; Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionCollection&#xA;override this.GetDevCenterCatalogEnvironmentDefinitions : unit -&gt; Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionCollection" Usage="devCenterCatalogResource.GetDevCenterCatalogEnvironmentDefinitions " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevCenter.DevCenterCatalogEnvironmentDefinitionCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Gets a collection of DevCenterCatalogEnvironmentDefinitions in the <see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </summary>
+        <returns> An object representing collection of DevCenterCatalogEnvironmentDefinitions and their operations over a DevCenterCatalogEnvironmentDefinitionResource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogImageDefinition">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt; GetDevCenterCatalogImageDefinition (string imageDefinitionName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt; GetDevCenterCatalogImageDefinition(string imageDefinitionName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogImageDefinition(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogImageDefinition (imageDefinitionName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of DevCenterCatalogImageDefinitionResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogImageDefinition : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt;&#xA;override this.GetDevCenterCatalogImageDefinition : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt;" Usage="devCenterCatalogResource.GetDevCenterCatalogImageDefinition (imageDefinitionName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageDefinitionName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="imageDefinitionName"> The name of the Image Definition. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets an Image Definition from the catalog. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="imageDefinitionName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="imageDefinitionName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogImageDefinitionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt;&gt; GetDevCenterCatalogImageDefinitionAsync (string imageDefinitionName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt;&gt; GetDevCenterCatalogImageDefinitionAsync(string imageDefinitionName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogImageDefinitionAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogImageDefinitionAsync (imageDefinitionName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of DevCenterCatalogImageDefinitionResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogImageDefinitionAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt;&gt;&#xA;override this.GetDevCenterCatalogImageDefinitionAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt;&gt;" Usage="devCenterCatalogResource.GetDevCenterCatalogImageDefinitionAsync (imageDefinitionName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageDefinitionName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="imageDefinitionName"> The name of the Image Definition. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets an Image Definition from the catalog. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="imageDefinitionName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="imageDefinitionName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogImageDefinitions">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionCollection GetDevCenterCatalogImageDefinitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionCollection GetDevCenterCatalogImageDefinitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogImageDefinitions" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogImageDefinitions () As DevCenterCatalogImageDefinitionCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogImageDefinitions : unit -&gt; Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionCollection&#xA;override this.GetDevCenterCatalogImageDefinitions : unit -&gt; Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionCollection" Usage="devCenterCatalogResource.GetDevCenterCatalogImageDefinitions " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevCenter.DevCenterCatalogImageDefinitionCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Gets a collection of DevCenterCatalogImageDefinitions in the <see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </summary>
+        <returns> An object representing collection of DevCenterCatalogImageDefinitions and their operations over a DevCenterCatalogImageDefinitionResource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogTask">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt; GetDevCenterCatalogTask (string taskName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt; GetDevCenterCatalogTask(string taskName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogTask(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogTask (taskName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of DevCenterCatalogTaskResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogTask : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt;&#xA;override this.GetDevCenterCatalogTask : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt;" Usage="devCenterCatalogResource.GetDevCenterCatalogTask (taskName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="taskName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="taskName"> The name of the Customization Task. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets a Task from the catalog. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="taskName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="taskName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogTaskAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt;&gt; GetDevCenterCatalogTaskAsync (string taskName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt;&gt; GetDevCenterCatalogTaskAsync(string taskName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogTaskAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogTaskAsync (taskName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of DevCenterCatalogTaskResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogTaskAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt;&gt;&#xA;override this.GetDevCenterCatalogTaskAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt;&gt;" Usage="devCenterCatalogResource.GetDevCenterCatalogTaskAsync (taskName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogTaskResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="taskName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="taskName"> The name of the Customization Task. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets a Task from the catalog. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="taskName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="taskName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevCenterCatalogTasks">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.DevCenter.DevCenterCatalogTaskCollection GetDevCenterCatalogTasks ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.DevCenter.DevCenterCatalogTaskCollection GetDevCenterCatalogTasks() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetDevCenterCatalogTasks" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDevCenterCatalogTasks () As DevCenterCatalogTaskCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetDevCenterCatalogTasks : unit -&gt; Azure.ResourceManager.DevCenter.DevCenterCatalogTaskCollection&#xA;override this.GetDevCenterCatalogTasks : unit -&gt; Azure.ResourceManager.DevCenter.DevCenterCatalogTaskCollection" Usage="devCenterCatalogResource.GetDevCenterCatalogTasks " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevCenter.DevCenterCatalogTaskCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Gets a collection of DevCenterCatalogTasks in the <see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </summary>
+        <returns> An object representing collection of DevCenterCatalogTasks and their operations over a DevCenterCatalogTaskResource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSyncErrorDetails">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt; GetSyncErrorDetails (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt; GetSyncErrorDetails(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetSyncErrorDetails(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSyncErrorDetails (Optional cancellationToken As CancellationToken = Nothing) As Response(Of DevCenterSyncErrorDetails)" />
+      <MemberSignature Language="F#" Value="abstract member GetSyncErrorDetails : System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt;&#xA;override this.GetSyncErrorDetails : System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt;" Usage="devCenterCatalogResource.GetSyncErrorDetails cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets catalog synchronization error details.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}/getSyncErrorDetails. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_GetSyncErrorDetails. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSyncErrorDetailsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt;&gt; GetSyncErrorDetailsAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt;&gt; GetSyncErrorDetailsAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevCenter.DevCenterCatalogResource.GetSyncErrorDetailsAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSyncErrorDetailsAsync (Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of DevCenterSyncErrorDetails))" />
+      <MemberSignature Language="F#" Value="abstract member GetSyncErrorDetailsAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt;&gt;&#xA;override this.GetSyncErrorDetailsAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt;&gt;" Usage="devCenterCatalogResource.GetSyncErrorDetailsAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.DevCenter.Models.DevCenterSyncErrorDetails&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets catalog synchronization error details.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}/getSyncErrorDetails. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_GetSyncErrorDetails. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -221,6 +581,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -241,6 +602,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Core.ResourceType</ReturnType>
@@ -260,6 +622,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
@@ -274,7 +637,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Syncs templates for a template source.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}/sync</description></item><item><term>Operation Id</term><description>Catalogs_Sync</description></item><item><term>Default Api Version</term><description>2023-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}/sync. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Sync. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -289,6 +652,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
@@ -303,7 +667,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Syncs templates for a template source.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}/sync</description></item><item><term>Operation Id</term><description>Catalogs_Sync</description></item><item><term>Default Api Version</term><description>2023-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}/sync. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Sync. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -321,6 +685,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevCenter.DevCenterCatalogData</ReturnType>
@@ -330,8 +695,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The reader for deserializing the model. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -353,6 +718,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -362,8 +728,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The writer to serialize the model to. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -384,6 +750,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevCenter.DevCenterCatalogData</ReturnType>
@@ -393,8 +760,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The binary data to be processed. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -416,6 +783,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -424,7 +792,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -445,6 +813,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
@@ -453,7 +822,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -472,6 +841,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogResource&gt;</ReturnType>
@@ -488,7 +858,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Partially updates a catalog.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}</description></item><item><term>Operation Id</term><description>Catalogs_Update</description></item><item><term>Default Api Version</term><description>2023-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Update. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -505,6 +875,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevCenter</AssemblyName>
         <AssemblyVersion>1.0.2.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DevCenter.DevCenterCatalogResource&gt;&gt;</ReturnType>
@@ -521,7 +892,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Partially updates a catalog.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}</description></item><item><term>Operation Id</term><description>Catalogs_Update</description></item><item><term>Default Api Version</term><description>2023-04-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevCenter/devcenters/{devCenterName}/catalogs/{catalogName}. </description></item><item><term> Operation Id. </term><description> CatalogOperationGroup_Update. </description></item><item><term> Default Api Version. </term><description> 2026-01-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DevCenter.DevCenterCatalogResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">

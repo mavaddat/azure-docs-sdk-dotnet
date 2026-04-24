@@ -21,18 +21,31 @@
   <Docs>
     <summary>
             Extension methods for standalone (Tier 3) server setups that do not use
-            <see cref="T:Azure.AI.AgentServer.Core.AgentHostBuilder" />. Provides fine-grained control over which
-            Core middleware features to enable.
+            <see cref="T:Azure.AI.AgentServer.Core.AgentHostBuilder" />. Registers all Core middleware services
+            and adds them to the pipeline in one call each.
             </summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+      <para>
+            Tier 1 and Tier 2 setups (using <see cref="T:Azure.AI.AgentServer.Core.AgentHost" /> or
+            <see cref="T:Azure.AI.AgentServer.Core.AgentHostBuilder" />) get this automatically — these methods
+            are only needed when building on raw <c>WebApplicationBuilder</c>.
+            </para>
+      <para>
+            Usage:
+            <code>
+            builder.Services.AddAgentServerCore();
+            var app = builder.Build();
+            app.UseAgentServerCore();
+            </code></para>
+    </remarks>
   </Docs>
   <Members>
-    <Member MemberName="AddAgentServerLogging">
-      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddAgentServerLogging (this Microsoft.Extensions.DependencyInjection.IServiceCollection services);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddAgentServerLogging(class Microsoft.Extensions.DependencyInjection.IServiceCollection services) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.AddAgentServerLogging(Microsoft.Extensions.DependencyInjection.IServiceCollection)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddAgentServerLogging (services As IServiceCollection) As IServiceCollection" />
-      <MemberSignature Language="F#" Value="static member AddAgentServerLogging : Microsoft.Extensions.DependencyInjection.IServiceCollection -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.AddAgentServerLogging services" />
+    <Member MemberName="AddAgentServerCore">
+      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddAgentServerCore (this Microsoft.Extensions.DependencyInjection.IServiceCollection services);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddAgentServerCore(class Microsoft.Extensions.DependencyInjection.IServiceCollection services) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.AddAgentServerCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddAgentServerCore (services As IServiceCollection) As IServiceCollection" />
+      <MemberSignature Language="F#" Value="static member AddAgentServerCore : Microsoft.Extensions.DependencyInjection.IServiceCollection -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.AddAgentServerCore services" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
@@ -47,49 +60,19 @@
       <Docs>
         <param name="services">The service collection.</param>
         <summary>
-            Registers the inbound request logging middleware.
-            Call this before <see cref="M:Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.UseAgentServerLogging(Microsoft.AspNetCore.Builder.IApplicationBuilder)" /> when not using
-            <see cref="T:Azure.AI.AgentServer.Core.AgentHostBuilder" />.
+            Registers all Core middleware services: request ID, server version,
+            request ID baggage propagation, and inbound request logging.
             </summary>
         <returns>The service collection for chaining.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="AddAgentServerVersion">
-      <MemberSignature Language="C#" Value="public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddAgentServerVersion (this Microsoft.Extensions.DependencyInjection.IServiceCollection services);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Extensions.DependencyInjection.IServiceCollection AddAgentServerVersion(class Microsoft.Extensions.DependencyInjection.IServiceCollection services) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.AddAgentServerVersion(Microsoft.Extensions.DependencyInjection.IServiceCollection)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AddAgentServerVersion (services As IServiceCollection) As IServiceCollection" />
-      <MemberSignature Language="F#" Value="static member AddAgentServerVersion : Microsoft.Extensions.DependencyInjection.IServiceCollection -&gt; Microsoft.Extensions.DependencyInjection.IServiceCollection" Usage="Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.AddAgentServerVersion services" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Microsoft.Extensions.DependencyInjection.IServiceCollection</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="services" Type="Microsoft.Extensions.DependencyInjection.IServiceCollection" RefType="this" />
-      </Parameters>
-      <Docs>
-        <param name="services">The service collection.</param>
-        <summary>
-            Registers the server version services (<see cref="T:Azure.AI.AgentServer.Core.ServerVersionRegistry" />
-            and middleware) required for the <c>x-platform-server</c> response header.
-            Call this before <see cref="M:Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.UseAgentServerVersion(Microsoft.AspNetCore.Builder.IApplicationBuilder)" /> when not using
-            <see cref="T:Azure.AI.AgentServer.Core.AgentHostBuilder" />.
-            </summary>
-        <returns>The service collection for chaining.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="UseAgentServerLogging">
-      <MemberSignature Language="C#" Value="public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseAgentServerLogging (this Microsoft.AspNetCore.Builder.IApplicationBuilder app);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.AspNetCore.Builder.IApplicationBuilder UseAgentServerLogging(class Microsoft.AspNetCore.Builder.IApplicationBuilder app) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.UseAgentServerLogging(Microsoft.AspNetCore.Builder.IApplicationBuilder)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function UseAgentServerLogging (app As IApplicationBuilder) As IApplicationBuilder" />
-      <MemberSignature Language="F#" Value="static member UseAgentServerLogging : Microsoft.AspNetCore.Builder.IApplicationBuilder -&gt; Microsoft.AspNetCore.Builder.IApplicationBuilder" Usage="Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.UseAgentServerLogging app" />
+    <Member MemberName="UseAgentServerCore">
+      <MemberSignature Language="C#" Value="public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseAgentServerCore (this Microsoft.AspNetCore.Builder.IApplicationBuilder app);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.AspNetCore.Builder.IApplicationBuilder UseAgentServerCore(class Microsoft.AspNetCore.Builder.IApplicationBuilder app) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.UseAgentServerCore(Microsoft.AspNetCore.Builder.IApplicationBuilder)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function UseAgentServerCore (app As IApplicationBuilder) As IApplicationBuilder" />
+      <MemberSignature Language="F#" Value="static member UseAgentServerCore : Microsoft.AspNetCore.Builder.IApplicationBuilder -&gt; Microsoft.AspNetCore.Builder.IApplicationBuilder" Usage="Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.UseAgentServerCore app" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
@@ -104,36 +87,8 @@
       <Docs>
         <param name="app">The application builder.</param>
         <summary>
-            Adds the inbound request logging middleware to the pipeline.
-            This middleware logs request/response details including method, path,
-            status code, duration, and trace ID.
-            </summary>
-        <returns>The application builder for chaining.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="UseAgentServerVersion">
-      <MemberSignature Language="C#" Value="public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseAgentServerVersion (this Microsoft.AspNetCore.Builder.IApplicationBuilder app);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.AspNetCore.Builder.IApplicationBuilder UseAgentServerVersion(class Microsoft.AspNetCore.Builder.IApplicationBuilder app) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.UseAgentServerVersion(Microsoft.AspNetCore.Builder.IApplicationBuilder)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function UseAgentServerVersion (app As IApplicationBuilder) As IApplicationBuilder" />
-      <MemberSignature Language="F#" Value="static member UseAgentServerVersion : Microsoft.AspNetCore.Builder.IApplicationBuilder -&gt; Microsoft.AspNetCore.Builder.IApplicationBuilder" Usage="Azure.AI.AgentServer.Core.AgentHostMiddlewareExtensions.UseAgentServerVersion app" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Microsoft.AspNetCore.Builder.IApplicationBuilder</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="app" Type="Microsoft.AspNetCore.Builder.IApplicationBuilder" RefType="this" />
-      </Parameters>
-      <Docs>
-        <param name="app">The application builder.</param>
-        <summary>
-            Adds the server version middleware to the pipeline.
-            This middleware sets the <c>x-platform-server</c> header on all HTTP responses.
+            Adds all Core middleware to the pipeline in the correct order:
+            request ID → server version → request ID baggage → inbound request logging.
             </summary>
         <returns>The application builder for chaining.</returns>
         <remarks>To be added.</remarks>

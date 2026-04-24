@@ -13,7 +13,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -41,13 +41,13 @@
         <Parameter Name="dependencyMapProvisioningState" Type="System.Nullable&lt;Azure.ResourceManager.DependencyMap.Models.DependencyMapProvisioningState&gt;" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="tags"> The tags. </param>
-        <param name="location"> The location. </param>
-        <param name="dependencyMapProvisioningState"> The resource-specific properties for this resource. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
+        <param name="dependencyMapProvisioningState"> Provisioning state of Maps resource. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapData" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -77,19 +77,39 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourceProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="tags"> The tags. </param>
-        <param name="location"> The location. </param>
-        <param name="properties">
-            The resource-specific properties for this resource.
-            Please note <see cref="T:Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourceProperties" /> is the base class. According to the scenario, a derived class of the base class might need to be assigned here, or this property needs to be casted to one of the possible derived classes.
-            The available derived classes include <see cref="T:Azure.ResourceManager.DependencyMap.Models.OffAzureDiscoverySourceProperties" />.
-            </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapDiscoverySourceData" />. </summary>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
+        <param name="properties"> The resource-specific properties for this resource. </param>
+        <summary> A Discovery Source resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapDiscoverySourceData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyMapDiscoverySourcePatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourcePatch DependencyMapDiscoverySourcePatch (System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourcePatch DependencyMapDiscoverySourcePatch(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.DependencyMapDiscoverySourcePatch(System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DependencyMapDiscoverySourcePatch (Optional tags As IDictionary(Of String, String) = Nothing) As DependencyMapDiscoverySourcePatch" />
+      <MemberSignature Language="F#" Value="static member DependencyMapDiscoverySourcePatch : System.Collections.Generic.IDictionary&lt;string, string&gt; -&gt; Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourcePatch" Usage="Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.DependencyMapDiscoverySourcePatch tags" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourcePatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="tags"> Resource tags. </param>
+        <summary> The type used for updating tags in DiscoverySourceResource resources. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourcePatch" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,17 +136,70 @@
         <param name="provisioningState"> Provisioning state of Discovery Source resource. </param>
         <param name="sourceType"> Source type of Discovery Source resource. </param>
         <param name="sourceId"> Source ArmId of Discovery Source resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourceProperties" />. </summary>
+        <summary>
+            The properties of Discovery Source resource
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.ResourceManager.DependencyMap.Models.OffAzureDiscoverySourceProperties" />.
+            </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.DependencyMapDiscoverySourceProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="DependencyMapPatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DependencyMap.Models.DependencyMapPatch DependencyMapPatch (System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DependencyMap.Models.DependencyMapPatch DependencyMapPatch(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.DependencyMapPatch(System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DependencyMapPatch (Optional tags As IDictionary(Of String, String) = Nothing) As DependencyMapPatch" />
+      <MemberSignature Language="F#" Value="static member DependencyMapPatch : System.Collections.Generic.IDictionary&lt;string, string&gt; -&gt; Azure.ResourceManager.DependencyMap.Models.DependencyMapPatch" Usage="Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.DependencyMapPatch tags" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DependencyMap.Models.DependencyMapPatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="tags"> Resource tags. </param>
+        <summary> The type used for updating tags in MapsResource resources. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.DependencyMapPatch" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyMapProcessNameFilter">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilter DependencyMapProcessNameFilter (Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilterOperator operator = default, System.Collections.Generic.IEnumerable&lt;string&gt; processNames = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilter DependencyMapProcessNameFilter(valuetype Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilterOperator operator, class System.Collections.Generic.IEnumerable`1&lt;string&gt; processNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.DependencyMapProcessNameFilter(Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilterOperator,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DependencyMapProcessNameFilter (Optional operator As DependencyMapProcessNameFilterOperator = Nothing, Optional processNames As IEnumerable(Of String) = Nothing) As DependencyMapProcessNameFilter" />
+      <MemberSignature Language="F#" Value="static member DependencyMapProcessNameFilter : Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilterOperator * seq&lt;string&gt; -&gt; Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilter" Usage="Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.DependencyMapProcessNameFilter (operator, processNames)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operator" Type="Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilterOperator" />
+        <Parameter Name="processNames" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="operator"> Operator for process name filter. </param>
+        <param name="processNames"> List of process names on which the operator should be applied. </param>
+        <summary> Process name filter for dependency map visualization apis. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.DependencyMapProcessNameFilter" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ExportDependenciesContent">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent ExportDependenciesContent (Azure.Core.ResourceIdentifier focusedMachineId = default, Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter filters = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent ExportDependenciesContent(class Azure.Core.ResourceIdentifier focusedMachineId, class Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter filters) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.ExportDependenciesContent(Azure.Core.ResourceIdentifier,Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ExportDependenciesContent (Optional focusedMachineId As ResourceIdentifier = Nothing, Optional filters As DependencyMapVisualizationFilter = Nothing) As ExportDependenciesContent" />
-      <MemberSignature Language="F#" Value="static member ExportDependenciesContent : Azure.Core.ResourceIdentifier * Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter -&gt; Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent" Usage="Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.ExportDependenciesContent (focusedMachineId, filters)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent ExportDependenciesContent (Azure.Core.ResourceIdentifier focusedMachineId = default, Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter filters = default, System.Collections.Generic.IEnumerable&lt;string&gt; applianceNameList = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent ExportDependenciesContent(class Azure.Core.ResourceIdentifier focusedMachineId, class Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter filters, class System.Collections.Generic.IEnumerable`1&lt;string&gt; applianceNameList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.ExportDependenciesContent(Azure.Core.ResourceIdentifier,Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ExportDependenciesContent (Optional focusedMachineId As ResourceIdentifier = Nothing, Optional filters As DependencyMapVisualizationFilter = Nothing, Optional applianceNameList As IEnumerable(Of String) = Nothing) As ExportDependenciesContent" />
+      <MemberSignature Language="F#" Value="static member ExportDependenciesContent : Azure.Core.ResourceIdentifier * Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter * seq&lt;string&gt; -&gt; Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent" Usage="Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.ExportDependenciesContent (focusedMachineId, filters, applianceNameList)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
@@ -138,12 +211,78 @@
       <Parameters>
         <Parameter Name="focusedMachineId" Type="Azure.Core.ResourceIdentifier" />
         <Parameter Name="filters" Type="Azure.ResourceManager.DependencyMap.Models.DependencyMapVisualizationFilter" />
+        <Parameter Name="applianceNameList" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
       </Parameters>
       <Docs>
         <param name="focusedMachineId"> Machine arm id. </param>
         <param name="filters"> Filters for ExportDependencies. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent" />. </summary>
+        <param name="applianceNameList"> List of Appliance Names. </param>
+        <summary> ExportDependencies request model. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportDependenciesOperationResult">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult ExportDependenciesOperationResult (string id = default, string name = default, string status = default, Azure.ResponseError error = default, DateTimeOffset? startOn = default, DateTimeOffset? endOn = default, Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties properties = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult ExportDependenciesOperationResult(string id, string name, string status, class Azure.ResponseError error, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; startOn, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; endOn, class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.ExportDependenciesOperationResult(System.String,System.String,System.String,Azure.ResponseError,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ExportDependenciesOperationResult (Optional id As String = Nothing, Optional name As String = Nothing, Optional status As String = Nothing, Optional error As ResponseError = Nothing, Optional startOn As Nullable(Of DateTimeOffset) = Nothing, Optional endOn As Nullable(Of DateTimeOffset) = Nothing, Optional properties As ExportDependenciesResultProperties = Nothing) As ExportDependenciesOperationResult" />
+      <MemberSignature Language="F#" Value="static member ExportDependenciesOperationResult : string * string * string * Azure.ResponseError * Nullable&lt;DateTimeOffset&gt; * Nullable&lt;DateTimeOffset&gt; * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties -&gt; Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult" Usage="Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.ExportDependenciesOperationResult (id, name, status, error, startOn, endOn, properties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="status" Type="System.String" />
+        <Parameter Name="error" Type="Azure.ResponseError" />
+        <Parameter Name="startOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="endOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="properties" Type="Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties" />
+      </Parameters>
+      <Docs>
+        <param name="id"> The status URL of export dependencies operation. </param>
+        <param name="name"> The resource name of the operation status. It must match the last segment of 'id' field. </param>
+        <param name="status"> The overall arm status of the operation. It has one of the terminal states - Succeeded/Failed/Canceled. </param>
+        <param name="error"> Contains error details if status is Failed/Canceled. </param>
+        <param name="startOn"> The start time of the operation. </param>
+        <param name="endOn"> The end time of the operation. </param>
+        <param name="properties"> Properties for export dependencies. These should only be set if the status is Succeeded. </param>
+        <summary> Model representing the result of the export dependencies asynchronous operation. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportDependenciesResultProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties ExportDependenciesResultProperties (string exportedDataSasUri = default, Azure.ResourceManager.DependencyMap.Models.ExportDependenciesStatusCode? statusCode = default, int? additionalInfoAvailableDaysCount = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties ExportDependenciesResultProperties(string exportedDataSasUri, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DependencyMap.Models.ExportDependenciesStatusCode&gt; statusCode, valuetype System.Nullable`1&lt;int32&gt; additionalInfoAvailableDaysCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.ExportDependenciesResultProperties(System.String,System.Nullable{Azure.ResourceManager.DependencyMap.Models.ExportDependenciesStatusCode},System.Nullable{System.Int32})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ExportDependenciesResultProperties (Optional exportedDataSasUri As String = Nothing, Optional statusCode As Nullable(Of ExportDependenciesStatusCode) = Nothing, Optional additionalInfoAvailableDaysCount As Nullable(Of Integer) = Nothing) As ExportDependenciesResultProperties" />
+      <MemberSignature Language="F#" Value="static member ExportDependenciesResultProperties : string * Nullable&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesStatusCode&gt; * Nullable&lt;int&gt; -&gt; Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties" Usage="Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.ExportDependenciesResultProperties (exportedDataSasUri, statusCode, additionalInfoAvailableDaysCount)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exportedDataSasUri" Type="System.String" />
+        <Parameter Name="statusCode" Type="System.Nullable&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesStatusCode&gt;" />
+        <Parameter Name="additionalInfoAvailableDaysCount" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="exportedDataSasUri"> The SAS URI of the blob containing the exported dependencies data. </param>
+        <param name="statusCode"> A status code returned by the service with additional context about the export dependencies operation. </param>
+        <param name="additionalInfoAvailableDaysCount"> Number of days for which data was available in the exported results. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.ExportDependenciesResultProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -170,7 +309,7 @@
         <param name="focusedMachineId"> Machine arm id. </param>
         <param name="processIdOnFocusedMachine"> Process id. </param>
         <param name="filters"> Filters for GetProcessNetworkConnections. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DependencyMap.Models.GetConnectionsForProcessOnFocusedMachineContent" />. </summary>
+        <summary> GetConnectionsForProcessOnFocusedMachine request model. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.GetConnectionsForProcessOnFocusedMachineContent" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -198,8 +337,44 @@
         <param name="focusedMachineId"> Source machine arm id. </param>
         <param name="connectedMachineId"> Destination machine arm id. </param>
         <param name="filters"> Filters for GetNetworkConnectionsBetweenMachines. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DependencyMap.Models.GetConnectionsWithConnectedMachineForFocusedMachineContent" />. </summary>
+        <summary> GetConnectionsWithConnectedMachineForFocusedMachine request model. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.GetConnectionsWithConnectedMachineForFocusedMachineContent" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDependencyViewForAllMachinesOperationResult">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult GetDependencyViewForAllMachinesOperationResult (string id = default, string name = default, string status = default, Azure.ResponseError error = default, DateTimeOffset? startOn = default, DateTimeOffset? endOn = default, string getDependencyViewForAllMachinesResultLayoutFileSasUri = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult GetDependencyViewForAllMachinesOperationResult(string id, string name, string status, class Azure.ResponseError error, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; startOn, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; endOn, string getDependencyViewForAllMachinesResultLayoutFileSasUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.GetDependencyViewForAllMachinesOperationResult(System.String,System.String,System.String,Azure.ResponseError,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetDependencyViewForAllMachinesOperationResult (Optional id As String = Nothing, Optional name As String = Nothing, Optional status As String = Nothing, Optional error As ResponseError = Nothing, Optional startOn As Nullable(Of DateTimeOffset) = Nothing, Optional endOn As Nullable(Of DateTimeOffset) = Nothing, Optional getDependencyViewForAllMachinesResultLayoutFileSasUri As String = Nothing) As GetDependencyViewForAllMachinesOperationResult" />
+      <MemberSignature Language="F#" Value="static member GetDependencyViewForAllMachinesOperationResult : string * string * string * Azure.ResponseError * Nullable&lt;DateTimeOffset&gt; * Nullable&lt;DateTimeOffset&gt; * string -&gt; Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult" Usage="Azure.ResourceManager.DependencyMap.Models.ArmDependencyMapModelFactory.GetDependencyViewForAllMachinesOperationResult (id, name, status, error, startOn, endOn, getDependencyViewForAllMachinesResultLayoutFileSasUri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="status" Type="System.String" />
+        <Parameter Name="error" Type="Azure.ResponseError" />
+        <Parameter Name="startOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="endOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="getDependencyViewForAllMachinesResultLayoutFileSasUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id"> The status URL of the asynchronous operation. </param>
+        <param name="name"> The resource name of the operation status. It must match the last segment of 'id' field. </param>
+        <param name="status"> The overall arm status of the operation. It has one of the terminal states - Succeeded/Failed/Canceled. </param>
+        <param name="error"> Contains error details if status is Failed/Canceled. </param>
+        <param name="startOn"> The start time of the operation. </param>
+        <param name="endOn"> The end time of the operation. </param>
+        <param name="getDependencyViewForAllMachinesResultLayoutFileSasUri"> The SAS URI of the blob containing the layout file for the multi-server view. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -224,7 +399,7 @@
       <Docs>
         <param name="focusedMachineId"> Machine arm id. </param>
         <param name="filters"> Filters for GetSingleMachineDependencyView. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForFocusedMachineContent" />. </summary>
+        <summary> GetDependencyViewForFocusedMachine request model. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForFocusedMachineContent" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -250,7 +425,7 @@
       <Docs>
         <param name="provisioningState"> Provisioning state of Discovery Source resource. </param>
         <param name="sourceId"> Source ArmId of Discovery Source resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.DependencyMap.Models.OffAzureDiscoverySourceProperties" />. </summary>
+        <summary> OffAzure discovery source resource properties. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DependencyMap.Models.OffAzureDiscoverySourceProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>

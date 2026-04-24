@@ -24,10 +24,9 @@
   </Interfaces>
   <Docs>
     <summary>
-            A Class representing a DependencyMap along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetDependencyMapResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /> using the GetDependencyMap method.
+            A class representing a DependencyMap along with the instance operations that can be performed on it.
+            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /> from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetResource method.
+            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /> using the GetDependencyMaps method.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -44,7 +43,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of DependencyMapResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -71,9 +70,7 @@
         <param name="key"> The key for the tag. </param>
         <param name="value"> The value for the tag. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Add a tag to the current resource.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+        <summary> Add a tag to the current resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -103,9 +100,7 @@
         <param name="key"> The key for the tag. </param>
         <param name="value"> The value for the tag. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Add a tag to the current resource.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+        <summary> Add a tag to the current resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -135,7 +130,7 @@
         <param name="subscriptionId"> The subscriptionId. </param>
         <param name="resourceGroupName"> The resourceGroupName. </param>
         <param name="mapName"> The mapName. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /> instance. </summary>
+        <summary> Generate the resource identifier for this resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -185,7 +180,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Delete a MapsResource
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Delete</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}. </description></item><item><term> Operation Id. </term><description> Maps_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -214,24 +209,24 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Delete a MapsResource
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Delete</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}. </description></item><item><term> Operation Id. </term><description> Maps_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ExportDependencies">
-      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation ExportDependencies (Azure.WaitUntil waitUntil, Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent content, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation ExportDependencies(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt; ExportDependencies (Azure.WaitUntil waitUntil, Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt; ExportDependencies(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.DependencyMapResource.ExportDependencies(Azure.WaitUntil,Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExportDependencies (waitUntil As WaitUntil, content As ExportDependenciesContent, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation" />
-      <MemberSignature Language="F#" Value="abstract member ExportDependencies : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&#xA;override this.ExportDependencies : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation" Usage="dependencyMapResource.ExportDependencies (waitUntil, content, cancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExportDependencies (waitUntil As WaitUntil, content As ExportDependenciesContent, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of ExportDependenciesOperationResult)" />
+      <MemberSignature Language="F#" Value="abstract member ExportDependencies : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt;&#xA;override this.ExportDependencies : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt;" Usage="dependencyMapResource.ExportDependencies (waitUntil, content, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
+        <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
@@ -245,7 +240,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Export dependencies
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/exportDependencies</description></item><item><term>Operation Id</term><description>Maps_ExportDependencies</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/exportDependencies. </description></item><item><term> Operation Id. </term><description> Maps_ExportDependencies. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -253,18 +248,18 @@
       </Docs>
     </Member>
     <Member MemberName="ExportDependenciesAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt; ExportDependenciesAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent content, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation&gt; ExportDependenciesAsync(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt;&gt; ExportDependenciesAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt;&gt; ExportDependenciesAsync(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.DependencyMapResource.ExportDependenciesAsync(Azure.WaitUntil,Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExportDependenciesAsync (waitUntil As WaitUntil, content As ExportDependenciesContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation)" />
-      <MemberSignature Language="F#" Value="abstract member ExportDependenciesAsync : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;&#xA;override this.ExportDependenciesAsync : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;" Usage="dependencyMapResource.ExportDependenciesAsync (waitUntil, content, cancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExportDependenciesAsync (waitUntil As WaitUntil, content As ExportDependenciesContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of ExportDependenciesOperationResult))" />
+      <MemberSignature Language="F#" Value="abstract member ExportDependenciesAsync : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt;&gt;&#xA;override this.ExportDependenciesAsync : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.ExportDependenciesContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt;&gt;" Usage="dependencyMapResource.ExportDependenciesAsync (waitUntil, content, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.ExportDependenciesOperationResult&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
@@ -278,7 +273,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Export dependencies
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/exportDependencies</description></item><item><term>Operation Id</term><description>Maps_ExportDependencies</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/exportDependencies. </description></item><item><term> Operation Id. </term><description> Maps_ExportDependencies. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -306,7 +301,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get a MapsResource
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}. </description></item><item><term> Operation Id. </term><description> Maps_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -332,7 +327,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get a MapsResource
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}. </description></item><item><term> Operation Id. </term><description> Maps_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -363,7 +358,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get network connections of a process
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getConnectionsForProcessOnFocusedMachine</description></item><item><term>Operation Id</term><description>Maps_GetConnectionsForProcessOnFocusedMachine</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getConnectionsForProcessOnFocusedMachine. </description></item><item><term> Operation Id. </term><description> Maps_GetConnectionsForProcessOnFocusedMachine. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -396,7 +391,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get network connections of a process
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getConnectionsForProcessOnFocusedMachine</description></item><item><term>Operation Id</term><description>Maps_GetConnectionsForProcessOnFocusedMachine</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getConnectionsForProcessOnFocusedMachine. </description></item><item><term> Operation Id. </term><description> Maps_GetConnectionsForProcessOnFocusedMachine. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -429,7 +424,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get network connections between machines
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getConnectionsWithConnectedMachineForFocusedMachine</description></item><item><term>Operation Id</term><description>Maps_GetConnectionsWithConnectedMachineForFocusedMachine</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getConnectionsWithConnectedMachineForFocusedMachine. </description></item><item><term> Operation Id. </term><description> Maps_GetConnectionsWithConnectedMachineForFocusedMachine. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -462,7 +457,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get network connections between machines
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getConnectionsWithConnectedMachineForFocusedMachine</description></item><item><term>Operation Id</term><description>Maps_GetConnectionsWithConnectedMachineForFocusedMachine</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getConnectionsWithConnectedMachineForFocusedMachine. </description></item><item><term> Operation Id. </term><description> Maps_GetConnectionsWithConnectedMachineForFocusedMachine. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -490,9 +485,7 @@
       <Docs>
         <param name="sourceName"> discovery source resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a DiscoverySourceResource
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/discoverySources/{sourceName}</description></item><item><term>Operation Id</term><description>DiscoverySourceResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapDiscoverySourceResource" /></description></item></list></summary>
+        <summary> Get a DiscoverySourceResource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -522,9 +515,7 @@
       <Docs>
         <param name="sourceName"> discovery source resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a DiscoverySourceResource
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/discoverySources/{sourceName}</description></item><item><term>Operation Id</term><description>DiscoverySourceResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapDiscoverySourceResource" /></description></item></list></summary>
+        <summary> Get a DiscoverySourceResource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -549,9 +540,75 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of DependencyMapDiscoverySourceResources in the DependencyMap. </summary>
-        <returns> An object representing collection of DependencyMapDiscoverySourceResources and their operations over a DependencyMapDiscoverySourceResource. </returns>
+        <summary> Gets a collection of DependencyMapDiscoverySources in the <see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </summary>
+        <returns> An object representing collection of DependencyMapDiscoverySources and their operations over a DependencyMapDiscoverySourceResource. </returns>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDependencyViewForAllMachines">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt; GetDependencyViewForAllMachines (Azure.WaitUntil waitUntil, Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt; GetDependencyViewForAllMachines(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.DependencyMapResource.GetDependencyViewForAllMachines(Azure.WaitUntil,Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDependencyViewForAllMachines (waitUntil As WaitUntil, content As GetDependencyViewForAllMachinesContent, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of GetDependencyViewForAllMachinesOperationResult)" />
+      <MemberSignature Language="F#" Value="abstract member GetDependencyViewForAllMachines : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt;&#xA;override this.GetDependencyViewForAllMachines : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt;" Usage="dependencyMapResource.GetDependencyViewForAllMachines (waitUntil, content, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
+        <Parameter Name="content" Type="Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="content"> The content of the action request. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get dependencies for all machines
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getDependencyViewForAllMachines. </description></item><item><term> Operation Id. </term><description> Maps_GetDependencyViewForAllMachines. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="content" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDependencyViewForAllMachinesAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt;&gt; GetDependencyViewForAllMachinesAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt;&gt; GetDependencyViewForAllMachinesAsync(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DependencyMap.DependencyMapResource.GetDependencyViewForAllMachinesAsync(Azure.WaitUntil,Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetDependencyViewForAllMachinesAsync (waitUntil As WaitUntil, content As GetDependencyViewForAllMachinesContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of GetDependencyViewForAllMachinesOperationResult))" />
+      <MemberSignature Language="F#" Value="abstract member GetDependencyViewForAllMachinesAsync : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt;&gt;&#xA;override this.GetDependencyViewForAllMachinesAsync : Azure.WaitUntil * Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt;&gt;" Usage="dependencyMapResource.GetDependencyViewForAllMachinesAsync (waitUntil, content, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DependencyMap</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesOperationResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
+        <Parameter Name="content" Type="Azure.ResourceManager.DependencyMap.Models.GetDependencyViewForAllMachinesContent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="content"> The content of the action request. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get dependencies for all machines
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getDependencyViewForAllMachines. </description></item><item><term> Operation Id. </term><description> Maps_GetDependencyViewForAllMachines. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="content" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetDependencyViewForFocusedMachine">
@@ -580,7 +637,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get dependency map of single machine
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getDependencyViewForFocusedMachine</description></item><item><term>Operation Id</term><description>Maps_GetDependencyViewForFocusedMachine</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getDependencyViewForFocusedMachine. </description></item><item><term> Operation Id. </term><description> Maps_GetDependencyViewForFocusedMachine. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -613,7 +670,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get dependency map of single machine
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getDependencyViewForFocusedMachine</description></item><item><term>Operation Id</term><description>Maps_GetDependencyViewForFocusedMachine</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}/getDependencyViewForFocusedMachine. </description></item><item><term> Operation Id. </term><description> Maps_GetDependencyViewForFocusedMachine. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -661,9 +718,7 @@
       <Docs>
         <param name="key"> The key for the tag. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Removes a tag by key from the resource.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+        <summary> Removes a tag by key from the resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -691,9 +746,7 @@
       <Docs>
         <param name="key"> The key for the tag. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Removes a tag by key from the resource.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+        <summary> Removes a tag by key from the resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -738,11 +791,9 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="tags"> The set of tags to use as replacement. </param>
+        <param name="tags"> The tags to set on the resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Replace the tags on the resource with the given set.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+        <summary> Replace the tags on the resource with the given set. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -768,11 +819,9 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="tags"> The set of tags to use as replacement. </param>
+        <param name="tags"> The tags to set on the resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Replace the tags on the resource with the given set.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Get</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+        <summary> Replace the tags on the resource with the given set. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -801,8 +850,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The reader for deserializing the model. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -833,8 +882,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The writer to serialize the model to. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -864,8 +913,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The binary data to be processed. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -895,7 +944,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -924,7 +973,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -959,7 +1008,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Update a MapsResource
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Update</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}. </description></item><item><term> Operation Id. </term><description> Maps_Update. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -992,7 +1041,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Update a MapsResource
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}</description></item><item><term>Operation Id</term><description>MapsResource_Update</description></item><item><term>Default Api Version</term><description>2025-01-31-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DependencyMap/maps/{mapName}. </description></item><item><term> Operation Id. </term><description> Maps_Update. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.DependencyMap.DependencyMapResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
