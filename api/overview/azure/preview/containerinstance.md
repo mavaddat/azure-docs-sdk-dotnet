@@ -1,9 +1,10 @@
 ---
-title: Azure Container Instances libraries for .NET
-description: Reference for Azure Container Instances libraries for .NET
-ms.date: 06/11/2018
+title: Azure Containerinstance SDK for .NET
+description: Reference for Azure Containerinstance SDK for .NET
+ms.date: 04/24/2026
 ms.topic: reference
-ms.service: container-instances
+ms.devlang: dotnet
+ms.service: containerinstance
 ---
 # Azure Container Instances libraries for .NET
 
@@ -143,4 +144,3 @@ Explore more [sample .NET code](https://azure.microsoft.com/resources/samples/?p
 [PackageManager]: /nuget/tools/package-manager-console
 [iazure]: /dotnet/api/microsoft.azure.management.fluent.azure
 [iazure-authenticate]: /dotnet/api/microsoft.azure.management.fluent.azure.authenticate
-
