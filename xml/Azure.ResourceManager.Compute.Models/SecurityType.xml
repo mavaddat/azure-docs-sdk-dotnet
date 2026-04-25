@@ -23,6 +23,7 @@
     <AssemblyVersion>1.12.0.0</AssemblyVersion>
     <AssemblyVersion>1.13.0.0</AssemblyVersion>
     <AssemblyVersion>1.14.0.0</AssemblyVersion>
+    <AssemblyVersion>1.15.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ValueType</BaseTypeName>
@@ -33,7 +34,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary> Specifies the SecurityType of the virtual machine. It has to be set to any specified value to enable UefiSettings. The default behavior is: UefiSettings will not be enabled unless this property is set. </summary>
+    <summary> Specifies the VM securityType; UefiSettings are enabled only when set to TrustedLaunch or ConfidentialVM, and returns a Standard value starting API version 2025-11-01. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -46,8 +47,8 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="System.String" />
@@ -69,8 +70,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Compute.Models.SecurityType</ReturnType>
@@ -93,8 +94,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -119,8 +120,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -151,8 +152,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -179,8 +180,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -206,8 +207,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Compute.Models.SecurityType</ReturnType>
@@ -231,8 +232,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -249,6 +250,26 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="Standard">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Models.SecurityType Standard { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype Azure.ResourceManager.Compute.Models.SecurityType Standard" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Compute.Models.SecurityType.Standard" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Standard As SecurityType" />
+      <MemberSignature Language="F#" Value="static member Standard : Azure.ResourceManager.Compute.Models.SecurityType" Usage="Azure.ResourceManager.Compute.Models.SecurityType.Standard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Compute.Models.SecurityType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Indicates a VM without UEFI features such as SecureBoot or vTPM; returned as the default value when securityType is not specified. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ToString">
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
@@ -258,8 +279,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -280,8 +301,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
         <AssemblyVersion>1.14.0.0</AssemblyVersion>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Compute.Models.SecurityType</ReturnType>
