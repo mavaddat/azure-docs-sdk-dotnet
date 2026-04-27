@@ -1,7 +1,7 @@
 ---
 title: Azure Edgeactions SDK for .NET
 description: Reference for Azure Edgeactions SDK for .NET
-ms.date: 04/24/2026
+ms.date: 04/27/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: edgeactions

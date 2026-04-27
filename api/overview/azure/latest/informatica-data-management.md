@@ -1,0 +1,11 @@
+---
+title: Azure Informatica Data Management SDK for .NET
+description: Reference for Azure Informatica Data Management SDK for .NET
+ms.date: 04/27/2026
+ms.topic: reference
+ms.devlang: dotnet
+ms.service: informaticadatamanagement
+---
+# Azure Informatica Data Management SDK for .NET - latest
+## Packages - latest
+[!INCLUDE [packages](informatica-data-management-index.md)]
