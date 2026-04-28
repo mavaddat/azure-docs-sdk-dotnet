@@ -1,7 +1,7 @@
 ---
 title: Azure Servicenetworking SDK for .NET
 description: Reference for Azure Servicenetworking SDK for .NET
-ms.date: 04/27/2026
+ms.date: 04/28/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: servicenetworking
