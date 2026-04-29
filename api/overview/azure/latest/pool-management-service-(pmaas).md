@@ -1,7 +1,7 @@
 ---
 title: Azure Pool Management Service (PMaaS) SDK for .NET
 description: Reference for Azure Pool Management Service (PMaaS) SDK for .NET
-ms.date: 04/28/2026
+ms.date: 04/29/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: poolmanagementservice(pmaas)
