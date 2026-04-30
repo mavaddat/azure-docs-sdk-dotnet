@@ -1,12 +1,12 @@
 ---
 title: Azure Content Understanding client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.AI.ContentUnderstanding, contentunderstanding
-ms.date: 01/09/2026
+ms.date: 04/30/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: contentunderstanding
 ---
-# Azure Content Understanding client library for .NET - version 1.0.0-beta.1 
+# Azure Content Understanding client library for .NET - version 1.2.0-beta.1 
 
 
 Azure AI Content Understanding is a multimodal AI service that extracts semantic content from documents, video, audio, and image files. It transforms unstructured content into structured, machine-readable data optimized for retrieval-augmented generation (RAG) and automated workflows.
@@ -20,7 +20,7 @@ Use the client library for Azure AI Content Understanding to:
 * **Create custom analyzers** - Build domain-specific analyzers for specialized content extraction needs across all four modalities (documents, video, audio, and images)
 * **Classify documents and video** - Automatically categorize and extract information from documents and video by type
 
-[Source code][source_code] | [Package (NuGet)] | [API reference documentation] | [Product documentation][product_docs]
+[Source code][source_code] | [Package (NuGet)][nuget_package] | [API reference documentation][api_reference] | [Product documentation][product_docs]
 
 ## Getting started
 
@@ -29,7 +29,7 @@ Use the client library for Azure AI Content Understanding to:
 Install the client library for .NET with [NuGet][nuget]:
 
 ```bash
-dotnet add package Azure.AI.ContentUnderstanding --prerelease
+dotnet add package Azure.AI.ContentUnderstanding
 ```
 
 ### Prerequisites
@@ -63,7 +63,7 @@ After creating your Microsoft Foundry resource, you must grant yourself the **Co
 5. Select the **Cognitive Services User** role
 6. Assign it to yourself (or the user/service principal that will run the application)
 
-> **Note:** This role assignment is required even if you are the owner of the resource. Without this role, you will not be able to call the Content Understanding API to configure model deployments for prebuilt analyzers and custom analzyers.
+> **Note:** This role assignment is required even if you are the owner of the resource. Without this role, you will not be able to call the Content Understanding API to configure model deployments for prebuilt analyzers and custom analyzers.
 
 #### Step 2: Deploy required models
 
@@ -149,10 +149,9 @@ Prebuilt analyzers are organized into several categories:
 
 For a complete list of available prebuilt analyzers and their capabilities, see the [Prebuilt analyzers documentation][prebuilt-analyzers-docs].
 
->
 ### Content types
 
-The API returns different content types based on the input. Both `DocumentContent` and `AudioVisualContent` classes derive from `MediaContent` class, which provides basic information and markdown representation. Each derived class provides additional properties to access detailed information:
+The API returns different content types based on the input. Both `DocumentContent` and `AudioVisualContent` classes derive from `AnalysisContent` class, which provides basic information and markdown representation. Each derived class provides additional properties to access detailed information:
 
 * **`DocumentContent`** - For document files (PDF, HTML, images, Office documents such as Word, Excel, PowerPoint, and more). Provides basic information such as page count and MIME type. Retrieve detailed information including pages, tables, figures, paragraphs, and many others.
 * **`AudioVisualContent`** - For audio and video files. Provides basic information such as timing information (start/end times) and frame dimensions (for video). Retrieve detailed information including transcript phrases, timing information, and for video, key frame references and more.
@@ -165,12 +164,12 @@ Content Understanding operations are asynchronous long-running operations. The w
 2. **Poll for Results** - Poll the operation location until the analysis completes
 3. **Process Results** - Extract and display the structured results
 
-The SDK provides `Operation<T>` types that handle polling automatically when using `WaitUntil.Completed`. For analysis operations, the SDK returns `Operation<AnalyzeResult>` and provides access to the operation ID via the `Id` property. This operation ID can be used with `GetResultFile*` and `DeleteResult*` methods.
+The SDK provides `Operation<T>` types that handle polling automatically when using `WaitUntil.Completed`. For analysis operations, the SDK returns `Operation<AnalysisResult>` and provides access to the operation ID via the `Id` property. This operation ID can be used with `GetResultFile*` and `DeleteResult*` methods.
 
 ### Main classes
 
 * **`ContentUnderstandingClient`** - The main client for analyzing content, as well as creating, managing, and configuring analyzers
-* **`AnalyzeResult`** - Contains the structured results of an analysis operation, including content elements, markdown, and metadata
+* **`AnalysisResult`** - Contains the structured results of an analysis operation, including content elements, markdown, and metadata
 
 ### Thread safety
 
@@ -197,6 +196,7 @@ The samples demonstrate:
 * **Document Content Extraction** - Extract structured markdown content from PDFs and images using `prebuilt-documentSearch`, optimized for RAG (Retrieval-Augmented Generation) applications
 * **Multi-Modal Content Analysis** - Analyze content from URLs across all modalities: extract markdown and summaries from documents, images, audio, and video using `prebuilt-documentSearch`, `prebuilt-imageSearch`, `prebuilt-audioSearch`, and `prebuilt-videoSearch`
 * **Domain-Specific Analysis** - Extract structured fields from invoices using `prebuilt-invoice`
+* **LLM Integration** - Convert analysis results to LLM-ready text with `.ToLlmInput()`
 * **Advanced Document Features** - Extract charts, hyperlinks, formulas, and annotations from documents
 * **Custom Analyzers** - Create custom analyzers with field schemas for specialized extraction needs
 * **Document Classification** - Create and use classifiers to categorize documents
@@ -204,6 +204,52 @@ The samples demonstrate:
 * **Result Management** - Retrieve result files from video analysis and delete analysis results
 
 See the [samples directory][samples_directory] for complete examples.
+
+### Convert results to LLM-ready text
+
+Use `.ToLlmInput()` to convert any analysis result into a text format that LLMs can consume directly — YAML front matter with extracted fields followed by the markdown body. This works with all content types (documents, images, audio, video) and handles multi-segment results and classification hierarchies automatically.
+
+```csharp
+using Azure.AI.ContentUnderstanding;
+using Azure.Identity;
+
+var client = new ContentUnderstandingClient(new Uri(endpoint), new DefaultAzureCredential());
+
+// Analyze a document with text, tables, and charts using prebuilt-documentSearch (CU's primary RAG analyzer)
+byte[] fileBytes = File.ReadAllBytes("sample_document_features.pdf");
+Operation<AnalysisResult> operation = await client.AnalyzeBinaryAsync(
+    WaitUntil.Completed,
+    "prebuilt-documentSearch",
+    BinaryData.FromBytes(fileBytes));
+
+AnalysisResult result = operation.Value;
+
+// One line to get LLM-ready text
+string text = result.ToLlmInput();
+Console.WriteLine(text);
+// Output:
+//   ---
+//   contentType: document
+//   pages: 1
+//   fields:
+//     Summary: The document provides an overview of Latin, includes a sample
+//       table with names and corporate affiliations, presents a bar chart
+//       figure illustrating monthly values, and describes the AI Document
+//       Intelligence service...
+//   ---
+//   <!-- page 1 -->
+//   # ==This is title==
+//   ## 1. Text
+//   [Latin](https://en.wikipedia.org/wiki/Latin) refers to an ancient Italic language...
+//   ## 2. Page Objects
+//   ### 2.1 Table
+//   <table><caption>Table 1: This is a dummy table</caption>...</table>
+//   ### 2.2. Figure
+//   ![Values...](figures/1.1 "Bar chart with six bars: Jan=200, Feb=300...")
+//   ...
+```
+
+See the [advanced ToLlmInput sample][sample-advanced-to-llm-input] for output options (fields-only, markdown-only, custom metadata), multi-page content ranges, and multi-segment video.
 
 ## Troubleshooting
 
@@ -253,8 +299,9 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct][code_of_conduct]. For more information see the [Code of Conduct FAQ][code_of_conduct_faq] or contact [opencode@microsoft.com][opencode_email] with any additional questions or comments.
 
 <!-- LINKS -->
-[source_code]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding
-
+[source_code]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding
+[nuget_package]: https://www.nuget.org/packages/Azure.AI.ContentUnderstanding
+[api_reference]: https://learn.microsoft.com/dotnet/api/azure.ai.contentunderstanding
 [product_docs]: https://learn.microsoft.com/azure/ai-services/content-understanding/
 [nuget]: https://www.nuget.org/
 [azure_subscription]: https://azure.microsoft.com/free/dotnet/
@@ -262,19 +309,20 @@ This project has adopted the [Microsoft Open Source Code of Conduct][code_of_con
 [cu_region_support]: https://learn.microsoft.com/azure/ai-services/content-understanding/language-region-support
 [azure_portal]: https://portal.azure.com/
 [deploy_models_docs]: https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-openai
-[azure_identity_readme]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/identity/Azure.Identity/README.md
+[azure_identity_readme]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/identity/Azure.Identity/README.md
 [thread_safety_guideline]: https://azure.github.io/azure-sdk/dotnet_introduction.html#dotnet-service-methods-thread-safety
-[client_options]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions
-[accessing_response]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset
-[long_running_operations]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt
-[handling_failures]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception
-[diagnostics]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/core/Azure.Core/samples/Diagnostics.md
+[client_options]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions
+[accessing_response]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset
+[long_running_operations]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt
+[handling_failures]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception
+[diagnostics]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/samples/Diagnostics.md
 [mocking]: https://learn.microsoft.com/dotnet/azure/sdk/unit-testing-mocking
 [client_lifetime]: https://devblogs.microsoft.com/azure-sdk/lifetime-management-and-thread-safety-guarantees-of-azure-sdk-net-clients/
-[samples_directory]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples
-[sample00]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample00_UpdateDefaults.md
-[sample01]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.0.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample01_AnalyzeBinary.md
+[samples_directory]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples
+[sample00]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample00_UpdateDefaults.md
+[sample01]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample01_AnalyzeBinary.md
 [prebuilt-analyzers-docs]: https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/prebuilt-analyzers
+[sample-advanced-to-llm-input]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample_Advanced_ToLlmInput.md
 [cla]: https://cla.microsoft.com
 [code_of_conduct]: https://opensource.microsoft.com/codeofconduct/
 [code_of_conduct_faq]: https://opensource.microsoft.com/codeofconduct/faq/
