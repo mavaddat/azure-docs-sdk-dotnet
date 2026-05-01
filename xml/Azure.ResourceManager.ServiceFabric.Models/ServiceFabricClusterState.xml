@@ -20,21 +20,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>
-             The current state of the cluster.
-            
-               - WaitingForNodes - Indicates that the cluster resource is created and the resource provider is waiting for Service Fabric VM extension to boot up and report to it.
-               - Deploying - Indicates that the Service Fabric runtime is being installed on the VMs. Cluster resource will be in this state until the cluster boots up and system services are up.
-               - BaselineUpgrade - Indicates that the cluster is upgrading to establishes the cluster version. This upgrade is automatically initiated when the cluster boots up for the first time.
-               - UpdatingUserConfiguration - Indicates that the cluster is being upgraded with the user provided configuration.
-               - UpdatingUserCertificate - Indicates that the cluster is being upgraded with the user provided certificate.
-               - UpdatingInfrastructure - Indicates that the cluster is being upgraded with the latest Service Fabric runtime version. This happens only when the **upgradeMode** is set to 'Automatic'.
-               - EnforcingClusterVersion - Indicates that cluster is on a different version than expected and the cluster is being upgraded to the expected version.
-               - UpgradeServiceUnreachable - Indicates that the system service in the cluster is no longer polling the Resource Provider. Clusters in this state cannot be managed by the Resource Provider.
-               - AutoScale - Indicates that the ReliabilityLevel of the cluster is being adjusted.
-               - Ready - Indicates that the cluster is in a stable state.
-            
-             </summary>
+    <summary> The current state of the cluster. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -54,7 +40,7 @@
         <Parameter Name="value" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
+        <param name="value"> The value. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -77,7 +63,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> AutoScale. </summary>
+        <summary> Indicates that the ReliabilityLevel of the cluster is being adjusted. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -98,7 +84,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> BaselineUpgrade. </summary>
+        <summary> Indicates that the cluster is upgrading to establishes the cluster version. This upgrade is automatically initiated when the cluster boots up for the first time. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -119,7 +105,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Deploying. </summary>
+        <summary> Indicates that the Service Fabric runtime is being installed on the VMs. Cluster resource will be in this state until the cluster boots up and system services are up. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -140,7 +126,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> EnforcingClusterVersion. </summary>
+        <summary> Indicates that cluster is on a different version than expected and the cluster is being upgraded to the expected version. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -254,8 +240,8 @@
         <Parameter Name="right" Type="Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState" />
       </Parameters>
       <Docs>
-        <param name="left">To be added.</param>
-        <param name="right">To be added.</param>
+        <param name="left"> The left value to compare. </param>
+        <param name="right"> The right value to compare. </param>
         <summary> Determines if two <see cref="T:Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState" /> values are the same. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
@@ -280,8 +266,32 @@
         <Parameter Name="value" Type="System.String" />
       </Parameters>
       <Docs>
+        <param name="value"> The value. </param>
+        <summary> Converts a string to a <see cref="T:Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState" />. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState? (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState&gt; op_Implicit(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState.op_Implicit(System.String)~System.Nullable{Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState}" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Widening Operator CType (value As String) As Nullable(Of ServiceFabricClusterState)" />
+      <MemberSignature Language="F#" Value="static member op_Implicit : string -&gt; Nullable&lt;Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState&gt;" Usage="Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState.op_Implicit value" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ServiceFabric</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
         <param name="value">To be added.</param>
-        <summary> Converts a <see cref="T:System.String" /> to a <see cref="T:Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState" />. </summary>
+        <summary>To be added.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -306,8 +316,8 @@
         <Parameter Name="right" Type="Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState" />
       </Parameters>
       <Docs>
-        <param name="left">To be added.</param>
-        <param name="right">To be added.</param>
+        <param name="left"> The left value to compare. </param>
+        <param name="right"> The right value to compare. </param>
         <summary> Determines if two <see cref="T:Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState" /> values are not the same. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
@@ -329,7 +339,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Ready. </summary>
+        <summary> Indicates that the cluster is in a stable state. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -372,7 +382,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> UpdatingInfrastructure. </summary>
+        <summary> Indicates that the cluster is being upgraded with the latest Service Fabric runtime version. This happens only when the <b>upgradeMode</b> is set to 'Automatic'. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -393,7 +403,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> UpdatingUserCertificate. </summary>
+        <summary> Indicates that the cluster is being upgraded with the user provided certificate. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -414,7 +424,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> UpdatingUserConfiguration. </summary>
+        <summary> Indicates that the cluster is being upgraded with the user provided configuration. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -435,7 +445,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> UpgradeServiceUnreachable. </summary>
+        <summary> Indicates that the system service in the cluster is no longer polling the Resource Provider. Clusters in this state cannot be managed by the Resource Provider. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -456,7 +466,7 @@
         <ReturnType>Azure.ResourceManager.ServiceFabric.Models.ServiceFabricClusterState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> WaitingForNodes. </summary>
+        <summary> Indicates that the cluster resource is created and the resource provider is waiting for Service Fabric VM extension to boot up and report to it. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -8,13 +8,14 @@
     <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to ArmClient. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.ArmClient" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,11 +28,11 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.HybridConnectivity.Mocking.MockableHybridConnectivityArmClient" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableHybridConnectivityArmClient for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,7 +160,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource&gt;</ReturnType>
@@ -170,16 +171,16 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="endpointName"> The endpoint name. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets the endpoint to the resource.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.HybridConnectivity/endpoints/{endpointName}</description></item><item><term>Operation Id</term><description>EndpointResource_Get</description></item><item><term>Default Api Version</term><description>2024-12-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource" /></description></item></list></summary>
+        <summary> Gets the endpoint to the resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="endpointName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="endpointName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHybridConnectivityEndpointAsync">
@@ -191,7 +192,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource&gt;&gt;</ReturnType>
@@ -202,16 +203,16 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="endpointName"> The endpoint name. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets the endpoint to the resource.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.HybridConnectivity/endpoints/{endpointName}</description></item><item><term>Operation Id</term><description>EndpointResource_Get</description></item><item><term>Default Api Version</term><description>2024-12-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource" /></description></item></list></summary>
+        <summary> Gets the endpoint to the resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="endpointName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="endpointName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHybridConnectivityEndpointResource">
@@ -223,7 +224,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource</ReturnType>
@@ -233,10 +234,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource.CreateResourceIdentifier(System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -250,7 +248,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointCollection</ReturnType>
@@ -259,10 +257,74 @@
         <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
-        <summary> Gets a collection of HybridConnectivityEndpointResources in the ArmClient. </summary>
-        <returns> An object representing collection of HybridConnectivityEndpointResources and their operations over a HybridConnectivityEndpointResource. </returns>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityEndpointResource" /> objects. </returns>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHybridConnectivityServiceConfiguration">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt; GetHybridConnectivityServiceConfiguration (Azure.Core.ResourceIdentifier scope, string serviceConfigurationName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt; GetHybridConnectivityServiceConfiguration(class Azure.Core.ResourceIdentifier scope, string serviceConfigurationName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.HybridConnectivity.Mocking.MockableHybridConnectivityArmClient.GetHybridConnectivityServiceConfiguration(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetHybridConnectivityServiceConfiguration (scope As ResourceIdentifier, serviceConfigurationName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of HybridConnectivityServiceConfigurationResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetHybridConnectivityServiceConfiguration : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt;&#xA;override this.GetHybridConnectivityServiceConfiguration : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt;" Usage="mockableHybridConnectivityArmClient.GetHybridConnectivityServiceConfiguration (scope, serviceConfigurationName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="serviceConfigurationName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="serviceConfigurationName"> The service name. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets the details about the service to the resource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceConfigurationName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="serviceConfigurationName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHybridConnectivityServiceConfigurationAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt;&gt; GetHybridConnectivityServiceConfigurationAsync (Azure.Core.ResourceIdentifier scope, string serviceConfigurationName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt;&gt; GetHybridConnectivityServiceConfigurationAsync(class Azure.Core.ResourceIdentifier scope, string serviceConfigurationName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.HybridConnectivity.Mocking.MockableHybridConnectivityArmClient.GetHybridConnectivityServiceConfigurationAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetHybridConnectivityServiceConfigurationAsync (scope As ResourceIdentifier, serviceConfigurationName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of HybridConnectivityServiceConfigurationResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetHybridConnectivityServiceConfigurationAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt;&gt;&#xA;override this.GetHybridConnectivityServiceConfigurationAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt;&gt;" Usage="mockableHybridConnectivityArmClient.GetHybridConnectivityServiceConfigurationAsync (scope, serviceConfigurationName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="serviceConfigurationName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="serviceConfigurationName"> The service name. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets the details about the service to the resource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceConfigurationName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="serviceConfigurationName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHybridConnectivityServiceConfigurationResource">
@@ -274,7 +336,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource</ReturnType>
@@ -284,11 +346,32 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHybridConnectivityServiceConfigurations">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationCollection GetHybridConnectivityServiceConfigurations (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationCollection GetHybridConnectivityServiceConfigurations(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.HybridConnectivity.Mocking.MockableHybridConnectivityArmClient.GetHybridConnectivityServiceConfigurations(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetHybridConnectivityServiceConfigurations (scope As ResourceIdentifier) As HybridConnectivityServiceConfigurationCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetHybridConnectivityServiceConfigurations : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationCollection&#xA;override this.GetHybridConnectivityServiceConfigurations : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationCollection" Usage="mockableHybridConnectivityArmClient.GetHybridConnectivityServiceConfigurations scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.HybridConnectivity.HybridConnectivityServiceConfigurationResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -301,7 +384,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorResource</ReturnType>
@@ -311,10 +394,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -328,7 +408,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource&gt;</ReturnType>
@@ -339,12 +419,10 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="solutionConfiguration"> Represent Solution Configuration Resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a SolutionConfiguration
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.HybridConnectivity/solutionConfigurations/{solutionConfiguration}</description></item><item><term>Operation Id</term><description>SolutionConfiguration_Get</description></item><item><term>Default Api Version</term><description>2024-12-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource" /></description></item></list></summary>
+        <summary> Get a SolutionConfiguration. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -362,7 +440,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource&gt;&gt;</ReturnType>
@@ -373,12 +451,10 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="solutionConfiguration"> Represent Solution Configuration Resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a SolutionConfiguration
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.HybridConnectivity/solutionConfigurations/{solutionConfiguration}</description></item><item><term>Operation Id</term><description>SolutionConfiguration_Get</description></item><item><term>Default Api Version</term><description>2024-12-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource" /></description></item></list></summary>
+        <summary> Get a SolutionConfiguration. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -396,7 +472,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource</ReturnType>
@@ -406,10 +482,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource.CreateResourceIdentifier(System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -423,7 +496,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationCollection</ReturnType>
@@ -432,9 +505,9 @@
         <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
-        <summary> Gets a collection of PublicCloudConnectorSolutionConfigurationResources in the ArmClient. </summary>
-        <returns> An object representing collection of PublicCloudConnectorSolutionConfigurationResources and their operations over a PublicCloudConnectorSolutionConfigurationResource. </returns>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionConfigurationResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -447,7 +520,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionTypeResource</ReturnType>
@@ -457,12 +530,97 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionTypeResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionTypeResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionTypeResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionTypeResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudConnectorSolutionTypeResource" /> object. </returns>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPublicCloudInventories">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryCollection GetPublicCloudInventories (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryCollection GetPublicCloudInventories(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.HybridConnectivity.Mocking.MockableHybridConnectivityArmClient.GetPublicCloudInventories(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetPublicCloudInventories (scope As ResourceIdentifier) As PublicCloudInventoryCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetPublicCloudInventories : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryCollection&#xA;override this.GetPublicCloudInventories : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryCollection" Usage="mockableHybridConnectivityArmClient.GetPublicCloudInventories scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource" /> objects. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPublicCloudInventory">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt; GetPublicCloudInventory (Azure.Core.ResourceIdentifier scope, string inventoryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt; GetPublicCloudInventory(class Azure.Core.ResourceIdentifier scope, string inventoryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.HybridConnectivity.Mocking.MockableHybridConnectivityArmClient.GetPublicCloudInventory(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetPublicCloudInventory (scope As ResourceIdentifier, inventoryId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of PublicCloudInventoryResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetPublicCloudInventory : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt;&#xA;override this.GetPublicCloudInventory : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt;" Usage="mockableHybridConnectivityArmClient.GetPublicCloudInventory (scope, inventoryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="inventoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="inventoryId"> Inventory resource. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get a InventoryResource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inventoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="inventoryId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPublicCloudInventoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt;&gt; GetPublicCloudInventoryAsync (Azure.Core.ResourceIdentifier scope, string inventoryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt;&gt; GetPublicCloudInventoryAsync(class Azure.Core.ResourceIdentifier scope, string inventoryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.HybridConnectivity.Mocking.MockableHybridConnectivityArmClient.GetPublicCloudInventoryAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetPublicCloudInventoryAsync (scope As ResourceIdentifier, inventoryId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of PublicCloudInventoryResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetPublicCloudInventoryAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt;&gt;&#xA;override this.GetPublicCloudInventoryAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt;&gt;" Usage="mockableHybridConnectivityArmClient.GetPublicCloudInventoryAsync (scope, inventoryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="inventoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="inventoryId"> Inventory resource. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get a InventoryResource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inventoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="inventoryId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetPublicCloudInventoryResource">
@@ -474,7 +632,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.HybridConnectivity</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource</ReturnType>
@@ -484,10 +642,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.HybridConnectivity.PublicCloudInventoryResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>

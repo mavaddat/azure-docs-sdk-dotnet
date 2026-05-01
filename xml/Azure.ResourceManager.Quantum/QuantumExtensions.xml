@@ -18,11 +18,11 @@
   </Docs>
   <Members>
     <Member MemberName="CheckWorkspaceNameAvailability">
-      <MemberSignature Language="C#" Value="public static Azure.Response&lt;Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt; CheckWorkspaceNameAvailability (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, string locationName, Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent content, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Response`1&lt;class Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt; CheckWorkspaceNameAvailability(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, string locationName, class Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.CheckWorkspaceNameAvailability(Azure.ResourceManager.Resources.SubscriptionResource,System.String,Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CheckWorkspaceNameAvailability (subscriptionResource As SubscriptionResource, locationName As String, content As WorkspaceNameAvailabilityContent, Optional cancellationToken As CancellationToken = Nothing) As Response(Of WorkspaceNameAvailabilityResult)" />
-      <MemberSignature Language="F#" Value="static member CheckWorkspaceNameAvailability : Azure.ResourceManager.Resources.SubscriptionResource * string * Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.CheckWorkspaceNameAvailability (subscriptionResource, locationName, content, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public static Azure.Response&lt;Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt; CheckWorkspaceNameAvailability (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, Azure.Core.AzureLocation location, Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Response`1&lt;class Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt; CheckWorkspaceNameAvailability(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, valuetype Azure.Core.AzureLocation location, class Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.CheckWorkspaceNameAvailability(Azure.ResourceManager.Resources.SubscriptionResource,Azure.Core.AzureLocation,Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CheckWorkspaceNameAvailability (subscriptionResource As SubscriptionResource, location As AzureLocation, content As WorkspaceNameAvailabilityContent, Optional cancellationToken As CancellationToken = Nothing) As Response(Of WorkspaceNameAvailabilityResult)" />
+      <MemberSignature Language="F#" Value="static member CheckWorkspaceNameAvailability : Azure.ResourceManager.Resources.SubscriptionResource * Azure.Core.AzureLocation * Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.CheckWorkspaceNameAvailability (subscriptionResource, location, content, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quantum</AssemblyName>
@@ -33,32 +33,30 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="subscriptionResource" Type="Azure.ResourceManager.Resources.SubscriptionResource" RefType="this" />
-        <Parameter Name="locationName" Type="System.String" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" />
         <Parameter Name="content" Type="Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> instance the method will execute against. </param>
-        <param name="locationName"> Location. </param>
-        <param name="content"> The name and type of the resource. </param>
+        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> the method will execute against. </param>
+        <param name="location"> The name of the Azure region. </param>
+        <param name="content"> The CheckAvailability request. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Check the availability of the resource name.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Quantum/locations/{locationName}/checkNameAvailability</description></item><item><term>Operation Id</term><description>Workspace_CheckNameAvailability</description></item><item><term>Default Api Version</term><description>2023-11-13-preview</description></item></list><item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.CheckWorkspaceNameAvailability(System.String,Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent,System.Threading.CancellationToken)" /> instead.</description></item></summary>
+            Check the availability of the resource name for the given location.
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.CheckWorkspaceNameAvailability(Azure.Core.AzureLocation,Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent,System.Threading.CancellationToken)" /> instead. </description></item></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="locationName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="subscriptionResource" />, <paramref name="locationName" /> or <paramref name="content" /> is null. </exception>
+          <paramref name="subscriptionResource" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="CheckWorkspaceNameAvailabilityAsync">
-      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt;&gt; CheckWorkspaceNameAvailabilityAsync (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, string locationName, Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent content, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt;&gt; CheckWorkspaceNameAvailabilityAsync(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, string locationName, class Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.CheckWorkspaceNameAvailabilityAsync(Azure.ResourceManager.Resources.SubscriptionResource,System.String,Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CheckWorkspaceNameAvailabilityAsync (subscriptionResource As SubscriptionResource, locationName As String, content As WorkspaceNameAvailabilityContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of WorkspaceNameAvailabilityResult))" />
-      <MemberSignature Language="F#" Value="static member CheckWorkspaceNameAvailabilityAsync : Azure.ResourceManager.Resources.SubscriptionResource * string * Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt;&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.CheckWorkspaceNameAvailabilityAsync (subscriptionResource, locationName, content, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt;&gt; CheckWorkspaceNameAvailabilityAsync (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, Azure.Core.AzureLocation location, Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt;&gt; CheckWorkspaceNameAvailabilityAsync(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, valuetype Azure.Core.AzureLocation location, class Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.CheckWorkspaceNameAvailabilityAsync(Azure.ResourceManager.Resources.SubscriptionResource,Azure.Core.AzureLocation,Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CheckWorkspaceNameAvailabilityAsync (subscriptionResource As SubscriptionResource, location As AzureLocation, content As WorkspaceNameAvailabilityContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of WorkspaceNameAvailabilityResult))" />
+      <MemberSignature Language="F#" Value="static member CheckWorkspaceNameAvailabilityAsync : Azure.ResourceManager.Resources.SubscriptionResource * Azure.Core.AzureLocation * Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityResult&gt;&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.CheckWorkspaceNameAvailabilityAsync (subscriptionResource, location, content, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quantum</AssemblyName>
@@ -69,92 +67,90 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="subscriptionResource" Type="Azure.ResourceManager.Resources.SubscriptionResource" RefType="this" />
-        <Parameter Name="locationName" Type="System.String" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" />
         <Parameter Name="content" Type="Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> instance the method will execute against. </param>
-        <param name="locationName"> Location. </param>
-        <param name="content"> The name and type of the resource. </param>
+        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> the method will execute against. </param>
+        <param name="location"> The name of the Azure region. </param>
+        <param name="content"> The CheckAvailability request. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Check the availability of the resource name.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Quantum/locations/{locationName}/checkNameAvailability</description></item><item><term>Operation Id</term><description>Workspace_CheckNameAvailability</description></item><item><term>Default Api Version</term><description>2023-11-13-preview</description></item></list><item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.CheckWorkspaceNameAvailability(System.String,Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent,System.Threading.CancellationToken)" /> instead.</description></item></summary>
+            Check the availability of the resource name for the given location.
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.CheckWorkspaceNameAvailabilityAsync(Azure.Core.AzureLocation,Azure.ResourceManager.Quantum.Models.WorkspaceNameAvailabilityContent,System.Threading.CancellationToken)" /> instead. </description></item></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="locationName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="subscriptionResource" />, <paramref name="locationName" /> or <paramref name="content" /> is null. </exception>
+          <paramref name="subscriptionResource" /> is null. </exception>
       </Docs>
     </Member>
-    <Member MemberName="GetOfferings">
-      <MemberSignature Language="C#" Value="public static Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderDescription&gt; GetOfferings (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, string locationName, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Pageable`1&lt;class Azure.ResourceManager.Quantum.Models.QuantumProviderDescription&gt; GetOfferings(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, string locationName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.GetOfferings(Azure.ResourceManager.Resources.SubscriptionResource,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetOfferings (subscriptionResource As SubscriptionResource, locationName As String, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of QuantumProviderDescription)" />
-      <MemberSignature Language="F#" Value="static member GetOfferings : Azure.ResourceManager.Resources.SubscriptionResource * string * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderDescription&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.GetOfferings (subscriptionResource, locationName, cancellationToken)" />
+    <Member MemberName="GetProviderOfferings">
+      <MemberSignature Language="C#" Value="public static Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderOffer&gt; GetProviderOfferings (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, Azure.Core.AzureLocation locationName, string filter = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Pageable`1&lt;class Azure.ResourceManager.Quantum.Models.QuantumProviderOffer&gt; GetProviderOfferings(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, valuetype Azure.Core.AzureLocation locationName, string filter, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.GetProviderOfferings(Azure.ResourceManager.Resources.SubscriptionResource,Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetProviderOfferings (subscriptionResource As SubscriptionResource, locationName As AzureLocation, Optional filter As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of QuantumProviderOffer)" />
+      <MemberSignature Language="F#" Value="static member GetProviderOfferings : Azure.ResourceManager.Resources.SubscriptionResource * Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderOffer&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.GetProviderOfferings (subscriptionResource, locationName, filter, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quantum</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderDescription&gt;</ReturnType>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderOffer&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="subscriptionResource" Type="Azure.ResourceManager.Resources.SubscriptionResource" RefType="this" />
-        <Parameter Name="locationName" Type="System.String" />
+        <Parameter Name="locationName" Type="Azure.Core.AzureLocation" />
+        <Parameter Name="filter" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> instance the method will execute against. </param>
+        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> the method will execute against. </param>
         <param name="locationName"> Location. </param>
+        <param name="filter"> The filter to apply to the operation. Example: '$filter=kind eq 'v1'. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns the list of all provider offerings available for the given location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Quantum/locations/{locationName}/offerings</description></item><item><term>Operation Id</term><description>Offerings_List</description></item><item><term>Default Api Version</term><description>2023-11-13-preview</description></item></list><item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetOfferings(System.String,System.Threading.CancellationToken)" /> instead.</description></item></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.Quantum.Models.QuantumProviderDescription" /> that may take multiple service requests to iterate over. </returns>
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetProviderOfferings(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Quantum.Models.QuantumProviderOffer" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="locationName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="subscriptionResource" /> or <paramref name="locationName" /> is null. </exception>
+          <paramref name="subscriptionResource" /> is null. </exception>
       </Docs>
     </Member>
-    <Member MemberName="GetOfferingsAsync">
-      <MemberSignature Language="C#" Value="public static Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderDescription&gt; GetOfferingsAsync (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, string locationName, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Quantum.Models.QuantumProviderDescription&gt; GetOfferingsAsync(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, string locationName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.GetOfferingsAsync(Azure.ResourceManager.Resources.SubscriptionResource,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetOfferingsAsync (subscriptionResource As SubscriptionResource, locationName As String, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of QuantumProviderDescription)" />
-      <MemberSignature Language="F#" Value="static member GetOfferingsAsync : Azure.ResourceManager.Resources.SubscriptionResource * string * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderDescription&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.GetOfferingsAsync (subscriptionResource, locationName, cancellationToken)" />
+    <Member MemberName="GetProviderOfferingsAsync">
+      <MemberSignature Language="C#" Value="public static Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderOffer&gt; GetProviderOfferingsAsync (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, Azure.Core.AzureLocation locationName, string filter = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Quantum.Models.QuantumProviderOffer&gt; GetProviderOfferingsAsync(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, valuetype Azure.Core.AzureLocation locationName, string filter, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.GetProviderOfferingsAsync(Azure.ResourceManager.Resources.SubscriptionResource,Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetProviderOfferingsAsync (subscriptionResource As SubscriptionResource, locationName As AzureLocation, Optional filter As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of QuantumProviderOffer)" />
+      <MemberSignature Language="F#" Value="static member GetProviderOfferingsAsync : Azure.ResourceManager.Resources.SubscriptionResource * Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderOffer&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.GetProviderOfferingsAsync (subscriptionResource, locationName, filter, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quantum</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderDescription&gt;</ReturnType>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumProviderOffer&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="subscriptionResource" Type="Azure.ResourceManager.Resources.SubscriptionResource" RefType="this" />
-        <Parameter Name="locationName" Type="System.String" />
+        <Parameter Name="locationName" Type="Azure.Core.AzureLocation" />
+        <Parameter Name="filter" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> instance the method will execute against. </param>
+        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> the method will execute against. </param>
         <param name="locationName"> Location. </param>
+        <param name="filter"> The filter to apply to the operation. Example: '$filter=kind eq 'v1'. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns the list of all provider offerings available for the given location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Quantum/locations/{locationName}/offerings</description></item><item><term>Operation Id</term><description>Offerings_List</description></item><item><term>Default Api Version</term><description>2023-11-13-preview</description></item></list><item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetOfferings(System.String,System.Threading.CancellationToken)" /> instead.</description></item></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Quantum.Models.QuantumProviderDescription" /> that may take multiple service requests to iterate over. </returns>
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetProviderOfferingsAsync(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Quantum.Models.QuantumProviderOffer" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="locationName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="subscriptionResource" /> or <paramref name="locationName" /> is null. </exception>
+          <paramref name="subscriptionResource" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetQuantumWorkspace">
@@ -177,18 +173,18 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="resourceGroupResource"> The <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /> instance the method will execute against. </param>
+        <param name="resourceGroupResource"> The <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /> the method will execute against. </param>
         <param name="workspaceName"> The name of the quantum workspace resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns the Workspace resource associated with the given name.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Quantum/workspaces/{workspaceName}</description></item><item><term>Operation Id</term><description>Workspaces_Get</description></item><item><term>Default Api Version</term><description>2023-11-13-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /></description></item></list><item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumResourceGroupResource.GetQuantumWorkspace(System.String,System.Threading.CancellationToken)" /> instead.</description></item></summary>
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumResourceGroupResource.GetQuantumWorkspace(System.String,System.Threading.CancellationToken)" /> instead. </description></item></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="resourceGroupResource" /> or <paramref name="workspaceName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="workspaceName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceGroupResource" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetQuantumWorkspaceAsync">
@@ -211,18 +207,18 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="resourceGroupResource"> The <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /> instance the method will execute against. </param>
+        <param name="resourceGroupResource"> The <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /> the method will execute against. </param>
         <param name="workspaceName"> The name of the quantum workspace resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns the Workspace resource associated with the given name.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Quantum/workspaces/{workspaceName}</description></item><item><term>Operation Id</term><description>Workspaces_Get</description></item><item><term>Default Api Version</term><description>2023-11-13-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /></description></item></list><item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumResourceGroupResource.GetQuantumWorkspaceAsync(System.String,System.Threading.CancellationToken)" /> instead.</description></item></summary>
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumResourceGroupResource.GetQuantumWorkspaceAsync(System.String,System.Threading.CancellationToken)" /> instead. </description></item></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="resourceGroupResource" /> or <paramref name="workspaceName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="workspaceName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceGroupResource" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetQuantumWorkspaceResource">
@@ -244,12 +240,11 @@
         <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" />
       </Parameters>
       <Docs>
-        <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> instance the method will execute against. </param>
+        <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
         <param name="id"> The resource ID of the resource to get. </param>
         <summary>
             Gets an object representing a <see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quantum.QuantumWorkspaceResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            <item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumArmClient.GetQuantumWorkspaceResource(Azure.Core.ResourceIdentifier)" /> instead.</description></item></summary>
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumArmClient.GetQuantumWorkspaceResource(Azure.Core.ResourceIdentifier)" /> instead. </description></item></summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /> object. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -274,11 +269,10 @@
         <Parameter Name="resourceGroupResource" Type="Azure.ResourceManager.Resources.ResourceGroupResource" RefType="this" />
       </Parameters>
       <Docs>
-        <param name="resourceGroupResource"> The <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /> instance the method will execute against. </param>
+        <param name="resourceGroupResource"> The <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /> the method will execute against. </param>
         <summary>
-            Gets a collection of QuantumWorkspaceResources in the ResourceGroupResource.
-            <item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumResourceGroupResource.GetQuantumWorkspaces" /> instead.</description></item></summary>
-        <returns> An object representing collection of QuantumWorkspaceResources and their operations over a QuantumWorkspaceResource. </returns>
+            Gets a collection of QuantumWorkspaces in the <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" /><item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumResourceGroupResource.GetQuantumWorkspaces" /> instead. </description></item></summary>
+        <returns> An object representing collection of QuantumWorkspaces and their operations over a QuantumWorkspaceResource. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="resourceGroupResource" /> is null. </exception>
@@ -303,11 +297,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> instance the method will execute against. </param>
+        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> the method will execute against. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the list of Workspaces within a Subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Quantum/workspaces</description></item><item><term>Operation Id</term><description>Workspaces_ListBySubscription</description></item><item><term>Default Api Version</term><description>2023-11-13-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /></description></item></list><item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetQuantumWorkspaces(System.Threading.CancellationToken)" /> instead.</description></item></summary>
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetQuantumWorkspaces(System.Threading.CancellationToken)" /> instead. </description></item></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -333,12 +327,72 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> instance the method will execute against. </param>
+        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> the method will execute against. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the list of Workspaces within a Subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Quantum/workspaces</description></item><item><term>Operation Id</term><description>Workspaces_ListBySubscription</description></item><item><term>Default Api Version</term><description>2023-11-13-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /></description></item></list><item><term>Mocking</term><description>To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetQuantumWorkspaces(System.Threading.CancellationToken)" /> instead.</description></item></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetQuantumWorkspacesAsync(System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Quantum.QuantumWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="subscriptionResource" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSuiteOffer">
+      <MemberSignature Language="C#" Value="public static Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer&gt; GetSuiteOffer (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Pageable`1&lt;class Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer&gt; GetSuiteOffer(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.GetSuiteOffer(Azure.ResourceManager.Resources.SubscriptionResource,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetSuiteOffer (subscriptionResource As SubscriptionResource, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of QuantumSuiteOffer)" />
+      <MemberSignature Language="F#" Value="static member GetSuiteOffer : Azure.ResourceManager.Resources.SubscriptionResource * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.GetSuiteOffer (subscriptionResource, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quantum</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subscriptionResource" Type="Azure.ResourceManager.Resources.SubscriptionResource" RefType="this" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> the method will execute against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Returns the SuiteOffer resource associated with the given name.
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetSuiteOffer(System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="subscriptionResource" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSuiteOfferAsync">
+      <MemberSignature Language="C#" Value="public static Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer&gt; GetSuiteOfferAsync (this Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer&gt; GetSuiteOfferAsync(class Azure.ResourceManager.Resources.SubscriptionResource subscriptionResource, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quantum.QuantumExtensions.GetSuiteOfferAsync(Azure.ResourceManager.Resources.SubscriptionResource,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetSuiteOfferAsync (subscriptionResource As SubscriptionResource, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of QuantumSuiteOffer)" />
+      <MemberSignature Language="F#" Value="static member GetSuiteOfferAsync : Azure.ResourceManager.Resources.SubscriptionResource * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer&gt;" Usage="Azure.ResourceManager.Quantum.QuantumExtensions.GetSuiteOfferAsync (subscriptionResource, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quantum</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subscriptionResource" Type="Azure.ResourceManager.Resources.SubscriptionResource" RefType="this" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="subscriptionResource"> The <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> the method will execute against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Returns the SuiteOffer resource associated with the given name.
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Quantum.Mocking.MockableQuantumSubscriptionResource.GetSuiteOfferAsync(System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Quantum.Models.QuantumSuiteOffer" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="subscriptionResource" /> is null. </exception>

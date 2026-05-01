@@ -13,16 +13,16 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName="ServiceGroupData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ServiceGroups.ServiceGroupData ServiceGroupData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string kind = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties properties = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ServiceGroups.ServiceGroupData ServiceGroupData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string kind, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, class Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties properties) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ServiceGroups.Models.ArmServiceGroupsModelFactory.ServiceGroupData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.Collections.Generic.IDictionary{System.String,System.String},Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ServiceGroupData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional kind As String = Nothing, Optional tags As IDictionary(Of String, String) = Nothing, Optional properties As ServiceGroupProperties = Nothing) As ServiceGroupData" />
-      <MemberSignature Language="F#" Value="static member ServiceGroupData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties -&gt; Azure.ResourceManager.ServiceGroups.ServiceGroupData" Usage="Azure.ResourceManager.ServiceGroups.Models.ArmServiceGroupsModelFactory.ServiceGroupData (id, name, resourceType, systemData, kind, tags, properties)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ServiceGroups.ServiceGroupData ServiceGroupData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties properties = default, string kind = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ServiceGroups.ServiceGroupData ServiceGroupData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, class Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties properties, string kind, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ServiceGroups.Models.ArmServiceGroupsModelFactory.ServiceGroupData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties,System.String,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ServiceGroupData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional properties As ServiceGroupProperties = Nothing, Optional kind As String = Nothing, Optional tags As IDictionary(Of String, String) = Nothing) As ServiceGroupData" />
+      <MemberSignature Language="F#" Value="static member ServiceGroupData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties * string * System.Collections.Generic.IDictionary&lt;string, string&gt; -&gt; Azure.ResourceManager.ServiceGroups.ServiceGroupData" Usage="Azure.ResourceManager.ServiceGroups.Models.ArmServiceGroupsModelFactory.ServiceGroupData (id, name, resourceType, systemData, properties, kind, tags)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ServiceGroups</AssemblyName>
@@ -36,19 +36,19 @@
         <Parameter Name="name" Type="System.String" />
         <Parameter Name="resourceType" Type="Azure.Core.ResourceType" />
         <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" />
+        <Parameter Name="properties" Type="Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties" />
         <Parameter Name="kind" Type="System.String" />
         <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
-        <Parameter Name="properties" Type="Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="properties"> ServiceGroup creation request body parameters. </param>
         <param name="kind"> The kind of the serviceGroup. </param>
         <param name="tags"> The serviceGroup tags. </param>
-        <param name="properties"> ServiceGroup creation request body parameters. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ServiceGroups.ServiceGroupData" />. </summary>
+        <summary> The serviceGroup details. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ServiceGroups.ServiceGroupData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -75,7 +75,7 @@
       <Docs>
         <param name="provisioningState"> The provisioning state of the serviceGroup. For example, Running. </param>
         <param name="displayName"> The display name of the serviceGroup. For example, ServiceGroupTest1. </param>
-        <param name="parentResourceId"> The details of the parent serviceGroup. </param>
+        <param name="parentResourceId"> The fully qualified ID of the parent serviceGroup.  For example, '/providers/Microsoft.Management/serviceGroups/TestServiceGroup'. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ServiceGroups.Models.ServiceGroupProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>

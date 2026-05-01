@@ -8,13 +8,14 @@
     <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -28,6 +29,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.Models.BillingInfoSku</ReturnType>
@@ -41,26 +43,112 @@
       </Parameters>
       <Docs>
         <param name="name">
-             The name of the SKU. Required.
-            
-             Allowed values: Standard_S1, Free_F1
-             </param>
+            The name of the SKU. Required.
+            Allowed values: Standard_S1, Free_F1, Premium_P1, Premium_P2
+            </param>
         <param name="tier">
-             Optional tier of this particular SKU. 'Standard' or 'Free'.
-            
-             `Basic` is deprecated, use `Standard` instead.
-             </param>
+            Optional tier of this particular SKU. 'Standard' or 'Free'.
+            `Basic` is deprecated, use `Standard` instead.
+            </param>
         <param name="size"> Not used. Retained for future use. </param>
         <param name="family"> Not used. Retained for future use. </param>
         <param name="capacity">
-             Optional, integer. The unit count of the resource. 1 by default.
-            
-             If present, following values are allowed:
-                 Free: 1
-                 Standard: 1,2,5,10,20,50,100
-             </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.Models.BillingInfoSku" />. </summary>
+            Optional, integer. The unit count of the resource.
+            1 for Free_F1/Standard_S1/Premium_P1, 100 for Premium_P2 by default.
+            If present, following values are allowed:
+            Free_F1: 1;
+            Standard_S1: 1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100;
+            Premium_P1:  1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100;
+            Premium_P2:  100,200,300,400,500,600,700,800,900,1000;
+            </param>
+        <summary> The billing information of the resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.BillingInfoSku" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LiveTraceConfiguration">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration LiveTraceConfiguration (bool? isEnabled = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.LiveTraceCategory&gt; categories = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration LiveTraceConfiguration(valuetype System.Nullable`1&lt;bool&gt; isEnabled, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.LiveTraceCategory&gt; categories) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.LiveTraceConfiguration(System.Nullable{System.Boolean},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.LiveTraceCategory})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function LiveTraceConfiguration (Optional isEnabled As Nullable(Of Boolean) = Nothing, Optional categories As IEnumerable(Of LiveTraceCategory) = Nothing) As LiveTraceConfiguration" />
+      <MemberSignature Language="F#" Value="static member LiveTraceConfiguration : Nullable&lt;bool&gt; * seq&lt;Azure.ResourceManager.WebPubSub.Models.LiveTraceCategory&gt; -&gt; Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.LiveTraceConfiguration (isEnabled, categories)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isEnabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="categories" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.LiveTraceCategory&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="isEnabled">
+            Indicates whether or not enable live trace.
+            When it's set to true, live trace client can connect to the service.
+            Otherwise, live trace client can't connect to the service, so that you are unable to receive any log, no matter what you configure in "categories".
+            Available values: true, false.
+            Case insensitive.
+            </param>
+        <param name="categories"> Gets or sets the list of category configurations. </param>
+        <summary> Live trace configuration of a Microsoft.SignalRService resource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateEndpointAcl">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl PrivateEndpointAcl (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; allow = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; deny = default, string name = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl PrivateEndpointAcl(class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; allow, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; deny, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.PrivateEndpointAcl(System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function PrivateEndpointAcl (Optional allow As IEnumerable(Of WebPubSubRequestType) = Nothing, Optional deny As IEnumerable(Of WebPubSubRequestType) = Nothing, Optional name As String = Nothing) As PrivateEndpointAcl" />
+      <MemberSignature Language="F#" Value="static member PrivateEndpointAcl : seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; * seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; * string -&gt; Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.PrivateEndpointAcl (allow, deny, name)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allow" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="deny" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="allow"> Allowed request types. The value can be one or more of: ClientConnection, ServerConnection, RESTAPI. </param>
+        <param name="deny"> Denied request types. The value can be one or more of: ClientConnection, ServerConnection, RESTAPI. </param>
+        <param name="name"> Name of the private endpoint connection. </param>
+        <summary> ACL for a private endpoint. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicNetworkAcls">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls PublicNetworkAcls (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; allow = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; deny = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls PublicNetworkAcls(class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; allow, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; deny) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.PublicNetworkAcls(System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function PublicNetworkAcls (Optional allow As IEnumerable(Of WebPubSubRequestType) = Nothing, Optional deny As IEnumerable(Of WebPubSubRequestType) = Nothing) As PublicNetworkAcls" />
+      <MemberSignature Language="F#" Value="static member PublicNetworkAcls : seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; * seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt; -&gt; Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.PublicNetworkAcls (allow, deny)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allow" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="deny" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubRequestType&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="allow"> Allowed request types. The value can be one or more of: ClientConnection, ServerConnection, RESTAPI. </param>
+        <param name="deny"> Denied request types. The value can be one or more of: ClientConnection, ServerConnection, RESTAPI. </param>
+        <summary> Network ACL. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -74,6 +162,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.Models.SignalRServiceUsage</ReturnType>
@@ -91,7 +180,7 @@
         <param name="limit"> The maximum permitted value for the usage quota. If there is no limit, this value will be -1. </param>
         <param name="name"> Localizable String object containing the name and a localized value. </param>
         <param name="unit"> Representing the units of the usage quota. Possible values are: Count, Bytes, Seconds, Percent, CountPerSecond, BytesPerSecond. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.Models.SignalRServiceUsage" />. </summary>
+        <summary> Object that describes a specific usage of the resources. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.SignalRServiceUsage" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -106,6 +195,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.Models.SignalRServiceUsageName</ReturnType>
@@ -117,22 +207,133 @@
       <Docs>
         <param name="value"> The identifier of the usage. </param>
         <param name="localizedValue"> Localized name of the usage. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.Models.SignalRServiceUsageName" />. </summary>
+        <summary> Localizable String object containing the name and a localized value. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.SignalRServiceUsageName" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="WebPubSubApplicationFirewallSettings">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings WebPubSubApplicationFirewallSettings (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubClientConnectionCountRule&gt; clientConnectionCountRules = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubClientTrafficControlRule&gt; clientTrafficControlRules = default, long? maxClientConnectionLifetimeInSeconds = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings WebPubSubApplicationFirewallSettings(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.WebPubSubClientConnectionCountRule&gt; clientConnectionCountRules, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.WebPubSubClientTrafficControlRule&gt; clientTrafficControlRules, valuetype System.Nullable`1&lt;int64&gt; maxClientConnectionLifetimeInSeconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubApplicationFirewallSettings(System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubClientConnectionCountRule},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubClientTrafficControlRule},System.Nullable{System.Int64})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubApplicationFirewallSettings (Optional clientConnectionCountRules As IEnumerable(Of WebPubSubClientConnectionCountRule) = Nothing, Optional clientTrafficControlRules As IEnumerable(Of WebPubSubClientTrafficControlRule) = Nothing, Optional maxClientConnectionLifetimeInSeconds As Nullable(Of Long) = Nothing) As WebPubSubApplicationFirewallSettings" />
+      <MemberSignature Language="F#" Value="static member WebPubSubApplicationFirewallSettings : seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubClientConnectionCountRule&gt; * seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubClientTrafficControlRule&gt; * Nullable&lt;int64&gt; -&gt; Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubApplicationFirewallSettings (clientConnectionCountRules, clientTrafficControlRules, maxClientConnectionLifetimeInSeconds)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientConnectionCountRules" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubClientConnectionCountRule&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientTrafficControlRules" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubClientTrafficControlRule&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="maxClientConnectionLifetimeInSeconds" Type="System.Nullable&lt;System.Int64&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="clientConnectionCountRules"> Rules to control the client connection count. </param>
+        <param name="clientTrafficControlRules"> Rules to control the client traffic. </param>
+        <param name="maxClientConnectionLifetimeInSeconds"> Config to control the client connection lifetime in seconds, can be set to 0 to disable the config. </param>
+        <summary> Application firewall settings for the resource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubCustomCertificateData">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubCustomCertificateData WebPubSubCustomCertificateData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, Uri keyVaultBaseUri = default, string keyVaultSecretName = default, string keyVaultSecretVersion = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.WebPubSubCustomCertificateData WebPubSubCustomCertificateData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; provisioningState, class System.Uri keyVaultBaseUri, string keyVaultSecretName, string keyVaultSecretVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubCustomCertificateData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState},System.Uri,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubCustomCertificateData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional keyVaultBaseUri As Uri = Nothing, Optional keyVaultSecretName As String = Nothing, Optional keyVaultSecretVersion As String = Nothing) As WebPubSubCustomCertificateData" />
+      <MemberSignature Language="F#" Value="static member WebPubSubCustomCertificateData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; * Uri * string * string -&gt; Azure.ResourceManager.WebPubSub.WebPubSubCustomCertificateData" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubCustomCertificateData (id, name, resourceType, systemData, provisioningState, keyVaultBaseUri, keyVaultSecretName, keyVaultSecretVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubCustomCertificateData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="keyVaultBaseUri" Type="System.Uri" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="keyVaultSecretName" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="keyVaultSecretVersion" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="provisioningState"> Provisioning state of the resource. </param>
+        <param name="keyVaultBaseUri"> Base uri of the KeyVault that stores certificate. </param>
+        <param name="keyVaultSecretName"> Certificate secret name. </param>
+        <param name="keyVaultSecretVersion"> Certificate secret version. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubCustomCertificateData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubCustomDomainData">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubCustomDomainData WebPubSubCustomDomainData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, string domainName = default, Azure.Core.ResourceIdentifier customCertificateId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.WebPubSubCustomDomainData WebPubSubCustomDomainData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; provisioningState, string domainName, class Azure.Core.ResourceIdentifier customCertificateId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubCustomDomainData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState},System.String,Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubCustomDomainData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional domainName As String = Nothing, Optional customCertificateId As ResourceIdentifier = Nothing) As WebPubSubCustomDomainData" />
+      <MemberSignature Language="F#" Value="static member WebPubSubCustomDomainData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; * string * Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.WebPubSub.WebPubSubCustomDomainData" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubCustomDomainData (id, name, resourceType, systemData, provisioningState, domainName, customCertificateId)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubCustomDomainData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="domainName" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="customCertificateId" Type="Azure.Core.ResourceIdentifier" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="provisioningState"> Provisioning state of the resource. </param>
+        <param name="domainName"> The custom domain name. </param>
+        <param name="customCertificateId"> Resource ID. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubCustomDomainData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="WebPubSubData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubData WebPubSubData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.Core.AzureLocation location = default, Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku = default, Azure.ResourceManager.Models.ManagedServiceIdentity identity = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, string externalIP = default, string hostName = default, int? publicPort = default, int? serverPort = default, string version = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt; privateEndpointConnections = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt; sharedPrivateLinkResources = default, bool? isClientCertEnabled = default, string hostNamePrefix = default, Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration liveTraceConfiguration = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt; resourceLogCategories = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls networkAcls = default, string publicNetworkAccess = default, bool? isLocalAuthDisabled = default, bool? isAadAuthDisabled = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubData WebPubSubData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.Core.AzureLocation location = default, Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku = default, Azure.ResourceManager.Models.ManagedServiceIdentity identity = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, string externalIP = default, string hostName = default, int? publicPort = default, int? serverPort = default, string version = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt; privateEndpointConnections = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt; sharedPrivateLinkResources = default, bool? isClientCertEnabled = default, string hostNamePrefix = default, Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration liveTraceConfiguration = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt; resourceLogCategories = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls networkAcls = default, string publicNetworkAccess = default, bool? isLocalAuthDisabled = default, bool? isAadAuthDisabled = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.WebPubSubData WebPubSubData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, valuetype Azure.Core.AzureLocation location, class Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku, class Azure.ResourceManager.Models.ManagedServiceIdentity identity, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; provisioningState, string externalIP, string hostName, valuetype System.Nullable`1&lt;int32&gt; publicPort, valuetype System.Nullable`1&lt;int32&gt; serverPort, string version, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt; privateEndpointConnections, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt; sharedPrivateLinkResources, valuetype System.Nullable`1&lt;bool&gt; isClientCertEnabled, string hostNamePrefix, class Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration liveTraceConfiguration, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt; resourceLogCategories, class Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls networkAcls, string publicNetworkAccess, valuetype System.Nullable`1&lt;bool&gt; isLocalAuthDisabled, valuetype System.Nullable`1&lt;bool&gt; isAadAuthDisabled) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.Collections.Generic.IDictionary{System.String,System.String},Azure.Core.AzureLocation,Azure.ResourceManager.WebPubSub.Models.BillingInfoSku,Azure.ResourceManager.Models.ManagedServiceIdentity,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState},System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData},System.Nullable{System.Boolean},System.String,Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration,System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory},Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional tags As IDictionary(Of String, String) = Nothing, Optional location As AzureLocation = Nothing, Optional sku As BillingInfoSku = Nothing, Optional identity As ManagedServiceIdentity = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional externalIP As String = Nothing, Optional hostName As String = Nothing, Optional publicPort As Nullable(Of Integer) = Nothing, Optional serverPort As Nullable(Of Integer) = Nothing, Optional version As String = Nothing, Optional privateEndpointConnections As IEnumerable(Of WebPubSubPrivateEndpointConnectionData) = Nothing, Optional sharedPrivateLinkResources As IEnumerable(Of WebPubSubSharedPrivateLinkData) = Nothing, Optional isClientCertEnabled As Nullable(Of Boolean) = Nothing, Optional hostNamePrefix As String = Nothing, Optional liveTraceConfiguration As LiveTraceConfiguration = Nothing, Optional resourceLogCategories As IEnumerable(Of ResourceLogCategory) = Nothing, Optional networkAcls As WebPubSubNetworkAcls = Nothing, Optional publicNetworkAccess As String = Nothing, Optional isLocalAuthDisabled As Nullable(Of Boolean) = Nothing, Optional isAadAuthDisabled As Nullable(Of Boolean) = Nothing) As WebPubSubData" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional tags As IDictionary(Of String, String) = Nothing, Optional location As AzureLocation = Nothing, Optional sku As BillingInfoSku = Nothing, Optional identity As ManagedServiceIdentity = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional externalIP As String = Nothing, Optional hostName As String = Nothing, Optional publicPort As Nullable(Of Integer) = Nothing, Optional serverPort As Nullable(Of Integer) = Nothing, Optional version As String = Nothing, Optional privateEndpointConnections As IEnumerable(Of WebPubSubPrivateEndpointConnectionData) = Nothing, Optional sharedPrivateLinkResources As IEnumerable(Of WebPubSubSharedPrivateLinkData) = Nothing, Optional isClientCertEnabled As Nullable(Of Boolean) = Nothing, Optional hostNamePrefix As String = Nothing, Optional liveTraceConfiguration As LiveTraceConfiguration = Nothing, Optional resourceLogCategories As IEnumerable(Of ResourceLogCategory) = Nothing, Optional networkAcls As WebPubSubNetworkAcls = Nothing, Optional publicNetworkAccess As String = Nothing, Optional isLocalAuthDisabled As Nullable(Of Boolean) = Nothing, Optional isAadAuthDisabled As Nullable(Of Boolean) = Nothing) As WebPubSubData" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="static member WebPubSubData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.Core.AzureLocation * Azure.ResourceManager.WebPubSub.Models.BillingInfoSku * Azure.ResourceManager.Models.ManagedServiceIdentity * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; * string * string * Nullable&lt;int&gt; * Nullable&lt;int&gt; * string * seq&lt;Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt; * seq&lt;Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt; * Nullable&lt;bool&gt; * string * Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration * seq&lt;Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt; * Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls * string * Nullable&lt;bool&gt; * Nullable&lt;bool&gt; -&gt; Azure.ResourceManager.WebPubSub.WebPubSubData" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubData (id, name, resourceType, systemData, tags, location, sku, identity, provisioningState, externalIP, hostName, publicPort, serverPort, version, privateEndpointConnections, sharedPrivateLinkResources, isClientCertEnabled, hostNamePrefix, liveTraceConfiguration, resourceLogCategories, networkAcls, publicNetworkAccess, isLocalAuthDisabled, isAadAuthDisabled)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubData WebPubSubData (Azure.Core.ResourceIdentifier id, string name, Azure.Core.ResourceType resourceType, Azure.ResourceManager.Models.SystemData systemData, System.Collections.Generic.IDictionary&lt;string,string&gt; tags, Azure.Core.AzureLocation location, Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku, Azure.ResourceManager.Models.ManagedServiceIdentity identity, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState, string externalIP, string hostName, int? publicPort, int? serverPort, string version, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt; privateEndpointConnections, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt; sharedPrivateLinkResources, bool? isClientCertEnabled, string hostNamePrefix, Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration liveTraceConfiguration, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt; resourceLogCategories, Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls networkAcls, string publicNetworkAccess, bool? isLocalAuthDisabled, bool? isAadAuthDisabled);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubData (id As ResourceIdentifier, name As String, resourceType As ResourceType, systemData As SystemData, tags As IDictionary(Of String, String), location As AzureLocation, sku As BillingInfoSku, identity As ManagedServiceIdentity, provisioningState As Nullable(Of WebPubSubProvisioningState), externalIP As String, hostName As String, publicPort As Nullable(Of Integer), serverPort As Nullable(Of Integer), version As String, privateEndpointConnections As IEnumerable(Of WebPubSubPrivateEndpointConnectionData), sharedPrivateLinkResources As IEnumerable(Of WebPubSubSharedPrivateLinkData), isClientCertEnabled As Nullable(Of Boolean), hostNamePrefix As String, liveTraceConfiguration As LiveTraceConfiguration, resourceLogCategories As IEnumerable(Of ResourceLogCategory), networkAcls As WebPubSubNetworkAcls, publicNetworkAccess As String, isLocalAuthDisabled As Nullable(Of Boolean), isAadAuthDisabled As Nullable(Of Boolean)) As WebPubSubData" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubData</ReturnType>
       </ReturnValue>
@@ -186,6 +387,90 @@
         <param name="networkAcls"> Network ACLs for the resource. </param>
         <param name="publicNetworkAccess">
             Enable or disable public network access. Default to "Enabled".
+                        When it's Enabled, network ACLs still apply.
+                        When it's Disabled, public network access is always disabled no matter what you set in network ACLs.
+            </param>
+        <param name="isLocalAuthDisabled">
+            DisableLocalAuth
+                        Enable or disable local auth with AccessKey
+                        When set as true, connection with AccessKey=xxx won't work.
+            </param>
+        <param name="isAadAuthDisabled">
+            DisableLocalAuth
+                        Enable or disable aad auth
+                        When set as true, connection with AuthType=aad won't work.
+            </param>
+        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubData" />. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubData">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubData WebPubSubData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.Core.AzureLocation location = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, string externalIP = default, string hostName = default, int? publicPort = default, int? serverPort = default, string version = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt; privateEndpointConnections = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt; sharedPrivateLinkResources = default, string hostNamePrefix = default, Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration liveTraceConfiguration = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls networkAcls = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings applicationFirewall = default, string publicNetworkAccess = default, bool? isLocalAuthDisabled = default, bool? isAadAuthDisabled = default, string isRegionEndpointEnabled = default, string resourceStopped = default, bool? isClientCertEnabled = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt; resourceLogCategories = default, string socketIOServiceMode = default, Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubServiceKind? kind = default, Azure.ResourceManager.Models.ManagedServiceIdentity identity = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.WebPubSubData WebPubSubData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, valuetype Azure.Core.AzureLocation location, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; provisioningState, string externalIP, string hostName, valuetype System.Nullable`1&lt;int32&gt; publicPort, valuetype System.Nullable`1&lt;int32&gt; serverPort, string version, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt; privateEndpointConnections, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt; sharedPrivateLinkResources, string hostNamePrefix, class Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration liveTraceConfiguration, class Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls networkAcls, class Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings applicationFirewall, string publicNetworkAccess, valuetype System.Nullable`1&lt;bool&gt; isLocalAuthDisabled, valuetype System.Nullable`1&lt;bool&gt; isAadAuthDisabled, string isRegionEndpointEnabled, string resourceStopped, valuetype System.Nullable`1&lt;bool&gt; isClientCertEnabled, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt; resourceLogCategories, string socketIOServiceMode, class Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubServiceKind&gt; kind, class Azure.ResourceManager.Models.ManagedServiceIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.Collections.Generic.IDictionary{System.String,System.String},Azure.Core.AzureLocation,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState},System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData},System.String,Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration,Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls,Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.String,System.Nullable{System.Boolean},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory},System.String,Azure.ResourceManager.WebPubSub.Models.BillingInfoSku,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubServiceKind},Azure.ResourceManager.Models.ManagedServiceIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional tags As IDictionary(Of String, String) = Nothing, Optional location As AzureLocation = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional externalIP As String = Nothing, Optional hostName As String = Nothing, Optional publicPort As Nullable(Of Integer) = Nothing, Optional serverPort As Nullable(Of Integer) = Nothing, Optional version As String = Nothing, Optional privateEndpointConnections As IEnumerable(Of WebPubSubPrivateEndpointConnectionData) = Nothing, Optional sharedPrivateLinkResources As IEnumerable(Of WebPubSubSharedPrivateLinkData) = Nothing, Optional hostNamePrefix As String = Nothing, Optional liveTraceConfiguration As LiveTraceConfiguration = Nothing, Optional networkAcls As WebPubSubNetworkAcls = Nothing, Optional applicationFirewall As WebPubSubApplicationFirewallSettings = Nothing, Optional publicNetworkAccess As String = Nothing, Optional isLocalAuthDisabled As Nullable(Of Boolean) = Nothing, Optional isAadAuthDisabled As Nullable(Of Boolean) = Nothing, Optional isRegionEndpointEnabled As String = Nothing, Optional resourceStopped As String = Nothing, Optional isClientCertEnabled As Nullable(Of Boolean) = Nothing, Optional resourceLogCategories As IEnumerable(Of ResourceLogCategory) = Nothing, Optional socketIOServiceMode As String = Nothing, Optional sku As BillingInfoSku = Nothing, Optional kind As Nullable(Of WebPubSubServiceKind) = Nothing, Optional identity As ManagedServiceIdentity = Nothing) As WebPubSubData" />
+      <MemberSignature Language="F#" Value="static member WebPubSubData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.Core.AzureLocation * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; * string * string * Nullable&lt;int&gt; * Nullable&lt;int&gt; * string * seq&lt;Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt; * seq&lt;Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt; * string * Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration * Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls * Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings * string * Nullable&lt;bool&gt; * Nullable&lt;bool&gt; * string * string * Nullable&lt;bool&gt; * seq&lt;Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt; * string * Azure.ResourceManager.WebPubSub.Models.BillingInfoSku * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubServiceKind&gt; * Azure.ResourceManager.Models.ManagedServiceIdentity -&gt; Azure.ResourceManager.WebPubSub.WebPubSubData" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubData (id, name, resourceType, systemData, tags, location, provisioningState, externalIP, hostName, publicPort, serverPort, version, privateEndpointConnections, sharedPrivateLinkResources, hostNamePrefix, liveTraceConfiguration, networkAcls, applicationFirewall, publicNetworkAccess, isLocalAuthDisabled, isAadAuthDisabled, isRegionEndpointEnabled, resourceStopped, isClientCertEnabled, resourceLogCategories, socketIOServiceMode, sku, kind, identity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="externalIP" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="hostName" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="publicPort" Type="System.Nullable&lt;System.Int32&gt;" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="serverPort" Type="System.Nullable&lt;System.Int32&gt;" Index="10" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="version" Type="System.String" Index="11" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="privateEndpointConnections" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData&gt;" Index="12" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sharedPrivateLinkResources" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData&gt;" Index="13" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="hostNamePrefix" Type="System.String" Index="14" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="liveTraceConfiguration" Type="Azure.ResourceManager.WebPubSub.Models.LiveTraceConfiguration" Index="15" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="networkAcls" Type="Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls" Index="16" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="applicationFirewall" Type="Azure.ResourceManager.WebPubSub.Models.WebPubSubApplicationFirewallSettings" Index="17" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="publicNetworkAccess" Type="System.String" Index="18" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isLocalAuthDisabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="19" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isAadAuthDisabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="20" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isRegionEndpointEnabled" Type="System.String" Index="21" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceStopped" Type="System.String" Index="22" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isClientCertEnabled" Type="System.Nullable&lt;System.Boolean&gt;" Index="23" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceLogCategories" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.ResourceLogCategory&gt;" Index="24" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="socketIOServiceMode" Type="System.String" Index="25" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sku" Type="Azure.ResourceManager.WebPubSub.Models.BillingInfoSku" Index="26" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="kind" Type="System.Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubServiceKind&gt;" Index="27" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" Index="28" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
+        <param name="provisioningState"> Provisioning state of the resource. </param>
+        <param name="externalIP"> The publicly accessible IP of the resource. </param>
+        <param name="hostName"> FQDN of the service instance. </param>
+        <param name="publicPort"> The publicly accessible port of the resource which is designed for browser/client side usage. </param>
+        <param name="serverPort"> The publicly accessible port of the resource which is designed for customer server side usage. </param>
+        <param name="version"> Version of the resource. Probably you need the same or higher version of client SDKs. </param>
+        <param name="privateEndpointConnections"> Private endpoint connections to the resource. </param>
+        <param name="sharedPrivateLinkResources"> The list of shared private link resources. </param>
+        <param name="hostNamePrefix"> Deprecated. </param>
+        <param name="liveTraceConfiguration"> Live trace configuration of a Microsoft.SignalRService resource. </param>
+        <param name="networkAcls"> Network ACLs for the resource. </param>
+        <param name="applicationFirewall"> Application firewall settings for the resource. </param>
+        <param name="publicNetworkAccess">
+            Enable or disable public network access. Default to "Enabled".
             When it's Enabled, network ACLs still apply.
             When it's Disabled, public network access is always disabled no matter what you set in network ACLs.
             </param>
@@ -199,8 +484,123 @@
             Enable or disable aad auth
             When set as true, connection with AuthType=aad won't work.
             </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubData" />. </summary>
+        <param name="isRegionEndpointEnabled">
+            Enable or disable the regional endpoint. Default to "Enabled".
+            When it's Disabled, new connections will not be routed to this endpoint, however existing connections will not be affected.
+            This property is replica specific. Disable the regional endpoint without replica is not allowed.
+            </param>
+        <param name="resourceStopped">
+            Stop or start the resource.  Default to "False".
+            When it's true, the data plane of the resource is shutdown.
+            When it's false, the data plane of the resource is started.
+            </param>
+        <param name="isClientCertEnabled"> Request client certificate during TLS handshake if enabled. Not supported for free tier. Any input will be ignored for free tier. </param>
+        <param name="resourceLogCategories"> Gets or sets the list of category configurations. </param>
+        <param name="socketIOServiceMode">
+            The service mode of Web PubSub for Socket.IO. Values allowed:
+            "Default": have your own backend Socket.IO server
+            "Serverless": your application doesn't have a backend server
+            </param>
+        <param name="sku"> The billing information of the resource. </param>
+        <param name="kind"> The kind of the service. </param>
+        <param name="identity"> A class represent managed identities used for request and response. </param>
+        <summary>To be added.</summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubEventHandler">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler WebPubSubEventHandler (string urlTemplate = default, string userEventPattern = default, System.Collections.Generic.IEnumerable&lt;string&gt; systemEvents = default, Azure.ResourceManager.WebPubSub.Models.UpstreamAuthSettings auth = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters groupPresenceEvents = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler WebPubSubEventHandler(string urlTemplate, string userEventPattern, class System.Collections.Generic.IEnumerable`1&lt;string&gt; systemEvents, class Azure.ResourceManager.WebPubSub.Models.UpstreamAuthSettings auth, class Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters groupPresenceEvents) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubEventHandler(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Azure.ResourceManager.WebPubSub.Models.UpstreamAuthSettings,Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubEventHandler (Optional urlTemplate As String = Nothing, Optional userEventPattern As String = Nothing, Optional systemEvents As IEnumerable(Of String) = Nothing, Optional auth As UpstreamAuthSettings = Nothing, Optional groupPresenceEvents As WebPubSubGroupPresenceEventFilters = Nothing) As WebPubSubEventHandler" />
+      <MemberSignature Language="F#" Value="static member WebPubSubEventHandler : string * string * seq&lt;string&gt; * Azure.ResourceManager.WebPubSub.Models.UpstreamAuthSettings * Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters -&gt; Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubEventHandler (urlTemplate, userEventPattern, systemEvents, auth, groupPresenceEvents)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="urlTemplate" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="userEventPattern" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemEvents" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="auth" Type="Azure.ResourceManager.WebPubSub.Models.UpstreamAuthSettings" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="groupPresenceEvents" Type="Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="urlTemplate">
+            Gets or sets the URL template for the event handler. The actual URL is calculated when the corresponding event is triggered.
+            The template supports predefined parameters syntax: `{event}`, `{hub}`, and KeyVault reference syntax `{@Microsoft.KeyVault(SecretUri=_your_secret_identifier_)}`
+            For example, if the template is `http://example.com/api/{event}`, when `connect` event is triggered, a POST request will be sent to the URL `http://example.com/chat/api/connect`.
+            Note: Parameters are not allowed in the hostname of the URL, and curly brackets `{}` are reserved for parameter syntax only. If your URL path contains literal curly brackets, please URL-encode them to ensure proper handling.
+            </param>
+        <param name="userEventPattern">
+            Gets or sets the matching pattern for event names.
+            There are 3 kinds of patterns supported:
+            <list type="number"><item><description>"*", it matches any event name</description></item><item><description>Combine multiple events with ",", for example "event1,event2", it matches event "event1" and "event2"</description></item><item><description>A single event name, for example, "event1", it matches "event1"</description></item></list></param>
+        <param name="systemEvents"> Gets or sets the list of system events. </param>
+        <param name="auth"> Upstream auth settings. If not set, no auth is used for upstream messages. </param>
+        <param name="groupPresenceEvents"> The group presence events that this event handler is concerned with. Group presence events are triggered when connections join or leave groups in the hub. If the value is null, no presence events will be sent to this event handler. </param>
+        <summary> Properties of event handler. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubEventNameFilter">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.WebPubSubEventNameFilter WebPubSubEventNameFilter (System.Collections.Generic.IEnumerable&lt;string&gt; systemEvents = default, string userEventPattern = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.WebPubSubEventNameFilter WebPubSubEventNameFilter(class System.Collections.Generic.IEnumerable`1&lt;string&gt; systemEvents, string userEventPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubEventNameFilter(System.Collections.Generic.IEnumerable{System.String},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubEventNameFilter (Optional systemEvents As IEnumerable(Of String) = Nothing, Optional userEventPattern As String = Nothing) As WebPubSubEventNameFilter" />
+      <MemberSignature Language="F#" Value="static member WebPubSubEventNameFilter : seq&lt;string&gt; * string -&gt; Azure.ResourceManager.WebPubSub.Models.WebPubSubEventNameFilter" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubEventNameFilter (systemEvents, userEventPattern)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubEventNameFilter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="systemEvents" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="userEventPattern" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="systemEvents"> Gets or sets a list of system events. Supported events: "connected" and "disconnected". Blocking event "connect" is not supported because it requires a response. </param>
+        <param name="userEventPattern">
+            Gets or sets a matching pattern for event names.
+            There are 3 kinds of patterns supported:
+            <list type="number"><item><description>"*", it matches any event name</description></item><item><description>Combine multiple events with ",", for example "event1,event2", it matches events "event1" and "event2"</description></item><item><description>A single event name, for example, "event1", it matches "event1"</description></item></list></param>
+        <summary> Filter events by their name. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubEventNameFilter" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubGroupPresenceEventFilters">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters WebPubSubGroupPresenceEventFilters (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventName&gt; eventNames = default, System.Collections.Generic.IEnumerable&lt;string&gt; groupFilters = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters WebPubSubGroupPresenceEventFilters(class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventName&gt; eventNames, class System.Collections.Generic.IEnumerable`1&lt;string&gt; groupFilters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubGroupPresenceEventFilters(System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventName},System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubGroupPresenceEventFilters (Optional eventNames As IEnumerable(Of WebPubSubGroupPresenceEventName) = Nothing, Optional groupFilters As IEnumerable(Of String) = Nothing) As WebPubSubGroupPresenceEventFilters" />
+      <MemberSignature Language="F#" Value="static member WebPubSubGroupPresenceEventFilters : seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventName&gt; * seq&lt;string&gt; -&gt; Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubGroupPresenceEventFilters (eventNames, groupFilters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventNames" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventName&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="groupFilters" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="eventNames"> The concerning event names. Valid values are "joined", "left". If the value is null or empty, no presence events will be sent to the event handler. </param>
+        <param name="groupFilters"> The group filters. Only events from these groups will be sent to the event handler. Each element is a pattern that may match multiple groups. If null or empty, events from all groups will be sent (subject to eventNames). </param>
+        <summary> Represents presence event filters for event handler configuration. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubGroupPresenceEventFilters" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -214,6 +614,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubHubData</ReturnType>
@@ -226,13 +627,48 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.WebPubSub.Models.WebPubSubHubProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> Properties of a hub. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubHubData" />. </summary>
+        <summary> A hub setting. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubHubData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubHubProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.WebPubSubHubProperties WebPubSubHubProperties (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler&gt; eventHandlers = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubEventListener&gt; eventListeners = default, string anonymousConnectPolicy = default, int? webSocketKeepAliveIntervalInSeconds = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.WebPubSubHubProperties WebPubSubHubProperties(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler&gt; eventHandlers, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.WebPubSubEventListener&gt; eventListeners, string anonymousConnectPolicy, valuetype System.Nullable`1&lt;int32&gt; webSocketKeepAliveIntervalInSeconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubHubProperties(System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubEventListener},System.String,System.Nullable{System.Int32})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubHubProperties (Optional eventHandlers As IEnumerable(Of WebPubSubEventHandler) = Nothing, Optional eventListeners As IEnumerable(Of WebPubSubEventListener) = Nothing, Optional anonymousConnectPolicy As String = Nothing, Optional webSocketKeepAliveIntervalInSeconds As Nullable(Of Integer) = Nothing) As WebPubSubHubProperties" />
+      <MemberSignature Language="F#" Value="static member WebPubSubHubProperties : seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler&gt; * seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubEventListener&gt; * string * Nullable&lt;int&gt; -&gt; Azure.ResourceManager.WebPubSub.Models.WebPubSubHubProperties" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubHubProperties (eventHandlers, eventListeners, anonymousConnectPolicy, webSocketKeepAliveIntervalInSeconds)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubHubProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventHandlers" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubEventHandler&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="eventListeners" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubEventListener&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="anonymousConnectPolicy" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="webSocketKeepAliveIntervalInSeconds" Type="System.Nullable&lt;System.Int32&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="eventHandlers"> Event handler of a hub. </param>
+        <param name="eventListeners">
+            Event listener settings for forwarding your client events to listeners.
+            Event listener is transparent to Web PubSub clients, and it doesn't return any result to clients nor interrupt the lifetime of clients.
+            One event can be sent to multiple listeners, as long as it matches the filters in those listeners. The order of the array elements doesn't matter.
+            Maximum count of event listeners among all hubs is 10.
+            </param>
+        <param name="anonymousConnectPolicy"> The settings for configuring if anonymous connections are allowed for this hub: "allow" or "deny". Default to "deny". </param>
+        <param name="webSocketKeepAliveIntervalInSeconds"> The settings for configuring the WebSocket ping-pong interval in seconds for all clients in the hub. Valid range: 1 to 120. Default to 20 seconds. </param>
+        <summary> Properties of a hub. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubHubProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -246,6 +682,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubKeys</ReturnType>
@@ -261,7 +698,7 @@
         <param name="secondaryKey"> The secondary access key. </param>
         <param name="primaryConnectionString"> Connection string constructed via the primaryKey. </param>
         <param name="secondaryConnectionString"> Connection string constructed via the secondaryKey. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubKeys" />. </summary>
+        <summary> A class represents the access keys of the resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubKeys" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -276,6 +713,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubNameAvailability</ReturnType>
@@ -289,8 +727,64 @@
         <param name="nameAvailable"> Indicates whether the name is available or not. </param>
         <param name="reason"> The reason of the availability. Required if name is not available. </param>
         <param name="message"> The message of the operation. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubNameAvailability" />. </summary>
+        <summary> Result of the request to check name availability. It contains a flag and possible reason of failure. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubNameAvailability" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubNameAvailabilityContent">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.WebPubSubNameAvailabilityContent WebPubSubNameAvailabilityContent (string resourceType = default, string name = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.WebPubSubNameAvailabilityContent WebPubSubNameAvailabilityContent(string resourceType, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubNameAvailabilityContent(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubNameAvailabilityContent (Optional resourceType As String = Nothing, Optional name As String = Nothing) As WebPubSubNameAvailabilityContent" />
+      <MemberSignature Language="F#" Value="static member WebPubSubNameAvailabilityContent : string * string -&gt; Azure.ResourceManager.WebPubSub.Models.WebPubSubNameAvailabilityContent" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubNameAvailabilityContent (resourceType, name)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubNameAvailabilityContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceType" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="resourceType"> The resource type. Can be "Microsoft.SignalRService/SignalR", "Microsoft.SignalRService/WebPubSub", "Microsoft.SignalRService/SignalR/replicas" or "Microsoft.SignalRService/WebPubSub/replicas". </param>
+        <param name="name"> The resource name to validate. e.g."my-resource-name". </param>
+        <summary> Data POST-ed to the nameAvailability action. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubNameAvailabilityContent" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPubSubNetworkAcls">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls WebPubSubNetworkAcls (Azure.ResourceManager.WebPubSub.Models.AclAction? defaultAction = default, Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls publicNetwork = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl&gt; privateEndpoints = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubIPRule&gt; ipRules = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls WebPubSubNetworkAcls(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.AclAction&gt; defaultAction, class Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls publicNetwork, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl&gt; privateEndpoints, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.WebPubSub.Models.WebPubSubIPRule&gt; ipRules) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubNetworkAcls(System.Nullable{Azure.ResourceManager.WebPubSub.Models.AclAction},Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls,System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl},System.Collections.Generic.IEnumerable{Azure.ResourceManager.WebPubSub.Models.WebPubSubIPRule})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubNetworkAcls (Optional defaultAction As Nullable(Of AclAction) = Nothing, Optional publicNetwork As PublicNetworkAcls = Nothing, Optional privateEndpoints As IEnumerable(Of PrivateEndpointAcl) = Nothing, Optional ipRules As IEnumerable(Of WebPubSubIPRule) = Nothing) As WebPubSubNetworkAcls" />
+      <MemberSignature Language="F#" Value="static member WebPubSubNetworkAcls : Nullable&lt;Azure.ResourceManager.WebPubSub.Models.AclAction&gt; * Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls * seq&lt;Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl&gt; * seq&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubIPRule&gt; -&gt; Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubNetworkAcls (defaultAction, publicNetwork, privateEndpoints, ipRules)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultAction" Type="System.Nullable&lt;Azure.ResourceManager.WebPubSub.Models.AclAction&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="publicNetwork" Type="Azure.ResourceManager.WebPubSub.Models.PublicNetworkAcls" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="privateEndpoints" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.PrivateEndpointAcl&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="ipRules" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubIPRule&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="defaultAction"> Azure Networking ACL Action. </param>
+        <param name="publicNetwork"> Network ACL. </param>
+        <param name="privateEndpoints"> ACLs for requests from private endpoints. </param>
+        <param name="ipRules"> IP rules for filtering public traffic. </param>
+        <summary> Network ACLs for the resource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubNetworkAcls" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -304,6 +798,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubPrivateEndpointConnectionData</ReturnType>
@@ -342,6 +837,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubPrivateLink</ReturnType>
@@ -370,17 +866,75 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="WebPubSubReplicaData">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubReplicaData WebPubSubReplicaData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.Core.AzureLocation location = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, string isRegionEndpointEnabled = default, string resourceStopped = default, Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.WebPubSubReplicaData WebPubSubReplicaData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, valuetype Azure.Core.AzureLocation location, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; provisioningState, string isRegionEndpointEnabled, string resourceStopped, class Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubReplicaData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.Collections.Generic.IDictionary{System.String,System.String},Azure.Core.AzureLocation,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState},System.String,System.String,Azure.ResourceManager.WebPubSub.Models.BillingInfoSku)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubReplicaData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional tags As IDictionary(Of String, String) = Nothing, Optional location As AzureLocation = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional isRegionEndpointEnabled As String = Nothing, Optional resourceStopped As String = Nothing, Optional sku As BillingInfoSku = Nothing) As WebPubSubReplicaData" />
+      <MemberSignature Language="F#" Value="static member WebPubSubReplicaData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.Core.AzureLocation * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; * string * string * Azure.ResourceManager.WebPubSub.Models.BillingInfoSku -&gt; Azure.ResourceManager.WebPubSub.WebPubSubReplicaData" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubReplicaData (id, name, resourceType, systemData, tags, location, provisioningState, isRegionEndpointEnabled, resourceStopped, sku)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubReplicaData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isRegionEndpointEnabled" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceStopped" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sku" Type="Azure.ResourceManager.WebPubSub.Models.BillingInfoSku" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
+        <param name="provisioningState"> Provisioning state of the resource. </param>
+        <param name="isRegionEndpointEnabled">
+            Enable or disable the regional endpoint. Default to "Enabled".
+            When it's Disabled, new connections will not be routed to this endpoint, however existing connections will not be affected.
+            </param>
+        <param name="resourceStopped">
+            Stop or start the resource.  Default to "false".
+            When it's true, the data plane of the resource is shutdown.
+            When it's false, the data plane of the resource is started.
+            </param>
+        <param name="sku"> The billing information of the resource. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubReplicaData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="WebPubSubSharedPrivateLinkData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData WebPubSubSharedPrivateLinkData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string groupId = default, Azure.Core.ResourceIdentifier privateLinkResourceId = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, string requestMessage = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus? status = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData WebPubSubSharedPrivateLinkData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string groupId = default, Azure.Core.ResourceIdentifier privateLinkResourceId = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, string requestMessage = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus? status = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData WebPubSubSharedPrivateLinkData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string groupId, class Azure.Core.ResourceIdentifier privateLinkResourceId, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; provisioningState, string requestMessage, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus&gt; status) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubSharedPrivateLinkData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,Azure.Core.ResourceIdentifier,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState},System.String,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubSharedPrivateLinkData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional groupId As String = Nothing, Optional privateLinkResourceId As ResourceIdentifier = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional requestMessage As String = Nothing, Optional status As Nullable(Of WebPubSubSharedPrivateLinkStatus) = Nothing) As WebPubSubSharedPrivateLinkData" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubSharedPrivateLinkData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional groupId As String = Nothing, Optional privateLinkResourceId As ResourceIdentifier = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional requestMessage As String = Nothing, Optional status As Nullable(Of WebPubSubSharedPrivateLinkStatus) = Nothing) As WebPubSubSharedPrivateLinkData" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="static member WebPubSubSharedPrivateLinkData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * Azure.Core.ResourceIdentifier * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; * string * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus&gt; -&gt; Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubSharedPrivateLinkData (id, name, resourceType, systemData, groupId, privateLinkResourceId, provisioningState, requestMessage, status)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData WebPubSubSharedPrivateLinkData (Azure.Core.ResourceIdentifier id, string name, Azure.Core.ResourceType resourceType, Azure.ResourceManager.Models.SystemData systemData, string groupId, Azure.Core.ResourceIdentifier privateLinkResourceId, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState, string requestMessage, Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus? status);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubSharedPrivateLinkData (id As ResourceIdentifier, name As String, resourceType As ResourceType, systemData As SystemData, groupId As String, privateLinkResourceId As ResourceIdentifier, provisioningState As Nullable(Of WebPubSubProvisioningState), requestMessage As String, status As Nullable(Of WebPubSubSharedPrivateLinkStatus)) As WebPubSubSharedPrivateLinkData" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData</ReturnType>
       </ReturnValue>
@@ -410,6 +964,48 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="WebPubSubSharedPrivateLinkData">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData WebPubSubSharedPrivateLinkData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string groupId = default, Azure.Core.ResourceIdentifier privateLinkResourceId = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState? provisioningState = default, string requestMessage = default, System.Collections.Generic.IEnumerable&lt;string&gt; fqdns = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus? status = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData WebPubSubSharedPrivateLinkData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string groupId, class Azure.Core.ResourceIdentifier privateLinkResourceId, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; provisioningState, string requestMessage, class System.Collections.Generic.IEnumerable`1&lt;string&gt; fqdns, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus&gt; status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubSharedPrivateLinkData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,Azure.Core.ResourceIdentifier,System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState},System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebPubSubSharedPrivateLinkData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional groupId As String = Nothing, Optional privateLinkResourceId As ResourceIdentifier = Nothing, Optional provisioningState As Nullable(Of WebPubSubProvisioningState) = Nothing, Optional requestMessage As String = Nothing, Optional fqdns As IEnumerable(Of String) = Nothing, Optional status As Nullable(Of WebPubSubSharedPrivateLinkStatus) = Nothing) As WebPubSubSharedPrivateLinkData" />
+      <MemberSignature Language="F#" Value="static member WebPubSubSharedPrivateLinkData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * Azure.Core.ResourceIdentifier * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt; * string * seq&lt;string&gt; * Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus&gt; -&gt; Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData" Usage="Azure.ResourceManager.WebPubSub.Models.ArmWebPubSubModelFactory.WebPubSubSharedPrivateLinkData (id, name, resourceType, systemData, groupId, privateLinkResourceId, provisioningState, requestMessage, fqdns, status)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="groupId" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="privateLinkResourceId" Type="Azure.Core.ResourceIdentifier" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubProvisioningState&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="requestMessage" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="fqdns" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="status" Type="System.Nullable&lt;Azure.ResourceManager.WebPubSub.Models.WebPubSubSharedPrivateLinkStatus&gt;" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="groupId"> The group id from the provider of resource the shared private link resource is for. </param>
+        <param name="privateLinkResourceId"> The resource id of the resource the shared private link resource is for. </param>
+        <param name="provisioningState"> Provisioning state of the resource. </param>
+        <param name="requestMessage"> The request message for requesting approval of the shared private link resource. </param>
+        <param name="fqdns"> A list of FQDNs for third party private link service. </param>
+        <param name="status"> Status of the shared private link resource. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.WebPubSubSharedPrivateLinkData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="WebPubSubSku">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WebPubSub.Models.WebPubSubSku WebPubSubSku (Azure.Core.ResourceType? resourceType = default, Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku = default, Azure.ResourceManager.WebPubSub.Models.WebPubSubSkuCapacity capacity = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WebPubSub.Models.WebPubSubSku WebPubSubSku(valuetype System.Nullable`1&lt;valuetype Azure.Core.ResourceType&gt; resourceType, class Azure.ResourceManager.WebPubSub.Models.BillingInfoSku sku, class Azure.ResourceManager.WebPubSub.Models.WebPubSubSkuCapacity capacity) cil managed" />
@@ -420,6 +1016,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubSku</ReturnType>
@@ -433,7 +1030,7 @@
         <param name="resourceType"> The resource type that this object applies to. </param>
         <param name="sku"> The billing information of the resource. </param>
         <param name="capacity"> Describes scaling information of a sku. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubSku" />. </summary>
+        <summary> Describes an available sku.". </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubSku" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -448,6 +1045,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WebPubSub</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.WebPubSub.Models.WebPubSubSkuCapacity</ReturnType>
@@ -465,7 +1063,7 @@
         <param name="default"> The default capacity. </param>
         <param name="allowedValues"> Allows capacity value list. </param>
         <param name="scaleType"> The scale type applicable to the sku. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubSkuCapacity" />. </summary>
+        <summary> Describes scaling information of a sku. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WebPubSub.Models.WebPubSubSkuCapacity" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>

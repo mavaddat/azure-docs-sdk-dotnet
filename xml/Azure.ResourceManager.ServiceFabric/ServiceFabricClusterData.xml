@@ -30,11 +30,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>
-             A class representing the ServiceFabricCluster data model.
-             The cluster resource
-            
-             </summary>
+    <summary> The cluster resource. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -54,7 +50,7 @@
         <Parameter Name="location" Type="Azure.Core.AzureLocation" />
       </Parameters>
       <Docs>
-        <param name="location"> The location. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ServiceFabric.ServiceFabricClusterData" />. </summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -222,7 +218,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The Service Fabric runtime version of the cluster. This property can only by set the user when **upgradeMode** is set to 'Manual'. To get list of available Service Fabric versions for new clusters use [ClusterVersion API](https://learn.microsoft.com/rest/api/servicefabric/cluster-versions/list). To get the list of available version for existing clusters use **availableClusterVersions**. </summary>
+        <summary> The Service Fabric runtime version of the cluster. This property can only by set the user when <b>upgradeMode</b> is set to 'Manual'. To get list of available Service Fabric versions for new clusters use [ClusterVersion API](https://learn.microsoft.com/rest/api/servicefabric/cluster-versions/list). To get the list of available version for existing clusters use <b>availableClusterVersions</b>. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -286,20 +282,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-             The current state of the cluster.
-            
-               - WaitingForNodes - Indicates that the cluster resource is created and the resource provider is waiting for Service Fabric VM extension to boot up and report to it.
-               - Deploying - Indicates that the Service Fabric runtime is being installed on the VMs. Cluster resource will be in this state until the cluster boots up and system services are up.
-               - BaselineUpgrade - Indicates that the cluster is upgrading to establishes the cluster version. This upgrade is automatically initiated when the cluster boots up for the first time.
-               - UpdatingUserConfiguration - Indicates that the cluster is being upgraded with the user provided configuration.
-               - UpdatingUserCertificate - Indicates that the cluster is being upgraded with the user provided certificate.
-               - UpdatingInfrastructure - Indicates that the cluster is being upgraded with the latest Service Fabric runtime version. This happens only when the **upgradeMode** is set to 'Automatic'.
-               - EnforcingClusterVersion - Indicates that cluster is on a different version than expected and the cluster is being upgraded to the expected version.
-               - UpgradeServiceUnreachable - Indicates that the system service in the cluster is no longer polling the Resource Provider. Clusters in this state cannot be managed by the Resource Provider.
-               - AutoScale - Indicates that the ReliabilityLevel of the cluster is being adjusted.
-               - Ready - Indicates that the cluster is in a stable state.
-            
-             </summary>
+            The current state of the cluster.
+            <list type="bullet"><item><description>WaitingForNodes - Indicates that the cluster resource is created and the resource provider is waiting for Service Fabric VM extension to boot up and report to it.</description></item><item><description>Deploying - Indicates that the Service Fabric runtime is being installed on the VMs. Cluster resource will be in this state until the cluster boots up and system services are up.</description></item><item><description>BaselineUpgrade - Indicates that the cluster is upgrading to establishes the cluster version. This upgrade is automatically initiated when the cluster boots up for the first time.</description></item><item><description>UpdatingUserConfiguration - Indicates that the cluster is being upgraded with the user provided configuration.</description></item><item><description>UpdatingUserCertificate - Indicates that the cluster is being upgraded with the user provided certificate.</description></item><item><description>UpdatingInfrastructure - Indicates that the cluster is being upgraded with the latest Service Fabric runtime version. This happens only when the <b>upgradeMode</b> is set to 'Automatic'.</description></item><item><description>EnforcingClusterVersion - Indicates that cluster is on a different version than expected and the cluster is being upgraded to the expected version.</description></item><item><description>UpgradeServiceUnreachable - Indicates that the system service in the cluster is no longer polling the Resource Provider. Clusters in this state cannot be managed by the Resource Provider.</description></item><item><description>AutoScale - Indicates that the ReliabilityLevel of the cluster is being adjusted.</description></item><item><description>Ready - Indicates that the cluster is in a stable state.</description></item></list></summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -450,6 +434,32 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="JsonModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.ResourceManager.Models.ResourceData JsonModelCreateCore (ref System.Text.Json.Utf8JsonReader reader, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.ResourceManager.Models.ResourceData JsonModelCreateCore(valuetype System.Text.Json.Utf8JsonReader&amp; reader, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ServiceFabric.ServiceFabricClusterData.JsonModelCreateCore(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function JsonModelCreateCore (ByRef reader As Utf8JsonReader, options As ModelReaderWriterOptions) As ResourceData" />
+      <MemberSignature Language="F#" Value="abstract member JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Models.ResourceData&#xA;override this.JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Models.ResourceData" Usage="serviceFabricClusterData.JsonModelCreateCore (reader, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ServiceFabric</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Models.ResourceData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="JsonModelWriteCore">
       <MemberSignature Language="C#" Value="protected override void JsonModelWriteCore (System.Text.Json.Utf8JsonWriter writer, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void JsonModelWriteCore(class System.Text.Json.Utf8JsonWriter writer, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
@@ -559,6 +569,56 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="PersistableModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.ResourceManager.Models.ResourceData PersistableModelCreateCore (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.ResourceManager.Models.ResourceData PersistableModelCreateCore(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ServiceFabric.ServiceFabricClusterData.PersistableModelCreateCore(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelCreateCore (data As BinaryData, options As ModelReaderWriterOptions) As ResourceData" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Models.ResourceData&#xA;override this.PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Models.ResourceData" Usage="serviceFabricClusterData.PersistableModelCreateCore (data, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ServiceFabric</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Models.ResourceData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.BinaryData" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelWriteCore">
+      <MemberSignature Language="C#" Value="protected virtual BinaryData PersistableModelWriteCore (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.BinaryData PersistableModelWriteCore(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ServiceFabric.ServiceFabricClusterData.PersistableModelWriteCore(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelWriteCore (options As ModelReaderWriterOptions) As BinaryData" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData&#xA;override this.PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData" Usage="serviceFabricClusterData.PersistableModelWriteCore options" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ServiceFabric</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ProvisioningState">
       <MemberSignature Language="C#" Value="public Azure.ResourceManager.ServiceFabric.Models.ServiceFabricProvisioningState? ProvisioningState { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ServiceFabric.Models.ServiceFabricProvisioningState&gt; ProvisioningState" />
@@ -597,15 +657,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-             The reliability level sets the replica set size of system services. Learn about [ReliabilityLevel](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
-            
-               - None - Run the System services with a target replica set count of 1. This should only be used for test clusters.
-               - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters.
-               - Silver - Run the System services with a target replica set count of 5.
-               - Gold - Run the System services with a target replica set count of 7.
-               - Platinum - Run the System services with a target replica set count of 9.
-            
-             </summary>
+            The reliability level sets the replica set size of system services. Learn about [ReliabilityLevel](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
+            <list type="bullet"><item><description>None - Run the System services with a target replica set count of 1. This should only be used for test clusters.</description></item><item><description>Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters.</description></item><item><description>Silver - Run the System services with a target replica set count of 5.</description></item><item><description>Gold - Run the System services with a target replica set count of 7.</description></item><item><description>Platinum - Run the System services with a target replica set count of 9.</description></item></list></summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -695,8 +748,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -727,8 +780,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The JSON writer. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -758,8 +811,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -789,7 +842,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -818,7 +871,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -927,7 +980,7 @@
         <ReturnType>System.Nullable&lt;Azure.ResourceManager.ServiceFabric.Models.ClusterUpgradeCadence&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Indicates when new cluster runtime version upgrades will be applied after they are released. By default is Wave0. Only applies when **upgradeMode** is set to 'Automatic'. </summary>
+        <summary> Indicates when new cluster runtime version upgrades will be applied after they are released. By default is Wave0. Only applies when <b>upgradeMode</b> is set to 'Automatic'. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

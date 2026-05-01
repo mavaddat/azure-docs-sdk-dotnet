@@ -13,7 +13,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -42,16 +42,42 @@
         <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="tags"> The tags. </param>
-        <param name="location"> The location. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <param name="identity"> The managed service identities assigned to this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WeightsAndBiases.WeightsAndBiasesInstanceData" />. </summary>
+        <summary> Concrete tracked resource types can be created by aliasing this type using a specific property type. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WeightsAndBiases.WeightsAndBiasesInstanceData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WeightsAndBiasesInstancePatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesInstancePatch WeightsAndBiasesInstancePatch (System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.ResourceManager.Models.ManagedServiceIdentity identity = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesInstancePatch WeightsAndBiasesInstancePatch(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, class Azure.ResourceManager.Models.ManagedServiceIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WeightsAndBiases.Models.ArmWeightsAndBiasesModelFactory.WeightsAndBiasesInstancePatch(System.Collections.Generic.IDictionary{System.String,System.String},Azure.ResourceManager.Models.ManagedServiceIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WeightsAndBiasesInstancePatch (Optional tags As IDictionary(Of String, String) = Nothing, Optional identity As ManagedServiceIdentity = Nothing) As WeightsAndBiasesInstancePatch" />
+      <MemberSignature Language="F#" Value="static member WeightsAndBiasesInstancePatch : System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.ResourceManager.Models.ManagedServiceIdentity -&gt; Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesInstancePatch" Usage="Azure.ResourceManager.WeightsAndBiases.Models.ArmWeightsAndBiasesModelFactory.WeightsAndBiasesInstancePatch (tags, identity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WeightsAndBiases</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesInstancePatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="tags"> Resource tags. </param>
+        <param name="identity"> The managed service identities assigned to this resource. </param>
+        <summary> The type used for update operations of the Instance Resource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesInstancePatch" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,7 +108,7 @@
         <param name="provisioningState"> Provisioning state of the resource. </param>
         <param name="partnerProperties"> partner properties. </param>
         <param name="singleSignOnProperties"> Single sign-on properties. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesInstanceProperties" />. </summary>
+        <summary> Properties specific to Instance. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesInstanceProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -110,8 +136,40 @@
         <param name="subscriptionId"> Azure subscription id for the the marketplace offer is purchased from. </param>
         <param name="subscriptionStatus"> Marketplace subscription status. </param>
         <param name="offerDetails"> Offer details for the marketplace that is selected by the user. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesMarketplaceDetails" />. </summary>
+        <summary> Marketplace details for an organization. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesMarketplaceDetails" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WeightsAndBiasesSingleSignOnPropertiesV2">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnPropertiesV2 WeightsAndBiasesSingleSignOnPropertiesV2 (Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnType type = default, Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnState? state = default, string enterpriseAppId = default, string uri = default, System.Collections.Generic.IEnumerable&lt;string&gt; aadDomains = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnPropertiesV2 WeightsAndBiasesSingleSignOnPropertiesV2(valuetype Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnType type, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnState&gt; state, string enterpriseAppId, string uri, class System.Collections.Generic.IEnumerable`1&lt;string&gt; aadDomains) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WeightsAndBiases.Models.ArmWeightsAndBiasesModelFactory.WeightsAndBiasesSingleSignOnPropertiesV2(Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnType,System.Nullable{Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnState},System.String,System.String,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WeightsAndBiasesSingleSignOnPropertiesV2 (Optional type As WeightsAndBiasesSingleSignOnType = Nothing, Optional state As Nullable(Of WeightsAndBiasesSingleSignOnState) = Nothing, Optional enterpriseAppId As String = Nothing, Optional uri As String = Nothing, Optional aadDomains As IEnumerable(Of String) = Nothing) As WeightsAndBiasesSingleSignOnPropertiesV2" />
+      <MemberSignature Language="F#" Value="static member WeightsAndBiasesSingleSignOnPropertiesV2 : Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnType * Nullable&lt;Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnState&gt; * string * string * seq&lt;string&gt; -&gt; Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnPropertiesV2" Usage="Azure.ResourceManager.WeightsAndBiases.Models.ArmWeightsAndBiasesModelFactory.WeightsAndBiasesSingleSignOnPropertiesV2 (type, state, enterpriseAppId, uri, aadDomains)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WeightsAndBiases</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnPropertiesV2</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnType" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="state" Type="System.Nullable&lt;Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnState&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="enterpriseAppId" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="uri" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="aadDomains" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="4" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="type"> Type of Single Sign-On mechanism being used. </param>
+        <param name="state"> State of the Single Sign On for the resource. </param>
+        <param name="enterpriseAppId"> AAD enterprise application Id used to setup SSO. </param>
+        <param name="uri"> URL for SSO to be used by the partner to redirect the user to their system. </param>
+        <param name="aadDomains"> List of AAD domains fetched from Microsoft Graph for user. </param>
+        <summary> Properties specific to Single Sign On Resource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.WeightsAndBiases.Models.WeightsAndBiasesSingleSignOnPropertiesV2" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

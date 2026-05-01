@@ -14,7 +14,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to ArmClient. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.ArmClient" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -31,8 +31,200 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableMaintenanceArmClient for mocking. </summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Acknowledge">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt; Acknowledge (Azure.Core.ResourceIdentifier scope, string scheduledEventId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt; Acknowledge(class Azure.Core.ResourceIdentifier scope, string scheduledEventId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.Acknowledge(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Acknowledge (scope As ResourceIdentifier, scheduledEventId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MaintenanceScheduledEventApproveResult)" />
+      <MemberSignature Language="F#" Value="abstract member Acknowledge : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&#xA;override this.Acknowledge : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;" Usage="mockableMaintenanceArmClient.Acknowledge (scope, scheduledEventId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="scheduledEventId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scheduledEventId"> Scheduled Event Id. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Post Scheduled Event Acknowledgement
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Compute/{resourceType}/{resourceName}/providers/Microsoft.Maintenance/scheduledevents/{scheduledEventId}/acknowledge. </description></item><item><term> Operation Id. </term><description> ScheduledEventOperationGroup_Acknowledge. </description></item><item><term> Default Api Version. </term><description> 2023-10-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scope" /> or <paramref name="scheduledEventId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="scheduledEventId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcknowledgeAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt; AcknowledgeAsync (Azure.Core.ResourceIdentifier scope, string scheduledEventId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt; AcknowledgeAsync(class Azure.Core.ResourceIdentifier scope, string scheduledEventId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.AcknowledgeAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AcknowledgeAsync (scope As ResourceIdentifier, scheduledEventId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MaintenanceScheduledEventApproveResult))" />
+      <MemberSignature Language="F#" Value="abstract member AcknowledgeAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt;&#xA;override this.AcknowledgeAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt;" Usage="mockableMaintenanceArmClient.AcknowledgeAsync (scope, scheduledEventId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="scheduledEventId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scheduledEventId"> Scheduled Event Id. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Post Scheduled Event Acknowledgement
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Compute/{resourceType}/{resourceName}/providers/Microsoft.Maintenance/scheduledevents/{scheduledEventId}/acknowledge. </description></item><item><term> Operation Id. </term><description> ScheduledEventOperationGroup_Acknowledge. </description></item><item><term> Default Api Version. </term><description> 2023-10-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scope" /> or <paramref name="scheduledEventId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="scheduledEventId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAll">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt; GetAll (Azure.Core.ResourceIdentifier scope, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt; GetAll(class Azure.Core.ResourceIdentifier scope, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetAll(Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAll (scope As ResourceIdentifier, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of MaintenanceUpdate)" />
+      <MemberSignature Language="F#" Value="abstract member GetAll : Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;&#xA;override this.GetAll : Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;" Usage="mockableMaintenanceArmClient.GetAll (scope, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get updates to resources.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{providerName}/{resourceType}/{resourceName}/providers/Microsoft.Maintenance/updates. </description></item><item><term> Operation Id. </term><description> UpdatesOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2023-10-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scope" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt; GetAllAsync (Azure.Core.ResourceIdentifier scope, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt; GetAllAsync(class Azure.Core.ResourceIdentifier scope, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetAllAsync(Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAllAsync (scope As ResourceIdentifier, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of MaintenanceUpdate)" />
+      <MemberSignature Language="F#" Value="abstract member GetAllAsync : Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;&#xA;override this.GetAllAsync : Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;" Usage="mockableMaintenanceArmClient.GetAllAsync (scope, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get updates to resources.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{providerName}/{resourceType}/{resourceName}/providers/Microsoft.Maintenance/updates. </description></item><item><term> Operation Id. </term><description> UpdatesOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2023-10-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scope" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceApplyUpdate">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt; GetMaintenanceApplyUpdate (Azure.Core.ResourceIdentifier scope, string applyUpdateName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt; GetMaintenanceApplyUpdate(class Azure.Core.ResourceIdentifier scope, string applyUpdateName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceApplyUpdate(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceApplyUpdate (scope As ResourceIdentifier, applyUpdateName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MaintenanceApplyUpdateResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceApplyUpdate : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;&#xA;override this.GetMaintenanceApplyUpdate : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;" Usage="mockableMaintenanceArmClient.GetMaintenanceApplyUpdate (scope, applyUpdateName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="applyUpdateName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="applyUpdateName"> The name of the ApplyUpdate. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Track maintenance updates to resource with parent. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="applyUpdateName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="applyUpdateName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceApplyUpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;&gt; GetMaintenanceApplyUpdateAsync (Azure.Core.ResourceIdentifier scope, string applyUpdateName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;&gt; GetMaintenanceApplyUpdateAsync(class Azure.Core.ResourceIdentifier scope, string applyUpdateName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceApplyUpdateAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceApplyUpdateAsync (scope As ResourceIdentifier, applyUpdateName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MaintenanceApplyUpdateResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceApplyUpdateAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;&gt;&#xA;override this.GetMaintenanceApplyUpdateAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;&gt;" Usage="mockableMaintenanceArmClient.GetMaintenanceApplyUpdateAsync (scope, applyUpdateName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="applyUpdateName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="applyUpdateName"> The name of the ApplyUpdate. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Track maintenance updates to resource with parent. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="applyUpdateName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="applyUpdateName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetMaintenanceApplyUpdateResource">
@@ -55,11 +247,144 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource.CreateResourceIdentifier(System.String,System.String,System.String,System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceApplyUpdates">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateCollection GetMaintenanceApplyUpdates (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateCollection GetMaintenanceApplyUpdates(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceApplyUpdates(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceApplyUpdates (scope As ResourceIdentifier) As MaintenanceApplyUpdateCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceApplyUpdates : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateCollection&#xA;override this.GetMaintenanceApplyUpdates : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateCollection" Usage="mockableMaintenanceArmClient.GetMaintenanceApplyUpdates scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource" /> objects. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceConfigurationAssignment">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt; GetMaintenanceConfigurationAssignment (Azure.Core.ResourceIdentifier scope, string configurationAssignmentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt; GetMaintenanceConfigurationAssignment(class Azure.Core.ResourceIdentifier scope, string configurationAssignmentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceConfigurationAssignment(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceConfigurationAssignment (scope As ResourceIdentifier, configurationAssignmentName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MaintenanceConfigurationAssignmentResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceConfigurationAssignment : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt;&#xA;override this.GetMaintenanceConfigurationAssignment : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt;" Usage="mockableMaintenanceArmClient.GetMaintenanceConfigurationAssignment (scope, configurationAssignmentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="configurationAssignmentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="configurationAssignmentName"> The name of the ConfigurationAssignment. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get configuration assignment for resource.. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="configurationAssignmentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="configurationAssignmentName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceConfigurationAssignmentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt;&gt; GetMaintenanceConfigurationAssignmentAsync (Azure.Core.ResourceIdentifier scope, string configurationAssignmentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt;&gt; GetMaintenanceConfigurationAssignmentAsync(class Azure.Core.ResourceIdentifier scope, string configurationAssignmentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceConfigurationAssignmentAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceConfigurationAssignmentAsync (scope As ResourceIdentifier, configurationAssignmentName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MaintenanceConfigurationAssignmentResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceConfigurationAssignmentAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt;&gt;&#xA;override this.GetMaintenanceConfigurationAssignmentAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt;&gt;" Usage="mockableMaintenanceArmClient.GetMaintenanceConfigurationAssignmentAsync (scope, configurationAssignmentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="configurationAssignmentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="configurationAssignmentName"> The name of the ConfigurationAssignment. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get configuration assignment for resource.. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="configurationAssignmentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="configurationAssignmentName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceConfigurationAssignmentResource">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource GetMaintenanceConfigurationAssignmentResource (Azure.Core.ResourceIdentifier id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource GetMaintenanceConfigurationAssignmentResource(class Azure.Core.ResourceIdentifier id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceConfigurationAssignmentResource(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceConfigurationAssignmentResource (id As ResourceIdentifier) As MaintenanceConfigurationAssignmentResource" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceConfigurationAssignmentResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource&#xA;override this.GetMaintenanceConfigurationAssignmentResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource" Usage="mockableMaintenanceArmClient.GetMaintenanceConfigurationAssignmentResource id" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> The resource ID of the resource to get. </param>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource" /> along with the instance operations that can be performed on it but with no data. </summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceConfigurationAssignments">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentCollection GetMaintenanceConfigurationAssignments (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentCollection GetMaintenanceConfigurationAssignments(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceConfigurationAssignments(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceConfigurationAssignments (scope As ResourceIdentifier) As MaintenanceConfigurationAssignmentCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceConfigurationAssignments : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentCollection&#xA;override this.GetMaintenanceConfigurationAssignments : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentCollection" Usage="mockableMaintenanceArmClient.GetMaintenanceConfigurationAssignments scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceConfigurationAssignmentResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,11 +408,232 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceConfigurationResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Maintenance.MaintenanceConfigurationResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceConfigurationResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceConfigurationResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceConfigurationResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceGroupApplyUpdate">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt; GetMaintenanceGroupApplyUpdate (Azure.Core.ResourceIdentifier scope, string applyUpdateName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt; GetMaintenanceGroupApplyUpdate(class Azure.Core.ResourceIdentifier scope, string applyUpdateName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceGroupApplyUpdate(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceGroupApplyUpdate (scope As ResourceIdentifier, applyUpdateName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MaintenanceGroupApplyUpdateResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceGroupApplyUpdate : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt;&#xA;override this.GetMaintenanceGroupApplyUpdate : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt;" Usage="mockableMaintenanceArmClient.GetMaintenanceGroupApplyUpdate (scope, applyUpdateName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="applyUpdateName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="applyUpdateName"> The name of the ApplyUpdate. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Track maintenance updates to resource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="applyUpdateName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="applyUpdateName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceGroupApplyUpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt;&gt; GetMaintenanceGroupApplyUpdateAsync (Azure.Core.ResourceIdentifier scope, string applyUpdateName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt;&gt; GetMaintenanceGroupApplyUpdateAsync(class Azure.Core.ResourceIdentifier scope, string applyUpdateName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceGroupApplyUpdateAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceGroupApplyUpdateAsync (scope As ResourceIdentifier, applyUpdateName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MaintenanceGroupApplyUpdateResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceGroupApplyUpdateAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt;&gt;&#xA;override this.GetMaintenanceGroupApplyUpdateAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt;&gt;" Usage="mockableMaintenanceArmClient.GetMaintenanceGroupApplyUpdateAsync (scope, applyUpdateName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="applyUpdateName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="applyUpdateName"> The name of the ApplyUpdate. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Track maintenance updates to resource. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="applyUpdateName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="applyUpdateName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceGroupApplyUpdateResource">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource GetMaintenanceGroupApplyUpdateResource (Azure.Core.ResourceIdentifier id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource GetMaintenanceGroupApplyUpdateResource(class Azure.Core.ResourceIdentifier id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceGroupApplyUpdateResource(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceGroupApplyUpdateResource (id As ResourceIdentifier) As MaintenanceGroupApplyUpdateResource" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceGroupApplyUpdateResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource&#xA;override this.GetMaintenanceGroupApplyUpdateResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource" Usage="mockableMaintenanceArmClient.GetMaintenanceGroupApplyUpdateResource id" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> The resource ID of the resource to get. </param>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource" /> along with the instance operations that can be performed on it but with no data. </summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceGroupApplyUpdates">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateCollection GetMaintenanceGroupApplyUpdates (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateCollection GetMaintenanceGroupApplyUpdates(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceGroupApplyUpdates(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceGroupApplyUpdates (scope As ResourceIdentifier) As MaintenanceGroupApplyUpdateCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceGroupApplyUpdates : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateCollection&#xA;override this.GetMaintenanceGroupApplyUpdates : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateCollection" Usage="mockableMaintenanceArmClient.GetMaintenanceGroupApplyUpdates scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceGroupApplyUpdateResource" /> objects. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceGroupConfigurationAssignment">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt; GetMaintenanceGroupConfigurationAssignment (Azure.Core.ResourceIdentifier scope, string configurationAssignmentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt; GetMaintenanceGroupConfigurationAssignment(class Azure.Core.ResourceIdentifier scope, string configurationAssignmentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceGroupConfigurationAssignment(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceGroupConfigurationAssignment (scope As ResourceIdentifier, configurationAssignmentName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MaintenanceGroupConfigurationAssignmentResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceGroupConfigurationAssignment : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt;&#xA;override this.GetMaintenanceGroupConfigurationAssignment : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt;" Usage="mockableMaintenanceArmClient.GetMaintenanceGroupConfigurationAssignment (scope, configurationAssignmentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="configurationAssignmentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="configurationAssignmentName"> The name of the ConfigurationAssignment. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get configuration assignment for resource.. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="configurationAssignmentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="configurationAssignmentName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceGroupConfigurationAssignmentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt;&gt; GetMaintenanceGroupConfigurationAssignmentAsync (Azure.Core.ResourceIdentifier scope, string configurationAssignmentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt;&gt; GetMaintenanceGroupConfigurationAssignmentAsync(class Azure.Core.ResourceIdentifier scope, string configurationAssignmentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceGroupConfigurationAssignmentAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceGroupConfigurationAssignmentAsync (scope As ResourceIdentifier, configurationAssignmentName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MaintenanceGroupConfigurationAssignmentResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceGroupConfigurationAssignmentAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt;&gt;&#xA;override this.GetMaintenanceGroupConfigurationAssignmentAsync : Azure.Core.ResourceIdentifier * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt;&gt;" Usage="mockableMaintenanceArmClient.GetMaintenanceGroupConfigurationAssignmentAsync (scope, configurationAssignmentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="configurationAssignmentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="configurationAssignmentName"> The name of the ConfigurationAssignment. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get configuration assignment for resource.. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="configurationAssignmentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="configurationAssignmentName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceGroupConfigurationAssignmentResource">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource GetMaintenanceGroupConfigurationAssignmentResource (Azure.Core.ResourceIdentifier id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource GetMaintenanceGroupConfigurationAssignmentResource(class Azure.Core.ResourceIdentifier id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceGroupConfigurationAssignmentResource(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceGroupConfigurationAssignmentResource (id As ResourceIdentifier) As MaintenanceGroupConfigurationAssignmentResource" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceGroupConfigurationAssignmentResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource&#xA;override this.GetMaintenanceGroupConfigurationAssignmentResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource" Usage="mockableMaintenanceArmClient.GetMaintenanceGroupConfigurationAssignmentResource id" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> The resource ID of the resource to get. </param>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource" /> along with the instance operations that can be performed on it but with no data. </summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceGroupConfigurationAssignments">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentCollection GetMaintenanceGroupConfigurationAssignments (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentCollection GetMaintenanceGroupConfigurationAssignments(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceGroupConfigurationAssignments(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceGroupConfigurationAssignments (scope As ResourceIdentifier) As MaintenanceGroupConfigurationAssignmentCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceGroupConfigurationAssignments : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentCollection&#xA;override this.GetMaintenanceGroupConfigurationAssignments : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentCollection" Usage="mockableMaintenanceArmClient.GetMaintenanceGroupConfigurationAssignments scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceGroupConfigurationAssignmentResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +657,117 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenancePublicConfigurationResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Maintenance.MaintenancePublicConfigurationResource.CreateResourceIdentifier(System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Maintenance.MaintenancePublicConfigurationResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenancePublicConfigurationResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Maintenance.MaintenancePublicConfigurationResource" /> object. </returns>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceResourceGroupConfigurationAssignmentResource">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceResourceGroupConfigurationAssignmentResource GetMaintenanceResourceGroupConfigurationAssignmentResource (Azure.Core.ResourceIdentifier id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceResourceGroupConfigurationAssignmentResource GetMaintenanceResourceGroupConfigurationAssignmentResource(class Azure.Core.ResourceIdentifier id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceResourceGroupConfigurationAssignmentResource(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceResourceGroupConfigurationAssignmentResource (id As ResourceIdentifier) As MaintenanceResourceGroupConfigurationAssignmentResource" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceResourceGroupConfigurationAssignmentResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceResourceGroupConfigurationAssignmentResource&#xA;override this.GetMaintenanceResourceGroupConfigurationAssignmentResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceResourceGroupConfigurationAssignmentResource" Usage="mockableMaintenanceArmClient.GetMaintenanceResourceGroupConfigurationAssignmentResource id" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceResourceGroupConfigurationAssignmentResource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> The resource ID of the resource to get. </param>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceResourceGroupConfigurationAssignmentResource" /> along with the instance operations that can be performed on it but with no data. </summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceResourceGroupConfigurationAssignmentResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaintenanceSubscriptionConfigurationAssignmentResource">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Maintenance.MaintenanceSubscriptionConfigurationAssignmentResource GetMaintenanceSubscriptionConfigurationAssignmentResource (Azure.Core.ResourceIdentifier id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Maintenance.MaintenanceSubscriptionConfigurationAssignmentResource GetMaintenanceSubscriptionConfigurationAssignmentResource(class Azure.Core.ResourceIdentifier id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetMaintenanceSubscriptionConfigurationAssignmentResource(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMaintenanceSubscriptionConfigurationAssignmentResource (id As ResourceIdentifier) As MaintenanceSubscriptionConfigurationAssignmentResource" />
+      <MemberSignature Language="F#" Value="abstract member GetMaintenanceSubscriptionConfigurationAssignmentResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceSubscriptionConfigurationAssignmentResource&#xA;override this.GetMaintenanceSubscriptionConfigurationAssignmentResource : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Maintenance.MaintenanceSubscriptionConfigurationAssignmentResource" Usage="mockableMaintenanceArmClient.GetMaintenanceSubscriptionConfigurationAssignmentResource id" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Maintenance.MaintenanceSubscriptionConfigurationAssignmentResource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> The resource ID of the resource to get. </param>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceSubscriptionConfigurationAssignmentResource" /> along with the instance operations that can be performed on it but with no data. </summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.Maintenance.MaintenanceSubscriptionConfigurationAssignmentResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUpdatesByParent">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt; GetUpdatesByParent (Azure.Core.ResourceIdentifier scope, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt; GetUpdatesByParent(class Azure.Core.ResourceIdentifier scope, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetUpdatesByParent(Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUpdatesByParent (scope As ResourceIdentifier, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of MaintenanceUpdate)" />
+      <MemberSignature Language="F#" Value="abstract member GetUpdatesByParent : Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;&#xA;override this.GetUpdatesByParent : Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;" Usage="mockableMaintenanceArmClient.GetUpdatesByParent (scope, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get updates to resources.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{providerName}/{resourceParentType}/{resourceParentName}/{resourceType}/{resourceName}/providers/Microsoft.Maintenance/updates. </description></item><item><term> Operation Id. </term><description> UpdatesOperationGroup_ListParent. </description></item><item><term> Default Api Version. </term><description> 2023-10-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scope" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUpdatesByParentAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt; GetUpdatesByParentAsync (Azure.Core.ResourceIdentifier scope, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt; GetUpdatesByParentAsync(class Azure.Core.ResourceIdentifier scope, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.GetUpdatesByParentAsync(Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUpdatesByParentAsync (scope As ResourceIdentifier, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of MaintenanceUpdate)" />
+      <MemberSignature Language="F#" Value="abstract member GetUpdatesByParentAsync : Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;&#xA;override this.GetUpdatesByParentAsync : Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;" Usage="mockableMaintenanceArmClient.GetUpdatesByParentAsync (scope, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get updates to resources.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{providerName}/{resourceParentType}/{resourceParentName}/{resourceType}/{resourceName}/providers/Microsoft.Maintenance/updates. </description></item><item><term> Operation Id. </term><description> UpdatesOperationGroup_ListParent. </description></item><item><term> Default Api Version. </term><description> 2023-10-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Maintenance.Models.MaintenanceUpdate" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scope" /> is null. </exception>
       </Docs>
     </Member>
   </Members>

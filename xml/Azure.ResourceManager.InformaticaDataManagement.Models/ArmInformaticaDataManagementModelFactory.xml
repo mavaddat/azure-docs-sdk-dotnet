@@ -13,10 +13,38 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
+    <Member MemberName="CdiConfigProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties CdiConfigProperties (string engineName = default, string engineVersion = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationConfigs&gt; applicationConfigs = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties CdiConfigProperties(string engineName, string engineVersion, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationConfigs&gt; applicationConfigs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.CdiConfigProperties(System.String,System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationConfigs})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CdiConfigProperties (Optional engineName As String = Nothing, Optional engineVersion As String = Nothing, Optional applicationConfigs As IEnumerable(Of InformaticaApplicationConfigs) = Nothing) As CdiConfigProperties" />
+      <MemberSignature Language="F#" Value="static member CdiConfigProperties : string * string * seq&lt;Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationConfigs&gt; -&gt; Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties" Usage="Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.CdiConfigProperties (engineName, engineVersion, applicationConfigs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.InformaticaDataManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="engineName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="engineVersion" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="applicationConfigs" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationConfigs&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="engineName"> EngineName of the application config. </param>
+        <param name="engineVersion"> EngineVersion of the application config. </param>
+        <param name="applicationConfigs"> ApplicationConfigs of the CDI or CDIE. </param>
+        <summary> Informatica CDI Configuration Properties. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="CheckDependenciesResult">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.InformaticaDataManagement.Models.CheckDependenciesResult CheckDependenciesResult (int count = 0, string id = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeDependency&gt; references = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.InformaticaDataManagement.Models.CheckDependenciesResult CheckDependenciesResult(int32 count, string id, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeDependency&gt; references) cil managed" />
@@ -40,7 +68,7 @@
         <param name="count"> Count of dependencies. </param>
         <param name="id"> id of resource. </param>
         <param name="references"> List of dependencies. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.CheckDependenciesResult" />. </summary>
+        <summary> Model for the check dependencies API for an informatica serverless runtime resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.CheckDependenciesResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -66,7 +94,7 @@
       <Docs>
         <param name="name"> ComputeUnit name. </param>
         <param name="value"> ComputeUnit value. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ComputeUnitsMetadata" />. </summary>
+        <summary> Informatica Serverless Runtime Application type Metadata. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ComputeUnitsMetadata" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -92,7 +120,7 @@
       <Docs>
         <param name="name"> Application type name. </param>
         <param name="value"> Application type value. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationTypeMetadata" />. </summary>
+        <summary> Informatica Serverless Runtime Application type Metadata. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationTypeMetadata" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -121,15 +149,41 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="tags"> The tags. </param>
-        <param name="location"> The location. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="tags"> Resource tags. </param>
+        <param name="location"> The geo-location where the resource lives. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.InformaticaOrganizationData" />. </summary>
+        <summary> An Organization Resource by Informatica. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.InformaticaOrganizationData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InformaticaOrganizationPatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPatch InformaticaOrganizationPatch (System.Collections.Generic.IDictionary&lt;string,string&gt; tags = default, Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPropertiesUpdate properties = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPatch InformaticaOrganizationPatch(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; tags, class Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPropertiesUpdate properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.InformaticaOrganizationPatch(System.Collections.Generic.IDictionary{System.String,System.String},Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPropertiesUpdate)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function InformaticaOrganizationPatch (Optional tags As IDictionary(Of String, String) = Nothing, Optional properties As InformaticaOrganizationPropertiesUpdate = Nothing) As InformaticaOrganizationPatch" />
+      <MemberSignature Language="F#" Value="static member InformaticaOrganizationPatch : System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPropertiesUpdate -&gt; Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPatch" Usage="Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.InformaticaOrganizationPatch (tags, properties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.InformaticaDataManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="properties" Type="Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPropertiesUpdate" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="tags"> Resource tags. </param>
+        <param name="properties"> Patchable PropertieInformaticaOrganizationPropertiesUpdates of the Organization observability resource. </param>
+        <summary> The template for adding optional properties. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationPatch" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -161,7 +215,7 @@
         <param name="marketplaceDetails"> Marketplace details. </param>
         <param name="userDetails"> User details. </param>
         <param name="companyDetails"> Company details. </param>
-        <param name="linkOrganizationToken"> Link Organization. </param>
+        <param name="linkOrganizationToken"> Link organization token. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationProperties" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaOrganizationProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -188,7 +242,7 @@
       <Docs>
         <param name="id"> Region Id. </param>
         <param name="name"> Region name. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaRegionsMetadata" />. </summary>
+        <summary> Informatica Serverless Runtime Regions Metadata. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaRegionsMetadata" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -234,7 +288,7 @@
         <param name="statusMessage"> status message. </param>
         <param name="serverlessConfigProperties"> Serverless Config Properties. </param>
         <param name="description"> Description of the runtime resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaRuntimeResourceFetchMetadata" />. </summary>
+        <summary> Informatica runtime resource metadata as received via the informatica fetch all runtime environments API. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaRuntimeResourceFetchMetadata" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -284,7 +338,7 @@
         <param name="subscriptionId"> subscription ID. </param>
         <param name="region"> region name for the runtime environment. </param>
         <param name="serverlessArmResourceId"> Serverless Arm Resource ID. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaServerlessFetchConfigProperties" />. </summary>
+        <summary> InfaServerlessFetchConfigProperties for the fetch all serverless API as received from informatica API response. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaServerlessFetchConfigProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -311,12 +365,12 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaServerlessRuntimeProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.InformaticaServerlessRuntimeData" />. </summary>
+        <summary> A Serverless Runtime environment  resource by Informatica. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.InformaticaServerlessRuntimeData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -358,12 +412,12 @@
         <param name="computeUnits"> Compute units of the serverless runtime. </param>
         <param name="executionTimeout"> Serverless Execution timeout. </param>
         <param name="serverlessAccountLocation"> Serverless account creation location. </param>
-        <param name="networkInterfaceConfiguration"> Informatica Serverless Network profile properties. </param>
+        <param name="networkInterfaceConfiguration"> Network Interface Configuration Profile. </param>
         <param name="advancedCustomProperties"> String KV pairs indicating Advanced custom properties. </param>
         <param name="supplementaryFileLocation"> Supplementary file location. </param>
         <param name="serverlessRuntimeConfig"> Serverless config properties. </param>
         <param name="serverlessRuntimeTags"> Serverless Runtime Tags. </param>
-        <param name="userContextToken"> Serverless runtime user context properties. </param>
+        <param name="userContextToken"> User context token for OBO flow. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaServerlessRuntimeProperties" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaServerlessRuntimeProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -388,7 +442,7 @@
       </Parameters>
       <Docs>
         <param name="informaticaRuntimeResources"> List of runtime resources for the fetch all API. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaServerlessRuntimeResourceList" />. </summary>
+        <summary> A list of serverless runtime resources as fetched using the informatica APIs. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaServerlessRuntimeResourceList" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -420,7 +474,7 @@
         <param name="computeUnits"> The list of compute units with possible array of values. </param>
         <param name="executionTimeout"> Serverless Runtime execution timeout. </param>
         <param name="regions"> List of supported serverless informatica regions. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessConfigProperties" />. </summary>
+        <summary> Metadata Serverless Config Properties. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessConfigProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -448,8 +502,60 @@
         <param name="runtimeType"> type of the runtime environment. </param>
         <param name="serverlessConfigProperties"> serverless config properties. </param>
         <param name="serverlessRuntimeConfigProperties"> serverless runtime config properties. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessMetadataResponse" />. </summary>
+        <summary> Serverless Runtime environment Metadata response. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessMetadataResponse" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerlessRuntimeConfigProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigProperties ServerlessRuntimeConfigProperties (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; cdiConfigProps = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; cdieConfigProps = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigProperties ServerlessRuntimeConfigProperties(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; cdiConfigProps, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; cdieConfigProps) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.ServerlessRuntimeConfigProperties(System.Collections.Generic.IEnumerable{Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties},System.Collections.Generic.IEnumerable{Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ServerlessRuntimeConfigProperties (Optional cdiConfigProps As IEnumerable(Of CdiConfigProperties) = Nothing, Optional cdieConfigProps As IEnumerable(Of CdiConfigProperties) = Nothing) As ServerlessRuntimeConfigProperties" />
+      <MemberSignature Language="F#" Value="static member ServerlessRuntimeConfigProperties : seq&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; * seq&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; -&gt; Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigProperties" Usage="Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.ServerlessRuntimeConfigProperties (cdiConfigProps, cdieConfigProps)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.InformaticaDataManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cdiConfigProps" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cdieConfigProps" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="cdiConfigProps"> The List of Informatica Serverless Runtime CDI Config Properties. </param>
+        <param name="cdieConfigProps"> The List of Informatica Serverless Runtime CDIE Config Properties. </param>
+        <summary> Serverless Runtime config properties. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerlessRuntimeConfigPropertiesUpdate">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate ServerlessRuntimeConfigPropertiesUpdate (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; cdiConfigProps = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; cdieConfigProps = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate ServerlessRuntimeConfigPropertiesUpdate(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; cdiConfigProps, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; cdieConfigProps) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.ServerlessRuntimeConfigPropertiesUpdate(System.Collections.Generic.IEnumerable{Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties},System.Collections.Generic.IEnumerable{Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ServerlessRuntimeConfigPropertiesUpdate (Optional cdiConfigProps As IEnumerable(Of CdiConfigProperties) = Nothing, Optional cdieConfigProps As IEnumerable(Of CdiConfigProperties) = Nothing) As ServerlessRuntimeConfigPropertiesUpdate" />
+      <MemberSignature Language="F#" Value="static member ServerlessRuntimeConfigPropertiesUpdate : seq&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; * seq&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt; -&gt; Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate" Usage="Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.ServerlessRuntimeConfigPropertiesUpdate (cdiConfigProps, cdieConfigProps)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.InformaticaDataManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cdiConfigProps" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cdieConfigProps" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.CdiConfigProperties&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="cdiConfigProps"> The List of Informatica Serverless Runtime CDI Config Properties. </param>
+        <param name="cdieConfigProps"> The List of Informatica Serverless Runtime CDIE Config Properties. </param>
+        <summary> The template for adding optional properties. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -482,8 +588,54 @@
         <param name="documentType"> document type. </param>
         <param name="description"> description of Dependency. </param>
         <param name="lastUpdatedTime"> Last Update Time. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeDependency" />. </summary>
+        <summary> Dependency reference for a serverless runtime resource. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeDependency" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerlessRuntimePropertiesUpdate">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimePropertiesUpdate ServerlessRuntimePropertiesUpdate (string description = default, Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaPlatformType? platform = default, Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationType? applicationType = default, string computeUnits = default, string executionTimeout = default, string serverlessAccountLocation = default, Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaNetworkInterfaceConfigurationUpdate networkInterfaceConfiguration = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.AdvancedCustomProperties&gt; advancedCustomProperties = default, string supplementaryFileLocation = default, Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate serverlessRuntimeConfig = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeTag&gt; serverlessRuntimeTags = default, string userContextToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimePropertiesUpdate ServerlessRuntimePropertiesUpdate(string description, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaPlatformType&gt; platform, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationType&gt; applicationType, string computeUnits, string executionTimeout, string serverlessAccountLocation, class Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaNetworkInterfaceConfigurationUpdate networkInterfaceConfiguration, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.InformaticaDataManagement.Models.AdvancedCustomProperties&gt; advancedCustomProperties, string supplementaryFileLocation, class Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate serverlessRuntimeConfig, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeTag&gt; serverlessRuntimeTags, string userContextToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.ServerlessRuntimePropertiesUpdate(System.String,System.Nullable{Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaPlatformType},System.Nullable{Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationType},System.String,System.String,System.String,Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaNetworkInterfaceConfigurationUpdate,System.Collections.Generic.IEnumerable{Azure.ResourceManager.InformaticaDataManagement.Models.AdvancedCustomProperties},System.String,Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate,System.Collections.Generic.IEnumerable{Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeTag},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ServerlessRuntimePropertiesUpdate (Optional description As String = Nothing, Optional platform As Nullable(Of InformaticaPlatformType) = Nothing, Optional applicationType As Nullable(Of InformaticaApplicationType) = Nothing, Optional computeUnits As String = Nothing, Optional executionTimeout As String = Nothing, Optional serverlessAccountLocation As String = Nothing, Optional networkInterfaceConfiguration As InformaticaNetworkInterfaceConfigurationUpdate = Nothing, Optional advancedCustomProperties As IEnumerable(Of AdvancedCustomProperties) = Nothing, Optional supplementaryFileLocation As String = Nothing, Optional serverlessRuntimeConfig As ServerlessRuntimeConfigPropertiesUpdate = Nothing, Optional serverlessRuntimeTags As IEnumerable(Of ServerlessRuntimeTag) = Nothing, Optional userContextToken As String = Nothing) As ServerlessRuntimePropertiesUpdate" />
+      <MemberSignature Language="F#" Value="static member ServerlessRuntimePropertiesUpdate : string * Nullable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaPlatformType&gt; * Nullable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationType&gt; * string * string * string * Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaNetworkInterfaceConfigurationUpdate * seq&lt;Azure.ResourceManager.InformaticaDataManagement.Models.AdvancedCustomProperties&gt; * string * Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate * seq&lt;Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeTag&gt; * string -&gt; Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimePropertiesUpdate" Usage="Azure.ResourceManager.InformaticaDataManagement.Models.ArmInformaticaDataManagementModelFactory.ServerlessRuntimePropertiesUpdate (description, platform, applicationType, computeUnits, executionTimeout, serverlessAccountLocation, networkInterfaceConfiguration, advancedCustomProperties, supplementaryFileLocation, serverlessRuntimeConfig, serverlessRuntimeTags, userContextToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.InformaticaDataManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimePropertiesUpdate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="platform" Type="System.Nullable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaPlatformType&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="applicationType" Type="System.Nullable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaApplicationType&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="computeUnits" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="executionTimeout" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="serverlessAccountLocation" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="networkInterfaceConfiguration" Type="Azure.ResourceManager.InformaticaDataManagement.Models.InformaticaNetworkInterfaceConfigurationUpdate" Index="6" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="advancedCustomProperties" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.AdvancedCustomProperties&gt;" Index="7" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="supplementaryFileLocation" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="serverlessRuntimeConfig" Type="Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeConfigPropertiesUpdate" Index="9" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="serverlessRuntimeTags" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimeTag&gt;" Index="10" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="userContextToken" Type="System.String" Index="11" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="description"> description of the serverless runtime. </param>
+        <param name="platform"> Platform type of the Serverless Runtime. </param>
+        <param name="applicationType"> Application type of the Serverless Runtime environment. </param>
+        <param name="computeUnits"> Compute units of the serverless runtime. </param>
+        <param name="executionTimeout"> Serverless Execution timeout. </param>
+        <param name="serverlessAccountLocation"> Serverless account creation location. </param>
+        <param name="networkInterfaceConfiguration"> Network Interface Configuration Profile Update. </param>
+        <param name="advancedCustomProperties"> String KV pairs indicating Advanced custom properties. </param>
+        <param name="supplementaryFileLocation"> Supplementary file location. </param>
+        <param name="serverlessRuntimeConfig"> Serverless config properties. </param>
+        <param name="serverlessRuntimeTags"> Serverless Runtime Tags. </param>
+        <param name="userContextToken"> User context token for OBO flow. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.InformaticaDataManagement.Models.ServerlessRuntimePropertiesUpdate" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

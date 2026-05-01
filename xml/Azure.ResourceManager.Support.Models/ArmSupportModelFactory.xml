@@ -8,13 +8,14 @@
     <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,8 +28,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.ChatTranscriptDetailData</ReturnType>
@@ -42,10 +43,10 @@
         <Parameter Name="startOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="messages"> List of chat transcript communication resources. </param>
         <param name="startOn"> Time in UTC (ISO 8601 format) when the chat began. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.ChatTranscriptDetailData" />. </summary>
@@ -54,17 +55,25 @@
       </Docs>
     </Member>
     <Member MemberName="ChatTranscriptMessageProperties">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties ChatTranscriptMessageProperties (Azure.ResourceManager.Support.Models.TranscriptContentType? contentType = default, Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection? communicationDirection = default, string sender = default, string body = default, DateTimeOffset? createdOn = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties ChatTranscriptMessageProperties (Azure.ResourceManager.Support.Models.TranscriptContentType? contentType = default, Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection? communicationDirection = default, string sender = default, string body = default, DateTimeOffset? createdOn = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties ChatTranscriptMessageProperties(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.TranscriptContentType&gt; contentType, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection&gt; communicationDirection, string sender, string body, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ChatTranscriptMessageProperties(System.Nullable{Azure.ResourceManager.Support.Models.TranscriptContentType},System.Nullable{Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection},System.String,System.String,System.Nullable{System.DateTimeOffset})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ChatTranscriptMessageProperties (Optional contentType As Nullable(Of TranscriptContentType) = Nothing, Optional communicationDirection As Nullable(Of SupportTicketCommunicationDirection) = Nothing, Optional sender As String = Nothing, Optional body As String = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing) As ChatTranscriptMessageProperties" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ChatTranscriptMessageProperties (Optional contentType As Nullable(Of TranscriptContentType) = Nothing, Optional communicationDirection As Nullable(Of SupportTicketCommunicationDirection) = Nothing, Optional sender As String = Nothing, Optional body As String = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing) As ChatTranscriptMessageProperties" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="static member ChatTranscriptMessageProperties : Nullable&lt;Azure.ResourceManager.Support.Models.TranscriptContentType&gt; * Nullable&lt;Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection&gt; * string * string * Nullable&lt;DateTimeOffset&gt; -&gt; Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ChatTranscriptMessageProperties (contentType, communicationDirection, sender, body, createdOn)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties ChatTranscriptMessageProperties (Azure.ResourceManager.Support.Models.TranscriptContentType? contentType, Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection? communicationDirection, string sender, string body, DateTimeOffset? createdOn);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ChatTranscriptMessageProperties (contentType As Nullable(Of TranscriptContentType), communicationDirection As Nullable(Of SupportTicketCommunicationDirection), sender As String, body As String, createdOn As Nullable(Of DateTimeOffset)) As ChatTranscriptMessageProperties" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties</ReturnType>
       </ReturnValue>
@@ -86,31 +95,35 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ClassificationService">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ClassificationService ClassificationService (Azure.Core.ResourceIdentifier serviceId = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt; resourceTypes = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ClassificationService ClassificationService(class Azure.Core.ResourceIdentifier serviceId, string displayName, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.Core.ResourceType&gt; resourceTypes) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ClassificationService(Azure.Core.ResourceIdentifier,System.String,System.Collections.Generic.IEnumerable{Azure.Core.ResourceType})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ClassificationService (Optional serviceId As ResourceIdentifier = Nothing, Optional displayName As String = Nothing, Optional resourceTypes As IEnumerable(Of ResourceType) = Nothing) As ClassificationService" />
-      <MemberSignature Language="F#" Value="static member ClassificationService : Azure.Core.ResourceIdentifier * string * seq&lt;Azure.Core.ResourceType&gt; -&gt; Azure.ResourceManager.Support.Models.ClassificationService" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ClassificationService (serviceId, displayName, resourceTypes)" />
+    <Member MemberName="ChatTranscriptMessageProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties ChatTranscriptMessageProperties (string transcriptContentType = default, Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection? communicationDirection = default, string sender = default, string body = default, DateTimeOffset? createdOn = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties ChatTranscriptMessageProperties(string transcriptContentType, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection&gt; communicationDirection, string sender, string body, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ChatTranscriptMessageProperties(System.String,System.Nullable{Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection},System.String,System.String,System.Nullable{System.DateTimeOffset})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ChatTranscriptMessageProperties (Optional transcriptContentType As String = Nothing, Optional communicationDirection As Nullable(Of SupportTicketCommunicationDirection) = Nothing, Optional sender As String = Nothing, Optional body As String = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing) As ChatTranscriptMessageProperties" />
+      <MemberSignature Language="F#" Value="static member ChatTranscriptMessageProperties : string * Nullable&lt;Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection&gt; * string * string * Nullable&lt;DateTimeOffset&gt; -&gt; Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ChatTranscriptMessageProperties (transcriptContentType, communicationDirection, sender, body, createdOn)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.Models.ClassificationService</ReturnType>
+        <ReturnType>Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="serviceId" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="displayName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="resourceTypes" Type="System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="transcriptContentType" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="communicationDirection" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.SupportTicketCommunicationDirection&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sender" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="body" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="serviceId"> Azure resource Id of the service. </param>
-        <param name="displayName"> Localized name of the azure service. </param>
-        <param name="resourceTypes"> List of applicable ARM resource types for this service. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.ClassificationService" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ClassificationService" /> instance for mocking. </returns>
+        <param name="transcriptContentType"> Content type. </param>
+        <param name="communicationDirection"> Direction of communication. </param>
+        <param name="sender"> Name of the sender. </param>
+        <param name="body"> Body of the communication. </param>
+        <param name="createdOn"> Time in UTC (ISO 8601 format) when the communication was created. </param>
+        <summary> Describes the properties of a Message Details resource. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ChatTranscriptMessageProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,8 +136,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.FileWorkspaceDetailData</ReturnType>
@@ -138,10 +151,10 @@
         <Parameter Name="expireOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="createdOn"> Time in UTC (ISO 8601 format) when file workspace was created. </param>
         <param name="expireOn"> Time in UTC (ISO 8601 format) when file workspace is going to expire. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.FileWorkspaceDetailData" />. </summary>
@@ -149,114 +162,179 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="LookUpResourceIdResult">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.LookUpResourceIdResult LookUpResourceIdResult (Azure.Core.ResourceIdentifier resourceId = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.LookUpResourceIdResult LookUpResourceIdResult(class Azure.Core.ResourceIdentifier resourceId) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.LookUpResourceIdResult(Azure.Core.ResourceIdentifier)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function LookUpResourceIdResult (Optional resourceId As ResourceIdentifier = Nothing) As LookUpResourceIdResult" />
-      <MemberSignature Language="F#" Value="static member LookUpResourceIdResult : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Support.Models.LookUpResourceIdResult" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.LookUpResourceIdResult resourceId" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.Models.LookUpResourceIdResult</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="resourceId" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="resourceId"> The resource Id of support resource type. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.LookUpResourceIdResult" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.LookUpResourceIdResult" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
     <Member MemberName="ProblemClassificationData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.ProblemClassificationData ProblemClassificationData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; secondaryConsentEnabled = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.ProblemClassificationData ProblemClassificationData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string displayName, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; secondaryConsentEnabled) cil managed" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.ProblemClassificationData ProblemClassificationData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; secondaryConsentEnabled = default);" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.ProblemClassificationData ProblemClassificationData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string displayName, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; secondaryConsentEnabled) cil managed" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SecondaryConsentEnabled})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ProblemClassificationData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional displayName As String = Nothing, Optional secondaryConsentEnabled As IEnumerable(Of SecondaryConsentEnabled) = Nothing) As ProblemClassificationData" />
-      <MemberSignature Language="F#" Value="static member ProblemClassificationData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * seq&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; -&gt; Azure.ResourceManager.Support.ProblemClassificationData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationData (id, name, resourceType, systemData, displayName, secondaryConsentEnabled)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProblemClassificationData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional displayName As String = Nothing, Optional secondaryConsentEnabled As IEnumerable(Of SecondaryConsentEnabled) = Nothing) As ProblemClassificationData" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="static member ProblemClassificationData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * seq&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; -&gt; Azure.ResourceManager.Support.ProblemClassificationData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationData (id, name, resourceType, systemData, displayName, secondaryConsentEnabled)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.ProblemClassificationData ProblemClassificationData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; secondaryConsentEnabledInfo = default);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.ProblemClassificationData ProblemClassificationData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string displayName, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; secondaryConsentEnabledInfo) cil managed" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProblemClassificationData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional displayName As String = Nothing, Optional secondaryConsentEnabledInfo As IEnumerable(Of SecondaryConsentEnabled) = Nothing) As ProblemClassificationData" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="F#" Value="static member ProblemClassificationData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * seq&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; -&gt; Azure.ResourceManager.Support.ProblemClassificationData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationData (id, name, resourceType, systemData, displayName, secondaryConsentEnabledInfo)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.ProblemClassificationData</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="displayName" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" />
+        <Parameter Name="name" Type="System.String" Index="1" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" />
+        <Parameter Name="displayName" Type="System.String" Index="4" />
         <Parameter Name="secondaryConsentEnabled" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt;" Index="5" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="secondaryConsentEnabledInfo" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="displayName"> Localized name of problem classification. </param>
         <param name="secondaryConsentEnabled"> This property indicates whether secondary consent is present for problem classification. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="displayName"> Localized name of problem classification. </param>
+        <param name="secondaryConsentEnabledInfo"> This property indicates whether secondary consent is present for problem classification. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.ProblemClassificationData" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Support.ProblemClassificationData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ProblemClassificationData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.ProblemClassificationData ProblemClassificationData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; secondaryConsentEnabled = default, System.Collections.Generic.IReadOnlyDictionary&lt;string,string&gt; metadata = default, Azure.ResourceManager.Support.ProblemClassificationData parentProblemClassification = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.ProblemClassificationData ProblemClassificationData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string displayName, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; secondaryConsentEnabled, class System.Collections.Generic.IReadOnlyDictionary`2&lt;string, string&gt; metadata, class Azure.ResourceManager.Support.ProblemClassificationData parentProblemClassification) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SecondaryConsentEnabled},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},Azure.ResourceManager.Support.ProblemClassificationData)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ProblemClassificationData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional displayName As String = Nothing, Optional secondaryConsentEnabled As IEnumerable(Of SecondaryConsentEnabled) = Nothing, Optional metadata As IReadOnlyDictionary(Of String, String) = Nothing, Optional parentProblemClassification As ProblemClassificationData = Nothing) As ProblemClassificationData" />
-      <MemberSignature Language="F#" Value="static member ProblemClassificationData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * seq&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt; * System.Collections.Generic.IReadOnlyDictionary&lt;string, string&gt; * Azure.ResourceManager.Support.ProblemClassificationData -&gt; Azure.ResourceManager.Support.ProblemClassificationData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationData (id, name, resourceType, systemData, displayName, secondaryConsentEnabled, metadata, parentProblemClassification)" />
+    <Member MemberName="ProblemClassificationsClassificationInput">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationInput ProblemClassificationsClassificationInput (string issueSummary = default, Azure.Core.ResourceIdentifier resourceId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationInput ProblemClassificationsClassificationInput(string issueSummary, class Azure.Core.ResourceIdentifier resourceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationsClassificationInput(System.String,Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProblemClassificationsClassificationInput (Optional issueSummary As String = Nothing, Optional resourceId As ResourceIdentifier = Nothing) As ProblemClassificationsClassificationInput" />
+      <MemberSignature Language="F#" Value="static member ProblemClassificationsClassificationInput : string * Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationInput" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationsClassificationInput (issueSummary, resourceId)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.ProblemClassificationData</ReturnType>
+        <ReturnType>Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationInput</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="displayName" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="secondaryConsentEnabled" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsentEnabled&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="metadata" Type="System.Collections.Generic.IReadOnlyDictionary&lt;System.String,System.String&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="parentProblemClassification" Type="Azure.ResourceManager.Support.ProblemClassificationData" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="issueSummary" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceId" Type="Azure.Core.ResourceIdentifier" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="displayName"> Localized name of problem classification. </param>
-        <param name="secondaryConsentEnabled"> This property indicates whether secondary consent is present for problem classification. </param>
-        <param name="metadata"> String-to-string dictionary for additional metadata. </param>
-        <param name="parentProblemClassification"> Reference to the parent problem classification which has same structure as problem classification. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.ProblemClassificationData" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.ProblemClassificationData" /> instance for mocking. </returns>
+        <param name="issueSummary"> Natural language description of the customer’s issue. </param>
+        <param name="resourceId"> ARM resource Id of the resource that is having the issue. </param>
+        <summary> Input to problem classification Classification API. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationInput" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProblemClassificationsClassificationOutput">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationOutput ProblemClassificationsClassificationOutput (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult&gt; problemClassificationResults = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationOutput ProblemClassificationsClassificationOutput(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult&gt; problemClassificationResults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationsClassificationOutput(System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProblemClassificationsClassificationOutput (Optional problemClassificationResults As IEnumerable(Of ProblemClassificationsClassificationResult) = Nothing) As ProblemClassificationsClassificationOutput" />
+      <MemberSignature Language="F#" Value="static member ProblemClassificationsClassificationOutput : seq&lt;Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult&gt; -&gt; Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationOutput" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationsClassificationOutput problemClassificationResults" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationOutput</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="problemClassificationResults" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="problemClassificationResults"> Set of problem classification objects classified. </param>
+        <summary> Output of the problem classification Classification API. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationOutput" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProblemClassificationsClassificationResult">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult ProblemClassificationsClassificationResult (string problemId = default, string title = default, string description = default, string serviceId = default, string problemClassificationId = default, Azure.ResourceManager.Support.Models.SupportClassificationService relatedService = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult ProblemClassificationsClassificationResult(string problemId, string title, string description, string serviceId, string problemClassificationId, class Azure.ResourceManager.Support.Models.SupportClassificationService relatedService) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationsClassificationResult(System.String,System.String,System.String,System.String,System.String,Azure.ResourceManager.Support.Models.SupportClassificationService)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProblemClassificationsClassificationResult (Optional problemId As String = Nothing, Optional title As String = Nothing, Optional description As String = Nothing, Optional serviceId As String = Nothing, Optional problemClassificationId As String = Nothing, Optional relatedService As SupportClassificationService = Nothing) As ProblemClassificationsClassificationResult" />
+      <MemberSignature Language="F#" Value="static member ProblemClassificationsClassificationResult : string * string * string * string * string * Azure.ResourceManager.Support.Models.SupportClassificationService -&gt; Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ProblemClassificationsClassificationResult (problemId, title, description, serviceId, problemClassificationId, relatedService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="problemId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="title" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="serviceId" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="problemClassificationId" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="relatedService" Type="Azure.ResourceManager.Support.Models.SupportClassificationService" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="problemId"> Identifier that may be used for solution discovery or some other purposes. </param>
+        <param name="title"> Title of the problem classification result. </param>
+        <param name="description"> Description of the problem classification result. </param>
+        <param name="serviceId"> Identifier of the service associated with this problem classification result. </param>
+        <param name="problemClassificationId"> Identifier that may be used for support ticket creation. </param>
+        <param name="relatedService"> Related service. </param>
+        <summary> ProblemClassification Classification result object. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ProblemClassificationsClassificationResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuotaTicketDetails">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.QuotaTicketDetails QuotaTicketDetails (string quotaChangeRequestSubType = default, string quotaChangeRequestVersion = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SupportQuotaChangeContent&gt; quotaChangeRequests = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.QuotaTicketDetails QuotaTicketDetails(string quotaChangeRequestSubType, string quotaChangeRequestVersion, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SupportQuotaChangeContent&gt; quotaChangeRequests) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.QuotaTicketDetails(System.String,System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SupportQuotaChangeContent})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function QuotaTicketDetails (Optional quotaChangeRequestSubType As String = Nothing, Optional quotaChangeRequestVersion As String = Nothing, Optional quotaChangeRequests As IEnumerable(Of SupportQuotaChangeContent) = Nothing) As QuotaTicketDetails" />
+      <MemberSignature Language="F#" Value="static member QuotaTicketDetails : string * string * seq&lt;Azure.ResourceManager.Support.Models.SupportQuotaChangeContent&gt; -&gt; Azure.ResourceManager.Support.Models.QuotaTicketDetails" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.QuotaTicketDetails (quotaChangeRequestSubType, quotaChangeRequestVersion, quotaChangeRequests)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.QuotaTicketDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="quotaChangeRequestSubType" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="quotaChangeRequestVersion" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="quotaChangeRequests" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SupportQuotaChangeContent&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="quotaChangeRequestSubType"> Required for certain quota types when there is a sub type, such as Batch, for which you are requesting a quota increase. </param>
+        <param name="quotaChangeRequestVersion"> Quota change request version. </param>
+        <param name="quotaChangeRequests"> This property is required for providing the region and new quota limits. </param>
+        <summary> Additional set of information required for quota increase support ticket for certain quota types, e.g.: Virtual machine cores. Get complete details about Quota payload support request along with examples at [Support quota request](https://aka.ms/supportrpquotarequestpayload). </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.QuotaTicketDetails" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="SecondaryConsentEnabled">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SecondaryConsentEnabled SecondaryConsentEnabled (string description = default, string secondaryConsentEnabledType = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SecondaryConsentEnabled SecondaryConsentEnabled (string description = default, string secondaryConsentEnabledType = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SecondaryConsentEnabled SecondaryConsentEnabled(string description, string secondaryConsentEnabledType) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SecondaryConsentEnabled(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function SecondaryConsentEnabled (Optional description As String = Nothing, Optional secondaryConsentEnabledType As String = Nothing) As SecondaryConsentEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SecondaryConsentEnabled (Optional description As String = Nothing, Optional secondaryConsentEnabledType As String = Nothing) As SecondaryConsentEnabled" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="static member SecondaryConsentEnabled : string * string -&gt; Azure.ResourceManager.Support.Models.SecondaryConsentEnabled" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SecondaryConsentEnabled (description, secondaryConsentEnabledType)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SecondaryConsentEnabled SecondaryConsentEnabled (string description, string secondaryConsentEnabledType);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SecondaryConsentEnabled (description As String, secondaryConsentEnabledType As String) As SecondaryConsentEnabled" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.Models.SecondaryConsentEnabled</ReturnType>
       </ReturnValue>
@@ -272,219 +350,180 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ServiceClassificationAnswer">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ServiceClassificationAnswer ServiceClassificationAnswer (Azure.Core.ResourceIdentifier serviceId = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt; resourceTypes = default, Azure.Core.ResourceIdentifier serviceIdChildServiceId = default, string displayNameChildServiceDisplayName = default, System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt; resourceTypesChildServiceResourceTypes = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ServiceClassificationAnswer ServiceClassificationAnswer(class Azure.Core.ResourceIdentifier serviceId, string displayName, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.Core.ResourceType&gt; resourceTypes, class Azure.Core.ResourceIdentifier serviceIdChildServiceId, string displayNameChildServiceDisplayName, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.Core.ResourceType&gt; resourceTypesChildServiceResourceTypes) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceClassificationAnswer(Azure.Core.ResourceIdentifier,System.String,System.Collections.Generic.IEnumerable{Azure.Core.ResourceType},Azure.Core.ResourceIdentifier,System.String,System.Collections.Generic.IEnumerable{Azure.Core.ResourceType})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ServiceClassificationAnswer (Optional serviceId As ResourceIdentifier = Nothing, Optional displayName As String = Nothing, Optional resourceTypes As IEnumerable(Of ResourceType) = Nothing, Optional serviceIdChildServiceId As ResourceIdentifier = Nothing, Optional displayNameChildServiceDisplayName As String = Nothing, Optional resourceTypesChildServiceResourceTypes As IEnumerable(Of ResourceType) = Nothing) As ServiceClassificationAnswer" />
-      <MemberSignature Language="F#" Value="static member ServiceClassificationAnswer : Azure.Core.ResourceIdentifier * string * seq&lt;Azure.Core.ResourceType&gt; * Azure.Core.ResourceIdentifier * string * seq&lt;Azure.Core.ResourceType&gt; -&gt; Azure.ResourceManager.Support.Models.ServiceClassificationAnswer" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceClassificationAnswer (serviceId, displayName, resourceTypes, serviceIdChildServiceId, displayNameChildServiceDisplayName, resourceTypesChildServiceResourceTypes)" />
+    <Member MemberName="SupportAzureServiceData">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportAzureServiceData SupportAzureServiceData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;string&gt; resourceTypes = default);" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.SupportAzureServiceData SupportAzureServiceData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string displayName, class System.Collections.Generic.IEnumerable`1&lt;string&gt; resourceTypes) cil managed" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportAzureServiceData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportAzureServiceData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional displayName As String = Nothing, Optional resourceTypes As IEnumerable(Of String) = Nothing) As SupportAzureServiceData" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="static member SupportAzureServiceData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * seq&lt;string&gt; -&gt; Azure.ResourceManager.Support.SupportAzureServiceData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportAzureServiceData (id, name, resourceType, systemData, displayName, resourceTypes)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportAzureServiceData SupportAzureServiceData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;string&gt; armResourceTypes = default);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.SupportAzureServiceData SupportAzureServiceData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string displayName, class System.Collections.Generic.IEnumerable`1&lt;string&gt; armResourceTypes) cil managed" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportAzureServiceData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional displayName As String = Nothing, Optional armResourceTypes As IEnumerable(Of String) = Nothing) As SupportAzureServiceData" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="F#" Value="static member SupportAzureServiceData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * seq&lt;string&gt; -&gt; Azure.ResourceManager.Support.SupportAzureServiceData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportAzureServiceData (id, name, resourceType, systemData, displayName, armResourceTypes)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.Models.ServiceClassificationAnswer</ReturnType>
+        <ReturnType>Azure.ResourceManager.Support.SupportAzureServiceData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" />
+        <Parameter Name="name" Type="System.String" Index="1" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" />
+        <Parameter Name="displayName" Type="System.String" Index="4" />
+        <Parameter Name="resourceTypes" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="5" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="armResourceTypes" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="resourceTypes"> ARM Resource types. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="displayName"> Localized name of the Azure service. </param>
+        <param name="armResourceTypes"> ARM Resource types. </param>
+        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.SupportAzureServiceData" />. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.SupportAzureServiceData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportClassificationService">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SupportClassificationService SupportClassificationService (Azure.Core.ResourceIdentifier serviceId = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt; resourceTypes = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SupportClassificationService SupportClassificationService(class Azure.Core.ResourceIdentifier serviceId, string displayName, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.Core.ResourceType&gt; resourceTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportClassificationService(Azure.Core.ResourceIdentifier,System.String,System.Collections.Generic.IEnumerable{Azure.Core.ResourceType})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportClassificationService (Optional serviceId As ResourceIdentifier = Nothing, Optional displayName As String = Nothing, Optional resourceTypes As IEnumerable(Of ResourceType) = Nothing) As SupportClassificationService" />
+      <MemberSignature Language="F#" Value="static member SupportClassificationService : Azure.Core.ResourceIdentifier * string * seq&lt;Azure.Core.ResourceType&gt; -&gt; Azure.ResourceManager.Support.Models.SupportClassificationService" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportClassificationService (serviceId, displayName, resourceTypes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.SupportClassificationService</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="serviceId" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="displayName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="resourceTypes" Type="System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="serviceIdChildServiceId" Type="Azure.Core.ResourceIdentifier" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="displayNameChildServiceDisplayName" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="resourceTypesChildServiceResourceTypes" Type="System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="serviceId"> Azure resource Id of the service. </param>
         <param name="displayName"> Localized name of the azure service. </param>
         <param name="resourceTypes"> List of applicable ARM resource types for this service. </param>
-        <param name="serviceIdChildServiceId"> Azure resource Id of the service. </param>
-        <param name="displayNameChildServiceDisplayName"> Localized name of the azure service. </param>
-        <param name="resourceTypesChildServiceResourceTypes"> List of applicable ARM resource types for this service. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.ServiceClassificationAnswer" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ServiceClassificationAnswer" /> instance for mocking. </returns>
+        <summary> Service Classification result object. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportClassificationService" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ServiceClassificationOutput">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ServiceClassificationOutput ServiceClassificationOutput (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.ServiceClassificationAnswer&gt; serviceClassificationResults = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ServiceClassificationOutput ServiceClassificationOutput(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.ServiceClassificationAnswer&gt; serviceClassificationResults) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceClassificationOutput(System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.ServiceClassificationAnswer})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ServiceClassificationOutput (Optional serviceClassificationResults As IEnumerable(Of ServiceClassificationAnswer) = Nothing) As ServiceClassificationOutput" />
-      <MemberSignature Language="F#" Value="static member ServiceClassificationOutput : seq&lt;Azure.ResourceManager.Support.Models.ServiceClassificationAnswer&gt; -&gt; Azure.ResourceManager.Support.Models.ServiceClassificationOutput" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceClassificationOutput serviceClassificationResults" />
+    <Member MemberName="SupportContactProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SupportContactProfile SupportContactProfile (string firstName = default, string lastName = default, Azure.ResourceManager.Support.Models.PreferredContactMethod preferredContactMethod = default, string primaryEmailAddress = default, System.Collections.Generic.IEnumerable&lt;string&gt; additionalEmailAddresses = default, string phoneNumber = default, string preferredTimeZone = default, string country = default, string preferredSupportLanguage = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SupportContactProfile SupportContactProfile(string firstName, string lastName, valuetype Azure.ResourceManager.Support.Models.PreferredContactMethod preferredContactMethod, string primaryEmailAddress, class System.Collections.Generic.IEnumerable`1&lt;string&gt; additionalEmailAddresses, string phoneNumber, string preferredTimeZone, string country, string preferredSupportLanguage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportContactProfile(System.String,System.String,Azure.ResourceManager.Support.Models.PreferredContactMethod,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportContactProfile (Optional firstName As String = Nothing, Optional lastName As String = Nothing, Optional preferredContactMethod As PreferredContactMethod = Nothing, Optional primaryEmailAddress As String = Nothing, Optional additionalEmailAddresses As IEnumerable(Of String) = Nothing, Optional phoneNumber As String = Nothing, Optional preferredTimeZone As String = Nothing, Optional country As String = Nothing, Optional preferredSupportLanguage As String = Nothing) As SupportContactProfile" />
+      <MemberSignature Language="F#" Value="static member SupportContactProfile : string * string * Azure.ResourceManager.Support.Models.PreferredContactMethod * string * seq&lt;string&gt; * string * string * string * string -&gt; Azure.ResourceManager.Support.Models.SupportContactProfile" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportContactProfile (firstName, lastName, preferredContactMethod, primaryEmailAddress, additionalEmailAddresses, phoneNumber, preferredTimeZone, country, preferredSupportLanguage)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.Models.ServiceClassificationOutput</ReturnType>
+        <ReturnType>Azure.ResourceManager.Support.Models.SupportContactProfile</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="serviceClassificationResults" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.ServiceClassificationAnswer&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="firstName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="lastName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="preferredContactMethod" Type="Azure.ResourceManager.Support.Models.PreferredContactMethod" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="primaryEmailAddress" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="additionalEmailAddresses" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="phoneNumber" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="preferredTimeZone" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="country" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="preferredSupportLanguage" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="serviceClassificationResults"> Set of problem classification objects classified. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.ServiceClassificationOutput" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ServiceClassificationOutput" /> instance for mocking. </returns>
+        <param name="firstName"> First name. </param>
+        <param name="lastName"> Last name. </param>
+        <param name="preferredContactMethod"> Preferred contact method. </param>
+        <param name="primaryEmailAddress"> Primary email address. </param>
+        <param name="additionalEmailAddresses"> Additional email addresses listed will be copied on any correspondence about the support ticket. </param>
+        <param name="phoneNumber"> Phone number. This is required if preferred contact method is phone. It is also required when submitting 'critical' or 'highestcriticalimpact' severity cases. </param>
+        <param name="preferredTimeZone"> Time zone of the user. This is the name of the time zone from [Microsoft Time Zone Index Values](https://support.microsoft.com/help/973627/microsoft-time-zone-index-values). </param>
+        <param name="country"> Country of the user. This is the ISO 3166-1 alpha-3 code. </param>
+        <param name="preferredSupportLanguage"> Preferred language of support from Azure. Support languages vary based on the severity you choose for your support ticket. Learn more at [Azure Severity and responsiveness](https://azure.microsoft.com/support/plans/response). Use the standard language-country code. Valid values are 'en-us' for English, 'zh-hans' for Chinese, 'es-es' for Spanish, 'fr-fr' for French, 'ja-jp' for Japanese, 'ko-kr' for Korean, 'ru-ru' for Russian, 'pt-br' for Portuguese, 'it-it' for Italian, 'zh-tw' for Chinese and 'de-de' for German. </param>
+        <summary> Contact information associated with the support ticket. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportContactProfile" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ServiceProblemClassificationContent">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ServiceProblemClassificationContent ServiceProblemClassificationContent (string issueSummary = default, Azure.Core.ResourceIdentifier resourceId = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ServiceProblemClassificationContent ServiceProblemClassificationContent(string issueSummary, class Azure.Core.ResourceIdentifier resourceId) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceProblemClassificationContent(System.String,Azure.Core.ResourceIdentifier)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ServiceProblemClassificationContent (Optional issueSummary As String = Nothing, Optional resourceId As ResourceIdentifier = Nothing) As ServiceProblemClassificationContent" />
-      <MemberSignature Language="F#" Value="static member ServiceProblemClassificationContent : string * Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Support.Models.ServiceProblemClassificationContent" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceProblemClassificationContent (issueSummary, resourceId)" />
+    <Member MemberName="SupportContactProfileContent">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SupportContactProfileContent SupportContactProfileContent (string firstName = default, string lastName = default, Azure.ResourceManager.Support.Models.PreferredContactMethod? preferredContactMethod = default, string primaryEmailAddress = default, System.Collections.Generic.IEnumerable&lt;string&gt; additionalEmailAddresses = default, string phoneNumber = default, string preferredTimeZone = default, string country = default, string preferredSupportLanguage = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SupportContactProfileContent SupportContactProfileContent(string firstName, string lastName, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.PreferredContactMethod&gt; preferredContactMethod, string primaryEmailAddress, class System.Collections.Generic.IEnumerable`1&lt;string&gt; additionalEmailAddresses, string phoneNumber, string preferredTimeZone, string country, string preferredSupportLanguage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportContactProfileContent(System.String,System.String,System.Nullable{Azure.ResourceManager.Support.Models.PreferredContactMethod},System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportContactProfileContent (Optional firstName As String = Nothing, Optional lastName As String = Nothing, Optional preferredContactMethod As Nullable(Of PreferredContactMethod) = Nothing, Optional primaryEmailAddress As String = Nothing, Optional additionalEmailAddresses As IEnumerable(Of String) = Nothing, Optional phoneNumber As String = Nothing, Optional preferredTimeZone As String = Nothing, Optional country As String = Nothing, Optional preferredSupportLanguage As String = Nothing) As SupportContactProfileContent" />
+      <MemberSignature Language="F#" Value="static member SupportContactProfileContent : string * string * Nullable&lt;Azure.ResourceManager.Support.Models.PreferredContactMethod&gt; * string * seq&lt;string&gt; * string * string * string * string -&gt; Azure.ResourceManager.Support.Models.SupportContactProfileContent" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportContactProfileContent (firstName, lastName, preferredContactMethod, primaryEmailAddress, additionalEmailAddresses, phoneNumber, preferredTimeZone, country, preferredSupportLanguage)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.Models.ServiceProblemClassificationContent</ReturnType>
+        <ReturnType>Azure.ResourceManager.Support.Models.SupportContactProfileContent</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="issueSummary" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="resourceId" Type="Azure.Core.ResourceIdentifier" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="firstName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="lastName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="preferredContactMethod" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.PreferredContactMethod&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="primaryEmailAddress" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="additionalEmailAddresses" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="phoneNumber" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="preferredTimeZone" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="country" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="preferredSupportLanguage" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="issueSummary"> Natural language description of the customer’s issue. </param>
-        <param name="resourceId"> ARM resource Id of the resource that is having the issue. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.ServiceProblemClassificationContent" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ServiceProblemClassificationContent" /> instance for mocking. </returns>
+        <param name="firstName"> First name. </param>
+        <param name="lastName"> Last name. </param>
+        <param name="preferredContactMethod"> Preferred contact method. </param>
+        <param name="primaryEmailAddress"> Primary email address. </param>
+        <param name="additionalEmailAddresses"> Email addresses listed will be copied on any correspondence about the support ticket. </param>
+        <param name="phoneNumber"> Phone number. This is required if preferred contact method is phone. It is also required when submitting 'critical' or 'highestcriticalimpact' severity cases. </param>
+        <param name="preferredTimeZone"> Time zone of the user. This is the name of the time zone from [Microsoft Time Zone Index Values](https://support.microsoft.com/help/973627/microsoft-time-zone-index-values). </param>
+        <param name="country"> Country of the user. This is the ISO 3166-1 alpha-3 code. </param>
+        <param name="preferredSupportLanguage"> Preferred language of support from Azure. Support languages vary based on the severity you choose for your support ticket. Learn more at [Azure Severity and responsiveness](https://azure.microsoft.com/support/plans/response/). Use the standard language-country code. Valid values are 'en-us' for English, 'zh-hans' for Chinese, 'es-es' for Spanish, 'fr-fr' for French, 'ja-jp' for Japanese, 'ko-kr' for Korean, 'ru-ru' for Russian, 'pt-br' for Portuguese, 'it-it' for Italian, 'zh-tw' for Chinese and 'de-de' for German. </param>
+        <summary> Contact information associated with the support ticket. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportContactProfileContent" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ServiceProblemClassificationListResult">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ServiceProblemClassificationListResult ServiceProblemClassificationListResult (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult&gt; problemClassificationResults = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ServiceProblemClassificationListResult ServiceProblemClassificationListResult(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult&gt; problemClassificationResults) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceProblemClassificationListResult(System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ServiceProblemClassificationListResult (Optional problemClassificationResults As IEnumerable(Of ServiceProblemClassificationResult) = Nothing) As ServiceProblemClassificationListResult" />
-      <MemberSignature Language="F#" Value="static member ServiceProblemClassificationListResult : seq&lt;Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult&gt; -&gt; Azure.ResourceManager.Support.Models.ServiceProblemClassificationListResult" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceProblemClassificationListResult problemClassificationResults" />
+    <Member MemberName="SupportDirectConnectEscalation">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation SupportDirectConnectEscalation (Azure.ResourceManager.Support.Models.SupportEscalationStatus? azureEEStatus = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt; allowedSeverities = default, string reasonForEscalation = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation SupportDirectConnectEscalation(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.SupportEscalationStatus&gt; azureEEStatus, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt; allowedSeverities, string reasonForEscalation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportDirectConnectEscalation(System.Nullable{Azure.ResourceManager.Support.Models.SupportEscalationStatus},System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SupportSeverityLevel},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportDirectConnectEscalation (Optional azureEEStatus As Nullable(Of SupportEscalationStatus) = Nothing, Optional allowedSeverities As IEnumerable(Of SupportSeverityLevel) = Nothing, Optional reasonForEscalation As String = Nothing) As SupportDirectConnectEscalation" />
+      <MemberSignature Language="F#" Value="static member SupportDirectConnectEscalation : Nullable&lt;Azure.ResourceManager.Support.Models.SupportEscalationStatus&gt; * seq&lt;Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt; * string -&gt; Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportDirectConnectEscalation (azureEEStatus, allowedSeverities, reasonForEscalation)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.Models.ServiceProblemClassificationListResult</ReturnType>
+        <ReturnType>Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="problemClassificationResults" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="azureEEStatus" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.SupportEscalationStatus&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowedSeverities" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="reasonForEscalation" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="problemClassificationResults"> Set of problem classification objects classified. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.ServiceProblemClassificationListResult" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ServiceProblemClassificationListResult" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="ServiceProblemClassificationResult">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult ServiceProblemClassificationResult (string problemId = default, string title = default, string description = default, Azure.Core.ResourceIdentifier serviceId = default, string problemClassificationId = default, Azure.Core.ResourceIdentifier relatedServiceId = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt; resourceTypes = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult ServiceProblemClassificationResult(string problemId, string title, string description, class Azure.Core.ResourceIdentifier serviceId, string problemClassificationId, class Azure.Core.ResourceIdentifier relatedServiceId, string displayName, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.Core.ResourceType&gt; resourceTypes) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceProblemClassificationResult(System.String,System.String,System.String,Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceIdentifier,System.String,System.Collections.Generic.IEnumerable{Azure.Core.ResourceType})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ServiceProblemClassificationResult (Optional problemId As String = Nothing, Optional title As String = Nothing, Optional description As String = Nothing, Optional serviceId As ResourceIdentifier = Nothing, Optional problemClassificationId As String = Nothing, Optional relatedServiceId As ResourceIdentifier = Nothing, Optional displayName As String = Nothing, Optional resourceTypes As IEnumerable(Of ResourceType) = Nothing) As ServiceProblemClassificationResult" />
-      <MemberSignature Language="F#" Value="static member ServiceProblemClassificationResult : string * string * string * Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceIdentifier * string * seq&lt;Azure.Core.ResourceType&gt; -&gt; Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.ServiceProblemClassificationResult (problemId, title, description, serviceId, problemClassificationId, relatedServiceId, displayName, resourceTypes)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="problemId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="title" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="description" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="serviceId" Type="Azure.Core.ResourceIdentifier" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="problemClassificationId" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="relatedServiceId" Type="Azure.Core.ResourceIdentifier" Index="5" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="displayName" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="resourceTypes" Type="System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="problemId"> Identifier that may be used for solution discovery or some other purposes. </param>
-        <param name="title"> Title of the problem classification result. </param>
-        <param name="description"> Description of the problem classification result. </param>
-        <param name="serviceId"> Identifier of the service associated with this problem classification result. </param>
-        <param name="problemClassificationId"> Identifier that may be used for support ticket creation. </param>
-        <param name="relatedServiceId"> Azure resource Id of the service. </param>
-        <param name="displayName"> Localized name of the azure service. </param>
-        <param name="resourceTypes"> List of applicable ARM resource types for this service. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.ServiceProblemClassificationResult" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="SupportAzureServiceData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportAzureServiceData SupportAzureServiceData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;string&gt; resourceTypes = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.SupportAzureServiceData SupportAzureServiceData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string displayName, class System.Collections.Generic.IEnumerable`1&lt;string&gt; resourceTypes) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportAzureServiceData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.Collections.Generic.IEnumerable{System.String})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportAzureServiceData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional displayName As String = Nothing, Optional resourceTypes As IEnumerable(Of String) = Nothing) As SupportAzureServiceData" />
-      <MemberSignature Language="F#" Value="static member SupportAzureServiceData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * seq&lt;string&gt; -&gt; Azure.ResourceManager.Support.SupportAzureServiceData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportAzureServiceData (id, name, resourceType, systemData, displayName, resourceTypes)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.1.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.SupportAzureServiceData</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="displayName" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="resourceTypes" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="5" FrameworkAlternate="azure-dotnet" />
-      </Parameters>
-      <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="displayName"> Localized name of the Azure service. </param>
-        <param name="resourceTypes"> ARM Resource types. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.SupportAzureServiceData" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.SupportAzureServiceData" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="SupportAzureServiceData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportAzureServiceData SupportAzureServiceData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;string&gt; resourceTypes = default, System.Collections.Generic.IReadOnlyDictionary&lt;string,string&gt; metadata = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.SupportAzureServiceData SupportAzureServiceData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string displayName, class System.Collections.Generic.IEnumerable`1&lt;string&gt; resourceTypes, class System.Collections.Generic.IReadOnlyDictionary`2&lt;string, string&gt; metadata) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportAzureServiceData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportAzureServiceData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional displayName As String = Nothing, Optional resourceTypes As IEnumerable(Of String) = Nothing, Optional metadata As IReadOnlyDictionary(Of String, String) = Nothing) As SupportAzureServiceData" />
-      <MemberSignature Language="F#" Value="static member SupportAzureServiceData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * seq&lt;string&gt; * System.Collections.Generic.IReadOnlyDictionary&lt;string, string&gt; -&gt; Azure.ResourceManager.Support.SupportAzureServiceData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportAzureServiceData (id, name, resourceType, systemData, displayName, resourceTypes, metadata)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.SupportAzureServiceData</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="displayName" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="resourceTypes" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="metadata" Type="System.Collections.Generic.IReadOnlyDictionary&lt;System.String,System.String&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="displayName"> Localized name of the Azure service. </param>
-        <param name="resourceTypes"> ARM Resource types. </param>
-        <param name="metadata"> Metadata about the service, only visible for 1P clients. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.SupportAzureServiceData" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.SupportAzureServiceData" /> instance for mocking. </returns>
+        <param name="azureEEStatus"> Status of Direct Connect Escalation. </param>
+        <param name="allowedSeverities"> An array containing the allowed severities for direct connect escalation. </param>
+        <param name="reasonForEscalation"> Reason for escalation / business impact. </param>
+        <summary> Direct Connect Escalation details for a support ticket. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -497,8 +536,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.SupportFileDetailData</ReturnType>
@@ -514,16 +553,66 @@
         <Parameter Name="numberOfChunks" Type="System.Nullable&lt;System.Int32&gt;" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="createdOn"> Time in UTC (ISO 8601 format) when file workspace was created. </param>
         <param name="chunkSize"> Size of each chunk. The size of each chunk should be provided in bytes and must not exceed 2.5 megabytes (MB). </param>
         <param name="fileSize"> Size of the file to be uploaded. The file size must not exceed 5 MB and should be provided in bytes. </param>
         <param name="numberOfChunks"> Number of chunks to be uploaded. The maximum number of allowed chunks is 2. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.SupportFileDetailData" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Support.SupportFileDetailData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportLookUpResourceIdResult">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SupportLookUpResourceIdResult SupportLookUpResourceIdResult (Azure.Core.ResourceIdentifier resourceId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SupportLookUpResourceIdResult SupportLookUpResourceIdResult(class Azure.Core.ResourceIdentifier resourceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportLookUpResourceIdResult(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportLookUpResourceIdResult (Optional resourceId As ResourceIdentifier = Nothing) As SupportLookUpResourceIdResult" />
+      <MemberSignature Language="F#" Value="static member SupportLookUpResourceIdResult : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Support.Models.SupportLookUpResourceIdResult" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportLookUpResourceIdResult resourceId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.SupportLookUpResourceIdResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceId" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="resourceId"> The resource Id of support resource type. </param>
+        <summary> The look up resource id response. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportLookUpResourceIdResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportNameAvailabilityContent">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SupportNameAvailabilityContent SupportNameAvailabilityContent (string name = default, Azure.ResourceManager.Support.Models.SupportResourceType resourceType = Azure.ResourceManager.Support.Models.SupportResourceType.MicrosoftSupportSupportTickets);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SupportNameAvailabilityContent SupportNameAvailabilityContent(string name, valuetype Azure.ResourceManager.Support.Models.SupportResourceType resourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportNameAvailabilityContent(System.String,Azure.ResourceManager.Support.Models.SupportResourceType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportNameAvailabilityContent (Optional name As String = Nothing, Optional resourceType As SupportResourceType = Azure.ResourceManager.Support.Models.SupportResourceType.MicrosoftSupportSupportTickets) As SupportNameAvailabilityContent" />
+      <MemberSignature Language="F#" Value="static member SupportNameAvailabilityContent : string * Azure.ResourceManager.Support.Models.SupportResourceType -&gt; Azure.ResourceManager.Support.Models.SupportNameAvailabilityContent" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportNameAvailabilityContent (name, resourceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.SupportNameAvailabilityContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.ResourceManager.Support.Models.SupportResourceType" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The resource name to validate. </param>
+        <param name="resourceType"> The type of resource. </param>
+        <summary> Input of CheckNameAvailability API. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportNameAvailabilityContent" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -536,8 +625,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.Models.SupportNameAvailabilityResult</ReturnType>
@@ -551,8 +640,62 @@
         <param name="isNameAvailable"> Indicates whether the name is available. </param>
         <param name="reason"> The reason why the name is not available. </param>
         <param name="message"> The detailed error message describing why the name is not available. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.SupportNameAvailabilityResult" />. </summary>
+        <summary> Output of check name availability API. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportNameAvailabilityResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportServiceClassificationAnswer">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer SupportServiceClassificationAnswer (Azure.Core.ResourceIdentifier serviceId = default, string displayName = default, System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt; resourceTypes = default, Azure.ResourceManager.Support.Models.SupportClassificationService childService = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer SupportServiceClassificationAnswer(class Azure.Core.ResourceIdentifier serviceId, string displayName, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.Core.ResourceType&gt; resourceTypes, class Azure.ResourceManager.Support.Models.SupportClassificationService childService) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportServiceClassificationAnswer(Azure.Core.ResourceIdentifier,System.String,System.Collections.Generic.IEnumerable{Azure.Core.ResourceType},Azure.ResourceManager.Support.Models.SupportClassificationService)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportServiceClassificationAnswer (Optional serviceId As ResourceIdentifier = Nothing, Optional displayName As String = Nothing, Optional resourceTypes As IEnumerable(Of ResourceType) = Nothing, Optional childService As SupportClassificationService = Nothing) As SupportServiceClassificationAnswer" />
+      <MemberSignature Language="F#" Value="static member SupportServiceClassificationAnswer : Azure.Core.ResourceIdentifier * string * seq&lt;Azure.Core.ResourceType&gt; * Azure.ResourceManager.Support.Models.SupportClassificationService -&gt; Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportServiceClassificationAnswer (serviceId, displayName, resourceTypes, childService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceId" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="displayName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceTypes" Type="System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceType&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="childService" Type="Azure.ResourceManager.Support.Models.SupportClassificationService" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="serviceId"> Azure resource Id of the service. </param>
+        <param name="displayName"> Localized name of the azure service. </param>
+        <param name="resourceTypes"> List of applicable ARM resource types for this service. </param>
+        <param name="childService"> Child service. </param>
+        <summary> Service Classification result object. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportServiceClassificationOutput">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.SupportServiceClassificationOutput SupportServiceClassificationOutput (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer&gt; serviceClassificationResults = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.SupportServiceClassificationOutput SupportServiceClassificationOutput(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer&gt; serviceClassificationResults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportServiceClassificationOutput(System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportServiceClassificationOutput (Optional serviceClassificationResults As IEnumerable(Of SupportServiceClassificationAnswer) = Nothing) As SupportServiceClassificationOutput" />
+      <MemberSignature Language="F#" Value="static member SupportServiceClassificationOutput : seq&lt;Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer&gt; -&gt; Azure.ResourceManager.Support.Models.SupportServiceClassificationOutput" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportServiceClassificationOutput serviceClassificationResults" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.SupportServiceClassificationOutput</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceClassificationResults" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SupportServiceClassificationAnswer&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="serviceClassificationResults"> Set of problem classification objects classified. </param>
+        <summary> Output of the service classification API. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportServiceClassificationOutput" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -565,8 +708,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement</ReturnType>
@@ -580,7 +723,7 @@
         <param name="startOn"> Time in UTC (ISO 8601 format) when the service level agreement starts. </param>
         <param name="expireOn"> Time in UTC (ISO 8601 format) when the service level agreement expires. </param>
         <param name="slaInMinutes"> Service Level Agreement in minutes. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement" />. </summary>
+        <summary> Service Level Agreement details for a support ticket. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -594,8 +737,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.SupportTicketCommunicationData</ReturnType>
@@ -613,10 +756,10 @@
         <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="communicationType"> Communication type. </param>
         <param name="communicationDirection"> Direction of communication. </param>
         <param name="sender"> Email address of the sender. This property is required if called by a service principal. </param>
@@ -629,133 +772,60 @@
       </Docs>
     </Member>
     <Member MemberName="SupportTicketData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportTicketData SupportTicketData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string supportTicketId = default, string description = default, string problemClassificationId = default, string problemClassificationDisplayName = default, Azure.ResourceManager.Support.Models.SupportSeverityLevel? severity = default, string enrollmentId = default, bool? require24X7Response = default, Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent? advancedDiagnosticConsent = default, string problemScopingQuestions = default, string supportPlanId = default, Azure.ResourceManager.Support.Models.SupportContactProfile contactDetails = default, Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement serviceLevelAgreement = default, string supportEngineerEmailAddress = default, string supportPlanType = default, string supportPlanDisplayName = default, string title = default, DateTimeOffset? problemStartOn = default, string serviceId = default, string serviceDisplayName = default, string status = default, DateTimeOffset? createdOn = default, DateTimeOffset? modifiedOn = default, string fileWorkspaceName = default, Azure.Core.ResourceIdentifier technicalTicketDetailsResourceId = default, Azure.ResourceManager.Support.Models.QuotaTicketDetails quotaTicketDetails = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.SupportTicketData SupportTicketData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string supportTicketId, string description, string problemClassificationId, string problemClassificationDisplayName, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt; severity, string enrollmentId, valuetype System.Nullable`1&lt;bool&gt; require24X7Response, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent&gt; advancedDiagnosticConsent, string problemScopingQuestions, string supportPlanId, class Azure.ResourceManager.Support.Models.SupportContactProfile contactDetails, class Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement serviceLevelAgreement, string supportEngineerEmailAddress, string supportPlanType, string supportPlanDisplayName, string title, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; problemStartOn, string serviceId, string serviceDisplayName, string status, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; modifiedOn, string fileWorkspaceName, class Azure.Core.ResourceIdentifier technicalTicketDetailsResourceId, class Azure.ResourceManager.Support.Models.QuotaTicketDetails quotaTicketDetails, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportTicketData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.String,System.String,System.String,System.Nullable{Azure.ResourceManager.Support.Models.SupportSeverityLevel},System.String,System.Nullable{System.Boolean},System.Nullable{Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent},System.String,System.String,Azure.ResourceManager.Support.Models.SupportContactProfile,Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement,System.String,System.String,System.String,System.String,System.Nullable{System.DateTimeOffset},System.String,System.String,System.String,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.String,Azure.Core.ResourceIdentifier,Azure.ResourceManager.Support.Models.QuotaTicketDetails,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SecondaryConsent})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportTicketData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional supportTicketId As String = Nothing, Optional description As String = Nothing, Optional problemClassificationId As String = Nothing, Optional problemClassificationDisplayName As String = Nothing, Optional severity As Nullable(Of SupportSeverityLevel) = Nothing, Optional enrollmentId As String = Nothing, Optional require24X7Response As Nullable(Of Boolean) = Nothing, Optional advancedDiagnosticConsent As Nullable(Of AdvancedDiagnosticConsent) = Nothing, Optional problemScopingQuestions As String = Nothing, Optional supportPlanId As String = Nothing, Optional contactDetails As SupportContactProfile = Nothing, Optional serviceLevelAgreement As SupportServiceLevelAgreement = Nothing, Optional supportEngineerEmailAddress As String = Nothing, Optional supportPlanType As String = Nothing, Optional supportPlanDisplayName As String = Nothing, Optional title As String = Nothing, Optional problemStartOn As Nullable(Of DateTimeOffset) = Nothing, Optional serviceId As String = Nothing, Optional serviceDisplayName As String = Nothing, Optional status As String = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional modifiedOn As Nullable(Of DateTimeOffset) = Nothing, Optional fileWorkspaceName As String = Nothing, Optional technicalTicketDetailsResourceId As ResourceIdentifier = Nothing, Optional quotaTicketDetails As QuotaTicketDetails = Nothing, Optional secondaryConsent As IEnumerable(Of SecondaryConsent) = Nothing) As SupportTicketData" />
-      <MemberSignature Language="F#" Value="static member SupportTicketData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * string * string * string * Nullable&lt;Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt; * string * Nullable&lt;bool&gt; * Nullable&lt;Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent&gt; * string * string * Azure.ResourceManager.Support.Models.SupportContactProfile * Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement * string * string * string * string * Nullable&lt;DateTimeOffset&gt; * string * string * string * Nullable&lt;DateTimeOffset&gt; * Nullable&lt;DateTimeOffset&gt; * string * Azure.Core.ResourceIdentifier * Azure.ResourceManager.Support.Models.QuotaTicketDetails * seq&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; -&gt; Azure.ResourceManager.Support.SupportTicketData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportTicketData (id, name, resourceType, systemData, supportTicketId, description, problemClassificationId, problemClassificationDisplayName, severity, enrollmentId, require24X7Response, advancedDiagnosticConsent, problemScopingQuestions, supportPlanId, contactDetails, serviceLevelAgreement, supportEngineerEmailAddress, supportPlanType, supportPlanDisplayName, title, problemStartOn, serviceId, serviceDisplayName, status, createdOn, modifiedOn, fileWorkspaceName, technicalTicketDetailsResourceId, quotaTicketDetails, secondaryConsent)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
-        <AssemblyVersion>1.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Support.SupportTicketData</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="supportTicketId" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="description" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="problemClassificationId" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="problemClassificationDisplayName" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="severity" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="enrollmentId" Type="System.String" Index="9" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="require24X7Response" Type="System.Nullable&lt;System.Boolean&gt;" Index="10" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="advancedDiagnosticConsent" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent&gt;" Index="11" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="problemScopingQuestions" Type="System.String" Index="12" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="supportPlanId" Type="System.String" Index="13" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="contactDetails" Type="Azure.ResourceManager.Support.Models.SupportContactProfile" Index="14" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="serviceLevelAgreement" Type="Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement" Index="15" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="supportEngineerEmailAddress" Type="System.String" Index="16" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="supportPlanType" Type="System.String" Index="17" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="supportPlanDisplayName" Type="System.String" Index="18" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="title" Type="System.String" Index="19" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="problemStartOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="20" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="serviceId" Type="System.String" Index="21" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="serviceDisplayName" Type="System.String" Index="22" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="status" Type="System.String" Index="23" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="24" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="modifiedOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="25" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="fileWorkspaceName" Type="System.String" Index="26" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="technicalTicketDetailsResourceId" Type="Azure.Core.ResourceIdentifier" Index="27" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="quotaTicketDetails" Type="Azure.ResourceManager.Support.Models.QuotaTicketDetails" Index="28" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="secondaryConsent" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt;" Index="29" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
-        <param name="supportTicketId"> System generated support ticket Id that is unique. </param>
-        <param name="description"> Detailed description of the question or issue. </param>
-        <param name="problemClassificationId"> Each Azure service has its own set of issue categories, also known as problem classification. This parameter is the unique Id for the type of problem you are experiencing. </param>
-        <param name="problemClassificationDisplayName"> Localized name of problem classification. </param>
-        <param name="severity"> A value that indicates the urgency of the case, which in turn determines the response time according to the service level agreement of the technical support plan you have with Azure. Note: 'Highest critical impact', also known as the 'Emergency - Severe impact' level in the Azure portal is reserved only for our Premium customers. </param>
-        <param name="enrollmentId"> Enrollment Id associated with the support ticket. </param>
-        <param name="require24X7Response"> Indicates if this requires a 24x7 response from Azure. </param>
-        <param name="advancedDiagnosticConsent"> Advanced diagnostic consent to be updated on the support ticket. </param>
-        <param name="problemScopingQuestions"> Problem scoping questions associated with the support ticket. </param>
-        <param name="supportPlanId"> Support plan id associated with the support ticket. </param>
-        <param name="contactDetails"> Contact information of the user requesting to create a support ticket. </param>
-        <param name="serviceLevelAgreement"> Service Level Agreement information for this support ticket. </param>
-        <param name="supportEngineerEmailAddress"> Information about the support engineer working on this support ticket. </param>
-        <param name="supportPlanType"> Support plan type associated with the support ticket. </param>
-        <param name="supportPlanDisplayName"> Support plan type associated with the support ticket. </param>
-        <param name="title"> Title of the support ticket. </param>
-        <param name="problemStartOn"> Time in UTC (ISO 8601 format) when the problem started. </param>
-        <param name="serviceId"> This is the resource Id of the Azure service resource associated with the support ticket. </param>
-        <param name="serviceDisplayName"> Localized name of the Azure service. </param>
-        <param name="status"> Status of the support ticket. </param>
-        <param name="createdOn"> Time in UTC (ISO 8601 format) when the support ticket was created. </param>
-        <param name="modifiedOn"> Time in UTC (ISO 8601 format) when the support ticket was last modified. </param>
-        <param name="fileWorkspaceName"> File workspace name. </param>
-        <param name="technicalTicketDetailsResourceId"> Additional ticket details associated with a technical support ticket request. </param>
-        <param name="quotaTicketDetails"> Additional ticket details associated with a quota support ticket request. </param>
-        <param name="secondaryConsent"> This property indicates secondary consents for the support ticket. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.SupportTicketData" />. </summary>
-        <returns> A new <see cref="T:Azure.ResourceManager.Support.SupportTicketData" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="SupportTicketData">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportTicketData SupportTicketData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string supportTicketId = default, string description = default, string problemClassificationId = default, string problemClassificationDisplayName = default, Azure.ResourceManager.Support.Models.SupportSeverityLevel severity = default, string enrollmentId = default, bool? require24X7Response = default, Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent advancedDiagnosticConsent = default, string problemScopingQuestions = default, string supportPlanId = default, Azure.ResourceManager.Support.Models.SupportContactProfile contactDetails = default, Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement serviceLevelAgreement = default, string supportEngineerEmailAddress = default, string supportPlanType = default, string supportPlanDisplayName = default, string title = default, DateTimeOffset? problemStartOn = default, string serviceId = default, string serviceDisplayName = default, string status = default, DateTimeOffset? createdOn = default, DateTimeOffset? modifiedOn = default, string fileWorkspaceName = default, Azure.ResourceManager.Support.Models.IsTemporaryTicket? isTemporaryTicket = default, Azure.Core.ResourceIdentifier technicalTicketDetailsResourceId = default, Azure.ResourceManager.Support.Models.QuotaTicketDetails quotaTicketDetails = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportTicketData SupportTicketData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string supportTicketId = default, string description = default, string problemClassificationId = default, string problemClassificationDisplayName = default, Azure.ResourceManager.Support.Models.SupportSeverityLevel severity = default, string enrollmentId = default, bool? require24X7Response = default, Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent advancedDiagnosticConsent = default, string problemScopingQuestions = default, string supportPlanId = default, Azure.ResourceManager.Support.Models.SupportContactProfile contactDetails = default, Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement serviceLevelAgreement = default, string supportEngineerEmailAddress = default, string supportPlanType = default, string supportPlanDisplayName = default, string title = default, DateTimeOffset? problemStartOn = default, string serviceId = default, string serviceDisplayName = default, string status = default, DateTimeOffset? createdOn = default, DateTimeOffset? modifiedOn = default, string fileWorkspaceName = default, Azure.ResourceManager.Support.Models.IsTemporaryTicket? isTemporaryTicket = default, Azure.Core.ResourceIdentifier technicalTicketDetailsResourceId = default, Azure.ResourceManager.Support.Models.QuotaTicketDetails quotaTicketDetails = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.SupportTicketData SupportTicketData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string supportTicketId, string description, string problemClassificationId, string problemClassificationDisplayName, valuetype Azure.ResourceManager.Support.Models.SupportSeverityLevel severity, string enrollmentId, valuetype System.Nullable`1&lt;bool&gt; require24X7Response, valuetype Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent advancedDiagnosticConsent, string problemScopingQuestions, string supportPlanId, class Azure.ResourceManager.Support.Models.SupportContactProfile contactDetails, class Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement serviceLevelAgreement, string supportEngineerEmailAddress, string supportPlanType, string supportPlanDisplayName, string title, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; problemStartOn, string serviceId, string serviceDisplayName, string status, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; modifiedOn, string fileWorkspaceName, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.IsTemporaryTicket&gt; isTemporaryTicket, class Azure.Core.ResourceIdentifier technicalTicketDetailsResourceId, class Azure.ResourceManager.Support.Models.QuotaTicketDetails quotaTicketDetails, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportTicketData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.String,System.String,System.String,Azure.ResourceManager.Support.Models.SupportSeverityLevel,System.String,System.Nullable{System.Boolean},Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent,System.String,System.String,Azure.ResourceManager.Support.Models.SupportContactProfile,Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement,System.String,System.String,System.String,System.String,System.Nullable{System.DateTimeOffset},System.String,System.String,System.String,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.String,System.Nullable{Azure.ResourceManager.Support.Models.IsTemporaryTicket},Azure.Core.ResourceIdentifier,Azure.ResourceManager.Support.Models.QuotaTicketDetails,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SecondaryConsent})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportTicketData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional supportTicketId As String = Nothing, Optional description As String = Nothing, Optional problemClassificationId As String = Nothing, Optional problemClassificationDisplayName As String = Nothing, Optional severity As SupportSeverityLevel = Nothing, Optional enrollmentId As String = Nothing, Optional require24X7Response As Nullable(Of Boolean) = Nothing, Optional advancedDiagnosticConsent As AdvancedDiagnosticConsent = Nothing, Optional problemScopingQuestions As String = Nothing, Optional supportPlanId As String = Nothing, Optional contactDetails As SupportContactProfile = Nothing, Optional serviceLevelAgreement As SupportServiceLevelAgreement = Nothing, Optional supportEngineerEmailAddress As String = Nothing, Optional supportPlanType As String = Nothing, Optional supportPlanDisplayName As String = Nothing, Optional title As String = Nothing, Optional problemStartOn As Nullable(Of DateTimeOffset) = Nothing, Optional serviceId As String = Nothing, Optional serviceDisplayName As String = Nothing, Optional status As String = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional modifiedOn As Nullable(Of DateTimeOffset) = Nothing, Optional fileWorkspaceName As String = Nothing, Optional isTemporaryTicket As Nullable(Of IsTemporaryTicket) = Nothing, Optional technicalTicketDetailsResourceId As ResourceIdentifier = Nothing, Optional quotaTicketDetails As QuotaTicketDetails = Nothing, Optional secondaryConsent As IEnumerable(Of SecondaryConsent) = Nothing) As SupportTicketData" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportTicketData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional supportTicketId As String = Nothing, Optional description As String = Nothing, Optional problemClassificationId As String = Nothing, Optional problemClassificationDisplayName As String = Nothing, Optional severity As SupportSeverityLevel = Nothing, Optional enrollmentId As String = Nothing, Optional require24X7Response As Nullable(Of Boolean) = Nothing, Optional advancedDiagnosticConsent As AdvancedDiagnosticConsent = Nothing, Optional problemScopingQuestions As String = Nothing, Optional supportPlanId As String = Nothing, Optional contactDetails As SupportContactProfile = Nothing, Optional serviceLevelAgreement As SupportServiceLevelAgreement = Nothing, Optional supportEngineerEmailAddress As String = Nothing, Optional supportPlanType As String = Nothing, Optional supportPlanDisplayName As String = Nothing, Optional title As String = Nothing, Optional problemStartOn As Nullable(Of DateTimeOffset) = Nothing, Optional serviceId As String = Nothing, Optional serviceDisplayName As String = Nothing, Optional status As String = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional modifiedOn As Nullable(Of DateTimeOffset) = Nothing, Optional fileWorkspaceName As String = Nothing, Optional isTemporaryTicket As Nullable(Of IsTemporaryTicket) = Nothing, Optional technicalTicketDetailsResourceId As ResourceIdentifier = Nothing, Optional quotaTicketDetails As QuotaTicketDetails = Nothing, Optional secondaryConsent As IEnumerable(Of SecondaryConsent) = Nothing) As SupportTicketData" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="static member SupportTicketData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * string * string * string * Azure.ResourceManager.Support.Models.SupportSeverityLevel * string * Nullable&lt;bool&gt; * Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent * string * string * Azure.ResourceManager.Support.Models.SupportContactProfile * Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement * string * string * string * string * Nullable&lt;DateTimeOffset&gt; * string * string * string * Nullable&lt;DateTimeOffset&gt; * Nullable&lt;DateTimeOffset&gt; * string * Nullable&lt;Azure.ResourceManager.Support.Models.IsTemporaryTicket&gt; * Azure.Core.ResourceIdentifier * Azure.ResourceManager.Support.Models.QuotaTicketDetails * seq&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; -&gt; Azure.ResourceManager.Support.SupportTicketData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportTicketData (id, name, resourceType, systemData, supportTicketId, description, problemClassificationId, problemClassificationDisplayName, severity, enrollmentId, require24X7Response, advancedDiagnosticConsent, problemScopingQuestions, supportPlanId, contactDetails, serviceLevelAgreement, supportEngineerEmailAddress, supportPlanType, supportPlanDisplayName, title, problemStartOn, serviceId, serviceDisplayName, status, createdOn, modifiedOn, fileWorkspaceName, isTemporaryTicket, technicalTicketDetailsResourceId, quotaTicketDetails, secondaryConsent)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportTicketData SupportTicketData (Azure.Core.ResourceIdentifier id, string name, Azure.Core.ResourceType resourceType, Azure.ResourceManager.Models.SystemData systemData, string supportTicketId, string description, string problemClassificationId, string problemClassificationDisplayName, Azure.ResourceManager.Support.Models.SupportSeverityLevel severity, string enrollmentId, bool? require24X7Response, Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent advancedDiagnosticConsent, string problemScopingQuestions, string supportPlanId, Azure.ResourceManager.Support.Models.SupportContactProfile contactDetails, Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement serviceLevelAgreement, string supportEngineerEmailAddress, string supportPlanType, string supportPlanDisplayName, string title, DateTimeOffset? problemStartOn, string serviceId, string serviceDisplayName, string status, DateTimeOffset? createdOn, DateTimeOffset? modifiedOn, string fileWorkspaceName, Azure.ResourceManager.Support.Models.IsTemporaryTicket? isTemporaryTicket, Azure.Core.ResourceIdentifier technicalTicketDetailsResourceId, Azure.ResourceManager.Support.Models.QuotaTicketDetails quotaTicketDetails, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportTicketData (id As ResourceIdentifier, name As String, resourceType As ResourceType, systemData As SystemData, supportTicketId As String, description As String, problemClassificationId As String, problemClassificationDisplayName As String, severity As SupportSeverityLevel, enrollmentId As String, require24X7Response As Nullable(Of Boolean), advancedDiagnosticConsent As AdvancedDiagnosticConsent, problemScopingQuestions As String, supportPlanId As String, contactDetails As SupportContactProfile, serviceLevelAgreement As SupportServiceLevelAgreement, supportEngineerEmailAddress As String, supportPlanType As String, supportPlanDisplayName As String, title As String, problemStartOn As Nullable(Of DateTimeOffset), serviceId As String, serviceDisplayName As String, status As String, createdOn As Nullable(Of DateTimeOffset), modifiedOn As Nullable(Of DateTimeOffset), fileWorkspaceName As String, isTemporaryTicket As Nullable(Of IsTemporaryTicket), technicalTicketDetailsResourceId As ResourceIdentifier, quotaTicketDetails As QuotaTicketDetails, secondaryConsent As IEnumerable(Of SecondaryConsent)) As SupportTicketData" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
         <AssemblyVersion>1.1.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Support.SupportTicketData</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="supportTicketId" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="description" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="problemClassificationId" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="problemClassificationDisplayName" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="severity" Type="Azure.ResourceManager.Support.Models.SupportSeverityLevel" Index="8" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="enrollmentId" Type="System.String" Index="9" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="require24X7Response" Type="System.Nullable&lt;System.Boolean&gt;" Index="10" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="advancedDiagnosticConsent" Type="Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent" Index="11" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="problemScopingQuestions" Type="System.String" Index="12" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="supportPlanId" Type="System.String" Index="13" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="contactDetails" Type="Azure.ResourceManager.Support.Models.SupportContactProfile" Index="14" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="serviceLevelAgreement" Type="Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement" Index="15" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="supportEngineerEmailAddress" Type="System.String" Index="16" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="supportPlanType" Type="System.String" Index="17" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="supportPlanDisplayName" Type="System.String" Index="18" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="title" Type="System.String" Index="19" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="problemStartOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="20" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="serviceId" Type="System.String" Index="21" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="serviceDisplayName" Type="System.String" Index="22" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="status" Type="System.String" Index="23" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="24" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="modifiedOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="25" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="fileWorkspaceName" Type="System.String" Index="26" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="isTemporaryTicket" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.IsTemporaryTicket&gt;" Index="27" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="technicalTicketDetailsResourceId" Type="Azure.Core.ResourceIdentifier" Index="28" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="quotaTicketDetails" Type="Azure.ResourceManager.Support.Models.QuotaTicketDetails" Index="29" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="secondaryConsent" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt;" Index="30" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" />
+        <Parameter Name="supportTicketId" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="problemClassificationId" Type="System.String" />
+        <Parameter Name="problemClassificationDisplayName" Type="System.String" />
+        <Parameter Name="severity" Type="Azure.ResourceManager.Support.Models.SupportSeverityLevel" />
+        <Parameter Name="enrollmentId" Type="System.String" />
+        <Parameter Name="require24X7Response" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="advancedDiagnosticConsent" Type="Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent" />
+        <Parameter Name="problemScopingQuestions" Type="System.String" />
+        <Parameter Name="supportPlanId" Type="System.String" />
+        <Parameter Name="contactDetails" Type="Azure.ResourceManager.Support.Models.SupportContactProfile" />
+        <Parameter Name="serviceLevelAgreement" Type="Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement" />
+        <Parameter Name="supportEngineerEmailAddress" Type="System.String" />
+        <Parameter Name="supportPlanType" Type="System.String" />
+        <Parameter Name="supportPlanDisplayName" Type="System.String" />
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="problemStartOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="serviceId" Type="System.String" />
+        <Parameter Name="serviceDisplayName" Type="System.String" />
+        <Parameter Name="status" Type="System.String" />
+        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="modifiedOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="fileWorkspaceName" Type="System.String" />
+        <Parameter Name="isTemporaryTicket" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.IsTemporaryTicket&gt;" />
+        <Parameter Name="technicalTicketDetailsResourceId" Type="Azure.Core.ResourceIdentifier" />
+        <Parameter Name="quotaTicketDetails" Type="Azure.ResourceManager.Support.Models.QuotaTicketDetails" />
+        <Parameter Name="secondaryConsent" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt;" />
       </Parameters>
       <Docs>
         <param name="id"> The id. </param>
@@ -791,6 +861,128 @@
         <param name="secondaryConsent"> This property indicates secondary consents for the support ticket. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Support.SupportTicketData" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Support.SupportTicketData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportTicketData">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.SupportTicketData SupportTicketData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, string supportTicketId = default, string description = default, string problemClassificationId = default, string problemClassificationDisplayName = default, Azure.ResourceManager.Support.Models.SupportSeverityLevel severity = default, string enrollmentId = default, bool? require24X7Response = default, Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent advancedDiagnosticConsent = default, string problemScopingQuestions = default, string supportPlanId = default, Azure.ResourceManager.Support.Models.SupportContactProfile contactDetails = default, Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement serviceLevelAgreement = default, string supportPlanType = default, string supportPlanDisplayName = default, string title = default, DateTimeOffset? problemStartOn = default, string serviceId = default, string serviceDisplayName = default, string status = default, DateTimeOffset? createdOn = default, DateTimeOffset? modifiedOn = default, string fileWorkspaceName = default, Azure.ResourceManager.Support.Models.IsTemporaryTicket? isTemporaryTicket = default, Azure.ResourceManager.Support.Models.QuotaTicketDetails quotaTicketDetails = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent = default, Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation directConnectEscalation = default, string communityForumPost = default, string supportEngineerEmailAddress = default, Azure.Core.ResourceIdentifier technicalTicketDetailsResourceId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.SupportTicketData SupportTicketData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, string supportTicketId, string description, string problemClassificationId, string problemClassificationDisplayName, valuetype Azure.ResourceManager.Support.Models.SupportSeverityLevel severity, string enrollmentId, valuetype System.Nullable`1&lt;bool&gt; require24X7Response, valuetype Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent advancedDiagnosticConsent, string problemScopingQuestions, string supportPlanId, class Azure.ResourceManager.Support.Models.SupportContactProfile contactDetails, class Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement serviceLevelAgreement, string supportPlanType, string supportPlanDisplayName, string title, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; problemStartOn, string serviceId, string serviceDisplayName, string status, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; modifiedOn, string fileWorkspaceName, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.IsTemporaryTicket&gt; isTemporaryTicket, class Azure.ResourceManager.Support.Models.QuotaTicketDetails quotaTicketDetails, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent, class Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation directConnectEscalation, string communityForumPost, string supportEngineerEmailAddress, class Azure.Core.ResourceIdentifier technicalTicketDetailsResourceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportTicketData(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,System.String,System.String,System.String,System.String,Azure.ResourceManager.Support.Models.SupportSeverityLevel,System.String,System.Nullable{System.Boolean},Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent,System.String,System.String,Azure.ResourceManager.Support.Models.SupportContactProfile,Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement,System.String,System.String,System.String,System.Nullable{System.DateTimeOffset},System.String,System.String,System.String,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.String,System.Nullable{Azure.ResourceManager.Support.Models.IsTemporaryTicket},Azure.ResourceManager.Support.Models.QuotaTicketDetails,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SecondaryConsent},Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation,System.String,System.String,Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SupportTicketData (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional supportTicketId As String = Nothing, Optional description As String = Nothing, Optional problemClassificationId As String = Nothing, Optional problemClassificationDisplayName As String = Nothing, Optional severity As SupportSeverityLevel = Nothing, Optional enrollmentId As String = Nothing, Optional require24X7Response As Nullable(Of Boolean) = Nothing, Optional advancedDiagnosticConsent As AdvancedDiagnosticConsent = Nothing, Optional problemScopingQuestions As String = Nothing, Optional supportPlanId As String = Nothing, Optional contactDetails As SupportContactProfile = Nothing, Optional serviceLevelAgreement As SupportServiceLevelAgreement = Nothing, Optional supportPlanType As String = Nothing, Optional supportPlanDisplayName As String = Nothing, Optional title As String = Nothing, Optional problemStartOn As Nullable(Of DateTimeOffset) = Nothing, Optional serviceId As String = Nothing, Optional serviceDisplayName As String = Nothing, Optional status As String = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional modifiedOn As Nullable(Of DateTimeOffset) = Nothing, Optional fileWorkspaceName As String = Nothing, Optional isTemporaryTicket As Nullable(Of IsTemporaryTicket) = Nothing, Optional quotaTicketDetails As QuotaTicketDetails = Nothing, Optional secondaryConsent As IEnumerable(Of SecondaryConsent) = Nothing, Optional directConnectEscalation As SupportDirectConnectEscalation = Nothing, Optional communityForumPost As String = Nothing, Optional supportEngineerEmailAddress As String = Nothing, Optional technicalTicketDetailsResourceId As ResourceIdentifier = Nothing) As SupportTicketData" />
+      <MemberSignature Language="F#" Value="static member SupportTicketData : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * string * string * string * string * Azure.ResourceManager.Support.Models.SupportSeverityLevel * string * Nullable&lt;bool&gt; * Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent * string * string * Azure.ResourceManager.Support.Models.SupportContactProfile * Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement * string * string * string * Nullable&lt;DateTimeOffset&gt; * string * string * string * Nullable&lt;DateTimeOffset&gt; * Nullable&lt;DateTimeOffset&gt; * string * Nullable&lt;Azure.ResourceManager.Support.Models.IsTemporaryTicket&gt; * Azure.ResourceManager.Support.Models.QuotaTicketDetails * seq&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; * Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation * string * string * Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Support.SupportTicketData" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.SupportTicketData (id, name, resourceType, systemData, supportTicketId, description, problemClassificationId, problemClassificationDisplayName, severity, enrollmentId, require24X7Response, advancedDiagnosticConsent, problemScopingQuestions, supportPlanId, contactDetails, serviceLevelAgreement, supportPlanType, supportPlanDisplayName, title, problemStartOn, serviceId, serviceDisplayName, status, createdOn, modifiedOn, fileWorkspaceName, isTemporaryTicket, quotaTicketDetails, secondaryConsent, directConnectEscalation, communityForumPost, supportEngineerEmailAddress, technicalTicketDetailsResourceId)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.SupportTicketData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourceType" Type="Azure.Core.ResourceType" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="supportTicketId" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="problemClassificationId" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="problemClassificationDisplayName" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="severity" Type="Azure.ResourceManager.Support.Models.SupportSeverityLevel" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="enrollmentId" Type="System.String" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="require24X7Response" Type="System.Nullable&lt;System.Boolean&gt;" Index="10" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="advancedDiagnosticConsent" Type="Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent" Index="11" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="problemScopingQuestions" Type="System.String" Index="12" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="supportPlanId" Type="System.String" Index="13" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contactDetails" Type="Azure.ResourceManager.Support.Models.SupportContactProfile" Index="14" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="serviceLevelAgreement" Type="Azure.ResourceManager.Support.Models.SupportServiceLevelAgreement" Index="15" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="supportPlanType" Type="System.String" Index="16" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="supportPlanDisplayName" Type="System.String" Index="17" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="title" Type="System.String" Index="18" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="problemStartOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="19" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="serviceId" Type="System.String" Index="20" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="serviceDisplayName" Type="System.String" Index="21" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="status" Type="System.String" Index="22" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="23" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="modifiedOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="24" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="fileWorkspaceName" Type="System.String" Index="25" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isTemporaryTicket" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.IsTemporaryTicket&gt;" Index="26" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="quotaTicketDetails" Type="Azure.ResourceManager.Support.Models.QuotaTicketDetails" Index="27" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="secondaryConsent" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt;" Index="28" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="directConnectEscalation" Type="Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation" Index="29" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="communityForumPost" Type="System.String" Index="30" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="supportEngineerEmailAddress" Type="System.String" Index="31" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="technicalTicketDetailsResourceId" Type="Azure.Core.ResourceIdentifier" Index="32" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        <param name="supportTicketId"> System generated support ticket Id that is unique. </param>
+        <param name="description"> Detailed description of the question or issue. </param>
+        <param name="problemClassificationId"> Each Azure service has its own set of issue categories, also known as problem classification. This parameter is the unique Id for the type of problem you are experiencing. </param>
+        <param name="problemClassificationDisplayName"> Localized name of problem classification. </param>
+        <param name="severity"> A value that indicates the urgency of the case, which in turn determines the response time according to the service level agreement of the technical support plan you have with Azure. Note: 'Highest critical impact', also known as the 'Emergency - Severe impact' level in the Azure portal is reserved only for our Premium customers. </param>
+        <param name="enrollmentId"> Enrollment Id associated with the support ticket. </param>
+        <param name="require24X7Response"> Indicates if this requires a 24x7 response from Azure. </param>
+        <param name="advancedDiagnosticConsent"> Advanced diagnostic consent to be updated on the support ticket. </param>
+        <param name="problemScopingQuestions"> Problem scoping questions associated with the support ticket. </param>
+        <param name="supportPlanId"> Support plan id associated with the support ticket. </param>
+        <param name="contactDetails"> Contact information of the user requesting to create a support ticket. </param>
+        <param name="serviceLevelAgreement"> Service Level Agreement information for this support ticket. </param>
+        <param name="supportPlanType"> Support plan type associated with the support ticket. </param>
+        <param name="supportPlanDisplayName"> Support plan type associated with the support ticket. </param>
+        <param name="title"> Title of the support ticket. </param>
+        <param name="problemStartOn"> Time in UTC (ISO 8601 format) when the problem started. </param>
+        <param name="serviceId"> This is the resource Id of the Azure service resource associated with the support ticket. </param>
+        <param name="serviceDisplayName"> Localized name of the Azure service. </param>
+        <param name="status"> Status of the support ticket. </param>
+        <param name="createdOn"> Time in UTC (ISO 8601 format) when the support ticket was created. </param>
+        <param name="modifiedOn"> Time in UTC (ISO 8601 format) when the support ticket was last modified. </param>
+        <param name="fileWorkspaceName"> File workspace name. </param>
+        <param name="isTemporaryTicket"> This property indicates if support ticket is a temporary ticket. </param>
+        <param name="quotaTicketDetails"> Additional ticket details associated with a quota support ticket request. </param>
+        <param name="secondaryConsent"> This property indicates secondary consents for the support ticket. </param>
+        <param name="directConnectEscalation"> Direct Connect Escalation details for a support ticket. </param>
+        <param name="communityForumPost"> Contains a link to the post on the community forum. </param>
+        <param name="supportEngineerEmailAddress"> Email address of the Azure Support engineer assigned to the support ticket. </param>
+        <param name="technicalTicketDetailsResourceId"> This is the resource Id of the Azure service resource (For example: A virtual machine resource or an HDInsight resource) for which the support ticket is created. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.SupportTicketData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateSupportTicket">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Support.Models.UpdateSupportTicket UpdateSupportTicket (Azure.ResourceManager.Support.Models.SupportSeverityLevel? severity = default, Azure.ResourceManager.Support.Models.SupportTicketStatus? status = default, Azure.ResourceManager.Support.Models.SupportContactProfileContent contactDetails = default, Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent? advancedDiagnosticConsent = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent = default, Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation directConnectEscalation = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Support.Models.UpdateSupportTicket UpdateSupportTicket(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt; severity, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.SupportTicketStatus&gt; status, class Azure.ResourceManager.Support.Models.SupportContactProfileContent contactDetails, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent&gt; advancedDiagnosticConsent, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Support.Models.SecondaryConsent&gt; secondaryConsent, class Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation directConnectEscalation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Support.Models.ArmSupportModelFactory.UpdateSupportTicket(System.Nullable{Azure.ResourceManager.Support.Models.SupportSeverityLevel},System.Nullable{Azure.ResourceManager.Support.Models.SupportTicketStatus},Azure.ResourceManager.Support.Models.SupportContactProfileContent,System.Nullable{Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent},System.Collections.Generic.IEnumerable{Azure.ResourceManager.Support.Models.SecondaryConsent},Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function UpdateSupportTicket (Optional severity As Nullable(Of SupportSeverityLevel) = Nothing, Optional status As Nullable(Of SupportTicketStatus) = Nothing, Optional contactDetails As SupportContactProfileContent = Nothing, Optional advancedDiagnosticConsent As Nullable(Of AdvancedDiagnosticConsent) = Nothing, Optional secondaryConsent As IEnumerable(Of SecondaryConsent) = Nothing, Optional directConnectEscalation As SupportDirectConnectEscalation = Nothing) As UpdateSupportTicket" />
+      <MemberSignature Language="F#" Value="static member UpdateSupportTicket : Nullable&lt;Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt; * Nullable&lt;Azure.ResourceManager.Support.Models.SupportTicketStatus&gt; * Azure.ResourceManager.Support.Models.SupportContactProfileContent * Nullable&lt;Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent&gt; * seq&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt; * Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation -&gt; Azure.ResourceManager.Support.Models.UpdateSupportTicket" Usage="Azure.ResourceManager.Support.Models.ArmSupportModelFactory.UpdateSupportTicket (severity, status, contactDetails, advancedDiagnosticConsent, secondaryConsent, directConnectEscalation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Support</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Support.Models.UpdateSupportTicket</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="severity" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.SupportSeverityLevel&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="status" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.SupportTicketStatus&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contactDetails" Type="Azure.ResourceManager.Support.Models.SupportContactProfileContent" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="advancedDiagnosticConsent" Type="System.Nullable&lt;Azure.ResourceManager.Support.Models.AdvancedDiagnosticConsent&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="secondaryConsent" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Support.Models.SecondaryConsent&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="directConnectEscalation" Type="Azure.ResourceManager.Support.Models.SupportDirectConnectEscalation" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="severity"> Severity level. </param>
+        <param name="status"> Status to be updated on the ticket. </param>
+        <param name="contactDetails"> Contact details to be updated on the support ticket. </param>
+        <param name="advancedDiagnosticConsent"> Advanced diagnostic consent to be updated on the support ticket. </param>
+        <param name="secondaryConsent"> This property indicates secondary consents for the support ticket. </param>
+        <param name="directConnectEscalation"> Direct Connect Escalation details for a support ticket. </param>
+        <summary> Updates severity, ticket status, contact details, advanced diagnostic consent and secondary consent in the support ticket. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Support.Models.UpdateSupportTicket" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
