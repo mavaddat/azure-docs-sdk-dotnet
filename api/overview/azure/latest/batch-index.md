@@ -1,5 +1,6 @@
 | Reference | Package | Source |
 |---|---|---|
+|[Compute Batch](compute.batch-readme.md)|[Azure.Compute.Batch](https://www.nuget.org/packages/Azure.Compute.Batch)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/batch/Azure.Compute.Batch)|
 |[Batch](microsoft.batch-readme.md)|[Microsoft.Azure.Batch](https://www.nuget.org/packages/Microsoft.Azure.Batch)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/batch/Microsoft.Azure.Batch)|
 |Batch - Conventions Files|[Microsoft.Azure.Batch.Conventions.Files](https://www.nuget.org/packages/Microsoft.Azure.Batch.Conventions.Files)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/batch/Microsoft.Azure.Batch.Conventions.Files)|
 |Batch - File Staging|[Microsoft.Azure.Batch.FileStaging](https://www.nuget.org/packages/Microsoft.Azure.Batch.FileStaging)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/batch/Microsoft.Azure.Batch.FileStaging)|
