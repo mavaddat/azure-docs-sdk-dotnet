@@ -51,8 +51,8 @@
         <ReturnType>Azure.Compute.Batch.CreateTaskResultStatus</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="addTaskResult" Type="Azure.Compute.Batch.CreateTaskResult" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="addTaskResult" Type="Azure.Compute.Batch.CreateTaskResult" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="addTaskResult">The result of a single Add Task operation.</param>
@@ -62,6 +62,36 @@
             <see cref="T:Azure.Compute.Batch.AddTaskCollectionTerminatedException" /> on client error (HTTP 4xx).
             </summary>
         <returns>An <see cref="T:Azure.Compute.Batch.CreateTaskResultStatus" /> which indicates whether the <paramref name="addTaskResult" />
+            is classified as a success or as requiring a retry.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleTaskResult">
+      <MemberSignature Language="C#" Value="public override Azure.Compute.Batch.CreateTaskResultStatus HandleTaskResult (Azure.Compute.Batch.CreateTaskResult taskResult, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype Azure.Compute.Batch.CreateTaskResultStatus HandleTaskResult(class Azure.Compute.Batch.CreateTaskResult taskResult, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Compute.Batch.DefaultCreateTaskResultHandler.HandleTaskResult(Azure.Compute.Batch.CreateTaskResult,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function HandleTaskResult (taskResult As CreateTaskResult, cancellationToken As CancellationToken) As CreateTaskResultStatus" />
+      <MemberSignature Language="F#" Value="override this.HandleTaskResult : Azure.Compute.Batch.CreateTaskResult * System.Threading.CancellationToken -&gt; Azure.Compute.Batch.CreateTaskResultStatus" Usage="defaultCreateTaskResultHandler.HandleTaskResult (taskResult, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Compute.Batch</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Compute.Batch.CreateTaskResultStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="taskResult" Type="Azure.Compute.Batch.CreateTaskResult" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="taskResult">The result of a single Add Task operation.</param>
+        <param name="cancellationToken">The cancellation token associated with the AddTaskCollection operation.</param>
+        <summary>
+            This handler treats success and 'TaskExists' errors as successful, retries server errors (HTTP 5xx), and throws
+            <see cref="T:Azure.Compute.Batch.AddTaskCollectionTerminatedException" /> on client error (HTTP 4xx).
+            </summary>
+        <returns>An <see cref="T:Azure.Compute.Batch.CreateTaskResultStatus" /> which indicates whether the <paramref name="taskResult" />
             is classified as a success or as requiring a retry.</returns>
         <remarks>To be added.</remarks>
       </Docs>

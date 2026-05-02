@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Azure.Search.Documents</AssemblyName>
     <AssemblyVersion>11.8.0.0</AssemblyVersion>
+    <AssemblyVersion>12.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -23,7 +24,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary> The KnowledgeBase. </summary>
+    <summary> Represents a knowledge base definition. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -37,14 +38,15 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
         <Parameter Name="knowledgeSources" Type="System.Collections.Generic.IEnumerable&lt;Azure.Search.Documents.Indexes.Models.KnowledgeSourceReference&gt;" />
       </Parameters>
       <Docs>
-        <param name="name"> The name of the knowledge knowledge base. </param>
-        <param name="knowledgeSources" />
+        <param name="name"> The name of the knowledge base. </param>
+        <param name="knowledgeSources"> Knowledge sources referenced by this knowledge base. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.Search.Documents.Indexes.Models.KnowledgeBase" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -81,6 +83,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -101,33 +104,66 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.SearchResourceEncryptionKey</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> A description of an encryption key that you create in Azure Key Vault. This key is used to provide an additional level of encryption-at-rest for your knowledge base definition when you want full assurance that no one, not even Microsoft, can decrypt them. Once you have encrypted your knowledge base definition, it will always remain encrypted. The search service will ignore attempts to set this property to null. You can change this property as needed if you want to rotate your encryption key; Your knowledge base definition will be unaffected. Encryption with customer-managed keys is not available for free search services, and is only available for paid services created on or after January 1, 2019. </summary>
+        <summary> A description of an encryption key that you create in Azure Key Vault. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ETag">
-      <MemberSignature Language="C#" Value="public string ETag { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance string ETag" />
+      <MemberSignature Language="C#" Value="public Azure.ETag? ETag { get; set; }" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.ETag&gt; ETag" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="DocId" Value="P:Azure.Search.Documents.Indexes.Models.KnowledgeBase.ETag" />
-      <MemberSignature Language="VB.NET" Value="Public Property ETag As String" />
-      <MemberSignature Language="F#" Value="member this.ETag : string with get, set" Usage="Azure.Search.Documents.Indexes.Models.KnowledgeBase.ETag" />
+      <MemberSignature Language="VB.NET" Value="Public Property ETag As Nullable(Of ETag)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="member this.ETag : Nullable&lt;Azure.ETag&gt; with get, set" Usage="Azure.Search.Documents.Indexes.Models.KnowledgeBase.ETag" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public string ETag { get; set; }" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ETag" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Property ETag As String" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="F#" Value="member this.ETag : string with get, set" Usage="Azure.Search.Documents.Indexes.Models.KnowledgeBase.ETag" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.String</ReturnType>
+        <ReturnType FrameworkAlternate="azure-dotnet">System.Nullable&lt;Azure.ETag&gt;</ReturnType>
+        <ReturnType FrameworkAlternate="azure-dotnet-preview">System.String</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> The ETag of the knowledge base. </summary>
         <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JsonModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.Search.Documents.Indexes.Models.KnowledgeBase JsonModelCreateCore (ref System.Text.Json.Utf8JsonReader reader, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.Search.Documents.Indexes.Models.KnowledgeBase JsonModelCreateCore(valuetype System.Text.Json.Utf8JsonReader&amp; reader, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Search.Documents.Indexes.Models.KnowledgeBase.JsonModelCreateCore(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function JsonModelCreateCore (ByRef reader As Utf8JsonReader, options As ModelReaderWriterOptions) As KnowledgeBase" />
+      <MemberSignature Language="F#" Value="abstract member JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.Search.Documents.Indexes.Models.KnowledgeBase&#xA;override this.JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.Search.Documents.Indexes.Models.KnowledgeBase" Usage="knowledgeBase.JsonModelCreateCore (reader, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,6 +177,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -166,12 +203,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Azure.Search.Documents.Indexes.Models.KnowledgeSourceReference&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Gets the knowledge sources. </summary>
+        <summary> Knowledge sources referenced by this knowledge base. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -186,16 +224,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Azure.Search.Documents.Indexes.Models.KnowledgeBaseModel&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Contains configuration options on how to connect to AI models.
-            Please note <see cref="T:Azure.Search.Documents.Indexes.Models.KnowledgeBaseModel" /> is the base class. According to the scenario, a derived class of the base class might need to be assigned here, or this property needs to be casted to one of the possible derived classes.
-            The available derived classes include <see cref="T:Azure.Search.Documents.Indexes.Models.KnowledgeBaseAzureOpenAIModel" />.
-            </summary>
+        <summary> Contains configuration options on how to connect to AI models. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -210,13 +245,62 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The name of the knowledge knowledge base. </summary>
+        <summary> The name of the knowledge base. </summary>
         <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Azure.Search.Documents.Indexes.Models.KnowledgeBase (Azure.Response response);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class Azure.Search.Documents.Indexes.Models.KnowledgeBase op_Explicit(class Azure.Response response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Search.Documents.Indexes.Models.KnowledgeBase.op_Explicit(Azure.Response)~Azure.Search.Documents.Indexes.Models.KnowledgeBase" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Narrowing Operator CType (response As Response) As KnowledgeBase" />
+      <MemberSignature Language="F#" Value="static member op_Explicit : Azure.Response -&gt; Azure.Search.Documents.Indexes.Models.KnowledgeBase" Usage="Azure.Search.Documents.Indexes.Models.KnowledgeBase.op_Explicit response" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="Azure.Response" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="response"> The <see cref="T:Azure.Response" /> to deserialize the <see cref="T:Azure.Search.Documents.Indexes.Models.KnowledgeBase" /> from. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator Azure.Core.RequestContent (Azure.Search.Documents.Indexes.Models.KnowledgeBase knowledgeBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class Azure.Core.RequestContent op_Implicit(class Azure.Search.Documents.Indexes.Models.KnowledgeBase knowledgeBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Search.Documents.Indexes.Models.KnowledgeBase.op_Implicit(Azure.Search.Documents.Indexes.Models.KnowledgeBase)~Azure.Core.RequestContent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Widening Operator CType (knowledgeBase As KnowledgeBase) As RequestContent" />
+      <MemberSignature Language="F#" Value="static member op_Implicit : Azure.Search.Documents.Indexes.Models.KnowledgeBase -&gt; Azure.Core.RequestContent" Usage="Azure.Search.Documents.Indexes.Models.KnowledgeBase.op_Implicit knowledgeBase" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Core.RequestContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="knowledgeBase" Type="Azure.Search.Documents.Indexes.Models.KnowledgeBase" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="knowledgeBase"> The <see cref="T:Azure.Search.Documents.Indexes.Models.KnowledgeBase" /> to serialize into <see cref="T:Azure.Core.RequestContent" />. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -237,6 +321,56 @@
       <Docs>
         <summary> The output configuration for this retrieval. </summary>
         <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.Search.Documents.Indexes.Models.KnowledgeBase PersistableModelCreateCore (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.Search.Documents.Indexes.Models.KnowledgeBase PersistableModelCreateCore(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Search.Documents.Indexes.Models.KnowledgeBase.PersistableModelCreateCore(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelCreateCore (data As BinaryData, options As ModelReaderWriterOptions) As KnowledgeBase" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.Search.Documents.Indexes.Models.KnowledgeBase&#xA;override this.PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.Search.Documents.Indexes.Models.KnowledgeBase" Usage="knowledgeBase.PersistableModelCreateCore (data, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.BinaryData" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelWriteCore">
+      <MemberSignature Language="C#" Value="protected virtual BinaryData PersistableModelWriteCore (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.BinaryData PersistableModelWriteCore(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Search.Documents.Indexes.Models.KnowledgeBase.PersistableModelWriteCore(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelWriteCore (options As ModelReaderWriterOptions) As BinaryData" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData&#xA;override this.PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData" Usage="knowledgeBase.PersistableModelWriteCore options" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -297,6 +431,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeBase</ReturnType>
@@ -306,8 +441,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -329,6 +464,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -338,8 +474,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The JSON writer. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -360,6 +496,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeBase</ReturnType>
@@ -369,8 +506,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -392,6 +529,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -400,7 +538,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -421,6 +559,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
@@ -429,7 +568,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
