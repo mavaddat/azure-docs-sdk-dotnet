@@ -1,18 +1,16 @@
 <Type Name="IClientBuilder" FullName="System.ClientModel.Primitives.IClientBuilder">
-  <TypeSignature Language="C#" Value="public interface IClientBuilder : Microsoft.Extensions.Hosting.IHostApplicationBuilder" />
-  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract beforefieldinit IClientBuilder implements class Microsoft.Extensions.Hosting.IHostApplicationBuilder" />
+  <TypeSignature Language="C#" Value="public interface IClientBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract beforefieldinit IClientBuilder" />
   <TypeSignature Language="DocId" Value="T:System.ClientModel.Primitives.IClientBuilder" />
-  <TypeSignature Language="VB.NET" Value="Public Interface IClientBuilder&#xA;Implements IHostApplicationBuilder" />
-  <TypeSignature Language="F#" Value="type IClientBuilder = interface&#xA;    interface IHostApplicationBuilder" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IClientBuilder" />
+  <TypeSignature Language="F#" Value="type IClientBuilder = interface" />
   <AssemblyInfo>
     <AssemblyName>System.ClientModel</AssemblyName>
     <AssemblyVersion>1.9.0.0</AssemblyVersion>
     <AssemblyVersion>1.10.0.0</AssemblyVersion>
+    <AssemblyVersion>1.11.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
-    <Interface>
-      <InterfaceName>Microsoft.Extensions.Hosting.IHostApplicationBuilder</InterfaceName>
-    </Interface>
   </Interfaces>
   <Docs>
     <summary>
@@ -21,19 +19,49 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
-    <Member MemberName="PostConfigure">
-      <MemberSignature Language="C#" Value="public Microsoft.Extensions.Hosting.IHostApplicationBuilder PostConfigure (Action&lt;System.ClientModel.Primitives.ClientSettings&gt; configure);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Extensions.Hosting.IHostApplicationBuilder PostConfigure(class System.Action`1&lt;class System.ClientModel.Primitives.ClientSettings&gt; configure) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.ClientModel.Primitives.IClientBuilder.PostConfigure(System.Action{System.ClientModel.Primitives.ClientSettings})" />
-      <MemberSignature Language="VB.NET" Value="Public Function PostConfigure (configure As Action(Of ClientSettings)) As IHostApplicationBuilder" />
-      <MemberSignature Language="F#" Value="abstract member PostConfigure : Action&lt;System.ClientModel.Primitives.ClientSettings&gt; -&gt; Microsoft.Extensions.Hosting.IHostApplicationBuilder" Usage="iClientBuilder.PostConfigure configure" />
+    <Member MemberName="ConfigureCredential">
+      <MemberSignature Language="C#" Value="public System.ClientModel.Primitives.IClientBuilder ConfigureCredential (Action&lt;Microsoft.Extensions.Configuration.IConfigurationSection&gt; configureOverrides);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.Primitives.IClientBuilder ConfigureCredential(class System.Action`1&lt;class Microsoft.Extensions.Configuration.IConfigurationSection&gt; configureOverrides) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.Primitives.IClientBuilder.ConfigureCredential(System.Action{Microsoft.Extensions.Configuration.IConfigurationSection})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ConfigureCredential (configureOverrides As Action(Of IConfigurationSection)) As IClientBuilder" />
+      <MemberSignature Language="F#" Value="abstract member ConfigureCredential : Action&lt;Microsoft.Extensions.Configuration.IConfigurationSection&gt; -&gt; System.ClientModel.Primitives.IClientBuilder" Usage="iClientBuilder.ConfigureCredential configureOverrides" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ClientModel</AssemblyName>
-        <AssemblyVersion>1.10.0.0</AssemblyVersion>
+        <AssemblyVersion>1.11.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Microsoft.Extensions.Hosting.IHostApplicationBuilder</ReturnType>
+        <ReturnType>System.ClientModel.Primitives.IClientBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configureOverrides" Type="System.Action&lt;Microsoft.Extensions.Configuration.IConfigurationSection&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="configureOverrides">Callback that receives a writable
+            view of the credential section.</param>
+        <summary>
+            Adds a configuration action that mutates the <c>Credential</c>
+            configuration section before it is handed to the registered
+            <see cref="T:System.ClientModel.Primitives.CredentialResolver" /> chain. Use this to override values
+            such as <c>TenantId</c> or <c>ClientId</c> at registration time.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostConfigure">
+      <MemberSignature Language="C#" Value="public System.ClientModel.Primitives.IClientBuilder PostConfigure (Action&lt;System.ClientModel.Primitives.ClientSettings&gt; configure);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.Primitives.IClientBuilder PostConfigure(class System.Action`1&lt;class System.ClientModel.Primitives.ClientSettings&gt; configure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.Primitives.IClientBuilder.PostConfigure(System.Action{System.ClientModel.Primitives.ClientSettings})" />
+      <MemberSignature Language="VB.NET" Value="Public Function PostConfigure (configure As Action(Of ClientSettings)) As IClientBuilder" />
+      <MemberSignature Language="F#" Value="abstract member PostConfigure : Action&lt;System.ClientModel.Primitives.ClientSettings&gt; -&gt; System.ClientModel.Primitives.IClientBuilder" Usage="iClientBuilder.PostConfigure configure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.Primitives.IClientBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="configure" Type="System.Action&lt;System.ClientModel.Primitives.ClientSettings&gt;" />
