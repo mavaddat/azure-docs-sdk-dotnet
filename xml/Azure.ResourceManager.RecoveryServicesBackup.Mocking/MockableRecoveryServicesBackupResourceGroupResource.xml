@@ -11,13 +11,14 @@
     <AssemblyVersion>1.2.1.0</AssemblyVersion>
     <AssemblyVersion>1.3.0.0</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
+    <AssemblyVersion>1.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to ResourceGroupResource. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -30,10 +31,11 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Mocking.MockableRecoveryServicesBackupResourceGroupResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableRecoveryServicesBackupResourceGroupResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -47,6 +49,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
@@ -62,13 +65,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Triggers export of jobs specified by filters and returns an OperationID to track.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobsExport</description></item><item><term>Operation Id</term><description>Jobs_Export</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobsExport. </description></item><item><term> Operation Id. </term><description> Jobs_Export. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="ExportJobAsync">
@@ -81,6 +84,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
@@ -96,13 +100,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Triggers export of jobs specified by filters and returns an OperationID to track.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobsExport</description></item><item><term>Operation Id</term><description>Jobs_Export</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobsExport. </description></item><item><term> Operation Id. </term><description> Jobs_Export. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupEngine">
@@ -115,6 +119,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupEngineResource&gt;</ReturnType>
@@ -127,20 +132,20 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
+        <param name="vaultName"> The vaultName for the resource. </param>
         <param name="backupEngineName"> Name of the backup management server. </param>
         <param name="filter"> OData filter options. </param>
         <param name="skipToken"> skipToken Filter. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns backup management server registered to Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEngines/{backupEngineName}</description></item><item><term>Operation Id</term><description>BackupEngines_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupEngineResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEngines/{backupEngineName}. </description></item><item><term> Operation Id. </term><description> BackupEngines_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="vaultName" /> or <paramref name="backupEngineName" /> is null. </exception>
+          <paramref name="backupEngineName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="backupEngineName" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="backupEngineName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupEngineAsync">
@@ -153,6 +158,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupEngineResource&gt;&gt;</ReturnType>
@@ -165,20 +171,20 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
+        <param name="vaultName"> The vaultName for the resource. </param>
         <param name="backupEngineName"> Name of the backup management server. </param>
         <param name="filter"> OData filter options. </param>
         <param name="skipToken"> skipToken Filter. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns backup management server registered to Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEngines/{backupEngineName}</description></item><item><term>Operation Id</term><description>BackupEngines_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupEngineResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEngines/{backupEngineName}. </description></item><item><term> Operation Id. </term><description> BackupEngines_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="vaultName" /> or <paramref name="backupEngineName" /> is null. </exception>
+          <paramref name="backupEngineName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="backupEngineName" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="backupEngineName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupEngines">
@@ -191,6 +197,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupEngineCollection</ReturnType>
@@ -199,9 +206,9 @@
         <Parameter Name="vaultName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <summary> Gets a collection of BackupEngineResources in the ResourceGroupResource. </summary>
-        <returns> An object representing collection of BackupEngineResources and their operations over a BackupEngineResource. </returns>
+        <param name="vaultName"> The vaultName for the resource. </param>
+        <summary> Gets a collection of BackupEngines in the <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />. </summary>
+        <returns> An object representing collection of BackupEngines and their operations over a BackupEngineResource. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
@@ -219,6 +226,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupJobResource&gt;</ReturnType>
@@ -229,18 +237,18 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
+        <param name="vaultName"> The vaultName for the resource. </param>
         <param name="jobName"> Name of the job whose details are to be fetched. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets extended information associated with the job.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/{jobName}</description></item><item><term>Operation Id</term><description>JobDetails_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupJobResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/{jobName}. </description></item><item><term> Operation Id. </term><description> JobDetails_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="vaultName" /> or <paramref name="jobName" /> is null. </exception>
+          <paramref name="jobName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="jobName" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="jobName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupJobAsync">
@@ -253,6 +261,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupJobResource&gt;&gt;</ReturnType>
@@ -263,18 +272,18 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
+        <param name="vaultName"> The vaultName for the resource. </param>
         <param name="jobName"> Name of the job whose details are to be fetched. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets extended information associated with the job.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/{jobName}</description></item><item><term>Operation Id</term><description>JobDetails_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupJobResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/{jobName}. </description></item><item><term> Operation Id. </term><description> JobDetails_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="vaultName" /> or <paramref name="jobName" /> is null. </exception>
+          <paramref name="jobName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="jobName" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="jobName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupJobs">
@@ -287,6 +296,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupJobCollection</ReturnType>
@@ -295,9 +305,9 @@
         <Parameter Name="vaultName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <summary> Gets a collection of BackupJobResources in the ResourceGroupResource. </summary>
-        <returns> An object representing collection of BackupJobResources and their operations over a BackupJobResource. </returns>
+        <param name="vaultName"> The vaultName for the resource. </param>
+        <summary> Gets a collection of BackupJobs in the <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />. </summary>
+        <returns> An object representing collection of BackupJobs and their operations over a BackupJobResource. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
@@ -315,6 +325,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupPrivateEndpointConnectionResource&gt;</ReturnType>
@@ -325,12 +336,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
+        <param name="vaultName"> The name of the VaultResource. </param>
         <param name="privateEndpointConnectionName"> The name of the private endpoint connection. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get Private Endpoint Connection. This call is made by Backup Admin.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/privateEndpointConnections/{privateEndpointConnectionName}</description></item><item><term>Operation Id</term><description>PrivateEndpointConnection_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupPrivateEndpointConnectionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/privateEndpointConnections/{privateEndpointConnectionName}. </description></item><item><term> Operation Id. </term><description> PrivateEndpointConnectionResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -349,6 +360,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupPrivateEndpointConnectionResource&gt;&gt;</ReturnType>
@@ -359,12 +371,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
+        <param name="vaultName"> The name of the VaultResource. </param>
         <param name="privateEndpointConnectionName"> The name of the private endpoint connection. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get Private Endpoint Connection. This call is made by Backup Admin.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/privateEndpointConnections/{privateEndpointConnectionName}</description></item><item><term>Operation Id</term><description>PrivateEndpointConnection_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupPrivateEndpointConnectionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/privateEndpointConnections/{privateEndpointConnectionName}. </description></item><item><term> Operation Id. </term><description> PrivateEndpointConnectionResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -383,14 +395,15 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupPrivateEndpointConnectionCollection</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of BackupPrivateEndpointConnectionResources in the ResourceGroupResource. </summary>
-        <returns> An object representing collection of BackupPrivateEndpointConnectionResources and their operations over a BackupPrivateEndpointConnectionResource. </returns>
+        <summary> Gets a collection of BackupPrivateEndpointConnections in the <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />. </summary>
+        <returns> An object representing collection of BackupPrivateEndpointConnections and their operations over a BackupPrivateEndpointConnectionResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -404,6 +417,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.WorkloadProtectableItemResource&gt;</ReturnType>
@@ -422,13 +436,13 @@
         <summary>
             Provides a pageable list of protectable objects within your subscription according to the query filter and the
             pagination parameters.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectableItems</description></item><item><term>Operation Id</term><description>BackupProtectableItems_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectableItems. </description></item><item><term> Operation Id. </term><description> BackupProtectableItems_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.WorkloadProtectableItemResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectableItemsAsync">
@@ -441,6 +455,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.WorkloadProtectableItemResource&gt;</ReturnType>
@@ -459,13 +474,13 @@
         <summary>
             Provides a pageable list of protectable objects within your subscription according to the query filter and the
             pagination parameters.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectableItems</description></item><item><term>Operation Id</term><description>BackupProtectableItems_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.WorkloadProtectableItemResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectableItems. </description></item><item><term> Operation Id. </term><description> BackupProtectableItems_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.WorkloadProtectableItemResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectedItems">
@@ -478,6 +493,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectedItemResource&gt;</ReturnType>
@@ -495,13 +511,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Provides a pageable list of all items that are backed up within a vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectedItems</description></item><item><term>Operation Id</term><description>BackupProtectedItems_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectedItems. </description></item><item><term> Operation Id. </term><description> BackupProtectedItems_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectedItemResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectedItemsAsync">
@@ -514,6 +530,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectedItemResource&gt;</ReturnType>
@@ -531,13 +548,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Provides a pageable list of all items that are backed up within a vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectedItems</description></item><item><term>Operation Id</term><description>BackupProtectedItems_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectedItemResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectedItems. </description></item><item><term> Operation Id. </term><description> BackupProtectedItems_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectedItemResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectionContainer">
@@ -550,6 +567,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource&gt;</ReturnType>
@@ -561,13 +579,13 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="fabricName"> Name of the fabric where the container belongs. </param>
+        <param name="vaultName"> The name of the VaultResource. </param>
+        <param name="fabricName"> The name of the BackupFabricResource. </param>
         <param name="containerName"> Name of the container whose details need to be fetched. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets details of the specific container registered to your Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}</description></item><item><term>Operation Id</term><description>ProtectionContainers_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}. </description></item><item><term> Operation Id. </term><description> ProtectionContainers_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -586,6 +604,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource&gt;&gt;</ReturnType>
@@ -597,13 +616,13 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="fabricName"> Name of the fabric where the container belongs. </param>
+        <param name="vaultName"> The name of the VaultResource. </param>
+        <param name="fabricName"> The name of the BackupFabricResource. </param>
         <param name="containerName"> Name of the container whose details need to be fetched. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets details of the specific container registered to your Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}</description></item><item><term>Operation Id</term><description>ProtectionContainers_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}. </description></item><item><term> Operation Id. </term><description> ProtectionContainers_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -622,14 +641,15 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerCollection</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of BackupProtectionContainerResources in the ResourceGroupResource. </summary>
-        <returns> An object representing collection of BackupProtectionContainerResources and their operations over a BackupProtectionContainerResource. </returns>
+        <summary> Gets a collection of BackupProtectionContainers in the <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />. </summary>
+        <returns> An object representing collection of BackupProtectionContainers and their operations over a BackupProtectionContainerResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -643,6 +663,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource&gt;</ReturnType>
@@ -658,13 +679,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Lists the containers registered to Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectionContainers</description></item><item><term>Operation Id</term><description>BackupProtectionContainers_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectionContainers. </description></item><item><term> Operation Id. </term><description> BackupProtectionContainers_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectionContainersAsync">
@@ -677,6 +698,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource&gt;</ReturnType>
@@ -692,13 +714,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Lists the containers registered to Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectionContainers</description></item><item><term>Operation Id</term><description>BackupProtectionContainers_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectionContainers. </description></item><item><term> Operation Id. </term><description> BackupProtectionContainers_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectionIntent">
@@ -711,6 +733,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource&gt;</ReturnType>
@@ -722,14 +745,14 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="fabricName"> Fabric name associated with the backed up item. </param>
+        <param name="vaultName"> The name of the VaultResource. </param>
+        <param name="fabricName"> The name of the BackupFabricResource. </param>
         <param name="intentObjectName"> Backed up item name whose details are to be fetched. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Provides the details of the protection intent up item. This is an asynchronous operation. To know the status of the operation,
             call the GetItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/backupProtectionIntent/{intentObjectName}</description></item><item><term>Operation Id</term><description>ProtectionIntent_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/backupProtectionIntent/{intentObjectName}. </description></item><item><term> Operation Id. </term><description> ProtectionIntentResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -748,6 +771,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource&gt;&gt;</ReturnType>
@@ -759,14 +783,14 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="fabricName"> Fabric name associated with the backed up item. </param>
+        <param name="vaultName"> The name of the VaultResource. </param>
+        <param name="fabricName"> The name of the BackupFabricResource. </param>
         <param name="intentObjectName"> Backed up item name whose details are to be fetched. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Provides the details of the protection intent up item. This is an asynchronous operation. To know the status of the operation,
             call the GetItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/backupProtectionIntent/{intentObjectName}</description></item><item><term>Operation Id</term><description>ProtectionIntent_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/backupProtectionIntent/{intentObjectName}. </description></item><item><term> Operation Id. </term><description> ProtectionIntentResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -785,14 +809,15 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentCollection</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of BackupProtectionIntentResources in the ResourceGroupResource. </summary>
-        <returns> An object representing collection of BackupProtectionIntentResources and their operations over a BackupProtectionIntentResource. </returns>
+        <summary> Gets a collection of BackupProtectionIntents in the <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />. </summary>
+        <returns> An object representing collection of BackupProtectionIntents and their operations over a BackupProtectionIntentResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -806,6 +831,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource&gt;</ReturnType>
@@ -823,13 +849,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Provides a pageable list of all intents that are present within a vault.
-            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectionIntents</description></item><item><term>Operation Id</term><description>BackupProtectionIntent_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectionIntents. </description></item><item><term> Operation Id. </term><description> BackupProtectionIntent_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectionIntentsAsync">
@@ -842,6 +868,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource&gt;</ReturnType>
@@ -859,13 +886,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Provides a pageable list of all intents that are present within a vault.
-            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectionIntents</description></item><item><term>Operation Id</term><description>BackupProtectionIntent_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectionIntents. </description></item><item><term> Operation Id. </term><description> BackupProtectionIntent_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionIntentResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectionPolicies">
@@ -878,6 +905,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionPolicyCollection</ReturnType>
@@ -886,9 +914,9 @@
         <Parameter Name="vaultName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <summary> Gets a collection of BackupProtectionPolicyResources in the ResourceGroupResource. </summary>
-        <returns> An object representing collection of BackupProtectionPolicyResources and their operations over a BackupProtectionPolicyResource. </returns>
+        <param name="vaultName"> The vaultName for the resource. </param>
+        <summary> Gets a collection of BackupProtectionPolicies in the <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />. </summary>
+        <returns> An object representing collection of BackupProtectionPolicies and their operations over a BackupProtectionPolicyResource. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
@@ -906,6 +934,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionPolicyResource&gt;</ReturnType>
@@ -916,19 +945,19 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
+        <param name="vaultName"> The vaultName for the resource. </param>
         <param name="policyName"> Backup policy information to be fetched. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Provides the details of the backup policies associated to Recovery Services Vault. This is an asynchronous
             operation. Status of the operation can be fetched using GetPolicyOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}</description></item><item><term>Operation Id</term><description>ProtectionPolicies_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionPolicyResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}. </description></item><item><term> Operation Id. </term><description> ProtectionPolicies_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="vaultName" /> or <paramref name="policyName" /> is null. </exception>
+          <paramref name="policyName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="policyName" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="policyName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupProtectionPolicyAsync">
@@ -941,6 +970,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionPolicyResource&gt;&gt;</ReturnType>
@@ -951,19 +981,42 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
+        <param name="vaultName"> The vaultName for the resource. </param>
         <param name="policyName"> Backup policy information to be fetched. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Provides the details of the backup policies associated to Recovery Services Vault. This is an asynchronous
             operation. Status of the operation can be fetched using GetPolicyOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}</description></item><item><term>Operation Id</term><description>ProtectionPolicies_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionPolicyResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}. </description></item><item><term> Operation Id. </term><description> ProtectionPolicies_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="vaultName" /> or <paramref name="policyName" /> is null. </exception>
+          <paramref name="policyName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="policyName" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="policyName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBackupResourceConfig">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource GetBackupResourceConfig ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource GetBackupResourceConfig() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.RecoveryServicesBackup.Mocking.MockableRecoveryServicesBackupResourceGroupResource.GetBackupResourceConfig" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetBackupResourceConfig () As BackupResourceConfigResource" />
+      <MemberSignature Language="F#" Value="abstract member GetBackupResourceConfig : unit -&gt; Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource&#xA;override this.GetBackupResourceConfig : unit -&gt; Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource" Usage="mockableRecoveryServicesBackupResourceGroupResource.GetBackupResourceConfig " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Fetches resource storage config.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupstorageconfig/vaultstorageconfig. </description></item><item><term> Operation Id. </term><description> BackupResourceStorageConfigsNonCRR_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource" />. </description></item></list></summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource" /> object. </returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetBackupResourceConfig">
@@ -976,7 +1029,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource&gt;</ReturnType>
       </ReturnValue>
@@ -989,7 +1049,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Fetches resource storage config.
-            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupstorageconfig/vaultstorageconfig</description></item><item><term>Operation Id</term><description>BackupResourceStorageConfigsNonCRR_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource" /></description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupstorageconfig/vaultstorageconfig</description></item><item><term>Operation Id</term><description>BackupResourceStorageConfigsNonCRR_Get</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource" /></description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -1008,7 +1068,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -1021,7 +1088,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Fetches resource storage config.
-            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupstorageconfig/vaultstorageconfig</description></item><item><term>Operation Id</term><description>BackupResourceStorageConfigsNonCRR_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource" /></description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupstorageconfig/vaultstorageconfig</description></item><item><term>Operation Id</term><description>BackupResourceStorageConfigsNonCRR_Get</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigResource" /></description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -1040,7 +1107,18 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This collection class is retained for backward compatibility. The BackupResourceConfigResource is a singleton resource and should not have a collection class.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This collection class is retained for backward compatibility. The BackupResourceConfigResource is a singleton resource and should not have a collection class.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupResourceConfigCollection</ReturnType>
       </ReturnValue>
@@ -1048,6 +1126,29 @@
       <Docs>
         <summary> Gets a collection of BackupResourceConfigResources in the ResourceGroupResource. </summary>
         <returns> An object representing collection of BackupResourceConfigResources and their operations over a BackupResourceConfigResource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBackupResourceEncryptionConfigExtended">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource GetBackupResourceEncryptionConfigExtended ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource GetBackupResourceEncryptionConfigExtended() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.RecoveryServicesBackup.Mocking.MockableRecoveryServicesBackupResourceGroupResource.GetBackupResourceEncryptionConfigExtended" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetBackupResourceEncryptionConfigExtended () As BackupResourceEncryptionConfigExtendedResource" />
+      <MemberSignature Language="F#" Value="abstract member GetBackupResourceEncryptionConfigExtended : unit -&gt; Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource&#xA;override this.GetBackupResourceEncryptionConfigExtended : unit -&gt; Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource" Usage="mockableRecoveryServicesBackupResourceGroupResource.GetBackupResourceEncryptionConfigExtended " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Fetches Vault Encryption config.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEncryptionConfigs/backupResourceEncryptionConfig. </description></item><item><term> Operation Id. </term><description> BackupResourceEncryptionConfigs_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource" />. </description></item></list></summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1061,7 +1162,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource&gt;</ReturnType>
       </ReturnValue>
@@ -1074,7 +1182,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Fetches Vault Encryption config.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEncryptionConfigs/backupResourceEncryptionConfig</description></item><item><term>Operation Id</term><description>BackupResourceEncryptionConfigs_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource" /></description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEncryptionConfigs/backupResourceEncryptionConfig</description></item><item><term>Operation Id</term><description>BackupResourceEncryptionConfigs_Get</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource" /></description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -1093,7 +1201,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -1106,7 +1221,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Fetches Vault Encryption config.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEncryptionConfigs/backupResourceEncryptionConfig</description></item><item><term>Operation Id</term><description>BackupResourceEncryptionConfigs_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource" /></description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEncryptionConfigs/backupResourceEncryptionConfig</description></item><item><term>Operation Id</term><description>BackupResourceEncryptionConfigs_Get</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedResource" /></description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -1125,7 +1240,18 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This collection class is retained for backward compatibility. The BackupResourceEncryptionConfigExtendedResource is a singleton resource and should not have a collection class.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This collection class is retained for backward compatibility. The BackupResourceEncryptionConfigExtendedResource is a singleton resource and should not have a collection class.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupResourceEncryptionConfigExtendedCollection</ReturnType>
       </ReturnValue>
@@ -1133,6 +1259,29 @@
       <Docs>
         <summary> Gets a collection of BackupResourceEncryptionConfigExtendedResources in the ResourceGroupResource. </summary>
         <returns> An object representing collection of BackupResourceEncryptionConfigExtendedResources and their operations over a BackupResourceEncryptionConfigExtendedResource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBackupResourceVaultConfig">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource GetBackupResourceVaultConfig ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource GetBackupResourceVaultConfig() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.RecoveryServicesBackup.Mocking.MockableRecoveryServicesBackupResourceGroupResource.GetBackupResourceVaultConfig" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetBackupResourceVaultConfig () As BackupResourceVaultConfigResource" />
+      <MemberSignature Language="F#" Value="abstract member GetBackupResourceVaultConfig : unit -&gt; Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource&#xA;override this.GetBackupResourceVaultConfig : unit -&gt; Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource" Usage="mockableRecoveryServicesBackupResourceGroupResource.GetBackupResourceVaultConfig " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Fetches resource vault config.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig. </description></item><item><term> Operation Id. </term><description> BackupResourceVaultConfigs_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource" />. </description></item></list></summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1146,7 +1295,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource&gt;</ReturnType>
       </ReturnValue>
@@ -1159,7 +1315,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Fetches resource vault config.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig</description></item><item><term>Operation Id</term><description>BackupResourceVaultConfigs_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource" /></description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig</description></item><item><term>Operation Id</term><description>BackupResourceVaultConfigs_Get</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource" /></description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -1178,7 +1334,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -1191,7 +1354,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Fetches resource vault config.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig</description></item><item><term>Operation Id</term><description>BackupResourceVaultConfigs_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource" /></description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig</description></item><item><term>Operation Id</term><description>BackupResourceVaultConfigs_Get</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigResource" /></description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -1210,7 +1373,18 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This collection class is retained for backward compatibility. The BackupResourceVaultConfigResources is a singleton resource and should not have a collection class.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This collection class is retained for backward compatibility. The BackupResourceVaultConfigResources is a singleton resource and should not have a collection class.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupResourceVaultConfigCollection</ReturnType>
       </ReturnValue>
@@ -1231,6 +1405,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.BackupManagementUsage&gt;</ReturnType>
@@ -1248,13 +1423,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Fetches the backup management usage summaries of the vault.
-            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupUsageSummaries</description></item><item><term>Operation Id</term><description>BackupUsageSummaries_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupUsageSummaries. </description></item><item><term> Operation Id. </term><description> BackupUsageSummaries_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.BackupManagementUsage" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetBackupUsageSummariesAsync">
@@ -1267,6 +1442,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.BackupManagementUsage&gt;</ReturnType>
@@ -1284,13 +1460,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Fetches the backup management usage summaries of the vault.
-            <list type="bullet"><item><term>Request Path</term><description>/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupUsageSummaries</description></item><item><term>Operation Id</term><description>BackupUsageSummaries_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.BackupManagementUsage" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupUsageSummaries. </description></item><item><term> Operation Id. </term><description> BackupUsageSummaries_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.BackupManagementUsage" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetGetTieringCostOperationResult">
@@ -1303,6 +1479,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.TieringCostInfo&gt;</ReturnType>
@@ -1314,17 +1491,17 @@
       </Parameters>
       <Docs>
         <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="operationId"> The <see cref="T:System.String" /> to use. </param>
+        <param name="operationId" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the result of async operation for tiering cost
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupTieringCost/default/operationResults/{operationId}</description></item><item><term>Operation Id</term><description>GetTieringCostOperationResult_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupTieringCost/default/operationResults/{operationId}. </description></item><item><term> Operation Id. </term><description> GetTieringCostOperationResult_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> or <paramref name="operationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> or <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetGetTieringCostOperationResultAsync">
@@ -1337,6 +1514,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.TieringCostInfo&gt;&gt;</ReturnType>
@@ -1348,17 +1526,17 @@
       </Parameters>
       <Docs>
         <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="operationId"> The <see cref="T:System.String" /> to use. </param>
+        <param name="operationId" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the result of async operation for tiering cost
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupTieringCost/default/operationResults/{operationId}</description></item><item><term>Operation Id</term><description>GetTieringCostOperationResult_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupTieringCost/default/operationResults/{operationId}. </description></item><item><term> Operation Id. </term><description> GetTieringCostOperationResult_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> or <paramref name="operationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> or <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetProtectableContainers">
@@ -1371,6 +1549,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.ProtectableContainerResource&gt;</ReturnType>
@@ -1383,18 +1562,18 @@
       </Parameters>
       <Docs>
         <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="fabricName"> The <see cref="T:System.String" /> to use. </param>
+        <param name="fabricName" />
         <param name="filter"> OData filter options. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Lists the containers that can be registered to Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectableContainers</description></item><item><term>Operation Id</term><description>ProtectableContainers_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectableContainers. </description></item><item><term> Operation Id. </term><description> ProtectableContainers_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.ProtectableContainerResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="fabricName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> or <paramref name="fabricName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> or <paramref name="fabricName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetProtectableContainersAsync">
@@ -1407,6 +1586,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.ProtectableContainerResource&gt;</ReturnType>
@@ -1419,18 +1599,18 @@
       </Parameters>
       <Docs>
         <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="fabricName"> The <see cref="T:System.String" /> to use. </param>
+        <param name="fabricName" />
         <param name="filter"> OData filter options. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Lists the containers that can be registered to Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectableContainers</description></item><item><term>Operation Id</term><description>ProtectableContainers_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.ProtectableContainerResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectableContainers. </description></item><item><term> Operation Id. </term><description> ProtectableContainers_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.Models.ProtectableContainerResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="fabricName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> or <paramref name="fabricName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> or <paramref name="fabricName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetResourceGuardProxies">
@@ -1443,6 +1623,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.ResourceGuardProxyCollection</ReturnType>
@@ -1451,9 +1632,9 @@
         <Parameter Name="vaultName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <summary> Gets a collection of ResourceGuardProxyResources in the ResourceGroupResource. </summary>
-        <returns> An object representing collection of ResourceGuardProxyResources and their operations over a ResourceGuardProxyResource. </returns>
+        <param name="vaultName"> The vaultName for the resource. </param>
+        <summary> Gets a collection of ResourceGuardProxies in the <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />. </summary>
+        <returns> An object representing collection of ResourceGuardProxies and their operations over a ResourceGuardProxyResource. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
@@ -1471,6 +1652,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.ResourceGuardProxyResource&gt;</ReturnType>
@@ -1481,18 +1663,18 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="resourceGuardProxyName"> The <see cref="T:System.String" /> to use. </param>
+        <param name="vaultName"> The vaultName for the resource. </param>
+        <param name="resourceGuardProxyName" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns ResourceGuardProxy under vault and with the name referenced in request
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupResourceGuardProxies/{resourceGuardProxyName}</description></item><item><term>Operation Id</term><description>ResourceGuardProxy_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.ResourceGuardProxyResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupResourceGuardProxies/{resourceGuardProxyName}. </description></item><item><term> Operation Id. </term><description> ResourceGuardProxy_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="vaultName" /> or <paramref name="resourceGuardProxyName" /> is null. </exception>
+          <paramref name="resourceGuardProxyName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="resourceGuardProxyName" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="resourceGuardProxyName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetResourceGuardProxyAsync">
@@ -1505,6 +1687,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.ResourceGuardProxyResource&gt;&gt;</ReturnType>
@@ -1515,18 +1698,18 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="vaultName"> The name of the recovery services vault. </param>
-        <param name="resourceGuardProxyName"> The <see cref="T:System.String" /> to use. </param>
+        <param name="vaultName"> The vaultName for the resource. </param>
+        <param name="resourceGuardProxyName" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns ResourceGuardProxy under vault and with the name referenced in request
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupResourceGuardProxies/{resourceGuardProxyName}</description></item><item><term>Operation Id</term><description>ResourceGuardProxy_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.ResourceGuardProxyResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupResourceGuardProxies/{resourceGuardProxyName}. </description></item><item><term> Operation Id. </term><description> ResourceGuardProxy_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="vaultName" /> or <paramref name="resourceGuardProxyName" /> is null. </exception>
+          <paramref name="resourceGuardProxyName" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="resourceGuardProxyName" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="resourceGuardProxyName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetSecurityPin">
@@ -1539,6 +1722,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1560,7 +1744,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get the security PIN.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupSecurityPIN</description></item><item><term>Operation Id</term><description>SecurityPINs_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupSecurityPIN</description></item><item><term>Operation Id</term><description>SecurityPINs_Get</description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -1579,6 +1763,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.TokenInformation&gt;</ReturnType>
@@ -1592,17 +1777,17 @@
       <Docs>
         <param name="vaultName"> The name of the recovery services vault. </param>
         <param name="content"> security pin request. </param>
-        <param name="xMsAuthorizationAuxiliary"> The <see cref="T:System.String" /> to use. </param>
+        <param name="xMsAuthorizationAuxiliary" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get the security PIN.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupSecurityPIN</description></item><item><term>Operation Id</term><description>SecurityPINs_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupSecurityPIN. </description></item><item><term> Operation Id. </term><description> SecurityPINs_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetSecurityPinAsync">
@@ -1615,6 +1800,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1636,7 +1822,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get the security PIN.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupSecurityPIN</description></item><item><term>Operation Id</term><description>SecurityPINs_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupSecurityPIN</description></item><item><term>Operation Id</term><description>SecurityPINs_Get</description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -1655,6 +1841,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.TokenInformation&gt;&gt;</ReturnType>
@@ -1668,17 +1855,17 @@
       <Docs>
         <param name="vaultName"> The name of the recovery services vault. </param>
         <param name="content"> security pin request. </param>
-        <param name="xMsAuthorizationAuxiliary"> The <see cref="T:System.String" /> to use. </param>
+        <param name="xMsAuthorizationAuxiliary" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get the security PIN.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupSecurityPIN</description></item><item><term>Operation Id</term><description>SecurityPINs_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupSecurityPIN. </description></item><item><term> Operation Id. </term><description> SecurityPINs_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetSoftDeletedProtectionContainers">
@@ -1691,6 +1878,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource&gt;</ReturnType>
@@ -1706,13 +1894,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Lists the soft deleted containers registered to Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupDeletedProtectionContainers</description></item><item><term>Operation Id</term><description>DeletedProtectionContainers_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupDeletedProtectionContainers. </description></item><item><term> Operation Id. </term><description> DeletedProtectionContainers_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetSoftDeletedProtectionContainersAsync">
@@ -1725,6 +1913,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource&gt;</ReturnType>
@@ -1740,13 +1929,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Lists the soft deleted containers registered to Recovery Services Vault.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupDeletedProtectionContainers</description></item><item><term>Operation Id</term><description>DeletedProtectionContainers_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupDeletedProtectionContainers. </description></item><item><term> Operation Id. </term><description> DeletedProtectionContainers_List. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="PostFetchTieringCost">
@@ -1759,6 +1948,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.TieringCostInfo&gt;</ReturnType>
@@ -1778,13 +1968,13 @@
         <summary>
             Provides the details of the tiering related sizes and cost.
             Status of the operation can be fetched using GetTieringCostOperationStatus API and result using GetTieringCostOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupTieringCost/default/fetchTieringCost</description></item><item><term>Operation Id</term><description>FetchTieringCost_Post</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupTieringCost/default/fetchTieringCost. </description></item><item><term> Operation Id. </term><description> FetchTieringCost_Post. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="PostFetchTieringCostAsync">
@@ -1797,6 +1987,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.RecoveryServicesBackup.Models.TieringCostInfo&gt;&gt;</ReturnType>
@@ -1816,13 +2007,13 @@
         <summary>
             Provides the details of the tiering related sizes and cost.
             Status of the operation can be fetched using GetTieringCostOperationStatus API and result using GetTieringCostOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupTieringCost/default/fetchTieringCost</description></item><item><term>Operation Id</term><description>FetchTieringCost_Post</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupTieringCost/default/fetchTieringCost. </description></item><item><term> Operation Id. </term><description> FetchTieringCost_Post. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="RefreshProtectionContainer">
@@ -1835,6 +2026,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
@@ -1853,13 +2045,13 @@
         <summary>
             Discovers all the containers in the subscription that can be backed up to Recovery Services Vault. This is an
             asynchronous operation. To know the status of the operation, call GetRefreshOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers</description></item><item><term>Operation Id</term><description>ProtectionContainers_Refresh</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers. </description></item><item><term> Operation Id. </term><description> ProtectionContainersOperationGroup_Refresh. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="fabricName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> or <paramref name="fabricName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> or <paramref name="fabricName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="RefreshProtectionContainerAsync">
@@ -1872,6 +2064,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
@@ -1890,13 +2083,13 @@
         <summary>
             Discovers all the containers in the subscription that can be backed up to Recovery Services Vault. This is an
             asynchronous operation. To know the status of the operation, call GetRefreshOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers</description></item><item><term>Operation Id</term><description>ProtectionContainers_Refresh</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectionContainerResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers. </description></item><item><term> Operation Id. </term><description> ProtectionContainersOperationGroup_Refresh. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="vaultName" /> or <paramref name="fabricName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="vaultName" /> or <paramref name="fabricName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="vaultName" /> or <paramref name="fabricName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
   </Members>

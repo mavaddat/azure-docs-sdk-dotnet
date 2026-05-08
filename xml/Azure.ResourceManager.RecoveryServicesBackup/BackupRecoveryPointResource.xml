@@ -13,6 +13,7 @@
     <AssemblyVersion>1.2.1.0</AssemblyVersion>
     <AssemblyVersion>1.3.0.0</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
+    <AssemblyVersion>1.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
@@ -30,10 +31,9 @@
   </Interfaces>
   <Docs>
     <summary>
-            A Class representing a BackupRecoveryPoint along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetBackupRecoveryPointResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectedItemResource" /> using the GetBackupRecoveryPoint method.
+            A class representing a BackupRecoveryPoint along with the instance operations that can be performed on it.
+            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" /> from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetResource method.
+            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupProtectedItemResource" /> using the GetBackupRecoveryPoints method.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -47,10 +47,11 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of BackupRecoveryPointResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,6 +65,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Core.ResourceIdentifier</ReturnType>
@@ -85,7 +87,7 @@
         <param name="containerName"> The containerName. </param>
         <param name="protectedItemName"> The protectedItemName. </param>
         <param name="recoveryPointId"> The recoveryPointId. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" /> instance. </summary>
+        <summary> Generate the resource identifier for this resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -100,6 +102,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointData</ReturnType>
@@ -121,6 +124,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;</ReturnType>
@@ -133,7 +137,7 @@
         <summary>
             Provides the information of the backed up data identified using RecoveryPointID. This is an asynchronous operation.
             To know the status of the operation, call the GetProtectedItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}</description></item><item><term>Operation Id</term><description>RecoveryPoints_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}. </description></item><item><term> Operation Id. </term><description> RecoveryPoints_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -148,6 +152,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;&gt;</ReturnType>
@@ -160,7 +165,7 @@
         <summary>
             Provides the information of the backed up data identified using RecoveryPointID. This is an asynchronous operation.
             To know the status of the operation, call the GetProtectedItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}</description></item><item><term>Operation Id</term><description>RecoveryPoints_Get</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}. </description></item><item><term> Operation Id. </term><description> RecoveryPoints_Get. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -175,6 +180,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -195,6 +201,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
@@ -211,7 +218,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Move recovery point from one datastore to another store.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/move</description></item><item><term>Operation Id</term><description>MoveRecoveryPoint</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/move. </description></item><item><term> Operation Id. </term><description> RecoveryPoints_MoveRecoveryPoint. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -228,6 +235,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
@@ -244,7 +252,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Move recovery point from one datastore to another store.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/move</description></item><item><term>Operation Id</term><description>MoveRecoveryPoint</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/move. </description></item><item><term> Operation Id. </term><description> RecoveryPoints_MoveRecoveryPoint. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -261,6 +269,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
@@ -276,7 +285,7 @@
             Provisions a script which invokes an iSCSI connection to the backup data. Executing this script opens a file
             explorer displaying all the recoverable files and folders. This is an asynchronous operation. To know the status of
             provisioning, call GetProtectedItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/provisionInstantItemRecovery</description></item><item><term>Operation Id</term><description>ItemLevelRecoveryConnections_Provision</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/provisionInstantItemRecovery. </description></item><item><term> Operation Id. </term><description> ItemLevelRecoveryConnections_Provision. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -293,6 +302,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
@@ -308,7 +318,7 @@
             Provisions a script which invokes an iSCSI connection to the backup data. Executing this script opens a file
             explorer displaying all the recoverable files and folders. This is an asynchronous operation. To know the status of
             provisioning, call GetProtectedItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/provisionInstantItemRecovery</description></item><item><term>Operation Id</term><description>ItemLevelRecoveryConnections_Provision</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/provisionInstantItemRecovery. </description></item><item><term> Operation Id. </term><description> ItemLevelRecoveryConnections_Provision. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -325,6 +335,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Core.ResourceType</ReturnType>
@@ -344,6 +355,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
@@ -356,7 +368,7 @@
         <summary>
             Revokes an iSCSI connection which can be used to download a script. Executing this script opens a file explorer
             displaying all recoverable files and folders. This is an asynchronous operation.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/revokeInstantItemRecovery</description></item><item><term>Operation Id</term><description>ItemLevelRecoveryConnections_Revoke</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/revokeInstantItemRecovery. </description></item><item><term> Operation Id. </term><description> ItemLevelRecoveryConnections_Revoke. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -371,6 +383,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
@@ -383,7 +396,7 @@
         <summary>
             Revokes an iSCSI connection which can be used to download a script. Executing this script opens a file explorer
             displaying all recoverable files and folders. This is an asynchronous operation.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/revokeInstantItemRecovery</description></item><item><term>Operation Id</term><description>ItemLevelRecoveryConnections_Revoke</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/revokeInstantItemRecovery. </description></item><item><term> Operation Id. </term><description> ItemLevelRecoveryConnections_Revoke. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -401,6 +414,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointData</ReturnType>
@@ -410,8 +424,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The reader for deserializing the model. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -433,6 +447,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -442,8 +457,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The writer to serialize the model to. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -464,6 +479,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointData</ReturnType>
@@ -473,8 +489,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The binary data to be processed. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -496,6 +512,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -504,7 +521,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -525,6 +542,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
@@ -533,7 +551,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -552,6 +570,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -575,7 +594,7 @@
         <summary>
             Restores the specified backed up data. This is an asynchronous operation. To know the status of this API call, use
             GetProtectedItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore</description></item><item><term>Operation Id</term><description>Restores_Trigger</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore</description></item><item><term>Operation Id</term><description>Restores_Trigger</description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -592,6 +611,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
@@ -606,12 +626,12 @@
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="content"> resource restore request. </param>
-        <param name="xMsAuthorizationAuxiliary"> The <see cref="T:System.String" /> to use. </param>
+        <param name="xMsAuthorizationAuxiliary" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Restores the specified backed up data. This is an asynchronous operation. To know the status of this API call, use
             GetProtectedItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore</description></item><item><term>Operation Id</term><description>Restores_Trigger</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore. </description></item><item><term> Operation Id. </term><description> Restores_Trigger. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -628,6 +648,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -651,7 +672,7 @@
         <summary>
             Restores the specified backed up data. This is an asynchronous operation. To know the status of this API call, use
             GetProtectedItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore</description></item><item><term>Operation Id</term><description>Restores_Trigger</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore</description></item><item><term>Operation Id</term><description>Restores_Trigger</description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -668,6 +689,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
@@ -682,16 +704,76 @@
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="content"> resource restore request. </param>
-        <param name="xMsAuthorizationAuxiliary"> The <see cref="T:System.String" /> to use. </param>
+        <param name="xMsAuthorizationAuxiliary" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Restores the specified backed up data. This is an asynchronous operation. To know the status of this API call, use
             GetProtectedItemOperationResult API.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore</description></item><item><term>Operation Id</term><description>Restores_Trigger</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore. </description></item><item><term> Operation Id. </term><description> Restores_Trigger. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="content" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt; Update (Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch patch, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt; Update(class Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch patch, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource.Update(Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Update (patch As BackupRecoveryPointPatch, Optional cancellationToken As CancellationToken = Nothing) As Response(Of BackupRecoveryPointResource)" />
+      <MemberSignature Language="F#" Value="abstract member Update : Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;&#xA;override this.Update : Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;" Usage="backupRecoveryPointResource.Update (patch, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patch" Type="Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="patch"> Request body for operation. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            UpdateRecoveryPoint to update recovery point for given RecoveryPointID.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}. </description></item><item><term> Operation Id. </term><description> RecoveryPoints_Update. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="patch" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;&gt; UpdateAsync (Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch patch, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;&gt; UpdateAsync(class Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch patch, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource.UpdateAsync(Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateAsync (patch As BackupRecoveryPointPatch, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BackupRecoveryPointResource))" />
+      <MemberSignature Language="F#" Value="abstract member UpdateAsync : Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;&gt;&#xA;override this.UpdateAsync : Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;&gt;" Usage="backupRecoveryPointResource.UpdateAsync (patch, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.RecoveryServicesBackup</AssemblyName>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patch" Type="Azure.ResourceManager.RecoveryServicesBackup.Models.BackupRecoveryPointPatch" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="patch"> Request body for operation. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            UpdateRecoveryPoint to update recovery point for given RecoveryPointID.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}. </description></item><item><term> Operation Id. </term><description> RecoveryPoints_Update. </description></item><item><term> Default Api Version. </term><description> 2026-01-31-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.RecoveryServicesBackup.BackupRecoveryPointResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="patch" /> is null. </exception>
       </Docs>
     </Member>
   </Members>
