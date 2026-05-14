@@ -1,12 +1,12 @@
 ---
 title: Azure AI Projects Agents client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.AI.Projects.Agents, ai
-ms.date: 04/21/2026
+ms.date: 05/14/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: ai
 ---
-# Azure AI Projects Agents client library for .NET - version 2.1.0-beta.1 
+# Azure AI Projects Agents client library for .NET - version 2.1.0-beta.2 
 
 
 Develop Agents using the Azure AI Foundry platform, leveraging an extensive ecosystem of models, tools, and capabilities from OpenAI, Microsoft, and other LLM providers.
@@ -272,21 +272,17 @@ Sessions allow multiple users to use the same hosted Agent within their own sand
 sessions for the same agent version.
 
 ```C# Snippet:Sample_CreateSessions_SessionsCRUD_Async
-string sessionKey1 = Guid.NewGuid().ToString();
-string sessionKey2 = Guid.NewGuid().ToString();
 string sessionId1 = Guid.NewGuid().ToString();
 string sessionId2 = Guid.NewGuid().ToString();
 ProjectAgentSession session1 = await agentsClient.CreateSessionAsync(
     agentName: agentVersion.Name,
     agentSessionId: sessionId1,
-    isolationKey: sessionKey1,
     versionIndicator: new VersionRefIndicator(agentVersion.Version)
 );
 Console.WriteLine($"Created session with ID {session1.AgentSessionId}");
 ProjectAgentSession session2 = await agentsClient.CreateSessionAsync(
     agentName: agentVersion.Name,
     agentSessionId: sessionId2,
-    isolationKey: sessionKey2,
     versionIndicator: new VersionRefIndicator(agentVersion.Version)
 );
 Console.WriteLine($"Created session with ID {session2.AgentSessionId}");
@@ -401,7 +397,7 @@ AgentsSkill simpleSkill = await skillsClient.CreateSkillAsync(name: "simpleSkill
 make it aware of the skill we have created.
 
 ```C# Snippet:Sample_CreateEndpoint_AgentsEndpoint_Async
-AgentEndpoint config = new()
+AgentEndpointConfiguration config = new()
 {
     VersionSelector = new([new FixedRatioVersionSelectionRule(agentVersion: agentVersion.Version, trafficPercentage: 100)]),
     Protocols = {AgentEndpointProtocol.Responses}
@@ -427,7 +423,6 @@ and `GetSessionLogStreamAsync`.
 ```C# Snippet:Sample_Agents_StreamLogs_HostedAgentLogStreaming
 ProjectAgentSession session = await agentsClient.CreateSessionAsync(
     agentName: agentVersion.Name,
-    isolationKey: "key_1",
     versionIndicator: new VersionRefIndicator(agentVersion.Version)
 );
 SessionLogEvent logEvent = await agentsClient.GetSessionLogStreamAsync(agentName: agentVersion.Name, agentVersion: agentVersion.Version, sessionId: session.AgentSessionId);
@@ -462,7 +457,7 @@ For tracing to Azure Monitor from your application, the preferred option is to u
 dotnet add package Azure.Monitor.OpenTelemetry.AspNetCore
 ```
 
-More information about using the Azure.Monitor.OpenTelemetry.AspNetCore package can be found [here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects.Agents_2.1.0-beta.1/sdk/monitor/Azure.Monitor.OpenTelemetry.AspNetCore/README.md).
+More information about using the Azure.Monitor.OpenTelemetry.AspNetCore package can be found [here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects.Agents_2.1.0-beta.2/sdk/monitor/Azure.Monitor.OpenTelemetry.AspNetCore/README.md).
 
 Another option is to use Azure.Monitor.OpenTelemetry.Exporter package. Install the package with [NuGet](https://www.nuget.org/ ):
 ```dotnetcli
@@ -550,7 +545,7 @@ See the [Azure SDK CONTRIBUTING.md][aiprojects_contrib] for details on building,
 [product_doc]: https://aka.ms/azsdk/azure-ai-projects-v2/product-doc
 [azure_identity]: https://learn.microsoft.com/dotnet/api/overview/azure/identity-readme?view=azure-dotnet
 [azure_identity_dac]: https://learn.microsoft.com/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet
-[aiprojects_contrib]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects.Agents_2.1.0-beta.1/CONTRIBUTING.md
+[aiprojects_contrib]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects.Agents_2.1.0-beta.2/CONTRIBUTING.md
 [cla]: https://cla.microsoft.com
 [code_of_conduct]: https://opensource.microsoft.com/codeofconduct/
 [code_of_conduct_faq]: https://opensource.microsoft.com/codeofconduct/faq/
