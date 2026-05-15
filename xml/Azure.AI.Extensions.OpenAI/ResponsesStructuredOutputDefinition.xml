@@ -28,11 +28,11 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ResponsesStructuredOutputDefinition (string name, string description, System.Collections.Generic.IDictionary&lt;string,BinaryData&gt; schema, bool? strict);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string description, class System.Collections.Generic.IDictionary`2&lt;string, class System.BinaryData&gt; schema, valuetype System.Nullable`1&lt;bool&gt; strict) cil managed" />
+      <MemberSignature Language="C#" Value="public ResponsesStructuredOutputDefinition (string name, string description, System.Collections.Generic.IDictionary&lt;string,BinaryData&gt; schema, bool? isStrict);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string description, class System.Collections.Generic.IDictionary`2&lt;string, class System.BinaryData&gt; schema, valuetype System.Nullable`1&lt;bool&gt; isStrict) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition.#ctor(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.BinaryData},System.Nullable{System.Boolean})" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String, description As String, schema As IDictionary(Of String, BinaryData), strict As Nullable(Of Boolean))" />
-      <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition : string * string * System.Collections.Generic.IDictionary&lt;string, BinaryData&gt; * Nullable&lt;bool&gt; -&gt; Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition" Usage="new Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition (name, description, schema, strict)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String, description As String, schema As IDictionary(Of String, BinaryData), isStrict As Nullable(Of Boolean))" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition : string * string * System.Collections.Generic.IDictionary&lt;string, BinaryData&gt; * Nullable&lt;bool&gt; -&gt; Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition" Usage="new Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition (name, description, schema, isStrict)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
@@ -42,13 +42,13 @@
         <Parameter Name="name" Type="System.String" />
         <Parameter Name="description" Type="System.String" />
         <Parameter Name="schema" Type="System.Collections.Generic.IDictionary&lt;System.String,System.BinaryData&gt;" />
-        <Parameter Name="strict" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="isStrict" Type="System.Nullable&lt;System.Boolean&gt;" />
       </Parameters>
       <Docs>
         <param name="name"> The name of the structured output. </param>
         <param name="description"> A description of the output to emit. Used by the model to determine when to emit the output. </param>
         <param name="schema"> The JSON schema for the structured output. </param>
-        <param name="strict"> Whether to enforce strict validation. Default `true`. </param>
+        <param name="isStrict"> Whether to enforce strict validation. Default `true`. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -71,6 +71,26 @@
       </ReturnValue>
       <Docs>
         <summary> A description of the output to emit. Used by the model to determine when to emit the output. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStrict">
+      <MemberSignature Language="C#" Value="public bool? IsStrict { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsStrict" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition.IsStrict" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsStrict As Nullable(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.IsStrict : Nullable&lt;bool&gt; with get, set" Usage="Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition.IsStrict" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Whether to enforce strict validation. Default `true`. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -216,26 +236,6 @@
             <para> To assign an object to the value of this property use <see cref="M:System.BinaryData.FromObjectAsJson``1(``0,System.Text.Json.JsonSerializerOptions)" />. </para><para> To assign an already formatted json string to this property use <see cref="M:System.BinaryData.FromString(System.String)" />. </para><para>
             Examples:
             <list type="bullet"><item><term> BinaryData.FromObjectAsJson("foo"). </term><description> Creates a payload of "foo". </description></item><item><term> BinaryData.FromString("\"foo\""). </term><description> Creates a payload of "foo". </description></item><item><term> BinaryData.FromObjectAsJson(new { key = "value" }). </term><description> Creates a payload of { "key": "value" }. </description></item><item><term> BinaryData.FromString("{\"key\": \"value\"}"). </term><description> Creates a payload of { "key": "value" }. </description></item></list></para></summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="Strict">
-      <MemberSignature Language="C#" Value="public bool? Strict { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; Strict" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition.Strict" />
-      <MemberSignature Language="VB.NET" Value="Public Property Strict As Nullable(Of Boolean)" />
-      <MemberSignature Language="F#" Value="member this.Strict : Nullable&lt;bool&gt; with get, set" Usage="Azure.AI.Extensions.OpenAI.ResponsesStructuredOutputDefinition.Strict" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary> Whether to enforce strict validation. Default `true`. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

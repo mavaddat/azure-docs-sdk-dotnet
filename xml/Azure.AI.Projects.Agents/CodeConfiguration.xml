@@ -28,11 +28,11 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public CodeConfiguration (string runtime, System.Collections.Generic.IEnumerable&lt;string&gt; entryPoint);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string runtime, class System.Collections.Generic.IEnumerable`1&lt;string&gt; entryPoint) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.CodeConfiguration.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (runtime As String, entryPoint As IEnumerable(Of String))" />
-      <MemberSignature Language="F#" Value="new Azure.AI.Projects.Agents.CodeConfiguration : string * seq&lt;string&gt; -&gt; Azure.AI.Projects.Agents.CodeConfiguration" Usage="new Azure.AI.Projects.Agents.CodeConfiguration (runtime, entryPoint)" />
+      <MemberSignature Language="C#" Value="public CodeConfiguration (string runtime, System.Collections.Generic.IEnumerable&lt;string&gt; entryPoint, Azure.AI.Projects.Agents.CodeDependencyResolution dependencyResolution);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string runtime, class System.Collections.Generic.IEnumerable`1&lt;string&gt; entryPoint, valuetype Azure.AI.Projects.Agents.CodeDependencyResolution dependencyResolution) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.CodeConfiguration.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String},Azure.AI.Projects.Agents.CodeDependencyResolution)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (runtime As String, entryPoint As IEnumerable(Of String), dependencyResolution As CodeDependencyResolution)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Projects.Agents.CodeConfiguration : string * seq&lt;string&gt; * Azure.AI.Projects.Agents.CodeDependencyResolution -&gt; Azure.AI.Projects.Agents.CodeConfiguration" Usage="new Azure.AI.Projects.Agents.CodeConfiguration (runtime, entryPoint, dependencyResolution)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -41,14 +41,66 @@
       <Parameters>
         <Parameter Name="runtime" Type="System.String" />
         <Parameter Name="entryPoint" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="dependencyResolution" Type="Azure.AI.Projects.Agents.CodeDependencyResolution" />
       </Parameters>
       <Docs>
         <param name="runtime"> The runtime identifier for code execution (e.g., 'python_3_11', 'python_3_12', 'python_3_13'). </param>
         <param name="entryPoint"> The entry point command and arguments for the code execution. </param>
+        <param name="dependencyResolution">
+            How package dependencies are resolved at deployment time. Defaults to `bundled`,
+            where the caller bundles all dependencies into the uploaded zip and the service
+            performs no remote build. `remote_build` instructs the service to build
+            dependencies remotely from the manifest included in the uploaded zip.
+            </param>
         <summary> Initializes a new instance of <see cref="T:Azure.AI.Projects.Agents.CodeConfiguration" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="runtime" /> or <paramref name="entryPoint" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentHash">
+      <MemberSignature Language="C#" Value="public string ContentHash { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentHash" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.CodeConfiguration.ContentHash" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContentHash As String" />
+      <MemberSignature Language="F#" Value="member this.ContentHash : string" Usage="Azure.AI.Projects.Agents.CodeConfiguration.ContentHash" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> The SHA-256 hex digest of the uploaded code zip. Set by the service from the `x-ms-code-zip-sha256` request header; read-only in responses and never accepted in request payloads. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyResolution">
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.CodeDependencyResolution DependencyResolution { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.AI.Projects.Agents.CodeDependencyResolution DependencyResolution" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.CodeConfiguration.DependencyResolution" />
+      <MemberSignature Language="VB.NET" Value="Public Property DependencyResolution As CodeDependencyResolution" />
+      <MemberSignature Language="F#" Value="member this.DependencyResolution : Azure.AI.Projects.Agents.CodeDependencyResolution with get, set" Usage="Azure.AI.Projects.Agents.CodeConfiguration.DependencyResolution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.CodeDependencyResolution</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            How package dependencies are resolved at deployment time. Defaults to `bundled`,
+            where the caller bundles all dependencies into the uploaded zip and the service
+            performs no remote build. `remote_build` instructs the service to build
+            dependencies remotely from the manifest included in the uploaded zip.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="EntryPoint">
