@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.AI.AgentServer.Responses, agentserver
-ms.date: 04/23/2026
+ms.date: 05/21/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: agentserver
@@ -114,7 +114,7 @@ Available convenience generators (commonly used):
 
 Additional convenience generators are available for computer calls, local shell calls, function shell calls, apply-patch calls, custom tool call outputs, MCP approval requests/responses, and compaction. Each follows the same pattern — accepts domain parameters and yields the complete `output_item.added` → `output_item.done` event pair.
 
-See [Sample 3 — Full control ResponseStream](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample3_FullControlResponseStream.md) and [Sample 4 — Function calling](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample4_FunctionCalling.md) for more examples.
+See [Sample 3 — Full control ResponseStream](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample3_FullControlResponseStream.md) and [Sample 4 — Function calling](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample4_FunctionCalling.md) for more examples.
 
 **`ResponseEventStream` — full builder control:**
 
@@ -163,7 +163,7 @@ Injected into every `CreateAsync` call, `ResponseContext` provides access to the
 
 For collections of `Item` objects, the `GetInputText()` extension method (on `IEnumerable<Item>`) extracts and joins text content without needing a `ResponseContext`.
 
-See the [handler implementation guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md#responsecontext) for the full `ResponseContext` API reference.
+See the [handler implementation guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md#responsecontext) for the full `ResponseContext` API reference.
 
 ### ResponseEventStream
 
@@ -178,7 +178,64 @@ Manages `sequenceNumber`, `outputIndex`, `contentIndex`, and `itemId` tracking i
 
 The library orchestrates the complete response lifecycle: `created` → `in_progress` → `completed` (or `failed` / `cancelled`). Cancellation, error handling, and terminal event guarantees are all managed automatically.
 
-For detailed handler implementation guidance, see [docs/handler-implementation-guide.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md).
+For detailed handler implementation guidance, see [docs/handler-implementation-guide.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md).
+
+### Input validation
+
+The library eagerly validates `previous_response_id` and `conversation.id` before starting handler execution:
+
+- **Format validation** — IDs that don't match the expected format return `400 Bad Request` with `param` identifying the invalid field.
+- **Existence check** — `previous_response_id` values that pass format validation but reference a nonexistent response return `404 Not Found` with a structured error containing `code` and `param`.
+
+This means handlers can rely on `ResponseContext.GetInputItemsAsync()` and `GetHistoryAsync()` returning valid data — invalid references are caught before `CreateAsync` is called.
+
+### Structured error responses
+
+All error responses follow the same JSON structure:
+
+```json
+{
+  "error": {
+    "code": "invalid_request_error",
+    "message": "The response 'resp_abc123' was not found.",
+    "param": "previous_response_id",
+    "type": "invalid_request_error"
+  }
+}
+```
+
+Exception types carry structured fields that map to the error body:
+
+| Exception | HTTP status | `error.code` | `error.param` |
+|-----------|-------------|--------------|----------------|
+| `PayloadValidationException` | 400 | `invalid_request_error` | Per-field errors |
+| `BadRequestException` | 400 | Caller-provided or `invalid_request_error` | Caller-provided |
+| `ResourceNotFoundException` | 404 | Caller-provided or `not_found` | Caller-provided |
+| `ResponsesApiException` | 500 | Upstream code or `server_error` | — |
+
+### Request correlation
+
+Every response includes an `x-request-id` header (set by Core's `RequestIdMiddleware`). Error responses also embed the same value in `error.additionalInfo.request_id`, so clients can correlate errors to specific requests even when headers are stripped by intermediaries.
+
+### Error source classification
+
+All error responses (4xx/5xx) include the `x-platform-error-source` header classifying the error origin as `user`, `platform`, or `upstream`. See the [Core README](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Core#error-source-classification) for the full classification table.
+
+### Chat isolation and session ID
+
+When the platform injects `x-agent-user-isolation-key` and `x-agent-chat-isolation-key` request headers, the library forwards them to the storage provider so that responses are scoped to the correct tenant and conversation. The resolved session ID is returned on every response via the `x-agent-session-id` header.
+
+Handlers can access the isolation context through `ResponseContext.Isolation` for custom partitioning logic.
+
+### Persistence resilience
+
+When storage operations fail (e.g., Foundry storage is unreachable), responses complete gracefully instead of crashing:
+
+- The response reaches a terminal state with `status: "failed"` and `error.code: "storage_error"`.
+- For streaming responses, the terminal SSE event is replaced with `response.failed` carrying `error_code="storage_error"`.
+- For synchronous responses, the error is returned as an HTTP 500 with the storage error details.
+
+This ensures clients always receive a definitive terminal state rather than hanging indefinitely.
 
 ### Thread safety
 
@@ -186,7 +243,7 @@ All service instances registered via `AddResponsesServer()` are thread-safe. Han
 
 ## Examples
 
-You can familiarize yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses/samples).
+You can familiarize yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/samples).
 
 ## Troubleshooting
 
@@ -203,8 +260,8 @@ The library emits OpenTelemetry traces via `Azure.AI.AgentServer.Responses` acti
 
 ## Next steps
 
-- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses/samples) — Getting started, function calling, conversation history, multi-output
-- [Handler implementation guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md) — Detailed reference for building handlers
+- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/samples) — Getting started, function calling, conversation history, multi-output
+- [Handler implementation guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md) — Detailed reference for building handlers
 
 
 ## Contributing
@@ -216,7 +273,7 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 <!-- LINKS -->
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/src
 [nuget]: https://www.nuget.org/packages/Azure.AI.AgentServer.Responses
 [rest_api]: https://learn.microsoft.com/azure/foundry/reference/foundry-project#responses-94
 [product_doc]: https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agents
