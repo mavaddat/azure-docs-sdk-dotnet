@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.AI.AgentServer.Invocations, agentserver
-ms.date: 04/23/2026
+ms.date: 05/21/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: agentserver
@@ -65,7 +65,11 @@ For more control over the host (adding services, configuring middleware, composi
 
 ### InvocationHandler
 
-The abstract base class you subclass. Only `HandleAsync` is abstract — the remaining operations (`GetAsync`, `CancelAsync`, `GetOpenApiAsync`) return 404 by default and can be overridden as needed.
+The abstract base class you subclass for HTTP-only handlers. Only `HandleAsync` is abstract — the remaining operations (`GetAsync`, `CancelAsync`, `GetOpenApiAsync`) return 404 by default and can be overridden as needed.
+
+### InvocationWebSocketHandler
+
+Derives from `InvocationHandler` and adds the abstract `HandleWebSocketAsync` method for the `/invocations_ws` endpoint. The inherited `HandleAsync` returns 404 by default, so a WebSocket-only handler does not need to implement `HandleAsync` — multi-protocol handlers override both. See the [WebSocket protocol section](#websocket-protocol-invocations_ws) below.
 
 ### InvocationContext
 
@@ -82,19 +86,64 @@ Provides request metadata to the handler. All properties are read-only and resol
 ### Customizing the host
 
 When you need to add services, configure middleware, or compose multiple protocols on a single host, see the hosting tier samples:
-- [Tier 1 hosting customization](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample5_Tier1HostingCustomize.md)
-- [Tier 2 builder](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample6_Tier2HostingBuilder.md)
-- [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md)
+- [Tier 1 hosting customization](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample5_Tier1HostingCustomize.md)
+- [Tier 2 builder](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample6_Tier2HostingBuilder.md)
+- [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md)
 
-`InvocationsServerOptions` can be configured via the `AddInvocationsServer(options => { ... })` delegate on any tier. See the [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md) sample for a complete example.
+`InvocationsServerOptions` can be configured via the `AddInvocationsServer(options => { ... })` delegate on any tier. See the [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md) sample for a complete example.
 
 ### Handler lifetime
 
 Handlers registered via `AddInvocations<THandler>()` or `InvocationsServer.Run<THandler>()` are resolved per request by default (scoped lifetime). Instance fields on your `InvocationHandler` subclass will not persist across requests. Store long-lived state in separate services or storage keyed by `InvocationContext.SessionId` or `InvocationContext.InvocationId`, or register a singleton handler explicitly if you require a single shared instance.
 
+### WebSocket protocol (`invocations_ws`)
+
+The same host that serves `POST /invocations` also exposes a WebSocket transport at `/invocations_ws`. Container authors do not install or import a second package — derive from `InvocationWebSocketHandler` and override `HandleWebSocketAsync`. The inherited `HandleAsync` returns 404 by default, so a WebSocket-only agent has no boilerplate; override `HandleAsync` too when you want HTTP and WebSocket on the same handler.
+
+```C# Snippet:Invocations_ReadMe_WebSocketHandler
+public class WebSocketEchoHandler : InvocationWebSocketHandler
+{
+    public override async Task HandleWebSocketAsync(
+        WebSocket webSocket, InvocationContext context, CancellationToken cancellationToken)
+    {
+        var buffer = new byte[4096];
+        while (webSocket.State == WebSocketState.Open && !cancellationToken.IsCancellationRequested)
+        {
+            var received = await webSocket.ReceiveAsync(buffer, cancellationToken);
+            if (received.MessageType == WebSocketMessageType.Close)
+            {
+                break;
+            }
+            await webSocket.SendAsync(
+                new ArraySegment<byte>(buffer, 0, received.Count),
+                received.MessageType,
+                received.EndOfMessage,
+                cancellationToken);
+        }
+    }
+}
+```
+
+What the SDK does for you when the registered handler derives from `InvocationWebSocketHandler`:
+
+- Registers the `/invocations_ws` route on the same host as `/invocations` and `/readiness`.
+- Calls `AcceptWebSocketAsync` before invoking your handler.
+- Sends an RFC 6455 protocol-level Ping frame (opcode `0x9`) every `WS_KEEPALIVE_INTERVAL` seconds when the env var is set — Kestrel does this for us via `WebSocketOptions.KeepAliveInterval`, so the connection stays alive across upstream proxy / load-balancer idle timeouts without any extra application traffic. Disabled by default.
+- Closes the connection cleanly on handler return (close code `1000` — `NormalClosure`) or maps an uncaught handler exception to close code `1011` (`InternalServerError`). Handler-initiated close codes are preserved unchanged.
+- Emits a structured close-event log line carrying `session_id`, `close_code`, and `duration_ms`. No framework-level OpenTelemetry span is created for the connection — ASP.NET Core auto-propagates the inbound W3C trace context, so any spans your handler starts are parented correctly without a per-connection wrapper.
+- When the registered handler is a plain `InvocationHandler` (not an `InvocationWebSocketHandler`), an upgrade attempt receives HTTP `404 Not Found` — the WS endpoint short-circuits with "endpoint not registered" semantics so a missing handler fails fast instead of accepting and immediately closing.
+
+The session ID honours `FOUNDRY_AGENT_SESSION_ID` (matching the HTTP `POST /invocations` precedence, minus the query-param override which has no ergonomic equivalent on a long-lived WS connection), falling back to a generated UUID. Both transports on the same container therefore report the same session ID.
+
+#### WebSocket configuration
+
+| Environment variable | Default | Description |
+|---|---|---|
+| `WS_KEEPALIVE_INTERVAL` | unset → disabled | Integer seconds between RFC 6455 Ping frames. `0` (or unset) disables protocol-level keep-alive. |
+
 ## Examples
 
-You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples).
+You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples).
 
 ## Troubleshooting
 
@@ -109,9 +158,9 @@ The library emits OpenTelemetry traces via the `Azure.AI.AgentServer.Invocations
 
 ## Next steps
 
-- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples) — Getting started, custom operations
-- [Azure.AI.AgentServer.Core](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Core) — Shared hosting foundation
-- [Azure.AI.AgentServer.Responses](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Responses) — Responses protocol implementation
+- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples) — Getting started, custom operations
+- [Azure.AI.AgentServer.Core](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Core) — Shared hosting foundation
+- [Azure.AI.AgentServer.Responses](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Responses) — Responses protocol implementation
 
 ## Contributing
 
@@ -122,7 +171,7 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 <!-- LINKS -->
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.3/sdk/agentserver/Azure.AI.AgentServer.Invocations/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.4/sdk/agentserver/Azure.AI.AgentServer.Invocations/src
 [nuget]: https://www.nuget.org/packages/Azure.AI.AgentServer.Invocations
 [product_doc]: https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agents
 
