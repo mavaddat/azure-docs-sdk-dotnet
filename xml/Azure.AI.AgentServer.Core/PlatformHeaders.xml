@@ -36,6 +36,14 @@
           <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.SessionId" /> — resolved session ID (when applicable).</item>
       </list>
       <para>
+        <b>Error response headers</b> (set on 4xx/5xx responses):</para>
+      <list type="bullet">
+        <item>
+          <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSource" /> — classifies error origin (<c>user</c>, <c>platform</c>, or <c>upstream</c>).</item>
+        <item>
+          <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.ErrorDetail" /> — internal diagnostic detail for platform telemetry.</item>
+      </list>
+      <para>
         <b>Request headers</b> (set by the platform or client):</para>
       <list type="bullet">
         <item>
@@ -115,6 +123,119 @@
         <summary>
             The <c>x-ms-client-request-id</c> header — Azure SDK client correlation header.
             Logged for diagnostic correlation with upstream Azure SDK callers.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorDetail">
+      <MemberSignature Language="C#" Value="public const string ErrorDetail;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ErrorDetail" />
+      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.ErrorDetail" />
+      <MemberSignature Language="VB.NET" Value="Public Const ErrorDetail As String " />
+      <MemberSignature Language="F#" Value="val mutable ErrorDetail : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.ErrorDetail" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The <c>x-platform-error-detail</c> header — internal diagnostic detail
+            for platform telemetry. Not intended for end-user display.
+            Present on error responses when additional diagnostic context is available.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorSource">
+      <MemberSignature Language="C#" Value="public const string ErrorSource;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ErrorSource" />
+      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSource" />
+      <MemberSignature Language="VB.NET" Value="Public Const ErrorSource As String " />
+      <MemberSignature Language="F#" Value="val mutable ErrorSource : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSource" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The <c>x-platform-error-source</c> header — classifies every error response
+            so the platform can route actionable errors to the right team.
+            Present on all 4xx/5xx responses from protocol endpoints.
+            Values: <c>user</c>, <c>platform</c>, <c>upstream</c>.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorSourcePlatform">
+      <MemberSignature Language="C#" Value="public const string ErrorSourcePlatform;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ErrorSourcePlatform" />
+      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSourcePlatform" />
+      <MemberSignature Language="VB.NET" Value="Public Const ErrorSourcePlatform As String " />
+      <MemberSignature Language="F#" Value="val mutable ErrorSourcePlatform : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSourcePlatform" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Error source value indicating the error was caused by the SDK, library,
+            or a platform dependency — not by the caller or the developer's handler.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorSourceUpstream">
+      <MemberSignature Language="C#" Value="public const string ErrorSourceUpstream;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ErrorSourceUpstream" />
+      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSourceUpstream" />
+      <MemberSignature Language="VB.NET" Value="Public Const ErrorSourceUpstream As String " />
+      <MemberSignature Language="F#" Value="val mutable ErrorSourceUpstream : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSourceUpstream" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Error source value indicating the developer's handler code or an external
+            service it called failed or returned incorrect behaviour.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorSourceUser">
+      <MemberSignature Language="C#" Value="public const string ErrorSourceUser;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ErrorSourceUser" />
+      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSourceUser" />
+      <MemberSignature Language="VB.NET" Value="Public Const ErrorSourceUser As String " />
+      <MemberSignature Language="F#" Value="val mutable ErrorSourceUser : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.ErrorSourceUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Error source value indicating the caller's input is invalid.
+            The caller can fix the request and retry.
             </summary>
         <remarks>To be added.</remarks>
       </Docs>

@@ -1,0 +1,152 @@
+<Type Name="InvocationWebSocketHandler" FullName="Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler">
+  <TypeSignature Language="C#" Value="public abstract class InvocationWebSocketHandler : Azure.AI.AgentServer.Invocations.InvocationHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit InvocationWebSocketHandler extends Azure.AI.AgentServer.Invocations.InvocationHandler" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class InvocationWebSocketHandler&#xA;Inherits InvocationHandler" />
+  <TypeSignature Language="F#" Value="type InvocationWebSocketHandler = class&#xA;    inherit InvocationHandler" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Azure.AI.AgentServer.Invocations.InvocationHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Base class for handlers that opt in to the <c>invocations_ws</c>
+            (WebSocket) transport at <c>/invocations_ws</c>, optionally alongside
+            the HTTP <c>POST /invocations</c> transport.
+            </summary>
+    <remarks>
+      <para>Override <see cref="M:Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler.HandleWebSocketAsync(System.Net.WebSockets.WebSocket,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" /> to serve a WebSocket
+            connection. The library calls <c>AcceptWebSocketAsync</c> for you,
+            maps a clean handler return to RFC 6455 close code <c>1000</c>
+            (<c>NormalClosure</c>) and an uncaught handler exception to
+            <c>1011</c> (<c>InternalServerError</c>), preserves handler-initiated
+            close codes unchanged, and emits a structured close-event log line
+            carrying <c>azure.ai.agentserver.invocations_ws.session_id</c>,
+            <c>azure.ai.agentserver.invocations_ws.close_code</c>, and
+            <c>azure.ai.agentserver.invocations_ws.duration_ms</c>.</para>
+      <para>The inherited <see cref="M:Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler.HandleAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" /> (HTTP
+            <c>POST /invocations</c>) returns <c>404 Not Found</c> by default — a
+            WS-only handler does not need to override it. Multi-protocol handlers
+            override both <see cref="M:Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler.HandleAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" /> and
+            <see cref="M:Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler.HandleWebSocketAsync(System.Net.WebSockets.WebSocket,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />; both methods see the same session
+            when <c>FOUNDRY_AGENT_SESSION_ID</c> is set so HTTP and WebSocket turns
+            correlate.</para>
+      <para>No framework-level OpenTelemetry span is created for the
+            connection; ASP.NET Core auto-propagates the inbound W3C trace context
+            to the request <see cref="T:System.Diagnostics.Activity" />, so any spans
+            the handler starts are parented correctly. Session / invocation /
+            <c>x-request-id</c> baggage is propagated onto the current Activity
+            before the handler runs.</para>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InvocationWebSocketHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task HandleAsync (Microsoft.AspNetCore.Http.HttpRequest request, Microsoft.AspNetCore.Http.HttpResponse response, Azure.AI.AgentServer.Invocations.InvocationContext context, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task HandleAsync(class Microsoft.AspNetCore.Http.HttpRequest request, class Microsoft.AspNetCore.Http.HttpResponse response, class Azure.AI.AgentServer.Invocations.InvocationContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler.HandleAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function HandleAsync (request As HttpRequest, response As HttpResponse, context As InvocationContext, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="override this.HandleAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * Azure.AI.AgentServer.Invocations.InvocationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="invocationWebSocketHandler.HandleAsync (request, response, context, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="response" Type="Microsoft.AspNetCore.Http.HttpResponse" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Invocations.InvocationContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="request">The incoming HTTP request.</param>
+        <param name="response">The outgoing HTTP response.</param>
+        <param name="context">Per-request context with resolved invocation/session IDs, headers, and query parameters.</param>
+        <param name="cancellationToken">A token to observe for cancellation.</param>
+        <summary>
+            Handles a <c>POST /invocations</c> request. Returns <c>404 Not Found</c>
+            by default — override to add HTTP support alongside the WebSocket
+            endpoint.
+            </summary>
+        <returns>A task representing the async operation.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleWebSocketAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task HandleWebSocketAsync (System.Net.WebSockets.WebSocket webSocket, Azure.AI.AgentServer.Invocations.InvocationContext context, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task HandleWebSocketAsync(class System.Net.WebSockets.WebSocket webSocket, class Azure.AI.AgentServer.Invocations.InvocationContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler.HandleWebSocketAsync(System.Net.WebSockets.WebSocket,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function HandleWebSocketAsync (webSocket As WebSocket, context As InvocationContext, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member HandleWebSocketAsync : System.Net.WebSockets.WebSocket * Azure.AI.AgentServer.Invocations.InvocationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="invocationWebSocketHandler.HandleWebSocketAsync (webSocket, context, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webSocket" Type="System.Net.WebSockets.WebSocket" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Invocations.InvocationContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="webSocket">
+            The accepted <see cref="T:System.Net.WebSockets.WebSocket" />. The SDK has already called
+            <c>AcceptWebSocketAsync</c>; the handler owns the full-duplex
+            lifecycle from this point. On clean return the SDK closes the
+            connection with RFC 6455 code <c>1000</c> (<c>NormalClosure</c>);
+            an unhandled exception is mapped to code <c>1011</c>
+            (<c>InternalServerError</c>); a handler-initiated <c>CloseAsync</c>
+            is preserved unchanged.
+            </param>
+        <param name="context">
+            Per-connection context. The session ID honours
+            <c>FOUNDRY_AGENT_SESSION_ID</c> (matching the HTTP
+            <c>POST /invocations</c> precedence, minus the query-param override
+            which has no ergonomic equivalent on a long-lived WS connection).
+            The invocation ID is a generated UUID — WebSocket has no
+            per-message invocation ID.
+            </param>
+        <param name="cancellationToken">
+            Cancelled when the connection is aborted (client disconnect,
+            server shutdown, request aborted, etc.).
+            </param>
+        <summary>
+            Handles a <c>/invocations_ws</c> WebSocket connection. Required.
+            </summary>
+        <returns>A task representing the async lifetime of the connection.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
