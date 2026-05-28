@@ -1,12 +1,13 @@
 ---
-title: 
-keywords: Azure, dotnet, SDK, API, Azure.Provisioning.Kubernetes, provisioning
-ms.date: 06/17/2025
+title: Azure Provisioning Kubernetes client library for .NET
+keywords: Azure, dotnet, SDK, API, Azure.Provisioning.Kubernetes, hybridkubernetes
+ms.date: 05/28/2026
 ms.topic: reference
 ms.devlang: dotnet
-ms.service: provisioning
+ms.service: hybridkubernetes
 ---
-# Azure.Provisioning.Kubernetes client library for .NET
+# Azure Provisioning Kubernetes client library for .NET - version 1.0.0-beta.4 
+
 
 Azure.Provisioning.Kubernetes simplifies declarative resource provisioning in .NET.
 
@@ -29,6 +30,30 @@ dotnet add package Azure.Provisioning.Kubernetes --prerelease
 ## Key concepts
 
 This library allows you to specify your infrastructure in a declarative style using dotnet.  You can then use azd to deploy your infrastructure to Azure directly without needing to write or maintain bicep or arm templates.
+
+## Examples
+
+### Create a Connected Cluster
+
+This example demonstrates how to define an Azure Arc-enabled Kubernetes connected cluster resource.
+
+```C# Snippet:KubernetesBasic
+Infrastructure infra = new();
+
+ConnectedCluster cluster =
+    new(nameof(cluster), ConnectedCluster.ResourceVersions.V2025_12_01_PREVIEW)
+    {
+        Properties = new ConnectedClusterProperties
+        {
+            AgentPublicKeyCertificate = "base64cert"
+        },
+        Identity = new ManagedServiceIdentity
+        {
+            ManagedServiceIdentityType = ManagedServiceIdentityType.SystemAssigned
+        }
+    };
+infra.Add(cluster);
+```
 
 ## Troubleshooting
 
@@ -58,7 +83,7 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 <opencode@microsoft.com> with any other questions or comments.
 
 <!-- LINKS -->
-[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.Kubernetes_1.0.0-beta.3/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
+[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.Kubernetes_1.0.0-beta.4/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 
