@@ -1,29 +1,27 @@
 ---
 title: Azure Text Translation client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.AI.Translation.Text, translation
-ms.date: 05/21/2024
+ms.date: 05/29/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: translation
 ---
-# Azure Text Translation client library for .NET - version 1.0.0 
+# Azure Text Translation client library for .NET - version 2.0.0 
 
 
-Text translation is a cloud-based REST API feature of the Translator service that uses neural machine translation technology to enable quick and accurate source-to-target text translation in real time across all supported languages.
+Azure text translation is a cloud-based REST API provided by the Azure Translator service. It utilizes neural machine translation technology to deliver precise, contextually relevant, and semantically accurate real-time text translations across all supported languages.
 
 Use the Text Translation client library for .NET to:
 
-* Return a list of languages supported by Translate, Transliterate, and Dictionary operations.
+- Retrieve the list of languages supported for translation and transliteration operations, as well as LLM models available for translations.
 
-* Render single source-language text to multiple target-language texts with a single request.
+- Perform deterministic text translation from a specified source language to a target language, with configurable parameters to ensure precision and maintain contextual integrity.
 
-* Convert text of a source language in letters of a different script.
+- Execute transliteration by converting text from the original script to an alternative script representation.
 
-* Return equivalent words for the source term in the target language.
+- Use LLM models to produce translation output variants that are tone-specific and gender-aware.
 
-* Return grammatical structure and context examples for the source term and target term pair.
-
-[Source code](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/src) | [API reference documentation](https://learn.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference) | [Product documentation](https://learn.microsoft.com/azure/cognitive-services/translator/)
+[Source code](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_2.0.0/sdk/translation/Azure.AI.Translation.Text/src) | [API reference documentation](https://learn.microsoft.com/azure/ai-services/translator/text-translation/preview/rest-api-guide) | [Product documentation](https://learn.microsoft.com/azure/cognitive-services/translator/)
 
 ## Getting started
 
@@ -32,7 +30,7 @@ Use the Text Translation client library for .NET to:
 Install the Azure Text Translation client library for .NET with [NuGet][nuget]:
 
 ```dotnetcli
-dotnet add package Azure.AI.Translation.Text --prerelease
+dotnet add package Azure.AI.Translation.Text
 ```
 
 This table shows the relationship between SDK versions and supported API versions of the service:
@@ -41,6 +39,8 @@ This table shows the relationship between SDK versions and supported API version
 |-------------|-----------------------------------------------------|
 |1.0.0-beta.1 | 3.0
 |1.0.0 | 3.0
+|2.0.0-beta.1 | 2025-10-01-preview
+|2.0.0 | 2026-06-06
 
 ### Prerequisites
 
@@ -103,12 +103,12 @@ A `TextTranslationClient` is the primary interface for developers using the Text
 
 ### Input
 
-A **text element** (`string`), is a single unit of input to be processed by the translation models in the Translator service. Operations on `TextTranslationClient` may take a single text element or a collection of text elements.
+A **TranslateInputItem** is a single unit of input to be processed by the translation models in the Translator service. Each `TranslateInputItem` defines both the input string to translate and the output specifications for the translation. Operations on `TextTranslationClient` may take a single `TranslateInputItem` or a collection of `TranslateInputItem` objects.
 For text element length limits, maximum requests size, and supported text encoding see [here][translator_limits].
 
 ### Return value
 
-Return values, such as `Response<IReadOnlyList<TranslatedTextItem>>`, is the result of a Text Translation operation, It contains array with one result for each string in the input array.  An operation's return value also may optionally include information about the input text element (for example detected language).
+Return values, such as `Response<IReadOnlyList<TranslatedTextItem>>`, is the result of a Text Translation operation. It contains an array with one `TranslatedTextItem` for each input `TranslateInputItem`. An operation's return value also may optionally include information about the input text element (for example detected language).
 
 ### Thread safety
 
@@ -116,11 +116,11 @@ We guarantee that all client instance methods are thread-safe and independent of
 
 ### Additional concepts
 <!-- CLIENT COMMON BAR -->
-[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
-[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
-[Long-running operations](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt) |
-[Handling failures](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception) |
-[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/core/Azure.Core/samples/Diagnostics.md) |
+[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
+[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
+[Long-running operations](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt) |
+[Handling failures](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception) |
+[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/core/Azure.Core/samples/Diagnostics.md) |
 [Mocking](https://learn.microsoft.com/dotnet/azure/sdk/unit-testing-mocking) |
 [Client lifetime](https://devblogs.microsoft.com/azure-sdk/lifetime-management-and-thread-safety-guarantees-of-azure-sdk-net-clients/)
 <!-- CLIENT COMMON BAR -->
@@ -153,6 +153,7 @@ For samples on using the `languages` endpoint refer to more samples [here][langu
 Please refer to the service documentation for a conceptual discussion of [languages][languages_doc].
 
 ### Translate
+
 The simplest use of the Translate method is to invoke it with a single target language and one input string.
 
 ```C# Snippet:GetTextTranslation
@@ -165,64 +166,8 @@ try
     IReadOnlyList<TranslatedTextItem> translations = response.Value;
     TranslatedTextItem translation = translations.FirstOrDefault();
 
-    Console.WriteLine($"Detected languages of the input text: {translation?.DetectedLanguage?.Language} with score: {translation?.DetectedLanguage?.Confidence}.");
-    Console.WriteLine($"Text was translated to: '{translation?.Translations?.FirstOrDefault().TargetLanguage}' and the result is: '{translation?.Translations?.FirstOrDefault()?.Text}'.");
-}
-catch (RequestFailedException exception)
-{
-    Console.WriteLine($"Error Code: {exception.ErrorCode}");
-    Console.WriteLine($"Message: {exception.Message}");
-}
-```
-
-A convenience overload of Translate is provided using a TextTranslationTranslateOptions parameter.  This sample demonstrates rendering a single source-language to multiple target languages with a single request using the options overload.
-
-```C# Snippet:GetTextTranslationMatrixOptions
-try
-{
-    TextTranslationTranslateOptions options = new TextTranslationTranslateOptions(
-        targetLanguages: new[] { "cs", "es", "de" },
-        content: new[] { "This is a test." }
-    );
-
-    Response<IReadOnlyList<TranslatedTextItem>> response = client.Translate(options);
-    IReadOnlyList<TranslatedTextItem> translations = response.Value;
-
-    foreach (TranslatedTextItem translation in translations)
-    {
-        Console.WriteLine($"Detected languages of the input text: {translation?.DetectedLanguage?.Language} with score: {translation?.DetectedLanguage?.Confidence}.");
-
-        Console.WriteLine($"Text was translated to: '{translation?.Translations?.FirstOrDefault().TargetLanguage}' and the result is: '{translation?.Translations?.FirstOrDefault()?.Text}'.");
-    }
-}
-catch (RequestFailedException exception)
-{
-    Console.WriteLine($"Error Code: {exception.ErrorCode}");
-    Console.WriteLine($"Message: {exception.Message}");
-}
-```
-
-This sample demonstrates Translation and Transliteration in a single call using the TextTranslationTranslateOptions parameter.  Required parameters are passed to the constructor, optional parameters are set using an object initializer.
-
-```C# Snippet:GetTranslationTextTransliteratedOptions
-try
-{
-    TextTranslationTranslateOptions options = new TextTranslationTranslateOptions(
-        targetLanguage: "zh-Hans",
-        content: "hudha akhtabar.")
-    {
-        FromScript = "Latn",
-        SourceLanguage = "ar",
-        ToScript = "Latn"
-    };
-
-    Response<IReadOnlyList<TranslatedTextItem>> response = client.Translate(options);
-    IReadOnlyList<TranslatedTextItem> translations = response.Value;
-    TranslatedTextItem translation = translations.FirstOrDefault();
-
-    Console.WriteLine($"Source Text: {translation.SourceText.Text}");
-    Console.WriteLine($"Translation: '{translation?.Translations?.FirstOrDefault()?.Text}'.");
-    Console.WriteLine($"Transliterated text ({translation?.Translations?.FirstOrDefault()?.Transliteration?.Script}): {translation?.Translations?.FirstOrDefault()?.Transliteration?.Text}");
+    Console.WriteLine($"Detected languages of the input text: {translation?.DetectedLanguage?.Language} with score: {translation?.DetectedLanguage?.Score}.");
+    Console.WriteLine($"Text was translated to: '{translation?.Translations?.FirstOrDefault().Language}' and the result is: '{translation?.Translations?.FirstOrDefault()?.Text}'.");
 }
 catch (RequestFailedException exception)
 {
@@ -261,123 +206,9 @@ catch (RequestFailedException exception)
 }
 ```
 
-A convenience overload of Transliterate is provided using a single TextTranslationTransliterateOptions parameter.  A modified version of the preceding sample is provided here demonstrating its use.
-
-```C# Snippet:GetTransliteratedTextOptions
-try
-{
-    TextTranslationTransliterateOptions options = new TextTranslationTransliterateOptions(
-        language: "zh-Hans",
-        fromScript: "Hans",
-        toScript: "Latn",
-        content: "这是个测试。"
-    );
-
-    Response<IReadOnlyList<TransliteratedText>> response = client.Transliterate(options);
-    IReadOnlyList<TransliteratedText> transliterations = response.Value;
-    TransliteratedText transliteration = transliterations.FirstOrDefault();
-
-    Console.WriteLine($"Input text was transliterated to '{transliteration?.Script}' script. Transliterated text: '{transliteration?.Text}'.");
-}
-catch (RequestFailedException exception)
-{
-    Console.WriteLine($"Error Code: {exception.ErrorCode}");
-    Console.WriteLine($"Message: {exception.Message}");
-}
-```
-
 For samples on using the `transliterate` endpoint refer to more samples [here][transliterate_sample].
 
 Please refer to the service documentation for a conceptual discussion of [transliterate][transliterate_doc].
-
-### Break Sentence
-
-Identifies the positioning of sentence boundaries in a piece of text.
-
-```C# Snippet:FindTextSentenceBoundaries
-try
-{
-    string inputText = "How are you? I am fine. What did you do today?";
-
-    Response<IReadOnlyList<BreakSentenceItem>> response = client.FindSentenceBoundaries(inputText);
-    IReadOnlyList<BreakSentenceItem> brokenSentences = response.Value;
-    BreakSentenceItem brokenSentence = brokenSentences.FirstOrDefault();
-
-    Console.WriteLine($"Detected languages of the input text: {brokenSentence?.DetectedLanguage?.Language} with score: {brokenSentence?.DetectedLanguage?.Confidence}.");
-    Console.WriteLine($"The detected sentence boundaries: '{string.Join(",", brokenSentence?.SentencesLengths)}'.");
-}
-catch (RequestFailedException exception)
-{
-    Console.WriteLine($"Error Code: {exception.ErrorCode}");
-    Console.WriteLine($"Message: {exception.Message}");
-}
-```
-
-For samples on using the `break sentece` endpoint refer to more samples [here][breaksentence_sample].
-
-Please refer to the service documentation for a conceptual discussion of [break sentence][breaksentence_doc].
-
-### Dictionary Lookup
-
-Returns equivalent words for the source term in the target language.
-
-```C# Snippet:LookupDictionaryEntries
-try
-{
-    string sourceLanguage = "en";
-    string targetLanguage = "es";
-    string inputText = "fly";
-
-    Response<IReadOnlyList<DictionaryLookupItem>> response = client.LookupDictionaryEntries(sourceLanguage, targetLanguage, inputText);
-    IReadOnlyList<DictionaryLookupItem> dictionaryEntries = response.Value;
-    DictionaryLookupItem dictionaryEntry = dictionaryEntries.FirstOrDefault();
-
-    Console.WriteLine($"For the given input {dictionaryEntry?.Translations?.Count} entries were found in the dictionary.");
-    Console.WriteLine($"First entry: '{dictionaryEntry?.Translations?.FirstOrDefault()?.DisplayTarget}', confidence: {dictionaryEntry?.Translations?.FirstOrDefault()?.Confidence}.");
-}
-catch (RequestFailedException exception)
-{
-    Console.WriteLine($"Error Code: {exception.ErrorCode}");
-    Console.WriteLine($"Message: {exception.Message}");
-}
-```
-
-For samples on using the `dictionary lookup` endpoint refer to more samples [here][dictionarylookup_sample].
-
-Please refer to the service documentation for a conceptual discussion of [dictionary lookup][dictionarylookup_doc].
-
-### Dictionary Examples
-
-Returns grammatical structure and context examples for the source term and target term pair.
-
-```C# Snippet:GetGrammaticalStructure
-try
-{
-    string sourceLanguage = "en";
-    string targetLanguage = "es";
-    IEnumerable<InputTextWithTranslation> inputTextElements = new[]
-    {
-        new InputTextWithTranslation("fly", "volar")
-    };
-
-    Response<IReadOnlyList<DictionaryExampleItem>> response = client.LookupDictionaryExamples(sourceLanguage, targetLanguage, inputTextElements);
-    IReadOnlyList<DictionaryExampleItem> dictionaryEntries = response.Value;
-    DictionaryExampleItem dictionaryEntry = dictionaryEntries.FirstOrDefault();
-
-    Console.WriteLine($"For the given input {dictionaryEntry?.Examples?.Count} examples were found in the dictionary.");
-    DictionaryExample firstExample = dictionaryEntry?.Examples?.FirstOrDefault();
-    Console.WriteLine($"Example: '{string.Concat(firstExample.TargetPrefix, firstExample.TargetTerm, firstExample.TargetSuffix)}'.");
-}
-catch (RequestFailedException exception)
-{
-    Console.WriteLine($"Error Code: {exception.ErrorCode}");
-    Console.WriteLine($"Message: {exception.Message}");
-}
-```
-
-For samples on using the `dictionary examples` endpoint refer to more samples [here][dictionaryexamples_sample].
-
-Please refer to the service documentation for a conceptual discussion of [dictionary examples][dictionaryexamples_doc].
 
 ## Troubleshooting
 
@@ -388,7 +219,7 @@ For example, if you submit a translation request without a target translate lang
 ```C# Snippet:HandleBadRequest
 try
 {
-    var translation = client.Translate(Array.Empty<string>(), new[] { "This is a Test" });
+    var translation = client.Translate("", "This is a Test");
 }
 catch (RequestFailedException e)
 {
@@ -437,9 +268,6 @@ Samples are provided for each main functional area, and for each area, samples a
 * [Languages][languages_sample]
 * [Translate][translate_sample]
 * [Transliterate][transliterate_sample]
-* [Break Sentence][breaksentence_sample]
-* [Dictionary Lookup][dictionarylookup_sample]
-* [Dictionary Examples][dictionaryexamples_sample]
 
 ## Contributing
 
@@ -452,40 +280,34 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct][code_of_conduct]. For more information see the [Code of Conduct FAQ][coc_faq] or contact [opencode@microsoft.com][coc_contact] with any additional questions or comments.
 
 <!-- LINKS -->
-[contributing]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/CONTRIBUTING.md
+[contributing]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/CONTRIBUTING.md
 [cla]: https://cla.microsoft.com
 [code_of_conduct]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 [coc_contact]: mailto:opencode@microsoft.com
 
-[translator_client_class]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/src/Custom/TextTranslationClient.cs
+[translator_client_class]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/translation/Azure.AI.Translation.Text/src/Custom/TextTranslationClient.cs
 
-[translator_auth]: https://learn.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication
+[translator_auth]: https://learn.microsoft.com/azure/ai-services/translator/text-translation/reference/authentication
 [translator_limits]: https://learn.microsoft.com/azure/cognitive-services/translator/request-limits
 
-[languages_doc]: https://learn.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages
-[translate_doc]: https://learn.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate
-[transliterate_doc]: https://learn.microsoft.com/azure/cognitive-services/translator/reference/v3-0-transliterate
-[breaksentence_doc]: https://learn.microsoft.com/azure/cognitive-services/translator/reference/v3-0-break-sentence
-[dictionarylookup_doc]: https://learn.microsoft.com/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup
-[dictionaryexamples_doc]: https://learn.microsoft.com/azure/cognitive-services/translator/reference/v3-0-dictionary-examples
+[languages_doc]: https://learn.microsoft.com/azure/ai-services/translator/text-translation/preview/get-languages
+[translate_doc]: https://learn.microsoft.com/azure/ai-services/translator/text-translation/preview/translate-api
+[transliterate_doc]: https://learn.microsoft.com/azure/ai-services/translator/text-translation/preview/transliterate-api
 
-[client_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample0_CreateClient.md
-[languages_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample1_GetLanguages.md
-[translate_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample2_Translate.md
-[transliterate_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample3_Transliterate.md
-[breaksentence_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample4_BreakSentence.md
-[dictionarylookup_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample5_DictionaryLookup.md
-[dictionaryexamples_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_1.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample6_DictionaryExamples.md
+[client_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_2.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample0_CreateClient.md
+[languages_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_2.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample1_GetLanguages.md
+[translate_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_2.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample2_Translate.md
+[transliterate_sample]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Translation.Text_2.0.0/sdk/translation/Azure.AI.Translation.Text/samples/Sample3_Transliterate.md
 
 [translator_resource_create]: https://learn.microsoft.com/azure/cognitive-services/Translator/create-translator-resource
-[azure_identity]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/identity/Azure.Identity/README.md
-[DefaultAzureCredential]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/identity/Azure.Identity/README.md#defaultazurecredential
+[azure_identity]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/identity/Azure.Identity/README.md
+[DefaultAzureCredential]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/identity/Azure.Identity/README.md#defaultazurecredential
 [register_aad_app]: https://learn.microsoft.com/azure/cognitive-services/authentication#assign-a-role-to-a-service-principal
 [aad_grant_access]: https://learn.microsoft.com/azure/cognitive-services/authentication#assign-a-role-to-a-service-principal
 [custom_subdomain]: https://learn.microsoft.com/azure/cognitive-services/authentication#create-a-resource-with-a-custom-subdomain
-[custom_details]: https://learn.microsoft.com/azure/ai-services/translator/reference/v3-0-reference#authentication-with-microsoft-entra-id
-[logging]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_1.0.0/sdk/core/Azure.Core/samples/Diagnostics.md
+[custom_details]: https://learn.microsoft.com/azure/ai-services/translator/text-translation/reference/authentication#authentication-with-microsoft-entra-id
+[logging]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Translation.Text_2.0.0/sdk/core/Azure.Core/samples/Diagnostics.md
 
 [azure_cli]: https://learn.microsoft.com/cli/azure/
 [azure_sub]: https://azure.microsoft.com/free/dotnet/
