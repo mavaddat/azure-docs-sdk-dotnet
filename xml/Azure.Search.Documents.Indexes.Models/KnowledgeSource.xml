@@ -9,6 +9,7 @@
     <AssemblyVersion>11.7.0.0</AssemblyVersion>
     <AssemblyVersion>11.8.0.0</AssemblyVersion>
     <AssemblyVersion>12.0.0.0</AssemblyVersion>
+    <AssemblyVersion>12.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -25,45 +26,19 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="azure-dotnet">
+    <Attribute>
       <AttributeName Language="C#">[System.ClientModel.Primitives.PersistableModelProxy(typeof(Azure.Search.Documents.Indexes.Models.UnknownKnowledgeSource))]</AttributeName>
       <AttributeName Language="F#">[&lt;System.ClientModel.Primitives.PersistableModelProxy(typeof(Azure.Search.Documents.Indexes.Models.UnknownKnowledgeSource))&gt;]</AttributeName>
-    </Attribute>
-    <Attribute FrameworkAlternate="azure-dotnet-preview">
-      <AttributeName Language="C#">[System.ClientModel.Primitives.PersistableModelProxy(typeof(Azure.Search.Documents.Models.UnknownKnowledgeSource))]</AttributeName>
-      <AttributeName Language="F#">[&lt;System.ClientModel.Primitives.PersistableModelProxy(typeof(Azure.Search.Documents.Models.UnknownKnowledgeSource))&gt;]</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
     <summary>
             Represents a knowledge source definition.
-            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.Search.Documents.Indexes.Models.SearchIndexKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.AzureBlobKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.IndexedOneLakeKnowledgeSource" />, and <see cref="T:Azure.Search.Documents.Indexes.Models.WebKnowledgeSource" />.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.Search.Documents.Indexes.Models.SearchIndexKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.AzureBlobKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.IndexedSharePointKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.IndexedOneLakeKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.IndexedSqlKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.FileKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.WebKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.RemoteSharePointKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.WorkIQKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.McpServerKnowledgeSource" />, <see cref="T:Azure.Search.Documents.Indexes.Models.FabricDataAgentKnowledgeSource" />, and <see cref="T:Azure.Search.Documents.Indexes.Models.FabricOntologyKnowledgeSource" />.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
-    <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="protected KnowledgeSource (string name);" />
-      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.Search.Documents.Indexes.Models.KnowledgeSource.#ctor(System.String)" />
-      <MemberSignature Language="VB.NET" Value="Protected Sub New (name As String)" />
-      <MemberSignature Language="F#" Value="new Azure.Search.Documents.Indexes.Models.KnowledgeSource : string -&gt; Azure.Search.Documents.Indexes.Models.KnowledgeSource" Usage="new Azure.Search.Documents.Indexes.Models.KnowledgeSource name" />
-      <MemberType>Constructor</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Parameters>
-        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="name"> The name of the knowledge source. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.Search.Documents.Indexes.Models.KnowledgeSource" />. </summary>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> is null. </exception>
-      </Docs>
-    </Member>
     <Member MemberName="Description">
       <MemberSignature Language="C#" Value="public string Description { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Description" />
@@ -73,8 +48,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -94,8 +69,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.SearchResourceEncryptionKey</ReturnType>
@@ -115,8 +90,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Azure.ETag&gt;</ReturnType>
@@ -137,13 +112,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeSource</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
         <param name="reader"> The JSON reader. </param>
@@ -162,8 +138,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -188,8 +164,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -210,12 +186,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeSource</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="response" Type="Azure.Response" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="response" Type="Azure.Response" />
       </Parameters>
       <Docs>
         <param name="response"> The <see cref="T:Azure.Response" /> to deserialize the <see cref="T:Azure.Search.Documents.Indexes.Models.KnowledgeSource" /> from. </param>
@@ -234,12 +211,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Core.RequestContent</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="knowledgeSource" Type="Azure.Search.Documents.Indexes.Models.KnowledgeSource" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="knowledgeSource" Type="Azure.Search.Documents.Indexes.Models.KnowledgeSource" />
       </Parameters>
       <Docs>
         <param name="knowledgeSource"> The <see cref="T:Azure.Search.Documents.Indexes.Models.KnowledgeSource" /> to serialize into <see cref="T:Azure.Core.RequestContent" />. </param>
@@ -258,13 +236,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeSource</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="data" Type="System.BinaryData" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="data" Type="System.BinaryData" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
         <param name="data"> The data to parse. </param>
@@ -284,12 +263,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
         <param name="options"> The client options for reading and writing models. </param>
@@ -310,8 +290,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeSource</ReturnType>
@@ -343,8 +323,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -375,8 +355,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Indexes.Models.KnowledgeSource</ReturnType>
@@ -408,8 +388,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -438,8 +418,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>

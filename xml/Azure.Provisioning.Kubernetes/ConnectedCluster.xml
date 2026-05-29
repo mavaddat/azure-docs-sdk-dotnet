@@ -13,14 +13,12 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            ConnectedCluster.
-            </summary>
+    <summary> Represents a connected cluster. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ConnectedCluster (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public ConnectedCluster (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Kubernetes.ConnectedCluster.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
@@ -35,83 +33,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the ConnectedCluster resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the ConnectedCluster.</param>
-        <summary>
-            Creates a new ConnectedCluster.
-            </summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="AgentPublicKeyCertificate">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; AgentPublicKeyCertificate { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; AgentPublicKeyCertificate" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.AgentPublicKeyCertificate" />
-      <MemberSignature Language="VB.NET" Value="Public Property AgentPublicKeyCertificate As BicepValue(Of String)" />
-      <MemberSignature Language="F#" Value="member this.AgentPublicKeyCertificate : Azure.Provisioning.BicepValue&lt;string&gt; with get, set" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.AgentPublicKeyCertificate" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Base64 encoded public certificate used by the agent to do the initial
-            handshake to the backend services in Azure.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="AgentVersion">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; AgentVersion { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; AgentVersion" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.AgentVersion" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AgentVersion As BicepValue(Of String)" />
-      <MemberSignature Language="F#" Value="member this.AgentVersion : Azure.Provisioning.BicepValue&lt;string&gt;" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.AgentVersion" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Version of the agent running on the connected cluster resource.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="ConnectivityStatus">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ConnectivityStatus&gt; ConnectivityStatus { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.Kubernetes.ConnectivityStatus&gt; ConnectivityStatus" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.ConnectivityStatus" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ConnectivityStatus As BicepValue(Of ConnectivityStatus)" />
-      <MemberSignature Language="F#" Value="member this.ConnectivityStatus : Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ConnectivityStatus&gt;" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.ConnectivityStatus" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ConnectivityStatus&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Represents the connectivity status of the connected cluster.
-            </summary>
-        <value>To be added.</value>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new ConnectedCluster. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -134,18 +58,15 @@
         <Parameter Name="identity" Type="Azure.Provisioning.Roles.UserAssignedIdentity" />
       </Parameters>
       <Docs>
-        <param name="role">The role to grant.</param>
-        <param name="identity">The <see cref="T:Azure.Provisioning.Roles.UserAssignedIdentity" />.</param>
-        <summary>
-            Creates a role assignment for a user-assigned identity that grants
-            access to this ConnectedCluster.
-            </summary>
-        <returns>The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />.</returns>
+        <param name="role"> The role to grant. </param>
+        <param name="identity"> The <see cref="T:Azure.Provisioning.Roles.UserAssignedIdentity" />. </param>
+        <summary> Creates a role assignment for a user-assigned identity that grants access to this ConnectedCluster. </summary>
+        <returns> The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateRoleAssignment">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment (Azure.Provisioning.Kubernetes.KubernetesBuiltInRole role, Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, Azure.Provisioning.BicepValue&lt;Guid&gt; principalId, string? bicepIdentifierSuffix = default);" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment (Azure.Provisioning.Kubernetes.KubernetesBuiltInRole role, Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, Azure.Provisioning.BicepValue&lt;Guid&gt; principalId, string bicepIdentifierSuffix = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment(valuetype Azure.Provisioning.Kubernetes.KubernetesBuiltInRole role, class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, class Azure.Provisioning.BicepValue`1&lt;valuetype System.Guid&gt; principalId, string bicepIdentifierSuffix) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Kubernetes.ConnectedCluster.CreateRoleAssignment(Azure.Provisioning.Kubernetes.KubernetesBuiltInRole,Azure.Provisioning.BicepValue{Azure.Provisioning.Authorization.RoleManagementPrincipalType},Azure.Provisioning.BicepValue{System.Guid},System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Function CreateRoleAssignment (role As KubernetesBuiltInRole, principalType As BicepValue(Of RoleManagementPrincipalType), principalId As BicepValue(Of Guid), Optional bicepIdentifierSuffix As String = Nothing) As RoleAssignment" />
@@ -165,15 +86,12 @@
         <Parameter Name="bicepIdentifierSuffix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="role">The role to grant.</param>
-        <param name="principalType">The type of the principal to assign to.</param>
-        <param name="principalId">The principal to assign to.</param>
-        <param name="bicepIdentifierSuffix">Optional role assignment identifier name suffix.</param>
-        <summary>
-            Creates a role assignment for a principal that grants access to this
-            ConnectedCluster.
-            </summary>
-        <returns>The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />.</returns>
+        <param name="role"> The role to grant. </param>
+        <param name="principalType"> The type of the principal to assign to. </param>
+        <param name="principalId"> The principal to assign to. </param>
+        <param name="bicepIdentifierSuffix"> Optional role assignment identifier name suffix. </param>
+        <summary> Creates a role assignment for a principal that grants access to this ConnectedCluster. </summary>
+        <returns> The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -193,36 +111,12 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of ConnectedCluster.
-            </summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="Distribution">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; Distribution { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; Distribution" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.Distribution" />
-      <MemberSignature Language="VB.NET" Value="Public Property Distribution As BicepValue(Of String)" />
-      <MemberSignature Language="F#" Value="member this.Distribution : Azure.Provisioning.BicepValue&lt;string&gt; with get, set" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.Distribution" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            The Kubernetes distribution running on this connected cluster.
-            </summary>
-        <value>To be added.</value>
+        <summary> Define all the provisionable properties for ConnectedCluster. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Kubernetes.ConnectedCluster FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Kubernetes.ConnectedCluster FromExisting (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.Kubernetes.ConnectedCluster FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Kubernetes.ConnectedCluster.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As ConnectedCluster" />
@@ -240,46 +134,10 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the ConnectedCluster resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the ConnectedCluster.</param>
-        <summary>
-            Creates a reference to an existing ConnectedCluster.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing ConnectedCluster. </summary>
         <returns>The existing ConnectedCluster resource.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="GetResourceNameRequirements">
-      <MemberSignature Language="C#" Value="public override Azure.Provisioning.Primitives.ResourceNameRequirements GetResourceNameRequirements ();" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype Azure.Provisioning.Primitives.ResourceNameRequirements GetResourceNameRequirements() cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Kubernetes.ConnectedCluster.GetResourceNameRequirements" />
-      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResourceNameRequirements () As ResourceNameRequirements" />
-      <MemberSignature Language="F#" Value="override this.GetResourceNameRequirements : unit -&gt; Azure.Provisioning.Primitives.ResourceNameRequirements" Usage="connectedCluster.GetResourceNameRequirements " />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Attributes>
-        <Attribute>
-          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
-        </Attribute>
-      </Attributes>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.Primitives.ResourceNameRequirements</ReturnType>
-      </ReturnValue>
-      <Parameters />
-      <Docs>
-        <summary>
-            Get the requirements for naming this ConnectedCluster resource.
-            </summary>
-        <returns>Naming requirements.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -298,9 +156,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -320,78 +176,27 @@
         <ReturnType>Azure.Provisioning.Resources.ManagedServiceIdentity</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The identity of the connected cluster. Current supported identity
-            types: None, SystemAssigned.
-            </summary>
+        <summary> Gets or sets the Identity. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="Infrastructure">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; Infrastructure { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; Infrastructure" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.Infrastructure" />
-      <MemberSignature Language="VB.NET" Value="Public Property Infrastructure As BicepValue(Of String)" />
-      <MemberSignature Language="F#" Value="member this.Infrastructure : Azure.Provisioning.BicepValue&lt;string&gt; with get, set" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.Infrastructure" />
+    <Member MemberName="Kind">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ConnectedClusterKind&gt; Kind { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.Kubernetes.ConnectedClusterKind&gt; Kind" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.Kind" />
+      <MemberSignature Language="VB.NET" Value="Public Property Kind As BicepValue(Of ConnectedClusterKind)" />
+      <MemberSignature Language="F#" Value="member this.Kind : Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ConnectedClusterKind&gt; with get, set" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.Kind" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ConnectedClusterKind&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The infrastructure on which the Kubernetes cluster represented by this
-            connected cluster is running on.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="KubernetesVersion">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; KubernetesVersion { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; KubernetesVersion" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.KubernetesVersion" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property KubernetesVersion As BicepValue(Of String)" />
-      <MemberSignature Language="F#" Value="member this.KubernetesVersion : Azure.Provisioning.BicepValue&lt;string&gt;" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.KubernetesVersion" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            The Kubernetes version of the connected cluster resource.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="LastConnectivityOn">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt; LastConnectivityOn { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype System.DateTimeOffset&gt; LastConnectivityOn" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.LastConnectivityOn" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LastConnectivityOn As BicepValue(Of DateTimeOffset)" />
-      <MemberSignature Language="F#" Value="member this.LastConnectivityOn : Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt;" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.LastConnectivityOn" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Time representing the last instance when heart beat was received from
-            the cluster.
-            </summary>
+        <summary> Gets or sets the Kind. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -411,31 +216,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="ManagedIdentityCertificateExpirationOn">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt; ManagedIdentityCertificateExpirationOn { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype System.DateTimeOffset&gt; ManagedIdentityCertificateExpirationOn" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.ManagedIdentityCertificateExpirationOn" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ManagedIdentityCertificateExpirationOn As BicepValue(Of DateTimeOffset)" />
-      <MemberSignature Language="F#" Value="member this.ManagedIdentityCertificateExpirationOn : Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt;" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.ManagedIdentityCertificateExpirationOn" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Expiration time of the managed identity certificate.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -455,99 +236,27 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The name of the Kubernetes cluster on which get is called.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="Offering">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; Offering { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; Offering" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.Offering" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Offering As BicepValue(Of String)" />
-      <MemberSignature Language="F#" Value="member this.Offering : Azure.Provisioning.BicepValue&lt;string&gt;" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.Offering" />
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Kubernetes.ConnectedClusterProperties Properties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.Kubernetes.ConnectedClusterProperties Properties" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.Properties" />
+      <MemberSignature Language="VB.NET" Value="Public Property Properties As ConnectedClusterProperties" />
+      <MemberSignature Language="F#" Value="member this.Properties : Azure.Provisioning.Kubernetes.ConnectedClusterProperties with get, set" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.Properties" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
+        <ReturnType>Azure.Provisioning.Kubernetes.ConnectedClusterProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Connected cluster offering.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="PrivateLinkScopeResourceId">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; PrivateLinkScopeResourceId { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; PrivateLinkScopeResourceId" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.PrivateLinkScopeResourceId" />
-      <MemberSignature Language="VB.NET" Value="Public Property PrivateLinkScopeResourceId As BicepValue(Of String)" />
-      <MemberSignature Language="F#" Value="member this.PrivateLinkScopeResourceId : Azure.Provisioning.BicepValue&lt;string&gt; with get, set" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.PrivateLinkScopeResourceId" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            The resource id of the private link scope this connected cluster is
-            assigned to, if any.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="PrivateLinkState">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.PrivateLinkState&gt; PrivateLinkState { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.Kubernetes.PrivateLinkState&gt; PrivateLinkState" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.PrivateLinkState" />
-      <MemberSignature Language="VB.NET" Value="Public Property PrivateLinkState As BicepValue(Of PrivateLinkState)" />
-      <MemberSignature Language="F#" Value="member this.PrivateLinkState : Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.PrivateLinkState&gt; with get, set" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.PrivateLinkState" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.PrivateLinkState&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Property which describes the state of private link on a connected
-            cluster resource.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="ProvisioningState">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ProvisioningState&gt; ProvisioningState { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.Kubernetes.ProvisioningState&gt; ProvisioningState" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.ProvisioningState" />
-      <MemberSignature Language="VB.NET" Value="Public Property ProvisioningState As BicepValue(Of ProvisioningState)" />
-      <MemberSignature Language="F#" Value="member this.ProvisioningState : Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ProvisioningState&gt; with get, set" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.ProvisioningState" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Kubernetes.ProvisioningState&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Provisioning state of the connected cluster resource.
-            </summary>
+        <summary> Gets or sets the Properties. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -567,9 +276,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -589,53 +296,7 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="TotalCoreCount">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;int&gt; TotalCoreCount { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;int32&gt; TotalCoreCount" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.TotalCoreCount" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TotalCoreCount As BicepValue(Of Integer)" />
-      <MemberSignature Language="F#" Value="member this.TotalCoreCount : Azure.Provisioning.BicepValue&lt;int&gt;" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.TotalCoreCount" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Number of CPU cores present in the connected cluster resource.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="TotalNodeCount">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;int&gt; TotalNodeCount { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;int32&gt; TotalNodeCount" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kubernetes.ConnectedCluster.TotalNodeCount" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TotalNodeCount As BicepValue(Of Integer)" />
-      <MemberSignature Language="F#" Value="member this.TotalNodeCount : Azure.Provisioning.BicepValue&lt;int&gt;" Usage="Azure.Provisioning.Kubernetes.ConnectedCluster.TotalNodeCount" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Kubernetes</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            Number of nodes present in the connected cluster resource.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

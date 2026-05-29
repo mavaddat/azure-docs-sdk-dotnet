@@ -13,6 +13,7 @@
     <AssemblyVersion>11.7.0.0</AssemblyVersion>
     <AssemblyVersion>11.8.0.0</AssemblyVersion>
     <AssemblyVersion>12.0.0.0</AssemblyVersion>
+    <AssemblyVersion>12.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -33,8 +34,8 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -51,8 +52,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Azure.Search.Documents.Models.SemanticErrorMode&gt;</ReturnType>
@@ -72,8 +73,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
@@ -93,8 +94,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Models.QueryAnswer</ReturnType>
@@ -120,8 +121,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Models.QueryCaption</ReturnType>
@@ -136,6 +137,26 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="QueryLanguage">
+      <MemberSignature Language="C#" Value="public Azure.Search.Documents.Models.QueryLanguage? QueryLanguage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.Search.Documents.Models.QueryLanguage&gt; QueryLanguage" />
+      <MemberSignature Language="DocId" Value="P:Azure.Search.Documents.Models.SemanticSearchOptions.QueryLanguage" />
+      <MemberSignature Language="VB.NET" Value="Public Property QueryLanguage As Nullable(Of QueryLanguage)" />
+      <MemberSignature Language="F#" Value="member this.QueryLanguage : Nullable&lt;Azure.Search.Documents.Models.QueryLanguage&gt; with get, set" Usage="Azure.Search.Documents.Models.SemanticSearchOptions.QueryLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.Search.Documents.Models.QueryLanguage&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> A value that specifies the language of the search query. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="QueryRewrites">
       <MemberSignature Language="C#" Value="public Azure.Search.Documents.Models.QueryRewrites QueryRewrites { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Azure.Search.Documents.Models.QueryRewrites QueryRewrites" />
@@ -145,16 +166,38 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Models.QueryRewrites</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>
-            This parameter is only valid if the query type is `semantic`. When QueryRewrites is set to `generative`, the query terms are sent to a
-            generate model which will produce 10 (default) rewrites to help increase the recall of the request. The requested count can be configured
-            by appending the pipe character `|` followed by the `count-&lt;number of rewrites&gt;` option, such as `generative|count-3`. Defaults to `None`. </summary>
+            This parameter is only valid if the query type is 'semantic'. When <see cref="P:Azure.Search.Documents.Models.QueryRewrites.RewritesType" /> is set to
+            <see cref="P:Azure.Search.Documents.Models.QueryRewritesType.Generative" />, the query terms are sent to a generative model which produces alternative
+            query rewrites (10 by default) to help increase the recall of the request. The requested count can be configured via
+            <see cref="P:Azure.Search.Documents.Models.QueryRewrites.Count" />, which serializes as e.g. 'generative|count-3'. Defaults to 'None'.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuerySpeller">
+      <MemberSignature Language="C#" Value="public Azure.Search.Documents.Models.QuerySpellerType? QuerySpeller { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.Search.Documents.Models.QuerySpellerType&gt; QuerySpeller" />
+      <MemberSignature Language="DocId" Value="P:Azure.Search.Documents.Models.SemanticSearchOptions.QuerySpeller" />
+      <MemberSignature Language="VB.NET" Value="Public Property QuerySpeller As Nullable(Of QuerySpellerType)" />
+      <MemberSignature Language="F#" Value="member this.QuerySpeller : Nullable&lt;Azure.Search.Documents.Models.QuerySpellerType&gt; with get, set" Usage="Azure.Search.Documents.Models.SemanticSearchOptions.QuerySpeller" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.Search.Documents.Models.QuerySpellerType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> A value that specifies the type of the speller to use to spell-correct individual search query terms. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -168,8 +211,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -189,13 +232,15 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The list of field names used for semantic search. </summary>
+        <summary>
+            The list of field names used for semantic ranking.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -209,8 +254,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

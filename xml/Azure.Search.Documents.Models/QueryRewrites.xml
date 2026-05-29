@@ -8,6 +8,7 @@
     <AssemblyName>Azure.Search.Documents</AssemblyName>
     <AssemblyVersion>11.7.0.0</AssemblyVersion>
     <AssemblyVersion>11.8.0.0</AssemblyVersion>
+    <AssemblyVersion>12.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -15,7 +16,7 @@
   <Interfaces />
   <Docs>
     <summary>
-            Configuration for how semantic search returns query rewrite to the search.
+            Configuration for how semantic search generates query rewrites.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -29,13 +30,13 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="rewritesType" Type="Azure.Search.Documents.Models.QueryRewritesType" />
       </Parameters>
       <Docs>
-        <param name="rewritesType">A value that specifies whether <see cref="P:Azure.Search.Documents.Models.SemanticSearchResults.SemanticQueryRewritesResultType" /> should be returned as part of the search response.</param>
+        <param name="rewritesType">A value that specifies whether query rewrites should be generated to augment the search query.</param>
         <summary>
             Initializes a new instance of the <see cref="T:Azure.Search.Documents.Models.QueryRewrites" /> class.
             </summary>
@@ -51,13 +52,16 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> A value that specifies the number of <see cref="P:Azure.Search.Documents.Models.SemanticSearchResults.SemanticQueryRewritesResultType" /> that should be returned as part of the search response and will default to 10. </summary>
+        <summary>
+            A value that specifies the number of query rewrites that should be generated. Optional and defaults to null,
+            which lets the service apply its own default (10 for <see cref="P:Azure.Search.Documents.Models.QueryRewritesType.Generative" />).
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -71,13 +75,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.Models.QueryRewritesType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> A value that specifies whether <see cref="P:Azure.Search.Documents.Models.SemanticSearchResults.SemanticQueryRewritesResultType" /> should be returned as part of the search response. </summary>
+        <summary> A value that specifies whether query rewrites should be generated to augment the search query. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

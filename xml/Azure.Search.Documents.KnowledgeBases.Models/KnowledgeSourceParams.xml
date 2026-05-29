@@ -8,6 +8,7 @@
     <AssemblyName>Azure.Search.Documents</AssemblyName>
     <AssemblyVersion>11.8.0.0</AssemblyVersion>
     <AssemblyVersion>12.0.0.0</AssemblyVersion>
+    <AssemblyVersion>12.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -24,45 +25,19 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="azure-dotnet">
+    <Attribute>
       <AttributeName Language="C#">[System.ClientModel.Primitives.PersistableModelProxy(typeof(Azure.Search.Documents.KnowledgeBases.Models.UnknownKnowledgeSourceParams))]</AttributeName>
       <AttributeName Language="F#">[&lt;System.ClientModel.Primitives.PersistableModelProxy(typeof(Azure.Search.Documents.KnowledgeBases.Models.UnknownKnowledgeSourceParams))&gt;]</AttributeName>
-    </Attribute>
-    <Attribute FrameworkAlternate="azure-dotnet-preview">
-      <AttributeName Language="C#">[System.ClientModel.Primitives.PersistableModelProxy(typeof(Azure.Search.Documents.Models.UnknownKnowledgeSourceParams))]</AttributeName>
-      <AttributeName Language="F#">[&lt;System.ClientModel.Primitives.PersistableModelProxy(typeof(Azure.Search.Documents.Models.UnknownKnowledgeSourceParams))&gt;]</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
     <summary>
             Base type for knowledge source runtime parameters.
-            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.SearchIndexKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.AzureBlobKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.IndexedOneLakeKnowledgeSourceParams" />, and <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.WebKnowledgeSourceParams" />.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.SearchIndexKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.AzureBlobKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.IndexedSharePointKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.IndexedOneLakeKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.WebKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.RemoteSharePointKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.WorkIQKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.FabricDataAgentKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.FabricOntologyKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.McpServerKnowledgeSourceParams" />, <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.FileKnowledgeSourceParams" />, and <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.IndexedSqlKnowledgeSourceParams" />.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
-    <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="protected KnowledgeSourceParams (string knowledgeSourceName);" />
-      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string knowledgeSourceName) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams.#ctor(System.String)" />
-      <MemberSignature Language="VB.NET" Value="Protected Sub New (knowledgeSourceName As String)" />
-      <MemberSignature Language="F#" Value="new Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams : string -&gt; Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams" Usage="new Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams knowledgeSourceName" />
-      <MemberType>Constructor</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Parameters>
-        <Parameter Name="knowledgeSourceName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="knowledgeSourceName"> The name of the index the params apply to. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams" />. </summary>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="knowledgeSourceName" /> is null. </exception>
-      </Docs>
-    </Member>
     <Member MemberName="AlwaysQuerySource">
       <MemberSignature Language="C#" Value="public bool? AlwaysQuerySource { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; AlwaysQuerySource" />
@@ -72,13 +47,53 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> Indicates that this knowledge source should bypass source selection and always be queried at retrieval time. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableImageServing">
+      <MemberSignature Language="C#" Value="public bool? EnableImageServing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; EnableImageServing" />
+      <MemberSignature Language="DocId" Value="P:Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams.EnableImageServing" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnableImageServing As Nullable(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.EnableImageServing : Nullable&lt;bool&gt; with get, set" Usage="Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams.EnableImageServing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Indicates whether image serving should be enabled for this knowledge source at retrieval time. When true, images extracted during ingestion are delivered to downstream models. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FailOnError">
+      <MemberSignature Language="C#" Value="public bool? FailOnError { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; FailOnError" />
+      <MemberSignature Language="DocId" Value="P:Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams.FailOnError" />
+      <MemberSignature Language="VB.NET" Value="Public Property FailOnError As Nullable(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.FailOnError : Nullable&lt;bool&gt; with get, set" Usage="Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams.FailOnError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Indicates that the entire retrieval request should fail if retrieval from this knowledge source encounters an error. Defaults to false. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -92,8 +107,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
@@ -113,8 +128,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
@@ -135,13 +150,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
         <param name="reader"> The JSON reader. </param>
@@ -160,8 +176,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -186,14 +202,34 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> The name of the index the params apply to. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxOutputDocuments">
+      <MemberSignature Language="C#" Value="public int? MaxOutputDocuments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; MaxOutputDocuments" />
+      <MemberSignature Language="DocId" Value="P:Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams.MaxOutputDocuments" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxOutputDocuments As Nullable(Of Integer)" />
+      <MemberSignature Language="F#" Value="member this.MaxOutputDocuments : Nullable&lt;int&gt; with get, set" Usage="Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams.MaxOutputDocuments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Search.Documents</AssemblyName>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Limits the maximum number of documents returned from this knowledge source. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -208,13 +244,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="data" Type="System.BinaryData" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="data" Type="System.BinaryData" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
         <param name="data"> The data to parse. </param>
@@ -234,12 +271,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
         <param name="options"> The client options for reading and writing models. </param>
@@ -257,8 +295,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Single&gt;</ReturnType>
@@ -281,8 +319,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams</ReturnType>
@@ -314,8 +352,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -346,8 +384,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Search.Documents.KnowledgeBases.Models.KnowledgeSourceParams</ReturnType>
@@ -379,8 +417,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -409,8 +447,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Search.Documents</AssemblyName>
-        <AssemblyVersion>11.8.0.0</AssemblyVersion>
         <AssemblyVersion>12.0.0.0</AssemblyVersion>
+        <AssemblyVersion>12.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
