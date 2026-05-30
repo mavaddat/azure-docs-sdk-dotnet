@@ -219,7 +219,6 @@
             Specifies the language of the input text. Find which languages are available to translate by 
             looking up supported languages using the translation scope. If the language parameter isn't 
             specified, automatic language detection is applied to determine the source language.
-            
             You must use the language parameter rather than autodetection when using the dynamic dictionary feature. 
             Note: the dynamic dictionary feature is case-sensitive.
             </param>
@@ -267,6 +266,76 @@
       </Docs>
     </Member>
     <Member MemberName="TranslationTarget">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Translation.Text.TranslationTarget TranslationTarget (string language = default, string script = default, Azure.AI.Translation.Text.ProfanityAction? profanityAction = default, Azure.AI.Translation.Text.ProfanityMarker? profanityMarker = default, string deploymentName = default, bool? allowFallback = default, Azure.AI.Translation.Text.TranslationTone? tone = default, Azure.AI.Translation.Text.TranslationGender? gender = default, string adaptiveDatasetId = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Text.ReferenceTextPair&gt; referenceTextPairs = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Translation.Text.TranslationTarget TranslationTarget(string language, string script, valuetype System.Nullable`1&lt;valuetype Azure.AI.Translation.Text.ProfanityAction&gt; profanityAction, valuetype System.Nullable`1&lt;valuetype Azure.AI.Translation.Text.ProfanityMarker&gt; profanityMarker, string deploymentName, valuetype System.Nullable`1&lt;bool&gt; allowFallback, valuetype System.Nullable`1&lt;valuetype Azure.AI.Translation.Text.TranslationTone&gt; tone, valuetype System.Nullable`1&lt;valuetype Azure.AI.Translation.Text.TranslationGender&gt; gender, string adaptiveDatasetId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Translation.Text.ReferenceTextPair&gt; referenceTextPairs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Text.TranslationTextModelFactory.TranslationTarget(System.String,System.String,System.Nullable{Azure.AI.Translation.Text.ProfanityAction},System.Nullable{Azure.AI.Translation.Text.ProfanityMarker},System.String,System.Nullable{System.Boolean},System.Nullable{Azure.AI.Translation.Text.TranslationTone},System.Nullable{Azure.AI.Translation.Text.TranslationGender},System.String,System.Collections.Generic.IEnumerable{Azure.AI.Translation.Text.ReferenceTextPair})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TranslationTarget (Optional language As String = Nothing, Optional script As String = Nothing, Optional profanityAction As Nullable(Of ProfanityAction) = Nothing, Optional profanityMarker As Nullable(Of ProfanityMarker) = Nothing, Optional deploymentName As String = Nothing, Optional allowFallback As Nullable(Of Boolean) = Nothing, Optional tone As Nullable(Of TranslationTone) = Nothing, Optional gender As Nullable(Of TranslationGender) = Nothing, Optional adaptiveDatasetId As String = Nothing, Optional referenceTextPairs As IEnumerable(Of ReferenceTextPair) = Nothing) As TranslationTarget" />
+      <MemberSignature Language="F#" Value="static member TranslationTarget : string * string * Nullable&lt;Azure.AI.Translation.Text.ProfanityAction&gt; * Nullable&lt;Azure.AI.Translation.Text.ProfanityMarker&gt; * string * Nullable&lt;bool&gt; * Nullable&lt;Azure.AI.Translation.Text.TranslationTone&gt; * Nullable&lt;Azure.AI.Translation.Text.TranslationGender&gt; * string * seq&lt;Azure.AI.Translation.Text.ReferenceTextPair&gt; -&gt; Azure.AI.Translation.Text.TranslationTarget" Usage="Azure.AI.Translation.Text.TranslationTextModelFactory.TranslationTarget (language, script, profanityAction, profanityMarker, deploymentName, allowFallback, tone, gender, adaptiveDatasetId, referenceTextPairs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Translation.Text</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Translation.Text.TranslationTarget</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="language" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="script" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="profanityAction" Type="System.Nullable&lt;Azure.AI.Translation.Text.ProfanityAction&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="profanityMarker" Type="System.Nullable&lt;Azure.AI.Translation.Text.ProfanityMarker&gt;" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="deploymentName" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="allowFallback" Type="System.Nullable&lt;System.Boolean&gt;" Index="5" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="tone" Type="System.Nullable&lt;Azure.AI.Translation.Text.TranslationTone&gt;" Index="6" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="gender" Type="System.Nullable&lt;Azure.AI.Translation.Text.TranslationGender&gt;" Index="7" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="adaptiveDatasetId" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="referenceTextPairs" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Text.ReferenceTextPair&gt;" Index="9" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="language">
+            Specifies the language of the output text. The target language must be one of the supported languages included 
+            in the translation scope. It's possible to translate to multiple languages simultaneously by including 
+            multiple string values in the targetsLanguage array.
+            </param>
+        <param name="script"> Specifies the script of the translated text. </param>
+        <param name="profanityAction">
+            Specifies how profanities should be treated in translations.
+            Possible values are: NoAction (default), Marked or Deleted.
+            </param>
+        <param name="profanityMarker">
+            Specifies how profanities should be marked in translations.
+            Possible values are: Asterisk (default) or Tag. 
+            </param>
+        <param name="deploymentName">
+            Default is 'general', which uses NMT system.
+            'abc-inc-gpt-4o', and 'abc-inc-gpt-4o-mini' are examples of deployment names which use GPT-4o uses or
+            GPT-4o-mini model. 'gpt-4o' uses GPT-4o model.
+            '&lt;custom model id&gt;' uses the custom NMT model tuned by customer.
+            'best' system determines which is the best model to use for the request. This intelligence could be introduced
+            in future. Customer should have deployed it in their resource.
+            </param>
+        <param name="allowFallback">
+            In the case where a custom system is being used, specifies that the service is allowed to fall back to a
+            general system when a custom system doesn't exist. 
+            In the case where a Large Language Model is being used, specifies that the service is allowed to fall
+            back to a Small Language Model if an error occurs.
+            Possible values are: true (default) or false.
+            allowFallback=false specifies that the translation should only use systems trained for the category specified 
+            by the request. If a translation for language X to language Y requires chaining through a pivot language E, 
+            then all the systems in the chain (X → E and E → Y) will need to be custom and have the same category. 
+            If no system is found with the specific category, the request will return a 400 status code. allowFallback=true 
+            specifies that the service is allowed to fall back to a general system when a custom system doesn't exist.
+            </param>
+        <param name="tone"> Desired tone of target translation. Accepted values are formal, informal, or neutral. </param>
+        <param name="gender"> Desired gender of target translation. Accepted values are female, male, or neutral. </param>
+        <param name="adaptiveDatasetId"> Reference dataset ID having sentence pair to generate adaptive customized translation. </param>
+        <param name="referenceTextPairs"> Reference text pairs to generate adaptive customized translation. </param>
+        <summary> Target language and translation configuration parameters. </summary>
+        <returns> A new <see cref="T:Azure.AI.Translation.Text.TranslationTarget" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslationTarget">
       <MemberSignature Language="C#" Value="public static Azure.AI.Translation.Text.TranslationTarget TranslationTarget (string language = default, string script = default, Azure.AI.Translation.Text.ProfanityAction? profanityAction = default, Azure.AI.Translation.Text.ProfanityMarker? profanityMarker = default, string deploymentName = default, bool? allowFallback = default, string grade = default, string tone = default, string gender = default, string adaptiveDatasetId = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Text.ReferenceTextPair&gt; referenceTextPairs = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Translation.Text.TranslationTarget TranslationTarget(string language, string script, valuetype System.Nullable`1&lt;valuetype Azure.AI.Translation.Text.ProfanityAction&gt; profanityAction, valuetype System.Nullable`1&lt;valuetype Azure.AI.Translation.Text.ProfanityMarker&gt; profanityMarker, string deploymentName, valuetype System.Nullable`1&lt;bool&gt; allowFallback, string grade, string tone, string gender, string adaptiveDatasetId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Translation.Text.ReferenceTextPair&gt; referenceTextPairs) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Text.TranslationTextModelFactory.TranslationTarget(System.String,System.String,System.Nullable{Azure.AI.Translation.Text.ProfanityAction},System.Nullable{Azure.AI.Translation.Text.ProfanityMarker},System.String,System.Nullable{System.Boolean},System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Azure.AI.Translation.Text.ReferenceTextPair})" />
@@ -281,17 +350,17 @@
         <ReturnType>Azure.AI.Translation.Text.TranslationTarget</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="language" Type="System.String" />
-        <Parameter Name="script" Type="System.String" />
-        <Parameter Name="profanityAction" Type="System.Nullable&lt;Azure.AI.Translation.Text.ProfanityAction&gt;" />
-        <Parameter Name="profanityMarker" Type="System.Nullable&lt;Azure.AI.Translation.Text.ProfanityMarker&gt;" />
-        <Parameter Name="deploymentName" Type="System.String" />
-        <Parameter Name="allowFallback" Type="System.Nullable&lt;System.Boolean&gt;" />
-        <Parameter Name="grade" Type="System.String" />
-        <Parameter Name="tone" Type="System.String" />
-        <Parameter Name="gender" Type="System.String" />
-        <Parameter Name="adaptiveDatasetId" Type="System.String" />
-        <Parameter Name="referenceTextPairs" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Text.ReferenceTextPair&gt;" />
+        <Parameter Name="language" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="script" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="profanityAction" Type="System.Nullable&lt;Azure.AI.Translation.Text.ProfanityAction&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="profanityMarker" Type="System.Nullable&lt;Azure.AI.Translation.Text.ProfanityMarker&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="deploymentName" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowFallback" Type="System.Nullable&lt;System.Boolean&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="grade" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="tone" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="gender" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="adaptiveDatasetId" Type="System.String" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="referenceTextPairs" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Text.ReferenceTextPair&gt;" Index="10" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="language">
