@@ -41,11 +41,11 @@
       </Docs>
     </Member>
     <Member MemberName="DeleteSessionFile">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DeleteSessionFile (string agentName, string sessionId, string path, bool? recursive = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DeleteSessionFile(string agentName, string sessionId, string path, valuetype System.Nullable`1&lt;bool&gt; recursive, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.DeleteSessionFile(System.String,System.String,System.String,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSessionFile (agentName As String, sessionId As String, path As String, Optional recursive As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult" />
-      <MemberSignature Language="F#" Value="abstract member DeleteSessionFile : string * string * string * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&#xA;override this.DeleteSessionFile : string * string * string * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult" Usage="agentSessionFiles.DeleteSessionFile (agentName, sessionId, path, recursive, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DeleteSessionFile (string agentName, string sessionId, string path, bool? recursive = default, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DeleteSessionFile(string agentName, string sessionId, string path, valuetype System.Nullable`1&lt;bool&gt; recursive, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.DeleteSessionFile(System.String,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSessionFile (agentName As String, sessionId As String, path As String, Optional recursive As Nullable(Of Boolean) = Nothing, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member DeleteSessionFile : string * string * string * Nullable&lt;bool&gt; * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&#xA;override this.DeleteSessionFile : string * string * string * Nullable&lt;bool&gt; * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult" Usage="agentSessionFiles.DeleteSessionFile (agentName, sessionId, path, recursive, userIsolationKey, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -59,6 +59,7 @@
         <Parameter Name="sessionId" Type="System.String" />
         <Parameter Name="path" Type="System.String" />
         <Parameter Name="recursive" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="userIsolationKey" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
@@ -66,6 +67,7 @@
         <param name="sessionId"> The session ID. </param>
         <param name="path"> The file or directory path to delete, relative to the session home directory. </param>
         <param name="recursive"> Whether to recursively delete directory contents. Defaults to false. </param>
+        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Delete a file or directory from the session sandbox.
@@ -81,11 +83,11 @@
       </Docs>
     </Member>
     <Member MemberName="DeleteSessionFileAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DeleteSessionFileAsync (string agentName, string sessionId, string path, bool? recursive = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DeleteSessionFileAsync(string agentName, string sessionId, string path, valuetype System.Nullable`1&lt;bool&gt; recursive, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.DeleteSessionFileAsync(System.String,System.String,System.String,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSessionFileAsync (agentName As String, sessionId As String, path As String, Optional recursive As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult)" />
-      <MemberSignature Language="F#" Value="abstract member DeleteSessionFileAsync : string * string * string * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DeleteSessionFileAsync : string * string * string * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="agentSessionFiles.DeleteSessionFileAsync (agentName, sessionId, path, recursive, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DeleteSessionFileAsync (string agentName, string sessionId, string path, bool? recursive = default, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DeleteSessionFileAsync(string agentName, string sessionId, string path, valuetype System.Nullable`1&lt;bool&gt; recursive, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.DeleteSessionFileAsync(System.String,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSessionFileAsync (agentName As String, sessionId As String, path As String, Optional recursive As Nullable(Of Boolean) = Nothing, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteSessionFileAsync : string * string * string * Nullable&lt;bool&gt; * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DeleteSessionFileAsync : string * string * string * Nullable&lt;bool&gt; * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="agentSessionFiles.DeleteSessionFileAsync (agentName, sessionId, path, recursive, userIsolationKey, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -99,6 +101,7 @@
         <Parameter Name="sessionId" Type="System.String" />
         <Parameter Name="path" Type="System.String" />
         <Parameter Name="recursive" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="userIsolationKey" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
@@ -106,6 +109,7 @@
         <param name="sessionId"> The session ID. </param>
         <param name="path"> The file or directory path to delete, relative to the session home directory. </param>
         <param name="recursive"> Whether to recursively delete directory contents. Defaults to false. </param>
+        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Delete a file or directory from the session sandbox.
@@ -121,11 +125,11 @@
       </Docs>
     </Member>
     <Member MemberName="DownloadSessionFile">
-      <MemberSignature Language="C#" Value="public virtual BinaryData DownloadSessionFile (string agentName, string sessionId, string sessionStoragePath, string localPath, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.BinaryData DownloadSessionFile(string agentName, string sessionId, string sessionStoragePath, string localPath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.DownloadSessionFile(System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSessionFile (agentName As String, sessionId As String, sessionStoragePath As String, localPath As String, Optional cancellationToken As CancellationToken = Nothing) As BinaryData" />
-      <MemberSignature Language="F#" Value="abstract member DownloadSessionFile : string * string * string * string * System.Threading.CancellationToken -&gt; BinaryData&#xA;override this.DownloadSessionFile : string * string * string * string * System.Threading.CancellationToken -&gt; BinaryData" Usage="agentSessionFiles.DownloadSessionFile (agentName, sessionId, sessionStoragePath, localPath, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual BinaryData DownloadSessionFile (string agentName, string sessionId, string sessionStoragePath, string localPath, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.BinaryData DownloadSessionFile(string agentName, string sessionId, string sessionStoragePath, string localPath, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.DownloadSessionFile(System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSessionFile (agentName As String, sessionId As String, sessionStoragePath As String, localPath As String, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As BinaryData" />
+      <MemberSignature Language="F#" Value="abstract member DownloadSessionFile : string * string * string * string * string * System.Threading.CancellationToken -&gt; BinaryData&#xA;override this.DownloadSessionFile : string * string * string * string * string * System.Threading.CancellationToken -&gt; BinaryData" Usage="agentSessionFiles.DownloadSessionFile (agentName, sessionId, sessionStoragePath, localPath, userIsolationKey, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -139,6 +143,7 @@
         <Parameter Name="sessionId" Type="System.String" />
         <Parameter Name="sessionStoragePath" Type="System.String" />
         <Parameter Name="localPath" Type="System.String" />
+        <Parameter Name="userIsolationKey" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
@@ -146,6 +151,7 @@
         <param name="sessionId"> The session ID. </param>
         <param name="sessionStoragePath"> The destination file path within the sandbox, relative to the session home directory. </param>
         <param name="localPath"> The path to the local file to save the data to. </param>
+        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Download a file from the session sandbox as a binary stream. Also return file as binary data. </summary>
         <returns>To be added.</returns>
@@ -158,11 +164,11 @@
       </Docs>
     </Member>
     <Member MemberName="DownloadSessionFileAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;BinaryData&gt; DownloadSessionFileAsync (string agentName, string sessionId, string sessionStoragePath, string localPath, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.BinaryData&gt; DownloadSessionFileAsync(string agentName, string sessionId, string sessionStoragePath, string localPath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.DownloadSessionFileAsync(System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSessionFileAsync (agentName As String, sessionId As String, sessionStoragePath As String, localPath As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of BinaryData)" />
-      <MemberSignature Language="F#" Value="abstract member DownloadSessionFileAsync : string * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;&#xA;override this.DownloadSessionFileAsync : string * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;" Usage="agentSessionFiles.DownloadSessionFileAsync (agentName, sessionId, sessionStoragePath, localPath, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;BinaryData&gt; DownloadSessionFileAsync (string agentName, string sessionId, string sessionStoragePath, string localPath, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.BinaryData&gt; DownloadSessionFileAsync(string agentName, string sessionId, string sessionStoragePath, string localPath, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.DownloadSessionFileAsync(System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSessionFileAsync (agentName As String, sessionId As String, sessionStoragePath As String, localPath As String, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member DownloadSessionFileAsync : string * string * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;&#xA;override this.DownloadSessionFileAsync : string * string * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;" Usage="agentSessionFiles.DownloadSessionFileAsync (agentName, sessionId, sessionStoragePath, localPath, userIsolationKey, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -176,6 +182,7 @@
         <Parameter Name="sessionId" Type="System.String" />
         <Parameter Name="sessionStoragePath" Type="System.String" />
         <Parameter Name="localPath" Type="System.String" />
+        <Parameter Name="userIsolationKey" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
@@ -183,6 +190,7 @@
         <param name="sessionId"> The session ID. </param>
         <param name="sessionStoragePath"> The destination file path within the sandbox, relative to the session home directory. </param>
         <param name="localPath"> The path to the local file to save the data to. </param>
+        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Download a file from the session sandbox as a binary stream. Also return file as binary data. </summary>
         <returns>To be added.</returns>
@@ -195,78 +203,120 @@
       </Docs>
     </Member>
     <Member MemberName="GetSessionFiles">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt; GetSessionFiles (string agentName, string sessionId, string sessionStoragePath, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt; GetSessionFiles(string agentName, string sessionId, string sessionStoragePath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.GetSessionFiles(System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessionFiles (agentName As String, sessionId As String, sessionStoragePath As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of SessionDirectoryListResponse)" />
-      <MemberSignature Language="F#" Value="abstract member GetSessionFiles : string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt;&#xA;override this.GetSessionFiles : string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt;" Usage="agentSessionFiles.GetSessionFiles (agentName, sessionId, sessionStoragePath, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.SessionDirectoryEntry&gt; GetSessionFiles (string agentName, string agentSessionId, string sessionStoragePath = default, string userIsolationKey = default, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.Agents.SessionDirectoryEntry&gt; GetSessionFiles(string agentName, string agentSessionId, string sessionStoragePath, string userIsolationKey, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.GetSessionFiles(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessionFiles (agentName As String, agentSessionId As String, Optional sessionStoragePath As String = Nothing, Optional userIsolationKey As String = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As CollectionResult(Of SessionDirectoryEntry)" />
+      <MemberSignature Language="F#" Value="abstract member GetSessionFiles : string * string * string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.SessionDirectoryEntry&gt;&#xA;override this.GetSessionFiles : string * string * string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.SessionDirectoryEntry&gt;" Usage="agentSessionFiles.GetSessionFiles (agentName, agentSessionId, sessionStoragePath, userIsolationKey, limit, order, after, before, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt;</ReturnType>
+        <ReturnType>System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.SessionDirectoryEntry&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="agentName" Type="System.String" />
-        <Parameter Name="sessionId" Type="System.String" />
+        <Parameter Name="agentSessionId" Type="System.String" />
         <Parameter Name="sessionStoragePath" Type="System.String" />
+        <Parameter Name="userIsolationKey" Type="System.String" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" />
+        <Parameter Name="after" Type="System.String" />
+        <Parameter Name="before" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent. </param>
-        <param name="sessionId"> The session ID. </param>
-        <param name="sessionStoragePath"> The directory path to list, relative to the session home directory. </param>
+        <param name="agentSessionId"> The session ID. </param>
+        <param name="sessionStoragePath"> The directory path to list, relative to the session home directory. Defaults to the home directory if not provided. </param>
+        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
-            [Protocol Method] List files and directories at a given path in the session sandbox.
+            List files and directories at a given path in the session sandbox.
             Returns only the immediate children of the specified directory (non-recursive).
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
-        <returns> The response returned from the service. </returns>
+            If path is not provided, lists the session home directory.
+            </summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="agentName" />, <paramref name="sessionId" /> or <paramref name="sessionStoragePath" /> is null. </exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="agentName" />, <paramref name="sessionId" /> or <paramref name="sessionStoragePath" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetSessionFilesAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt;&gt; GetSessionFilesAsync (string agentName, string sessionId, string sessionStoragePath, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt;&gt; GetSessionFilesAsync(string agentName, string sessionId, string sessionStoragePath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.GetSessionFilesAsync(System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessionFilesAsync (agentName As String, sessionId As String, sessionStoragePath As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of SessionDirectoryListResponse))" />
-      <MemberSignature Language="F#" Value="abstract member GetSessionFilesAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt;&gt;&#xA;override this.GetSessionFilesAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt;&gt;" Usage="agentSessionFiles.GetSessionFilesAsync (agentName, sessionId, sessionStoragePath, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.SessionDirectoryEntry&gt; GetSessionFilesAsync (string agentName, string agentSessionId, string sessionStoragePath = default, string userIsolationKey = default, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.Agents.SessionDirectoryEntry&gt; GetSessionFilesAsync(string agentName, string agentSessionId, string sessionStoragePath, string userIsolationKey, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.GetSessionFilesAsync(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessionFilesAsync (agentName As String, agentSessionId As String, Optional sessionStoragePath As String = Nothing, Optional userIsolationKey As String = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of SessionDirectoryEntry)" />
+      <MemberSignature Language="F#" Value="abstract member GetSessionFilesAsync : string * string * string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.SessionDirectoryEntry&gt;&#xA;override this.GetSessionFilesAsync : string * string * string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.SessionDirectoryEntry&gt;" Usage="agentSessionFiles.GetSessionFilesAsync (agentName, agentSessionId, sessionStoragePath, userIsolationKey, limit, order, after, before, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionDirectoryListResponse&gt;&gt;</ReturnType>
+        <ReturnType>System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.SessionDirectoryEntry&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="agentName" Type="System.String" />
-        <Parameter Name="sessionId" Type="System.String" />
+        <Parameter Name="agentSessionId" Type="System.String" />
         <Parameter Name="sessionStoragePath" Type="System.String" />
+        <Parameter Name="userIsolationKey" Type="System.String" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" />
+        <Parameter Name="after" Type="System.String" />
+        <Parameter Name="before" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent. </param>
-        <param name="sessionId"> The session ID. </param>
-        <param name="sessionStoragePath"> The directory path to list, relative to the session home directory. </param>
+        <param name="agentSessionId"> The session ID. </param>
+        <param name="sessionStoragePath"> The directory path to list, relative to the session home directory. Defaults to the home directory if not provided. </param>
+        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
-            [Protocol Method] List files and directories at a given path in the session sandbox.
+            List files and directories at a given path in the session sandbox.
             Returns only the immediate children of the specified directory (non-recursive).
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
-        <returns> The response returned from the service. </returns>
+            If path is not provided, lists the session home directory.
+            </summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="agentName" />, <paramref name="sessionId" /> or <paramref name="sessionStoragePath" /> is null. </exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="agentName" />, <paramref name="sessionId" /> or <paramref name="sessionStoragePath" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
@@ -291,11 +341,11 @@
       </Docs>
     </Member>
     <Member MemberName="UploadSessionFile">
-      <MemberSignature Language="C#" Value="public System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt; UploadSessionFile (string agentName, string sessionId, string sessionStoragePath, string localPath, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SessionFileWriteResponse&gt; UploadSessionFile(string agentName, string sessionId, string sessionStoragePath, string localPath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.UploadSessionFile(System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Function UploadSessionFile (agentName As String, sessionId As String, sessionStoragePath As String, localPath As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of SessionFileWriteResponse)" />
-      <MemberSignature Language="F#" Value="member this.UploadSessionFile : string * string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;" Usage="agentSessionFiles.UploadSessionFile (agentName, sessionId, sessionStoragePath, localPath, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt; UploadSessionFile (string agentName, string sessionId, string sessionStoragePath, string localPath, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SessionFileWriteResponse&gt; UploadSessionFile(string agentName, string sessionId, string sessionStoragePath, string localPath, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.UploadSessionFile(System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function UploadSessionFile (agentName As String, sessionId As String, sessionStoragePath As String, localPath As String, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of SessionFileWriteResponse)" />
+      <MemberSignature Language="F#" Value="member this.UploadSessionFile : string * string * string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;" Usage="agentSessionFiles.UploadSessionFile (agentName, sessionId, sessionStoragePath, localPath, userIsolationKey, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -309,6 +359,7 @@
         <Parameter Name="sessionId" Type="System.String" />
         <Parameter Name="sessionStoragePath" Type="System.String" />
         <Parameter Name="localPath" Type="System.String" />
+        <Parameter Name="userIsolationKey" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
@@ -316,6 +367,7 @@
         <param name="sessionId"> The session ID. </param>
         <param name="sessionStoragePath"> The destination file path within the sandbox, relative to the session home directory. </param>
         <param name="localPath"> The path to the local file to be uploaded. </param>
+        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken" />
         <summary>
             Upload a file to the session sandbox via binary stream.
@@ -331,11 +383,11 @@
       </Docs>
     </Member>
     <Member MemberName="UploadSessionFileAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;&gt; UploadSessionFileAsync (string agentName, string sessionId, string sessionStoragePath, string localPath, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;&gt; UploadSessionFileAsync(string agentName, string sessionId, string sessionStoragePath, string localPath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.UploadSessionFileAsync(System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function UploadSessionFileAsync (agentName As String, sessionId As String, sessionStoragePath As String, localPath As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of SessionFileWriteResponse))" />
-      <MemberSignature Language="F#" Value="abstract member UploadSessionFileAsync : string * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;&gt;&#xA;override this.UploadSessionFileAsync : string * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;&gt;" Usage="agentSessionFiles.UploadSessionFileAsync (agentName, sessionId, sessionStoragePath, localPath, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;&gt; UploadSessionFileAsync (string agentName, string sessionId, string sessionStoragePath, string localPath, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;&gt; UploadSessionFileAsync(string agentName, string sessionId, string sessionStoragePath, string localPath, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentSessionFiles.UploadSessionFileAsync(System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UploadSessionFileAsync (agentName As String, sessionId As String, sessionStoragePath As String, localPath As String, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of SessionFileWriteResponse))" />
+      <MemberSignature Language="F#" Value="abstract member UploadSessionFileAsync : string * string * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;&gt;&#xA;override this.UploadSessionFileAsync : string * string * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SessionFileWriteResponse&gt;&gt;" Usage="agentSessionFiles.UploadSessionFileAsync (agentName, sessionId, sessionStoragePath, localPath, userIsolationKey, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -349,6 +401,7 @@
         <Parameter Name="sessionId" Type="System.String" />
         <Parameter Name="sessionStoragePath" Type="System.String" />
         <Parameter Name="localPath" Type="System.String" />
+        <Parameter Name="userIsolationKey" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
@@ -356,6 +409,7 @@
         <param name="sessionId"> The session ID. </param>
         <param name="sessionStoragePath"> The destination file path within the sandbox, relative to the session home directory. </param>
         <param name="localPath"> The path to the local file to be uploaded. </param>
+        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Upload a file to the session sandbox via binary stream.

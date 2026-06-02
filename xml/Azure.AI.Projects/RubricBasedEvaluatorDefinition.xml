@@ -23,30 +23,50 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary> Rubric-based evaluator definition — stores rubric criteria produced by the generate API. Used for both quality and safety evaluators. </summary>
+    <summary> Rubric-based evaluator definition — stores dimensions produced by the generate API. Used for both quality and safety evaluators. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public RubricBasedEvaluatorDefinition (System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.RubricCriterion&gt; rubricCriteria);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.RubricCriterion&gt; rubricCriteria) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.RubricBasedEvaluatorDefinition.#ctor(System.Collections.Generic.IEnumerable{Azure.AI.Projects.RubricCriterion})" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (rubricCriteria As IEnumerable(Of RubricCriterion))" />
-      <MemberSignature Language="F#" Value="new Azure.AI.Projects.RubricBasedEvaluatorDefinition : seq&lt;Azure.AI.Projects.RubricCriterion&gt; -&gt; Azure.AI.Projects.RubricBasedEvaluatorDefinition" Usage="new Azure.AI.Projects.RubricBasedEvaluatorDefinition rubricCriteria" />
+      <MemberSignature Language="C#" Value="public RubricBasedEvaluatorDefinition (System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Evaluation.EvaluationsDimension&gt; dimensions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Evaluation.EvaluationsDimension&gt; dimensions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.RubricBasedEvaluatorDefinition.#ctor(System.Collections.Generic.IEnumerable{Azure.AI.Projects.Evaluation.EvaluationsDimension})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (dimensions As IEnumerable(Of EvaluationsDimension))" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Projects.RubricBasedEvaluatorDefinition : seq&lt;Azure.AI.Projects.Evaluation.EvaluationsDimension&gt; -&gt; Azure.AI.Projects.RubricBasedEvaluatorDefinition" Usage="new Azure.AI.Projects.RubricBasedEvaluatorDefinition dimensions" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="rubricCriteria" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.RubricCriterion&gt;" />
+        <Parameter Name="dimensions" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Evaluation.EvaluationsDimension&gt;" />
       </Parameters>
       <Docs>
-        <param name="rubricCriteria"> Rubric criteria — the scoring blueprint used by the LLM judge. Quality evaluators include a non-editable residual criterion with rubric_id 'general_quality' (always_applicable: true); safety evaluators include 'general_policy_compliance'. Both use the same rubric structure. </param>
+        <param name="dimensions"> The set of dimensions — the scoring blueprint used by the LLM judge. Quality evaluators include a non-editable residual dimension with id 'general_quality' (always_applicable: true); safety evaluators include 'general_policy_compliance'. Both use the same Dimension structure. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.AI.Projects.RubricBasedEvaluatorDefinition" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="rubricCriteria" /> is null. </exception>
+          <paramref name="dimensions" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dimensions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Azure.AI.Projects.Evaluation.EvaluationsDimension&gt; Dimensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class Azure.AI.Projects.Evaluation.EvaluationsDimension&gt; Dimensions" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.RubricBasedEvaluatorDefinition.Dimensions" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Dimensions As IList(Of EvaluationsDimension)" />
+      <MemberSignature Language="F#" Value="member this.Dimensions : System.Collections.Generic.IList&lt;Azure.AI.Projects.Evaluation.EvaluationsDimension&gt;" Usage="Azure.AI.Projects.RubricBasedEvaluatorDefinition.Dimensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Azure.AI.Projects.Evaluation.EvaluationsDimension&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> The set of dimensions — the scoring blueprint used by the LLM judge. Quality evaluators include a non-editable residual dimension with id 'general_quality' (always_applicable: true); safety evaluators include 'general_policy_compliance'. Both use the same Dimension structure. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="JsonModelCreateCore">
@@ -100,6 +120,26 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="PassThreshold">
+      <MemberSignature Language="C#" Value="public float? PassThreshold { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;float32&gt; PassThreshold" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.RubricBasedEvaluatorDefinition.PassThreshold" />
+      <MemberSignature Language="VB.NET" Value="Public Property PassThreshold As Nullable(Of Single)" />
+      <MemberSignature Language="F#" Value="member this.PassThreshold : Nullable&lt;single&gt; with get, set" Usage="Azure.AI.Projects.RubricBasedEvaluatorDefinition.PassThreshold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Single&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Pass/fail threshold for the aggregate rubric score, on the same normalized 0.0-1.0 scale as the emitted `score`. When the runtime weighted average meets or exceeds this value, the result is `pass`. Defaults to 0.5 (equivalent to a raw 1-5 weighted average of 3.0). The 'any dimension scored 1 → fail' rule still applies regardless of this threshold. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="PersistableModelCreateCore">
       <MemberSignature Language="C#" Value="protected override Azure.AI.Projects.Evaluation.EvaluatorDefinition PersistableModelCreateCore (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class Azure.AI.Projects.Evaluation.EvaluatorDefinition PersistableModelCreateCore(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
@@ -147,26 +187,6 @@
         <param name="options"> The client options for reading and writing models. </param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="RubricCriteria">
-      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Azure.AI.Projects.RubricCriterion&gt; RubricCriteria { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class Azure.AI.Projects.RubricCriterion&gt; RubricCriteria" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.RubricBasedEvaluatorDefinition.RubricCriteria" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RubricCriteria As IList(Of RubricCriterion)" />
-      <MemberSignature Language="F#" Value="member this.RubricCriteria : System.Collections.Generic.IList&lt;Azure.AI.Projects.RubricCriterion&gt;" Usage="Azure.AI.Projects.RubricBasedEvaluatorDefinition.RubricCriteria" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Collections.Generic.IList&lt;Azure.AI.Projects.RubricCriterion&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary> Rubric criteria — the scoring blueprint used by the LLM judge. Quality evaluators include a non-editable residual criterion with rubric_id 'general_quality' (always_applicable: true); safety evaluators include 'general_policy_compliance'. Both use the same rubric structure. </summary>
-        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

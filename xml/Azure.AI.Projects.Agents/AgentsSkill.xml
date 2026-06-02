@@ -23,10 +23,50 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary> A skill object. </summary>
+    <summary> A skill resource. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
+    <Member MemberName="CreatedAt">
+      <MemberSignature Language="C#" Value="public DateTimeOffset CreatedAt { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset CreatedAt" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.AgentsSkill.CreatedAt" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CreatedAt As DateTimeOffset" />
+      <MemberSignature Language="F#" Value="member this.CreatedAt : DateTimeOffset" Usage="Azure.AI.Projects.Agents.AgentsSkill.CreatedAt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> The Unix timestamp (seconds) when the skill was created. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultVersion">
+      <MemberSignature Language="C#" Value="public string DefaultVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultVersion" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.AgentsSkill.DefaultVersion" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DefaultVersion As String" />
+      <MemberSignature Language="F#" Value="member this.DefaultVersion : string" Usage="Azure.AI.Projects.Agents.AgentsSkill.DefaultVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> The default version for the skill. Can be changed via updateSkill. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Description">
       <MemberSignature Language="C#" Value="public string Description { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Description" />
@@ -47,22 +87,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="HasBlob">
-      <MemberSignature Language="C#" Value="public bool HasBlob { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance bool HasBlob" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.AgentsSkill.HasBlob" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HasBlob As Boolean" />
-      <MemberSignature Language="F#" Value="member this.HasBlob : bool" Usage="Azure.AI.Projects.Agents.AgentsSkill.HasBlob" />
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.AgentsSkill.Id" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Id As String" />
+      <MemberSignature Language="F#" Value="member this.Id : string" Usage="Azure.AI.Projects.Agents.AgentsSkill.Id" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Boolean</ReturnType>
+        <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Whether the skill was created from a zip blob package. </summary>
+        <summary> The unique identifier of the skill. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -118,28 +158,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="Metadata">
-      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Metadata { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Metadata" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.AgentsSkill.Metadata" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Metadata As IDictionary(Of String, String)" />
-      <MemberSignature Language="F#" Value="member this.Metadata : System.Collections.Generic.IDictionary&lt;string, string&gt;" Usage="Azure.AI.Projects.Agents.AgentsSkill.Metadata" />
+    <Member MemberName="LatestVersion">
+      <MemberSignature Language="C#" Value="public string LatestVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LatestVersion" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.AgentsSkill.LatestVersion" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LatestVersion As String" />
+      <MemberSignature Language="F#" Value="member this.LatestVersion : string" Usage="Azure.AI.Projects.Agents.AgentsSkill.LatestVersion" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+        <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Set of 16 key-value pairs that can be attached to an object. This can be
-            useful for storing additional information about the object in a structured
-            format, and querying for objects via API or the dashboard.
-            Keys are strings with a maximum length of 64 characters. Values are strings
-            with a maximum length of 512 characters.
-            </summary>
+        <summary> The latest version for the skill. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -235,26 +269,6 @@
         <param name="options"> The client options for reading and writing models. </param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="SkillId">
-      <MemberSignature Language="C#" Value="public string SkillId { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance string SkillId" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.AgentsSkill.SkillId" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SkillId As String" />
-      <MemberSignature Language="F#" Value="member this.SkillId : string" Usage="Azure.AI.Projects.Agents.AgentsSkill.SkillId" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.String</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary> The unique identifier of the skill. </summary>
-        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

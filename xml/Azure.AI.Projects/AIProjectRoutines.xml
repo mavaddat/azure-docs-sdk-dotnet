@@ -1,0 +1,653 @@
+<Type Name="AIProjectRoutines" FullName="Azure.AI.Projects.AIProjectRoutines">
+  <TypeSignature Language="C#" Value="public class AIProjectRoutines" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AIProjectRoutines extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.Projects.AIProjectRoutines" />
+  <TypeSignature Language="VB.NET" Value="Public Class AIProjectRoutines" />
+  <TypeSignature Language="F#" Value="type AIProjectRoutines = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.Projects</AssemblyName>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary> The AIProjectRoutines sub-client. </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AIProjectRoutines ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary> Initializes a new instance of AIProjectRoutines for mocking. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateRoutine">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt; CreateOrUpdateRoutine (string routineName, System.Collections.Generic.IDictionary&lt;string,Azure.AI.Projects.RoutineTrigger&gt; triggers, Azure.AI.Projects.RoutineAction action, string description = default, bool? enabled = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt; CreateOrUpdateRoutine(string routineName, class System.Collections.Generic.IDictionary`2&lt;string, class Azure.AI.Projects.RoutineTrigger&gt; triggers, class Azure.AI.Projects.RoutineAction action, string description, valuetype System.Nullable`1&lt;bool&gt; enabled, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.CreateOrUpdateRoutine(System.String,System.Collections.Generic.IDictionary{System.String,Azure.AI.Projects.RoutineTrigger},Azure.AI.Projects.RoutineAction,System.String,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateRoutine (routineName As String, triggers As IDictionary(Of String, RoutineTrigger), action As RoutineAction, Optional description As String = Nothing, Optional enabled As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectsRoutine)" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdateRoutine : string * System.Collections.Generic.IDictionary&lt;string, Azure.AI.Projects.RoutineTrigger&gt; * Azure.AI.Projects.RoutineAction * string * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&#xA;override this.CreateOrUpdateRoutine : string * System.Collections.Generic.IDictionary&lt;string, Azure.AI.Projects.RoutineTrigger&gt; * Azure.AI.Projects.RoutineAction * string * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;" Usage="aIProjectRoutines.CreateOrUpdateRoutine (routineName, triggers, action, description, enabled, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="triggers" Type="System.Collections.Generic.IDictionary&lt;System.String,Azure.AI.Projects.RoutineTrigger&gt;" />
+        <Parameter Name="action" Type="Azure.AI.Projects.RoutineAction" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="enabled" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="triggers"> The triggers configured for the routine. In v1, exactly one trigger entry is supported. </param>
+        <param name="action"> The action executed when the routine fires. </param>
+        <param name="description"> A human-readable description of the routine. </param>
+        <param name="enabled"> Whether the routine is enabled. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Create or update a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" />, <paramref name="triggers" /> or <paramref name="action" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateRoutineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt; CreateOrUpdateRoutineAsync (string routineName, System.Collections.Generic.IDictionary&lt;string,Azure.AI.Projects.RoutineTrigger&gt; triggers, Azure.AI.Projects.RoutineAction action, string description = default, bool? enabled = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt;&gt; CreateOrUpdateRoutineAsync(string routineName, class System.Collections.Generic.IDictionary`2&lt;string, class Azure.AI.Projects.RoutineTrigger&gt; triggers, class Azure.AI.Projects.RoutineAction action, string description, valuetype System.Nullable`1&lt;bool&gt; enabled, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.CreateOrUpdateRoutineAsync(System.String,System.Collections.Generic.IDictionary{System.String,Azure.AI.Projects.RoutineTrigger},Azure.AI.Projects.RoutineAction,System.String,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateRoutineAsync (routineName As String, triggers As IDictionary(Of String, RoutineTrigger), action As RoutineAction, Optional description As String = Nothing, Optional enabled As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectsRoutine))" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdateRoutineAsync : string * System.Collections.Generic.IDictionary&lt;string, Azure.AI.Projects.RoutineTrigger&gt; * Azure.AI.Projects.RoutineAction * string * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;&#xA;override this.CreateOrUpdateRoutineAsync : string * System.Collections.Generic.IDictionary&lt;string, Azure.AI.Projects.RoutineTrigger&gt; * Azure.AI.Projects.RoutineAction * string * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;" Usage="aIProjectRoutines.CreateOrUpdateRoutineAsync (routineName, triggers, action, description, enabled, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="triggers" Type="System.Collections.Generic.IDictionary&lt;System.String,Azure.AI.Projects.RoutineTrigger&gt;" />
+        <Parameter Name="action" Type="Azure.AI.Projects.RoutineAction" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="enabled" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="triggers"> The triggers configured for the routine. In v1, exactly one trigger entry is supported. </param>
+        <param name="action"> The action executed when the routine fires. </param>
+        <param name="description"> A human-readable description of the routine. </param>
+        <param name="enabled"> Whether the routine is enabled. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Create or update a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" />, <paramref name="triggers" /> or <paramref name="action" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteRoutine">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DeleteRoutine (string routineName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DeleteRoutine(string routineName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.DeleteRoutine(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteRoutine (routineName As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member DeleteRoutine : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&#xA;override this.DeleteRoutine : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult" Usage="aIProjectRoutines.DeleteRoutine (routineName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Delete a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteRoutineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DeleteRoutineAsync (string routineName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DeleteRoutineAsync(string routineName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.DeleteRoutineAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteRoutineAsync (routineName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteRoutineAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DeleteRoutineAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="aIProjectRoutines.DeleteRoutineAsync (routineName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Delete a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableRoutine">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt; DisableRoutine (string routineName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt; DisableRoutine(string routineName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.DisableRoutine(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisableRoutine (routineName As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectsRoutine)" />
+      <MemberSignature Language="F#" Value="abstract member DisableRoutine : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&#xA;override this.DisableRoutine : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;" Usage="aIProjectRoutines.DisableRoutine (routineName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Disable a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableRoutineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt; DisableRoutineAsync (string routineName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt;&gt; DisableRoutineAsync(string routineName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.DisableRoutineAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisableRoutineAsync (routineName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectsRoutine))" />
+      <MemberSignature Language="F#" Value="abstract member DisableRoutineAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;&#xA;override this.DisableRoutineAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;" Usage="aIProjectRoutines.DisableRoutineAsync (routineName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Disable a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DispatchAsyncRoutine">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.DispatchRoutineResponse&gt; DispatchAsyncRoutine (string routineName, Azure.AI.Projects.RoutineDispatchPayload payload = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.DispatchRoutineResponse&gt; DispatchAsyncRoutine(string routineName, class Azure.AI.Projects.RoutineDispatchPayload payload, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.DispatchAsyncRoutine(System.String,Azure.AI.Projects.RoutineDispatchPayload,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DispatchAsyncRoutine (routineName As String, Optional payload As RoutineDispatchPayload = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of DispatchRoutineResponse)" />
+      <MemberSignature Language="F#" Value="abstract member DispatchAsyncRoutine : string * Azure.AI.Projects.RoutineDispatchPayload * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.DispatchRoutineResponse&gt;&#xA;override this.DispatchAsyncRoutine : string * Azure.AI.Projects.RoutineDispatchPayload * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.DispatchRoutineResponse&gt;" Usage="aIProjectRoutines.DispatchAsyncRoutine (routineName, payload, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.DispatchRoutineResponse&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="payload" Type="Azure.AI.Projects.RoutineDispatchPayload" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="payload"> A direct action-input override sent downstream when testing a routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Queue an asynchronous routine dispatch. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DispatchAsyncRoutineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.DispatchRoutineResponse&gt;&gt; DispatchAsyncRoutineAsync (string routineName, Azure.AI.Projects.RoutineDispatchPayload payload = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.DispatchRoutineResponse&gt;&gt; DispatchAsyncRoutineAsync(string routineName, class Azure.AI.Projects.RoutineDispatchPayload payload, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.DispatchAsyncRoutineAsync(System.String,Azure.AI.Projects.RoutineDispatchPayload,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DispatchAsyncRoutineAsync (routineName As String, Optional payload As RoutineDispatchPayload = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of DispatchRoutineResponse))" />
+      <MemberSignature Language="F#" Value="abstract member DispatchAsyncRoutineAsync : string * Azure.AI.Projects.RoutineDispatchPayload * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.DispatchRoutineResponse&gt;&gt;&#xA;override this.DispatchAsyncRoutineAsync : string * Azure.AI.Projects.RoutineDispatchPayload * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.DispatchRoutineResponse&gt;&gt;" Usage="aIProjectRoutines.DispatchAsyncRoutineAsync (routineName, payload, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.DispatchRoutineResponse&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="payload" Type="Azure.AI.Projects.RoutineDispatchPayload" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="payload"> A direct action-input override sent downstream when testing a routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Queue an asynchronous routine dispatch. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableRoutine">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt; EnableRoutine (string routineName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt; EnableRoutine(string routineName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.EnableRoutine(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EnableRoutine (routineName As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectsRoutine)" />
+      <MemberSignature Language="F#" Value="abstract member EnableRoutine : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&#xA;override this.EnableRoutine : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;" Usage="aIProjectRoutines.EnableRoutine (routineName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Enable a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableRoutineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt; EnableRoutineAsync (string routineName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt;&gt; EnableRoutineAsync(string routineName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.EnableRoutineAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EnableRoutineAsync (routineName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectsRoutine))" />
+      <MemberSignature Language="F#" Value="abstract member EnableRoutineAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;&#xA;override this.EnableRoutineAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;" Usage="aIProjectRoutines.EnableRoutineAsync (routineName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Enable a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoutine">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt; GetRoutine (string routineName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt; GetRoutine(string routineName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.GetRoutine(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetRoutine (routineName As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectsRoutine)" />
+      <MemberSignature Language="F#" Value="abstract member GetRoutine : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&#xA;override this.GetRoutine : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;" Usage="aIProjectRoutines.GetRoutine (routineName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Retrieve a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoutineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt; GetRoutineAsync (string routineName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt;&gt; GetRoutineAsync(string routineName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.GetRoutineAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetRoutineAsync (routineName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectsRoutine))" />
+      <MemberSignature Language="F#" Value="abstract member GetRoutineAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;&#xA;override this.GetRoutineAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;" Usage="aIProjectRoutines.GetRoutineAsync (routineName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Retrieve a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoutineRuns">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.RoutineRun&gt; GetRoutineRuns (string routineName, string filter = default, int? limit = default, Azure.AI.Projects.Memory.MemoryStoreListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.RoutineRun&gt; GetRoutineRuns(string routineName, string filter, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.GetRoutineRuns(System.String,System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Memory.MemoryStoreListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetRoutineRuns (routineName As String, Optional filter As String = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of MemoryStoreListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As CollectionResult(Of RoutineRun)" />
+      <MemberSignature Language="F#" Value="abstract member GetRoutineRuns : string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.RoutineRun&gt;&#xA;override this.GetRoutineRuns : string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.RoutineRun&gt;" Usage="aIProjectRoutines.GetRoutineRuns (routineName, filter, limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.CollectionResult&lt;Azure.AI.Projects.RoutineRun&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="filter" Type="System.String" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt;" />
+        <Parameter Name="after" Type="System.String" />
+        <Parameter Name="before" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="filter"> An optional MLflow search-runs filter expression applied within the routine's experiment. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List prior runs for a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoutineRunsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.RoutineRun&gt; GetRoutineRunsAsync (string routineName, string filter = default, int? limit = default, Azure.AI.Projects.Memory.MemoryStoreListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.RoutineRun&gt; GetRoutineRunsAsync(string routineName, string filter, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.GetRoutineRunsAsync(System.String,System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Memory.MemoryStoreListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetRoutineRunsAsync (routineName As String, Optional filter As String = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of MemoryStoreListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of RoutineRun)" />
+      <MemberSignature Language="F#" Value="abstract member GetRoutineRunsAsync : string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.RoutineRun&gt;&#xA;override this.GetRoutineRunsAsync : string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.RoutineRun&gt;" Usage="aIProjectRoutines.GetRoutineRunsAsync (routineName, filter, limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.RoutineRun&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routineName" Type="System.String" />
+        <Parameter Name="filter" Type="System.String" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt;" />
+        <Parameter Name="after" Type="System.String" />
+        <Parameter Name="before" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="routineName"> The unique name of the routine. </param>
+        <param name="filter"> An optional MLflow search-runs filter expression applied within the routine's experiment. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List prior runs for a routine. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="routineName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="routineName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoutines">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.ProjectsRoutine&gt; GetRoutines (int? limit = default, Azure.AI.Projects.Memory.MemoryStoreListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt; GetRoutines(valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.GetRoutines(System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Memory.MemoryStoreListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetRoutines (Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of MemoryStoreListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As CollectionResult(Of ProjectsRoutine)" />
+      <MemberSignature Language="F#" Value="abstract member GetRoutines : Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&#xA;override this.GetRoutines : Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;" Usage="aIProjectRoutines.GetRoutines (limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.CollectionResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt;" />
+        <Parameter Name="after" Type="System.String" />
+        <Parameter Name="before" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List routines. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoutinesAsync">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.ProjectsRoutine&gt; GetRoutinesAsync (int? limit = default, Azure.AI.Projects.Memory.MemoryStoreListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.ProjectsRoutine&gt; GetRoutinesAsync(valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.AIProjectRoutines.GetRoutinesAsync(System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Memory.MemoryStoreListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetRoutinesAsync (Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of MemoryStoreListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of ProjectsRoutine)" />
+      <MemberSignature Language="F#" Value="abstract member GetRoutinesAsync : Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;&#xA;override this.GetRoutinesAsync : Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;" Usage="aIProjectRoutines.GetRoutinesAsync (limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.ProjectsRoutine&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt;" />
+        <Parameter Name="after" Type="System.String" />
+        <Parameter Name="before" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List routines. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pipeline">
+      <MemberSignature Language="C#" Value="public System.ClientModel.Primitives.ClientPipeline Pipeline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ClientModel.Primitives.ClientPipeline Pipeline" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.AIProjectRoutines.Pipeline" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Pipeline As ClientPipeline" />
+      <MemberSignature Language="F#" Value="member this.Pipeline : System.ClientModel.Primitives.ClientPipeline" Usage="Azure.AI.Projects.AIProjectRoutines.Pipeline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.Primitives.ClientPipeline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> The HTTP pipeline for sending and receiving REST requests and responses. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

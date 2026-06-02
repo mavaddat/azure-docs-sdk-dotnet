@@ -33,12 +33,12 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="CreateSkill">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult CreateSkill (System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult CreateSkill(class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkill(System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkill (content As BinaryContent, Optional options As RequestOptions = Nothing) As ClientResult" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkill : System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.CreateSkill : System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.CreateSkill (content, options)" />
+    <Member MemberName="CreateSkillVersion">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult CreateSkillVersion (string name, System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult CreateSkillVersion(string name, class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillVersion(System.String,System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillVersion (name As String, content As BinaryContent, Optional options As RequestOptions = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member CreateSkillVersion : string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.CreateSkillVersion : string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.CreateSkillVersion (name, content, options)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -48,56 +48,52 @@
         <ReturnType>System.ClientModel.ClientResult</ReturnType>
       </ReturnValue>
       <Parameters>
+        <Parameter Name="name" Type="System.String" />
         <Parameter Name="content" Type="System.ClientModel.BinaryContent" />
         <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
       </Parameters>
       <Docs>
+        <param name="name"> The name of the skill. If the skill does not exist, it will be created. </param>
         <param name="content"> The content to send as the body of the request. </param>
         <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Creates a skill.
+            [Protocol Method] Creates a new version of a skill. If the skill does not exist, it will be created.
             <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="content" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="CreateSkill">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt; CreateSkill (string name, string description = default, string instructions = default, System.Collections.Generic.IDictionary&lt;string,string&gt; metadata = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt; CreateSkill(string name, string description, string instructions, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; metadata, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkill(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkill (name As String, Optional description As String = Nothing, Optional instructions As String = Nothing, Optional metadata As IDictionary(Of String, String) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of AgentsSkill)" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkill : string * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&#xA;override this.CreateSkill : string * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;" Usage="projectAgentSkills.CreateSkill (name, description, instructions, metadata, cancellationToken)" />
+    <Member MemberName="CreateSkillVersion">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt; CreateSkillVersion (string name, Azure.AI.Projects.Agents.SkillInlineContent inlineContent = default, bool? default = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SkillVersion&gt; CreateSkillVersion(string name, class Azure.AI.Projects.Agents.SkillInlineContent inlineContent, valuetype System.Nullable`1&lt;bool&gt; default, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillVersion(System.String,Azure.AI.Projects.Agents.SkillInlineContent,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillVersion (name As String, Optional inlineContent As SkillInlineContent = Nothing, Optional default As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of SkillVersion)" />
+      <MemberSignature Language="F#" Value="abstract member CreateSkillVersion : string * Azure.AI.Projects.Agents.SkillInlineContent * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&#xA;override this.CreateSkillVersion : string * Azure.AI.Projects.Agents.SkillInlineContent * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;" Usage="projectAgentSkills.CreateSkillVersion (name, inlineContent, default, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;</ReturnType>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
-        <Parameter Name="description" Type="System.String" />
-        <Parameter Name="instructions" Type="System.String" />
-        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="inlineContent" Type="Azure.AI.Projects.Agents.SkillInlineContent" />
+        <Parameter Name="default" Type="System.Nullable&lt;System.Boolean&gt;" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
-        <param name="description"> A human-readable description of the skill. </param>
-        <param name="instructions"> Instructions that define the behavior of the skill. </param>
-        <param name="metadata">
-            Set of 16 key-value pairs that can be attached to an object. This can be
-            useful for storing additional information about the object in a structured
-            format, and querying for objects via API or the dashboard.
-            Keys are strings with a maximum length of 64 characters. Values are strings
-            with a maximum length of 512 characters.
-            </param>
+        <param name="name"> The name of the skill. If the skill does not exist, it will be created. </param>
+        <param name="inlineContent"> Inline skill content for simple skills without file uploads. Foundry-specific extension. </param>
+        <param name="default"> Whether to set this version as the default. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Creates a skill. </summary>
+        <summary> Creates a new version of a skill. If the skill does not exist, it will be created. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -107,12 +103,12 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="CreateSkillAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; CreateSkillAsync (System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; CreateSkillAsync(class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillAsync(System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillAsync (content As BinaryContent, Optional options As RequestOptions = Nothing) As Task(Of ClientResult)" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkillAsync : System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.CreateSkillAsync : System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.CreateSkillAsync (content, options)" />
+    <Member MemberName="CreateSkillVersionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; CreateSkillVersionAsync (string name, System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; CreateSkillVersionAsync(string name, class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillVersionAsync(System.String,System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillVersionAsync (name As String, content As BinaryContent, Optional options As RequestOptions = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member CreateSkillVersionAsync : string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.CreateSkillVersionAsync : string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.CreateSkillVersionAsync (name, content, options)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -122,56 +118,52 @@
         <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
+        <Parameter Name="name" Type="System.String" />
         <Parameter Name="content" Type="System.ClientModel.BinaryContent" />
         <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
       </Parameters>
       <Docs>
+        <param name="name"> The name of the skill. If the skill does not exist, it will be created. </param>
         <param name="content"> The content to send as the body of the request. </param>
         <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Creates a skill.
+            [Protocol Method] Creates a new version of a skill. If the skill does not exist, it will be created.
             <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="content" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="CreateSkillAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; CreateSkillAsync (string name, string description = default, string instructions = default, System.Collections.Generic.IDictionary&lt;string,string&gt; metadata = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; CreateSkillAsync(string name, string description, string instructions, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; metadata, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillAsync(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillAsync (name As String, Optional description As String = Nothing, Optional instructions As String = Nothing, Optional metadata As IDictionary(Of String, String) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of AgentsSkill))" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkillAsync : string * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;&#xA;override this.CreateSkillAsync : string * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;" Usage="projectAgentSkills.CreateSkillAsync (name, description, instructions, metadata, cancellationToken)" />
+    <Member MemberName="CreateSkillVersionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&gt; CreateSkillVersionAsync (string name, Azure.AI.Projects.Agents.SkillInlineContent inlineContent = default, bool? default = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SkillVersion&gt;&gt; CreateSkillVersionAsync(string name, class Azure.AI.Projects.Agents.SkillInlineContent inlineContent, valuetype System.Nullable`1&lt;bool&gt; default, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillVersionAsync(System.String,Azure.AI.Projects.Agents.SkillInlineContent,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillVersionAsync (name As String, Optional inlineContent As SkillInlineContent = Nothing, Optional default As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of SkillVersion))" />
+      <MemberSignature Language="F#" Value="abstract member CreateSkillVersionAsync : string * Azure.AI.Projects.Agents.SkillInlineContent * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&gt;&#xA;override this.CreateSkillVersionAsync : string * Azure.AI.Projects.Agents.SkillInlineContent * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&gt;" Usage="projectAgentSkills.CreateSkillVersionAsync (name, inlineContent, default, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;</ReturnType>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
-        <Parameter Name="description" Type="System.String" />
-        <Parameter Name="instructions" Type="System.String" />
-        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="inlineContent" Type="Azure.AI.Projects.Agents.SkillInlineContent" />
+        <Parameter Name="default" Type="System.Nullable&lt;System.Boolean&gt;" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
-        <param name="description"> A human-readable description of the skill. </param>
-        <param name="instructions"> Instructions that define the behavior of the skill. </param>
-        <param name="metadata">
-            Set of 16 key-value pairs that can be attached to an object. This can be
-            useful for storing additional information about the object in a structured
-            format, and querying for objects via API or the dashboard.
-            Keys are strings with a maximum length of 64 characters. Values are strings
-            with a maximum length of 512 characters.
-            </param>
+        <param name="name"> The name of the skill. If the skill does not exist, it will be created. </param>
+        <param name="inlineContent"> Inline skill content for simple skills without file uploads. Foundry-specific extension. </param>
+        <param name="default"> Whether to set this version as the default. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Creates a skill. </summary>
+        <summary> Creates a new version of a skill. If the skill does not exist, it will be created. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -181,12 +173,12 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="CreateSkillFromPackage">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt; CreateSkillFromPackage (BinaryData content, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt; CreateSkillFromPackage(class System.BinaryData content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillFromPackage(System.BinaryData,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillFromPackage (content As BinaryData, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of AgentsSkill)" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkillFromPackage : BinaryData * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&#xA;override this.CreateSkillFromPackage : BinaryData * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;" Usage="projectAgentSkills.CreateSkillFromPackage (content, cancellationToken)" />
+    <Member MemberName="CreateSkillVersionFromFiles">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt; CreateSkillVersionFromFiles (string name, string directoryPath, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt; CreateSkillVersionFromFiles(string name, string directoryPath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillVersionFromFiles(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillVersionFromFiles (name As String, directoryPath As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of AgentsSkill)" />
+      <MemberSignature Language="F#" Value="abstract member CreateSkillVersionFromFiles : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&#xA;override this.CreateSkillVersionFromFiles : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;" Usage="projectAgentSkills.CreateSkillVersionFromFiles (name, directoryPath, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -196,70 +188,12 @@
         <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="content" Type="System.BinaryData" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-      </Parameters>
-      <Docs>
-        <param name="content"> The zip package used to create the skill. </param>
-        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Creates a skill from a zip package. </summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="content" /> is null. </exception>
-        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="CreateSkillFromPackage">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult CreateSkillFromPackage (System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult CreateSkillFromPackage(class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillFromPackage(System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillFromPackage (content As BinaryContent, Optional options As RequestOptions = Nothing) As ClientResult" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkillFromPackage : System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.CreateSkillFromPackage : System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.CreateSkillFromPackage (content, options)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.ClientModel.ClientResult</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="content" Type="System.ClientModel.BinaryContent" />
-        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
-      </Parameters>
-      <Docs>
-        <param name="content"> The content to send as the body of the request. </param>
-        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary>
-            [Protocol Method] Creates a skill from a zip package.
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
-        <returns> The response returned from the service. </returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="content" /> is null. </exception>
-        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="CreateSkillFromPackage">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt; CreateSkillFromPackage (string directoryPath, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt; CreateSkillFromPackage(string directoryPath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillFromPackage(System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillFromPackage (directoryPath As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of AgentsSkill)" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkillFromPackage : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&#xA;override this.CreateSkillFromPackage : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;" Usage="projectAgentSkills.CreateSkillFromPackage (directoryPath, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
+        <Parameter Name="name" Type="System.String" />
         <Parameter Name="directoryPath" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
+        <param name="name"> The name of the skill. </param>
         <param name="directoryPath"> The path to the directory, containing skill description. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Creates a skill from a zip package. </summary>
@@ -272,72 +206,49 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="CreateSkillFromPackageAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; CreateSkillFromPackageAsync (BinaryData content, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; CreateSkillFromPackageAsync(class System.BinaryData content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillFromPackageAsync(System.BinaryData,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillFromPackageAsync (content As BinaryData, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of AgentsSkill))" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkillFromPackageAsync : BinaryData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;&#xA;override this.CreateSkillFromPackageAsync : BinaryData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;" Usage="projectAgentSkills.CreateSkillFromPackageAsync (content, cancellationToken)" />
+    <Member MemberName="CreateSkillVersionFromFiles">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult CreateSkillVersionFromFiles (string name, System.ClientModel.BinaryContent content, string contentType, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult CreateSkillVersionFromFiles(string name, class System.ClientModel.BinaryContent content, string contentType, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillVersionFromFiles(System.String,System.ClientModel.BinaryContent,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillVersionFromFiles (name As String, content As BinaryContent, contentType As String, Optional options As RequestOptions = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member CreateSkillVersionFromFiles : string * System.ClientModel.BinaryContent * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.CreateSkillVersionFromFiles : string * System.ClientModel.BinaryContent * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.CreateSkillVersionFromFiles (name, content, contentType, options)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;</ReturnType>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="content" Type="System.BinaryData" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-      </Parameters>
-      <Docs>
-        <param name="content"> The zip package used to create the skill. </param>
-        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Creates a skill from a zip package. </summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="content" /> is null. </exception>
-        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="CreateSkillFromPackageAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; CreateSkillFromPackageAsync (System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; CreateSkillFromPackageAsync(class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillFromPackageAsync(System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillFromPackageAsync (content As BinaryContent, Optional options As RequestOptions = Nothing) As Task(Of ClientResult)" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkillFromPackageAsync : System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.CreateSkillFromPackageAsync : System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.CreateSkillFromPackageAsync (content, options)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
+        <Parameter Name="name" Type="System.String" />
         <Parameter Name="content" Type="System.ClientModel.BinaryContent" />
+        <Parameter Name="contentType" Type="System.String" />
         <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
       </Parameters>
       <Docs>
+        <param name="name"> The name of the skill. </param>
         <param name="content"> The content to send as the body of the request. </param>
+        <param name="contentType"> The contentType to use which has the multipart/form-data boundary. </param>
         <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Creates a skill from a zip package.
+            [Protocol Method] Creates a new version of a skill from uploaded files via multipart form data.
             <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="content" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="CreateSkillFromPackageAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; CreateSkillFromPackageAsync (string directoryPath, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; CreateSkillFromPackageAsync(string directoryPath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillFromPackageAsync(System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillFromPackageAsync (directoryPath As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of AgentsSkill))" />
-      <MemberSignature Language="F#" Value="abstract member CreateSkillFromPackageAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;&#xA;override this.CreateSkillFromPackageAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;" Usage="projectAgentSkills.CreateSkillFromPackageAsync (directoryPath, cancellationToken)" />
+    <Member MemberName="CreateSkillVersionFromFilesAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; CreateSkillVersionFromFilesAsync (string name, string directoryPath, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; CreateSkillVersionFromFilesAsync(string name, string directoryPath, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillVersionFromFilesAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillVersionFromFilesAsync (name As String, directoryPath As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of AgentsSkill))" />
+      <MemberSignature Language="F#" Value="abstract member CreateSkillVersionFromFilesAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;&#xA;override this.CreateSkillVersionFromFilesAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;" Usage="projectAgentSkills.CreateSkillVersionFromFilesAsync (name, directoryPath, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -347,10 +258,12 @@
         <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
+        <Parameter Name="name" Type="System.String" />
         <Parameter Name="directoryPath" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
+        <param name="name"> The name of the skill. </param>
         <param name="directoryPath"> The path to the directory, containing skill description. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Creates a skill from a zip package. </summary>
@@ -360,6 +273,43 @@
           <paramref name="directoryPath" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="directoryPath" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSkillVersionFromFilesAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; CreateSkillVersionFromFilesAsync (string name, System.ClientModel.BinaryContent content, string contentType, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; CreateSkillVersionFromFilesAsync(string name, class System.ClientModel.BinaryContent content, string contentType, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.CreateSkillVersionFromFilesAsync(System.String,System.ClientModel.BinaryContent,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSkillVersionFromFilesAsync (name As String, content As BinaryContent, contentType As String, Optional options As RequestOptions = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member CreateSkillVersionFromFilesAsync : string * System.ClientModel.BinaryContent * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.CreateSkillVersionFromFilesAsync : string * System.ClientModel.BinaryContent * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.CreateSkillVersionFromFilesAsync (name, content, contentType, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="content" Type="System.ClientModel.BinaryContent" />
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="contentType"> The contentType to use which has the multipart/form-data boundary. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Creates a new version of a skill from uploaded files via multipart form data.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
@@ -491,12 +441,12 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="DownloadSkill">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DownloadSkill (string name, System.ClientModel.Primitives.RequestOptions options);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DownloadSkill(string name, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DownloadSkill(System.String,System.ClientModel.Primitives.RequestOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSkill (name As String, options As RequestOptions) As ClientResult" />
-      <MemberSignature Language="F#" Value="abstract member DownloadSkill : string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.DownloadSkill : string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.DownloadSkill (name, options)" />
+    <Member MemberName="DeleteSkillVersion">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DeleteSkillVersion (string name, string version, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DeleteSkillVersion(string name, string version, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DeleteSkillVersion(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSkillVersion (name As String, version As String, options As RequestOptions) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member DeleteSkillVersion : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.DeleteSkillVersion : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.DeleteSkillVersion (name, version, options)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -507,93 +457,64 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
         <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version identifier to delete. </param>
         <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Downloads a skill package.
+            [Protocol Method] Delete a specific version of a skill.
             <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="DownloadSkill">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;BinaryData&gt; DownloadSkill (string name, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class System.BinaryData&gt; DownloadSkill(string name, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DownloadSkill(System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSkill (name As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of BinaryData)" />
-      <MemberSignature Language="F#" Value="abstract member DownloadSkill : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;BinaryData&gt;&#xA;override this.DownloadSkill : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;BinaryData&gt;" Usage="projectAgentSkills.DownloadSkill (name, cancellationToken)" />
+    <Member MemberName="DeleteSkillVersion">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt; DeleteSkillVersion (string name, string version, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt; DeleteSkillVersion(string name, string version, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DeleteSkillVersion(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSkillVersion (name As String, version As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of DeleteSkillVersionResponse)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteSkillVersion : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt;&#xA;override this.DeleteSkillVersion : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt;" Usage="projectAgentSkills.DeleteSkillVersion (name, version, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.ClientModel.ClientResult&lt;System.BinaryData&gt;</ReturnType>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version identifier to delete. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Downloads a skill package. </summary>
+        <summary> Delete a specific version of a skill. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="DownloadSkill">
-      <MemberSignature Language="C#" Value="public BinaryData DownloadSkill (string skillName, string path, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.BinaryData DownloadSkill(string skillName, string path, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DownloadSkill(System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Function DownloadSkill (skillName As String, path As String, Optional cancellationToken As CancellationToken = Nothing) As BinaryData" />
-      <MemberSignature Language="F#" Value="member this.DownloadSkill : string * string * System.Threading.CancellationToken -&gt; BinaryData" Usage="projectAgentSkills.DownloadSkill (skillName, path, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.BinaryData</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="skillName" Type="System.String" />
-        <Parameter Name="path" Type="System.String" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-      </Parameters>
-      <Docs>
-        <param name="skillName"> The unique name of the skill. </param>
-        <param name="path"> The path to save the skill content to. </param>
-        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Downloads a skill package, save it to file and return as a Binary data. </summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="skillName" /> or <paramref name="path" /> is null. </exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="skillName" /> or <paramref name="path" /> is an empty string, and was expected to be non-empty. </exception>
-        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="DownloadSkillAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DownloadSkillAsync (string name, System.ClientModel.Primitives.RequestOptions options);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DownloadSkillAsync(string name, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DownloadSkillAsync(System.String,System.ClientModel.Primitives.RequestOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSkillAsync (name As String, options As RequestOptions) As Task(Of ClientResult)" />
-      <MemberSignature Language="F#" Value="abstract member DownloadSkillAsync : string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DownloadSkillAsync : string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.DownloadSkillAsync (name, options)" />
+    <Member MemberName="DeleteSkillVersionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DeleteSkillVersionAsync (string name, string version, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DeleteSkillVersionAsync(string name, string version, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DeleteSkillVersionAsync(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSkillVersionAsync (name As String, version As String, options As RequestOptions) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteSkillVersionAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DeleteSkillVersionAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.DeleteSkillVersionAsync (name, version, options)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -604,84 +525,55 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
         <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version identifier to delete. </param>
         <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Downloads a skill package.
+            [Protocol Method] Delete a specific version of a skill.
             <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="DownloadSkillAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt; DownloadSkillAsync (string name, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class System.BinaryData&gt;&gt; DownloadSkillAsync(string name, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DownloadSkillAsync(System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSkillAsync (name As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of BinaryData))" />
-      <MemberSignature Language="F#" Value="abstract member DownloadSkillAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt;&#xA;override this.DownloadSkillAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt;" Usage="projectAgentSkills.DownloadSkillAsync (name, cancellationToken)" />
+    <Member MemberName="DeleteSkillVersionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt;&gt; DeleteSkillVersionAsync (string name, string version, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt;&gt; DeleteSkillVersionAsync(string name, string version, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DeleteSkillVersionAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSkillVersionAsync (name As String, version As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of DeleteSkillVersionResponse))" />
+      <MemberSignature Language="F#" Value="abstract member DeleteSkillVersionAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt;&gt;&#xA;override this.DeleteSkillVersionAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt;&gt;" Usage="projectAgentSkills.DeleteSkillVersionAsync (name, version, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;System.BinaryData&gt;&gt;</ReturnType>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.DeleteSkillVersionResponse&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version identifier to delete. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Downloads a skill package. </summary>
+        <summary> Delete a specific version of a skill. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
-        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="DownloadSkillAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;BinaryData&gt; DownloadSkillAsync (string skillName, string path, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.BinaryData&gt; DownloadSkillAsync(string skillName, string path, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.DownloadSkillAsync(System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadSkillAsync (skillName As String, path As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of BinaryData)" />
-      <MemberSignature Language="F#" Value="abstract member DownloadSkillAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;&#xA;override this.DownloadSkillAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;" Usage="projectAgentSkills.DownloadSkillAsync (skillName, path, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;System.BinaryData&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="skillName" Type="System.String" />
-        <Parameter Name="path" Type="System.String" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
-      </Parameters>
-      <Docs>
-        <param name="skillName"> The unique name of the skill. </param>
-        <param name="path"> The path to save the skill content to. </param>
-        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Downloads a skill package, save it to file and return as a Binary data. </summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="skillName" /> or <paramref name="path" /> is null. </exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="skillName" /> or <paramref name="path" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
@@ -813,6 +705,200 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
+    <Member MemberName="GetSkillContent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult GetSkillContent (string name, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult GetSkillContent(string name, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillContent(System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillContent (name As String, options As RequestOptions) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillContent : string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.GetSkillContent : string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.GetSkillContent (name, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Download the zip content for the default version of a skill.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillContent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;BinaryData&gt; GetSkillContent (string name, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class System.BinaryData&gt; GetSkillContent(string name, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillContent(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillContent (name As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillContent : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;BinaryData&gt;&#xA;override this.GetSkillContent : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;BinaryData&gt;" Usage="projectAgentSkills.GetSkillContent (name, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Download the zip content for the default version of a skill. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillContent">
+      <MemberSignature Language="C#" Value="public BinaryData GetSkillContent (string skillName, string path, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.BinaryData GetSkillContent(string skillName, string path, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillContent(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetSkillContent (skillName As String, path As String, Optional cancellationToken As CancellationToken = Nothing) As BinaryData" />
+      <MemberSignature Language="F#" Value="member this.GetSkillContent : string * string * System.Threading.CancellationToken -&gt; BinaryData" Usage="projectAgentSkills.GetSkillContent (skillName, path, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="skillName" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="skillName"> The unique name of the skill. </param>
+        <param name="path"> The path to save the skill content to. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Downloads a skill package, save it to file and return as a Binary data. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="skillName" /> or <paramref name="path" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="skillName" /> or <paramref name="path" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillContentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; GetSkillContentAsync (string name, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; GetSkillContentAsync(string name, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillContentAsync(System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillContentAsync (name As String, options As RequestOptions) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillContentAsync : string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.GetSkillContentAsync : string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.GetSkillContentAsync (name, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Download the zip content for the default version of a skill.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillContentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt; GetSkillContentAsync (string name, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class System.BinaryData&gt;&gt; GetSkillContentAsync(string name, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillContentAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillContentAsync (name As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillContentAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt;&#xA;override this.GetSkillContentAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt;" Usage="projectAgentSkills.GetSkillContentAsync (name, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Download the zip content for the default version of a skill. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillContentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;BinaryData&gt; GetSkillContentAsync (string skillName, string path, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.BinaryData&gt; GetSkillContentAsync(string skillName, string path, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillContentAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillContentAsync (skillName As String, path As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillContentAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;&#xA;override this.GetSkillContentAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;" Usage="projectAgentSkills.GetSkillContentAsync (skillName, path, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="skillName" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="skillName"> The unique name of the skill. </param>
+        <param name="path"> The path to save the skill content to. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Downloads a skill package, save it to file and return as a Binary data. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="skillName" /> or <paramref name="path" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="skillName" /> or <paramref name="path" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
     <Member MemberName="GetSkills">
       <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt; GetSkills (int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt; GetSkills(valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -856,55 +942,6 @@
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Returns the list of all skills. </summary>
         <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="GetSkills">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.Primitives.CollectionResult GetSkills (int? limit, string order, string after, string before, System.ClientModel.Primitives.RequestOptions options);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.Primitives.CollectionResult GetSkills(valuetype System.Nullable`1&lt;int32&gt; limit, string order, string after, string before, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkills(System.Nullable{System.Int32},System.String,System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkills (limit As Nullable(Of Integer), order As String, after As String, before As String, options As RequestOptions) As CollectionResult" />
-      <MemberSignature Language="F#" Value="abstract member GetSkills : Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.CollectionResult&#xA;override this.GetSkills : Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.CollectionResult" Usage="projectAgentSkills.GetSkills (limit, order, after, before, options)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.ClientModel.Primitives.CollectionResult</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
-        <Parameter Name="order" Type="System.String" />
-        <Parameter Name="after" Type="System.String" />
-        <Parameter Name="before" Type="System.String" />
-        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
-      </Parameters>
-      <Docs>
-        <param name="limit">
-            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
-            default is 20.
-            </param>
-        <param name="order">
-            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
-            for descending order.
-            </param>
-        <param name="after">
-            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
-            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
-            subsequent call can include after=obj_foo in order to fetch the next page of the list.
-            </param>
-        <param name="before">
-            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
-            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
-            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
-            </param>
-        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary>
-            [Protocol Method] Returns the list of all skills.
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
-        <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
@@ -956,21 +993,347 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="GetSkillsAsync">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.Primitives.AsyncCollectionResult GetSkillsAsync (int? limit, string order, string after, string before, System.ClientModel.Primitives.RequestOptions options);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.Primitives.AsyncCollectionResult GetSkillsAsync(valuetype System.Nullable`1&lt;int32&gt; limit, string order, string after, string before, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillsAsync(System.Nullable{System.Int32},System.String,System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillsAsync (limit As Nullable(Of Integer), order As String, after As String, before As String, options As RequestOptions) As AsyncCollectionResult" />
-      <MemberSignature Language="F#" Value="abstract member GetSkillsAsync : Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.AsyncCollectionResult&#xA;override this.GetSkillsAsync : Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.AsyncCollectionResult" Usage="projectAgentSkills.GetSkillsAsync (limit, order, after, before, options)" />
+    <Member MemberName="GetSkillVersion">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult GetSkillVersion (string name, string version, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult GetSkillVersion(string name, string version, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersion(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersion (name As String, version As String, options As RequestOptions) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersion : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.GetSkillVersion : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.GetSkillVersion (name, version, options)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.ClientModel.Primitives.AsyncCollectionResult</ReturnType>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
       </ReturnValue>
       <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version identifier to retrieve. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Retrieve a specific version of a skill.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersion">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt; GetSkillVersion (string name, string version, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SkillVersion&gt; GetSkillVersion(string name, string version, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersion(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersion (name As String, version As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of SkillVersion)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersion : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&#xA;override this.GetSkillVersion : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;" Usage="projectAgentSkills.GetSkillVersion (name, version, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version identifier to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Retrieve a specific version of a skill. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; GetSkillVersionAsync (string name, string version, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; GetSkillVersionAsync(string name, string version, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersionAsync(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersionAsync (name As String, version As String, options As RequestOptions) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersionAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.GetSkillVersionAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.GetSkillVersionAsync (name, version, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version identifier to retrieve. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Retrieve a specific version of a skill.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&gt; GetSkillVersionAsync (string name, string version, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.SkillVersion&gt;&gt; GetSkillVersionAsync(string name, string version, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersionAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersionAsync (name As String, version As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of SkillVersion))" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersionAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&gt;&#xA;override this.GetSkillVersionAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&gt;" Usage="projectAgentSkills.GetSkillVersionAsync (name, version, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version identifier to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Retrieve a specific version of a skill. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersionContent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult GetSkillVersionContent (string name, string version, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult GetSkillVersionContent(string name, string version, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersionContent(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersionContent (name As String, version As String, options As RequestOptions) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersionContent : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.GetSkillVersionContent : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="projectAgentSkills.GetSkillVersionContent (name, version, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version to download content for. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Download the zip content for a specific version of a skill.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersionContent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;BinaryData&gt; GetSkillVersionContent (string name, string version, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class System.BinaryData&gt; GetSkillVersionContent(string name, string version, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersionContent(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersionContent (name As String, version As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersionContent : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;BinaryData&gt;&#xA;override this.GetSkillVersionContent : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;BinaryData&gt;" Usage="projectAgentSkills.GetSkillVersionContent (name, version, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version to download content for. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Download the zip content for a specific version of a skill. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersionContentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; GetSkillVersionContentAsync (string name, string version, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; GetSkillVersionContentAsync(string name, string version, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersionContentAsync(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersionContentAsync (name As String, version As String, options As RequestOptions) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersionContentAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.GetSkillVersionContentAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="projectAgentSkills.GetSkillVersionContentAsync (name, version, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version to download content for. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Download the zip content for a specific version of a skill.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersionContentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt; GetSkillVersionContentAsync (string name, string version, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class System.BinaryData&gt;&gt; GetSkillVersionContentAsync(string name, string version, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersionContentAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersionContentAsync (name As String, version As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersionContentAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt;&#xA;override this.GetSkillVersionContentAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;BinaryData&gt;&gt;" Usage="projectAgentSkills.GetSkillVersionContentAsync (name, version, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill. </param>
+        <param name="version"> The version to download content for. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Download the zip content for a specific version of a skill. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="version" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="version" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersions">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt; GetSkillVersions (string name, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.Agents.SkillVersion&gt; GetSkillVersions(string name, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersions(System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersions (name As String, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As CollectionResult(Of SkillVersion)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersions : string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&#xA;override this.GetSkillVersions : string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;" Usage="projectAgentSkills.GetSkillVersions (name, limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" />
+        <Parameter Name="after" Type="System.String" />
+        <Parameter Name="before" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill to list versions for. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List all versions of a skill. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersions">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.Primitives.CollectionResult GetSkillVersions (string name, int? limit, string order, string after, string before, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.Primitives.CollectionResult GetSkillVersions(string name, valuetype System.Nullable`1&lt;int32&gt; limit, string order, string after, string before, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersions(System.String,System.Nullable{System.Int32},System.String,System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersions (name As String, limit As Nullable(Of Integer), order As String, after As String, before As String, options As RequestOptions) As CollectionResult" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersions : string * Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.CollectionResult&#xA;override this.GetSkillVersions : string * Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.CollectionResult" Usage="projectAgentSkills.GetSkillVersions (name, limit, order, after, before, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.Primitives.CollectionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
         <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
         <Parameter Name="order" Type="System.String" />
         <Parameter Name="after" Type="System.String" />
@@ -978,6 +1341,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
       </Parameters>
       <Docs>
+        <param name="name"> The name of the skill to list versions for. </param>
         <param name="limit">
             A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
             default is 20.
@@ -998,28 +1362,33 @@
             </param>
         <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Returns the list of all skills.
+            [Protocol Method] List all versions of a skill.
             <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="GetSkillsAsyncAsync">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt; GetSkillsAsyncAsync (int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt; GetSkillsAsyncAsync(valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillsAsyncAsync(System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillsAsyncAsync (Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of AgentsSkill)" />
-      <MemberSignature Language="F#" Value="abstract member GetSkillsAsyncAsync : Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&#xA;override this.GetSkillsAsyncAsync : Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;" Usage="projectAgentSkills.GetSkillsAsyncAsync (limit, order, after, before, cancellationToken)" />
+    <Member MemberName="GetSkillVersionsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt; GetSkillVersionsAsync (string name, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.Agents.SkillVersion&gt; GetSkillVersionsAsync(string name, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersionsAsync(System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersionsAsync (name As String, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of SkillVersion)" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersionsAsync : string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;&#xA;override this.GetSkillVersionsAsync : string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;" Usage="projectAgentSkills.GetSkillVersionsAsync (name, limit, order, after, before, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;</ReturnType>
+        <ReturnType>System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.SkillVersion&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
+        <Parameter Name="name" Type="System.String" />
         <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
         <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" />
         <Parameter Name="after" Type="System.String" />
@@ -1027,6 +1396,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
+        <param name="name"> The name of the skill to list versions for. </param>
         <param name="limit">
             A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
             default is 20.
@@ -1046,9 +1416,68 @@
             subsequent call can include before=obj_foo in order to fetch the previous page of the list.
             </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Returns the list of all skills. </summary>
+        <summary> List all versions of a skill. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkillVersionsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.Primitives.AsyncCollectionResult GetSkillVersionsAsync (string name, int? limit, string order, string after, string before, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.Primitives.AsyncCollectionResult GetSkillVersionsAsync(string name, valuetype System.Nullable`1&lt;int32&gt; limit, string order, string after, string before, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.GetSkillVersionsAsync(System.String,System.Nullable{System.Int32},System.String,System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSkillVersionsAsync (name As String, limit As Nullable(Of Integer), order As String, after As String, before As String, options As RequestOptions) As AsyncCollectionResult" />
+      <MemberSignature Language="F#" Value="abstract member GetSkillVersionsAsync : string * Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.AsyncCollectionResult&#xA;override this.GetSkillVersionsAsync : string * Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.AsyncCollectionResult" Usage="projectAgentSkills.GetSkillVersionsAsync (name, limit, order, after, before, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.Primitives.AsyncCollectionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="order" Type="System.String" />
+        <Parameter Name="after" Type="System.String" />
+        <Parameter Name="before" Type="System.String" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the skill to list versions for. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] List all versions of a skill.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
@@ -1092,11 +1521,11 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
+        <param name="name"> The name of the skill to update. </param>
         <param name="content"> The content to send as the body of the request. </param>
         <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Updates an existing skill.
+            [Protocol Method] Update a skill.
             <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
@@ -1108,11 +1537,11 @@
       </Docs>
     </Member>
     <Member MemberName="UpdateSkill">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt; UpdateSkill (string name, string description = default, string instructions = default, System.Collections.Generic.IDictionary&lt;string,string&gt; metadata = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt; UpdateSkill(string name, string description, string instructions, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; metadata, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.UpdateSkill(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateSkill (name As String, Optional description As String = Nothing, Optional instructions As String = Nothing, Optional metadata As IDictionary(Of String, String) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of AgentsSkill)" />
-      <MemberSignature Language="F#" Value="abstract member UpdateSkill : string * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&#xA;override this.UpdateSkill : string * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;" Usage="projectAgentSkills.UpdateSkill (name, description, instructions, metadata, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt; UpdateSkill (string name, string defaultVersion, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt; UpdateSkill(string name, string defaultVersion, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.UpdateSkill(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateSkill (name As String, defaultVersion As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of AgentsSkill)" />
+      <MemberSignature Language="F#" Value="abstract member UpdateSkill : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&#xA;override this.UpdateSkill : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;" Usage="projectAgentSkills.UpdateSkill (name, defaultVersion, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -1123,30 +1552,20 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
-        <Parameter Name="description" Type="System.String" />
-        <Parameter Name="instructions" Type="System.String" />
-        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="defaultVersion" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
-        <param name="description"> A human-readable description of the skill. </param>
-        <param name="instructions"> Instructions that define the behavior of the skill. </param>
-        <param name="metadata">
-            Set of 16 key-value pairs that can be attached to an object. This can be
-            useful for storing additional information about the object in a structured
-            format, and querying for objects via API or the dashboard.
-            Keys are strings with a maximum length of 64 characters. Values are strings
-            with a maximum length of 512 characters.
-            </param>
+        <param name="name"> The name of the skill to update. </param>
+        <param name="defaultVersion"> The version identifier that the skill should point to. When set, the skill's default version will resolve to this version instead of the latest. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Updates an existing skill. </summary>
+        <summary> Update a skill. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="defaultVersion" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="name" /> or <paramref name="defaultVersion" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
@@ -1170,11 +1589,11 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
+        <param name="name"> The name of the skill to update. </param>
         <param name="content"> The content to send as the body of the request. </param>
         <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Updates an existing skill.
+            [Protocol Method] Update a skill.
             <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
@@ -1186,11 +1605,11 @@
       </Docs>
     </Member>
     <Member MemberName="UpdateSkillAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; UpdateSkillAsync (string name, string description = default, string instructions = default, System.Collections.Generic.IDictionary&lt;string,string&gt; metadata = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; UpdateSkillAsync(string name, string description, string instructions, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; metadata, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.UpdateSkillAsync(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateSkillAsync (name As String, Optional description As String = Nothing, Optional instructions As String = Nothing, Optional metadata As IDictionary(Of String, String) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of AgentsSkill))" />
-      <MemberSignature Language="F#" Value="abstract member UpdateSkillAsync : string * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;&#xA;override this.UpdateSkillAsync : string * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;" Usage="projectAgentSkills.UpdateSkillAsync (name, description, instructions, metadata, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; UpdateSkillAsync (string name, string defaultVersion, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.AgentsSkill&gt;&gt; UpdateSkillAsync(string name, string defaultVersion, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectAgentSkills.UpdateSkillAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateSkillAsync (name As String, defaultVersion As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of AgentsSkill))" />
+      <MemberSignature Language="F#" Value="abstract member UpdateSkillAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;&#xA;override this.UpdateSkillAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.AgentsSkill&gt;&gt;" Usage="projectAgentSkills.UpdateSkillAsync (name, defaultVersion, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -1201,30 +1620,20 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
-        <Parameter Name="description" Type="System.String" />
-        <Parameter Name="instructions" Type="System.String" />
-        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="defaultVersion" Type="System.String" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="name"> The unique name of the skill. </param>
-        <param name="description"> A human-readable description of the skill. </param>
-        <param name="instructions"> Instructions that define the behavior of the skill. </param>
-        <param name="metadata">
-            Set of 16 key-value pairs that can be attached to an object. This can be
-            useful for storing additional information about the object in a structured
-            format, and querying for objects via API or the dashboard.
-            Keys are strings with a maximum length of 64 characters. Values are strings
-            with a maximum length of 512 characters.
-            </param>
+        <param name="name"> The name of the skill to update. </param>
+        <param name="defaultVersion"> The version identifier that the skill should point to. When set, the skill's default version will resolve to this version instead of the latest. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Updates an existing skill. </summary>
+        <summary> Update a skill. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> is null. </exception>
+          <paramref name="name" /> or <paramref name="defaultVersion" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+          <paramref name="name" /> or <paramref name="defaultVersion" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>

@@ -28,25 +28,23 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public TracesEvaluatorGenerationJobSource (string agentName);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string agentName) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.TracesEvaluatorGenerationJobSource.#ctor(System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (agentName As String)" />
-      <MemberSignature Language="F#" Value="new Azure.AI.Projects.TracesEvaluatorGenerationJobSource : string -&gt; Azure.AI.Projects.TracesEvaluatorGenerationJobSource" Usage="new Azure.AI.Projects.TracesEvaluatorGenerationJobSource agentName" />
+      <MemberSignature Language="C#" Value="public TracesEvaluatorGenerationJobSource (DateTimeOffset startTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTimeOffset startTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.TracesEvaluatorGenerationJobSource.#ctor(System.DateTimeOffset)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (startTime As DateTimeOffset)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Projects.TracesEvaluatorGenerationJobSource : DateTimeOffset -&gt; Azure.AI.Projects.TracesEvaluatorGenerationJobSource" Usage="new Azure.AI.Projects.TracesEvaluatorGenerationJobSource startTime" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="agentName" Type="System.String" />
+        <Parameter Name="startTime" Type="System.DateTimeOffset" />
       </Parameters>
       <Docs>
-        <param name="agentName"> The agent name to fetch traces for. </param>
+        <param name="startTime"> Start of the time window (Unix timestamp in seconds) for fetching traces. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.AI.Projects.TracesEvaluatorGenerationJobSource" />. </summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="agentName" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="AgentId">
@@ -64,7 +62,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The unique agent ID used to filter traces. Optional — when omitted, traces are filtered by `agent_name` (and `agent_version` if specified). </summary>
+        <summary> The unique agent ID used to filter traces. Provide either `agent_id` or `agent_name` — at least one is required. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -84,7 +82,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The agent name to fetch traces for. </summary>
+        <summary> The agent name to fetch traces for. Provide either `agent_id` or `agent_name` — at least one is required. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -200,26 +198,6 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="MaxTraces">
-      <MemberSignature Language="C#" Value="public int? MaxTraces { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; MaxTraces" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.TracesEvaluatorGenerationJobSource.MaxTraces" />
-      <MemberSignature Language="VB.NET" Value="Public Property MaxTraces As Nullable(Of Integer)" />
-      <MemberSignature Language="F#" Value="member this.MaxTraces : Nullable&lt;int&gt; with get, set" Usage="Azure.AI.Projects.TracesEvaluatorGenerationJobSource.MaxTraces" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary> Maximum number of traces to retrieve. </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
     <Member MemberName="PersistableModelCreateCore">
       <MemberSignature Language="C#" Value="protected override Azure.AI.Projects.EvaluatorGenerationJobSource PersistableModelCreateCore (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class Azure.AI.Projects.EvaluatorGenerationJobSource PersistableModelCreateCore(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
@@ -271,18 +249,18 @@
       </Docs>
     </Member>
     <Member MemberName="StartTime">
-      <MemberSignature Language="C#" Value="public DateTimeOffset? StartTime { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; StartTime" />
+      <MemberSignature Language="C#" Value="public DateTimeOffset StartTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset StartTime" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.TracesEvaluatorGenerationJobSource.StartTime" />
-      <MemberSignature Language="VB.NET" Value="Public Property StartTime As Nullable(Of DateTimeOffset)" />
-      <MemberSignature Language="F#" Value="member this.StartTime : Nullable&lt;DateTimeOffset&gt; with get, set" Usage="Azure.AI.Projects.TracesEvaluatorGenerationJobSource.StartTime" />
+      <MemberSignature Language="VB.NET" Value="Public Property StartTime As DateTimeOffset" />
+      <MemberSignature Language="F#" Value="member this.StartTime : DateTimeOffset with get, set" Usage="Azure.AI.Projects.TracesEvaluatorGenerationJobSource.StartTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+        <ReturnType>System.DateTimeOffset</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> Start of the time window (Unix timestamp in seconds) for fetching traces. </summary>

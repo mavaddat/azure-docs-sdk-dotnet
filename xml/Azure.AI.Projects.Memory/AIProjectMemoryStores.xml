@@ -36,6 +36,150 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="CreateMemory">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult CreateMemory (string name, System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult CreateMemory(string name, class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.CreateMemory(System.String,System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateMemory (name As String, content As BinaryContent, Optional options As RequestOptions = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member CreateMemory : string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.CreateMemory : string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="aIProjectMemoryStores.CreateMemory (name, content, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.ClientModel.BinaryContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Create a memory item in a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMemory">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt; CreateMemory (string name, string scope, string content, Azure.AI.Projects.Memory.MemoryItemKind kind, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Memory.MemoryItem&gt; CreateMemory(string name, string scope, string content, valuetype Azure.AI.Projects.Memory.MemoryItemKind kind, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.CreateMemory(System.String,System.String,System.String,Azure.AI.Projects.Memory.MemoryItemKind,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateMemory (name As String, scope As String, content As String, kind As MemoryItemKind, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of MemoryItem)" />
+      <MemberSignature Language="F#" Value="abstract member CreateMemory : string * string * string * Azure.AI.Projects.Memory.MemoryItemKind * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&#xA;override this.CreateMemory : string * string * string * Azure.AI.Projects.Memory.MemoryItemKind * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;" Usage="aIProjectMemoryStores.CreateMemory (name, scope, content, kind, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="scope" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="kind" Type="Azure.AI.Projects.Memory.MemoryItemKind" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="scope"> The namespace that logically groups and isolates memories, such as a user ID. </param>
+        <param name="content"> The content of the memory. </param>
+        <param name="kind"> The kind of the memory item. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Create a memory item in a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" />, <paramref name="scope" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />, <paramref name="scope" /> or <paramref name="content" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMemoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; CreateMemoryAsync (string name, System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; CreateMemoryAsync(string name, class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.CreateMemoryAsync(System.String,System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateMemoryAsync (name As String, content As BinaryContent, Optional options As RequestOptions = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member CreateMemoryAsync : string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.CreateMemoryAsync : string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="aIProjectMemoryStores.CreateMemoryAsync (name, content, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.ClientModel.BinaryContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Create a memory item in a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMemoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt; CreateMemoryAsync (string name, string scope, string content, Azure.AI.Projects.Memory.MemoryItemKind kind, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Memory.MemoryItem&gt;&gt; CreateMemoryAsync(string name, string scope, string content, valuetype Azure.AI.Projects.Memory.MemoryItemKind kind, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.CreateMemoryAsync(System.String,System.String,System.String,Azure.AI.Projects.Memory.MemoryItemKind,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateMemoryAsync (name As String, scope As String, content As String, kind As MemoryItemKind, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of MemoryItem))" />
+      <MemberSignature Language="F#" Value="abstract member CreateMemoryAsync : string * string * string * Azure.AI.Projects.Memory.MemoryItemKind * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;&#xA;override this.CreateMemoryAsync : string * string * string * Azure.AI.Projects.Memory.MemoryItemKind * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;" Usage="aIProjectMemoryStores.CreateMemoryAsync (name, scope, content, kind, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="scope" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="kind" Type="Azure.AI.Projects.Memory.MemoryItemKind" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="scope"> The namespace that logically groups and isolates memories, such as a user ID. </param>
+        <param name="content"> The content of the memory. </param>
+        <param name="kind"> The kind of the memory item. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Create a memory item in a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" />, <paramref name="scope" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />, <paramref name="scope" /> or <paramref name="content" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
     <Member MemberName="CreateMemoryStore">
       <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult CreateMemoryStore (System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult CreateMemoryStore(class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
@@ -173,6 +317,142 @@
           <paramref name="name" /> or <paramref name="definition" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteMemory">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DeleteMemory (string name, string memoryId, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DeleteMemory(string name, string memoryId, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.DeleteMemory(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteMemory (name As String, memoryId As String, options As RequestOptions) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member DeleteMemory : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.DeleteMemory : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="aIProjectMemoryStores.DeleteMemory (name, memoryId, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to delete. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Delete a memory item from a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteMemory">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.DeleteMemoryResponse&gt; DeleteMemory (string name, string memoryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.DeleteMemoryResponse&gt; DeleteMemory(string name, string memoryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.DeleteMemory(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteMemory (name As String, memoryId As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of DeleteMemoryResponse)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteMemory : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.DeleteMemoryResponse&gt;&#xA;override this.DeleteMemory : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.DeleteMemoryResponse&gt;" Usage="aIProjectMemoryStores.DeleteMemory (name, memoryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.DeleteMemoryResponse&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to delete. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Delete a memory item from a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteMemoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DeleteMemoryAsync (string name, string memoryId, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DeleteMemoryAsync(string name, string memoryId, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.DeleteMemoryAsync(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteMemoryAsync (name As String, memoryId As String, options As RequestOptions) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteMemoryAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DeleteMemoryAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="aIProjectMemoryStores.DeleteMemoryAsync (name, memoryId, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to delete. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Delete a memory item from a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteMemoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.DeleteMemoryResponse&gt;&gt; DeleteMemoryAsync (string name, string memoryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.DeleteMemoryResponse&gt;&gt; DeleteMemoryAsync(string name, string memoryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.DeleteMemoryAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteMemoryAsync (name As String, memoryId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of DeleteMemoryResponse))" />
+      <MemberSignature Language="F#" Value="abstract member DeleteMemoryAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.DeleteMemoryResponse&gt;&gt;&#xA;override this.DeleteMemoryAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.DeleteMemoryResponse&gt;&gt;" Usage="aIProjectMemoryStores.DeleteMemoryAsync (name, memoryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.DeleteMemoryResponse&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to delete. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Delete a memory item from a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
@@ -445,6 +725,315 @@
           <paramref name="name" /> or <paramref name="scope" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="name" /> or <paramref name="scope" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemories">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt; GetMemories (string name, string scope, Azure.AI.Projects.Memory.MemoryItemKind? kind = default, int? limit = default, Azure.AI.Projects.Memory.MemoryStoreListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.Memory.MemoryItem&gt; GetMemories(string name, string scope, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Memory.MemoryItemKind&gt; kind, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.GetMemories(System.String,System.String,System.Nullable{Azure.AI.Projects.Memory.MemoryItemKind},System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Memory.MemoryStoreListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMemories (name As String, scope As String, Optional kind As Nullable(Of MemoryItemKind) = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of MemoryStoreListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As CollectionResult(Of MemoryItem)" />
+      <MemberSignature Language="F#" Value="abstract member GetMemories : string * string * Nullable&lt;Azure.AI.Projects.Memory.MemoryItemKind&gt; * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&#xA;override this.GetMemories : string * string * Nullable&lt;Azure.AI.Projects.Memory.MemoryItemKind&gt; * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;" Usage="aIProjectMemoryStores.GetMemories (name, scope, kind, limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="scope" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="kind" Type="System.Nullable&lt;Azure.AI.Projects.Memory.MemoryItemKind&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="after" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="before" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="scope"> The namespace that logically groups and isolates memories, such as a user ID. </param>
+        <param name="kind"> The kind of the memory item. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List all memory items in a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemoriesAsync">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.Primitives.AsyncCollectionResult GetMemoriesAsync (string name, System.ClientModel.BinaryContent content, string kind = default, int? limit = default, string order = default, string after = default, string before = default, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.Primitives.AsyncCollectionResult GetMemoriesAsync(string name, class System.ClientModel.BinaryContent content, string kind, valuetype System.Nullable`1&lt;int32&gt; limit, string order, string after, string before, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.GetMemoriesAsync(System.String,System.ClientModel.BinaryContent,System.String,System.Nullable{System.Int32},System.String,System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMemoriesAsync (name As String, content As BinaryContent, Optional kind As String = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As String = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional options As RequestOptions = Nothing) As AsyncCollectionResult" />
+      <MemberSignature Language="F#" Value="abstract member GetMemoriesAsync : string * System.ClientModel.BinaryContent * string * Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.AsyncCollectionResult&#xA;override this.GetMemoriesAsync : string * System.ClientModel.BinaryContent * string * Nullable&lt;int&gt; * string * string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.Primitives.AsyncCollectionResult" Usage="aIProjectMemoryStores.GetMemoriesAsync (name, content, kind, limit, order, after, before, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.Primitives.AsyncCollectionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.ClientModel.BinaryContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="kind" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="order" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="after" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="before" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="kind"> The kind of the memory item. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] List all memory items in a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemoriesAsync">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt; GetMemoriesAsync (string name, string scope, Azure.AI.Projects.Memory.MemoryItemKind? kind = default, int? limit = default, Azure.AI.Projects.Memory.MemoryStoreListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.Memory.MemoryItem&gt; GetMemoriesAsync(string name, string scope, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Memory.MemoryItemKind&gt; kind, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.GetMemoriesAsync(System.String,System.String,System.Nullable{Azure.AI.Projects.Memory.MemoryItemKind},System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Memory.MemoryStoreListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMemoriesAsync (name As String, scope As String, Optional kind As Nullable(Of MemoryItemKind) = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of MemoryStoreListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of MemoryItem)" />
+      <MemberSignature Language="F#" Value="abstract member GetMemoriesAsync : string * string * Nullable&lt;Azure.AI.Projects.Memory.MemoryItemKind&gt; * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&#xA;override this.GetMemoriesAsync : string * string * Nullable&lt;Azure.AI.Projects.Memory.MemoryItemKind&gt; * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;" Usage="aIProjectMemoryStores.GetMemoriesAsync (name, scope, kind, limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="scope" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="kind" Type="System.Nullable&lt;Azure.AI.Projects.Memory.MemoryItemKind&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Memory.MemoryStoreListOrder&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="after" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="before" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="scope"> The namespace that logically groups and isolates memories, such as a user ID. </param>
+        <param name="kind"> The kind of the memory item. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List all memory items in a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemory">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult GetMemory (string name, string memoryId, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult GetMemory(string name, string memoryId, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.GetMemory(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMemory (name As String, memoryId As String, options As RequestOptions) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member GetMemory : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.GetMemory : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="aIProjectMemoryStores.GetMemory (name, memoryId, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to retrieve. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Retrieve a memory item from a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemory">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt; GetMemory (string name, string memoryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Memory.MemoryItem&gt; GetMemory(string name, string memoryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.GetMemory(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMemory (name As String, memoryId As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of MemoryItem)" />
+      <MemberSignature Language="F#" Value="abstract member GetMemory : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&#xA;override this.GetMemory : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;" Usage="aIProjectMemoryStores.GetMemory (name, memoryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Retrieve a memory item from a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; GetMemoryAsync (string name, string memoryId, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; GetMemoryAsync(string name, string memoryId, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.GetMemoryAsync(System.String,System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMemoryAsync (name As String, memoryId As String, options As RequestOptions) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member GetMemoryAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.GetMemoryAsync : string * string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="aIProjectMemoryStores.GetMemoryAsync (name, memoryId, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to retrieve. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Retrieve a memory item from a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt; GetMemoryAsync (string name, string memoryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Memory.MemoryItem&gt;&gt; GetMemoryAsync(string name, string memoryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.GetMemoryAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMemoryAsync (name As String, memoryId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of MemoryItem))" />
+      <MemberSignature Language="F#" Value="abstract member GetMemoryAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;&#xA;override this.GetMemoryAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;" Usage="aIProjectMemoryStores.GetMemoryAsync (name, memoryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Retrieve a memory item from a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
@@ -1104,6 +1693,150 @@
           <paramref name="name" /> or <paramref name="content" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="name" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateMemory">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult UpdateMemory (string name, string memoryId, System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult UpdateMemory(string name, string memoryId, class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.UpdateMemory(System.String,System.String,System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateMemory (name As String, memoryId As String, content As BinaryContent, Optional options As RequestOptions = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member UpdateMemory : string * string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.UpdateMemory : string * string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="aIProjectMemoryStores.UpdateMemory (name, memoryId, content, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.ClientModel.BinaryContent" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to update. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Update a memory item in a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" />, <paramref name="memoryId" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateMemory">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt; UpdateMemory (string name, string memoryId, string content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Memory.MemoryItem&gt; UpdateMemory(string name, string memoryId, string content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.UpdateMemory(System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateMemory (name As String, memoryId As String, content As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of MemoryItem)" />
+      <MemberSignature Language="F#" Value="abstract member UpdateMemory : string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&#xA;override this.UpdateMemory : string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;" Usage="aIProjectMemoryStores.UpdateMemory (name, memoryId, content, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to update. </param>
+        <param name="content"> The updated content of the memory. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Update a memory item in a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" />, <paramref name="memoryId" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />, <paramref name="memoryId" /> or <paramref name="content" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateMemoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; UpdateMemoryAsync (string name, string memoryId, System.ClientModel.BinaryContent content, System.ClientModel.Primitives.RequestOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; UpdateMemoryAsync(string name, string memoryId, class System.ClientModel.BinaryContent content, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.UpdateMemoryAsync(System.String,System.String,System.ClientModel.BinaryContent,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateMemoryAsync (name As String, memoryId As String, content As BinaryContent, Optional options As RequestOptions = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member UpdateMemoryAsync : string * string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.UpdateMemoryAsync : string * string * System.ClientModel.BinaryContent * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="aIProjectMemoryStores.UpdateMemoryAsync (name, memoryId, content, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.ClientModel.BinaryContent" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to update. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Update a memory item in a memory store.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" />, <paramref name="memoryId" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> or <paramref name="memoryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateMemoryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt; UpdateMemoryAsync (string name, string memoryId, string content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Memory.MemoryItem&gt;&gt; UpdateMemoryAsync(string name, string memoryId, string content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Memory.AIProjectMemoryStores.UpdateMemoryAsync(System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateMemoryAsync (name As String, memoryId As String, content As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of MemoryItem))" />
+      <MemberSignature Language="F#" Value="abstract member UpdateMemoryAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;&#xA;override this.UpdateMemoryAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;" Usage="aIProjectMemoryStores.UpdateMemoryAsync (name, memoryId, content, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Memory.MemoryItem&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="memoryId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The name of the memory store. </param>
+        <param name="memoryId"> The ID of the memory item to update. </param>
+        <param name="content"> The updated content of the memory. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Update a memory item in a memory store. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" />, <paramref name="memoryId" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />, <paramref name="memoryId" /> or <paramref name="content" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
