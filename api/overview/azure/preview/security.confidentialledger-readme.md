@@ -1,12 +1,12 @@
 ---
 title: Azure confidential ledger client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.Security.ConfidentialLedger, confidentialledger
-ms.date: 02/17/2026
+ms.date: 06/02/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: confidentialledger
 ---
-# Azure confidential ledger client library for .NET - version 1.4.1-beta.3 
+# Azure confidential ledger client library for .NET - version 1.4.1-beta.5 
 
 
 Azure confidential ledger provides a service for logging to an immutable, tamper-proof ledger. As part of the [Azure Confidential Computing][azure_confidential_computing]
@@ -59,6 +59,8 @@ var ledgerClient = new ConfidentialLedgerClient(new Uri("https://my-ledger-url.c
 ```
 
 > Security Note: By default when a confidential ledger Client is created it will connect to Azure's confidential ledger Identity Service to obtain the latest TLS service certificate for your Ledger in order to secure connections to Ledger Nodes. The details of this process are available in [this sample][client_construction_sample]. This behavior can be overridden by setting the `options` argument when creating the Ledger Client.
+>
+> `ConfidentialLedgerClientOptions.VerifyConnection` defaults to `true`, which verifies node TLS certificates against the trusted identity service certificate. Set `VerifyConnection = false` only for development or testing scenarios.
 
 ## Key concepts
 
@@ -100,6 +102,14 @@ while (status == "Pending")
 
 Console.WriteLine($"Transaction status: {status}");
 ```
+
+### Redirect handling
+
+The `ConfidentialLedgerClient` automatically follows HTTP 307 and 308 redirects while preserving the `Authorization` header. This is required because Azure confidential ledger routes write operations to the primary node, and non-primary nodes may return redirects.
+
+The SDK also caches the latest primary node URL from redirect responses and reuses it for subsequent non-`GET` requests to reduce extra network round-trips for write-heavy workloads.
+
+No additional configuration is required to enable this behavior.
 
 #### Receipts
 
@@ -305,27 +315,30 @@ It is possible to further organize data within a collection as part of the lates
 
 Specify the `tags` parameter as part of the create entry operation. Multiple tags can be specified using commas. There is a limit of five tags per transaction.
 
-```C#
+```C# Snippet:CreateLedgerEntryWithTags
+RequestContent content = RequestContent.Create(new { contents = "Hello world with tags!" });
+string collectionId = "my-collection";
 string tags = "tag1,tag2";
 
-Response result = await Client.CreateLedgerEntryAsync(content, collectionId, tags);
+Response result = await client.CreateLedgerEntryAsync(content, collectionId, tags);
 ```
 
-```C#
+```C# Snippet:GetLedgerEntriesWithTags
+string collectionIdForQuery = "my-collection";
 
 // Specify collection ID and tag. Optionally add a range of transaction IDs.
 // Only one tag is permitted in each retrieval operation.
-var result = Client.GetLedgerEntriesAsync(collectionId, "tag1");
+var queryResult = client.GetLedgerEntriesAsync(collectionIdForQuery, tag: "tag1");
 ```
 ### User management
 
 Users are managed directly with the confidential ledger instead of through Azure. New users may be AAD-based or certificate-based.
 
 ```C# Snippet:NewUser
-string newUserAadObjectId = "<some AAD user or service princpal object Id>";
-ledgerClient.CreateOrUpdateUser(
+string newUserAadObjectId = "<some AAD user or service principal object Id>";
+ledgerClient.CreateOrUpdateLedgerUser(
     newUserAadObjectId,
-    RequestContent.Create(new { assignedRole = "Reader" }));
+    RequestContent.Create(new { assignedRoles = new[] { "Reader" } }));
 ```
 
 
@@ -365,18 +378,28 @@ We guarantee that all client instance methods are thread-safe and independent of
 ### Additional concepts
 
 <!-- CLIENT COMMON BAR -->
-[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
-[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
-[Long-running operations](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt) |
-[Handling failures](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception) |
-[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/core/Azure.Core/samples/Diagnostics.md) |
+[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
+[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
+[Long-running operations](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt) |
+[Handling failures](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception) |
+[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/core/Azure.Core/samples/Diagnostics.md) |
 [Mocking](https://learn.microsoft.com/dotnet/azure/sdk/unit-testing-mocking) |
 [Client lifetime](https://devblogs.microsoft.com/azure-sdk/lifetime-management-and-thread-safety-guarantees-of-azure-sdk-net-clients/)
 <!-- CLIENT COMMON BAR -->
 
 ## Examples
 
-Coming Soon...
+The [samples directory][samples] includes end-to-end usage patterns. A typical flow is:
+
+1. Append an entry and capture the transaction ID (`Snippet:AppendToLedger`).
+2. Verify the transaction is committed (`Snippet:GetStatus`).
+3. Retrieve the entry or receipt (`Snippet:GetEnteryWithNoTransactionId`, `Snippet:GetReceipt`).
+
+For additional scenarios such as collections, tags, and advanced certificate verification, see:
+
+- `tests/samples/HelloWorldSamples.cs`
+- `tests/samples/AdvancedSamples.cs`
+- `tests/samples/TagsSamples.cs`
 
 ## Troubleshooting
 
@@ -413,17 +436,18 @@ For more information see the [Code of Conduct FAQ][coc_faq] or contact
 <!-- LINKS -->
 [style-guide-msft]: https://learn.microsoft.com/style-guide/capitalization
 [style-guide-cloud]: https://aka.ms/azsdk/cloud-style-guide
-[client_src]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/confidentialledger/Azure.Security.ConfidentialLedger
+[client_src]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/confidentialledger/Azure.Security.ConfidentialLedger
 [client_nuget_package]: https://www.nuget.org/packages?q=Azure.Security.ConfidentialLedger
+[samples]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/confidentialledger/Azure.Security.ConfidentialLedger/tests/samples
 [azure_cli]: https://learn.microsoft.com/cli/azure
 [azure_cloud_shell]: https://shell.azure.com/bash
 [azure_confidential_computing]: https://azure.microsoft.com/solutions/confidential-compute
-[client_construction_sample]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/confidentialledger/Azure.Security.ConfidentialLedger/tests/samples/CertificateServiceSample.md
+[client_construction_sample]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/confidentialledger/Azure.Security.ConfidentialLedger/tests/samples/CertificateServiceSample.md
 [azure_sub]: https://azure.microsoft.com/free/dotnet/
 [ccf]: https://github.com/Microsoft/CCF
-[azure_identity]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/identity/Azure.Identity
-[default_cred_ref]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/identity/Azure.Identity/README.md#defaultazurecredential
-[logging]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.3/sdk/core/Azure.Core/samples/Diagnostics.md
+[azure_identity]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/identity/Azure.Identity
+[default_cred_ref]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/identity/Azure.Identity/README.md#defaultazurecredential
+[logging]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_1.4.1-beta.5/sdk/core/Azure.Core/samples/Diagnostics.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq
 [cla]: https://cla.microsoft.com
