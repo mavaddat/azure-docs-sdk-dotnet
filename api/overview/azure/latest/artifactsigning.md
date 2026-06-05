@@ -1,7 +1,7 @@
 ---
 title: Azure Artifactsigning SDK for .NET
 description: Reference for Azure Artifactsigning SDK for .NET
-ms.date: 06/04/2026
+ms.date: 06/05/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: artifactsigning
