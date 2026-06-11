@@ -1,0 +1,11 @@
+---
+title: Azure Voice Services SDK for .NET
+description: Reference for Azure Voice Services SDK for .NET
+ms.date: 06/11/2026
+ms.topic: reference
+ms.devlang: dotnet
+ms.service: voiceservices
+---
+# Azure Voice Services SDK for .NET - legacy
+## Packages - legacy
+[!INCLUDE [packages](voice-services-index.md)]
