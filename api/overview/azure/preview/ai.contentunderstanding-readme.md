@@ -1,12 +1,12 @@
 ---
 title: Azure Content Understanding client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.AI.ContentUnderstanding, contentunderstanding
-ms.date: 04/30/2026
+ms.date: 06/12/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: contentunderstanding
 ---
-# Azure Content Understanding client library for .NET - version 1.2.0-beta.1 
+# Azure Content Understanding client library for .NET - version 1.2.0-beta.2 
 
 
 Azure AI Content Understanding is a multimodal AI service that extracts semantic content from documents, video, audio, and image files. It transforms unstructured content into structured, machine-readable data optimized for retrieval-augmented generation (RAG) and automated workflows.
@@ -19,6 +19,8 @@ Use the client library for Azure AI Content Understanding to:
 * **Leverage prebuilt analyzers** - Use production-ready prebuilt analyzers across industries including finance and tax (invoices, receipts, tax forms), identity verification (passports, driver's licenses), mortgage and lending (loan applications, appraisals), procurement and contracts (purchase orders, agreements), and utilities (billing statements)
 * **Create custom analyzers** - Build domain-specific analyzers for specialized content extraction needs across all four modalities (documents, video, audio, and images)
 * **Classify documents and video** - Automatically categorize and extract information from documents and video by type
+
+If you have encountered issues or want to suggest features, please [file an issue][file_issue].
 
 [Source code][source_code] | [Package (NuGet)][nuget_package] | [API reference documentation][api_reference] | [Product documentation][product_docs]
 
@@ -207,6 +209,9 @@ See the [samples directory][samples_directory] for complete examples.
 
 ### Convert results to LLM-ready text
 
+> **Note:** `.ToLlmInput()` is currently in preview and may change in future releases.
+> We welcome feedback — please [file an issue][file_issue].
+
 Use `.ToLlmInput()` to convert any analysis result into a text format that LLMs can consume directly — YAML front matter with extracted fields followed by the markdown body. This works with all content types (documents, images, audio, video) and handles multi-segment results and classification hierarchies automatically.
 
 ```csharp
@@ -237,7 +242,7 @@ Console.WriteLine(text);
 //       figure illustrating monthly values, and describes the AI Document
 //       Intelligence service...
 //   ---
-//   <!-- page 1 -->
+//   <!-- InputPageNumber: 1 -->
 //   # ==This is title==
 //   ## 1. Text
 //   [Latin](https://en.wikipedia.org/wiki/Latin) refers to an ancient Italic language...
@@ -248,6 +253,50 @@ Console.WriteLine(text);
 //   ![Values...](figures/1.1 "Bar chart with six bars: Jan=200, Feb=300...")
 //   ...
 ```
+
+> **About `<!-- InputPageNumber: N -->`**
+>
+> The helper emits `<!-- InputPageNumber: N -->` markers at page boundaries in
+> the markdown body. `N` is the **original 1-based page number from the source
+> document** (i.e., the page index in the analyzed PDF), not a counter that
+> restarts at 1 for each call. Downstream consumers (RAG indexers, page-citation
+> prompts) can rely on the marker value to cite the correct source page even
+> when only a subset of pages was analyzed.
+>
+> **Why this matters when a page range is specified**
+>
+> Use `ContentRange` on the analyze request to analyze only a subset of pages
+> in a multi-page document. The markers in the rendered output preserve the
+> original page identity:
+>
+> ```csharp
+> // Analyze pages 2-3 and page 5 of a 10-page PDF.
+> Operation<AnalysisResult> operation = await client.AnalyzeAsync(
+>     WaitUntil.Completed,
+>     "prebuilt-documentSearch",
+>     inputs: new[]
+>     {
+>         new AnalysisInput
+>         {
+>             Uri = multiPageUrl,
+>             ContentRange = new ContentRange("2-3,5"),
+>         },
+>     });
+>
+> string text = operation.Value.ToLlmInput();
+> // Output contains markers for the *original* page numbers, not 1, 2, 3:
+> //   pages: 2-3, 5
+> //   ...
+> //   <!-- InputPageNumber: 2 -->
+> //   ...page 2 content...
+> //   <!-- InputPageNumber: 3 -->
+> //   ...page 3 content...
+> //   <!-- InputPageNumber: 5 -->
+> //   ...page 5 content...
+> ```
+>
+> An LLM or RAG indexer can therefore cite "see page 5" with the correct page
+> number, even though page 5 is the *third* segment in the response.
 
 See the [advanced ToLlmInput sample][sample-advanced-to-llm-input] for output options (fields-only, markdown-only, custom metadata), multi-page content ranges, and multi-segment video.
 
@@ -299,7 +348,7 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct][code_of_conduct]. For more information see the [Code of Conduct FAQ][code_of_conduct_faq] or contact [opencode@microsoft.com][opencode_email] with any additional questions or comments.
 
 <!-- LINKS -->
-[source_code]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding
+[source_code]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/contentunderstanding/Azure.AI.ContentUnderstanding
 [nuget_package]: https://www.nuget.org/packages/Azure.AI.ContentUnderstanding
 [api_reference]: https://learn.microsoft.com/dotnet/api/azure.ai.contentunderstanding
 [product_docs]: https://learn.microsoft.com/azure/ai-services/content-understanding/
@@ -309,24 +358,25 @@ This project has adopted the [Microsoft Open Source Code of Conduct][code_of_con
 [cu_region_support]: https://learn.microsoft.com/azure/ai-services/content-understanding/language-region-support
 [azure_portal]: https://portal.azure.com/
 [deploy_models_docs]: https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-openai
-[azure_identity_readme]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/identity/Azure.Identity/README.md
+[azure_identity_readme]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/identity/Azure.Identity/README.md
 [thread_safety_guideline]: https://azure.github.io/azure-sdk/dotnet_introduction.html#dotnet-service-methods-thread-safety
-[client_options]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions
-[accessing_response]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset
-[long_running_operations]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt
-[handling_failures]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception
-[diagnostics]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/core/Azure.Core/samples/Diagnostics.md
+[client_options]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions
+[accessing_response]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset
+[long_running_operations]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt
+[handling_failures]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception
+[diagnostics]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/core/Azure.Core/samples/Diagnostics.md
 [mocking]: https://learn.microsoft.com/dotnet/azure/sdk/unit-testing-mocking
 [client_lifetime]: https://devblogs.microsoft.com/azure-sdk/lifetime-management-and-thread-safety-guarantees-of-azure-sdk-net-clients/
-[samples_directory]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples
-[sample00]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample00_UpdateDefaults.md
-[sample01]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample01_AnalyzeBinary.md
+[samples_directory]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples
+[sample00]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample00_UpdateDefaults.md
+[sample01]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample01_AnalyzeBinary.md
 [prebuilt-analyzers-docs]: https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/prebuilt-analyzers
-[sample-advanced-to-llm-input]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.1/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample_Advanced_ToLlmInput.md
+[sample-advanced-to-llm-input]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.ContentUnderstanding_1.2.0-beta.2/sdk/contentunderstanding/Azure.AI.ContentUnderstanding/samples/Sample_Advanced_ToLlmInput.md
 [cla]: https://cla.microsoft.com
 [code_of_conduct]: https://opensource.microsoft.com/codeofconduct/
 [code_of_conduct_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 [opencode_email]: mailto:opencode@microsoft.com
 [style-guide-msft]: https://learn.microsoft.com/style-guide/capitalization
 [style-guide-cloud]: https://aka.ms/azsdk/cloud-style-guide
+[file_issue]: https://github.com/Azure/azure-sdk-for-net/issues/new?labels=Cognitive%20-%20Content%20Understanding&title=[ContentUnderstanding]%20&body=%23%23%20Library%20Version%0A%0A%23%23%20Repro%20Steps%0A%0A%23%23%20Expected%20Result%0A%0A%23%23%20Actual%20Result
 
