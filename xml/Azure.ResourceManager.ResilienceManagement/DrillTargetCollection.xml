@@ -1,0 +1,378 @@
+<Type Name="DrillTargetCollection" FullName="Azure.ResourceManager.ResilienceManagement.DrillTargetCollection">
+  <TypeSignature Language="C#" Value="public class DrillTargetCollection : Azure.ResourceManager.ArmCollection, System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DrillTargetCollection extends Azure.ResourceManager.ArmCollection implements class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection" />
+  <TypeSignature Language="VB.NET" Value="Public Class DrillTargetCollection&#xA;Inherits ArmCollection&#xA;Implements IAsyncEnumerable(Of DrillTargetResource), IEnumerable(Of DrillTargetResource)" />
+  <TypeSignature Language="F#" Value="type DrillTargetCollection = class&#xA;    inherit ArmCollection&#xA;    interface seq&lt;DrillTargetResource&gt;&#xA;    interface IEnumerable&#xA;    interface IAsyncEnumerable&lt;DrillTargetResource&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Azure.ResourceManager.ArmCollection</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            A class representing a collection of <see cref="T:Azure.ResourceManager.ResilienceManagement.DrillTargetResource" /> and their operations.
+            Each <see cref="T:Azure.ResourceManager.ResilienceManagement.DrillTargetResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.ResilienceManagement.ResilienceManagementDrillResource" />.
+            To get a <see cref="T:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection" /> instance call the GetDrillTargets method from an instance of <see cref="T:Azure.ResourceManager.ResilienceManagement.ResilienceManagementDrillResource" />.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DrillTargetCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary> Initializes a new instance of DrillTargetCollection for mocking. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;bool&gt; Exists (string drillResourceName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;bool&gt; Exists(string drillResourceName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.Exists(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Exists (drillResourceName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of Boolean)" />
+      <MemberSignature Language="F#" Value="abstract member Exists : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;bool&gt;&#xA;override this.Exists : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;bool&gt;" Usage="drillTargetCollection.Exists (drillResourceName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drillResourceName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="drillResourceName"> The name of the DrillResource (GUID). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Checks to see if the resource exists in azure.
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/serviceGroups/{serviceGroupName}/providers/Microsoft.AzureResilienceManagement/drills/{drillName}/drillResources/{drillResourceName}. </description></item><item><term> Operation Id. </term><description> DrillResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="drillResourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="drillResourceName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExistsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;bool&gt;&gt; ExistsAsync (string drillResourceName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;bool&gt;&gt; ExistsAsync(string drillResourceName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.ExistsAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExistsAsync (drillResourceName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of Boolean))" />
+      <MemberSignature Language="F#" Value="abstract member ExistsAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;bool&gt;&gt;&#xA;override this.ExistsAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;bool&gt;&gt;" Usage="drillTargetCollection.ExistsAsync (drillResourceName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.Boolean&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drillResourceName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="drillResourceName"> The name of the DrillResource (GUID). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Checks to see if the resource exists in azure.
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/serviceGroups/{serviceGroupName}/providers/Microsoft.AzureResilienceManagement/drills/{drillName}/drillResources/{drillResourceName}. </description></item><item><term> Operation Id. </term><description> DrillResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="drillResourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="drillResourceName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; Get (string drillResourceName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; Get(string drillResourceName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.Get(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Get (drillResourceName As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of DrillTargetResource)" />
+      <MemberSignature Language="F#" Value="abstract member Get : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&#xA;override this.Get : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;" Usage="drillTargetCollection.Get (drillResourceName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drillResourceName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="drillResourceName"> The name of the DrillResource (GUID). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get a DrillResource
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/serviceGroups/{serviceGroupName}/providers/Microsoft.AzureResilienceManagement/drills/{drillName}/drillResources/{drillResourceName}. </description></item><item><term> Operation Id. </term><description> DrillResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="drillResourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="drillResourceName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAll">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; GetAll (string skipToken = default, int? maxCount = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; GetAll(string skipToken, valuetype System.Nullable`1&lt;int32&gt; maxCount, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.GetAll(System.String,System.Nullable{System.Int32},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAll (Optional skipToken As String = Nothing, Optional maxCount As Nullable(Of Integer) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of DrillTargetResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAll : string * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&#xA;override this.GetAll : string * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;" Usage="drillTargetCollection.GetAll (skipToken, maxCount, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="skipToken" Type="System.String" />
+        <Parameter Name="maxCount" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="skipToken"> Skip over when retrieving results. </param>
+        <param name="maxCount"> Number of elements to return when retrieving results. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            List DrillResource resources by Drill
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/serviceGroups/{serviceGroupName}/providers/Microsoft.AzureResilienceManagement/drills/{drillName}/drillResources. </description></item><item><term> Operation Id. </term><description> DrillResources_List. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.ResilienceManagement.DrillTargetResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; GetAllAsync (string skipToken = default, int? maxCount = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; GetAllAsync(string skipToken, valuetype System.Nullable`1&lt;int32&gt; maxCount, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.GetAllAsync(System.String,System.Nullable{System.Int32},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAllAsync (Optional skipToken As String = Nothing, Optional maxCount As Nullable(Of Integer) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of DrillTargetResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAllAsync : string * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&#xA;override this.GetAllAsync : string * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;" Usage="drillTargetCollection.GetAllAsync (skipToken, maxCount, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="skipToken" Type="System.String" />
+        <Parameter Name="maxCount" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="skipToken"> Skip over when retrieving results. </param>
+        <param name="maxCount"> Number of elements to return when retrieving results. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            List DrillResource resources by Drill
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/serviceGroups/{serviceGroupName}/providers/Microsoft.AzureResilienceManagement/drills/{drillName}/drillResources. </description></item><item><term> Operation Id. </term><description> DrillResources_List. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.ResilienceManagement.DrillTargetResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt; GetAsync (string drillResourceName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt; GetAsync(string drillResourceName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.GetAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAsync (drillResourceName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of DrillTargetResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt;&#xA;override this.GetAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt;" Usage="drillTargetCollection.GetAsync (drillResourceName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drillResourceName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="drillResourceName"> The name of the DrillResource (GUID). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get a DrillResource
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/serviceGroups/{serviceGroupName}/providers/Microsoft.AzureResilienceManagement/drills/{drillName}/drillResources/{drillResourceName}. </description></item><item><term> Operation Id. </term><description> DrillResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="drillResourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="drillResourceName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIfExists">
+      <MemberSignature Language="C#" Value="public virtual Azure.NullableResponse&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; GetIfExists (string drillResourceName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.NullableResponse`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; GetIfExists(string drillResourceName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.GetIfExists(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetIfExists (drillResourceName As String, Optional cancellationToken As CancellationToken = Nothing) As NullableResponse(Of DrillTargetResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetIfExists : string * System.Threading.CancellationToken -&gt; Azure.NullableResponse&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&#xA;override this.GetIfExists : string * System.Threading.CancellationToken -&gt; Azure.NullableResponse&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;" Usage="drillTargetCollection.GetIfExists (drillResourceName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.NullableResponse&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drillResourceName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="drillResourceName"> The name of the DrillResource (GUID). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Tries to get details for this resource from the service.
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/serviceGroups/{serviceGroupName}/providers/Microsoft.AzureResilienceManagement/drills/{drillName}/drillResources/{drillResourceName}. </description></item><item><term> Operation Id. </term><description> DrillResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="drillResourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="drillResourceName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIfExistsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt; GetIfExistsAsync (string drillResourceName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.NullableResponse`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt; GetIfExistsAsync(string drillResourceName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.GetIfExistsAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetIfExistsAsync (drillResourceName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of NullableResponse(Of DrillTargetResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetIfExistsAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt;&#xA;override this.GetIfExistsAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt;" Usage="drillTargetCollection.GetIfExistsAsync (drillResourceName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drillResourceName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="drillResourceName"> The name of the DrillResource (GUID). </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Tries to get details for this resource from the service.
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/serviceGroups/{serviceGroupName}/providers/Microsoft.AzureResilienceManagement/drills/{drillName}/drillResources/{drillResourceName}. </description></item><item><term> Operation Id. </term><description> DrillResources_Get. </description></item><item><term> Default Api Version. </term><description> 2026-04-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="drillResourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="drillResourceName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetAsyncEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; IAsyncEnumerable&lt;DrillTargetResource&gt;.GetAsyncEnumerator (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IAsyncEnumerator`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetAsyncEnumerator(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.System#Collections#Generic#IAsyncEnumerable&lt;Azure#ResourceManager#ResilienceManagement#DrillTargetResource&gt;#GetAsyncEnumerator(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Function GetAsyncEnumerator (cancellationToken As CancellationToken) As IAsyncEnumerator(Of DrillTargetResource) Implements IAsyncEnumerable(Of DrillTargetResource).GetAsyncEnumerator" />
+      <MemberSignature Language="F#" Value="abstract member System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetAsyncEnumerator : System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&#xA;override this.System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetAsyncEnumerator : System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;" Usage="drillTargetCollection.System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetAsyncEnumerator cancellationToken" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.Generic.IAsyncEnumerable`1.GetAsyncEnumerator(System.Threading.CancellationToken)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; IEnumerable&lt;DrillTargetResource&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt; System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.System#Collections#Generic#IEnumerable&lt;Azure#ResourceManager#ResilienceManagement#DrillTargetResource&gt;#GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Function GetEnumerator () As IEnumerator(Of DrillTargetResource) Implements IEnumerable(Of DrillTargetResource).GetEnumerator" />
+      <MemberSignature Language="F#" Value="abstract member System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetEnumerator : unit -&gt; System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;&#xA;override this.System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetEnumerator : unit -&gt; System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;" Usage="drillTargetCollection.System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;.GetEnumerator " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.Generic.IEnumerable`1.GetEnumerator</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.ResilienceManagement.DrillTargetResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Returns an enumerator that iterates through the collection.</summary>
+        <returns>An enumerator that can be used to iterate through the collection.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ResilienceManagement.DrillTargetCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Function GetEnumerator () As IEnumerator Implements IEnumerable.GetEnumerator" />
+      <MemberSignature Language="F#" Value="abstract member System.Collections.IEnumerable.GetEnumerator : unit -&gt; System.Collections.IEnumerator&#xA;override this.System.Collections.IEnumerable.GetEnumerator : unit -&gt; System.Collections.IEnumerator" Usage="drillTargetCollection.System.Collections.IEnumerable.GetEnumerator " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ResilienceManagement</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Returns an enumerator that iterates through a collection.</summary>
+        <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
