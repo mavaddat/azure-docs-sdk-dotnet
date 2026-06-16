@@ -13,7 +13,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary> Model factory for models. </summary>
+    <summary> A factory class for creating instances of the models for mocking. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -39,10 +39,10 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.ImpactReporting.Models.ImpactCategoryProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ImpactReporting.ImpactCategoryData" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.ImpactCategoryData" /> instance for mocking. </returns>
@@ -81,6 +81,62 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="ImpactClientIncidentDetails">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactClientIncidentDetails ImpactClientIncidentDetails (string clientIncidentId = default, Azure.ResourceManager.ImpactReporting.Models.ImpactIncidentSource? clientIncidentSource = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactClientIncidentDetails ImpactClientIncidentDetails(string clientIncidentId, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ImpactReporting.Models.ImpactIncidentSource&gt; clientIncidentSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactClientIncidentDetails(System.String,System.Nullable{Azure.ResourceManager.ImpactReporting.Models.ImpactIncidentSource})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactClientIncidentDetails (Optional clientIncidentId As String = Nothing, Optional clientIncidentSource As Nullable(Of ImpactIncidentSource) = Nothing) As ImpactClientIncidentDetails" />
+      <MemberSignature Language="F#" Value="static member ImpactClientIncidentDetails : string * Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactIncidentSource&gt; -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactClientIncidentDetails" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactClientIncidentDetails (clientIncidentId, clientIncidentSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactClientIncidentDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientIncidentId" Type="System.String" />
+        <Parameter Name="clientIncidentSource" Type="System.Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactIncidentSource&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="clientIncidentId"> Client incident id. ex : id of the incident created to investigate and address the impact if any. </param>
+        <param name="clientIncidentSource"> Client incident source. ex : source system name where the incident is created. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactClientIncidentDetails" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpactConnectivityDetails">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactConnectivityDetails ImpactConnectivityDetails (Azure.ResourceManager.ImpactReporting.Models.ImpactProtocol? protocol = default, int? port = default, Azure.Core.ResourceIdentifier sourceAzureResourceId = default, Azure.Core.ResourceIdentifier targetAzureResourceId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactConnectivityDetails ImpactConnectivityDetails(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ImpactReporting.Models.ImpactProtocol&gt; protocol, valuetype System.Nullable`1&lt;int32&gt; port, class Azure.Core.ResourceIdentifier sourceAzureResourceId, class Azure.Core.ResourceIdentifier targetAzureResourceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactConnectivityDetails(System.Nullable{Azure.ResourceManager.ImpactReporting.Models.ImpactProtocol},System.Nullable{System.Int32},Azure.Core.ResourceIdentifier,Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactConnectivityDetails (Optional protocol As Nullable(Of ImpactProtocol) = Nothing, Optional port As Nullable(Of Integer) = Nothing, Optional sourceAzureResourceId As ResourceIdentifier = Nothing, Optional targetAzureResourceId As ResourceIdentifier = Nothing) As ImpactConnectivityDetails" />
+      <MemberSignature Language="F#" Value="static member ImpactConnectivityDetails : Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactProtocol&gt; * Nullable&lt;int&gt; * Azure.Core.ResourceIdentifier * Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactConnectivityDetails" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactConnectivityDetails (protocol, port, sourceAzureResourceId, targetAzureResourceId)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactConnectivityDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protocol" Type="System.Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactProtocol&gt;" />
+        <Parameter Name="port" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="sourceAzureResourceId" Type="Azure.Core.ResourceIdentifier" />
+        <Parameter Name="targetAzureResourceId" Type="Azure.Core.ResourceIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="protocol"> Protocol used for the connection. </param>
+        <param name="port"> Port number for the connection. </param>
+        <param name="sourceAzureResourceId"> Azure resource id, example /subscription/{subscription}/resourceGroup/{rg}/Microsoft.compute/virtualMachine/{vmName}. </param>
+        <param name="targetAzureResourceId"> Azure resource id, example /subscription/{subscription}/resourceGroup/{rg}/Microsoft.compute/virtualMachine/{vmName}. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactConnectivityDetails" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ImpactConnectorData">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.ImpactConnectorData ImpactConnectorData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorProperties properties = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.ImpactConnectorData ImpactConnectorData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, class Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorProperties properties) cil managed" />
@@ -103,13 +159,37 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ImpactReporting.ImpactConnectorData" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.ImpactConnectorData" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpactConnectorPatch">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorPatch ImpactConnectorPatch (Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorType? connectorType = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorPatch ImpactConnectorPatch(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorType&gt; connectorType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactConnectorPatch(System.Nullable{Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorType})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactConnectorPatch (Optional connectorType As Nullable(Of ImpactConnectorType) = Nothing) As ImpactConnectorPatch" />
+      <MemberSignature Language="F#" Value="static member ImpactConnectorPatch : Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorType&gt; -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorPatch" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactConnectorPatch connectorType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorPatch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectorType" Type="System.Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorType&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="connectorType"> connector type. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactConnectorPatch" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,6 +225,114 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="ImpactDetails">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactDetails ImpactDetails (Azure.Core.ResourceIdentifier impactedResourceId = default, DateTimeOffset startOn = default, DateTimeOffset? endOn = default, Azure.Core.ResourceIdentifier impactId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactDetails ImpactDetails(class Azure.Core.ResourceIdentifier impactedResourceId, valuetype System.DateTimeOffset startOn, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; endOn, class Azure.Core.ResourceIdentifier impactId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactDetails(Azure.Core.ResourceIdentifier,System.DateTimeOffset,System.Nullable{System.DateTimeOffset},Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactDetails (Optional impactedResourceId As ResourceIdentifier = Nothing, Optional startOn As DateTimeOffset = Nothing, Optional endOn As Nullable(Of DateTimeOffset) = Nothing, Optional impactId As ResourceIdentifier = Nothing) As ImpactDetails" />
+      <MemberSignature Language="F#" Value="static member ImpactDetails : Azure.Core.ResourceIdentifier * DateTimeOffset * Nullable&lt;DateTimeOffset&gt; * Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactDetails" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactDetails (impactedResourceId, startOn, endOn, impactId)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="impactedResourceId" Type="Azure.Core.ResourceIdentifier" />
+        <Parameter Name="startOn" Type="System.DateTimeOffset" />
+        <Parameter Name="endOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="impactId" Type="Azure.Core.ResourceIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="impactedResourceId"> List of impacted Azure resources. </param>
+        <param name="startOn"> Time at which impact was started according to reported impact. </param>
+        <param name="endOn"> Time at which impact was ended according to reported impact. </param>
+        <param name="impactId"> Azure Id of the impact. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactDetails" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpactedWorkload">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactedWorkload ImpactedWorkload (string context = default, Azure.ResourceManager.ImpactReporting.Models.ImpactToolset? toolset = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactedWorkload ImpactedWorkload(string context, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ImpactReporting.Models.ImpactToolset&gt; toolset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactedWorkload(System.String,System.Nullable{Azure.ResourceManager.ImpactReporting.Models.ImpactToolset})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactedWorkload (Optional context As String = Nothing, Optional toolset As Nullable(Of ImpactToolset) = Nothing) As ImpactedWorkload" />
+      <MemberSignature Language="F#" Value="static member ImpactedWorkload : string * Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactToolset&gt; -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactedWorkload" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactedWorkload (context, toolset)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactedWorkload</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="toolset" Type="System.Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactToolset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="context"> the scenario for the workload. </param>
+        <param name="toolset"> Tool used to interact with Azure. SDK, AzPortal, etc.., Other. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactedWorkload" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpactErrorDetails">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactErrorDetails ImpactErrorDetails (string errorCode = default, string errorMessage = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactErrorDetails ImpactErrorDetails(string errorCode, string errorMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactErrorDetails(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactErrorDetails (Optional errorCode As String = Nothing, Optional errorMessage As String = Nothing) As ImpactErrorDetails" />
+      <MemberSignature Language="F#" Value="static member ImpactErrorDetails : string * string -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactErrorDetails" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactErrorDetails (errorCode, errorMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactErrorDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.String" />
+        <Parameter Name="errorMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode"> ARM Error code associated with the impact. </param>
+        <param name="errorMessage"> ARM Error Message associated with the impact. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactErrorDetails" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpactInsightContent">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactInsightContent ImpactInsightContent (string title = default, string description = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactInsightContent ImpactInsightContent(string title, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactInsightContent(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactInsightContent (Optional title As String = Nothing, Optional description As String = Nothing) As ImpactInsightContent" />
+      <MemberSignature Language="F#" Value="static member ImpactInsightContent : string * string -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactInsightContent" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactInsightContent (title, description)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactInsightContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="title"> Title of the insight. </param>
+        <param name="description"> Description of the insight. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactInsightContent" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ImpactInsightData">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.ImpactInsightData ImpactInsightData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.ImpactReporting.Models.ImpactInsightProperties properties = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.ImpactInsightData ImpactInsightData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, class Azure.ResourceManager.ImpactReporting.Models.ImpactInsightProperties properties) cil managed" />
@@ -167,10 +355,10 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.ImpactReporting.Models.ImpactInsightProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ImpactReporting.ImpactInsightData" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.ImpactInsightData" /> instance for mocking. </returns>
@@ -216,6 +404,64 @@
         <param name="additionalDetails"> additional details of the insight. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactInsightProperties" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactInsightProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpactMetricExpectedValueRange">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange ImpactMetricExpectedValueRange (double min = 0, double max = 0);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange ImpactMetricExpectedValueRange(float64 min, float64 max) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactMetricExpectedValueRange(System.Double,System.Double)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactMetricExpectedValueRange (Optional min As Double = 0, Optional max As Double = 0) As ImpactMetricExpectedValueRange" />
+      <MemberSignature Language="F#" Value="static member ImpactMetricExpectedValueRange : double * double -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactMetricExpectedValueRange (min, max)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="min" Type="System.Double" />
+        <Parameter Name="max" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="min"> Min threshold value for the metric. </param>
+        <param name="max"> Max threshold value for the metric. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpactPerformance">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ImpactReporting.Models.ImpactPerformance ImpactPerformance (string metricName = default, double? expected = default, double? actual = default, Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange expectedValueRange = default, Azure.ResourceManager.ImpactReporting.Models.ImpactMetricUnit? unit = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ImpactReporting.Models.ImpactPerformance ImpactPerformance(string metricName, valuetype System.Nullable`1&lt;float64&gt; expected, valuetype System.Nullable`1&lt;float64&gt; actual, class Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange expectedValueRange, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ImpactReporting.Models.ImpactMetricUnit&gt; unit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactPerformance(System.String,System.Nullable{System.Double},System.Nullable{System.Double},Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange,System.Nullable{Azure.ResourceManager.ImpactReporting.Models.ImpactMetricUnit})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ImpactPerformance (Optional metricName As String = Nothing, Optional expected As Nullable(Of Double) = Nothing, Optional actual As Nullable(Of Double) = Nothing, Optional expectedValueRange As ImpactMetricExpectedValueRange = Nothing, Optional unit As Nullable(Of ImpactMetricUnit) = Nothing) As ImpactPerformance" />
+      <MemberSignature Language="F#" Value="static member ImpactPerformance : string * Nullable&lt;double&gt; * Nullable&lt;double&gt; * Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange * Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactMetricUnit&gt; -&gt; Azure.ResourceManager.ImpactReporting.Models.ImpactPerformance" Usage="Azure.ResourceManager.ImpactReporting.Models.ArmImpactReportingModelFactory.ImpactPerformance (metricName, expected, actual, expectedValueRange, unit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ImpactReporting</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ImpactReporting.Models.ImpactPerformance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metricName" Type="System.String" />
+        <Parameter Name="expected" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="actual" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="expectedValueRange" Type="Azure.ResourceManager.ImpactReporting.Models.ImpactMetricExpectedValueRange" />
+        <Parameter Name="unit" Type="System.Nullable&lt;Azure.ResourceManager.ImpactReporting.Models.ImpactMetricUnit&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="metricName"> Name of the Metric examples:  Disk, IOPs, CPU, GPU, Memory, details can be found from /impactCategories API. </param>
+        <param name="expected"> Threshold value for the metric. </param>
+        <param name="actual"> Observed value for the metric. </param>
+        <param name="expectedValueRange"> Max and Min Threshold values for the metric. </param>
+        <param name="unit"> Unit of the metric ex: Bytes, Percentage, Count, Seconds, Milliseconds, Bytes/Second, Count/Second, etc.., Other. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.Models.ImpactPerformance" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -267,10 +513,10 @@
         <Parameter Name="properties" Type="Azure.ResourceManager.ImpactReporting.Models.WorkloadImpactProperties" />
       </Parameters>
       <Docs>
-        <param name="id"> The id. </param>
-        <param name="name"> The name. </param>
-        <param name="resourceType"> The resourceType. </param>
-        <param name="systemData"> The systemData. </param>
+        <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        <param name="name"> The name of the resource. </param>
+        <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="properties"> The resource-specific properties for this resource. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ImpactReporting.WorkloadImpactData" />. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ImpactReporting.WorkloadImpactData" /> instance for mocking. </returns>
@@ -312,8 +558,8 @@
       </Parameters>
       <Docs>
         <param name="provisioningState"> Resource provisioning state. </param>
-        <param name="startOn"> Time at which impact was observed. </param>
-        <param name="endOn"> Time at which impact has ended. </param>
+        <param name="startOn"> Time at which impact was observed . </param>
+        <param name="endOn"> Time at which impact has ended . </param>
         <param name="impactedResourceId"> Azure resource id of the impacted resource. </param>
         <param name="impactUniqueId"> Unique ID of the impact (UUID). </param>
         <param name="reportedTimeUtc"> Time at which impact is reported. </param>
