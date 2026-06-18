@@ -1,7 +1,7 @@
 ---
 title: Azure Workloadorchestration SDK for .NET
 description: Reference for Azure Workloadorchestration SDK for .NET
-ms.date: 06/17/2026
+ms.date: 06/18/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: workloadorchestration
