@@ -1,7 +1,7 @@
 ---
 title: Azure Monitor.Pipelinegroups SDK for .NET
 description: Reference for Azure Monitor.Pipelinegroups SDK for .NET
-ms.date: 06/19/2026
+ms.date: 06/22/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: monitor.pipelinegroups
