@@ -1,10 +1,10 @@
 ---
 title: Azure Monitor SDK for .NET
 description: Reference for Azure Monitor SDK for .NET
-ms.date: 06/25/2026
+ms.date: 06/26/2026
 ms.topic: reference
 ms.devlang: dotnet
-ms.service: monitor
+ms.service: azure-monitor
 ---
 # Azure Monitor SDK for .NET - preview
 ## Packages - preview
