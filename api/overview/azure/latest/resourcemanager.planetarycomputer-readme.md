@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.ResourceManager.PlanetaryComputer, planetarycomputer
-ms.date: 04/30/2026
+ms.date: 06/26/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: planetarycomputer
@@ -179,5 +179,5 @@ Explore additional features of the PlanetaryComputer SDK:
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.PlanetaryComputer_1.0.0/CONTRIBUTING.md) for details on how to get started.
+We welcome contributions! Please see our [Contributing Guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.PlanetaryComputer_1.0.1/CONTRIBUTING.md) for details on how to get started.
 
