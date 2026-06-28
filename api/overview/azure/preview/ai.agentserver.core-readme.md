@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.AI.AgentServer.Core, agentserver
-ms.date: 05/25/2026
+ms.date: 06/28/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: agentserver
@@ -101,8 +101,8 @@ The `PlatformHeaders` static class defines all HTTP header name constants used a
 | `RequestId` | `x-request-id` | Request ↔ Response | Request correlation ID |
 | `ServerVersion` | `x-platform-server` | Response | Server SDK identity |
 | `SessionId` | `x-agent-session-id` | Response | Resolved session ID |
-| `UserIsolationKey` | `x-agent-user-isolation-key` | Request | Platform user partition key |
-| `ChatIsolationKey` | `x-agent-chat-isolation-key` | Request | Platform conversation partition key |
+| `UserId` | `x-agent-user-id` | Request | Global per-user partition key |
+| `FoundryCallId` | `x-agent-foundry-call-id` | Request | Opaque per-request call ID (protocol `2.0.0`); forwarded on outbound 1P calls |
 | `ClientHeaderPrefix` | `x-client-` | Request | Pass-through client header prefix |
 | `ErrorSource` | `x-platform-error-source` | Response | Error origin classification |
 | `ErrorDetail` | `x-platform-error-detail` | Response | Diagnostic error context |
@@ -131,6 +131,23 @@ Platform errors also include `x-platform-error-detail` with diagnostic context (
 
 Reads Azure AI Foundry platform variables (`FOUNDRY_*`, `PORT`, `SSE_KEEPALIVE_INTERVAL`) to resolve agent identity, listening port, and connection strings. Also detects `OTEL_EXPORTER_OTLP_ENDPOINT` and `APPLICATIONINSIGHTS_CONNECTION_STRING` for telemetry configuration. Useful when your agent server runs as a hosted agent in AI Foundry.
 
+### FoundryAgentRequestContext
+
+On container protocol `2.0.0` a single agent session can serve **multiple users**. Each request carries `x-agent-user-id` (the user — partition state by it) and an opaque `x-agent-foundry-call-id` (the per-request caller identity). Read both via `FoundryAgentRequestContext.Current`. Register `FoundryCallIdHandler` on any `HttpClient` that calls Foundry services so the call ID is echoed automatically on every outbound request — **only** the call ID is echoed (`x-agent-user-id` is never forwarded). Forwarding the call ID lets a tool server resolve which user made the request and act on their behalf.
+
+```csharp
+using Azure.AI.AgentServer.Core;
+
+// Any HttpClient with FoundryCallIdHandler echoes the CURRENT request's
+// x-agent-foundry-call-id — never bake one call's ID into static DefaultRequestHeaders.
+builder.Services.AddHttpClient("foundry", c => c.BaseAddress = new Uri(projectEndpoint))
+    .AddHttpMessageHandler<FoundryCallIdHandler>();
+
+// Anywhere during the request:
+string? userId = FoundryAgentRequestContext.Current.UserId;   // for the container's own per-user state
+string? callId = FoundryAgentRequestContext.Current.CallId;   // per-request caller identity
+```
+
 ### Telemetry
 
 OpenTelemetry is configured automatically via the `Microsoft.OpenTelemetry` distro. The Responses and Invocations protocols use dedicated activity source names (`Azure.AI.AgentServer.Responses` and `Azure.AI.AgentServer.Invocations`) for distributed tracing. Azure Monitor export is enabled when `APPLICATIONINSIGHTS_CONNECTION_STRING` is set, and OTLP export is enabled when `OTEL_EXPORTER_OTLP_ENDPOINT` is set.
@@ -141,7 +158,7 @@ A `/readiness` endpoint is registered by default, responding to liveness and rea
 
 ## Examples
 
-You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.25/sdk/agentserver/Azure.AI.AgentServer.Core/samples).
+You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Core/samples).
 
 ## Troubleshooting
 
@@ -156,7 +173,7 @@ The library emits OpenTelemetry traces via the `Azure.AI.AgentServer.Responses` 
 
 ## Next steps
 
-- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.25/sdk/agentserver/Azure.AI.AgentServer.Core/samples) — Getting started, multi-protocol composition
+- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Core/samples) — Getting started, multi-protocol composition
 
 ## Contributing
 
@@ -167,12 +184,12 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 <!-- LINKS -->
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.25/sdk/agentserver/Azure.AI.AgentServer.Core/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Core/src
 [nuget]: https://www.nuget.org/packages/Azure.AI.AgentServer.Core
 [product_doc]: https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agents
-[migration]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.25/sdk/agentserver/Azure.AI.AgentServer.Core/MigrationGuide.md
-[responses]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.25/sdk/agentserver/Azure.AI.AgentServer.Responses
-[invocations]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.25/sdk/agentserver/Azure.AI.AgentServer.Invocations
-[responses_tier3]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.25/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample9_Tier3SelfHosting.md
-[invocations_tier3]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.25/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md
+[migration]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Core/MigrationGuide.md
+[responses]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Responses
+[invocations]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Invocations
+[responses_tier3]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample9_Tier3SelfHosting.md
+[invocations_tier3]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md
 
