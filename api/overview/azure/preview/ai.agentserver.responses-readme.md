@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.AI.AgentServer.Responses, agentserver
-ms.date: 05/21/2026
+ms.date: 06/28/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: agentserver
@@ -114,7 +114,7 @@ Available convenience generators (commonly used):
 
 Additional convenience generators are available for computer calls, local shell calls, function shell calls, apply-patch calls, custom tool call outputs, MCP approval requests/responses, and compaction. Each follows the same pattern — accepts domain parameters and yields the complete `output_item.added` → `output_item.done` event pair.
 
-See [Sample 3 — Full control ResponseStream](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample3_FullControlResponseStream.md) and [Sample 4 — Function calling](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample4_FunctionCalling.md) for more examples.
+See [Sample 3 — Full control ResponseStream](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample3_FullControlResponseStream.md) and [Sample 4 — Function calling](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample4_FunctionCalling.md) for more examples.
 
 **`ResponseEventStream` — full builder control:**
 
@@ -163,7 +163,7 @@ Injected into every `CreateAsync` call, `ResponseContext` provides access to the
 
 For collections of `Item` objects, the `GetInputText()` extension method (on `IEnumerable<Item>`) extracts and joins text content without needing a `ResponseContext`.
 
-See the [handler implementation guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md#responsecontext) for the full `ResponseContext` API reference.
+See the [handler implementation guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md#responsecontext) for the full `ResponseContext` API reference.
 
 ### ResponseEventStream
 
@@ -178,7 +178,7 @@ Manages `sequenceNumber`, `outputIndex`, `contentIndex`, and `itemId` tracking i
 
 The library orchestrates the complete response lifecycle: `created` → `in_progress` → `completed` (or `failed` / `cancelled`). Cancellation, error handling, and terminal event guarantees are all managed automatically.
 
-For detailed handler implementation guidance, see [docs/handler-implementation-guide.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md).
+For detailed handler implementation guidance, see [docs/handler-implementation-guide.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md).
 
 ### Input validation
 
@@ -219,13 +219,13 @@ Every response includes an `x-request-id` header (set by Core's `RequestIdMiddle
 
 ### Error source classification
 
-All error responses (4xx/5xx) include the `x-platform-error-source` header classifying the error origin as `user`, `platform`, or `upstream`. See the [Core README](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Core#error-source-classification) for the full classification table.
+All error responses (4xx/5xx) include the `x-platform-error-source` header classifying the error origin as `user`, `platform`, or `upstream`. See the [Core README](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Core#error-source-classification) for the full classification table.
 
-### Chat isolation and session ID
+### Platform context headers and session ID
 
-When the platform injects `x-agent-user-isolation-key` and `x-agent-chat-isolation-key` request headers, the library forwards them to the storage provider so that responses are scoped to the correct tenant and conversation. The resolved session ID is returned on every response via the `x-agent-session-id` header.
+When the platform injects `x-agent-user-id` and `x-agent-foundry-call-id` request headers, the library reads them into the platform context and forwards the per-request call ID to the storage provider so that responses resolve the correct caller context server-side. The resolved session ID is returned on every response via the `x-agent-session-id` header.
 
-Handlers can access the isolation context through `ResponseContext.Isolation` for custom partitioning logic.
+Handlers can access the platform context through `ResponseContext.PlatformContext` for custom partitioning logic.
 
 ### Persistence resilience
 
@@ -243,7 +243,64 @@ All service instances registered via `AddResponsesServer()` are thread-safe. Han
 
 ## Examples
 
-You can familiarize yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/samples).
+You can familiarize yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses/samples).
+
+### Multi-user session (per-request call ID)
+
+On container protocol `2.0.0` a single agent session can serve **multiple users**. Forwarding the per-request `x-agent-foundry-call-id` on outbound toolbox calls lets the tool server resolve *which* user made this request and act on their behalf — so user A's and user B's requests to the same session each get a user-scoped result. (`x-agent-user-id` is never forwarded; the tool resolves the user from the call ID server-side. Use `context.PlatformContext.UserIdKey` only for the container's own per-user state.)
+
+Register `FoundryCallIdHandler` on the Foundry `HttpClient` so the current request's call ID is echoed on every outbound call:
+
+```C# Snippet:Responses_ReadMe_MultiUser_Startup
+builder.Services.AddAgentServerCore();
+
+// Any HttpClient with FoundryCallIdHandler echoes the CURRENT request's
+// x-agent-foundry-call-id — never bake one call's ID into static headers.
+builder.Services.AddHttpClient("foundry", c => c.BaseAddress = new Uri(projectEndpoint))
+    .AddHttpMessageHandler<FoundryCallIdHandler>();
+```
+
+```C# Snippet:Responses_ReadMe_MultiUser
+// One agent session can serve many users. Forwarding the per-request call ID on the
+// outbound toolbox call lets the tool server resolve which user made this request and
+// act on their behalf. x-agent-user-id is never forwarded; use
+// context.PlatformContext.UserIdKey only for the container's own per-user state.
+public class MultiUserHandler : ResponseHandler
+{
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public MultiUserHandler(IHttpClientFactory httpClientFactory) =>
+        _httpClientFactory = httpClientFactory;
+
+    public override IAsyncEnumerable<ResponseStreamEvent> CreateAsync(
+        CreateResponse request,
+        ResponseContext context,
+        CancellationToken cancellationToken)
+    {
+        return new TextResponse(context, request,
+            createText: async ct =>
+            {
+                var query = await context.GetInputTextAsync(cancellationToken: ct);
+
+                // The "foundry" client is registered with FoundryCallIdHandler, so this
+                // request's x-agent-foundry-call-id rides the toolbox tools/call.
+                var foundry = _httpClientFactory.CreateClient("foundry");
+                using var resp = await foundry.PostAsJsonAsync(
+                    "/toolboxes/github/mcp",
+                    new
+                    {
+                        jsonrpc = "2.0",
+                        method = "tools/call",
+                        @params = new { name = "list_my_assigned_issues", arguments = new { filter = query } },
+                    },
+                    ct);
+
+                // The toolbox resolved the caller from the call ID and returned THIS user's issues.
+                return await resp.Content.ReadAsStringAsync(ct);
+            });
+    }
+}
+```
 
 ## Troubleshooting
 
@@ -260,8 +317,8 @@ The library emits OpenTelemetry traces via `Azure.AI.AgentServer.Responses` acti
 
 ## Next steps
 
-- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/samples) — Getting started, function calling, conversation history, multi-output
-- [Handler implementation guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md) — Detailed reference for building handlers
+- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses/samples) — Getting started, function calling, conversation history, multi-output
+- [Handler implementation guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses/docs/handler-implementation-guide.md) — Detailed reference for building handlers
 
 
 ## Contributing
@@ -273,7 +330,7 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 <!-- LINKS -->
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Responses_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses/src
 [nuget]: https://www.nuget.org/packages/Azure.AI.AgentServer.Responses
 [rest_api]: https://learn.microsoft.com/azure/foundry/reference/foundry-project#responses-94
 [product_doc]: https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agents
