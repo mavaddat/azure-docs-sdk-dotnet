@@ -9,13 +9,18 @@
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.1.0</AssemblyVersion>
     <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <AssemblyVersion>1.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to SubscriptionPolicySetDefinition. </summary>
+    <summary>
+            A class to add extension methods to <see cref="T:Azure.ResourceManager.Resources.SubscriptionPolicySetDefinitionResource" />.
+            Mirrors the GA shape: re-hosts PolicyEvents/PolicyStates/Summarize from generic <c>ArmClient</c> scope
+            onto the more discoverable <c>SubscriptionPolicySetDefinitionResource</c>.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -28,10 +33,11 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.PolicyInsights.Mocking.MockablePolicyInsightsSubscriptionPolicySetDefinitionResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.PolicyInsights.Mocking.MockablePolicyInsightsSubscriptionPolicySetDefinitionResource" /> for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -45,6 +51,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.PolicyInsights.Models.PolicyEvent&gt;</ReturnType>
@@ -58,11 +65,7 @@
         <param name="policyEventType"> The name of the virtual resource under PolicyEvents resource type; only "default" is allowed. </param>
         <param name="policyQuerySettings"> Parameter group. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Queries policy events for the subscription level policy set definition.
-            Request Path: /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policySetDefinitions/{policySetDefinitionName}/providers/Microsoft.PolicyInsights/policyEvents/{policyEventsResource}/queryResults
-            Operation Id: PolicyEvents_ListQueryResultsForPolicySetDefinition
-            </summary>
+        <summary> Queries policy events for the subscription level policy set definition. </summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.PolicyEvent" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -77,6 +80,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.PolicyInsights.Models.PolicyEvent&gt;</ReturnType>
@@ -90,11 +94,7 @@
         <param name="policyEventType"> The name of the virtual resource under PolicyEvents resource type; only "default" is allowed. </param>
         <param name="policyQuerySettings"> Parameter group. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Queries policy events for the subscription level policy set definition.
-            Request Path: /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policySetDefinitions/{policySetDefinitionName}/providers/Microsoft.PolicyInsights/policyEvents/{policyEventsResource}/queryResults
-            Operation Id: PolicyEvents_ListQueryResultsForPolicySetDefinition
-            </summary>
+        <summary> Queries policy events for the subscription level policy set definition. </summary>
         <returns> An async collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.PolicyEvent" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -109,6 +109,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.PolicyInsights.Models.PolicyState&gt;</ReturnType>
@@ -122,11 +123,7 @@
         <param name="policyStateType"> The virtual resource under PolicyStates resource type. In a given time range, 'latest' represents the latest policy state(s), whereas 'default' represents all policy state(s). </param>
         <param name="policyQuerySettings"> Parameter group. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Queries policy states for the subscription level policy set definition.
-            Request Path: /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policySetDefinitions/{policySetDefinitionName}/providers/Microsoft.PolicyInsights/policyStates/{policyStatesResource}/queryResults
-            Operation Id: PolicyStates_ListQueryResultsForPolicySetDefinition
-            </summary>
+        <summary> Queries policy states for the subscription level policy set definition. </summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.PolicyState" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -141,6 +138,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.PolicyInsights.Models.PolicyState&gt;</ReturnType>
@@ -154,11 +152,7 @@
         <param name="policyStateType"> The virtual resource under PolicyStates resource type. In a given time range, 'latest' represents the latest policy state(s), whereas 'default' represents all policy state(s). </param>
         <param name="policyQuerySettings"> Parameter group. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Queries policy states for the subscription level policy set definition.
-            Request Path: /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policySetDefinitions/{policySetDefinitionName}/providers/Microsoft.PolicyInsights/policyStates/{policyStatesResource}/queryResults
-            Operation Id: PolicyStates_ListQueryResultsForPolicySetDefinition
-            </summary>
+        <summary> Queries policy states for the subscription level policy set definition. </summary>
         <returns> An async collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.PolicyState" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -173,6 +167,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.PolicyInsights.Models.PolicySummary&gt;</ReturnType>
@@ -183,14 +178,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="policyStateSummaryType"> The virtual resource under PolicyStates resource type for summarize action. In a given time range, 'latest' represents the latest policy state(s) and is the only allowed value. </param>
-        <param name="policyQuerySettings"> Parameter group. </param>
+        <param name="policyStateSummaryType" />
+        <param name="policyQuerySettings" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Summarizes policy states for the subscription level policy set definition.
-            Request Path: /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policySetDefinitions/{policySetDefinitionName}/providers/Microsoft.PolicyInsights/policyStates/{policyStatesSummaryResource}/summarize
-            Operation Id: PolicyStates_SummarizeForPolicySetDefinition
-            </summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/{authorizationNamespace}/policySetDefinitions/{policySetDefinitionName}/providers/Microsoft.PolicyInsights/policyStates/{policyStatesSummaryResource}/summarize. </description></item><item><term> Operation Id. </term><description> PolicyStatesOperationGroup_SummarizeForPolicySetDefinition. </description></item><item><term> Default Api Version. </term><description> 2024-10-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.PolicySummary" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -205,6 +198,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.PolicyInsights.Models.PolicySummary&gt;</ReturnType>
@@ -215,15 +209,13 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="policyStateSummaryType"> The virtual resource under PolicyStates resource type for summarize action. In a given time range, 'latest' represents the latest policy state(s) and is the only allowed value. </param>
-        <param name="policyQuerySettings"> Parameter group. </param>
+        <param name="policyStateSummaryType" />
+        <param name="policyQuerySettings" />
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Summarizes policy states for the subscription level policy set definition.
-            Request Path: /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policySetDefinitions/{policySetDefinitionName}/providers/Microsoft.PolicyInsights/policyStates/{policyStatesSummaryResource}/summarize
-            Operation Id: PolicyStates_SummarizeForPolicySetDefinition
-            </summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.PolicySummary" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/{authorizationNamespace}/policySetDefinitions/{policySetDefinitionName}/providers/Microsoft.PolicyInsights/policyStates/{policyStatesSummaryResource}/summarize. </description></item><item><term> Operation Id. </term><description> PolicyStatesOperationGroup_SummarizeForPolicySetDefinition. </description></item><item><term> Default Api Version. </term><description> 2024-10-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.PolicySummary" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

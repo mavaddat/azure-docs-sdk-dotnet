@@ -8,13 +8,14 @@
     <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to ArmClient. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.ArmClient" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,10 +28,11 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Quota.Mocking.MockableQuotaArmClient" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableQuotaArmClient for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -44,6 +46,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource&gt;</ReturnType>
@@ -54,17 +57,14 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="resourceName">
             Resource name for a given resource provider. For example:
-            - SKU name for Microsoft.Compute
-            - SKU or TotalLowPriorityCores for Microsoft.MachineLearningServices
+            <list type="bullet"><item><description>SKU name for Microsoft.Compute</description></item><item><description>SKU or TotalLowPriorityCores for Microsoft.MachineLearningServices</description></item></list>
              For Microsoft.Network PublicIPAddresses.
             </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get the quota limit of a resource. The response can be used to determine the remaining quota to calculate a new quota limit that can be submitted with a PUT request.
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Quota/quotas/{resourceName}</description></item><item><term>Operation Id</term><description>CurrentQuotaLimitBase_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource" /></description></item></list></summary>
+        <summary> Get the quota limit of a resource. The response can be used to determine the remaining quota to calculate a new quota limit that can be submitted with a PUT request. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -83,6 +83,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource&gt;&gt;</ReturnType>
@@ -93,17 +94,14 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="resourceName">
             Resource name for a given resource provider. For example:
-            - SKU name for Microsoft.Compute
-            - SKU or TotalLowPriorityCores for Microsoft.MachineLearningServices
+            <list type="bullet"><item><description>SKU name for Microsoft.Compute</description></item><item><description>SKU or TotalLowPriorityCores for Microsoft.MachineLearningServices</description></item></list>
              For Microsoft.Network PublicIPAddresses.
             </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get the quota limit of a resource. The response can be used to determine the remaining quota to calculate a new quota limit that can be submitted with a PUT request.
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Quota/quotas/{resourceName}</description></item><item><term>Operation Id</term><description>CurrentQuotaLimitBase_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource" /></description></item></list></summary>
+        <summary> Get the quota limit of a resource. The response can be used to determine the remaining quota to calculate a new quota limit that can be submitted with a PUT request. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -122,6 +120,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource</ReturnType>
@@ -131,10 +130,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource.CreateResourceIdentifier(System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -149,6 +145,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.CurrentQuotaLimitBaseCollection</ReturnType>
@@ -157,9 +154,9 @@
         <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
-        <summary> Gets a collection of CurrentQuotaLimitBaseResources in the ArmClient. </summary>
-        <returns> An object representing collection of CurrentQuotaLimitBaseResources and their operations over a CurrentQuotaLimitBaseResource. </returns>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Quota.CurrentQuotaLimitBaseResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,6 +170,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.Quota.CurrentUsagesBaseResource&gt;</ReturnType>
@@ -183,17 +181,14 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="resourceName">
             Resource name for a given resource provider. For example:
-            - SKU name for Microsoft.Compute
-            - SKU or TotalLowPriorityCores for Microsoft.MachineLearningServices
+            <list type="bullet"><item><description>SKU name for Microsoft.Compute</description></item><item><description>SKU or TotalLowPriorityCores for Microsoft.MachineLearningServices</description></item></list>
              For Microsoft.Network PublicIPAddresses.
             </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get the current usage of a resource.
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Quota/usages/{resourceName}</description></item><item><term>Operation Id</term><description>CurrentUsagesBase_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.CurrentUsagesBaseResource" /></description></item></list></summary>
+        <summary> Get the current usage of a resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -212,6 +207,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.CurrentUsagesBaseResource&gt;&gt;</ReturnType>
@@ -222,17 +218,14 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="resourceName">
             Resource name for a given resource provider. For example:
-            - SKU name for Microsoft.Compute
-            - SKU or TotalLowPriorityCores for Microsoft.MachineLearningServices
+            <list type="bullet"><item><description>SKU name for Microsoft.Compute</description></item><item><description>SKU or TotalLowPriorityCores for Microsoft.MachineLearningServices</description></item></list>
              For Microsoft.Network PublicIPAddresses.
             </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get the current usage of a resource.
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Quota/usages/{resourceName}</description></item><item><term>Operation Id</term><description>CurrentUsagesBase_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.CurrentUsagesBaseResource" /></description></item></list></summary>
+        <summary> Get the current usage of a resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -251,6 +244,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.CurrentUsagesBaseResource</ReturnType>
@@ -260,10 +254,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.CurrentUsagesBaseResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.CurrentUsagesBaseResource.CreateResourceIdentifier(System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quota.CurrentUsagesBaseResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.CurrentUsagesBaseResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.CurrentUsagesBaseResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -278,6 +269,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.CurrentUsagesBaseCollection</ReturnType>
@@ -286,9 +278,9 @@
         <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
-        <summary> Gets a collection of CurrentUsagesBaseResources in the ArmClient. </summary>
-        <returns> An object representing collection of CurrentUsagesBaseResources and their operations over a CurrentUsagesBaseResource. </returns>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Quota.CurrentUsagesBaseCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Quota.CurrentUsagesBaseResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -302,6 +294,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.GroupQuotaEntityResource</ReturnType>
@@ -311,10 +304,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaEntityResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.GroupQuotaEntityResource.CreateResourceIdentifier(System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaEntityResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaEntityResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaEntityResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -329,6 +319,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.GroupQuotaLimitListResource</ReturnType>
@@ -338,10 +329,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaLimitListResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.GroupQuotaLimitListResource.CreateResourceIdentifier(System.String,System.String,System.String,Azure.Core.AzureLocation)" /> to create a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaLimitListResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaLimitListResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaLimitListResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -356,6 +344,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.GroupQuotaRequestStatusResource</ReturnType>
@@ -365,10 +354,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaRequestStatusResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.GroupQuotaRequestStatusResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaRequestStatusResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaRequestStatusResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaRequestStatusResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -383,6 +369,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.GroupQuotasEnforcementStatusResource</ReturnType>
@@ -392,10 +379,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotasEnforcementStatusResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.GroupQuotasEnforcementStatusResource.CreateResourceIdentifier(System.String,System.String,System.String,Azure.Core.AzureLocation)" /> to create a <see cref="T:Azure.ResourceManager.Quota.GroupQuotasEnforcementStatusResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotasEnforcementStatusResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.GroupQuotasEnforcementStatusResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -410,6 +394,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.GroupQuotaSubscriptionRequestStatusResource</ReturnType>
@@ -419,10 +404,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionRequestStatusResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.GroupQuotaSubscriptionRequestStatusResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionRequestStatusResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionRequestStatusResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionRequestStatusResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -437,6 +419,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource</ReturnType>
@@ -446,11 +429,108 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource.CreateResourceIdentifier(System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQuotaAllocationRequestStatus">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt; GetQuotaAllocationRequestStatus (Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName, string allocationId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt; GetQuotaAllocationRequestStatus(class Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName, string allocationId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quota.Mocking.MockableQuotaArmClient.GetQuotaAllocationRequestStatus(Azure.Core.ResourceIdentifier,System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetQuotaAllocationRequestStatus (scope As ResourceIdentifier, groupQuotaName As String, resourceProviderName As String, allocationId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of QuotaAllocationRequestStatusResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetQuotaAllocationRequestStatus : Azure.Core.ResourceIdentifier * string * string * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;&#xA;override this.GetQuotaAllocationRequestStatus : Azure.Core.ResourceIdentifier * string * string * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;" Usage="mockableQuotaArmClient.GetQuotaAllocationRequestStatus (scope, groupQuotaName, resourceProviderName, allocationId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="groupQuotaName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceProviderName" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="allocationId" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="groupQuotaName"> The groupQuotaName for the resource. </param>
+        <param name="resourceProviderName"> The resourceProviderName for the resource. </param>
+        <param name="allocationId"> Request Id. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get the quota allocation request status for the subscriptionId by allocationId. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="allocationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQuotaAllocationRequestStatusAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;&gt; GetQuotaAllocationRequestStatusAsync (Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName, string allocationId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;&gt; GetQuotaAllocationRequestStatusAsync(class Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName, string allocationId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quota.Mocking.MockableQuotaArmClient.GetQuotaAllocationRequestStatusAsync(Azure.Core.ResourceIdentifier,System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetQuotaAllocationRequestStatusAsync (scope As ResourceIdentifier, groupQuotaName As String, resourceProviderName As String, allocationId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of QuotaAllocationRequestStatusResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetQuotaAllocationRequestStatusAsync : Azure.Core.ResourceIdentifier * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;&gt;&#xA;override this.GetQuotaAllocationRequestStatusAsync : Azure.Core.ResourceIdentifier * string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;&gt;" Usage="mockableQuotaArmClient.GetQuotaAllocationRequestStatusAsync (scope, groupQuotaName, resourceProviderName, allocationId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="groupQuotaName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceProviderName" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="allocationId" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="groupQuotaName"> The groupQuotaName for the resource. </param>
+        <param name="resourceProviderName"> The resourceProviderName for the resource. </param>
+        <param name="allocationId"> Request Id. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Get the quota allocation request status for the subscriptionId by allocationId. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="allocationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQuotaAllocationRequestStatuses">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection GetQuotaAllocationRequestStatuses (Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection GetQuotaAllocationRequestStatuses(class Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quota.Mocking.MockableQuotaArmClient.GetQuotaAllocationRequestStatuses(Azure.Core.ResourceIdentifier,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetQuotaAllocationRequestStatuses (scope As ResourceIdentifier, groupQuotaName As String, resourceProviderName As String) As QuotaAllocationRequestStatusCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetQuotaAllocationRequestStatuses : Azure.Core.ResourceIdentifier * string * string -&gt; Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection&#xA;override this.GetQuotaAllocationRequestStatuses : Azure.Core.ResourceIdentifier * string * string -&gt; Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection" Usage="mockableQuotaArmClient.GetQuotaAllocationRequestStatuses (scope, groupQuotaName, resourceProviderName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="groupQuotaName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceProviderName" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="groupQuotaName"> The groupQuotaName for the resource. </param>
+        <param name="resourceProviderName"> The resourceProviderName for the resource. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -464,6 +544,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource</ReturnType>
@@ -473,10 +554,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource.CreateResourceIdentifier(System.String,System.String,System.String,System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -491,6 +569,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.Quota.QuotaRequestDetailResource&gt;</ReturnType>
@@ -501,12 +580,10 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="id"> Quota request ID. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get the quota request details and status by quota request ID for the resources of the resource provider at a specific location. The quota request ID **id** is returned in the response of the PUT operation.
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Quota/quotaRequests/{id}</description></item><item><term>Operation Id</term><description>QuotaRequestDetails_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaRequestDetailResource" /></description></item></list></summary>
+        <summary> Get the quota request details and status by quota request ID for the resources of the resource provider at a specific location. The quota request ID <b>id</b> is returned in the response of the PUT operation. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -525,6 +602,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.QuotaRequestDetailResource&gt;&gt;</ReturnType>
@@ -535,12 +613,10 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scope"> The scope of the resource collection to get. </param>
         <param name="id"> Quota request ID. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get the quota request details and status by quota request ID for the resources of the resource provider at a specific location. The quota request ID **id** is returned in the response of the PUT operation.
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Quota/quotaRequests/{id}</description></item><item><term>Operation Id</term><description>QuotaRequestDetails_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaRequestDetailResource" /></description></item></list></summary>
+        <summary> Get the quota request details and status by quota request ID for the resources of the resource provider at a specific location. The quota request ID <b>id</b> is returned in the response of the PUT operation. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -559,6 +635,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.QuotaRequestDetailResource</ReturnType>
@@ -568,10 +645,7 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.QuotaRequestDetailResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.QuotaRequestDetailResource.CreateResourceIdentifier(System.String,System.String)" /> to create a <see cref="T:Azure.ResourceManager.Quota.QuotaRequestDetailResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.QuotaRequestDetailResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.QuotaRequestDetailResource" /> object. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -586,6 +660,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.QuotaRequestDetailCollection</ReturnType>
@@ -594,10 +669,82 @@
         <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" />
       </Parameters>
       <Docs>
-        <param name="scope"> The scope that the resource will apply against. </param>
-        <summary> Gets a collection of QuotaRequestDetailResources in the ArmClient. </summary>
-        <returns> An object representing collection of QuotaRequestDetailResources and their operations over a QuotaRequestDetailResource. </returns>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Quota.QuotaRequestDetailCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Quota.QuotaRequestDetailResource" /> objects. </returns>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSubscriptionQuotaAllocationsList">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt; GetSubscriptionQuotaAllocationsList (Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName, Azure.Core.AzureLocation location, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt; GetSubscriptionQuotaAllocationsList(class Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName, valuetype Azure.Core.AzureLocation location, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quota.Mocking.MockableQuotaArmClient.GetSubscriptionQuotaAllocationsList(Azure.Core.ResourceIdentifier,System.String,System.String,Azure.Core.AzureLocation,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSubscriptionQuotaAllocationsList (scope As ResourceIdentifier, groupQuotaName As String, resourceProviderName As String, location As AzureLocation, Optional cancellationToken As CancellationToken = Nothing) As Response(Of SubscriptionQuotaAllocationsListResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetSubscriptionQuotaAllocationsList : Azure.Core.ResourceIdentifier * string * string * Azure.Core.AzureLocation * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt;&#xA;override this.GetSubscriptionQuotaAllocationsList : Azure.Core.ResourceIdentifier * string * string * Azure.Core.AzureLocation * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt;" Usage="mockableQuotaArmClient.GetSubscriptionQuotaAllocationsList (scope, groupQuotaName, resourceProviderName, location, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="groupQuotaName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceProviderName" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="groupQuotaName"> The GroupQuota name. The name should be unique for the provided context tenantId/MgId. </param>
+        <param name="resourceProviderName"> The resource provider name, such as - Microsoft.Compute. Currently only Microsoft.Compute resource provider supports this API. </param>
+        <param name="location"> The name of the Azure region. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets all the quota allocated to a subscription for the specified resource provider and location for resource names passed in $filter=resourceName eq {SKU}. This will include the GroupQuota and total quota allocated to the subscription. Only the Group quota allocated to the subscription can be allocated back to the MG Group Quota. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="groupQuotaName" /> or <paramref name="resourceProviderName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="groupQuotaName" /> or <paramref name="resourceProviderName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSubscriptionQuotaAllocationsListAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt;&gt; GetSubscriptionQuotaAllocationsListAsync (Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName, Azure.Core.AzureLocation location, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt;&gt; GetSubscriptionQuotaAllocationsListAsync(class Azure.Core.ResourceIdentifier scope, string groupQuotaName, string resourceProviderName, valuetype Azure.Core.AzureLocation location, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quota.Mocking.MockableQuotaArmClient.GetSubscriptionQuotaAllocationsListAsync(Azure.Core.ResourceIdentifier,System.String,System.String,Azure.Core.AzureLocation,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSubscriptionQuotaAllocationsListAsync (scope As ResourceIdentifier, groupQuotaName As String, resourceProviderName As String, location As AzureLocation, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of SubscriptionQuotaAllocationsListResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetSubscriptionQuotaAllocationsListAsync : Azure.Core.ResourceIdentifier * string * string * Azure.Core.AzureLocation * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt;&gt;&#xA;override this.GetSubscriptionQuotaAllocationsListAsync : Azure.Core.ResourceIdentifier * string * string * Azure.Core.AzureLocation * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt;&gt;" Usage="mockableQuotaArmClient.GetSubscriptionQuotaAllocationsListAsync (scope, groupQuotaName, resourceProviderName, location, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="groupQuotaName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceProviderName" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <param name="groupQuotaName"> The GroupQuota name. The name should be unique for the provided context tenantId/MgId. </param>
+        <param name="resourceProviderName"> The resource provider name, such as - Microsoft.Compute. Currently only Microsoft.Compute resource provider supports this API. </param>
+        <param name="location"> The name of the Azure region. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary> Gets all the quota allocated to a subscription for the specified resource provider and location for resource names passed in $filter=resourceName eq {SKU}. This will include the GroupQuota and total quota allocated to the subscription. Only the Group quota allocated to the subscription can be allocated back to the MG Group Quota. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="groupQuotaName" /> or <paramref name="resourceProviderName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="groupQuotaName" /> or <paramref name="resourceProviderName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetSubscriptionQuotaAllocationsListResource">
@@ -610,6 +757,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource</ReturnType>
@@ -619,11 +767,32 @@
       </Parameters>
       <Docs>
         <param name="id"> The resource ID of the resource to get. </param>
-        <summary>
-            Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource" /> along with the instance operations that can be performed on it but with no data.
-            You can use <see cref="M:Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource.CreateResourceIdentifier(System.String,System.String,System.String,System.String,Azure.Core.AzureLocation)" /> to create a <see cref="T:Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource" /><see cref="T:Azure.Core.ResourceIdentifier" /> from its components.
-            </summary>
+        <summary> Gets an object representing a <see cref="T:Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource" /> along with the instance operations that can be performed on it but with no data. </summary>
         <returns> Returns a <see cref="T:Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSubscriptionQuotaAllocationsLists">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListCollection GetSubscriptionQuotaAllocationsLists (Azure.Core.ResourceIdentifier scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListCollection GetSubscriptionQuotaAllocationsLists(class Azure.Core.ResourceIdentifier scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quota.Mocking.MockableQuotaArmClient.GetSubscriptionQuotaAllocationsLists(Azure.Core.ResourceIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSubscriptionQuotaAllocationsLists (scope As ResourceIdentifier) As SubscriptionQuotaAllocationsListCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetSubscriptionQuotaAllocationsLists : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListCollection&#xA;override this.GetSubscriptionQuotaAllocationsLists : Azure.Core.ResourceIdentifier -&gt; Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListCollection" Usage="mockableQuotaArmClient.GetSubscriptionQuotaAllocationsLists scope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="scope"> The scope of the resource collection to get. </param>
+        <summary> Gets a collection of <see cref="T:Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListCollection" /> objects within the specified scope. </summary>
+        <returns> Returns a collection of <see cref="T:Azure.ResourceManager.Quota.SubscriptionQuotaAllocationsListResource" /> objects. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

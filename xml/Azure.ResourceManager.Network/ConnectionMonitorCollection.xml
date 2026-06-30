@@ -27,6 +27,7 @@
     <AssemblyVersion>1.13.0.0</AssemblyVersion>
     <AssemblyVersion>1.14.0.0</AssemblyVersion>
     <AssemblyVersion>1.15.0.0</AssemblyVersion>
+    <AssemblyVersion>1.16.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmCollection</BaseTypeName>
@@ -43,11 +44,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>
-            A class representing a collection of <see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /> and their operations.
-            Each <see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.Network.NetworkWatcherResource" />.
-            To get a <see cref="T:Azure.ResourceManager.Network.ConnectionMonitorCollection" /> instance call the GetConnectionMonitors method from an instance of <see cref="T:Azure.ResourceManager.Network.NetworkWatcherResource" />.
-            </summary>
+    <summary> Compatibility declaration for the ConnectionMonitorCollection type. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -60,25 +57,66 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Network.ConnectionMonitorCollection" /> class for mocking. </summary>
+        <summary> Initializes a new instance of ConnectionMonitorCollection for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateOrUpdate">
-      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt; CreateOrUpdate (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, string migrate = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt; CreateOrUpdate (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorContent content, string migrate = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.Network.ConnectionMonitorResource&gt; CreateOrUpdate(valuetype Azure.WaitUntil waitUntil, string connectionMonitorName, class Azure.ResourceManager.Network.Models.ConnectionMonitorContent content, string migrate, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.ConnectionMonitorCollection.CreateOrUpdate(Azure.WaitUntil,System.String,Azure.ResourceManager.Network.Models.ConnectionMonitorContent,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdate (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorContent, Optional migrate As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of ConnectionMonitorResource)" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdate : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorContent * string * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&#xA;override this.CreateOrUpdate : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorContent * string * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;" Usage="connectionMonitorCollection.CreateOrUpdate (waitUntil, connectionMonitorName, content, migrate, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="connectionMonitorName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="content" Type="Azure.ResourceManager.Network.Models.ConnectionMonitorContent" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="migrate" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="connectionMonitorName"> The name of the connection monitor. </param>
+        <param name="content"> Parameters that define the operation to create a connection monitor. </param>
+        <param name="migrate"> Value indicating whether connection monitor V1 should be migrated to V2 format. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Create or update a connection monitor.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="connectionMonitorName" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdate">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt; CreateOrUpdate (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, string migrate, System.Threading.CancellationToken cancellationToken);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.Network.ConnectionMonitorResource&gt; CreateOrUpdate(valuetype Azure.WaitUntil waitUntil, string connectionMonitorName, class Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, string migrate, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.ConnectionMonitorCollection.CreateOrUpdate(Azure.WaitUntil,System.String,Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdate (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorCreateOrUpdateContent, Optional migrate As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of ConnectionMonitorResource)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdate (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorCreateOrUpdateContent, migrate As String, cancellationToken As CancellationToken) As ArmOperation(Of ConnectionMonitorResource)" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="abstract member CreateOrUpdate : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent * string * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&#xA;override this.CreateOrUpdate : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent * string * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;" Usage="connectionMonitorCollection.CreateOrUpdate (waitUntil, connectionMonitorName, content, migrate, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt; CreateOrUpdate (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, string migrate = default, System.Threading.CancellationToken cancellationToken = default);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdate (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorCreateOrUpdateContent, Optional migrate As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of ConnectionMonitorResource)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;</ReturnType>
@@ -97,9 +135,7 @@
         <param name="content"> Parameters that define the operation to create a connection monitor. </param>
         <param name="migrate"> Value indicating whether connection monitor V1 should be migrated to V2 format. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Create or update a connection monitor.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}</description></item><item><term>Operation Id</term><description>ConnectionMonitors_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+        <summary> Invokes the CreateOrUpdate compatibility operation. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -109,16 +145,90 @@
       </Docs>
     </Member>
     <Member MemberName="CreateOrUpdateAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt; CreateOrUpdateAsync (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, string migrate = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt; CreateOrUpdateAsync (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt; CreateOrUpdateAsync(valuetype Azure.WaitUntil waitUntil, string connectionMonitorName, class Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.ConnectionMonitorCollection.CreateOrUpdateAsync(Azure.WaitUntil,System.String,Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateAsync (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorCreateOrUpdateContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of ConnectionMonitorResource))" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdateAsync : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;&#xA;override this.CreateOrUpdateAsync : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;" Usage="connectionMonitorCollection.CreateOrUpdateAsync (waitUntil, connectionMonitorName, content, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="connectionMonitorName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="content" Type="Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if the method should return after starting the operation. </param>
+        <param name="connectionMonitorName"> The name of the connection monitor. </param>
+        <param name="content"> Parameters that define the operation to create a connection monitor. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Create or update a connection monitor.
+            </summary>
+        <returns> An <see cref="T:Azure.ResourceManager.ArmOperation`1" /> that can be used to wait for completion and retrieve the created or updated resource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt; CreateOrUpdateAsync (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorContent content, string migrate = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt; CreateOrUpdateAsync(valuetype Azure.WaitUntil waitUntil, string connectionMonitorName, class Azure.ResourceManager.Network.Models.ConnectionMonitorContent content, string migrate, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.ConnectionMonitorCollection.CreateOrUpdateAsync(Azure.WaitUntil,System.String,Azure.ResourceManager.Network.Models.ConnectionMonitorContent,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateAsync (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorContent, Optional migrate As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of ConnectionMonitorResource))" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdateAsync : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorContent * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;&#xA;override this.CreateOrUpdateAsync : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorContent * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;" Usage="connectionMonitorCollection.CreateOrUpdateAsync (waitUntil, connectionMonitorName, content, migrate, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="connectionMonitorName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="content" Type="Azure.ResourceManager.Network.Models.ConnectionMonitorContent" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="migrate" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="connectionMonitorName"> The name of the connection monitor. </param>
+        <param name="content"> Parameters that define the operation to create a connection monitor. </param>
+        <param name="migrate"> Value indicating whether connection monitor V1 should be migrated to V2 format. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Create or update a connection monitor.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="connectionMonitorName" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt; CreateOrUpdateAsync (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, string migrate, System.Threading.CancellationToken cancellationToken);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt; CreateOrUpdateAsync(valuetype Azure.WaitUntil waitUntil, string connectionMonitorName, class Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, string migrate, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.ConnectionMonitorCollection.CreateOrUpdateAsync(Azure.WaitUntil,System.String,Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateAsync (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorCreateOrUpdateContent, Optional migrate As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of ConnectionMonitorResource))" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateAsync (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorCreateOrUpdateContent, migrate As String, cancellationToken As CancellationToken) As Task(Of ArmOperation(Of ConnectionMonitorResource))" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="abstract member CreateOrUpdateAsync : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;&#xA;override this.CreateOrUpdateAsync : Azure.WaitUntil * string * Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;" Usage="connectionMonitorCollection.CreateOrUpdateAsync (waitUntil, connectionMonitorName, content, migrate, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt; CreateOrUpdateAsync (Azure.WaitUntil waitUntil, string connectionMonitorName, Azure.ResourceManager.Network.Models.ConnectionMonitorCreateOrUpdateContent content, string migrate = default, System.Threading.CancellationToken cancellationToken = default);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateAsync (waitUntil As WaitUntil, connectionMonitorName As String, content As ConnectionMonitorCreateOrUpdateContent, Optional migrate As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of ConnectionMonitorResource))" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;</ReturnType>
@@ -137,9 +247,7 @@
         <param name="content"> Parameters that define the operation to create a connection monitor. </param>
         <param name="migrate"> Value indicating whether connection monitor V1 should be migrated to V2 format. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Create or update a connection monitor.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}</description></item><item><term>Operation Id</term><description>ConnectionMonitors_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+        <summary> Invokes the CreateOrUpdateAsync compatibility operation. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -158,7 +266,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;System.Boolean&gt;</ReturnType>
@@ -172,13 +280,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}</description></item><item><term>Operation Id</term><description>ConnectionMonitors_Get</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="connectionMonitorName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="ExistsAsync">
@@ -191,7 +299,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.Boolean&gt;&gt;</ReturnType>
@@ -205,13 +313,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}</description></item><item><term>Operation Id</term><description>ConnectionMonitors_Get</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="connectionMonitorName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="Get">
@@ -224,7 +332,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;</ReturnType>
@@ -238,13 +346,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets a connection monitor by name.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}</description></item><item><term>Operation Id</term><description>ConnectionMonitors_Get</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="connectionMonitorName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAll">
@@ -257,7 +365,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;</ReturnType>
@@ -269,7 +377,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Lists all connection monitors for the specified Network Watcher.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors</description></item><item><term>Operation Id</term><description>ConnectionMonitors_List</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -284,7 +392,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;</ReturnType>
@@ -296,8 +404,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Lists all connection monitors for the specified Network Watcher.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors</description></item><item><term>Operation Id</term><description>ConnectionMonitors_List</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -311,7 +419,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;</ReturnType>
@@ -325,13 +433,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets a connection monitor by name.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}</description></item><item><term>Operation Id</term><description>ConnectionMonitors_Get</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="connectionMonitorName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExists">
@@ -344,7 +452,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.NullableResponse&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;</ReturnType>
@@ -358,13 +466,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}</description></item><item><term>Operation Id</term><description>ConnectionMonitors_Get</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="connectionMonitorName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExistsAsync">
@@ -377,7 +485,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;&gt;</ReturnType>
@@ -391,13 +499,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}</description></item><item><term>Operation Id</term><description>ConnectionMonitors_Get</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.ConnectionMonitorResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}. </description></item><item><term> Operation Id. </term><description> ConnectionMonitorResults_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="connectionMonitorName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionMonitorName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;.GetAsyncEnumerator">
@@ -413,7 +521,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;</ReturnType>
@@ -422,7 +530,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> that may be used to cancel the asynchronous iteration.</param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>Returns an enumerator that iterates asynchronously through the collection.</summary>
         <returns>An enumerator that can be used to iterate asynchronously through the collection.</returns>
         <remarks>To be added.</remarks>
@@ -441,7 +549,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.Network.ConnectionMonitorResource&gt;</ReturnType>
@@ -466,7 +574,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>

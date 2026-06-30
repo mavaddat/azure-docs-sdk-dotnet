@@ -49,7 +49,9 @@
         <item>
           <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.RequestId" /> — client-provided correlation ID (echoed back on the response).</item>
         <item>
-          <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.UserIsolationKey" /> / <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.ChatIsolationKey" /> — platform isolation keys.</item>
+          <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.UserId" /> — global, cross-agent per-user partition key.</item>
+        <item>
+          <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.FoundryCallId" /> — opaque per-request call identifier (protocol <c>2.0.0</c>).</item>
         <item>
           <see cref="F:Azure.AI.AgentServer.Core.PlatformHeaders.ClientHeaderPrefix" /> — prefix for pass-through client headers.</item>
         <item>
@@ -60,28 +62,6 @@
     </remarks>
   </Docs>
   <Members>
-    <Member MemberName="ChatIsolationKey">
-      <MemberSignature Language="C#" Value="public const string ChatIsolationKey;" />
-      <MemberSignature Language="ILAsm" Value=".field public static literal string ChatIsolationKey" />
-      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.ChatIsolationKey" />
-      <MemberSignature Language="VB.NET" Value="Public Const ChatIsolationKey As String " />
-      <MemberSignature Language="F#" Value="val mutable ChatIsolationKey : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.ChatIsolationKey" />
-      <MemberType>Field</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.String</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            The <c>x-agent-chat-isolation-key</c> header — the platform-injected
-            partition key for conversation-scoped state.
-            </summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
     <Member MemberName="ClientHeaderPrefix">
       <MemberSignature Language="C#" Value="public const string ClientHeaderPrefix;" />
       <MemberSignature Language="ILAsm" Value=".field public static literal string ClientHeaderPrefix" />
@@ -240,6 +220,31 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="FoundryCallId">
+      <MemberSignature Language="C#" Value="public const string FoundryCallId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string FoundryCallId" />
+      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.FoundryCallId" />
+      <MemberSignature Language="VB.NET" Value="Public Const FoundryCallId As String " />
+      <MemberSignature Language="F#" Value="val mutable FoundryCallId : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.FoundryCallId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The <c>x-agent-foundry-call-id</c> header — the platform-minted opaque
+            per-request call identifier. Present only on container protocol version
+            <c>2.0.0</c>. The container <b>must</b> forward this value on outbound
+            calls to Foundry platform services (Storage, Toolboxes/MCP, A2A) so that
+            1P services resolve the server-side-stored caller context. Never parsed.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="RequestId">
       <MemberSignature Language="C#" Value="public const string RequestId;" />
       <MemberSignature Language="ILAsm" Value=".field public static literal string RequestId" />
@@ -353,12 +358,12 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="UserIsolationKey">
-      <MemberSignature Language="C#" Value="public const string UserIsolationKey;" />
-      <MemberSignature Language="ILAsm" Value=".field public static literal string UserIsolationKey" />
-      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.UserIsolationKey" />
-      <MemberSignature Language="VB.NET" Value="Public Const UserIsolationKey As String " />
-      <MemberSignature Language="F#" Value="val mutable UserIsolationKey : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.UserIsolationKey" />
+    <Member MemberName="UserId">
+      <MemberSignature Language="C#" Value="public const string UserId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string UserId" />
+      <MemberSignature Language="DocId" Value="F:Azure.AI.AgentServer.Core.PlatformHeaders.UserId" />
+      <MemberSignature Language="VB.NET" Value="Public Const UserId As String " />
+      <MemberSignature Language="F#" Value="val mutable UserId : string" Usage="Azure.AI.AgentServer.Core.PlatformHeaders.UserId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
@@ -369,8 +374,11 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The <c>x-agent-user-isolation-key</c> header — the platform-injected
-            partition key for user-private state.
+            The <c>x-agent-user-id</c> header — the platform-injected global,
+            cross-agent partition key for per-user state. The same user yields the
+            same value regardless of which agent they interact with. Consumed
+            container-side for per-user state partitioning; it is <b>not</b> forwarded
+            on outbound 1P calls (not accepted/trusted by 1P services).
             </summary>
         <remarks>To be added.</remarks>
       </Docs>

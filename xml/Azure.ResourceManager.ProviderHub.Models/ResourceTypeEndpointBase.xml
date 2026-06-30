@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -36,8 +37,14 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <Parameters>
         <Parameter Name="enabled" Type="System.Boolean" />
         <Parameter Name="apiVersions" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
@@ -65,10 +72,52 @@
         <param name="skuLink"> The sku link. </param>
         <param name="apiVersion"> The api version. </param>
         <param name="zones"> The zones. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase" />. </summary>
+        <summary> Backward-compat constructor with ProviderFeaturesRule parameter. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="apiVersions" />, <paramref name="endpointUri" />, <paramref name="locations" />, <paramref name="requiredFeatures" />, <paramref name="featuresRule" />, <paramref name="dstsConfiguration" />, <paramref name="skuLink" />, <paramref name="apiVersion" /> or <paramref name="zones" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceTypeEndpointBase (bool enabled, System.Collections.Generic.IEnumerable&lt;string&gt; apiVersions, Uri endpointUri, System.Collections.Generic.IEnumerable&lt;string&gt; locations, System.Collections.Generic.IEnumerable&lt;string&gt; requiredFeatures, Azure.ResourceManager.ProviderHub.Models.FeaturesPolicy? requiredFeaturesPolicy, TimeSpan timeout, Azure.ResourceManager.ProviderHub.Models.ProviderEndpointType endpointType, Azure.ResourceManager.ProviderHub.Models.ProviderDstsConfiguration dstsConfiguration, string skuLink, string apiVersion, System.Collections.Generic.IEnumerable&lt;string&gt; zones);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool enabled, class System.Collections.Generic.IEnumerable`1&lt;string&gt; apiVersions, class System.Uri endpointUri, class System.Collections.Generic.IEnumerable`1&lt;string&gt; locations, class System.Collections.Generic.IEnumerable`1&lt;string&gt; requiredFeatures, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.ProviderHub.Models.FeaturesPolicy&gt; requiredFeaturesPolicy, valuetype System.TimeSpan timeout, valuetype Azure.ResourceManager.ProviderHub.Models.ProviderEndpointType endpointType, class Azure.ResourceManager.ProviderHub.Models.ProviderDstsConfiguration dstsConfiguration, string skuLink, string apiVersion, class System.Collections.Generic.IEnumerable`1&lt;string&gt; zones) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase.#ctor(System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Uri,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{Azure.ResourceManager.ProviderHub.Models.FeaturesPolicy},System.TimeSpan,Azure.ResourceManager.ProviderHub.Models.ProviderEndpointType,Azure.ResourceManager.ProviderHub.Models.ProviderDstsConfiguration,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (enabled As Boolean, apiVersions As IEnumerable(Of String), endpointUri As Uri, locations As IEnumerable(Of String), requiredFeatures As IEnumerable(Of String), requiredFeaturesPolicy As Nullable(Of FeaturesPolicy), timeout As TimeSpan, endpointType As ProviderEndpointType, dstsConfiguration As ProviderDstsConfiguration, skuLink As String, apiVersion As String, zones As IEnumerable(Of String))" />
+      <MemberSignature Language="F#" Value="new Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase : bool * seq&lt;string&gt; * Uri * seq&lt;string&gt; * seq&lt;string&gt; * Nullable&lt;Azure.ResourceManager.ProviderHub.Models.FeaturesPolicy&gt; * TimeSpan * Azure.ResourceManager.ProviderHub.Models.ProviderEndpointType * Azure.ResourceManager.ProviderHub.Models.ProviderDstsConfiguration * string * string * seq&lt;string&gt; -&gt; Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase" Usage="new Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase (enabled, apiVersions, endpointUri, locations, requiredFeatures, requiredFeaturesPolicy, timeout, endpointType, dstsConfiguration, skuLink, apiVersion, zones)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enabled" Type="System.Boolean" />
+        <Parameter Name="apiVersions" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="endpointUri" Type="System.Uri" />
+        <Parameter Name="locations" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="requiredFeatures" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="requiredFeaturesPolicy" Type="System.Nullable&lt;Azure.ResourceManager.ProviderHub.Models.FeaturesPolicy&gt;" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="endpointType" Type="Azure.ResourceManager.ProviderHub.Models.ProviderEndpointType" />
+        <Parameter Name="dstsConfiguration" Type="Azure.ResourceManager.ProviderHub.Models.ProviderDstsConfiguration" />
+        <Parameter Name="skuLink" Type="System.String" />
+        <Parameter Name="apiVersion" Type="System.String" />
+        <Parameter Name="zones" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="enabled">To be added.</param>
+        <param name="apiVersions">To be added.</param>
+        <param name="endpointUri">To be added.</param>
+        <param name="locations">To be added.</param>
+        <param name="requiredFeatures">To be added.</param>
+        <param name="requiredFeaturesPolicy">To be added.</param>
+        <param name="timeout">To be added.</param>
+        <param name="endpointType">To be added.</param>
+        <param name="dstsConfiguration">To be added.</param>
+        <param name="skuLink">To be added.</param>
+        <param name="apiVersion">To be added.</param>
+        <param name="zones">To be added.</param>
+        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase" />. </summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ApiVersion">
@@ -80,7 +129,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -100,7 +149,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
@@ -120,7 +169,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ProviderHub.Models.ProviderDstsConfiguration</ReturnType>
@@ -140,7 +189,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -160,7 +209,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ProviderHub.Models.ProviderEndpointType</ReturnType>
@@ -180,7 +229,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -188,6 +237,32 @@
       <Docs>
         <summary> The endpoint uri. </summary>
         <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JsonModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase JsonModelCreateCore (ref System.Text.Json.Utf8JsonReader reader, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase JsonModelCreateCore(valuetype System.Text.Json.Utf8JsonReader&amp; reader, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase.JsonModelCreateCore(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function JsonModelCreateCore (ByRef reader As Utf8JsonReader, options As ModelReaderWriterOptions) As ResourceTypeEndpointBase" />
+      <MemberSignature Language="F#" Value="abstract member JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase&#xA;override this.JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase" Usage="resourceTypeEndpointBase.JsonModelCreateCore (reader, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -200,7 +275,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -225,7 +300,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
@@ -233,6 +308,56 @@
       <Docs>
         <summary> The locations. </summary>
         <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase PersistableModelCreateCore (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase PersistableModelCreateCore(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase.PersistableModelCreateCore(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelCreateCore (data As BinaryData, options As ModelReaderWriterOptions) As ResourceTypeEndpointBase" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase&#xA;override this.PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase" Usage="resourceTypeEndpointBase.PersistableModelCreateCore (data, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.BinaryData" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelWriteCore">
+      <MemberSignature Language="C#" Value="protected virtual BinaryData PersistableModelWriteCore (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.BinaryData PersistableModelWriteCore(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase.PersistableModelWriteCore(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelWriteCore (options As ModelReaderWriterOptions) As BinaryData" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData&#xA;override this.PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData" Usage="resourceTypeEndpointBase.PersistableModelWriteCore options" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -245,7 +370,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
@@ -265,7 +390,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Azure.ResourceManager.ProviderHub.Models.FeaturesPolicy&gt;</ReturnType>
@@ -285,7 +410,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -308,7 +433,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase</ReturnType>
@@ -318,8 +443,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -340,7 +465,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -350,8 +475,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The JSON writer. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -371,7 +496,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ProviderHub.Models.ResourceTypeEndpointBase</ReturnType>
@@ -381,8 +506,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -403,7 +528,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -412,7 +537,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -432,7 +557,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
@@ -441,7 +566,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -459,7 +584,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.TimeSpan</ReturnType>
@@ -479,7 +604,7 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ProviderHub</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>

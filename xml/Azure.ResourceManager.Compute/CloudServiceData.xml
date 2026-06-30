@@ -39,11 +39,18 @@
       <InterfaceName>System.ClientModel.Primitives.IPersistableModel&lt;T&gt;</InterfaceName>
     </Interface>
   </Interfaces>
+  <Attributes>
+    <Attribute FrameworkAlternate="azure-dotnet">
+      <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="azure-dotnet">
+      <AttributeName Language="C#">[System.Obsolete("CloudService operations are no longer supported.")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Obsolete("CloudService operations are no longer supported.")&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
   <Docs>
-    <summary>
-            A class representing the CloudService data model.
-            Describes the cloud service.
-            </summary>
+    <summary> This type is obsolete. Cloud Services (classic) are no longer supported for new customers. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -56,7 +63,6 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -64,7 +70,7 @@
       </Parameters>
       <Docs>
         <param name="location"> The location. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Compute.CloudServiceData" />. </summary>
+        <summary> Initializes a new instance of CloudServiceData. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,17 +83,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            (Optional) Indicates whether the role sku properties (roleProfile.roles.sku) specified in the model/template should override the role instance count and vm size specified in the .cscfg and .csdef respectively.
-            The default value is `false`.
-            </summary>
+        <summary> Whether model overrides are allowed. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -101,14 +103,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Specifies the XML service configuration (.cscfg) for the cloud service. </summary>
+        <summary> The XML service configuration (.cscfg). </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -122,17 +123,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Specifies a URL that refers to the location of the service configuration in the Blob service. The service package URL  can be Shared Access Signature (SAS) URI from any storage account.
-            This is a write-only property and is not returned in GET calls.
-            </summary>
+        <summary> The configuration URL. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -146,14 +143,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Azure.ResourceManager.Compute.Models.CloudServiceExtension&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> List of extensions for the cloud service. </summary>
+        <summary> The extensions. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -167,7 +163,6 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -193,14 +188,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Compute.Models.CloudServiceNetworkProfile</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Network Profile for the cloud service. </summary>
+        <summary> The network profile. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -214,14 +208,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Azure.ResourceManager.Compute.Models.CloudServiceVaultSecretGroup&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Specifies set of certificates that should be installed onto the role instances. </summary>
+        <summary> The OS secrets. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -235,17 +228,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Specifies a URL that refers to the location of the service package in the Blob service. The service package URL can be Shared Access Signature (SAS) URI from any storage account.
-            This is a write-only property and is not returned in GET calls.
-            </summary>
+        <summary> The package URL. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -259,14 +248,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The provisioning state, which only appears in the response. </summary>
+        <summary> The provisioning state. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -280,14 +268,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Azure.ResourceManager.Compute.Models.CloudServiceRoleProfileProperties&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> List of roles for the cloud service. </summary>
+        <summary> The role profile properties. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -301,17 +288,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            (Optional) Indicates whether to start the cloud service immediately after it is created. The default value is `true`.
-            If false, the service model is still deployed, but the code is not run immediately. Instead, the service is PoweredOff until you call Start, at which time the service will be started. A deployed service still incurs charges, even if it is poweredoff.
-            </summary>
+        <summary> Whether to start the cloud service. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -328,7 +311,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -361,7 +343,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -393,7 +374,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -426,7 +406,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -456,7 +435,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -484,14 +462,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The unique identifier for the cloud service. </summary>
+        <summary> The unique identifier. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -505,18 +482,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Azure.ResourceManager.Compute.Models.CloudServiceUpgradeMode&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Update mode for the cloud service. Role instances are allocated to update domains when the service is deployed. Updates can be initiated manually in each update domain or initiated automatically in all update domains.
-            Possible Values are &lt;br /&gt;&lt;br /&gt;**Auto**&lt;br /&gt;&lt;br /&gt;**Manual** &lt;br /&gt;&lt;br /&gt;**Simultaneous**&lt;br /&gt;&lt;br /&gt;
-            If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain must be called to apply the update. If set to Auto, the update is automatically applied to each update domain in sequence.
-            </summary>
+        <summary> The upgrade mode. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -530,14 +502,13 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute</AssemblyName>
-        <AssemblyVersion>1.14.0.0</AssemblyVersion>
         <AssemblyVersion>1.15.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be provisioned. This field is optional. </summary>
+        <summary> List of availability zones. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

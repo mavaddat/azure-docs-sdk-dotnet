@@ -27,6 +27,7 @@
     <AssemblyVersion>1.13.0.0</AssemblyVersion>
     <AssemblyVersion>1.14.0.0</AssemblyVersion>
     <AssemblyVersion>1.15.0.0</AssemblyVersion>
+    <AssemblyVersion>1.16.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.Network.Models.NetworkResourceData</BaseTypeName>
@@ -43,13 +44,13 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute>
+    <Attribute FrameworkAlternate="azure-dotnet-preview">
       <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
       <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary> NVA Inbound Security Rule resource. </summary>
+    <summary> Compatibility type for inbound security rules. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -62,7 +63,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -80,38 +81,69 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Azure.ETag&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> A unique read-only string that changes whenever the resource is updated. </summary>
+        <summary> Entity tag. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="JsonModelWriteCore">
+      <MemberSignature Language="C#" Value="protected override void JsonModelWriteCore (System.Text.Json.Utf8JsonWriter writer, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void JsonModelWriteCore(class System.Text.Json.Utf8JsonWriter writer, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.InboundSecurityRule.JsonModelWriteCore(System.Text.Json.Utf8JsonWriter,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub JsonModelWriteCore (writer As Utf8JsonWriter, options As ModelReaderWriterOptions)" />
+      <MemberSignature Language="F#" Value="override this.JsonModelWriteCore : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit" Usage="inboundSecurityRule.JsonModelWriteCore (writer, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Text.Json.Utf8JsonWriter" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="writer">To be added.</param>
+        <param name="options">To be added.</param>
+        <summary> Writes the model as JSON. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="op_Implicit">
-      <MemberSignature Language="C#" Value="public static implicit operator Azure.ResourceManager.Network.InboundSecurityRuleData (Azure.ResourceManager.Network.Models.InboundSecurityRule r);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class Azure.ResourceManager.Network.InboundSecurityRuleData op_Implicit(class Azure.ResourceManager.Network.Models.InboundSecurityRule r) cil managed" />
+      <MemberSignature Language="C#" Value="public static implicit operator Azure.ResourceManager.Network.InboundSecurityRuleData (Azure.ResourceManager.Network.Models.InboundSecurityRule rule);" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class Azure.ResourceManager.Network.InboundSecurityRuleData op_Implicit(class Azure.ResourceManager.Network.Models.InboundSecurityRule rule) cil managed" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.InboundSecurityRule.op_Implicit(Azure.ResourceManager.Network.Models.InboundSecurityRule)~Azure.ResourceManager.Network.InboundSecurityRuleData" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Widening Operator CType (r As InboundSecurityRule) As InboundSecurityRuleData" />
-      <MemberSignature Language="F#" Value="static member op_Implicit : Azure.ResourceManager.Network.Models.InboundSecurityRule -&gt; Azure.ResourceManager.Network.InboundSecurityRuleData" Usage="Azure.ResourceManager.Network.Models.InboundSecurityRule.op_Implicit r" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Widening Operator CType (rule As InboundSecurityRule) As InboundSecurityRuleData" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="static member op_Implicit : Azure.ResourceManager.Network.Models.InboundSecurityRule -&gt; Azure.ResourceManager.Network.InboundSecurityRuleData" Usage="Azure.ResourceManager.Network.Models.InboundSecurityRule.op_Implicit rule" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public static implicit operator Azure.ResourceManager.Network.InboundSecurityRuleData (Azure.ResourceManager.Network.Models.InboundSecurityRule r);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class Azure.ResourceManager.Network.InboundSecurityRuleData op_Implicit(class Azure.ResourceManager.Network.Models.InboundSecurityRule r) cil managed" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Widening Operator CType (r As InboundSecurityRule) As InboundSecurityRuleData" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="F#" Value="static member op_Implicit : Azure.ResourceManager.Network.Models.InboundSecurityRule -&gt; Azure.ResourceManager.Network.InboundSecurityRuleData" Usage="Azure.ResourceManager.Network.Models.InboundSecurityRule.op_Implicit r" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Network.InboundSecurityRuleData</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="r" Type="Azure.ResourceManager.Network.Models.InboundSecurityRule" />
+        <Parameter Name="rule" Type="Azure.ResourceManager.Network.Models.InboundSecurityRule" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="r" Type="Azure.ResourceManager.Network.Models.InboundSecurityRule" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
+        <param name="rule">To be added.</param>
         <param name="r"> The <see cref="T:Azure.ResourceManager.Network.Models.InboundSecurityRule" /> to convert. </param>
-        <summary> Implicitly converts an <see cref="T:Azure.ResourceManager.Network.Models.InboundSecurityRule" /> to an <see cref="T:Azure.ResourceManager.Network.InboundSecurityRuleData" />. </summary>
+        <summary> Converts the compatibility model to the generated resource data model. </summary>
         <returns> The converted <see cref="T:Azure.ResourceManager.Network.InboundSecurityRuleData" />. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -126,13 +158,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Azure.ResourceManager.Network.Models.NetworkProvisioningState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The provisioning state of the resource. </summary>
+        <summary> Provisioning state. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -147,13 +179,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Azure.ResourceManager.Network.Models.InboundSecurityRules&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> List of allowed rules. </summary>
+        <summary> Inbound security rules. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -168,13 +200,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Azure.ResourceManager.Network.Models.InboundSecurityRuleType&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Rule Type. This should be either AutoExpire or Permanent. Auto Expire Rule only creates NSG rules. Permanent Rule creates NSG rule and SLB LB Rule. </summary>
+        <summary> The rule type. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -192,7 +224,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Network.Models.InboundSecurityRule</ReturnType>
@@ -207,7 +239,7 @@
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
-        <returns>A <see cref="T:Azure.ResourceManager.Network.Models.InboundSecurityRule" /> representation of the JSON value.</returns>
+        <returns>A <typeparamref name="T" /> representation of the JSON value.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.FormatException">If the model does not support the requested <see cref="P:System.ClientModel.Primitives.ModelReaderWriterOptions.Format" />.</exception>
       </Docs>
@@ -225,7 +257,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -257,7 +289,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Network.Models.InboundSecurityRule</ReturnType>
@@ -272,7 +304,7 @@
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
-        <returns>A <see cref="T:Azure.ResourceManager.Network.Models.InboundSecurityRule" /> representation of the data.</returns>
+        <returns>A <typeparamref name="T" /> representation of the data.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.FormatException">If the model does not support the requested <see cref="P:System.ClientModel.Primitives.ModelReaderWriterOptions.Format" />.</exception>
       </Docs>
@@ -290,7 +322,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -320,7 +352,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>

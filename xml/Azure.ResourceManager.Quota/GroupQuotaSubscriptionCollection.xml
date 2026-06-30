@@ -8,6 +8,7 @@
     <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmCollection</BaseTypeName>
@@ -41,10 +42,42 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionCollection" /> class for mocking. </summary>
+        <summary> Initializes a new instance of GroupQuotaSubscriptionCollection for mocking. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdate">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt; CreateOrUpdate (Azure.WaitUntil waitUntil, Guid subscriptionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt; CreateOrUpdate(valuetype Azure.WaitUntil waitUntil, valuetype System.Guid subscriptionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quota.GroupQuotaSubscriptionCollection.CreateOrUpdate(Azure.WaitUntil,System.Guid,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdate (waitUntil As WaitUntil, subscriptionId As Guid, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of GroupQuotaSubscriptionResource)" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdate : Azure.WaitUntil * Guid * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&#xA;override this.CreateOrUpdate : Azure.WaitUntil * Guid * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;" Usage="groupQuotaSubscriptionCollection.CreateOrUpdate (waitUntil, subscriptionId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="subscriptionId" Type="System.Guid" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="subscriptionId"> The ID of the target subscription. The value must be an UUID. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Adds a subscription to GroupQuotas. The subscriptions will be validated based on the additionalAttributes defined in the GroupQuota. The additionalAttributes works as filter for the subscriptions, which can be included in the GroupQuotas. The request's TenantId is validated against the subscription's TenantId.
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -58,7 +91,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;</ReturnType>
       </ReturnValue>
@@ -74,13 +114,44 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Adds a subscription to GroupQuotas. The subscriptions will be validated based on the additionalAttributes defined in the GroupQuota. The additionalAttributes works as filter for the subscriptions, which can be included in the GroupQuotas. The request's TenantId is validated against the subscription's TenantId.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="subscriptionId" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&gt; CreateOrUpdateAsync (Azure.WaitUntil waitUntil, Guid subscriptionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&gt; CreateOrUpdateAsync(valuetype Azure.WaitUntil waitUntil, valuetype System.Guid subscriptionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Quota.GroupQuotaSubscriptionCollection.CreateOrUpdateAsync(Azure.WaitUntil,System.Guid,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateAsync (waitUntil As WaitUntil, subscriptionId As Guid, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of GroupQuotaSubscriptionResource))" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdateAsync : Azure.WaitUntil * Guid * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&gt;&#xA;override this.CreateOrUpdateAsync : Azure.WaitUntil * Guid * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&gt;" Usage="groupQuotaSubscriptionCollection.CreateOrUpdateAsync (waitUntil, subscriptionId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="subscriptionId" Type="System.Guid" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="subscriptionId"> The ID of the target subscription. The value must be an UUID. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Adds a subscription to GroupQuotas. The subscriptions will be validated based on the additionalAttributes defined in the GroupQuota. The additionalAttributes works as filter for the subscriptions, which can be included in the GroupQuotas. The request's TenantId is validated against the subscription's TenantId.
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateOrUpdateAsync">
@@ -93,7 +164,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -109,7 +187,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Adds a subscription to GroupQuotas. The subscriptions will be validated based on the additionalAttributes defined in the GroupQuota. The additionalAttributes works as filter for the subscriptions, which can be included in the GroupQuotas. The request's TenantId is validated against the subscription's TenantId.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -128,6 +206,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;System.Boolean&gt;</ReturnType>
@@ -141,13 +220,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="subscriptionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="ExistsAsync">
@@ -160,6 +239,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.Boolean&gt;&gt;</ReturnType>
@@ -173,13 +253,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="subscriptionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="Get">
@@ -192,6 +272,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;</ReturnType>
@@ -205,13 +286,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns the subscriptionIds along with its provisioning state for being associated with the GroupQuota. If the subscription is not a member of GroupQuota, it will return 404, else 200.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="subscriptionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAll">
@@ -224,6 +305,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;</ReturnType>
@@ -235,7 +317,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns a list of the subscriptionIds associated with the GroupQuotas.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_List</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_List. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -250,6 +332,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;</ReturnType>
@@ -261,8 +344,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns a list of the subscriptionIds associated with the GroupQuotas.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_List</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_List. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -276,6 +359,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&gt;</ReturnType>
@@ -289,13 +373,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Returns the subscriptionIds along with its provisioning state for being associated with the GroupQuota. If the subscription is not a member of GroupQuota, it will return 404, else 200.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="subscriptionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExists">
@@ -308,6 +392,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.NullableResponse&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;</ReturnType>
@@ -321,13 +406,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="subscriptionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExistsAsync">
@@ -340,6 +425,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;&gt;</ReturnType>
@@ -353,13 +439,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}</description></item><item><term>Operation Id</term><description>GroupQuotaSubscriptionId_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/subscriptions/{subscriptionId}. </description></item><item><term> Operation Id. </term><description> GroupQuotaSubscriptionIds_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="subscriptionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subscriptionId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;.GetAsyncEnumerator">
@@ -375,6 +461,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;</ReturnType>
@@ -383,7 +470,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> that may be used to cancel the asynchronous iteration.</param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>Returns an enumerator that iterates asynchronously through the collection.</summary>
         <returns>An enumerator that can be used to iterate asynchronously through the collection.</returns>
         <remarks>To be added.</remarks>
@@ -402,6 +489,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.Quota.GroupQuotaSubscriptionResource&gt;</ReturnType>
@@ -426,6 +514,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>

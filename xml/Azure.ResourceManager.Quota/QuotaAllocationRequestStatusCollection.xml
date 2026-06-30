@@ -8,6 +8,7 @@
     <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmCollection</BaseTypeName>
@@ -16,8 +17,8 @@
   <Docs>
     <summary>
             A class representing a collection of <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> and their operations.
-            Each <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.ManagementGroups.ManagementGroupResource" />.
-            To get a <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection" /> instance call the GetQuotaAllocationRequestStatuses method from an instance of <see cref="T:Azure.ResourceManager.ManagementGroups.ManagementGroupResource" />.
+            Each <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.ArmResource" />.
+            To get a <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection" /> instance call the GetQuotaAllocationRequestStatuses method from an instance of <see cref="T:Azure.ResourceManager.ArmResource" />.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -31,10 +32,11 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusCollection" /> class for mocking. </summary>
+        <summary> Initializes a new instance of QuotaAllocationRequestStatusCollection for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -48,6 +50,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;System.Boolean&gt;</ReturnType>
@@ -61,13 +64,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}</description></item><item><term>Operation Id</term><description>QuotaAllocationRequestStatus_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}. </description></item><item><term> Operation Id. </term><description> QuotaAllocationRequestStatuses_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="allocationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="ExistsAsync">
@@ -80,6 +83,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.Boolean&gt;&gt;</ReturnType>
@@ -93,13 +97,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}</description></item><item><term>Operation Id</term><description>QuotaAllocationRequestStatus_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}. </description></item><item><term> Operation Id. </term><description> QuotaAllocationRequestStatuses_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="allocationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="Get">
@@ -112,6 +116,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;</ReturnType>
@@ -125,13 +130,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get the quota allocation request status for the subscriptionId by allocationId.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}</description></item><item><term>Operation Id</term><description>QuotaAllocationRequestStatus_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}. </description></item><item><term> Operation Id. </term><description> QuotaAllocationRequestStatuses_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="allocationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAll">
@@ -144,6 +149,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;</ReturnType>
@@ -154,20 +160,21 @@
       </Parameters>
       <Docs>
         <param name="filter">
-             | Field | Supported operators
-             |---------------------|------------------------
-            
-             location eq {location}
-             Example: $filter=location eq eastus
-             </param>
+            | Field | Supported operators
+            |---------------------|------------------------
+            location eq {location}
+            Example: $filter=location eq eastus
+            </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-             Get all the quotaAllocationRequests for a resourceProvider/location. The filter paramter for location is required.
-             <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests</description></item><item><term>Operation Id</term><description>QuotaAllocationRequestStatus_List</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /></description></item></list></summary>
+            Get all the quotaAllocationRequests for a resourceProvider/location. The filter paramter for location is required.
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests. </description></item><item><term> Operation Id. </term><description> QuotaAllocationRequestStatuses_List. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="filter" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="filter" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAllAsync">
@@ -180,6 +187,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;</ReturnType>
@@ -190,20 +198,21 @@
       </Parameters>
       <Docs>
         <param name="filter">
-             | Field | Supported operators
-             |---------------------|------------------------
-            
-             location eq {location}
-             Example: $filter=location eq eastus
-             </param>
+            | Field | Supported operators
+            |---------------------|------------------------
+            location eq {location}
+            Example: $filter=location eq eastus
+            </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-             Get all the quotaAllocationRequests for a resourceProvider/location. The filter paramter for location is required.
-             <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests</description></item><item><term>Operation Id</term><description>QuotaAllocationRequestStatus_List</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> that may take multiple service requests to iterate over. </returns>
+            Get all the quotaAllocationRequests for a resourceProvider/location. The filter paramter for location is required.
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests. </description></item><item><term> Operation Id. </term><description> QuotaAllocationRequestStatuses_List. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="filter" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="filter" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAsync">
@@ -216,6 +225,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;&gt;</ReturnType>
@@ -229,13 +239,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get the quota allocation request status for the subscriptionId by allocationId.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}</description></item><item><term>Operation Id</term><description>QuotaAllocationRequestStatus_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}. </description></item><item><term> Operation Id. </term><description> QuotaAllocationRequestStatuses_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="allocationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExists">
@@ -248,6 +258,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.NullableResponse&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;</ReturnType>
@@ -261,13 +272,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}</description></item><item><term>Operation Id</term><description>QuotaAllocationRequestStatus_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}. </description></item><item><term> Operation Id. </term><description> QuotaAllocationRequestStatuses_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="allocationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExistsAsync">
@@ -280,6 +291,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Quota</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource&gt;&gt;</ReturnType>
@@ -293,13 +305,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}</description></item><item><term>Operation Id</term><description>QuotaAllocationRequestStatus_Get</description></item><item><term>Default Api Version</term><description>2025-09-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Quota.QuotaAllocationRequestStatusResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.Management/managementGroups/{managementGroupId}/subscriptions/{subscriptionId}/providers/Microsoft.Quota/groupQuotas/{groupQuotaName}/resourceProviders/{resourceProviderName}/quotaAllocationRequests/{allocationId}. </description></item><item><term> Operation Id. </term><description> QuotaAllocationRequestStatuses_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="allocationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allocationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
   </Members>

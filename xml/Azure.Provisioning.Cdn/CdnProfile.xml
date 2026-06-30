@@ -14,13 +14,15 @@
   <Interfaces />
   <Docs>
     <summary>
-            CdnProfile.
+            Renames the generated <c>Profile</c> resource to <c>CdnProfile</c> to avoid
+            the AZC0012 too-generic-name analyzer warning and to preserve the public
+            type name used by the previous (reflection-based) provisioning generator.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public CdnProfile (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public CdnProfile (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Cdn.CdnProfile.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
@@ -35,16 +37,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the CdnProfile resource.  This can be
-            used to refer to the resource in expressions, but is not the Azure
-            name of the resource.  This value can contain letters, numbers, and
-            underscores.
-            </param>
-        <param name="resourceVersion">Version of the CdnProfile.</param>
-        <summary>
-            Creates a new CdnProfile.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new CdnProfile. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,9 +59,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of CdnProfile.
-            </summary>
+        <summary> Define all the provisionable properties for CdnProfile. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,15 +78,13 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Key-Value pair representing additional properties for profiles.
-            </summary>
+        <summary> Gets the ExtendedProperties. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Cdn.CdnProfile FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Cdn.CdnProfile FromExisting (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.Cdn.CdnProfile FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Cdn.CdnProfile.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As CdnProfile" />
@@ -111,16 +102,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the CdnProfile resource.  This can be
-            used to refer to the resource in expressions, but is not the Azure
-            name of the resource.  This value can contain letters, numbers, and
-            underscores.
-            </param>
-        <param name="resourceVersion">Version of the CdnProfile.</param>
-        <summary>
-            Creates a reference to an existing CdnProfile.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing CdnProfile. </summary>
         <returns>The existing CdnProfile resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -140,9 +124,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Guid&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The Id of the frontdoor.
-            </summary>
+        <summary> Gets the FrontDoorId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -169,10 +151,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Get the requirements for naming this CdnProfile resource.
-            </summary>
-        <returns>Naming requirements.</returns>
+        <summary> Get the requirements for naming this resource. </summary>
+        <returns> Naming requirements. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,9 +171,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -213,10 +191,7 @@
         <ReturnType>Azure.Provisioning.Resources.ManagedServiceIdentity</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Managed service identity (system assigned and/or user assigned
-            identities).
-            </summary>
+        <summary> Gets or sets the Identity. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -236,10 +211,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Kind of the profile. Used by portal to differentiate traditional CDN
-            profile and new AFD profile.
-            </summary>
+        <summary> Gets the Kind. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -259,9 +231,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -281,10 +251,7 @@
         <ReturnType>Azure.Provisioning.Cdn.ProfileLogScrubbing</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Defines rules that scrub sensitive fields in the Azure Front Door
-            profile logs.
-            </summary>
+        <summary> Gets or sets the LogScrubbing. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -304,10 +271,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Name of the Azure Front Door Standard or Azure Front Door Premium or
-            CDN profile which is unique within the resource group.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -327,10 +291,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Send and receive timeout on forwarding request to the origin. When
-            timeout is reached, the request fails and returns.
-            </summary>
+        <summary> Gets or sets the OriginResponseTimeoutSeconds. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -350,9 +311,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Cdn.ProfileProvisioningState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Provisioning status of the profile.
-            </summary>
+        <summary> Gets the ProvisioningState. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -372,9 +331,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Cdn.ProfileResourceState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Resource status of the profile.
-            </summary>
+        <summary> Gets the ResourceState. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -394,9 +351,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Cdn.CdnSkuName&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Name of the pricing tier.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -416,9 +371,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -438,9 +391,7 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

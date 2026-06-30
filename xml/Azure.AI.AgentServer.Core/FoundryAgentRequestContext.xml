@@ -1,0 +1,235 @@
+<Type Name="FoundryAgentRequestContext" FullName="Azure.AI.AgentServer.Core.FoundryAgentRequestContext">
+  <TypeSignature Language="C#" Value="public sealed class FoundryAgentRequestContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FoundryAgentRequestContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.FoundryAgentRequestContext" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FoundryAgentRequestContext" />
+  <TypeSignature Language="F#" Value="type FoundryAgentRequestContext = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Request-scoped platform identity context, backed by an
+            <see cref="T:System.Threading.AsyncLocal`1" /> so it flows across
+            <c>await</c> points and child tasks within a single request without being
+            threaded through every call site. This is the .NET analogue of the Python
+            SDK's <c>get_request_context()</c> / <c>FoundryAgentRequestContext</c>.
+            </summary>
+    <remarks>
+      <para>
+            On container protocol version <c>2.0.0</c> the platform stamps
+            <c>x-agent-foundry-call-id</c> and <c>x-agent-user-id</c> on the inbound
+            request. The SDK's request-context middleware captures them here before the
+            handler runs; outbound Foundry-bound clients read <see cref="P:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.Current" /> and
+            echo <b>only</b> the call id (e.g. via <see cref="T:Azure.AI.AgentServer.Core.FoundryCallIdHandler" />).
+            </para>
+      <para>
+        <c>x-agent-user-id</c> is exposed purely as a convenience for the container's
+            own per-user state isolation — it is <b>never</b> echoed on outbound calls
+            (the receiver resolves user identity from the call id).
+            </para>
+      <para>
+        <see cref="P:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.Current" /> never returns <see langword="null" />; outside a request
+            (e.g. local development) it yields an empty context with all-<see langword="null" />
+            fields.
+            </para>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FoundryAgentRequestContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallId">
+      <MemberSignature Language="C#" Value="public string? CallId { get; init; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CallId" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.CallId" />
+      <MemberSignature Language="VB.NET" Value="Public Property CallId As String" />
+      <MemberSignature Language="F#" Value="member this.CallId : string with get, set" Usage="Azure.AI.AgentServer.Core.FoundryAgentRequestContext.CallId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The opaque per-request call identifier from <c>x-agent-foundry-call-id</c>
+            (container protocol version <c>2.0.0</c>). Echoed verbatim on outbound
+            Foundry-bound calls; <see langword="null" /> when absent.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static Azure.AI.AgentServer.Core.FoundryAgentRequestContext Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Azure.AI.AgentServer.Core.FoundryAgentRequestContext Current" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.Current" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Current As FoundryAgentRequestContext" />
+      <MemberSignature Language="F#" Value="static member Current : Azure.AI.AgentServer.Core.FoundryAgentRequestContext" Usage="Azure.AI.AgentServer.Core.FoundryAgentRequestContext.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(1)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(1)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.FoundryAgentRequestContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the platform identity context for the current request. Never returns
+            <see langword="null" /> — an empty context is returned outside a request.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static Azure.AI.AgentServer.Core.FoundryAgentRequestContext Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Azure.AI.AgentServer.Core.FoundryAgentRequestContext Empty" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.Empty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Empty As FoundryAgentRequestContext" />
+      <MemberSignature Language="F#" Value="static member Empty : Azure.AI.AgentServer.Core.FoundryAgentRequestContext" Usage="Azure.AI.AgentServer.Core.FoundryAgentRequestContext.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(1)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(1)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.FoundryAgentRequestContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            An empty context with all fields <see langword="null" />, returned by
+            <see cref="P:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.Current" /> when no request context has been established.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlatformHeaders">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,string&gt;&gt; PlatformHeaders ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, string&gt;&gt; PlatformHeaders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.PlatformHeaders" />
+      <MemberSignature Language="VB.NET" Value="Public Iterator Function PlatformHeaders () As IEnumerable(Of KeyValuePair(Of String, String))" />
+      <MemberSignature Language="F#" Value="member this.PlatformHeaders : unit -&gt; seq&lt;System.Collections.Generic.KeyValuePair&lt;string, string&gt;&gt;" Usage="foundryAgentRequestContext.PlatformHeaders " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Core.FoundryAgentRequestContext+&lt;PlatformHeaders&gt;d__20))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Core.FoundryAgentRequestContext+&lt;PlatformHeaders&gt;d__20))&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.String&gt;&gt;</ReturnType>
+        <Attributes>
+          <Attribute>
+            <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 1, 0, 1, 1 })]</AttributeName>
+            <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 1, 0, 1, 1 })&gt;]</AttributeName>
+          </Attribute>
+        </Attributes>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Builds the platform identity headers to echo on outbound Foundry-bound
+            calls. Only <c>x-agent-foundry-call-id</c> is included; <c>x-agent-user-id</c>
+            is never echoed. Mirrors the Python SDK's <c>FoundryAgentRequestContext.platform_headers()</c>.
+            </summary>
+        <returns>The headers to merge onto an outbound request (empty when no call id is present).</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionId">
+      <MemberSignature Language="C#" Value="public string? SessionId { get; init; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SessionId" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.SessionId" />
+      <MemberSignature Language="VB.NET" Value="Public Property SessionId As String" />
+      <MemberSignature Language="F#" Value="member this.SessionId : string with get, set" Usage="Azure.AI.AgentServer.Core.FoundryAgentRequestContext.SessionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The session ID sourced from the <c>FOUNDRY_AGENT_SESSION_ID</c> environment variable
+            at process start (via <see cref="P:Azure.AI.AgentServer.Core.FoundryEnvironment.SessionId" />). This is a process-level
+            value that does not reflect per-request overrides (e.g. the <c>agent_session_id</c> query
+            parameter); <see langword="null" /> when the variable is absent.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserId">
+      <MemberSignature Language="C#" Value="public string? UserId { get; init; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserId" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.FoundryAgentRequestContext.UserId" />
+      <MemberSignature Language="VB.NET" Value="Public Property UserId As String" />
+      <MemberSignature Language="F#" Value="member this.UserId : string with get, set" Usage="Azure.AI.AgentServer.Core.FoundryAgentRequestContext.UserId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The global, cross-agent per-user identity from <c>x-agent-user-id</c>.
+            A convenience for the container's own per-user state isolation; it is
+            <b>never</b> echoed on outbound calls. <see langword="null" /> when absent.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

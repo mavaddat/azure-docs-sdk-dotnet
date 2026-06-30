@@ -11,13 +11,14 @@
     <AssemblyVersion>1.2.2.0</AssemblyVersion>
     <AssemblyVersion>1.3.0.0</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
+    <AssemblyVersion>1.3.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to SubscriptionResource. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -30,12 +31,132 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.OperationalInsights.Mocking.MockableOperationalInsightsSubscriptionResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableOperationalInsightsSubscriptionResource for mocking. </summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt; Get (Azure.Core.AzureLocation location, string asyncOperationId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt; Get(valuetype Azure.Core.AzureLocation location, string asyncOperationId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.OperationalInsights.Mocking.MockableOperationalInsightsSubscriptionResource.Get(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Get (location As AzureLocation, asyncOperationId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of OperationalInsightsOperationStatus)" />
+      <MemberSignature Language="F#" Value="abstract member Get : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt;&#xA;override this.Get : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt;" Usage="mockableOperationalInsightsSubscriptionResource.Get (location, asyncOperationId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="asyncOperationId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The name of the Azure region. </param>
+        <param name="asyncOperationId"> The operation Id. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get the status of a long running azure asynchronous operation.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/locations/{location}/operationStatuses/{asyncOperationId}. </description></item><item><term> Operation Id. </term><description> OperationStatusesOperationGroup_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncOperationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncOperationId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAll">
+      <MemberSignature Language="C#" Value="public virtual Azure.Pageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt; GetAll (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Pageable`1&lt;class Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt; GetAll(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.OperationalInsights.Mocking.MockableOperationalInsightsSubscriptionResource.GetAll(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAll (Optional cancellationToken As CancellationToken = Nothing) As Pageable(Of OperationalInsightsWorkspaceResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAll : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;&#xA;override this.GetAll : System.Threading.CancellationToken -&gt; Azure.Pageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;" Usage="mockableOperationalInsightsSubscriptionResource.GetAll cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets recently deleted workspaces in a subscription, available for recovery.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/deletedWorkspaces. </description></item><item><term> Operation Id. </term><description> DeletedWorkspacesOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllAsync">
+      <MemberSignature Language="C#" Value="public virtual Azure.AsyncPageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt; GetAllAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AsyncPageable`1&lt;class Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt; GetAllAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.OperationalInsights.Mocking.MockableOperationalInsightsSubscriptionResource.GetAllAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAllAsync (Optional cancellationToken As CancellationToken = Nothing) As AsyncPageable(Of OperationalInsightsWorkspaceResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAllAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;&#xA;override this.GetAllAsync : System.Threading.CancellationToken -&gt; Azure.AsyncPageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;" Usage="mockableOperationalInsightsSubscriptionResource.GetAllAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets recently deleted workspaces in a subscription, available for recovery.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/deletedWorkspaces. </description></item><item><term> Operation Id. </term><description> DeletedWorkspacesOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt;&gt; GetAsync (Azure.Core.AzureLocation location, string asyncOperationId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt;&gt; GetAsync(valuetype Azure.Core.AzureLocation location, string asyncOperationId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.OperationalInsights.Mocking.MockableOperationalInsightsSubscriptionResource.GetAsync(Azure.Core.AzureLocation,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAsync (location As AzureLocation, asyncOperationId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of OperationalInsightsOperationStatus))" />
+      <MemberSignature Language="F#" Value="abstract member GetAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt;&gt;&#xA;override this.GetAsync : Azure.Core.AzureLocation * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt;&gt;" Usage="mockableOperationalInsightsSubscriptionResource.GetAsync (location, asyncOperationId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.OperationalInsights.Models.OperationalInsightsOperationStatus&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="Azure.Core.AzureLocation" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="asyncOperationId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="location"> The name of the Azure region. </param>
+        <param name="asyncOperationId"> The operation Id. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get the status of a long running azure asynchronous operation.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/locations/{location}/operationStatuses/{asyncOperationId}. </description></item><item><term> Operation Id. </term><description> OperationStatusesOperationGroup_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncOperationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncOperationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetDeletedWorkspaces">
@@ -48,7 +169,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;</ReturnType>
@@ -58,9 +179,7 @@
       </Parameters>
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets recently deleted workspaces in a subscription, available for recovery.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/deletedWorkspaces</description></item><item><term>Operation Id</term><description>DeletedWorkspaces_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+        <summary> Gets recently deleted workspaces in a subscription, available for recovery. </summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -75,7 +194,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;</ReturnType>
@@ -85,9 +204,7 @@
       </Parameters>
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets recently deleted workspaces in a subscription, available for recovery.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/deletedWorkspaces</description></item><item><term>Operation Id</term><description>DeletedWorkspaces_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item></list></summary>
+        <summary> Gets recently deleted workspaces in a subscription, available for recovery. </summary>
         <returns> An async collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -102,7 +219,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.OperationalInsights.LogAnalyticsQueryPackResource&gt;</ReturnType>
@@ -114,7 +231,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets a list of all Log Analytics QueryPacks within a subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/queryPacks</description></item><item><term>Operation Id</term><description>QueryPacks_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.OperationalInsights.LogAnalyticsQueryPackResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/queryPacks. </description></item><item><term> Operation Id. </term><description> LogAnalyticsQueryPacks_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.LogAnalyticsQueryPackResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -129,7 +246,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.OperationalInsights.LogAnalyticsQueryPackResource&gt;</ReturnType>
@@ -141,8 +258,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets a list of all Log Analytics QueryPacks within a subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/queryPacks</description></item><item><term>Operation Id</term><description>QueryPacks_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.OperationalInsights.LogAnalyticsQueryPackResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.OperationalInsights.LogAnalyticsQueryPackResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/queryPacks. </description></item><item><term> Operation Id. </term><description> LogAnalyticsQueryPacks_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.LogAnalyticsQueryPackResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -156,7 +273,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsClusterResource&gt;</ReturnType>
@@ -168,7 +285,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the Log Analytics clusters in a subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/clusters</description></item><item><term>Operation Id</term><description>Clusters_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsClusterResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/clusters. </description></item><item><term> Operation Id. </term><description> Clusters_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsClusterResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -183,7 +300,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsClusterResource&gt;</ReturnType>
@@ -195,8 +312,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the Log Analytics clusters in a subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/clusters</description></item><item><term>Operation Id</term><description>Clusters_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsClusterResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsClusterResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/clusters. </description></item><item><term> Operation Id. </term><description> Clusters_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsClusterResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -210,7 +327,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;</ReturnType>
@@ -222,7 +339,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the workspaces in a subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/workspaces</description></item><item><term>Operation Id</term><description>Workspaces_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/workspaces. </description></item><item><term> Operation Id. </term><description> Workspaces_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -237,7 +354,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.OperationalInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.3.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource&gt;</ReturnType>
@@ -249,8 +366,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the workspaces in a subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/workspaces</description></item><item><term>Operation Id</term><description>Workspaces_List</description></item><item><term>Default Api Version</term><description>2025-02-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/workspaces. </description></item><item><term> Operation Id. </term><description> Workspaces_List. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.OperationalInsights.OperationalInsightsWorkspaceResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -58,11 +58,11 @@
       </Docs>
     </Member>
     <Member MemberName="CreateResponseAsync">
-      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task CreateResponseAsync (Azure.AI.AgentServer.Responses.CreateResponseRequest request, Azure.AI.AgentServer.Core.IsolationContext isolation, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task CreateResponseAsync(class Azure.AI.AgentServer.Responses.CreateResponseRequest request, class Azure.AI.AgentServer.Core.IsolationContext isolation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.CreateResponseAsync(Azure.AI.AgentServer.Responses.CreateResponseRequest,Azure.AI.AgentServer.Core.IsolationContext,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateResponseAsync (request As CreateResponseRequest, isolation As IsolationContext, Optional cancellationToken As CancellationToken = Nothing) As Task" />
-      <MemberSignature Language="F#" Value="abstract member CreateResponseAsync : Azure.AI.AgentServer.Responses.CreateResponseRequest * Azure.AI.AgentServer.Core.IsolationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="responsesProvider.CreateResponseAsync (request, isolation, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task CreateResponseAsync (Azure.AI.AgentServer.Responses.CreateResponseRequest request, Azure.AI.AgentServer.Core.PlatformContext context, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task CreateResponseAsync(class Azure.AI.AgentServer.Responses.CreateResponseRequest request, class Azure.AI.AgentServer.Core.PlatformContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.CreateResponseAsync(Azure.AI.AgentServer.Responses.CreateResponseRequest,Azure.AI.AgentServer.Core.PlatformContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateResponseAsync (request As CreateResponseRequest, context As PlatformContext, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member CreateResponseAsync : Azure.AI.AgentServer.Responses.CreateResponseRequest * Azure.AI.AgentServer.Core.PlatformContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="responsesProvider.CreateResponseAsync (request, context, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
@@ -73,12 +73,12 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="request" Type="Azure.AI.AgentServer.Responses.CreateResponseRequest" />
-        <Parameter Name="isolation" Type="Azure.AI.AgentServer.Core.IsolationContext" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Core.PlatformContext" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="request">The create-response request containing the response snapshot, input items, and history item IDs.</param>
-        <param name="isolation">The platform isolation context. Use <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" /> when not applicable.</param>
+        <param name="context">The platform context. Use <see cref="P:Azure.AI.AgentServer.Core.PlatformContext.Empty" /> when not applicable.</param>
         <param name="cancellationToken">A token to cancel the operation.</param>
         <summary>
             Persists a newly created response along with its resolved input items and history item IDs.
@@ -88,11 +88,11 @@
       </Docs>
     </Member>
     <Member MemberName="DeleteResponseAsync">
-      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task DeleteResponseAsync (string responseId, Azure.AI.AgentServer.Core.IsolationContext isolation, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task DeleteResponseAsync(string responseId, class Azure.AI.AgentServer.Core.IsolationContext isolation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.DeleteResponseAsync(System.String,Azure.AI.AgentServer.Core.IsolationContext,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public MustOverride Function DeleteResponseAsync (responseId As String, isolation As IsolationContext, Optional cancellationToken As CancellationToken = Nothing) As Task" />
-      <MemberSignature Language="F#" Value="abstract member DeleteResponseAsync : string * Azure.AI.AgentServer.Core.IsolationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="responsesProvider.DeleteResponseAsync (responseId, isolation, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task DeleteResponseAsync (string responseId, Azure.AI.AgentServer.Core.PlatformContext context, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task DeleteResponseAsync(string responseId, class Azure.AI.AgentServer.Core.PlatformContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.DeleteResponseAsync(System.String,Azure.AI.AgentServer.Core.PlatformContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function DeleteResponseAsync (responseId As String, context As PlatformContext, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member DeleteResponseAsync : string * Azure.AI.AgentServer.Core.PlatformContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="responsesProvider.DeleteResponseAsync (responseId, context, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
@@ -103,12 +103,12 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="responseId" Type="System.String" />
-        <Parameter Name="isolation" Type="Azure.AI.AgentServer.Core.IsolationContext" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Core.PlatformContext" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="responseId">The unique response identifier.</param>
-        <param name="isolation">The platform isolation context. Use <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" /> when not applicable.</param>
+        <param name="context">The platform context. Use <see cref="P:Azure.AI.AgentServer.Core.PlatformContext.Empty" /> when not applicable.</param>
         <param name="cancellationToken">A token to cancel the operation.</param>
         <summary>
             Deletes a response envelope by its identifier.
@@ -119,11 +119,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetHistoryItemIdsAsync">
-      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;System.Collections.Generic.IEnumerable&lt;string&gt;&gt; GetHistoryItemIdsAsync (string? previousResponseId, string? conversationId, int limit, Azure.AI.AgentServer.Core.IsolationContext isolation, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IEnumerable`1&lt;string&gt;&gt; GetHistoryItemIdsAsync(string previousResponseId, string conversationId, int32 limit, class Azure.AI.AgentServer.Core.IsolationContext isolation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.GetHistoryItemIdsAsync(System.String,System.String,System.Int32,Azure.AI.AgentServer.Core.IsolationContext,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetHistoryItemIdsAsync (previousResponseId As String, conversationId As String, limit As Integer, isolation As IsolationContext, Optional cancellationToken As CancellationToken = Nothing) As Task(Of IEnumerable(Of String))" />
-      <MemberSignature Language="F#" Value="abstract member GetHistoryItemIdsAsync : string * string * int * Azure.AI.AgentServer.Core.IsolationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;seq&lt;string&gt;&gt;" Usage="responsesProvider.GetHistoryItemIdsAsync (previousResponseId, conversationId, limit, isolation, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;System.Collections.Generic.IEnumerable&lt;string&gt;&gt; GetHistoryItemIdsAsync (string? previousResponseId, string? conversationId, int limit, Azure.AI.AgentServer.Core.PlatformContext context, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IEnumerable`1&lt;string&gt;&gt; GetHistoryItemIdsAsync(string previousResponseId, string conversationId, int32 limit, class Azure.AI.AgentServer.Core.PlatformContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.GetHistoryItemIdsAsync(System.String,System.String,System.Int32,Azure.AI.AgentServer.Core.PlatformContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetHistoryItemIdsAsync (previousResponseId As String, conversationId As String, limit As Integer, context As PlatformContext, Optional cancellationToken As CancellationToken = Nothing) As Task(Of IEnumerable(Of String))" />
+      <MemberSignature Language="F#" Value="abstract member GetHistoryItemIdsAsync : string * string * int * Azure.AI.AgentServer.Core.PlatformContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;seq&lt;string&gt;&gt;" Usage="responsesProvider.GetHistoryItemIdsAsync (previousResponseId, conversationId, limit, context, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
@@ -150,14 +150,14 @@
           </Attributes>
         </Parameter>
         <Parameter Name="limit" Type="System.Int32" />
-        <Parameter Name="isolation" Type="Azure.AI.AgentServer.Core.IsolationContext" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Core.PlatformContext" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="previousResponseId">The previous response ID to look up history from, or <c>null</c>.</param>
         <param name="conversationId">The conversation ID to scope history, or <c>null</c>.</param>
         <param name="limit">Maximum number of history item IDs to return.</param>
-        <param name="isolation">The platform isolation context. Use <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" /> when not applicable.</param>
+        <param name="context">The platform context. Use <see cref="P:Azure.AI.AgentServer.Core.PlatformContext.Empty" /> when not applicable.</param>
         <param name="cancellationToken">A token to cancel the operation.</param>
         <summary>
             Retrieves the list of history item IDs for a conversation chain,
@@ -168,11 +168,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetInputItemsAsync">
-      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Azure.AI.AgentServer.Responses.Models.AgentsPagedResultOutputItem&gt; GetInputItemsAsync (string responseId, Azure.AI.AgentServer.Core.IsolationContext isolation, int limit = 20, bool ascending = false, string? after = default, string? before = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.AI.AgentServer.Responses.Models.AgentsPagedResultOutputItem&gt; GetInputItemsAsync(string responseId, class Azure.AI.AgentServer.Core.IsolationContext isolation, int32 limit, bool ascending, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.GetInputItemsAsync(System.String,Azure.AI.AgentServer.Core.IsolationContext,System.Int32,System.Boolean,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetInputItemsAsync (responseId As String, isolation As IsolationContext, Optional limit As Integer = 20, Optional ascending As Boolean = false, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of AgentsPagedResultOutputItem)" />
-      <MemberSignature Language="F#" Value="abstract member GetInputItemsAsync : string * Azure.AI.AgentServer.Core.IsolationContext * int * bool * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.AI.AgentServer.Responses.Models.AgentsPagedResultOutputItem&gt;" Usage="responsesProvider.GetInputItemsAsync (responseId, isolation, limit, ascending, after, before, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Azure.AI.AgentServer.Responses.Models.AgentsPagedResultOutputItem&gt; GetInputItemsAsync (string responseId, Azure.AI.AgentServer.Core.PlatformContext context, int limit = 20, bool ascending = false, string? after = default, string? before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.AI.AgentServer.Responses.Models.AgentsPagedResultOutputItem&gt; GetInputItemsAsync(string responseId, class Azure.AI.AgentServer.Core.PlatformContext context, int32 limit, bool ascending, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.GetInputItemsAsync(System.String,Azure.AI.AgentServer.Core.PlatformContext,System.Int32,System.Boolean,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetInputItemsAsync (responseId As String, context As PlatformContext, Optional limit As Integer = 20, Optional ascending As Boolean = false, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of AgentsPagedResultOutputItem)" />
+      <MemberSignature Language="F#" Value="abstract member GetInputItemsAsync : string * Azure.AI.AgentServer.Core.PlatformContext * int * bool * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.AI.AgentServer.Responses.Models.AgentsPagedResultOutputItem&gt;" Usage="responsesProvider.GetInputItemsAsync (responseId, context, limit, ascending, after, before, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
@@ -183,7 +183,7 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="responseId" Type="System.String" />
-        <Parameter Name="isolation" Type="Azure.AI.AgentServer.Core.IsolationContext" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Core.PlatformContext" />
         <Parameter Name="limit" Type="System.Int32" />
         <Parameter Name="ascending" Type="System.Boolean" />
         <Parameter Name="after" Type="System.String">
@@ -206,7 +206,7 @@
       </Parameters>
       <Docs>
         <param name="responseId">The unique response identifier.</param>
-        <param name="isolation">The platform isolation context. Use <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" /> when not applicable.</param>
+        <param name="context">The platform context. Use <see cref="P:Azure.AI.AgentServer.Core.PlatformContext.Empty" /> when not applicable.</param>
         <param name="limit">Maximum number of items to return (1–100, default 20).</param>
         <param name="ascending">If <c>true</c>, return items in ascending order; otherwise descending.</param>
         <param name="after">Cursor: return items after this item ID.</param>
@@ -222,11 +222,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetItemsAsync">
-      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.OutputItem?&gt;&gt; GetItemsAsync (System.Collections.Generic.IEnumerable&lt;string&gt; itemIds, Azure.AI.AgentServer.Core.IsolationContext isolation, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItem&gt;&gt; GetItemsAsync(class System.Collections.Generic.IEnumerable`1&lt;string&gt; itemIds, class Azure.AI.AgentServer.Core.IsolationContext isolation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.GetItemsAsync(System.Collections.Generic.IEnumerable{System.String},Azure.AI.AgentServer.Core.IsolationContext,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetItemsAsync (itemIds As IEnumerable(Of String), isolation As IsolationContext, Optional cancellationToken As CancellationToken = Nothing) As Task(Of IEnumerable(Of OutputItem))" />
-      <MemberSignature Language="F#" Value="abstract member GetItemsAsync : seq&lt;string&gt; * Azure.AI.AgentServer.Core.IsolationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;seq&lt;Azure.AI.AgentServer.Responses.Models.OutputItem&gt;&gt;" Usage="responsesProvider.GetItemsAsync (itemIds, isolation, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;System.Collections.Generic.IEnumerable&lt;Azure.AI.AgentServer.Responses.Models.OutputItem?&gt;&gt; GetItemsAsync (System.Collections.Generic.IEnumerable&lt;string&gt; itemIds, Azure.AI.AgentServer.Core.PlatformContext context, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.AgentServer.Responses.Models.OutputItem&gt;&gt; GetItemsAsync(class System.Collections.Generic.IEnumerable`1&lt;string&gt; itemIds, class Azure.AI.AgentServer.Core.PlatformContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.GetItemsAsync(System.Collections.Generic.IEnumerable{System.String},Azure.AI.AgentServer.Core.PlatformContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetItemsAsync (itemIds As IEnumerable(Of String), context As PlatformContext, Optional cancellationToken As CancellationToken = Nothing) As Task(Of IEnumerable(Of OutputItem))" />
+      <MemberSignature Language="F#" Value="abstract member GetItemsAsync : seq&lt;string&gt; * Azure.AI.AgentServer.Core.PlatformContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;seq&lt;Azure.AI.AgentServer.Responses.Models.OutputItem&gt;&gt;" Usage="responsesProvider.GetItemsAsync (itemIds, context, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
@@ -243,12 +243,12 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="itemIds" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
-        <Parameter Name="isolation" Type="Azure.AI.AgentServer.Core.IsolationContext" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Core.PlatformContext" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="itemIds">The item identifiers to look up.</param>
-        <param name="isolation">The platform isolation context. Use <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" /> when not applicable.</param>
+        <param name="context">The platform context. Use <see cref="P:Azure.AI.AgentServer.Core.PlatformContext.Empty" /> when not applicable.</param>
         <param name="cancellationToken">A token to cancel the operation.</param>
         <summary>
             Retrieves output items by their identifiers (batch lookup).
@@ -259,11 +259,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetResponseAsync">
-      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt; GetResponseAsync (string responseId, Azure.AI.AgentServer.Core.IsolationContext isolation, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseObject&gt; GetResponseAsync(string responseId, class Azure.AI.AgentServer.Core.IsolationContext isolation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.GetResponseAsync(System.String,Azure.AI.AgentServer.Core.IsolationContext,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetResponseAsync (responseId As String, isolation As IsolationContext, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseObject)" />
-      <MemberSignature Language="F#" Value="abstract member GetResponseAsync : string * Azure.AI.AgentServer.Core.IsolationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt;" Usage="responsesProvider.GetResponseAsync (responseId, isolation, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt; GetResponseAsync (string responseId, Azure.AI.AgentServer.Core.PlatformContext context, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.AI.AgentServer.Responses.Models.ResponseObject&gt; GetResponseAsync(string responseId, class Azure.AI.AgentServer.Core.PlatformContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.GetResponseAsync(System.String,Azure.AI.AgentServer.Core.PlatformContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetResponseAsync (responseId As String, context As PlatformContext, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ResponseObject)" />
+      <MemberSignature Language="F#" Value="abstract member GetResponseAsync : string * Azure.AI.AgentServer.Core.PlatformContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.AI.AgentServer.Responses.Models.ResponseObject&gt;" Usage="responsesProvider.GetResponseAsync (responseId, context, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
@@ -274,12 +274,12 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="responseId" Type="System.String" />
-        <Parameter Name="isolation" Type="Azure.AI.AgentServer.Core.IsolationContext" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Core.PlatformContext" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="responseId">The unique response identifier.</param>
-        <param name="isolation">The platform isolation context. Use <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" /> when not applicable.</param>
+        <param name="context">The platform context. Use <see cref="P:Azure.AI.AgentServer.Core.PlatformContext.Empty" /> when not applicable.</param>
         <param name="cancellationToken">A token to cancel the operation.</param>
         <summary>
             Retrieves a response by its identifier.
@@ -290,11 +290,11 @@
       </Docs>
     </Member>
     <Member MemberName="UpdateResponseAsync">
-      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task UpdateResponseAsync (Azure.AI.AgentServer.Responses.Models.ResponseObject response, Azure.AI.AgentServer.Core.IsolationContext isolation, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task UpdateResponseAsync(class Azure.AI.AgentServer.Responses.Models.ResponseObject response, class Azure.AI.AgentServer.Core.IsolationContext isolation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.UpdateResponseAsync(Azure.AI.AgentServer.Responses.Models.ResponseObject,Azure.AI.AgentServer.Core.IsolationContext,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public MustOverride Function UpdateResponseAsync (response As ResponseObject, isolation As IsolationContext, Optional cancellationToken As CancellationToken = Nothing) As Task" />
-      <MemberSignature Language="F#" Value="abstract member UpdateResponseAsync : Azure.AI.AgentServer.Responses.Models.ResponseObject * Azure.AI.AgentServer.Core.IsolationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="responsesProvider.UpdateResponseAsync (response, isolation, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.Task UpdateResponseAsync (Azure.AI.AgentServer.Responses.Models.ResponseObject response, Azure.AI.AgentServer.Core.PlatformContext context, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task UpdateResponseAsync(class Azure.AI.AgentServer.Responses.Models.ResponseObject response, class Azure.AI.AgentServer.Core.PlatformContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponsesProvider.UpdateResponseAsync(Azure.AI.AgentServer.Responses.Models.ResponseObject,Azure.AI.AgentServer.Core.PlatformContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function UpdateResponseAsync (response As ResponseObject, context As PlatformContext, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member UpdateResponseAsync : Azure.AI.AgentServer.Responses.Models.ResponseObject * Azure.AI.AgentServer.Core.PlatformContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="responsesProvider.UpdateResponseAsync (response, context, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
@@ -305,12 +305,12 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="response" Type="Azure.AI.AgentServer.Responses.Models.ResponseObject" />
-        <Parameter Name="isolation" Type="Azure.AI.AgentServer.Core.IsolationContext" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Core.PlatformContext" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="response">The updated response snapshot.</param>
-        <param name="isolation">The platform isolation context. Use <see cref="P:Azure.AI.AgentServer.Core.IsolationContext.Empty" /> when not applicable.</param>
+        <param name="context">The platform context. Use <see cref="P:Azure.AI.AgentServer.Core.PlatformContext.Empty" /> when not applicable.</param>
         <param name="cancellationToken">A token to cancel the operation.</param>
         <summary>
             Persists an updated response snapshot. Handles all state transitions

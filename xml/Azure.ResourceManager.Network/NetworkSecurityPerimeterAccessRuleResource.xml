@@ -14,6 +14,7 @@
     <AssemblyVersion>1.13.0.0</AssemblyVersion>
     <AssemblyVersion>1.14.0.0</AssemblyVersion>
     <AssemblyVersion>1.15.0.0</AssemblyVersion>
+    <AssemblyVersion>1.16.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
@@ -31,10 +32,9 @@
   </Interfaces>
   <Docs>
     <summary>
-            A Class representing a NetworkSecurityPerimeterAccessRule along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetNetworkSecurityPerimeterAccessRuleResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterProfileResource" /> using the GetNetworkSecurityPerimeterAccessRule method.
+            A class representing a NetworkSecurityPerimeterAccessRule along with the instance operations that can be performed on it.
+            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /> from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetResource method.
+            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterProfileResource" /> using the GetNetworkSecurityPerimeterAccessRules method.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -48,11 +48,11 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of NetworkSecurityPerimeterAccessRuleResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -130,7 +130,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Core.ResourceIdentifier</ReturnType>
@@ -148,7 +148,7 @@
         <param name="networkSecurityPerimeterName"> The networkSecurityPerimeterName. </param>
         <param name="profileName"> The profileName. </param>
         <param name="accessRuleName"> The accessRuleName. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /> instance. </summary>
+        <summary> Generate the resource identifier for this resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -163,7 +163,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleData</ReturnType>
@@ -185,7 +185,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation</ReturnType>
@@ -200,7 +200,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Deletes an NSP access rule.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}</description></item><item><term>Operation Id</term><description>NetworkSecurityPerimeterAccessRules_Delete</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}. </description></item><item><term> Operation Id. </term><description> NspAccessRules_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -215,7 +215,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&gt;</ReturnType>
@@ -230,7 +230,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Deletes an NSP access rule.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}</description></item><item><term>Operation Id</term><description>NetworkSecurityPerimeterAccessRules_Delete</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}. </description></item><item><term> Operation Id. </term><description> NspAccessRules_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -245,7 +245,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource&gt;</ReturnType>
@@ -257,7 +257,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the specified NSP access rule by name.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}</description></item><item><term>Operation Id</term><description>NetworkSecurityPerimeterAccessRules_Get</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}. </description></item><item><term> Operation Id. </term><description> NspAccessRules_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -272,7 +272,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource&gt;&gt;</ReturnType>
@@ -284,7 +284,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the specified NSP access rule by name.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}</description></item><item><term>Operation Id</term><description>NetworkSecurityPerimeterAccessRules_Get</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}. </description></item><item><term> Operation Id. </term><description> NspAccessRules_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -299,7 +299,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -308,6 +308,66 @@
         <summary> Gets whether or not the current instance has data. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reconcile">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;BinaryData&gt; Reconcile (BinaryData parameters, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class System.BinaryData&gt; Reconcile(class System.BinaryData parameters, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource.Reconcile(System.BinaryData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Reconcile (parameters As BinaryData, Optional cancellationToken As CancellationToken = Nothing) As Response(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member Reconcile : BinaryData * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;&#xA;override this.Reconcile : BinaryData * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;" Usage="networkSecurityPerimeterAccessRuleResource.Reconcile (parameters, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.BinaryData" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="parameters"> Parameters for NSP access rule reconcile. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Reconcile NSP access rules
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}/reconcile. </description></item><item><term> Operation Id. </term><description> NspAccessRules_Reconcile. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parameters" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReconcileAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt; ReconcileAsync (BinaryData parameters, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class System.BinaryData&gt;&gt; ReconcileAsync(class System.BinaryData parameters, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource.ReconcileAsync(System.BinaryData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ReconcileAsync (parameters As BinaryData, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member ReconcileAsync : BinaryData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;&#xA;override this.ReconcileAsync : BinaryData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;" Usage="networkSecurityPerimeterAccessRuleResource.ReconcileAsync (parameters, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.BinaryData" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="parameters"> Parameters for NSP access rule reconcile. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Reconcile NSP access rules
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}/reconcile. </description></item><item><term> Operation Id. </term><description> NspAccessRules_Reconcile. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parameters" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveTag">
@@ -380,7 +440,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Core.ResourceType</ReturnType>
@@ -463,7 +523,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleData</ReturnType>
@@ -473,8 +533,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The reader for deserializing the model. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -496,7 +556,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -506,8 +566,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The writer to serialize the model to. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -528,7 +588,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleData</ReturnType>
@@ -538,8 +598,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The binary data to be processed. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -561,7 +621,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -570,7 +630,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -591,7 +651,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
@@ -600,7 +660,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -619,7 +679,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource&gt;</ReturnType>
@@ -635,8 +695,8 @@
         <param name="data"> Parameters that hold the NspAccessRule resource to be created/updated. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Creates or updates a network access rule.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}</description></item><item><term>Operation Id</term><description>NetworkSecurityPerimeterAccessRules_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /></description></item></list></summary>
+            Update a NetworkSecurityPerimeterAccessRule.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}. </description></item><item><term> Operation Id. </term><description> NspAccessRules_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -653,7 +713,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
         <AssemblyVersion>1.11.0.0</AssemblyVersion>
-        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+        <AssemblyVersion>1.16.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource&gt;&gt;</ReturnType>
@@ -669,8 +729,8 @@
         <param name="data"> Parameters that hold the NspAccessRule resource to be created/updated. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Creates or updates a network access rule.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}</description></item><item><term>Operation Id</term><description>NetworkSecurityPerimeterAccessRules_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2025-05-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" /></description></item></list></summary>
+            Update a NetworkSecurityPerimeterAccessRule.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules/{accessRuleName}. </description></item><item><term> Operation Id. </term><description> NspAccessRules_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-07-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Network.NetworkSecurityPerimeterAccessRuleResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">

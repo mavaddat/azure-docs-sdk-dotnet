@@ -8,6 +8,7 @@
     <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -37,10 +38,35 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary> Initializes a new instance of <see cref="T:Azure.AI.VoiceLive.AudioEchoCancellation" />. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Channels">
+      <MemberSignature Language="C#" Value="public int? Channels { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; Channels" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.VoiceLive.AudioEchoCancellation.Channels" />
+      <MemberSignature Language="VB.NET" Value="Public Property Channels As Nullable(Of Integer)" />
+      <MemberSignature Language="F#" Value="member this.Channels : Nullable&lt;int&gt; with get, set" Usage="Azure.AI.VoiceLive.AudioEchoCancellation.Channels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Number of input audio channels.
+            <list type="bullet"><item><description>`1`: Mono input (default).</description></item><item><description>`2`: Interleaved stereo input where channel 0 is the microphone signal and channel 1 is the echo reference signal.</description></item></list>
+            When set to 2, `reference_source` must be `client` and `input_audio_format` must be `pcm16`.
+            </summary>
+        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -54,6 +80,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.VoiceLive.AudioEchoCancellation</ReturnType>
@@ -80,6 +107,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -105,6 +133,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.VoiceLive.AudioEchoCancellation</ReturnType>
@@ -131,6 +160,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
@@ -142,6 +172,28 @@
         <param name="options"> The client options for reading and writing models. </param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferenceSource">
+      <MemberSignature Language="C#" Value="public Azure.AI.VoiceLive.EchoCancellationReferenceSource? ReferenceSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.AI.VoiceLive.EchoCancellationReferenceSource&gt; ReferenceSource" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.VoiceLive.AudioEchoCancellation.ReferenceSource" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReferenceSource As Nullable(Of EchoCancellationReferenceSource)" />
+      <MemberSignature Language="F#" Value="member this.ReferenceSource : Nullable&lt;Azure.AI.VoiceLive.EchoCancellationReferenceSource&gt; with get, set" Usage="Azure.AI.VoiceLive.AudioEchoCancellation.ReferenceSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.AI.VoiceLive.EchoCancellationReferenceSource&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The source of the echo cancellation reference signal.
+            <list type="bullet"><item><description>`server`: EC uses the internal TTS loopback as the reference signal (default, existing behavior).</description></item><item><description>`client`: EC uses the client-supplied reference channel (ch1 of stereo input). Internal TTS loopback is skipped.</description></item></list></summary>
+        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,6 +210,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.VoiceLive.AudioEchoCancellation</ReturnType>
@@ -187,6 +240,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -215,6 +269,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.VoiceLive.AudioEchoCancellation</ReturnType>
@@ -244,6 +299,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -271,6 +327,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.BinaryData</ReturnType>
@@ -295,6 +352,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.VoiceLive</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

@@ -11,6 +11,7 @@
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.1.0</AssemblyVersion>
     <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <AssemblyVersion>1.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmCollection</BaseTypeName>
@@ -30,7 +31,7 @@
     <summary>
             A class representing a collection of <see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /> and their operations.
             Each <see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.Resources.TenantResource" />.
-            To get a <see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataCollection" /> instance call the GetPolicyMetadata method from an instance of <see cref="T:Azure.ResourceManager.Resources.TenantResource" />.
+            To get a <see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataCollection" /> instance call the GetPolicyMetadatas method from an instance of <see cref="T:Azure.ResourceManager.Resources.TenantResource" />.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -43,12 +44,12 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataCollection" /> class for mocking. </summary>
+        <summary> Initializes a new instance of PolicyMetadataCollection for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,8 +62,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;System.Boolean&gt;</ReturnType>
@@ -76,11 +77,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}</description></item><item><term>Operation Id</term><description>PolicyMetadata_GetResource</description></item><item><term>Default Api Version</term><description>2024-10-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}. </description></item><item><term> Operation Id. </term><description> PolicyMetadataOperationGroup_GetResource. </description></item><item><term> Default Api Version. </term><description> 2024-10-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="resourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resourceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="ExistsAsync">
@@ -92,8 +95,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.Boolean&gt;&gt;</ReturnType>
@@ -107,11 +110,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}</description></item><item><term>Operation Id</term><description>PolicyMetadata_GetResource</description></item><item><term>Default Api Version</term><description>2024-10-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}. </description></item><item><term> Operation Id. </term><description> PolicyMetadataOperationGroup_GetResource. </description></item><item><term> Default Api Version. </term><description> 2024-10-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="resourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resourceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="Get">
@@ -123,8 +128,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.PolicyInsights.PolicyMetadataResource&gt;</ReturnType>
@@ -138,11 +143,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get policy metadata resource.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}</description></item><item><term>Operation Id</term><description>PolicyMetadata_GetResource</description></item><item><term>Default Api Version</term><description>2024-10-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}. </description></item><item><term> Operation Id. </term><description> PolicyMetadataOperationGroup_GetResource. </description></item><item><term> Default Api Version. </term><description> 2024-10-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="resourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resourceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAll">
@@ -154,9 +161,19 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This method is no longer supported on PolicyMetadataCollection. Use TenantResource.GetAll(PolicyQuerySettings, CancellationToken) instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This method is no longer supported on PolicyMetadataCollection. Use TenantResource.GetAll(PolicyQuerySettings, CancellationToken) instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.PolicyInsights.Models.SlimPolicyMetadata&gt;</ReturnType>
       </ReturnValue>
@@ -165,11 +182,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="policyQuerySettings"> Parameter group. </param>
+        <param name="policyQuerySettings"> Optional OData query settings. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Get a list of the policy metadata resources.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.PolicyInsights/policyMetadata</description></item><item><term>Operation Id</term><description>PolicyMetadata_List</description></item><item><term>Default Api Version</term><description>2024-10-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /></description></item></list></summary>
+            [Obsolete] Get a list of the policy metadata resources. The host of this operation has moved to <see cref="T:Azure.ResourceManager.Resources.TenantResource" />.
+            </summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.SlimPolicyMetadata" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -183,9 +200,19 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This method is no longer supported on PolicyMetadataCollection. Use TenantResource.GetAllAsync(PolicyQuerySettings, CancellationToken) instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This method is no longer supported on PolicyMetadataCollection. Use TenantResource.GetAllAsync(PolicyQuerySettings, CancellationToken) instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.PolicyInsights.Models.SlimPolicyMetadata&gt;</ReturnType>
       </ReturnValue>
@@ -194,11 +221,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="policyQuerySettings"> Parameter group. </param>
+        <param name="policyQuerySettings"> Optional OData query settings. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Get a list of the policy metadata resources.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.PolicyInsights/policyMetadata</description></item><item><term>Operation Id</term><description>PolicyMetadata_List</description></item><item><term>Default Api Version</term><description>2024-10-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /></description></item></list></summary>
+            [Obsolete] Get a list of the policy metadata resources. The host of this operation has moved to <see cref="T:Azure.ResourceManager.Resources.TenantResource" />.
+            </summary>
         <returns> An async collection of <see cref="T:Azure.ResourceManager.PolicyInsights.Models.SlimPolicyMetadata" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -212,8 +239,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.PolicyInsights.PolicyMetadataResource&gt;&gt;</ReturnType>
@@ -227,11 +254,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get policy metadata resource.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}</description></item><item><term>Operation Id</term><description>PolicyMetadata_GetResource</description></item><item><term>Default Api Version</term><description>2024-10-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}. </description></item><item><term> Operation Id. </term><description> PolicyMetadataOperationGroup_GetResource. </description></item><item><term> Default Api Version. </term><description> 2024-10-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="resourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resourceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExists">
@@ -244,24 +273,27 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.NullableResponse&lt;Azure.ResourceManager.PolicyInsights.PolicyMetadataResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="resourceName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="resourceName"> The name of the policy metadata resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}</description></item><item><term>Operation Id</term><description>PolicyMetadata_GetResource</description></item><item><term>Default Api Version</term><description>2024-10-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}. </description></item><item><term> Operation Id. </term><description> PolicyMetadataOperationGroup_GetResource. </description></item><item><term> Default Api Version. </term><description> 2024-10-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="resourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resourceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExistsAsync">
@@ -274,24 +306,27 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.PolicyInsights.PolicyMetadataResource&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="resourceName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceName" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="resourceName"> The name of the policy metadata resource. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}</description></item><item><term>Operation Id</term><description>PolicyMetadata_GetResource</description></item><item><term>Default Api Version</term><description>2024-10-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.PolicyInsights.PolicyMetadataResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /providers/Microsoft.PolicyInsights/policyMetadata/{resourceName}. </description></item><item><term> Operation Id. </term><description> PolicyMetadataOperationGroup_GetResource. </description></item><item><term> Default Api Version. </term><description> 2024-10-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="resourceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resourceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.PolicyInsights.Models.SlimPolicyMetadata&gt;.GetAsyncEnumerator">
@@ -306,8 +341,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.PolicyInsights.Models.SlimPolicyMetadata&gt;</ReturnType>
@@ -334,8 +369,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.PolicyInsights.Models.SlimPolicyMetadata&gt;</ReturnType>
@@ -359,8 +394,8 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.PolicyInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>
