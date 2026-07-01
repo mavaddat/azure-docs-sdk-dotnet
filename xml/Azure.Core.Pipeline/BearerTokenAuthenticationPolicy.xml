@@ -59,6 +59,7 @@
     <AssemblyVersion>1.56.0.0</AssemblyVersion>
     <AssemblyVersion>1.57.0.0</AssemblyVersion>
     <AssemblyVersion>1.58.0.0</AssemblyVersion>
+    <AssemblyVersion>1.60.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.Core.Pipeline.HttpPipelinePolicy</BaseTypeName>
@@ -80,7 +81,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credential" Type="Azure.Core.TokenCredential" />
@@ -105,7 +106,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credential" Type="Azure.Core.TokenCredential" />
@@ -114,6 +115,59 @@
       <Docs>
         <param name="credential">The token credential to use for authentication.</param>
         <param name="scope">The scope to be included in acquired tokens.</param>
+        <summary>
+            Creates a new instance of <see cref="T:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy" /> using provided token credential and scope to authenticate for.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BearerTokenAuthenticationPolicy (Azure.Core.TokenCredential credential, System.Collections.Generic.IEnumerable&lt;string&gt; scopes, Azure.Core.Pipeline.HttpPipelineTransportOptions transportOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.Core.TokenCredential credential, class System.Collections.Generic.IEnumerable`1&lt;string&gt; scopes, class Azure.Core.Pipeline.HttpPipelineTransportOptions transportOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.#ctor(Azure.Core.TokenCredential,System.Collections.Generic.IEnumerable{System.String},Azure.Core.Pipeline.HttpPipelineTransportOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (credential As TokenCredential, scopes As IEnumerable(Of String), transportOptions As HttpPipelineTransportOptions)" />
+      <MemberSignature Language="F#" Value="new Azure.Core.Pipeline.BearerTokenAuthenticationPolicy : Azure.Core.TokenCredential * seq&lt;string&gt; * Azure.Core.Pipeline.HttpPipelineTransportOptions -&gt; Azure.Core.Pipeline.BearerTokenAuthenticationPolicy" Usage="new Azure.Core.Pipeline.BearerTokenAuthenticationPolicy (credential, scopes, transportOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Core</AssemblyName>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="credential" Type="Azure.Core.TokenCredential" />
+        <Parameter Name="scopes" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="transportOptions" Type="Azure.Core.Pipeline.HttpPipelineTransportOptions" />
+      </Parameters>
+      <Docs>
+        <param name="credential">The token credential to use for authentication.</param>
+        <param name="scopes">Scopes to be included in acquired tokens.</param>
+        <param name="transportOptions">The <see cref="T:Azure.Core.Pipeline.HttpPipelineTransportOptions" /> to use as a base when updating transport options. If provided, a clone of this instance will be used when updating the transport with new client certificates.</param>
+        <summary>
+            Creates a new instance of <see cref="T:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy" /> using provided token credential and scopes to authenticate for.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">When <paramref name="credential" /> or <paramref name="scopes" /> is null.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BearerTokenAuthenticationPolicy (Azure.Core.TokenCredential credential, string scope, Azure.Core.Pipeline.HttpPipelineTransportOptions transportOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.Core.TokenCredential credential, string scope, class Azure.Core.Pipeline.HttpPipelineTransportOptions transportOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.#ctor(Azure.Core.TokenCredential,System.String,Azure.Core.Pipeline.HttpPipelineTransportOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (credential As TokenCredential, scope As String, transportOptions As HttpPipelineTransportOptions)" />
+      <MemberSignature Language="F#" Value="new Azure.Core.Pipeline.BearerTokenAuthenticationPolicy : Azure.Core.TokenCredential * string * Azure.Core.Pipeline.HttpPipelineTransportOptions -&gt; Azure.Core.Pipeline.BearerTokenAuthenticationPolicy" Usage="new Azure.Core.Pipeline.BearerTokenAuthenticationPolicy (credential, scope, transportOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Core</AssemblyName>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="credential" Type="Azure.Core.TokenCredential" />
+        <Parameter Name="scope" Type="System.String" />
+        <Parameter Name="transportOptions" Type="Azure.Core.Pipeline.HttpPipelineTransportOptions" />
+      </Parameters>
+      <Docs>
+        <param name="credential">The token credential to use for authentication.</param>
+        <param name="scope">The scope to be included in acquired tokens.</param>
+        <param name="transportOptions">The <see cref="T:Azure.Core.Pipeline.HttpPipelineTransportOptions" /> to use as a base when updating transport options. If provided, a clone of this instance will be used when updating the transport with new client certificates.</param>
         <summary>
             Creates a new instance of <see cref="T:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy" /> using provided token credential and scope to authenticate for.
             </summary>
@@ -129,7 +183,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -156,7 +210,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
@@ -184,7 +238,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -212,7 +266,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
@@ -241,7 +295,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -268,7 +322,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ValueTask&lt;System.Boolean&gt;</ReturnType>
@@ -286,6 +340,32 @@
         <remarks>Service client libraries may override this to handle service specific authentication challenges.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="OnTransportOptionsChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnTransportOptionsChanged (Azure.Core.Pipeline.HttpPipelineTransportOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTransportOptionsChanged(class Azure.Core.Pipeline.HttpPipelineTransportOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.OnTransportOptionsChanged(Azure.Core.Pipeline.HttpPipelineTransportOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnTransportOptionsChanged (options As HttpPipelineTransportOptions)" />
+      <MemberSignature Language="F#" Value="abstract member OnTransportOptionsChanged : Azure.Core.Pipeline.HttpPipelineTransportOptions -&gt; unit&#xA;override this.OnTransportOptionsChanged : Azure.Core.Pipeline.HttpPipelineTransportOptions -&gt; unit" Usage="bearerTokenAuthenticationPolicy.OnTransportOptionsChanged options" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Core</AssemblyName>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="Azure.Core.Pipeline.HttpPipelineTransportOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">The updated <see cref="T:Azure.Core.Pipeline.HttpPipelineTransportOptions" /> to apply to the transport, typically containing new client certificates for mTLS token binding.</param>
+        <summary>
+            Triggers the <see cref="E:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.TransportOptionsChanged" /> event to update the transport with new options.
+            This can be used to trigger transport updates when token refreshes happen in the background and new tokens have different requirements for the transport, such as a different client certificate.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Process">
       <MemberSignature Language="C#" Value="public override void Process (Azure.Core.HttpMessage message, ReadOnlyMemory&lt;Azure.Core.Pipeline.HttpPipelinePolicy&gt; pipeline);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Process(class Azure.Core.HttpMessage message, valuetype System.ReadOnlyMemory`1&lt;class Azure.Core.Pipeline.HttpPipelinePolicy&gt; pipeline) cil managed" />
@@ -295,7 +375,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -323,7 +403,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Core</AssemblyName>
-        <AssemblyVersion>1.58.0.0</AssemblyVersion>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
@@ -341,6 +421,27 @@
         <returns>The <see cref="T:System.Threading.Tasks.ValueTask" /> representing the asynchronous operation.</returns>
         <remarks>To be added.</remarks>
         <inheritdoc />
+      </Docs>
+    </Member>
+    <Member MemberName="TransportOptionsChanged">
+      <MemberSignature Language="C#" Value="public event Action&lt;Azure.Core.Pipeline.HttpPipelineTransportOptions&gt;? TransportOptionsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Action`1&lt;class Azure.Core.Pipeline.HttpPipelineTransportOptions&gt; TransportOptionsChanged" />
+      <MemberSignature Language="DocId" Value="E:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.TransportOptionsChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Event TransportOptionsChanged As Action(Of HttpPipelineTransportOptions) " />
+      <MemberSignature Language="F#" Value="member this.TransportOptionsChanged : Action&lt;Azure.Core.Pipeline.HttpPipelineTransportOptions&gt; " Usage="member this.TransportOptionsChanged : System.Action&lt;Azure.Core.Pipeline.HttpPipelineTransportOptions&gt; " />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Core</AssemblyName>
+        <AssemblyVersion>1.60.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Action&lt;Azure.Core.Pipeline.HttpPipelineTransportOptions&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Event that is triggered when the transport needs to be updated.
+            </summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
   </Members>
