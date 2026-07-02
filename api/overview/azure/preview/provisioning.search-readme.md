@@ -1,12 +1,13 @@
 ---
-title: 
-keywords: Azure, dotnet, SDK, API, Azure.Provisioning.Search, provisioning
-ms.date: 06/17/2025
+title: Azure Provisioning Search client library for .NET
+keywords: Azure, dotnet, SDK, API, Azure.Provisioning.Search, search
+ms.date: 07/02/2026
 ms.topic: reference
 ms.devlang: dotnet
-ms.service: provisioning
+ms.service: search
 ---
-# Azure.Provisioning.Search client library for .NET
+# Azure Provisioning Search client library for .NET - version 1.1.0-beta.2 
+
 
 Azure.Provisioning.Search simplifies declarative resource provisioning in .NET.
 
@@ -29,6 +30,26 @@ dotnet add package Azure.Provisioning.Search
 ## Key concepts
 
 This library allows you to specify your infrastructure in a declarative style using dotnet.  You can then use azd to deploy your infrastructure to Azure directly without needing to write or maintain bicep or arm templates.
+
+## Examples
+
+### Create a Basic Search Service
+
+This example demonstrates how to create an Azure Cognitive Search service, based on the [Azure quickstart template](https://github.com/Azure/azure-quickstart-templates/blob/master/quickstarts/microsoft.search/azure-search-create/main.bicep).
+
+```C# Snippet:SearchBasic
+Infrastructure infra = new();
+
+SearchService search =
+    new(nameof(search))
+    {
+        SearchSkuName = SearchServiceSkuName.Standard,
+        ReplicaCount = 1,
+        PartitionCount = 1,
+        HostingMode = SearchServiceHostingMode.Default,
+    };
+infra.Add(search);
+```
 
 ## Troubleshooting
 
@@ -58,7 +79,7 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 <opencode@microsoft.com> with any other questions or comments.
 
 <!-- LINKS -->
-[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.Search_1.1.0-beta.1/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
+[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.Search_1.1.0-beta.2/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 
