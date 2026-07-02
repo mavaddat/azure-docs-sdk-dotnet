@@ -28,42 +28,44 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public OptimizationJobInputs (Azure.AI.Projects.Agents.AgentIdentifier agent, Azure.AI.Projects.Agents.DatasetRef trainDatasetReference);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.AI.Projects.Agents.AgentIdentifier agent, class Azure.AI.Projects.Agents.DatasetRef trainDatasetReference) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.OptimizationJobInputs.#ctor(Azure.AI.Projects.Agents.AgentIdentifier,Azure.AI.Projects.Agents.DatasetRef)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (agent As AgentIdentifier, trainDatasetReference As DatasetRef)" />
-      <MemberSignature Language="F#" Value="new Azure.AI.Projects.Agents.OptimizationJobInputs : Azure.AI.Projects.Agents.AgentIdentifier * Azure.AI.Projects.Agents.DatasetRef -&gt; Azure.AI.Projects.Agents.OptimizationJobInputs" Usage="new Azure.AI.Projects.Agents.OptimizationJobInputs (agent, trainDatasetReference)" />
+      <MemberSignature Language="C#" Value="public OptimizationJobInputs (Azure.AI.Projects.Agents.OptimizationAgentIdentifier agent, Azure.AI.Projects.Agents.OptimizationDatasetInput trainDataset, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt; evaluators);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.AI.Projects.Agents.OptimizationAgentIdentifier agent, class Azure.AI.Projects.Agents.OptimizationDatasetInput trainDataset, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt; evaluators) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.OptimizationJobInputs.#ctor(Azure.AI.Projects.Agents.OptimizationAgentIdentifier,Azure.AI.Projects.Agents.OptimizationDatasetInput,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.OptimizationEvaluatorRef})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (agent As OptimizationAgentIdentifier, trainDataset As OptimizationDatasetInput, evaluators As IEnumerable(Of OptimizationEvaluatorRef))" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Projects.Agents.OptimizationJobInputs : Azure.AI.Projects.Agents.OptimizationAgentIdentifier * Azure.AI.Projects.Agents.OptimizationDatasetInput * seq&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt; -&gt; Azure.AI.Projects.Agents.OptimizationJobInputs" Usage="new Azure.AI.Projects.Agents.OptimizationJobInputs (agent, trainDataset, evaluators)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="agent" Type="Azure.AI.Projects.Agents.AgentIdentifier" />
-        <Parameter Name="trainDatasetReference" Type="Azure.AI.Projects.Agents.DatasetRef" />
+        <Parameter Name="agent" Type="Azure.AI.Projects.Agents.OptimizationAgentIdentifier" />
+        <Parameter Name="trainDataset" Type="Azure.AI.Projects.Agents.OptimizationDatasetInput" />
+        <Parameter Name="evaluators" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt;" />
       </Parameters>
       <Docs>
         <param name="agent"> The agent (and pinned version) being optimized. </param>
-        <param name="trainDatasetReference"> Reference to a registered training dataset (required). </param>
+        <param name="trainDataset"> Training dataset — either inline items or a reference to a registered dataset. Required. </param>
+        <param name="evaluators"> Job-level evaluators referenced by name and optional version. Required; at least one must be provided. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.AI.Projects.Agents.OptimizationJobInputs" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="agent" /> or <paramref name="trainDatasetReference" /> is null. </exception>
+          <paramref name="agent" />, <paramref name="trainDataset" /> or <paramref name="evaluators" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="Agent">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.AgentIdentifier Agent { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Agents.AgentIdentifier Agent" />
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.OptimizationAgentIdentifier Agent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Agents.OptimizationAgentIdentifier Agent" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJobInputs.Agent" />
-      <MemberSignature Language="VB.NET" Value="Public Property Agent As AgentIdentifier" />
-      <MemberSignature Language="F#" Value="member this.Agent : Azure.AI.Projects.Agents.AgentIdentifier with get, set" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.Agent" />
+      <MemberSignature Language="VB.NET" Value="Public Property Agent As OptimizationAgentIdentifier" />
+      <MemberSignature Language="F#" Value="member this.Agent : Azure.AI.Projects.Agents.OptimizationAgentIdentifier with get, set" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.Agent" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.AgentIdentifier</ReturnType>
+        <ReturnType>Azure.AI.Projects.Agents.OptimizationAgentIdentifier</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> The agent (and pinned version) being optimized. </summary>
@@ -72,21 +74,21 @@
       </Docs>
     </Member>
     <Member MemberName="Evaluators">
-      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; Evaluators { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; Evaluators" />
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt; Evaluators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt; Evaluators" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJobInputs.Evaluators" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Evaluators As IList(Of String)" />
-      <MemberSignature Language="F#" Value="member this.Evaluators : System.Collections.Generic.IList&lt;string&gt;" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.Evaluators" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Evaluators As IList(Of OptimizationEvaluatorRef)" />
+      <MemberSignature Language="F#" Value="member this.Evaluators : System.Collections.Generic.IList&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt;" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.Evaluators" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+        <ReturnType>System.Collections.Generic.IList&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Job-level evaluators (referenced by name). Per-task criteria may override. Default: ['task_adherence']. </summary>
+        <summary> Job-level evaluators referenced by name and optional version. Required; at least one must be provided. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -139,30 +141,6 @@
         <param name="writer"> The JSON writer. </param>
         <param name="options"> The client options for reading and writing models. </param>
         <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="op_Implicit">
-      <MemberSignature Language="C#" Value="public static implicit operator System.ClientModel.BinaryContent (Azure.AI.Projects.Agents.OptimizationJobInputs optimizationJobInputs);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.ClientModel.BinaryContent op_Implicit(class Azure.AI.Projects.Agents.OptimizationJobInputs optimizationJobInputs) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.OptimizationJobInputs.op_Implicit(Azure.AI.Projects.Agents.OptimizationJobInputs)~System.ClientModel.BinaryContent" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Widening Operator CType (optimizationJobInputs As OptimizationJobInputs) As BinaryContent" />
-      <MemberSignature Language="F#" Value="static member op_Implicit : Azure.AI.Projects.Agents.OptimizationJobInputs -&gt; System.ClientModel.BinaryContent" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.op_Implicit optimizationJobInputs" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.ClientModel.BinaryContent</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="optimizationJobInputs" Type="Azure.AI.Projects.Agents.OptimizationJobInputs" />
-      </Parameters>
-      <Docs>
-        <param name="optimizationJobInputs"> The <see cref="T:Azure.AI.Projects.Agents.OptimizationJobInputs" /> to serialize into <see cref="T:System.ClientModel.BinaryContent" />. </param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -376,39 +354,39 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="TrainDatasetReference">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.DatasetRef TrainDatasetReference { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Agents.DatasetRef TrainDatasetReference" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJobInputs.TrainDatasetReference" />
-      <MemberSignature Language="VB.NET" Value="Public Property TrainDatasetReference As DatasetRef" />
-      <MemberSignature Language="F#" Value="member this.TrainDatasetReference : Azure.AI.Projects.Agents.DatasetRef with get, set" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.TrainDatasetReference" />
+    <Member MemberName="TrainDataset">
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.OptimizationDatasetInput TrainDataset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Agents.OptimizationDatasetInput TrainDataset" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJobInputs.TrainDataset" />
+      <MemberSignature Language="VB.NET" Value="Public Property TrainDataset As OptimizationDatasetInput" />
+      <MemberSignature Language="F#" Value="member this.TrainDataset : Azure.AI.Projects.Agents.OptimizationDatasetInput with get, set" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.TrainDataset" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.DatasetRef</ReturnType>
+        <ReturnType>Azure.AI.Projects.Agents.OptimizationDatasetInput</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Reference to a registered training dataset (required). </summary>
+        <summary> Training dataset — either inline items or a reference to a registered dataset. Required. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ValidationDatasetReference">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.DatasetRef ValidationDatasetReference { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Agents.DatasetRef ValidationDatasetReference" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJobInputs.ValidationDatasetReference" />
-      <MemberSignature Language="VB.NET" Value="Public Property ValidationDatasetReference As DatasetRef" />
-      <MemberSignature Language="F#" Value="member this.ValidationDatasetReference : Azure.AI.Projects.Agents.DatasetRef with get, set" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.ValidationDatasetReference" />
+    <Member MemberName="ValidationDataset">
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.OptimizationDatasetInput ValidationDataset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Agents.OptimizationDatasetInput ValidationDataset" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJobInputs.ValidationDataset" />
+      <MemberSignature Language="VB.NET" Value="Public Property ValidationDataset As OptimizationDatasetInput" />
+      <MemberSignature Language="F#" Value="member this.ValidationDataset : Azure.AI.Projects.Agents.OptimizationDatasetInput with get, set" Usage="Azure.AI.Projects.Agents.OptimizationJobInputs.ValidationDataset" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.DatasetRef</ReturnType>
+        <ReturnType>Azure.AI.Projects.Agents.OptimizationDatasetInput</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> Optional held-out validation dataset for measuring generalization of the final candidate. </summary>

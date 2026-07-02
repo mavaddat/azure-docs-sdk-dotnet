@@ -30,10 +30,9 @@
   </Interfaces>
   <Docs>
     <summary>
-            A Class representing a SecurityAssessment along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetSecurityAssessmentResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.ArmResource" /> using the GetSecurityAssessment method.
+            A class representing a SecurityAssessment along with the instance operations that can be performed on it.
+            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /> from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetResource method.
+            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.ArmResource" /> using the GetSecurityAssessments method.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -51,7 +50,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of SecurityAssessmentResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,7 +76,7 @@
       <Docs>
         <param name="resourceId"> The resourceId. </param>
         <param name="assessmentName"> The assessmentName. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /> instance. </summary>
+        <summary> Generate the resource identifier for this resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -129,7 +128,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Delete a security assessment on your resource. An assessment metadata that describes this assessment must be predefined with the same name before inserting the assessment result
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}</description></item><item><term>Operation Id</term><description>Assessments_Delete</description></item><item><term>Default Api Version</term><description>2021-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}. </description></item><item><term> Operation Id. </term><description> SecurityAssessmentResponses_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-05-04. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -159,7 +158,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Delete a security assessment on your resource. An assessment metadata that describes this assessment must be predefined with the same name before inserting the assessment result
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}</description></item><item><term>Operation Id</term><description>Assessments_Delete</description></item><item><term>Default Api Version</term><description>2021-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}. </description></item><item><term> Operation Id. </term><description> SecurityAssessmentResponses_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-05-04. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -186,9 +185,7 @@
       <Docs>
         <param name="expand"> OData expand. Optional. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a security assessment on your scanned resource
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}</description></item><item><term>Operation Id</term><description>Assessments_Get</description></item><item><term>Default Api Version</term><description>2021-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /></description></item></list></summary>
+        <summary> Get a security assessment on your scanned resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -215,9 +212,7 @@
       <Docs>
         <param name="expand"> OData expand. Optional. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a security assessment on your scanned resource
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}</description></item><item><term>Operation Id</term><description>Assessments_Get</description></item><item><term>Default Api Version</term><description>2021-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /></description></item></list></summary>
+        <summary> Get a security assessment on your scanned resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -242,11 +237,9 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="assignmentKey"> The governance assignment key - the assessment key of the required governance assignment. </param>
+        <param name="assignmentKey"> The governance assignment key. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a specific governanceAssignment for the requested scope by AssignmentKey
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Security/assessments/{assessmentName}/governanceAssignments/{assignmentKey}</description></item><item><term>Operation Id</term><description>GovernanceAssignments_Get</description></item><item><term>Default Api Version</term><description>2022-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.GovernanceAssignmentResource" /></description></item></list></summary>
+        <summary> Get a specific governanceAssignment for the requested scope by AssignmentKey. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -275,11 +268,9 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="assignmentKey"> The governance assignment key - the assessment key of the required governance assignment. </param>
+        <param name="assignmentKey"> The governance assignment key. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a specific governanceAssignment for the requested scope by AssignmentKey
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Security/assessments/{assessmentName}/governanceAssignments/{assignmentKey}</description></item><item><term>Operation Id</term><description>GovernanceAssignments_Get</description></item><item><term>Default Api Version</term><description>2022-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.GovernanceAssignmentResource" /></description></item></list></summary>
+        <summary> Get a specific governanceAssignment for the requested scope by AssignmentKey. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -305,8 +296,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of GovernanceAssignmentResources in the SecurityAssessment. </summary>
-        <returns> An object representing collection of GovernanceAssignmentResources and their operations over a GovernanceAssignmentResource. </returns>
+        <summary> Gets a collection of GovernanceAssignments in the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" />. </summary>
+        <returns> An object representing collection of GovernanceAssignments and their operations over a GovernanceAssignmentResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -332,9 +323,7 @@
       <Docs>
         <param name="subAssessmentName"> The Sub-Assessment Key - Unique key for the sub-assessment type. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a security sub-assessment on your scanned resource
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Security/assessments/{assessmentName}/subAssessments/{subAssessmentName}</description></item><item><term>Operation Id</term><description>SubAssessments_Get</description></item><item><term>Default Api Version</term><description>2019-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecuritySubAssessmentResource" /></description></item></list></summary>
+        <summary> Get a security sub-assessment on your scanned resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -365,9 +354,7 @@
       <Docs>
         <param name="subAssessmentName"> The Sub-Assessment Key - Unique key for the sub-assessment type. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get a security sub-assessment on your scanned resource
-            <list type="bullet"><item><term>Request Path</term><description>/{scope}/providers/Microsoft.Security/assessments/{assessmentName}/subAssessments/{subAssessmentName}</description></item><item><term>Operation Id</term><description>SubAssessments_Get</description></item><item><term>Default Api Version</term><description>2019-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecuritySubAssessmentResource" /></description></item></list></summary>
+        <summary> Get a security sub-assessment on your scanned resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -393,8 +380,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of SecuritySubAssessmentResources in the SecurityAssessment. </summary>
-        <returns> An object representing collection of SecuritySubAssessmentResources and their operations over a SecuritySubAssessmentResource. </returns>
+        <summary> Gets a collection of SecuritySubAssessments in the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" />. </summary>
+        <returns> An object representing collection of SecuritySubAssessments and their operations over a SecuritySubAssessmentResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -461,8 +448,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The reader for deserializing the model. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -493,8 +480,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The writer to serialize the model to. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -524,8 +511,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The binary data to be processed. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -555,7 +542,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -584,7 +571,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -594,33 +581,43 @@
       </Docs>
     </Member>
     <Member MemberName="Update">
-      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt; Update (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent content, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt; Update(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt; Update (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent content, System.Threading.CancellationToken cancellationToken = default);" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt; Update(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource.Update(Azure.WaitUntil,Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function Update (waitUntil As WaitUntil, content As SecurityAssessmentCreateOrUpdateContent, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of SecurityAssessmentResource)" />
-      <MemberSignature Language="F#" Value="abstract member Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&#xA;override this.Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;" Usage="securityAssessmentResource.Update (waitUntil, content, cancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Update (waitUntil As WaitUntil, content As SecurityAssessmentCreateOrUpdateContent, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of SecurityAssessmentResource)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="abstract member Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&#xA;override this.Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;" Usage="securityAssessmentResource.Update (waitUntil, content, cancellationToken)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt; Update (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent assessment, System.Threading.CancellationToken cancellationToken = default);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt; Update(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent assessment, valuetype System.Threading.CancellationToken cancellationToken) cil managed" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Update (waitUntil As WaitUntil, assessment As SecurityAssessmentCreateOrUpdateContent, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of SecurityAssessmentResource)" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="F#" Value="abstract member Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&#xA;override this.Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;" Usage="securityAssessmentResource.Update (waitUntil, assessment, cancellationToken)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
-        <Parameter Name="content" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" />
+        <Parameter Name="content" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="assessment" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" />
       </Parameters>
       <Docs>
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="content"> Calculated assessment on a pre-defined assessment metadata. </param>
+        <param name="assessment">To be added.</param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Create a security assessment on your resource. An assessment metadata that describes this assessment must be predefined with the same name before inserting the assessment result
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}</description></item><item><term>Operation Id</term><description>Assessments_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2021-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /></description></item></list></summary>
+        <summary> Update a SecurityAssessment. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -628,33 +625,43 @@
       </Docs>
     </Member>
     <Member MemberName="UpdateAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt; UpdateAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent content, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt; UpdateAsync(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt; UpdateAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent content, System.Threading.CancellationToken cancellationToken = default);" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt; UpdateAsync(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent content, valuetype System.Threading.CancellationToken cancellationToken) cil managed" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource.UpdateAsync(Azure.WaitUntil,Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateAsync (waitUntil As WaitUntil, content As SecurityAssessmentCreateOrUpdateContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of SecurityAssessmentResource))" />
-      <MemberSignature Language="F#" Value="abstract member UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt;&#xA;override this.UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt;" Usage="securityAssessmentResource.UpdateAsync (waitUntil, content, cancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateAsync (waitUntil As WaitUntil, content As SecurityAssessmentCreateOrUpdateContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of SecurityAssessmentResource))" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="abstract member UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt;&#xA;override this.UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt;" Usage="securityAssessmentResource.UpdateAsync (waitUntil, content, cancellationToken)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt; UpdateAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent assessment, System.Threading.CancellationToken cancellationToken = default);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt; UpdateAsync(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent assessment, valuetype System.Threading.CancellationToken cancellationToken) cil managed" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateAsync (waitUntil As WaitUntil, assessment As SecurityAssessmentCreateOrUpdateContent, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of SecurityAssessmentResource))" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="F#" Value="abstract member UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt;&#xA;override this.UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt;" Usage="securityAssessmentResource.UpdateAsync (waitUntil, assessment, cancellationToken)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
-        <Parameter Name="content" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" />
+        <Parameter Name="content" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="assessment" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityAssessmentCreateOrUpdateContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" />
       </Parameters>
       <Docs>
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="content"> Calculated assessment on a pre-defined assessment metadata. </param>
+        <param name="assessment">To be added.</param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Create a security assessment on your resource. An assessment metadata that describes this assessment must be predefined with the same name before inserting the assessment result
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}</description></item><item><term>Operation Id</term><description>Assessments_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2021-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityAssessmentResource" /></description></item></list></summary>
+        <summary> Update a SecurityAssessment. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">

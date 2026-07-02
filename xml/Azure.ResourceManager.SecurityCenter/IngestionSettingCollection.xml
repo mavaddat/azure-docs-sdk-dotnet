@@ -3,7 +3,8 @@
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IngestionSettingCollection extends Azure.ResourceManager.ArmCollection implements class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:Azure.ResourceManager.SecurityCenter.IngestionSettingCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class IngestionSettingCollection&#xA;Inherits ArmCollection&#xA;Implements IAsyncEnumerable(Of IngestionSettingResource), IEnumerable(Of IngestionSettingResource)" />
-  <TypeSignature Language="F#" Value="type IngestionSettingCollection = class&#xA;    inherit ArmCollection&#xA;    interface seq&lt;IngestionSettingResource&gt;&#xA;    interface IEnumerable&#xA;    interface IAsyncEnumerable&lt;IngestionSettingResource&gt;" />
+  <TypeSignature Language="F#" Value="type IngestionSettingCollection = class&#xA;    inherit ArmCollection&#xA;    interface seq&lt;IngestionSettingResource&gt;&#xA;    interface IEnumerable&#xA;    interface IAsyncEnumerable&lt;IngestionSettingResource&gt;" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="F#" Value="type IngestionSettingCollection = class&#xA;    inherit ArmCollection&#xA;    interface IAsyncEnumerable&lt;IngestionSettingResource&gt;&#xA;    interface seq&lt;IngestionSettingResource&gt;&#xA;    interface IEnumerable" FrameworkAlternate="azure-dotnet-preview" />
   <AssemblyInfo>
     <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -24,12 +25,14 @@
       <InterfaceName>System.Collections.IEnumerable</InterfaceName>
     </Interface>
   </Interfaces>
+  <Attributes>
+    <Attribute FrameworkAlternate="azure-dotnet-preview">
+      <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
   <Docs>
-    <summary>
-            A class representing a collection of <see cref="T:Azure.ResourceManager.SecurityCenter.IngestionSettingResource" /> and their operations.
-            Each <see cref="T:Azure.ResourceManager.SecurityCenter.IngestionSettingResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />.
-            To get an <see cref="T:Azure.ResourceManager.SecurityCenter.IngestionSettingCollection" /> instance call the GetIngestionSettings method from an instance of <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />.
-            </summary>
+    <summary> Provides a compatibility shim for the IngestionSettingCollection class. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -42,10 +45,11 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.IngestionSettingCollection" /> class for mocking. </summary>
+        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.SecurityCenter.IngestionSettingCollection" />. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -59,6 +63,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;</ReturnType>
@@ -75,9 +80,7 @@
         <param name="ingestionSettingName"> Name of the ingestion setting. </param>
         <param name="data"> Ingestion setting object. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Create setting for ingesting security data and logs to correlate with resources associated with the subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/ingestionSettings/{ingestionSettingName}</description></item><item><term>Operation Id</term><description>IngestionSettings_Create</description></item></list></summary>
+        <summary> Creates or updates an ingestion setting. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -96,6 +99,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;&gt;</ReturnType>
@@ -112,9 +116,7 @@
         <param name="ingestionSettingName"> Name of the ingestion setting. </param>
         <param name="data"> Ingestion setting object. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Create setting for ingesting security data and logs to correlate with resources associated with the subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/ingestionSettings/{ingestionSettingName}</description></item><item><term>Operation Id</term><description>IngestionSettings_Create</description></item></list></summary>
+        <summary> Creates or updates an ingestion setting. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -133,6 +135,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;System.Boolean&gt;</ReturnType>
@@ -144,9 +147,7 @@
       <Docs>
         <param name="ingestionSettingName"> Name of the ingestion setting. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/ingestionSettings/{ingestionSettingName}</description></item><item><term>Operation Id</term><description>IngestionSettings_Get</description></item></list></summary>
+        <summary> Checks whether an ingestion setting exists. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -165,6 +166,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.Boolean&gt;&gt;</ReturnType>
@@ -176,9 +178,7 @@
       <Docs>
         <param name="ingestionSettingName"> Name of the ingestion setting. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/ingestionSettings/{ingestionSettingName}</description></item><item><term>Operation Id</term><description>IngestionSettings_Get</description></item></list></summary>
+        <summary> Checks whether an ingestion setting exists. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -197,6 +197,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;</ReturnType>
@@ -208,9 +209,7 @@
       <Docs>
         <param name="ingestionSettingName"> Name of the ingestion setting. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Settings for ingesting security data and logs to correlate with resources associated with the subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/ingestionSettings/{ingestionSettingName}</description></item><item><term>Operation Id</term><description>IngestionSettings_Get</description></item></list></summary>
+        <summary> Gets an ingestion setting. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -229,6 +228,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;</ReturnType>
@@ -238,9 +238,7 @@
       </Parameters>
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Settings for ingesting security data and logs to correlate with resources associated with the subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/ingestionSettings</description></item><item><term>Operation Id</term><description>IngestionSettings_List</description></item></list></summary>
+        <summary> Gets all ingestion settings. </summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.IngestionSettingResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -255,6 +253,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;</ReturnType>
@@ -264,9 +263,7 @@
       </Parameters>
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Settings for ingesting security data and logs to correlate with resources associated with the subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/ingestionSettings</description></item><item><term>Operation Id</term><description>IngestionSettings_List</description></item></list></summary>
+        <summary> Gets all ingestion settings. </summary>
         <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.IngestionSettingResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -281,6 +278,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;&gt;</ReturnType>
@@ -292,9 +290,7 @@
       <Docs>
         <param name="ingestionSettingName"> Name of the ingestion setting. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Settings for ingesting security data and logs to correlate with resources associated with the subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/ingestionSettings/{ingestionSettingName}</description></item><item><term>Operation Id</term><description>IngestionSettings_Get</description></item></list></summary>
+        <summary> Gets an ingestion setting. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
@@ -316,6 +312,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;</ReturnType>
@@ -343,6 +340,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.SecurityCenter.IngestionSettingResource&gt;</ReturnType>
@@ -367,6 +365,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>

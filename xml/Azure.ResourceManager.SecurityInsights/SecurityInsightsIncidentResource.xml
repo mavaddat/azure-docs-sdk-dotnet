@@ -31,10 +31,9 @@
   </Interfaces>
   <Docs>
     <summary>
-            A Class representing a SecurityInsightsIncident along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetSecurityInsightsIncidentResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.SecurityInsights.OperationalInsightsWorkspaceSecurityInsightsResource" /> using the GetSecurityInsightsIncident method.
+            A class representing a SecurityInsightsIncident along with the instance operations that can be performed on it.
+            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /> from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetResource method.
+            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.ArmResource" /> using the GetSecurityInsightsIncidents method.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -52,7 +51,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of SecurityInsightsIncidentResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,69 +81,9 @@
         <param name="resourceGroupName"> The resourceGroupName. </param>
         <param name="workspaceName"> The workspaceName. </param>
         <param name="incidentId"> The incidentId. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /> instance. </summary>
+        <summary> Generate the resource identifier for this resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="CreateTeam">
-      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt; CreateTeam (Azure.ResourceManager.SecurityInsights.Models.TeamInformation teamProperties, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt; CreateTeam(class Azure.ResourceManager.SecurityInsights.Models.TeamInformation teamProperties, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource.CreateTeam(Azure.ResourceManager.SecurityInsights.Models.TeamInformation,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateTeam (teamProperties As TeamInformation, Optional cancellationToken As CancellationToken = Nothing) As Response(Of TeamInformation)" />
-      <MemberSignature Language="F#" Value="abstract member CreateTeam : Azure.ResourceManager.SecurityInsights.Models.TeamInformation * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt;&#xA;override this.CreateTeam : Azure.ResourceManager.SecurityInsights.Models.TeamInformation * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt;" Usage="securityInsightsIncidentResource.CreateTeam (teamProperties, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.SecurityInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="teamProperties" Type="Azure.ResourceManager.SecurityInsights.Models.TeamInformation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="teamProperties"> Team properties. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Creates a Microsoft team to investigate the incident by sharing information and insights between participants.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/createTeam</description></item><item><term>Operation Id</term><description>Incidents_CreateTeam</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="teamProperties" /> is null. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="CreateTeamAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt;&gt; CreateTeamAsync (Azure.ResourceManager.SecurityInsights.Models.TeamInformation teamProperties, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt;&gt; CreateTeamAsync(class Azure.ResourceManager.SecurityInsights.Models.TeamInformation teamProperties, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource.CreateTeamAsync(Azure.ResourceManager.SecurityInsights.Models.TeamInformation,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateTeamAsync (teamProperties As TeamInformation, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of TeamInformation))" />
-      <MemberSignature Language="F#" Value="abstract member CreateTeamAsync : Azure.ResourceManager.SecurityInsights.Models.TeamInformation * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt;&gt;&#xA;override this.CreateTeamAsync : Azure.ResourceManager.SecurityInsights.Models.TeamInformation * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt;&gt;" Usage="securityInsightsIncidentResource.CreateTeamAsync (teamProperties, cancellationToken)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.SecurityInsights</AssemblyName>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityInsights.Models.TeamInformation&gt;&gt;</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="teamProperties" Type="Azure.ResourceManager.SecurityInsights.Models.TeamInformation" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="teamProperties"> Team properties. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Creates a Microsoft team to investigate the incident by sharing information and insights between participants.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/createTeam</description></item><item><term>Operation Id</term><description>Incidents_CreateTeam</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="teamProperties" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="Data">
@@ -193,8 +132,8 @@
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Delete the incident.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}</description></item><item><term>Operation Id</term><description>Incidents_Delete</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Deletes a given incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}. </description></item><item><term> Operation Id. </term><description> Incidents_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -223,8 +162,8 @@
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Delete the incident.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}</description></item><item><term>Operation Id</term><description>Incidents_Delete</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Deletes a given incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}. </description></item><item><term> Operation Id. </term><description> Incidents_Delete. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -250,8 +189,8 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets an incident.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}</description></item><item><term>Operation Id</term><description>Incidents_Get</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Gets a given incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}. </description></item><item><term> Operation Id. </term><description> Incidents_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -277,8 +216,8 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets all incident alerts.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/alerts</description></item><item><term>Operation Id</term><description>Incidents_ListAlerts</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Gets all alerts for an incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/alerts. </description></item><item><term> Operation Id. </term><description> Incidents_ListAlerts. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityInsights.Models.SecurityInsightsAlert" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -304,9 +243,9 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets all incident alerts.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/alerts</description></item><item><term>Operation Id</term><description>Incidents_ListAlerts</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityInsights.Models.SecurityInsightsAlert" /> that may take multiple service requests to iterate over. </returns>
+            Gets all alerts for an incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/alerts. </description></item><item><term> Operation Id. </term><description> Incidents_ListAlerts. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityInsights.Models.SecurityInsightsAlert" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -331,8 +270,8 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets an incident.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}</description></item><item><term>Operation Id</term><description>Incidents_Get</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Gets a given incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}. </description></item><item><term> Operation Id. </term><description> Incidents_Get. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -358,8 +297,8 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets all incident bookmarks.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/bookmarks</description></item><item><term>Operation Id</term><description>Incidents_ListBookmarks</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Gets all bookmarks for an incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/bookmarks. </description></item><item><term> Operation Id. </term><description> Incidents_ListBookmarks. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityInsights.Models.SecurityInsightsHuntingBookmark" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -385,9 +324,9 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets all incident bookmarks.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/bookmarks</description></item><item><term>Operation Id</term><description>Incidents_ListBookmarks</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityInsights.Models.SecurityInsightsHuntingBookmark" /> that may take multiple service requests to iterate over. </returns>
+            Gets all bookmarks for an incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/bookmarks. </description></item><item><term> Operation Id. </term><description> Incidents_ListBookmarks. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityInsights.Models.SecurityInsightsHuntingBookmark" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -412,8 +351,8 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets all incident related entities.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/entities</description></item><item><term>Operation Id</term><description>Incidents_ListEntities</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Gets all entities for an incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/entities. </description></item><item><term> Operation Id. </term><description> Incidents_ListEntities. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -439,8 +378,8 @@
       <Docs>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Gets all incident related entities.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/entities</description></item><item><term>Operation Id</term><description>Incidents_ListEntities</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Gets all entities for an incident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/entities. </description></item><item><term> Operation Id. </term><description> Incidents_ListEntities. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -467,9 +406,7 @@
       <Docs>
         <param name="incidentCommentId"> Incident comment ID. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets an incident comment.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/comments/{incidentCommentId}</description></item><item><term>Operation Id</term><description>IncidentComments_Get</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentCommentResource" /></description></item></list></summary>
+        <summary> Gets an incident comment. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -500,9 +437,7 @@
       <Docs>
         <param name="incidentCommentId"> Incident comment ID. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets an incident comment.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/comments/{incidentCommentId}</description></item><item><term>Operation Id</term><description>IncidentComments_Get</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentCommentResource" /></description></item></list></summary>
+        <summary> Gets an incident comment. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -528,8 +463,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of SecurityInsightsIncidentCommentResources in the SecurityInsightsIncident. </summary>
-        <returns> An object representing collection of SecurityInsightsIncidentCommentResources and their operations over a SecurityInsightsIncidentCommentResource. </returns>
+        <summary> Gets a collection of SecurityInsightsIncidentComments in the <see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </summary>
+        <returns> An object representing collection of SecurityInsightsIncidentComments and their operations over a SecurityInsightsIncidentCommentResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -555,9 +490,7 @@
       <Docs>
         <param name="relationName"> Relation Name. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets an incident relation.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/relations/{relationName}</description></item><item><term>Operation Id</term><description>IncidentRelations_Get</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentRelationResource" /></description></item></list></summary>
+        <summary> Gets a relation for a given incident. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -588,9 +521,7 @@
       <Docs>
         <param name="relationName"> Relation Name. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets an incident relation.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/relations/{relationName}</description></item><item><term>Operation Id</term><description>IncidentRelations_Get</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentRelationResource" /></description></item></list></summary>
+        <summary> Gets a relation for a given incident. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -616,8 +547,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of SecurityInsightsIncidentRelationResources in the SecurityInsightsIncident. </summary>
-        <returns> An object representing collection of SecurityInsightsIncidentRelationResources and their operations over a SecurityInsightsIncidentRelationResource. </returns>
+        <summary> Gets a collection of SecurityInsightsIncidentRelations in the <see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </summary>
+        <returns> An object representing collection of SecurityInsightsIncidentRelations and their operations over a SecurityInsightsIncidentRelationResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -642,9 +573,7 @@
       <Docs>
         <param name="incidentTaskId"> Incident task ID. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets an incident task.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/tasks/{incidentTaskId}</description></item><item><term>Operation Id</term><description>IncidentTasks_Get</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentTaskResource" /></description></item></list></summary>
+        <summary> Gets an incident task. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -674,9 +603,7 @@
       <Docs>
         <param name="incidentTaskId"> Incident task ID. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Gets an incident task.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}/tasks/{incidentTaskId}</description></item><item><term>Operation Id</term><description>IncidentTasks_Get</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentTaskResource" /></description></item></list></summary>
+        <summary> Gets an incident task. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -701,8 +628,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of SecurityInsightsIncidentTaskResources in the SecurityInsightsIncident. </summary>
-        <returns> An object representing collection of SecurityInsightsIncidentTaskResources and their operations over a SecurityInsightsIncidentTaskResource. </returns>
+        <summary> Gets a collection of SecurityInsightsIncidentTasks in the <see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </summary>
+        <returns> An object representing collection of SecurityInsightsIncidentTasks and their operations over a SecurityInsightsIncidentTaskResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -766,11 +693,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="requestBody"> The <see cref="T:Azure.ResourceManager.SecurityInsights.Models.ManualTriggerRequestBody" /> to use. </param>
+        <param name="requestBody"> Describes the request body for triggering a playbook on an incident. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Triggers playbook on a specific incident
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentIdentifier}/runPlaybook</description></item><item><term>Operation Id</term><description>Incidents_RunPlaybook</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentIdentifier}/runPlaybook. </description></item><item><term> Operation Id. </term><description> Incidents_RunPlaybook. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -794,11 +721,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="requestBody"> The <see cref="T:Azure.ResourceManager.SecurityInsights.Models.ManualTriggerRequestBody" /> to use. </param>
+        <param name="requestBody"> Describes the request body for triggering a playbook on an incident. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Triggers playbook on a specific incident
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentIdentifier}/runPlaybook</description></item><item><term>Operation Id</term><description>Incidents_RunPlaybook</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentIdentifier}/runPlaybook. </description></item><item><term> Operation Id. </term><description> Incidents_RunPlaybook. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -825,8 +752,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The reader for deserializing the model. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -857,8 +784,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The writer to serialize the model to. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -888,8 +815,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The binary data to be processed. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -919,7 +846,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -948,7 +875,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -983,8 +910,8 @@
         <param name="data"> The incident. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Creates or updates the incident.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}</description></item><item><term>Operation Id</term><description>Incidents_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Update a SecurityInsightsIncident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}. </description></item><item><term> Operation Id. </term><description> Incidents_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -1017,8 +944,8 @@
         <param name="data"> The incident. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Creates or updates the incident.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}</description></item><item><term>Operation Id</term><description>Incidents_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2024-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" /></description></item></list></summary>
+            Update a SecurityInsightsIncident.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/incidents/{incidentId}. </description></item><item><term> Operation Id. </term><description> Incidents_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-07-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityInsights.SecurityInsightsIncidentResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">

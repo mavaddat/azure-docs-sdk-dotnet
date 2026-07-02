@@ -204,18 +204,18 @@
       </Docs>
     </Member>
     <Member MemberName="GenerationArtifacts">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.EvaluatorGenerationArtifacts GenerationArtifacts { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.EvaluatorGenerationArtifacts GenerationArtifacts" />
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Evaluation.EvaluatorGenerationArtifacts GenerationArtifacts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Evaluation.EvaluatorGenerationArtifacts GenerationArtifacts" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Evaluation.EvaluatorVersion.GenerationArtifacts" />
       <MemberSignature Language="VB.NET" Value="Public ReadOnly Property GenerationArtifacts As EvaluatorGenerationArtifacts" />
-      <MemberSignature Language="F#" Value="member this.GenerationArtifacts : Azure.AI.Projects.EvaluatorGenerationArtifacts" Usage="Azure.AI.Projects.Evaluation.EvaluatorVersion.GenerationArtifacts" />
+      <MemberSignature Language="F#" Value="member this.GenerationArtifacts : Azure.AI.Projects.Evaluation.EvaluatorGenerationArtifacts" Usage="Azure.AI.Projects.Evaluation.EvaluatorVersion.GenerationArtifacts" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.Projects.EvaluatorGenerationArtifacts</ReturnType>
+        <ReturnType>Azure.AI.Projects.Evaluation.EvaluatorGenerationArtifacts</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> Provenance artifacts from the generation pipeline. Read-only; present only on evaluator versions created via an EvaluatorGenerationJob. Each artifact resolves to a versioned Foundry Dataset. </summary>
@@ -459,6 +459,26 @@
         <param name="options"> The client options for reading and writing models. </param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedEvaluationLevels">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Azure.AI.Projects.Evaluation.ProjectsEvaluationLevel&gt; SupportedEvaluationLevels { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype Azure.AI.Projects.Evaluation.ProjectsEvaluationLevel&gt; SupportedEvaluationLevels" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Evaluation.EvaluatorVersion.SupportedEvaluationLevels" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SupportedEvaluationLevels As IList(Of ProjectsEvaluationLevel)" />
+      <MemberSignature Language="F#" Value="member this.SupportedEvaluationLevels : System.Collections.Generic.IList&lt;Azure.AI.Projects.Evaluation.ProjectsEvaluationLevel&gt;" Usage="Azure.AI.Projects.Evaluation.EvaluatorVersion.SupportedEvaluationLevels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Azure.AI.Projects.Evaluation.ProjectsEvaluationLevel&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Evaluation levels this evaluator supports (e.g., `turn`, `conversation`). When omitted on create, the service defaults to `["turn"]`. On update, omitting this field leaves it unchanged; an empty list is rejected. Custom code-based evaluators support only `turn`; custom prompt-based evaluators support exactly one level (`turn` or `conversation`). </summary>
+        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

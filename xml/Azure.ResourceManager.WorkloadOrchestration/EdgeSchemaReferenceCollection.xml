@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmCollection</BaseTypeName>
@@ -26,7 +27,7 @@
     <summary>
             A class representing a collection of <see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /> and their operations.
             Each <see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.ArmResource" />.
-            To get an <see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceCollection" /> instance call the GetEdgeSchemaReferences method from an instance of <see cref="T:Azure.ResourceManager.ArmResource" />.
+            To get a <see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceCollection" /> instance call the GetEdgeSchemaReferences method from an instance of <see cref="T:Azure.ResourceManager.ArmResource" />.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -39,12 +40,86 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceCollection" /> class for mocking. </summary>
+        <summary> Initializes a new instance of EdgeSchemaReferenceCollection for mocking. </summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdate">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt; CreateOrUpdate (Azure.WaitUntil waitUntil, string schemaReferenceName, Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData data, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt; CreateOrUpdate(valuetype Azure.WaitUntil waitUntil, string schemaReferenceName, class Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceCollection.CreateOrUpdate(Azure.WaitUntil,System.String,Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdate (waitUntil As WaitUntil, schemaReferenceName As String, data As EdgeSchemaReferenceData, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of EdgeSchemaReferenceResource)" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdate : Azure.WaitUntil * string * Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;&#xA;override this.CreateOrUpdate : Azure.WaitUntil * string * Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;" Usage="edgeSchemaReferenceCollection.CreateOrUpdate (waitUntil, schemaReferenceName, data, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
+        <Parameter Name="schemaReferenceName" Type="System.String" />
+        <Parameter Name="data" Type="Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="schemaReferenceName"> The name of the SchemaReference. </param>
+        <param name="data"> Resource create parameters. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Create or update a Schema Reference Resource
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}. </description></item><item><term> Operation Id. </term><description> SchemaReferences_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemaReferenceName" /> or <paramref name="data" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;&gt; CreateOrUpdateAsync (Azure.WaitUntil waitUntil, string schemaReferenceName, Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData data, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;&gt; CreateOrUpdateAsync(valuetype Azure.WaitUntil waitUntil, string schemaReferenceName, class Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceCollection.CreateOrUpdateAsync(Azure.WaitUntil,System.String,Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateAsync (waitUntil As WaitUntil, schemaReferenceName As String, data As EdgeSchemaReferenceData, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of EdgeSchemaReferenceResource))" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdateAsync : Azure.WaitUntil * string * Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;&gt;&#xA;override this.CreateOrUpdateAsync : Azure.WaitUntil * string * Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;&gt;" Usage="edgeSchemaReferenceCollection.CreateOrUpdateAsync (waitUntil, schemaReferenceName, data, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
+        <Parameter Name="schemaReferenceName" Type="System.String" />
+        <Parameter Name="data" Type="Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceData" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="schemaReferenceName"> The name of the SchemaReference. </param>
+        <param name="data"> Resource create parameters. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Create or update a Schema Reference Resource
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}. </description></item><item><term> Operation Id. </term><description> SchemaReferences_CreateOrUpdate. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemaReferenceName" /> or <paramref name="data" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="Exists">
@@ -56,7 +131,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;System.Boolean&gt;</ReturnType>
@@ -70,13 +145,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}</description></item><item><term>Operation Id</term><description>SchemaReference_Get</description></item><item><term>Default Api Version</term><description>2025-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}. </description></item><item><term> Operation Id. </term><description> SchemaReferences_Get. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="schemaReferenceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="ExistsAsync">
@@ -88,7 +163,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.Boolean&gt;&gt;</ReturnType>
@@ -102,13 +177,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}</description></item><item><term>Operation Id</term><description>SchemaReference_Get</description></item><item><term>Default Api Version</term><description>2025-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}. </description></item><item><term> Operation Id. </term><description> SchemaReferences_Get. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="schemaReferenceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="Get">
@@ -120,7 +195,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;</ReturnType>
@@ -134,13 +209,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get a Schema Reference Resource
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}</description></item><item><term>Operation Id</term><description>SchemaReference_Get</description></item><item><term>Default Api Version</term><description>2025-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}. </description></item><item><term> Operation Id. </term><description> SchemaReferences_Get. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="schemaReferenceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAll">
@@ -152,7 +227,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;</ReturnType>
@@ -164,7 +239,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             List by specified resource group
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.Edge/schemaReferences</description></item><item><term>Operation Id</term><description>SchemaReference_ListByResourceGroup</description></item><item><term>Default Api Version</term><description>2025-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences. </description></item><item><term> Operation Id. </term><description> SchemaReferences_ListByResourceGroup. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -178,7 +253,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;</ReturnType>
@@ -190,8 +265,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             List by specified resource group
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.Edge/schemaReferences</description></item><item><term>Operation Id</term><description>SchemaReference_ListByResourceGroup</description></item><item><term>Default Api Version</term><description>2025-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences. </description></item><item><term> Operation Id. </term><description> SchemaReferences_ListByResourceGroup. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,7 +279,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;&gt;</ReturnType>
@@ -218,13 +293,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Get a Schema Reference Resource
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}</description></item><item><term>Operation Id</term><description>SchemaReference_Get</description></item><item><term>Default Api Version</term><description>2025-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}. </description></item><item><term> Operation Id. </term><description> SchemaReferences_Get. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="schemaReferenceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExists">
@@ -236,7 +311,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.NullableResponse&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;</ReturnType>
@@ -250,13 +325,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}</description></item><item><term>Operation Id</term><description>SchemaReference_Get</description></item><item><term>Default Api Version</term><description>2025-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}. </description></item><item><term> Operation Id. </term><description> SchemaReferences_Get. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="schemaReferenceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExistsAsync">
@@ -268,7 +343,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;&gt;</ReturnType>
@@ -282,13 +357,13 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}</description></item><item><term>Operation Id</term><description>SchemaReference_Get</description></item><item><term>Default Api Version</term><description>2025-06-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceUri}/providers/Microsoft.Edge/schemaReferences/{schemaReferenceName}. </description></item><item><term> Operation Id. </term><description> SchemaReferences_Get. </description></item><item><term> Default Api Version. </term><description> 2025-06-01. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="schemaReferenceName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="schemaReferenceName" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;.GetAsyncEnumerator">
@@ -303,7 +378,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IAsyncEnumerator&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;</ReturnType>
@@ -312,7 +387,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> that may be used to cancel the asynchronous iteration.</param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>Returns an enumerator that iterates asynchronously through the collection.</summary>
         <returns>An enumerator that can be used to iterate asynchronously through the collection.</returns>
         <remarks>To be added.</remarks>
@@ -330,7 +405,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerator&lt;Azure.ResourceManager.WorkloadOrchestration.EdgeSchemaReferenceResource&gt;</ReturnType>
@@ -354,7 +429,7 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.WorkloadOrchestration</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>

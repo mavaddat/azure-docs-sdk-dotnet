@@ -24,10 +24,9 @@
   </Interfaces>
   <Docs>
     <summary>
-            A Class representing a DefenderForStorageSetting along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetDefenderForStorageSettingResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.ArmResource" /> using the GetDefenderForStorageSetting method.
+            A class representing a DefenderForStorageSetting along with the instance operations that can be performed on it.
+            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" /> from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetResource method.
+            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.ArmResource" /> using the GetDefenderForStorageSettings method.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -44,16 +43,80 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of DefenderForStorageSettingResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="CancelMalwareScan">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt; CancelMalwareScan (string scanId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt; CancelMalwareScan(string scanId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.CancelMalwareScan(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CancelMalwareScan (scanId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MalwareScan)" />
+      <MemberSignature Language="F#" Value="abstract member CancelMalwareScan : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&#xA;override this.CancelMalwareScan : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;" Usage="defenderForStorageSettingResource.CancelMalwareScan (scanId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scanId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="scanId"> The identifier of the scan. Can be either 'latest' or a GUID. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Cancels a Defender for Storage malware scan for the specified storage account.
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}/malwareScans/{scanId}/cancelMalwareScan. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_CancelMalwareScan. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scanId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="scanId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelMalwareScanAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt; CancelMalwareScanAsync (string scanId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt; CancelMalwareScanAsync(string scanId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.CancelMalwareScanAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CancelMalwareScanAsync (scanId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MalwareScan))" />
+      <MemberSignature Language="F#" Value="abstract member CancelMalwareScanAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;&#xA;override this.CancelMalwareScanAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;" Usage="defenderForStorageSettingResource.CancelMalwareScanAsync (scanId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scanId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="scanId"> The identifier of the scan. Can be either 'latest' or a GUID. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Cancels a Defender for Storage malware scan for the specified storage account.
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}/malwareScans/{scanId}/cancelMalwareScan. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_CancelMalwareScan. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scanId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="scanId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
     <Member MemberName="CreateResourceIdentifier">
-      <MemberSignature Language="C#" Value="public static Azure.Core.ResourceIdentifier CreateResourceIdentifier (string resourceId, Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Core.ResourceIdentifier CreateResourceIdentifier(string resourceId, valuetype Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.CreateResourceIdentifier(System.String,Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateResourceIdentifier (resourceId As String, settingName As DefenderForStorageSettingName) As ResourceIdentifier" />
-      <MemberSignature Language="F#" Value="static member CreateResourceIdentifier : string * Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName -&gt; Azure.Core.ResourceIdentifier" Usage="Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.CreateResourceIdentifier (resourceId, settingName)" />
+      <MemberSignature Language="C#" Value="public static Azure.Core.ResourceIdentifier CreateResourceIdentifier (string resourceId, Azure.ResourceManager.SecurityCenter.Models.SettingName settingName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Core.ResourceIdentifier CreateResourceIdentifier(string resourceId, valuetype Azure.ResourceManager.SecurityCenter.Models.SettingName settingName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.CreateResourceIdentifier(System.String,Azure.ResourceManager.SecurityCenter.Models.SettingName)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateResourceIdentifier (resourceId As String, settingName As SettingName) As ResourceIdentifier" />
+      <MemberSignature Language="F#" Value="static member CreateResourceIdentifier : string * Azure.ResourceManager.SecurityCenter.Models.SettingName -&gt; Azure.Core.ResourceIdentifier" Usage="Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.CreateResourceIdentifier (resourceId, settingName)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
@@ -64,12 +127,12 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="resourceId" Type="System.String" />
-        <Parameter Name="settingName" Type="Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName" />
+        <Parameter Name="settingName" Type="Azure.ResourceManager.SecurityCenter.Models.SettingName" />
       </Parameters>
       <Docs>
         <param name="resourceId"> The resourceId. </param>
         <param name="settingName"> The settingName. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" /> instance. </summary>
+        <summary> Generate the resource identifier for this resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -96,11 +159,11 @@
       </Docs>
     </Member>
     <Member MemberName="Get">
-      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt; Get (Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt; Get(valuetype Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.Get(Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function Get (settingName As DefenderForStorageSettingName, Optional cancellationToken As CancellationToken = Nothing) As Response(Of DefenderForStorageSettingResource)" />
-      <MemberSignature Language="F#" Value="abstract member Get : Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&#xA;override this.Get : Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;" Usage="defenderForStorageSettingResource.Get (settingName, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt; Get (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt; Get(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.Get(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Get (Optional cancellationToken As CancellationToken = Nothing) As Response(Of DefenderForStorageSettingResource)" />
+      <MemberSignature Language="F#" Value="abstract member Get : System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&#xA;override this.Get : System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;" Usage="defenderForStorageSettingResource.Get cancellationToken" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
@@ -110,25 +173,23 @@
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="settingName" Type="Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="settingName"> Defender for Storage setting name. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the Defender for Storage settings for the specified storage account.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}</description></item><item><term>Operation Id</term><description>DefenderForStorage_Get</description></item><item><term>Default Api Version</term><description>2022-12-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt; GetAsync (Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt; GetAsync(valuetype Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.GetAsync(Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAsync (settingName As DefenderForStorageSettingName, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of DefenderForStorageSettingResource))" />
-      <MemberSignature Language="F#" Value="abstract member GetAsync : Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;&#xA;override this.GetAsync : Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;" Usage="defenderForStorageSettingResource.GetAsync (settingName, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt; GetAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt; GetAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.GetAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAsync (Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of DefenderForStorageSettingResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;&#xA;override this.GetAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;" Usage="defenderForStorageSettingResource.GetAsync cancellationToken" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
@@ -138,17 +199,79 @@
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="settingName" Type="Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="settingName"> Defender for Storage setting name. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets the Defender for Storage settings for the specified storage account.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}</description></item><item><term>Operation Id</term><description>DefenderForStorage_Get</description></item><item><term>Default Api Version</term><description>2022-12-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_Get. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMalwareScan">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt; GetMalwareScan (string scanId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt; GetMalwareScan(string scanId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.GetMalwareScan(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMalwareScan (scanId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MalwareScan)" />
+      <MemberSignature Language="F#" Value="abstract member GetMalwareScan : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&#xA;override this.GetMalwareScan : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;" Usage="defenderForStorageSettingResource.GetMalwareScan (scanId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scanId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="scanId"> The identifier of the scan. Can be either 'latest' or a GUID. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets the Defender for Storage malware scan for the specified storage resource.
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}/malwareScans/{scanId}. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_GetMalwareScan. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scanId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="scanId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMalwareScanAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt; GetMalwareScanAsync (string scanId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt; GetMalwareScanAsync(string scanId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.GetMalwareScanAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMalwareScanAsync (scanId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MalwareScan))" />
+      <MemberSignature Language="F#" Value="abstract member GetMalwareScanAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;&#xA;override this.GetMalwareScanAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;" Usage="defenderForStorageSettingResource.GetMalwareScanAsync (scanId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scanId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="scanId"> The identifier of the scan. Can be either 'latest' or a GUID. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets the Defender for Storage malware scan for the specified storage resource.
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}/malwareScans/{scanId}. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_GetMalwareScan. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scanId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="scanId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="HasData">
@@ -190,6 +313,58 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="StartMalwareScan">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt; StartMalwareScan (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt; StartMalwareScan(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.StartMalwareScan(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function StartMalwareScan (Optional cancellationToken As CancellationToken = Nothing) As Response(Of MalwareScan)" />
+      <MemberSignature Language="F#" Value="abstract member StartMalwareScan : System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&#xA;override this.StartMalwareScan : System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;" Usage="defenderForStorageSettingResource.StartMalwareScan cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Initiate a Defender for Storage malware scan for the specified storage account. Blobs and Files will be scanned for malware.
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}/startMalwareScan. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_StartMalwareScan. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartMalwareScanAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt; StartMalwareScanAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt; StartMalwareScanAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.StartMalwareScanAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function StartMalwareScanAsync (Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MalwareScan))" />
+      <MemberSignature Language="F#" Value="abstract member StartMalwareScanAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;&#xA;override this.StartMalwareScanAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;" Usage="defenderForStorageSettingResource.StartMalwareScanAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.MalwareScan&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Initiate a Defender for Storage malware scan for the specified storage account. Blobs and Files will be scanned for malware.
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}/startMalwareScan. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_StartMalwareScan. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData&gt;.Create">
       <MemberSignature Language="C#" Value="Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData IJsonModel&lt;DefenderForStorageSettingData&gt;.Create (ref System.Text.Json.Utf8JsonReader reader, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData&gt;.Create(valuetype System.Text.Json.Utf8JsonReader&amp; reader, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
@@ -212,8 +387,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The reader for deserializing the model. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -244,8 +419,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The writer to serialize the model to. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -275,8 +450,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The binary data to be processed. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -306,7 +481,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -335,7 +510,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
@@ -345,11 +520,11 @@
       </Docs>
     </Member>
     <Member MemberName="Update">
-      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt; Update (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName, Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData data, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt; Update(valuetype Azure.WaitUntil waitUntil, valuetype Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName, class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.Update(Azure.WaitUntil,Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName,Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function Update (waitUntil As WaitUntil, settingName As DefenderForStorageSettingName, data As DefenderForStorageSettingData, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of DefenderForStorageSettingResource)" />
-      <MemberSignature Language="F#" Value="abstract member Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName * Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&#xA;override this.Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName * Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;" Usage="defenderForStorageSettingResource.Update (waitUntil, settingName, data, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt; Update (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData data, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt; Update(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.Update(Azure.WaitUntil,Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Update (waitUntil As WaitUntil, data As DefenderForStorageSettingData, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of DefenderForStorageSettingResource)" />
+      <MemberSignature Language="F#" Value="abstract member Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&#xA;override this.Update : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;" Usage="defenderForStorageSettingResource.Update (waitUntil, data, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
@@ -360,19 +535,17 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
-        <Parameter Name="settingName" Type="Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName" />
         <Parameter Name="data" Type="Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="settingName"> Defender for Storage setting name. </param>
         <param name="data"> Defender for Storage Settings. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Creates or updates the Defender for Storage settings on a specified storage account.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}</description></item><item><term>Operation Id</term><description>DefenderForStorage_Create</description></item><item><term>Default Api Version</term><description>2022-12-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" /></description></item></list></summary>
+            Update a DefenderForStorageSetting.
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_Create. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -380,11 +553,11 @@
       </Docs>
     </Member>
     <Member MemberName="UpdateAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt; UpdateAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName, Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData data, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt; UpdateAsync(valuetype Azure.WaitUntil waitUntil, valuetype Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName settingName, class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.UpdateAsync(Azure.WaitUntil,Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName,Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateAsync (waitUntil As WaitUntil, settingName As DefenderForStorageSettingName, data As DefenderForStorageSettingData, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of DefenderForStorageSettingResource))" />
-      <MemberSignature Language="F#" Value="abstract member UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName * Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;&#xA;override this.UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName * Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;" Usage="defenderForStorageSettingResource.UpdateAsync (waitUntil, settingName, data, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt; UpdateAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData data, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt; UpdateAsync(valuetype Azure.WaitUntil waitUntil, class Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource.UpdateAsync(Azure.WaitUntil,Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function UpdateAsync (waitUntil As WaitUntil, data As DefenderForStorageSettingData, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of DefenderForStorageSettingResource))" />
+      <MemberSignature Language="F#" Value="abstract member UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;&#xA;override this.UpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource&gt;&gt;" Usage="defenderForStorageSettingResource.UpdateAsync (waitUntil, data, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
@@ -395,19 +568,17 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="waitUntil" Type="Azure.WaitUntil" />
-        <Parameter Name="settingName" Type="Azure.ResourceManager.SecurityCenter.Models.DefenderForStorageSettingName" />
         <Parameter Name="data" Type="Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingData" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="settingName"> Defender for Storage setting name. </param>
         <param name="data"> Defender for Storage Settings. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Creates or updates the Defender for Storage settings on a specified storage account.
-            <list type="bullet"><item><term>Request Path</term><description>/{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}</description></item><item><term>Operation Id</term><description>DefenderForStorage_Create</description></item><item><term>Default Api Version</term><description>2022-12-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" /></description></item></list></summary>
+            Update a DefenderForStorageSetting.
+            <list type="bullet"><item><term> Request Path. </term><description> /{resourceId}/providers/Microsoft.Security/defenderForStorageSettings/{settingName}. </description></item><item><term> Operation Id. </term><description> DefenderForStorageSettings_Create. </description></item><item><term> Default Api Version. </term><description> 2025-09-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.DefenderForStorageSettingResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">

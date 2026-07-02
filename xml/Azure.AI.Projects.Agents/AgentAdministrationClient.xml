@@ -12,7 +12,6 @@
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
-  <Interfaces />
   <Docs>
     <summary> The AgentAdministrationClient sub-client. </summary>
     <remarks>To be added.</remarks>
@@ -29,7 +28,6 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <Parameters />
       <Docs>
         <summary> Initializes a new instance of AgentAdministrationClient for mocking. </summary>
         <remarks>To be added.</remarks>
@@ -124,10 +122,13 @@
         <Parameter Name="options" Type="Azure.AI.Projects.Agents.AgentAdministrationClientOptions" />
       </Parameters>
       <Docs>
-        <param name="endpoint">To be added.</param>
-        <param name="tokenProvider">To be added.</param>
-        <param name="options">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="endpoint">The service endpoint to target.</param>
+        <param name="tokenProvider">The token provider used to authenticate requests.</param>
+        <param name="options">Optional client configuration options.</param>
+        <summary>
+            Initializes a new <see cref="T:Azure.AI.Projects.Agents.AgentAdministrationClient" /> with the specified
+            service endpoint and authentication token provider.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -448,11 +449,11 @@
       </Docs>
     </Member>
     <Member MemberName="CreateAgentVersionFromCode">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; CreateAgentVersionFromCode (string agentName, string filePath, Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata metadata, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; CreateAgentVersionFromCode(string agentName, string filePath, class Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata metadata, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.CreateAgentVersionFromCode(System.String,System.String,Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateAgentVersionFromCode (agentName As String, filePath As String, metadata As CreateAgentVersionFromCodeMetadata, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectsAgentVersion)" />
-      <MemberSignature Language="F#" Value="abstract member CreateAgentVersionFromCode : string * string * Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&#xA;override this.CreateAgentVersionFromCode : string * string * Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;" Usage="agentAdministrationClient.CreateAgentVersionFromCode (agentName, filePath, metadata, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; CreateAgentVersionFromCode (string agentName, string filePath, Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata metadata, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; CreateAgentVersionFromCode(string agentName, string filePath, class Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata metadata, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.CreateAgentVersionFromCode(System.String,System.String,Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateAgentVersionFromCode (agentName As String, filePath As String, metadata As AgentVersionFromCodeMetadata, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectsAgentVersion)" />
+      <MemberSignature Language="F#" Value="abstract member CreateAgentVersionFromCode : string * string * Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&#xA;override this.CreateAgentVersionFromCode : string * string * Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;" Usage="agentAdministrationClient.CreateAgentVersionFromCode (agentName, filePath, metadata, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -464,7 +465,7 @@
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="filePath" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="metadata" Type="Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="metadata" Type="Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata" Index="2" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
@@ -487,11 +488,11 @@
       </Docs>
     </Member>
     <Member MemberName="CreateAgentVersionFromCodeAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&gt; CreateAgentVersionFromCodeAsync (string agentName, string filePath, Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata metadata, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&gt; CreateAgentVersionFromCodeAsync(string agentName, string filePath, class Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata metadata, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.CreateAgentVersionFromCodeAsync(System.String,System.String,Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateAgentVersionFromCodeAsync (agentName As String, filePath As String, metadata As CreateAgentVersionFromCodeMetadata, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectsAgentVersion))" />
-      <MemberSignature Language="F#" Value="abstract member CreateAgentVersionFromCodeAsync : string * string * Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&gt;&#xA;override this.CreateAgentVersionFromCodeAsync : string * string * Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&gt;" Usage="agentAdministrationClient.CreateAgentVersionFromCodeAsync (agentName, filePath, metadata, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&gt; CreateAgentVersionFromCodeAsync (string agentName, string filePath, Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata metadata, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&gt; CreateAgentVersionFromCodeAsync(string agentName, string filePath, class Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata metadata, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.CreateAgentVersionFromCodeAsync(System.String,System.String,Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateAgentVersionFromCodeAsync (agentName As String, filePath As String, metadata As AgentVersionFromCodeMetadata, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectsAgentVersion))" />
+      <MemberSignature Language="F#" Value="abstract member CreateAgentVersionFromCodeAsync : string * string * Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&gt;&#xA;override this.CreateAgentVersionFromCodeAsync : string * string * Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&gt;" Usage="agentAdministrationClient.CreateAgentVersionFromCodeAsync (agentName, filePath, metadata, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -503,7 +504,7 @@
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="filePath" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="metadata" Type="Azure.AI.Projects.Agents.CreateAgentVersionFromCodeMetadata" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="metadata" Type="Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata" Index="2" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
@@ -589,11 +590,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="agentName">To be added.</param>
-        <param name="manifestId">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="agentName">The name of the agent to create a version for.</param>
+        <param name="manifestId">The identifier of the agent manifest to use.</param>
+        <param name="options">Options describing the manifest-based creation request.</param>
+        <param name="cancellationToken">The cancellation token to use.</param>
+        <summary> Creates a new version of an agent from an agent manifest. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -662,21 +663,21 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="agentName">To be added.</param>
-        <param name="manifestId">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="agentName">The name of the agent to create a version for.</param>
+        <param name="manifestId">The identifier of the agent manifest to use.</param>
+        <param name="options">Options describing the manifest-based creation request.</param>
+        <param name="cancellationToken">The cancellation token to use.</param>
+        <summary> Creates a new version of an agent from an agent manifest. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateSession">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt; CreateSession (string agentName, Azure.AI.Projects.Agents.VersionIndicator versionIndicator, string agentSessionId = default, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt; CreateSession(string agentName, class Azure.AI.Projects.Agents.VersionIndicator versionIndicator, string agentSessionId, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.CreateSession(System.String,Azure.AI.Projects.Agents.VersionIndicator,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSession (agentName As String, versionIndicator As VersionIndicator, Optional agentSessionId As String = Nothing, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectAgentSession)" />
-      <MemberSignature Language="F#" Value="abstract member CreateSession : string * Azure.AI.Projects.Agents.VersionIndicator * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&#xA;override this.CreateSession : string * Azure.AI.Projects.Agents.VersionIndicator * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;" Usage="agentAdministrationClient.CreateSession (agentName, versionIndicator, agentSessionId, userIsolationKey, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt; CreateSession (string agentName, Azure.AI.Projects.Agents.VersionIndicator versionIndicator, string agentSessionId = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt; CreateSession(string agentName, class Azure.AI.Projects.Agents.VersionIndicator versionIndicator, string agentSessionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.CreateSession(System.String,Azure.AI.Projects.Agents.VersionIndicator,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSession (agentName As String, versionIndicator As VersionIndicator, Optional agentSessionId As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectAgentSession)" />
+      <MemberSignature Language="F#" Value="abstract member CreateSession : string * Azure.AI.Projects.Agents.VersionIndicator * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&#xA;override this.CreateSession : string * Azure.AI.Projects.Agents.VersionIndicator * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;" Usage="agentAdministrationClient.CreateSession (agentName, versionIndicator, agentSessionId, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -689,14 +690,12 @@
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="versionIndicator" Type="Azure.AI.Projects.Agents.VersionIndicator" Index="1" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="agentSessionId" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="userIsolationKey" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent to create a session for. </param>
         <param name="versionIndicator"> Determines which agent version backs the session. </param>
         <param name="agentSessionId"> Optional caller-provided session ID. If specified, it must be unique within the agent endpoint. Auto-generated if omitted. </param>
-        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Creates a new session for an agent endpoint.
@@ -713,11 +712,11 @@
       </Docs>
     </Member>
     <Member MemberName="CreateSessionAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt; CreateSessionAsync (string agentName, Azure.AI.Projects.Agents.VersionIndicator versionIndicator, string agentSessionId = default, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt; CreateSessionAsync(string agentName, class Azure.AI.Projects.Agents.VersionIndicator versionIndicator, string agentSessionId, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.CreateSessionAsync(System.String,Azure.AI.Projects.Agents.VersionIndicator,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSessionAsync (agentName As String, versionIndicator As VersionIndicator, Optional agentSessionId As String = Nothing, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectAgentSession))" />
-      <MemberSignature Language="F#" Value="abstract member CreateSessionAsync : string * Azure.AI.Projects.Agents.VersionIndicator * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt;&#xA;override this.CreateSessionAsync : string * Azure.AI.Projects.Agents.VersionIndicator * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt;" Usage="agentAdministrationClient.CreateSessionAsync (agentName, versionIndicator, agentSessionId, userIsolationKey, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt; CreateSessionAsync (string agentName, Azure.AI.Projects.Agents.VersionIndicator versionIndicator, string agentSessionId = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt; CreateSessionAsync(string agentName, class Azure.AI.Projects.Agents.VersionIndicator versionIndicator, string agentSessionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.CreateSessionAsync(System.String,Azure.AI.Projects.Agents.VersionIndicator,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateSessionAsync (agentName As String, versionIndicator As VersionIndicator, Optional agentSessionId As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectAgentSession))" />
+      <MemberSignature Language="F#" Value="abstract member CreateSessionAsync : string * Azure.AI.Projects.Agents.VersionIndicator * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt;&#xA;override this.CreateSessionAsync : string * Azure.AI.Projects.Agents.VersionIndicator * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt;" Usage="agentAdministrationClient.CreateSessionAsync (agentName, versionIndicator, agentSessionId, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -730,14 +729,12 @@
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="versionIndicator" Type="Azure.AI.Projects.Agents.VersionIndicator" Index="1" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="agentSessionId" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="userIsolationKey" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent to create a session for. </param>
         <param name="versionIndicator"> Determines which agent version backs the session. </param>
         <param name="agentSessionId"> Optional caller-provided session ID. If specified, it must be unique within the agent endpoint. Auto-generated if omitted. </param>
-        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Creates a new session for an agent endpoint.
@@ -1354,11 +1351,11 @@
       </Docs>
     </Member>
     <Member MemberName="DeleteSession">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DeleteSession (string agentName, string sessionId, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DeleteSession(string agentName, string sessionId, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DeleteSession(System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSession (agentName As String, sessionId As String, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult" />
-      <MemberSignature Language="F#" Value="abstract member DeleteSession : string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&#xA;override this.DeleteSession : string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult" Usage="agentAdministrationClient.DeleteSession (agentName, sessionId, userIsolationKey, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DeleteSession (string agentName, string sessionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DeleteSession(string agentName, string sessionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DeleteSession(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSession (agentName As String, sessionId As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member DeleteSession : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&#xA;override this.DeleteSession : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult" Usage="agentAdministrationClient.DeleteSession (agentName, sessionId, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -1370,13 +1367,11 @@
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="sessionId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="userIsolationKey" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent. </param>
         <param name="sessionId"> The session identifier. </param>
-        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Deletes a session synchronously.
@@ -1392,11 +1387,11 @@
       </Docs>
     </Member>
     <Member MemberName="DeleteSessionAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DeleteSessionAsync (string agentName, string sessionId, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DeleteSessionAsync(string agentName, string sessionId, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DeleteSessionAsync(System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSessionAsync (agentName As String, sessionId As String, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult)" />
-      <MemberSignature Language="F#" Value="abstract member DeleteSessionAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DeleteSessionAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="agentAdministrationClient.DeleteSessionAsync (agentName, sessionId, userIsolationKey, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DeleteSessionAsync (string agentName, string sessionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DeleteSessionAsync(string agentName, string sessionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DeleteSessionAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeleteSessionAsync (agentName As String, sessionId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member DeleteSessionAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DeleteSessionAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="agentAdministrationClient.DeleteSessionAsync (agentName, sessionId, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -1408,13 +1403,11 @@
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="sessionId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="userIsolationKey" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent. </param>
         <param name="sessionId"> The session identifier. </param>
-        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Deletes a session synchronously.
@@ -1429,12 +1422,152 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
+    <Member MemberName="DisableAgent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DisableAgent (string agentName, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DisableAgent(string agentName, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DisableAgent(System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisableAgent (agentName As String, options As RequestOptions) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member DisableAgent : string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.DisableAgent : string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="agentAdministrationClient.DisableAgent (agentName, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentName"> The name of the agent to disable. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Disables the specified agent, preventing it from accepting new sessions or processing requests.
+            Existing active sessions are allowed to drain gracefully but no new sessions can be created.
+            This operation is idempotent — disabling an already-disabled agent returns success with no side effects.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableAgent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult DisableAgent (string agentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult DisableAgent(string agentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DisableAgent(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisableAgent (agentName As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member DisableAgent : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&#xA;override this.DisableAgent : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult" Usage="agentAdministrationClient.DisableAgent (agentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentName"> The name of the agent to disable. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Disables the specified agent, preventing it from accepting new sessions or processing requests.
+            Existing active sessions are allowed to drain gracefully but no new sessions can be created.
+            This operation is idempotent — disabling an already-disabled agent returns success with no side effects.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableAgentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DisableAgentAsync (string agentName, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DisableAgentAsync(string agentName, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DisableAgentAsync(System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisableAgentAsync (agentName As String, options As RequestOptions) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member DisableAgentAsync : string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DisableAgentAsync : string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="agentAdministrationClient.DisableAgentAsync (agentName, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentName"> The name of the agent to disable. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Disables the specified agent, preventing it from accepting new sessions or processing requests.
+            Existing active sessions are allowed to drain gracefully but no new sessions can be created.
+            This operation is idempotent — disabling an already-disabled agent returns success with no side effects.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableAgentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; DisableAgentAsync (string agentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; DisableAgentAsync(string agentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DisableAgentAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisableAgentAsync (agentName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member DisableAgentAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.DisableAgentAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="agentAdministrationClient.DisableAgentAsync (agentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentName"> The name of the agent to disable. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Disables the specified agent, preventing it from accepting new sessions or processing requests.
+            Existing active sessions are allowed to drain gracefully but no new sessions can be created.
+            This operation is idempotent — disabling an already-disabled agent returns success with no side effects.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
     <Member MemberName="DownloadAgentCode">
-      <MemberSignature Language="C#" Value="public virtual BinaryData DownloadAgentCode (string agentName, string path, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.BinaryData DownloadAgentCode(string agentName, string path, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DownloadAgentCode(System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadAgentCode (agentName As String, path As String, Optional cancellationToken As CancellationToken = Nothing) As BinaryData" />
-      <MemberSignature Language="F#" Value="abstract member DownloadAgentCode : string * string * System.Threading.CancellationToken -&gt; BinaryData&#xA;override this.DownloadAgentCode : string * string * System.Threading.CancellationToken -&gt; BinaryData" Usage="agentAdministrationClient.DownloadAgentCode (agentName, path, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual BinaryData DownloadAgentCode (string agentName, string path, string agentVersion = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.BinaryData DownloadAgentCode(string agentName, string path, string agentVersion, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DownloadAgentCode(System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadAgentCode (agentName As String, path As String, Optional agentVersion As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As BinaryData" />
+      <MemberSignature Language="F#" Value="abstract member DownloadAgentCode : string * string * string * System.Threading.CancellationToken -&gt; BinaryData&#xA;override this.DownloadAgentCode : string * string * string * System.Threading.CancellationToken -&gt; BinaryData" Usage="agentAdministrationClient.DownloadAgentCode (agentName, path, agentVersion, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -1446,11 +1579,16 @@
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="path" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentVersion" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent whose latest-version code zip should be downloaded. </param>
         <param name="path"> The path to save the agent code. </param>
+        <param name="agentVersion">
+            The version of the agent whose code zip should be downloaded.
+            If omitted, the latest version's code zip is returned.
+            </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Download the code zip for the latest version of a code-based hosted agent. And unpacks ut to the user directory; returns the zip content as a binary data.
@@ -1467,11 +1605,11 @@
       </Docs>
     </Member>
     <Member MemberName="DownloadAgentCodeAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;BinaryData&gt; DownloadAgentCodeAsync (string agentName, string path, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.BinaryData&gt; DownloadAgentCodeAsync(string agentName, string path, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DownloadAgentCodeAsync(System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadAgentCodeAsync (agentName As String, path As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of BinaryData)" />
-      <MemberSignature Language="F#" Value="abstract member DownloadAgentCodeAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;&#xA;override this.DownloadAgentCodeAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;" Usage="agentAdministrationClient.DownloadAgentCodeAsync (agentName, path, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;BinaryData&gt; DownloadAgentCodeAsync (string agentName, string path, string agentVersion = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.BinaryData&gt; DownloadAgentCodeAsync(string agentName, string path, string agentVersion, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.DownloadAgentCodeAsync(System.String,System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DownloadAgentCodeAsync (agentName As String, path As String, Optional agentVersion As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member DownloadAgentCodeAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;&#xA;override this.DownloadAgentCodeAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;BinaryData&gt;" Usage="agentAdministrationClient.DownloadAgentCodeAsync (agentName, path, agentVersion, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -1483,11 +1621,16 @@
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="path" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentVersion" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent whose latest-version code zip should be downloaded. </param>
         <param name="path"> The path to save the agent code. </param>
+        <param name="agentVersion">
+            The version of the agent whose code zip should be downloaded.
+            If omitted, the latest version's code zip is returned.
+            </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary>
             Download the code zip for the latest version of a code-based hosted agent and unpacks it to the user directory; returns the zip content as a binary data.
@@ -1500,6 +1643,142 @@
           <paramref name="agentName" /> or <paramref name="path" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="agentName" /> or <paramref name="path" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableAgent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult EnableAgent (string agentName, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult EnableAgent(string agentName, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.EnableAgent(System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EnableAgent (agentName As String, options As RequestOptions) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member EnableAgent : string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult&#xA;override this.EnableAgent : string * System.ClientModel.Primitives.RequestOptions -&gt; System.ClientModel.ClientResult" Usage="agentAdministrationClient.EnableAgent (agentName, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentName"> The name of the agent to enable. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Enables the specified agent, allowing it to accept new sessions and process requests.
+            This operation is idempotent — enabling an already-enabled agent returns success with no side effects.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableAgent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult EnableAgent (string agentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult EnableAgent(string agentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.EnableAgent(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EnableAgent (agentName As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult" />
+      <MemberSignature Language="F#" Value="abstract member EnableAgent : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&#xA;override this.EnableAgent : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult" Usage="agentAdministrationClient.EnableAgent (agentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentName"> The name of the agent to enable. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Enables the specified agent, allowing it to accept new sessions and process requests.
+            This operation is idempotent — enabling an already-enabled agent returns success with no side effects.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableAgentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; EnableAgentAsync (string agentName, System.ClientModel.Primitives.RequestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; EnableAgentAsync(string agentName, class System.ClientModel.Primitives.RequestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.EnableAgentAsync(System.String,System.ClientModel.Primitives.RequestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EnableAgentAsync (agentName As String, options As RequestOptions) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member EnableAgentAsync : string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.EnableAgentAsync : string * System.ClientModel.Primitives.RequestOptions -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="agentAdministrationClient.EnableAgentAsync (agentName, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.RequestOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentName"> The name of the agent to enable. </param>
+        <param name="options"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Enables the specified agent, allowing it to accept new sessions and process requests.
+            This operation is idempotent — enabling an already-enabled agent returns success with no side effects.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableAgentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt; EnableAgentAsync (string agentName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult&gt; EnableAgentAsync(string agentName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.EnableAgentAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EnableAgentAsync (agentName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult)" />
+      <MemberSignature Language="F#" Value="abstract member EnableAgentAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;&#xA;override this.EnableAgentAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;" Usage="agentAdministrationClient.EnableAgentAsync (agentName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentName"> The name of the agent to enable. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Enables the specified agent, allowing it to accept new sessions and process requests.
+            This operation is idempotent — enabling an already-enabled agent returns success with no side effects.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
@@ -1661,9 +1940,8 @@
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationJobs</ReturnType>
       </ReturnValue>
-      <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary> Gets the lazily-initialized agent optimization jobs sub-client. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1769,11 +2047,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetAgentSessionFiles">
-      <MemberSignature Language="C#" Value="public virtual Azure.AI.Projects.Agents.AgentSessionFiles GetAgentSessionFiles ();" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.Projects.Agents.AgentSessionFiles GetAgentSessionFiles() cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetAgentSessionFiles" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAgentSessionFiles () As AgentSessionFiles" />
-      <MemberSignature Language="F#" Value="abstract member GetAgentSessionFiles : unit -&gt; Azure.AI.Projects.Agents.AgentSessionFiles&#xA;override this.GetAgentSessionFiles : unit -&gt; Azure.AI.Projects.Agents.AgentSessionFiles" Usage="agentAdministrationClient.GetAgentSessionFiles " />
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.Projects.Agents.AgentSessionFiles GetAgentSessionFiles (string agentName, string sessionId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.Projects.Agents.AgentSessionFiles GetAgentSessionFiles(string agentName, string sessionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetAgentSessionFiles(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAgentSessionFiles (agentName As String, sessionId As String) As AgentSessionFiles" />
+      <MemberSignature Language="F#" Value="abstract member GetAgentSessionFiles : string * string -&gt; Azure.AI.Projects.Agents.AgentSessionFiles&#xA;override this.GetAgentSessionFiles : string * string -&gt; Azure.AI.Projects.Agents.AgentSessionFiles" Usage="agentAdministrationClient.GetAgentSessionFiles (agentName, sessionId)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -1782,11 +2060,20 @@
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentSessionFiles</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters>
+        <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sessionId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
       <Docs>
-        <summary>To be added.</summary>
+        <param name="agentName"> The name of the agent. </param>
+        <param name="sessionId"> The session ID. </param>
+        <summary> Gets the lazily-initialized agent session files sub-client. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> or <paramref name="sessionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> or <paramref name="sessionId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAgentSkills">
@@ -1803,9 +2090,8 @@
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProjectAgentSkills</ReturnType>
       </ReturnValue>
-      <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary> Gets the lazily-initialized project agent skills sub-client. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1824,9 +2110,8 @@
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentToolboxes</ReturnType>
       </ReturnValue>
-      <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary> Gets the lazily-initialized agent toolboxes sub-client. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -2037,6 +2322,61 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
+    <Member MemberName="GetAgentVersions">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; GetAgentVersions (bool? includeDrafts, string agentName, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; GetAgentVersions(valuetype System.Nullable`1&lt;bool&gt; includeDrafts, string agentName, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetAgentVersions(System.Nullable{System.Boolean},System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAgentVersions (includeDrafts As Nullable(Of Boolean), agentName As String, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As CollectionResult(Of ProjectsAgentVersion)" />
+      <MemberSignature Language="F#" Value="abstract member GetAgentVersions : Nullable&lt;bool&gt; * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&#xA;override this.GetAgentVersions : Nullable&lt;bool&gt; * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;" Usage="agentAdministrationClient.GetAgentVersions (includeDrafts, agentName, limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeDrafts" Type="System.Nullable&lt;System.Boolean&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="after" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="before" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="includeDrafts"> (Preview) Whether to include draft versions in the listing. The service defaults to `false` if a value is not specified by the caller (only non-draft versions are returned). </param>
+        <param name="agentName"> The name of the agent to retrieve versions for. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Returns the list of versions of an agent. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
     <Member MemberName="GetAgentVersionsAsync">
       <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; GetAgentVersionsAsync (string agentName, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; GetAgentVersionsAsync(string agentName, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -2091,12 +2431,67 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
+    <Member MemberName="GetAgentVersionsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; GetAgentVersionsAsync (bool? includeDrafts, string agentName, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentVersion&gt; GetAgentVersionsAsync(valuetype System.Nullable`1&lt;bool&gt; includeDrafts, string agentName, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetAgentVersionsAsync(System.Nullable{System.Boolean},System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAgentVersionsAsync (includeDrafts As Nullable(Of Boolean), agentName As String, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of ProjectsAgentVersion)" />
+      <MemberSignature Language="F#" Value="abstract member GetAgentVersionsAsync : Nullable&lt;bool&gt; * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;&#xA;override this.GetAgentVersionsAsync : Nullable&lt;bool&gt; * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;" Usage="agentAdministrationClient.GetAgentVersionsAsync (includeDrafts, agentName, limit, order, after, before, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectsAgentVersion&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeDrafts" Type="System.Nullable&lt;System.Boolean&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="after" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="before" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="includeDrafts"> (Preview)Whether to include draft versions in the listing.The service defaults to `false` if a value is not specified by the caller (only non-draft versions are returned). </param>
+        <param name="agentName"> The name of the agent to retrieve versions for. </param>
+        <param name="limit">
+            A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+            default is 20.
+            </param>
+        <param name="order">
+            Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and`desc`
+            for descending order.
+            </param>
+        <param name="after">
+            A cursor for use in pagination. `after` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include after=obj_foo in order to fetch the next page of the list.
+            </param>
+        <param name="before">
+            A cursor for use in pagination. `before` is an object ID that defines your place in the list.
+            For instance, if you make a list request and receive 100 objects, ending with obj_foo, your
+            subsequent call can include before=obj_foo in order to fetch the previous page of the list.
+            </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Returns the list of versions of an agent. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="agentName" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="agentName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
     <Member MemberName="GetSession">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSession (string agentName, string sessionId, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSession(string agentName, string sessionId, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetSession(System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSession (agentName As String, sessionId As String, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectAgentSession)" />
-      <MemberSignature Language="F#" Value="abstract member GetSession : string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&#xA;override this.GetSession : string * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;" Usage="agentAdministrationClient.GetSession (agentName, sessionId, userIsolationKey, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSession (string agentName, string sessionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSession(string agentName, string sessionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetSession(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSession (agentName As String, sessionId As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectAgentSession)" />
+      <MemberSignature Language="F#" Value="abstract member GetSession : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&#xA;override this.GetSession : string * string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;" Usage="agentAdministrationClient.GetSession (agentName, sessionId, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -2108,13 +2503,11 @@
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="sessionId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="userIsolationKey" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent. </param>
         <param name="sessionId"> The session identifier. </param>
-        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Retrieves a session by ID. </summary>
         <returns>To be added.</returns>
@@ -2127,11 +2520,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetSessionAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt; GetSessionAsync (string agentName, string sessionId, string userIsolationKey = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt; GetSessionAsync(string agentName, string sessionId, string userIsolationKey, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetSessionAsync(System.String,System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessionAsync (agentName As String, sessionId As String, Optional userIsolationKey As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectAgentSession))" />
-      <MemberSignature Language="F#" Value="abstract member GetSessionAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt;&#xA;override this.GetSessionAsync : string * string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt;" Usage="agentAdministrationClient.GetSessionAsync (agentName, sessionId, userIsolationKey, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt; GetSessionAsync (string agentName, string sessionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt; GetSessionAsync(string agentName, string sessionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetSessionAsync(System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessionAsync (agentName As String, sessionId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectAgentSession))" />
+      <MemberSignature Language="F#" Value="abstract member GetSessionAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt;&#xA;override this.GetSessionAsync : string * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&gt;" Usage="agentAdministrationClient.GetSessionAsync (agentName, sessionId, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -2143,13 +2536,11 @@
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="sessionId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="userIsolationKey" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent. </param>
         <param name="sessionId"> The session identifier. </param>
-        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Retrieves a session by ID. </summary>
         <returns>To be added.</returns>
@@ -2272,11 +2663,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetSessions">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSessions (string agentName, string userIsolationKey = default, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSessions(string agentName, string userIsolationKey, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetSessions(System.String,System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessions (agentName As String, Optional userIsolationKey As String = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As CollectionResult(Of ProjectAgentSession)" />
-      <MemberSignature Language="F#" Value="abstract member GetSessions : string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&#xA;override this.GetSessions : string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;" Usage="agentAdministrationClient.GetSessions (agentName, userIsolationKey, limit, order, after, before, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSessions (string agentName, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.CollectionResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSessions(string agentName, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetSessions(System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessions (agentName As String, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As CollectionResult(Of ProjectAgentSession)" />
+      <MemberSignature Language="F#" Value="abstract member GetSessions : string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&#xA;override this.GetSessions : string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.CollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;" Usage="agentAdministrationClient.GetSessions (agentName, limit, order, after, before, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -2287,16 +2678,14 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="userIsolationKey" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="after" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="before" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="after" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="before" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="5" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent. </param>
-        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="limit">
             A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
             default is 20.
@@ -2327,11 +2716,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetSessionsAsync">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSessionsAsync (string agentName, string userIsolationKey = default, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSessionsAsync(string agentName, string userIsolationKey, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetSessionsAsync(System.String,System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessionsAsync (agentName As String, Optional userIsolationKey As String = Nothing, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of ProjectAgentSession)" />
-      <MemberSignature Language="F#" Value="abstract member GetSessionsAsync : string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&#xA;override this.GetSessionsAsync : string * string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;" Usage="agentAdministrationClient.GetSessionsAsync (agentName, userIsolationKey, limit, order, after, before, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSessionsAsync (string agentName, int? limit = default, Azure.AI.Projects.Agents.AgentListOrder? order = default, string after = default, string before = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.AsyncCollectionResult`1&lt;class Azure.AI.Projects.Agents.ProjectAgentSession&gt; GetSessionsAsync(string agentName, valuetype System.Nullable`1&lt;int32&gt; limit, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentListOrder&gt; order, string after, string before, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.GetSessionsAsync(System.String,System.Nullable{System.Int32},System.Nullable{Azure.AI.Projects.Agents.AgentListOrder},System.String,System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSessionsAsync (agentName As String, Optional limit As Nullable(Of Integer) = Nothing, Optional order As Nullable(Of AgentListOrder) = Nothing, Optional after As String = Nothing, Optional before As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As AsyncCollectionResult(Of ProjectAgentSession)" />
+      <MemberSignature Language="F#" Value="abstract member GetSessionsAsync : string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;&#xA;override this.GetSessionsAsync : string * Nullable&lt;int&gt; * Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt; * string * string * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncCollectionResult&lt;Azure.AI.Projects.Agents.ProjectAgentSession&gt;" Usage="agentAdministrationClient.GetSessionsAsync (agentName, limit, order, after, before, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -2342,16 +2731,14 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="userIsolationKey" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="after" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="before" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="limit" Type="System.Nullable&lt;System.Int32&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="order" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentListOrder&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="after" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="before" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="5" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentName"> The name of the agent. </param>
-        <param name="userIsolationKey"> Opaque per-user isolation key used to scope endpoint-scoped data (responses, conversations, sessions) to a specific end user. </param>
         <param name="limit">
             A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
             default is 20.
@@ -2381,12 +2768,12 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="PatchAgentObject">
-      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt; PatchAgentObject (string agentName, Azure.AI.Projects.Agents.PatchAgentOptions patchAgentOptions, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentRecord&gt; PatchAgentObject(string agentName, class Azure.AI.Projects.Agents.PatchAgentOptions patchAgentOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.PatchAgentObject(System.String,Azure.AI.Projects.Agents.PatchAgentOptions,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function PatchAgentObject (agentName As String, patchAgentOptions As PatchAgentOptions, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectsAgentRecord)" />
-      <MemberSignature Language="F#" Value="abstract member PatchAgentObject : string * Azure.AI.Projects.Agents.PatchAgentOptions * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&#xA;override this.PatchAgentObject : string * Azure.AI.Projects.Agents.PatchAgentOptions * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;" Usage="agentAdministrationClient.PatchAgentObject (agentName, patchAgentOptions, cancellationToken)" />
+    <Member MemberName="PatchAgent">
+      <MemberSignature Language="C#" Value="public virtual System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt; PatchAgent (string agentName, Azure.AI.Projects.Agents.PatchAgentOptions patchAgentOptions, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentRecord&gt; PatchAgent(string agentName, class Azure.AI.Projects.Agents.PatchAgentOptions patchAgentOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.PatchAgent(System.String,Azure.AI.Projects.Agents.PatchAgentOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function PatchAgent (agentName As String, patchAgentOptions As PatchAgentOptions, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ProjectsAgentRecord)" />
+      <MemberSignature Language="F#" Value="abstract member PatchAgent : string * Azure.AI.Projects.Agents.PatchAgentOptions * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&#xA;override this.PatchAgent : string * Azure.AI.Projects.Agents.PatchAgentOptions * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;" Usage="agentAdministrationClient.PatchAgent (agentName, patchAgentOptions, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -2416,12 +2803,12 @@
         <exception cref="T:System.ClientModel.ClientResultException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
-    <Member MemberName="PatchAgentObjectAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&gt; PatchAgentObjectAsync (string agentName, Azure.AI.Projects.Agents.PatchAgentOptions patchAgentOptions, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&gt; PatchAgentObjectAsync(string agentName, class Azure.AI.Projects.Agents.PatchAgentOptions patchAgentOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.PatchAgentObjectAsync(System.String,Azure.AI.Projects.Agents.PatchAgentOptions,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function PatchAgentObjectAsync (agentName As String, patchAgentOptions As PatchAgentOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectsAgentRecord))" />
-      <MemberSignature Language="F#" Value="abstract member PatchAgentObjectAsync : string * Azure.AI.Projects.Agents.PatchAgentOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&gt;&#xA;override this.PatchAgentObjectAsync : string * Azure.AI.Projects.Agents.PatchAgentOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&gt;" Usage="agentAdministrationClient.PatchAgentObjectAsync (agentName, patchAgentOptions, cancellationToken)" />
+    <Member MemberName="PatchAgentAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&gt; PatchAgentAsync (string agentName, Azure.AI.Projects.Agents.PatchAgentOptions patchAgentOptions, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&gt; PatchAgentAsync(string agentName, class Azure.AI.Projects.Agents.PatchAgentOptions patchAgentOptions, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.AgentAdministrationClient.PatchAgentAsync(System.String,Azure.AI.Projects.Agents.PatchAgentOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function PatchAgentAsync (agentName As String, patchAgentOptions As PatchAgentOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ProjectsAgentRecord))" />
+      <MemberSignature Language="F#" Value="abstract member PatchAgentAsync : string * Azure.AI.Projects.Agents.PatchAgentOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&gt;&#xA;override this.PatchAgentAsync : string * Azure.AI.Projects.Agents.PatchAgentOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;Azure.AI.Projects.Agents.ProjectsAgentRecord&gt;&gt;" Usage="agentAdministrationClient.PatchAgentAsync (agentName, patchAgentOptions, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>

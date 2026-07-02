@@ -3,7 +3,8 @@
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoftwareInventoryCollection extends Azure.ResourceManager.ArmCollection implements class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource&gt;, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class SoftwareInventoryCollection&#xA;Inherits ArmCollection&#xA;Implements IAsyncEnumerable(Of SoftwareInventoryResource), IEnumerable(Of SoftwareInventoryResource)" />
-  <TypeSignature Language="F#" Value="type SoftwareInventoryCollection = class&#xA;    inherit ArmCollection&#xA;    interface seq&lt;SoftwareInventoryResource&gt;&#xA;    interface IEnumerable&#xA;    interface IAsyncEnumerable&lt;SoftwareInventoryResource&gt;" />
+  <TypeSignature Language="F#" Value="type SoftwareInventoryCollection = class&#xA;    inherit ArmCollection&#xA;    interface seq&lt;SoftwareInventoryResource&gt;&#xA;    interface IEnumerable&#xA;    interface IAsyncEnumerable&lt;SoftwareInventoryResource&gt;" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="F#" Value="type SoftwareInventoryCollection = class&#xA;    inherit ArmCollection&#xA;    interface IAsyncEnumerable&lt;SoftwareInventoryResource&gt;&#xA;    interface seq&lt;SoftwareInventoryResource&gt;&#xA;    interface IEnumerable" FrameworkAlternate="azure-dotnet-preview" />
   <AssemblyInfo>
     <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -24,11 +25,15 @@
       <InterfaceName>System.Collections.IEnumerable</InterfaceName>
     </Interface>
   </Interfaces>
+  <Attributes>
+    <Attribute FrameworkAlternate="azure-dotnet-preview">
+      <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
   <Docs>
     <summary>
-            A class representing a collection of <see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /> and their operations.
-            Each <see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />.
-            To get a <see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryCollection" /> instance call the GetSoftwareInventories method from an instance of <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />.
+            Provides a compatibility shim for the SoftwareInventoryCollection class.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -46,7 +51,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryCollection" /> class for mocking. </summary>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryCollection" /> type for compatibility with the previous public API surface.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,12 +77,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="softwareName"> Name of the installed software. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="softwareName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/softwareInventories/{softwareName}</description></item><item><term>Operation Id</term><description>SoftwareInventories_Get</description></item><item><term>Default Api Version</term><description>2021-05-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Exists operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="softwareName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -103,12 +110,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="softwareName"> Name of the installed software. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="softwareName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/softwareInventories/{softwareName}</description></item><item><term>Operation Id</term><description>SoftwareInventories_Get</description></item><item><term>Default Api Version</term><description>2021-05-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the ExistsAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="softwareName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -136,12 +143,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="softwareName"> Name of the installed software. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="softwareName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets a single software data of the virtual machine.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/softwareInventories/{softwareName}</description></item><item><term>Operation Id</term><description>SoftwareInventories_Get</description></item><item><term>Default Api Version</term><description>2021-05-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Get operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="softwareName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -168,11 +175,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets the software inventory of the virtual machine.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/softwareInventories</description></item><item><term>Operation Id</term><description>SoftwareInventories_ListByExtendedResource</description></item><item><term>Default Api Version</term><description>2021-05-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /></description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetAll operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,11 +202,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets the software inventory of the virtual machine.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/softwareInventories</description></item><item><term>Operation Id</term><description>SoftwareInventories_ListByExtendedResource</description></item><item><term>Default Api Version</term><description>2021-05-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetAllAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -223,12 +230,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="softwareName"> Name of the installed software. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="softwareName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets a single software data of the virtual machine.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/softwareInventories/{softwareName}</description></item><item><term>Operation Id</term><description>SoftwareInventories_Get</description></item><item><term>Default Api Version</term><description>2021-05-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="softwareName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -255,12 +262,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="softwareName"> Name of the installed software. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="softwareName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/softwareInventories/{softwareName}</description></item><item><term>Operation Id</term><description>SoftwareInventories_Get</description></item><item><term>Default Api Version</term><description>2021-05-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetIfExists operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="softwareName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -287,12 +294,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="softwareName"> Name of the installed software. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="softwareName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/softwareInventories/{softwareName}</description></item><item><term>Operation Id</term><description>SoftwareInventories_Get</description></item><item><term>Default Api Version</term><description>2021-05-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SoftwareInventoryResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetIfExistsAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="softwareName" /> is an empty string, and was expected to be non-empty. </exception>

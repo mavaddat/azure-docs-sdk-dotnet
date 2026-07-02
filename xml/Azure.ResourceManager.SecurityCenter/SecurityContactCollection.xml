@@ -26,9 +26,7 @@
   </Interfaces>
   <Docs>
     <summary>
-            A class representing a collection of <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /> and their operations.
-            Each <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />.
-            To get a <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactCollection" /> instance call the GetSecurityContacts method from an instance of <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />.
+            Provides a compatibility shim for the SecurityContactCollection class.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -46,8 +44,43 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactCollection" /> class for mocking. </summary>
+        <summary> Initializes a new instance of SecurityContactCollection for mocking. </summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdate">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt; CreateOrUpdate (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, Azure.ResourceManager.SecurityCenter.SecurityContactData data, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt; CreateOrUpdate(valuetype Azure.WaitUntil waitUntil, valuetype Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, class Azure.ResourceManager.SecurityCenter.SecurityContactData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.CreateOrUpdate(Azure.WaitUntil,Azure.ResourceManager.SecurityCenter.Models.SecurityContactName,Azure.ResourceManager.SecurityCenter.SecurityContactData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdate (waitUntil As WaitUntil, securityContactName As SecurityContactName, data As SecurityContactData, Optional cancellationToken As CancellationToken = Nothing) As ArmOperation(Of SecurityContactResource)" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdate : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * Azure.ResourceManager.SecurityCenter.SecurityContactData * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&#xA;override this.CreateOrUpdate : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * Azure.ResourceManager.SecurityCenter.SecurityContactData * System.Threading.CancellationToken -&gt; Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;" Usage="securityContactCollection.CreateOrUpdate (waitUntil, securityContactName, data, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="securityContactName" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityContactName" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="data" Type="Azure.ResourceManager.SecurityCenter.SecurityContactData" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="securityContactName"> Name of the security contact object. </param>
+        <param name="data"> Security contact object. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Create security contact configurations for the subscription
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}. </description></item><item><term> Operation Id. </term><description> SecurityContacts_Create. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateOrUpdate">
@@ -72,6 +105,42 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
+        <param name="waitUntil">The value preserved for API compatibility.</param>
+        <param name="securityContactName">The value preserved for API compatibility.</param>
+        <param name="data">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
+        <summary>
+            Provides a compatibility shim for the CreateOrUpdate operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityContactName" /> or <paramref name="data" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt; CreateOrUpdateAsync (Azure.WaitUntil waitUntil, Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, Azure.ResourceManager.SecurityCenter.SecurityContactData data, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.ResourceManager.ArmOperation`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt; CreateOrUpdateAsync(valuetype Azure.WaitUntil waitUntil, valuetype Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, class Azure.ResourceManager.SecurityCenter.SecurityContactData data, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.CreateOrUpdateAsync(Azure.WaitUntil,Azure.ResourceManager.SecurityCenter.Models.SecurityContactName,Azure.ResourceManager.SecurityCenter.SecurityContactData,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateOrUpdateAsync (waitUntil As WaitUntil, securityContactName As SecurityContactName, data As SecurityContactData, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ArmOperation(Of SecurityContactResource))" />
+      <MemberSignature Language="F#" Value="abstract member CreateOrUpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * Azure.ResourceManager.SecurityCenter.SecurityContactData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;&#xA;override this.CreateOrUpdateAsync : Azure.WaitUntil * Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * Azure.ResourceManager.SecurityCenter.SecurityContactData * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;" Usage="securityContactCollection.CreateOrUpdateAsync (waitUntil, securityContactName, data, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.ResourceManager.ArmOperation&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="securityContactName" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityContactName" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="data" Type="Azure.ResourceManager.SecurityCenter.SecurityContactData" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="securityContactName"> Name of the security contact object. </param>
@@ -79,13 +148,11 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Create security contact configurations for the subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}</description></item><item><term>Operation Id</term><description>SecurityContacts_Create</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}. </description></item><item><term> Operation Id. </term><description> SecurityContacts_Create. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="securityContactName" /> or <paramref name="data" /> is null. </exception>
+          <paramref name="data" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateOrUpdateAsync">
@@ -110,20 +177,47 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="waitUntil">
-          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="securityContactName"> Name of the security contact object. </param>
-        <param name="data"> Security contact object. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="waitUntil">The value preserved for API compatibility.</param>
+        <param name="securityContactName">The value preserved for API compatibility.</param>
+        <param name="data">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Create security contact configurations for the subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}</description></item><item><term>Operation Id</term><description>SecurityContacts_Create</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the CreateOrUpdateAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="securityContactName" /> or <paramref name="data" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;bool&gt; Exists (Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;bool&gt; Exists(valuetype Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.Exists(Azure.ResourceManager.SecurityCenter.Models.SecurityContactName,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Exists (securityContactName As SecurityContactName, Optional cancellationToken As CancellationToken = Nothing) As Response(Of Boolean)" />
+      <MemberSignature Language="F#" Value="abstract member Exists : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; Azure.Response&lt;bool&gt;&#xA;override this.Exists : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; Azure.Response&lt;bool&gt;" Usage="securityContactCollection.Exists (securityContactName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityContactName" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityContactName" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="securityContactName"> Name of the security contact object. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Checks to see if the resource exists in azure.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}. </description></item><item><term> Operation Id. </term><description> SecurityContacts_Get. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Exists">
@@ -146,17 +240,45 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="securityContactName"> Name of the security contact object. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="securityContactName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}</description></item><item><term>Operation Id</term><description>SecurityContacts_Get</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Exists operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="securityContactName" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExistsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;bool&gt;&gt; ExistsAsync (Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;bool&gt;&gt; ExistsAsync(valuetype Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.ExistsAsync(Azure.ResourceManager.SecurityCenter.Models.SecurityContactName,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExistsAsync (securityContactName As SecurityContactName, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of Boolean))" />
+      <MemberSignature Language="F#" Value="abstract member ExistsAsync : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;bool&gt;&gt;&#xA;override this.ExistsAsync : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;bool&gt;&gt;" Usage="securityContactCollection.ExistsAsync (securityContactName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.Boolean&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityContactName" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityContactName" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="securityContactName"> Name of the security contact object. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Checks to see if the resource exists in azure.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}. </description></item><item><term> Operation Id. </term><description> SecurityContacts_Get. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ExistsAsync">
@@ -179,17 +301,45 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="securityContactName"> Name of the security contact object. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="securityContactName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}</description></item><item><term>Operation Id</term><description>SecurityContacts_Get</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the ExistsAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="securityContactName" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt; Get (Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt; Get(valuetype Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.Get(Azure.ResourceManager.SecurityCenter.Models.SecurityContactName,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Get (securityContactName As SecurityContactName, Optional cancellationToken As CancellationToken = Nothing) As Response(Of SecurityContactResource)" />
+      <MemberSignature Language="F#" Value="abstract member Get : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&#xA;override this.Get : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;" Usage="securityContactCollection.Get (securityContactName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityContactName" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityContactName" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="securityContactName"> Name of the security contact object. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get Default Security contact configurations for the subscription
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}. </description></item><item><term> Operation Id. </term><description> SecurityContacts_Get. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Get">
@@ -212,12 +362,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="securityContactName"> Name of the security contact object. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="securityContactName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Get Default Security contact configurations for the subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}</description></item><item><term>Operation Id</term><description>SecurityContacts_Get</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Get operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -247,7 +397,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             List all security contact configurations for the subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts</description></item><item><term>Operation Id</term><description>SecurityContacts_List</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts. </description></item><item><term> Operation Id. </term><description> SecurityContacts_List. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -274,8 +424,36 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             List all security contact configurations for the subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts</description></item><item><term>Operation Id</term><description>SecurityContacts_List</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts. </description></item><item><term> Operation Id. </term><description> SecurityContacts_List. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /> that may take multiple service requests to iterate over. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt; GetAsync (Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt; GetAsync(valuetype Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.GetAsync(Azure.ResourceManager.SecurityCenter.Models.SecurityContactName,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAsync (securityContactName As SecurityContactName, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of SecurityContactResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetAsync : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;&#xA;override this.GetAsync : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;" Usage="securityContactCollection.GetAsync (securityContactName, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityContactName" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityContactName" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="securityContactName"> Name of the security contact object. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get Default Security contact configurations for the subscription
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}. </description></item><item><term> Operation Id. </term><description> SecurityContacts_Get. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -299,12 +477,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="securityContactName"> Name of the security contact object. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="securityContactName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Get Default Security contact configurations for the subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}</description></item><item><term>Operation Id</term><description>SecurityContacts_Get</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -313,11 +491,11 @@
       </Docs>
     </Member>
     <Member MemberName="GetIfExists">
-      <MemberSignature Language="C#" Value="public virtual Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt; GetIfExists (string securityContactName, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.NullableResponse`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt; GetIfExists(string securityContactName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.GetIfExists(System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetIfExists (securityContactName As String, Optional cancellationToken As CancellationToken = Nothing) As NullableResponse(Of SecurityContactResource)" />
-      <MemberSignature Language="F#" Value="abstract member GetIfExists : string * System.Threading.CancellationToken -&gt; Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&#xA;override this.GetIfExists : string * System.Threading.CancellationToken -&gt; Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;" Usage="securityContactCollection.GetIfExists (securityContactName, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt; GetIfExists (Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.NullableResponse`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt; GetIfExists(valuetype Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.GetIfExists(Azure.ResourceManager.SecurityCenter.Models.SecurityContactName,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetIfExists (securityContactName As SecurityContactName, Optional cancellationToken As CancellationToken = Nothing) As NullableResponse(Of SecurityContactResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetIfExists : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&#xA;override this.GetIfExists : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;" Usage="securityContactCollection.GetIfExists (securityContactName, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
@@ -327,7 +505,7 @@
         <ReturnType>Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="securityContactName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="securityContactName" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityContactName" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
@@ -335,21 +513,17 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}</description></item><item><term>Operation Id</term><description>SecurityContacts_Get</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}. </description></item><item><term> Operation Id. </term><description> SecurityContacts_Get. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="securityContactName" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetIfExistsAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt; GetIfExistsAsync (string securityContactName, System.Threading.CancellationToken cancellationToken = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.NullableResponse`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt; GetIfExistsAsync(string securityContactName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.GetIfExistsAsync(System.String,System.Threading.CancellationToken)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetIfExistsAsync (securityContactName As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of NullableResponse(Of SecurityContactResource))" />
-      <MemberSignature Language="F#" Value="abstract member GetIfExistsAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;&#xA;override this.GetIfExistsAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;" Usage="securityContactCollection.GetIfExistsAsync (securityContactName, cancellationToken)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt; GetIfExistsAsync (Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.NullableResponse`1&lt;class Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt; GetIfExistsAsync(valuetype Azure.ResourceManager.SecurityCenter.Models.SecurityContactName securityContactName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityContactCollection.GetIfExistsAsync(Azure.ResourceManager.SecurityCenter.Models.SecurityContactName,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetIfExistsAsync (securityContactName As SecurityContactName, Optional cancellationToken As CancellationToken = Nothing) As Task(Of NullableResponse(Of SecurityContactResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetIfExistsAsync : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;&#xA;override this.GetIfExistsAsync : Azure.ResourceManager.SecurityCenter.Models.SecurityContactName * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;" Usage="securityContactCollection.GetIfExistsAsync (securityContactName, cancellationToken)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
@@ -359,7 +533,7 @@
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.NullableResponse&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="securityContactName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="securityContactName" Type="Azure.ResourceManager.SecurityCenter.Models.SecurityContactName" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
@@ -367,13 +541,9 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}</description></item><item><term>Operation Id</term><description>SecurityContacts_Get</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityContactResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/securityContacts/{securityContactName}. </description></item><item><term> Operation Id. </term><description> SecurityContacts_Get. </description></item><item><term> Default Api Version. </term><description> 2023-12-01-preview. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="securityContactName" /> is an empty string, and was expected to be non-empty. </exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="securityContactName" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.Generic.IAsyncEnumerable&lt;Azure.ResourceManager.SecurityCenter.SecurityContactResource&gt;.GetAsyncEnumerator">
@@ -398,7 +568,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> that may be used to cancel the asynchronous iteration.</param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>Returns an enumerator that iterates asynchronously through the collection.</summary>
         <returns>An enumerator that can be used to iterate asynchronously through the collection.</returns>
         <remarks>To be added.</remarks>

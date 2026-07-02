@@ -27,6 +27,22 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OptimizationJob ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.OptimizationJob.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary> Initializes a new instance of <see cref="T:Azure.AI.Projects.Agents.OptimizationJob" />. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="CreatedAt">
       <MemberSignature Language="C#" Value="public DateTimeOffset CreatedAt { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset CreatedAt" />
@@ -43,26 +59,6 @@
       </ReturnValue>
       <Docs>
         <summary> The timestamp when the job was created, represented in Unix time. </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="Dataset">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.DatasetInfo Dataset { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Agents.DatasetInfo Dataset" />
-      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJob.Dataset" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Dataset As DatasetInfo" />
-      <MemberSignature Language="F#" Value="member this.Dataset : Azure.AI.Projects.Agents.DatasetInfo" Usage="Azure.AI.Projects.Agents.OptimizationJob.Dataset" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.DatasetInfo</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary> Metadata about the dataset used for this optimization job. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -88,11 +84,11 @@
       </Docs>
     </Member>
     <Member MemberName="Inputs">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.OptimizationJobInputs Inputs { get; }" />
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.OptimizationJobInputs Inputs { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.Projects.Agents.OptimizationJobInputs Inputs" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJob.Inputs" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Inputs As OptimizationJobInputs" />
-      <MemberSignature Language="F#" Value="member this.Inputs : Azure.AI.Projects.Agents.OptimizationJobInputs" Usage="Azure.AI.Projects.Agents.OptimizationJob.Inputs" />
+      <MemberSignature Language="VB.NET" Value="Public Property Inputs As OptimizationJobInputs" />
+      <MemberSignature Language="F#" Value="member this.Inputs : Azure.AI.Projects.Agents.OptimizationJobInputs with get, set" Usage="Azure.AI.Projects.Agents.OptimizationJob.Inputs" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
@@ -182,6 +178,30 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.ClientModel.BinaryContent (Azure.AI.Projects.Agents.OptimizationJob optimizationJob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.ClientModel.BinaryContent op_Implicit(class Azure.AI.Projects.Agents.OptimizationJob optimizationJob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.OptimizationJob.op_Implicit(Azure.AI.Projects.Agents.OptimizationJob)~System.ClientModel.BinaryContent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Widening Operator CType (optimizationJob As OptimizationJob) As BinaryContent" />
+      <MemberSignature Language="F#" Value="static member op_Implicit : Azure.AI.Projects.Agents.OptimizationJob -&gt; System.ClientModel.BinaryContent" Usage="Azure.AI.Projects.Agents.OptimizationJob.op_Implicit optimizationJob" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.BinaryContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="optimizationJob" Type="Azure.AI.Projects.Agents.OptimizationJob" />
+      </Parameters>
+      <Docs>
+        <param name="optimizationJob"> The <see cref="T:Azure.AI.Projects.Agents.OptimizationJob" /> to serialize into <see cref="T:System.ClientModel.BinaryContent" />. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="PersistableModelCreateCore">
       <MemberSignature Language="C#" Value="protected virtual Azure.AI.Projects.Agents.OptimizationJob PersistableModelCreateCore (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.AI.Projects.Agents.OptimizationJob PersistableModelCreateCore(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
@@ -247,7 +267,7 @@
         <ReturnType>Azure.AI.Projects.Agents.OptimizationJobProgress</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Progress while in flight. Absent in terminal states. </summary>
+        <summary> Progress snapshot. May be present in terminal states reflecting last-known progress. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -273,18 +293,18 @@
       </Docs>
     </Member>
     <Member MemberName="Status">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.JobStatus Status { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.AI.Projects.Agents.JobStatus Status" />
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.Agents.AgentsJobStatus Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.AI.Projects.Agents.AgentsJobStatus Status" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJob.Status" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Status As JobStatus" />
-      <MemberSignature Language="F#" Value="member this.Status : Azure.AI.Projects.Agents.JobStatus" Usage="Azure.AI.Projects.Agents.OptimizationJob.Status" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Status As AgentsJobStatus" />
+      <MemberSignature Language="F#" Value="member this.Status : Azure.AI.Projects.Agents.AgentsJobStatus" Usage="Azure.AI.Projects.Agents.OptimizationJob.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.JobStatus</ReturnType>
+        <ReturnType>Azure.AI.Projects.Agents.AgentsJobStatus</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> Current lifecycle status. </summary>
@@ -433,21 +453,41 @@
       </Docs>
     </Member>
     <Member MemberName="UpdatedAt">
-      <MemberSignature Language="C#" Value="public DateTimeOffset? UpdatedAt { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; UpdatedAt" />
+      <MemberSignature Language="C#" Value="public DateTimeOffset UpdatedAt { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset UpdatedAt" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJob.UpdatedAt" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UpdatedAt As Nullable(Of DateTimeOffset)" />
-      <MemberSignature Language="F#" Value="member this.UpdatedAt : Nullable&lt;DateTimeOffset&gt;" Usage="Azure.AI.Projects.Agents.OptimizationJob.UpdatedAt" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UpdatedAt As DateTimeOffset" />
+      <MemberSignature Language="F#" Value="member this.UpdatedAt : DateTimeOffset" Usage="Azure.AI.Projects.Agents.OptimizationJob.UpdatedAt" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+        <ReturnType>System.DateTimeOffset</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The timestamp when the job was last updated (status, progress, or result change), represented in Unix time. </summary>
+        <summary> The timestamp when the job was last updated, represented in Unix time. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Warnings">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IReadOnlyList&lt;string&gt; Warnings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IReadOnlyList`1&lt;string&gt; Warnings" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.Agents.OptimizationJob.Warnings" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Warnings As IReadOnlyList(Of String)" />
+      <MemberSignature Language="F#" Value="member this.Warnings : System.Collections.Generic.IReadOnlyList&lt;string&gt;" Usage="Azure.AI.Projects.Agents.OptimizationJob.Warnings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IReadOnlyList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Non-fatal warnings emitted at any point during optimization. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

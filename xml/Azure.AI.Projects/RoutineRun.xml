@@ -48,18 +48,18 @@
       </Docs>
     </Member>
     <Member MemberName="ActionType">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.RoutineActionType? ActionType { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.RoutineActionType&gt; ActionType" />
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.RoutineActionKind? ActionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.RoutineActionKind&gt; ActionType" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.RoutineRun.ActionType" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ActionType As Nullable(Of RoutineActionType)" />
-      <MemberSignature Language="F#" Value="member this.ActionType : Nullable&lt;Azure.AI.Projects.RoutineActionType&gt;" Usage="Azure.AI.Projects.RoutineRun.ActionType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ActionType As Nullable(Of RoutineActionKind)" />
+      <MemberSignature Language="F#" Value="member this.ActionType : Nullable&lt;Azure.AI.Projects.RoutineActionKind&gt;" Usage="Azure.AI.Projects.RoutineRun.ActionType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Nullable&lt;Azure.AI.Projects.RoutineActionType&gt;</ReturnType>
+        <ReturnType>System.Nullable&lt;Azure.AI.Projects.RoutineActionKind&gt;</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> The action type dispatched for the routine attempt. </summary>
@@ -483,7 +483,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The run status. </summary>
+        <summary>
+            The run status.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -668,6 +670,30 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="TriggerEventPayload">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,BinaryData&gt; TriggerEventPayload { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.BinaryData&gt; TriggerEventPayload" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.RoutineRun.TriggerEventPayload" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TriggerEventPayload As IDictionary(Of String, BinaryData)" />
+      <MemberSignature Language="F#" Value="member this.TriggerEventPayload : System.Collections.Generic.IDictionary&lt;string, BinaryData&gt;" Usage="Azure.AI.Projects.RoutineRun.TriggerEventPayload" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The event payload captured from the event that triggered the routine attempt, when available.
+            <para> To assign an object to the value of this property use <see cref="M:System.BinaryData.FromObjectAsJson``1(``0,System.Text.Json.JsonSerializerOptions)" />. </para><para> To assign an already formatted json string to this property use <see cref="M:System.BinaryData.FromString(System.String)" />. </para><para>
+            Examples:
+            <list type="bullet"><item><term> BinaryData.FromObjectAsJson("foo"). </term><description> Creates a payload of "foo". </description></item><item><term> BinaryData.FromString("\"foo\""). </term><description> Creates a payload of "foo". </description></item><item><term> BinaryData.FromObjectAsJson(new { key = "value" }). </term><description> Creates a payload of { "key": "value" }. </description></item><item><term> BinaryData.FromString("{\"key\": \"value\"}"). </term><description> Creates a payload of { "key": "value" }. </description></item></list></para></summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="TriggerName">
       <MemberSignature Language="C#" Value="public string TriggerName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TriggerName" />
@@ -689,18 +715,18 @@
       </Docs>
     </Member>
     <Member MemberName="TriggerType">
-      <MemberSignature Language="C#" Value="public Azure.AI.Projects.RoutineTriggerType? TriggerType { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.RoutineTriggerType&gt; TriggerType" />
+      <MemberSignature Language="C#" Value="public Azure.AI.Projects.RoutineTriggerKind? TriggerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.RoutineTriggerKind&gt; TriggerType" />
       <MemberSignature Language="DocId" Value="P:Azure.AI.Projects.RoutineRun.TriggerType" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TriggerType As Nullable(Of RoutineTriggerType)" />
-      <MemberSignature Language="F#" Value="member this.TriggerType : Nullable&lt;Azure.AI.Projects.RoutineTriggerType&gt;" Usage="Azure.AI.Projects.RoutineRun.TriggerType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TriggerType As Nullable(Of RoutineTriggerKind)" />
+      <MemberSignature Language="F#" Value="member this.TriggerType : Nullable&lt;Azure.AI.Projects.RoutineTriggerKind&gt;" Usage="Azure.AI.Projects.RoutineRun.TriggerType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects</AssemblyName>
         <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.Nullable&lt;Azure.AI.Projects.RoutineTriggerType&gt;</ReturnType>
+        <ReturnType>System.Nullable&lt;Azure.AI.Projects.RoutineTriggerKind&gt;</ReturnType>
       </ReturnValue>
       <Docs>
         <summary> The trigger type that produced the routine attempt. </summary>

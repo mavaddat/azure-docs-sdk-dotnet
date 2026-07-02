@@ -32,7 +32,7 @@
   <Docs>
     <summary>
             A tool that can be used to generate a response.
-            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.BingGroundingTool" />, <see cref="T:Azure.AI.Projects.Agents.MicrosoftFabricPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.SharepointPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureAISearchTool" />, <see cref="T:Azure.AI.Projects.Agents.OpenAPITool" />, <see cref="T:Azure.AI.Projects.Agents.BingCustomSearchPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.BrowserAutomationPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureFunctionTool" />, <see cref="T:Azure.AI.Projects.Agents.CaptureStructuredOutputsTool" />, <see cref="T:Azure.AI.Projects.Agents.A2APreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.WorkIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.FabricIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.MemorySearchPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.ToolboxSearchPreviewTool" />, and <see cref="T:Azure.AI.Projects.Agents.ToolSearchTool" />.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.FabricIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.BingGroundingTool" />, <see cref="T:Azure.AI.Projects.Agents.MicrosoftFabricPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.SharepointPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureAISearchTool" />, <see cref="T:Azure.AI.Projects.Agents.OpenAPITool" />, <see cref="T:Azure.AI.Projects.Agents.BingCustomSearchPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.BrowserAutomationPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureFunctionTool" />, <see cref="T:Azure.AI.Projects.Agents.CaptureStructuredOutputsTool" />, <see cref="T:Azure.AI.Projects.Agents.A2APreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.WorkIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.MemorySearchPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.ReminderPreviewTool" />, and <see cref="T:Azure.AI.Projects.Agents.ToolSearchTool" />.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -58,9 +58,12 @@
         <Parameter Name="tool" Type="T" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <typeparam name="T">To be added.</typeparam>
-        <param name="tool">To be added.</param>
-        <summary>To be added.</summary>
+        <typeparam name="T">The source tool type.</typeparam>
+        <param name="tool">The source tool instance.</param>
+        <summary>
+            Reinterprets a tool from the OpenAI <c>ResponseTool</c> hierarchy as a
+            <see cref="T:Azure.AI.Projects.Agents.ProjectsAgentTool" /> by round-tripping through the wire format.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -85,9 +88,12 @@
         <Parameter Name="agentCardPath" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="baseUri">To be added.</param>
-        <param name="agentCardPath">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="baseUri">The base URI of the remote agent endpoint.</param>
+        <param name="agentCardPath">Optional path to the remote agent's agent card.</param>
+        <summary>
+            Creates a new tool that lets the agent communicate with another agent over the
+            Agent-to-Agent (A2A) protocol.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -111,8 +117,8 @@
         <Parameter Name="options" Type="Azure.AI.Projects.Agents.AzureAISearchToolOptions" />
       </Parameters>
       <Docs>
-        <param name="options">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="options">Optional configuration options for the Azure AI Search tool.</param>
+        <summary> Creates an Azure AI Search tool with the supplied options. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -136,8 +142,8 @@
         <Parameter Name="parameters" Type="Azure.AI.Projects.Agents.BingCustomSearchToolOptions" />
       </Parameters>
       <Docs>
-        <param name="parameters">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="parameters">Configuration options for the Bing custom search tool.</param>
+        <summary> Creates a Bing custom search tool with the supplied options. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -161,8 +167,8 @@
         <Parameter Name="options" Type="Azure.AI.Projects.Agents.BingGroundingSearchToolOptions" />
       </Parameters>
       <Docs>
-        <param name="options">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="options">Configuration options for the Bing grounding tool.</param>
+        <summary> Creates a Bing grounding tool with the supplied options. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -186,8 +192,8 @@
         <Parameter Name="parameters" Type="Azure.AI.Projects.Agents.BrowserAutomationToolOptions" />
       </Parameters>
       <Docs>
-        <param name="parameters">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="parameters">Configuration options for the browser-automation tool.</param>
+        <summary> Creates a browser-automation tool with the supplied options. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -211,8 +217,8 @@
         <Parameter Name="options" Type="Azure.AI.Projects.Agents.FabricDataAgentToolOptions" />
       </Parameters>
       <Docs>
-        <param name="options">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="options">Configuration options for the Fabric data agent tool.</param>
+        <summary> Creates a Microsoft Fabric data agent tool with the supplied options. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -236,8 +242,8 @@
         <Parameter Name="definition" Type="Azure.AI.Projects.Agents.OpenApiFunctionDefinition" />
       </Parameters>
       <Docs>
-        <param name="definition">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="definition">The OpenAPI function definition.</param>
+        <summary> Creates an OpenAPI tool from the supplied function definition. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -261,8 +267,8 @@
         <Parameter Name="options" Type="Azure.AI.Projects.Agents.SharePointGroundingToolOptions" />
       </Parameters>
       <Docs>
-        <param name="options">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="options">Configuration options for the SharePoint grounding tool.</param>
+        <summary> Creates a SharePoint grounding tool with the supplied options. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -286,8 +292,8 @@
         <Parameter Name="outputs" Type="Azure.AI.Projects.Agents.StructuredOutputDefinition" />
       </Parameters>
       <Docs>
-        <param name="outputs">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="outputs">The structured output definition the agent should produce.</param>
+        <summary> Creates a tool that captures structured outputs from the agent. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -364,8 +370,11 @@
         <Parameter Name="agentTool" Type="Azure.AI.Projects.Agents.ProjectsAgentTool" />
       </Parameters>
       <Docs>
-        <param name="agentTool">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="agentTool">The agent tool to convert.</param>
+        <summary>
+            Implicitly converts a <see cref="T:Azure.AI.Projects.Agents.ProjectsAgentTool" /> into the underlying
+            <see cref="T:OpenAI.Responses.ResponseTool" /> representation by round-tripping through the wire format.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>

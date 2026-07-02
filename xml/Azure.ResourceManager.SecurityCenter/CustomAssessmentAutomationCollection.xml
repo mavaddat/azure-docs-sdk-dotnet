@@ -3,7 +3,8 @@
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomAssessmentAutomationCollection extends Azure.ResourceManager.ArmCollection implements class System.Collections.Generic.IAsyncEnumerable`1&lt;class Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource&gt;, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class CustomAssessmentAutomationCollection&#xA;Inherits ArmCollection&#xA;Implements IAsyncEnumerable(Of CustomAssessmentAutomationResource), IEnumerable(Of CustomAssessmentAutomationResource)" />
-  <TypeSignature Language="F#" Value="type CustomAssessmentAutomationCollection = class&#xA;    inherit ArmCollection&#xA;    interface seq&lt;CustomAssessmentAutomationResource&gt;&#xA;    interface IEnumerable&#xA;    interface IAsyncEnumerable&lt;CustomAssessmentAutomationResource&gt;" />
+  <TypeSignature Language="F#" Value="type CustomAssessmentAutomationCollection = class&#xA;    inherit ArmCollection&#xA;    interface seq&lt;CustomAssessmentAutomationResource&gt;&#xA;    interface IEnumerable&#xA;    interface IAsyncEnumerable&lt;CustomAssessmentAutomationResource&gt;" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="F#" Value="type CustomAssessmentAutomationCollection = class&#xA;    inherit ArmCollection&#xA;    interface IAsyncEnumerable&lt;CustomAssessmentAutomationResource&gt;&#xA;    interface seq&lt;CustomAssessmentAutomationResource&gt;&#xA;    interface IEnumerable" FrameworkAlternate="azure-dotnet-preview" />
   <AssemblyInfo>
     <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -24,11 +25,15 @@
       <InterfaceName>System.Collections.IEnumerable</InterfaceName>
     </Interface>
   </Interfaces>
+  <Attributes>
+    <Attribute FrameworkAlternate="azure-dotnet-preview">
+      <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
   <Docs>
     <summary>
-            A class representing a collection of <see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /> and their operations.
-            Each <see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /> in the collection will belong to the same instance of <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />.
-            To get a <see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationCollection" /> instance call the GetCustomAssessmentAutomations method from an instance of <see cref="T:Azure.ResourceManager.Resources.ResourceGroupResource" />.
+            Provides a compatibility shim for the CustomAssessmentAutomationCollection class.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -46,7 +51,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationCollection" /> class for mocking. </summary>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationCollection" /> type for compatibility with the previous public API surface.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -72,15 +79,14 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="waitUntil">
-          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="customAssessmentAutomationName"> Name of the Custom Assessment Automation. </param>
-        <param name="content"> Custom Assessment Automation body. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="waitUntil">The value preserved for API compatibility.</param>
+        <param name="customAssessmentAutomationName">The value preserved for API compatibility.</param>
+        <param name="content">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Creates or updates a custom assessment automation for the provided subscription. Please note that providing an existing custom assessment automation will replace the existing record.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations/{customAssessmentAutomationName}</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_Create</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the CreateOrUpdate operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="customAssessmentAutomationName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -110,15 +116,14 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="waitUntil">
-          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="customAssessmentAutomationName"> Name of the Custom Assessment Automation. </param>
-        <param name="content"> Custom Assessment Automation body. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="waitUntil">The value preserved for API compatibility.</param>
+        <param name="customAssessmentAutomationName">The value preserved for API compatibility.</param>
+        <param name="content">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Creates or updates a custom assessment automation for the provided subscription. Please note that providing an existing custom assessment automation will replace the existing record.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations/{customAssessmentAutomationName}</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_Create</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the CreateOrUpdateAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="customAssessmentAutomationName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -146,12 +151,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="customAssessmentAutomationName"> Name of the Custom Assessment Automation. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="customAssessmentAutomationName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations/{customAssessmentAutomationName}</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_Get</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Exists operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="customAssessmentAutomationName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -179,12 +184,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="customAssessmentAutomationName"> Name of the Custom Assessment Automation. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="customAssessmentAutomationName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Checks to see if the resource exists in azure.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations/{customAssessmentAutomationName}</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_Get</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the ExistsAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="customAssessmentAutomationName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -212,12 +217,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="customAssessmentAutomationName"> Name of the Custom Assessment Automation. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="customAssessmentAutomationName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets a single custom assessment automation by name for the provided subscription and resource group.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations/{customAssessmentAutomationName}</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_Get</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Get operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="customAssessmentAutomationName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -244,11 +249,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            List custom assessment automations by provided subscription and resource group
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_ListByResourceGroup</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetAll operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -271,11 +276,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            List custom assessment automations by provided subscription and resource group
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_ListByResourceGroup</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetAllAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -299,12 +304,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="customAssessmentAutomationName"> Name of the Custom Assessment Automation. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="customAssessmentAutomationName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets a single custom assessment automation by name for the provided subscription and resource group.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations/{customAssessmentAutomationName}</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_Get</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="customAssessmentAutomationName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -331,12 +336,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="customAssessmentAutomationName"> Name of the Custom Assessment Automation. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="customAssessmentAutomationName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations/{customAssessmentAutomationName}</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_Get</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetIfExists operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="customAssessmentAutomationName" /> is an empty string, and was expected to be non-empty. </exception>
@@ -363,12 +368,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="customAssessmentAutomationName"> Name of the Custom Assessment Automation. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="customAssessmentAutomationName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Tries to get details for this resource from the service.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Security/customAssessmentAutomations/{customAssessmentAutomationName}</description></item><item><term>Operation Id</term><description>CustomAssessmentAutomations_Get</description></item><item><term>Default Api Version</term><description>2021-07-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.CustomAssessmentAutomationResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetIfExistsAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="customAssessmentAutomationName" /> is an empty string, and was expected to be non-empty. </exception>

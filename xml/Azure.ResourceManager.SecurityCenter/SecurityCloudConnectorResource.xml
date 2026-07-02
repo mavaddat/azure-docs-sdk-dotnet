@@ -28,12 +28,15 @@
       <InterfaceName>System.ClientModel.Primitives.IPersistableModel&lt;T&gt;</InterfaceName>
     </Interface>
   </Interfaces>
+  <Attributes>
+    <Attribute FrameworkAlternate="azure-dotnet-preview">
+      <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
   <Docs>
     <summary>
-            A Class representing a SecurityCloudConnector along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetSecurityCloudConnectorResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> using the GetSecurityCloudConnector method.
+            Provides a compatibility shim for the SecurityCloudConnectorResource class.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -51,7 +54,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /> class for mocking. </summary>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /> type for compatibility with the previous public API surface.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -75,10 +80,12 @@
         <Parameter Name="connectorName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="subscriptionId"> The subscriptionId. </param>
-        <param name="connectorName"> The connectorName. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /> instance. </summary>
-        <returns>To be added.</returns>
+        <param name="subscriptionId">The value preserved for API compatibility.</param>
+        <param name="connectorName">The value preserved for API compatibility.</param>
+        <summary>
+            Provides a compatibility shim for the CreateResourceIdentifier operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -98,7 +105,9 @@
         <ReturnType>Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Gets the data representing this Feature. </summary>
+        <summary>
+            Gets the Data value preserved from the previous public API surface.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException"> Throws if there is no data loaded in the current instance. </exception>
@@ -124,13 +133,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="waitUntil">
-          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="waitUntil">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Delete a cloud account connector from a subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/connectors/{connectorName}</description></item><item><term>Operation Id</term><description>Connectors_Delete</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Delete operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -154,13 +162,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="waitUntil">
-          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="waitUntil">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Delete a cloud account connector from a subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/connectors/{connectorName}</description></item><item><term>Operation Id</term><description>Connectors_Delete</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the DeleteAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -183,11 +190,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Details of a specific cloud account connector
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/connectors/{connectorName}</description></item><item><term>Operation Id</term><description>Connectors_Get</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Get operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -210,11 +217,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Details of a specific cloud account connector
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/connectors/{connectorName}</description></item><item><term>Operation Id</term><description>Connectors_Get</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -234,7 +241,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Gets whether or not the current instance has data. </summary>
+        <summary>
+            Gets the HasData value preserved from the previous public API surface.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -255,7 +264,9 @@
         <ReturnType>Azure.Core.ResourceType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Gets the resource type for the operations. </summary>
+        <summary>
+            Gets the ResourceType value preserved from the previous public API surface.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -434,14 +445,13 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="waitUntil">
-          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="data"> Settings for the cloud account connector. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="waitUntil">The value preserved for API compatibility.</param>
+        <param name="data">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Create a cloud account connector or update an existing one. Connect to your cloud account. For AWS, use either account credentials or role-based authentication. For GCP, use account organization credentials.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/connectors/{connectorName}</description></item><item><term>Operation Id</term><description>Connectors_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the Update operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="data" /> is null. </exception>
@@ -468,14 +478,13 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="waitUntil">
-          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        <param name="data"> Settings for the cloud account connector. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="waitUntil">The value preserved for API compatibility.</param>
+        <param name="data">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Create a cloud account connector or update an existing one. Connect to your cloud account. For AWS, use either account credentials or role-based authentication. For GCP, use account organization credentials.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/connectors/{connectorName}</description></item><item><term>Operation Id</term><description>Connectors_CreateOrUpdate</description></item><item><term>Default Api Version</term><description>2020-01-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCloudConnectorResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the UpdateAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="data" /> is null. </exception>

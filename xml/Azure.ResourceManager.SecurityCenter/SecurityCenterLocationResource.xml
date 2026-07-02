@@ -30,10 +30,7 @@
   </Interfaces>
   <Docs>
     <summary>
-            A Class representing a SecurityCenterLocation along with the instance operations that can be performed on it.
-            If you have a <see cref="T:Azure.Core.ResourceIdentifier" /> you can construct a <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />
-            from an instance of <see cref="T:Azure.ResourceManager.ArmClient" /> using the GetSecurityCenterLocationResource method.
-            Otherwise you can get one from its parent resource <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" /> using the GetSecurityCenterLocation method.
+            Provides a compatibility shim for the SecurityCenterLocationResource class.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -51,7 +48,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of SecurityCenterLocationResource for mocking. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -75,9 +72,37 @@
         <Parameter Name="ascLocation" Type="Azure.Core.AzureLocation" />
       </Parameters>
       <Docs>
+        <param name="subscriptionId">The value preserved for API compatibility.</param>
+        <param name="ascLocation">The value preserved for API compatibility.</param>
+        <summary>
+            Provides a compatibility shim for the CreateResourceIdentifier operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateResourceIdentifier">
+      <MemberSignature Language="C#" Value="public static Azure.Core.ResourceIdentifier CreateResourceIdentifier (string subscriptionId, string ascLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Core.ResourceIdentifier CreateResourceIdentifier(string subscriptionId, string ascLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource.CreateResourceIdentifier(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateResourceIdentifier (subscriptionId As String, ascLocation As String) As ResourceIdentifier" />
+      <MemberSignature Language="F#" Value="static member CreateResourceIdentifier : string * string -&gt; Azure.Core.ResourceIdentifier" Usage="Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource.CreateResourceIdentifier (subscriptionId, ascLocation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Core.ResourceIdentifier</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subscriptionId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="ascLocation" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
         <param name="subscriptionId"> The subscriptionId. </param>
         <param name="ascLocation"> The ascLocation. </param>
-        <summary> Generate the resource identifier of a <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" /> instance. </summary>
+        <summary> Generate the resource identifier for this resource. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -126,7 +151,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Details of a specific location
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}</description></item><item><term>Operation Id</term><description>Locations_Get</description></item><item><term>Default Api Version</term><description>2015-06-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}. </description></item><item><term> Operation Id. </term><description> AscLocations_Get. </description></item><item><term> Default Api Version. </term><description> 2015-06-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -143,6 +168,12 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityCenter.AdaptiveApplicationControlGroupResource&gt;</ReturnType>
       </ReturnValue>
@@ -151,12 +182,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="groupName"> Name of an application control machine group. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="groupName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets an application control VM/server group.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/applicationWhitelistings/{groupName}</description></item><item><term>Operation Id</term><description>AdaptiveApplicationControls_Get</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.AdaptiveApplicationControlGroupResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetAdaptiveApplicationControlGroup operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="groupName" /> is null. </exception>
@@ -176,6 +207,12 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.AdaptiveApplicationControlGroupResource&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -184,12 +221,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="groupName"> Name of an application control machine group. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="groupName">The value preserved for API compatibility.</param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets an application control VM/server group.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/applicationWhitelistings/{groupName}</description></item><item><term>Operation Id</term><description>AdaptiveApplicationControls_Get</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.AdaptiveApplicationControlGroupResource" /></description></item></list></summary>
-        <returns>To be added.</returns>
+            Provides a compatibility shim for the GetAdaptiveApplicationControlGroupAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="groupName" /> is null. </exception>
@@ -209,13 +246,21 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.SecurityCenter.AdaptiveApplicationControlGroupCollection</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of AdaptiveApplicationControlGroupResources in the SecurityCenterLocation. </summary>
-        <returns> An object representing collection of AdaptiveApplicationControlGroupResources and their operations over a AdaptiveApplicationControlGroupResource. </returns>
+        <summary>
+            Provides a compatibility shim for the GetAdaptiveApplicationControlGroups operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -238,11 +283,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets the list of all possible traffic between resources for the subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/allowedConnections</description></item><item><term>Operation Id</term><description>AllowedConnections_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.SecurityCenterAllowedConnection" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetAllowedConnectionsByHomeRegion operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -265,11 +310,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets the list of all possible traffic between resources for the subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/allowedConnections</description></item><item><term>Operation Id</term><description>AllowedConnections_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.SecurityCenterAllowedConnection" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetAllowedConnectionsByHomeRegionAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -285,6 +330,12 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceData&gt;</ReturnType>
       </ReturnValue>
@@ -292,11 +343,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets list of all supported Security Solutions for subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/securitySolutionsReferenceData</description></item><item><term>Operation Id</term><description>SecuritySolutionsReferenceData_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceData" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetAllSecuritySolutionsReferenceDataByHomeRegion operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -312,6 +363,12 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceData&gt;</ReturnType>
       </ReturnValue>
@@ -319,11 +376,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets list of all supported Security Solutions for subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/securitySolutionsReferenceData</description></item><item><term>Operation Id</term><description>SecuritySolutionsReferenceData_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceData" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetAllSecuritySolutionsReferenceDataByHomeRegionAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -349,7 +406,59 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Details of a specific location
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}</description></item><item><term>Operation Id</term><description>Locations_Get</description></item><item><term>Default Api Version</term><description>2015-06-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" /></description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}. </description></item><item><term> Operation Id. </term><description> AscLocations_Get. </description></item><item><term> Default Api Version. </term><description> 2015-06-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByHomeRegion">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt; GetByHomeRegion (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt; GetByHomeRegion(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource.GetByHomeRegion(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetByHomeRegion (Optional cancellationToken As CancellationToken = Nothing) As Response(Of SecuritySolutionsReferenceInfoList)" />
+      <MemberSignature Language="F#" Value="abstract member GetByHomeRegion : System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt;&#xA;override this.GetByHomeRegion : System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt;" Usage="securityCenterLocationResource.GetByHomeRegion cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets list of all supported Security Solutions for subscription and location.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/securitySolutionsReferenceData. </description></item><item><term> Operation Id. </term><description> SecuritySolutionsReferenceDataOperationGroup_ListByHomeRegion. </description></item><item><term> Default Api Version. </term><description> 2020-01-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByHomeRegionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt;&gt; GetByHomeRegionAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt;&gt; GetByHomeRegionAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource.GetByHomeRegionAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetByHomeRegionAsync (Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of SecuritySolutionsReferenceInfoList))" />
+      <MemberSignature Language="F#" Value="abstract member GetByHomeRegionAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt;&gt;&#xA;override this.GetByHomeRegionAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt;&gt;" Usage="securityCenterLocationResource.GetByHomeRegionAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.SecurityCenter.Models.SecuritySolutionsReferenceInfoList&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Gets list of all supported Security Solutions for subscription and location.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/securitySolutionsReferenceData. </description></item><item><term> Operation Id. </term><description> SecuritySolutionsReferenceDataOperationGroup_ListByHomeRegion. </description></item><item><term> Default Api Version. </term><description> 2020-01-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </description></item></list></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -373,11 +482,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets a list of discovered Security Solutions for the subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/discoveredSecuritySolutions</description></item><item><term>Operation Id</term><description>DiscoveredSecuritySolutions_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.DiscoveredSecuritySolution" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetDiscoveredSecuritySolutionsByHomeRegion operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -400,11 +509,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets a list of discovered Security Solutions for the subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/discoveredSecuritySolutions</description></item><item><term>Operation Id</term><description>DiscoveredSecuritySolutions_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.DiscoveredSecuritySolution" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetDiscoveredSecuritySolutionsByHomeRegionAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -430,7 +539,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets a list of external Security Solutions for the subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/ExternalSecuritySolutions</description></item><item><term>Operation Id</term><description>ExternalSecuritySolutions_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/ExternalSecuritySolutions. </description></item><item><term> Operation Id. </term><description> ExternalSecuritySolutions_ListByHomeRegion. </description></item><item><term> Default Api Version. </term><description> 2020-01-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.ExternalSecuritySolution" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -457,8 +566,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets a list of external Security Solutions for the subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/ExternalSecuritySolutions</description></item><item><term>Operation Id</term><description>ExternalSecuritySolutions_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.ExternalSecuritySolution" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/ExternalSecuritySolutions. </description></item><item><term> Operation Id. </term><description> ExternalSecuritySolutions_ListByHomeRegion. </description></item><item><term> Default Api Version. </term><description> 2020-01-01. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.ExternalSecuritySolution" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -474,6 +583,12 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.SecurityCenter.JitNetworkAccessPolicyResource&gt;</ReturnType>
       </ReturnValue>
@@ -481,11 +596,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Policies for protecting resources using Just-in-Time access control for the subscription, location
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/jitNetworkAccessPolicies</description></item><item><term>Operation Id</term><description>JitNetworkAccessPolicies_ListByRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.JitNetworkAccessPolicyResource" /></description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.JitNetworkAccessPolicyResource" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetJitNetworkAccessPoliciesByRegion operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -501,6 +616,12 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.SecurityCenter.JitNetworkAccessPolicyResource&gt;</ReturnType>
       </ReturnValue>
@@ -508,12 +629,76 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
+        <summary>
+            Provides a compatibility shim for the GetJitNetworkAccessPoliciesByRegionAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOperationResult">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetOperationResult (string operationId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetOperationResult(string operationId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource.GetOperationResult(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOperationResult (operationId As String, Optional cancellationToken As CancellationToken = Nothing) As Response" />
+      <MemberSignature Language="F#" Value="abstract member GetOperationResult : string * System.Threading.CancellationToken -&gt; Azure.Response&#xA;override this.GetOperationResult : string * System.Threading.CancellationToken -&gt; Azure.Response" Usage="securityCenterLocationResource.GetOperationResult (operationId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="operationId"> The ID of an ongoing async operation. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Policies for protecting resources using Just-in-Time access control for the subscription, location
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/jitNetworkAccessPolicies</description></item><item><term>Operation Id</term><description>JitNetworkAccessPolicies_ListByRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.JitNetworkAccessPolicyResource" /></description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.JitNetworkAccessPolicyResource" /> that may take multiple service requests to iterate over. </returns>
+            Returns operation results for long running operations.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{location}/operationResults/{operationId}. </description></item><item><term> Operation Id. </term><description> OperationResultsOperationGroup_Get. </description></item><item><term> Default Api Version. </term><description> 2025-10-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="operationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOperationResultAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetOperationResultAsync (string operationId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetOperationResultAsync(string operationId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource.GetOperationResultAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOperationResultAsync (operationId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member GetOperationResultAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetOperationResultAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="securityCenterLocationResource.GetOperationResultAsync (operationId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.SecurityCenter</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="operationId"> The ID of an ongoing async operation. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Returns operation results for long running operations.
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{location}/operationResults/{operationId}. </description></item><item><term> Operation Id. </term><description> OperationResultsOperationGroup_Get. </description></item><item><term> Default Api Version. </term><description> 2025-10-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="operationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetSubscriptionSecurityAlert">
@@ -538,9 +723,7 @@
       <Docs>
         <param name="alertName"> Name of the alert object. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get an alert that is associated with a subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/alerts/{alertName}</description></item><item><term>Operation Id</term><description>Alerts_GetSubscriptionLevel</description></item><item><term>Default Api Version</term><description>2022-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SubscriptionSecurityAlertResource" /></description></item></list></summary>
+        <summary> Get an alert that is associated with a subscription. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -571,9 +754,7 @@
       <Docs>
         <param name="alertName"> Name of the alert object. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Get an alert that is associated with a subscription
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/alerts/{alertName}</description></item><item><term>Operation Id</term><description>Alerts_GetSubscriptionLevel</description></item><item><term>Default Api Version</term><description>2022-01-01</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SubscriptionSecurityAlertResource" /></description></item></list></summary>
+        <summary> Get an alert that is associated with a subscription. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -599,8 +780,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of SubscriptionSecurityAlertResources in the SecurityCenterLocation. </summary>
-        <returns> An object representing collection of SubscriptionSecurityAlertResources and their operations over a SubscriptionSecurityAlertResource. </returns>
+        <summary> Gets a collection of SubscriptionSecurityAlerts in the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </summary>
+        <returns> An object representing collection of SubscriptionSecurityAlerts and their operations over a SubscriptionSecurityAlertResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -626,9 +807,7 @@
       <Docs>
         <param name="taskName"> Name of the task object, will be a GUID. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Recommended tasks that will help improve the security of the subscription proactively
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/tasks/{taskName}</description></item><item><term>Operation Id</term><description>Tasks_GetSubscriptionLevelTask</description></item><item><term>Default Api Version</term><description>2015-06-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SubscriptionSecurityTaskResource" /></description></item></list></summary>
+        <summary> Recommended tasks that will help improve the security of the subscription proactively. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -659,9 +838,7 @@
       <Docs>
         <param name="taskName"> Name of the task object, will be a GUID. </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary>
-            Recommended tasks that will help improve the security of the subscription proactively
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/tasks/{taskName}</description></item><item><term>Operation Id</term><description>Tasks_GetSubscriptionLevelTask</description></item><item><term>Default Api Version</term><description>2015-06-01-preview</description></item><item><term>Resource</term><description><see cref="T:Azure.ResourceManager.SecurityCenter.SubscriptionSecurityTaskResource" /></description></item></list></summary>
+        <summary> Recommended tasks that will help improve the security of the subscription proactively. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -687,8 +864,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary> Gets a collection of SubscriptionSecurityTaskResources in the SecurityCenterLocation. </summary>
-        <returns> An object representing collection of SubscriptionSecurityTaskResources and their operations over a SubscriptionSecurityTaskResource. </returns>
+        <summary> Gets a collection of SubscriptionSecurityTasks in the <see cref="T:Azure.ResourceManager.SecurityCenter.SecurityCenterLocationResource" />. </summary>
+        <returns> An object representing collection of SubscriptionSecurityTasks and their operations over a SubscriptionSecurityTaskResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -711,11 +888,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets a list that allows to build a topology view of a subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/topologies</description></item><item><term>Operation Id</term><description>Topology_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> A collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.SecurityTopologyResource" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetTopologiesByHomeRegion operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -738,11 +915,11 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="cancellationToken"> The cancellation token to use. </param>
+        <param name="cancellationToken">The value preserved for API compatibility.</param>
         <summary>
-            Gets a list that allows to build a topology view of a subscription and location.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/topologies</description></item><item><term>Operation Id</term><description>Topology_ListByHomeRegion</description></item><item><term>Default Api Version</term><description>2020-01-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.SecurityCenter.Models.SecurityTopologyResource" /> that may take multiple service requests to iterate over. </returns>
+            Provides a compatibility shim for the GetTopologiesByHomeRegionAsync operation preserved from the previous public API surface.
+            </summary>
+        <returns>The compatibility result.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -809,8 +986,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader" /> to read.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="reader"> The reader for deserializing the model. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Reads one JSON value (including objects or arrays) from the provided reader and converts it to a model.
             </summary>
@@ -841,8 +1018,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter" /> to write into.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="writer"> The writer to serialize the model to. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model to the provided <see cref="T:System.Text.Json.Utf8JsonWriter" />.
             </summary>
@@ -872,8 +1049,8 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="data">The <see cref="T:System.BinaryData" /> to parse.</param>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="data"> The binary data to be processed. </param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Converts the provided <see cref="T:System.BinaryData" /> into a model.
             </summary>
@@ -903,7 +1080,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to consider when serializing and deserializing the model.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Gets the data interchange format (JSON, Xml, etc) that the model uses when communicating with the service.
             </summary>
@@ -932,7 +1109,7 @@
         <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="options">The <see cref="T:System.ClientModel.Primitives.ModelReaderWriterOptions" /> to use.</param>
+        <param name="options"> The client options for reading and writing models. </param>
         <summary>
             Writes the model into a <see cref="T:System.BinaryData" />.
             </summary>
