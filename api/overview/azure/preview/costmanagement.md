@@ -1,6 +1,7 @@
 ---
 title: Azure Costmanagement SDK for .NET
 description: Reference for Azure Costmanagement SDK for .NET
+ms.date: 07/09/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: costmanagement
@@ -8,4 +9,3 @@ ms.service: costmanagement
 # Azure Costmanagement SDK for .NET - preview
 ## Packages - preview
 [!INCLUDE [packages](costmanagement-index.md)]
-
