@@ -1,12 +1,12 @@
 ---
 title: Azure Provisioning Communication client library for .NET
-keywords: Azure, dotnet, SDK, API, Azure.Provisioning.Communication, provisioning
-ms.date: 03/03/2026
+keywords: Azure, dotnet, SDK, API, Azure.Provisioning.Communication, communication
+ms.date: 07/10/2026
 ms.topic: reference
 ms.devlang: dotnet
-ms.service: provisioning
+ms.service: communication
 ---
-# Azure Provisioning Communication client library for .NET - version 1.0.0-beta.4 
+# Azure Provisioning Communication client library for .NET - version 1.0.0-beta.5 
 
 
 Azure.Provisioning.Communication simplifies declarative resource provisioning in .NET.
@@ -48,7 +48,7 @@ ProvisioningParameter location =
 infra.Add(location);
 
 CommunicationService comm =
-    new(nameof(comm), "2023-03-31")
+    new(nameof(comm), "2026-03-18")
     {
         Location = location,
         DataLocation = "unitedstates"
@@ -84,7 +84,7 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 <opencode@microsoft.com> with any other questions or comments.
 
 <!-- LINKS -->
-[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.Communication_1.0.0-beta.4/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
+[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.Communication_1.0.0-beta.5/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 
