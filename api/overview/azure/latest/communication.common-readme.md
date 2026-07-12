@@ -1,12 +1,12 @@
 ---
 title: Azure Communication Common client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.Communication.Common, communication
-ms.date: 06/04/2025
+ms.date: 07/12/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: communication
 ---
-# Azure Communication Common client library for .NET - version 1.4.0 
+# Azure Communication Common client library for .NET - version 1.4.1 
 
 
 This package contains common code for Azure Communication Service libraries.
@@ -56,11 +56,11 @@ We guarantee that all client instance methods are thread-safe and independent of
 
 ### Additional concepts
 <!-- CLIENT COMMON BAR -->
-[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.0/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
-[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.0/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
-[Long-running operations](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.0/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt) |
-[Handling failures](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.0/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception) |
-[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.0/sdk/core/Azure.Core/samples/Diagnostics.md) |
+[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.1/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
+[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.1/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
+[Long-running operations](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.1/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt) |
+[Handling failures](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.1/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception) |
+[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Communication.Common_1.4.1/sdk/core/Azure.Core/samples/Diagnostics.md) |
 [Mocking](https://learn.microsoft.com/dotnet/azure/sdk/unit-testing-mocking) |
 [Client lifetime](https://devblogs.microsoft.com/azure-sdk/lifetime-management-and-thread-safety-guarantees-of-azure-sdk-net-clients/)
 <!-- CLIENT COMMON BAR -->
@@ -117,7 +117,10 @@ For scenarios where an Entra user can be used with Communication Services, you n
 Along with this, you must provide the URI of the Azure Communication Services resource and the scopes required for the Entra user token. These scopes determine the permissions granted to the token.
 
 This approach needs to be used for authorizing an Entra user with a Teams license to use Teams Phone Extensibility features through your Azure Communication Services resource.
-This requires providing the `https://auth.msft.communication.azure.com/TeamsExtension.ManageCalls` scope.
+This requires providing a Teams Extension scope:
+- Public cloud: `https://auth.msft.communication.azure.com/TeamsExtension.ManageCalls`
+- Sovereign (GCCH) cloud: `https://auth.msft.communication.azure.us/TeamsExtension.ManageCalls`
+
 ```C# 
 var options = new InteractiveBrowserCredentialOptions
     {
@@ -130,7 +133,6 @@ var entraTokenCredential = new InteractiveBrowserCredential(options);
 var entraTokenCredentialOptions = new EntraCommunicationTokenCredentialOptions(
     resourceEndpoint: "https://<your-resource>.communication.azure.com",
     entraTokenCredential: entraTokenCredential)
-    )
     {
       Scopes = new[] { "https://auth.msft.communication.azure.com/TeamsExtension.ManageCalls" }
     };
@@ -180,7 +182,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct][coc]. For m
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 [coc_contact]: mailto:opencode@microsoft.com
 [azure_sub]: https://azure.microsoft.com/free/dotnet/
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Communication.Common_1.4.0/sdk/communication/Azure.Communication.Common/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Communication.Common_1.4.1/sdk/communication/Azure.Communication.Common/src
 [package]: https://www.nuget.org/packages/Azure.Communication.Common/
 [product_docs]: https://learn.microsoft.com/azure/communication-services/overview
 [nuget]: https://www.nuget.org/
