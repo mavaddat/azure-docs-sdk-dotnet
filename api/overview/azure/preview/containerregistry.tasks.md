@@ -1,7 +1,7 @@
 ---
 title: Azure Containerregistry.Tasks SDK for .NET
 description: Reference for Azure Containerregistry.Tasks SDK for .NET
-ms.date: 07/10/2026
+ms.date: 07/13/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: containerregistry.tasks
