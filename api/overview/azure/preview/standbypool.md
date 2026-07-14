@@ -1,0 +1,11 @@
+---
+title: Azure Standbypool SDK for .NET
+description: Reference for Azure Standbypool SDK for .NET
+ms.date: 07/14/2026
+ms.topic: reference
+ms.devlang: dotnet
+ms.service: standbypool
+---
+# Azure Standbypool SDK for .NET - preview
+## Packages - preview
+[!INCLUDE [packages](standbypool-index.md)]

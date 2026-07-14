@@ -1,7 +1,7 @@
 ---
 title: Azure Planetarycomputer SDK for .NET
 description: Reference for Azure Planetarycomputer SDK for .NET
-ms.date: 07/13/2026
+ms.date: 07/14/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: planetarycomputer
