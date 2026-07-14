@@ -1,12 +1,12 @@
 ---
 title: Azure Provisioning FrontDoor client library for .NET
-keywords: Azure, dotnet, SDK, API, Azure.Provisioning.FrontDoor, provisioning
-ms.date: 10/17/2025
+keywords: Azure, dotnet, SDK, API, Azure.Provisioning.FrontDoor, frontdoor
+ms.date: 07/14/2026
 ms.topic: reference
 ms.devlang: dotnet
-ms.service: provisioning
+ms.service: frontdoor
 ---
-# Azure Provisioning FrontDoor client library for .NET - version 1.0.0-beta.1 
+# Azure Provisioning FrontDoor client library for .NET - version 1.0.0-beta.2 
 
 
 Azure.Provisioning.FrontDoor simplifies declarative resource provisioning in .NET.
@@ -90,20 +90,11 @@ ProvisioningVariable backendPoolName =
 infra.Add(backendPoolName);
 
 FrontDoorResource frontDoor =
-    new(nameof(frontDoor), FrontDoorResource.ResourceVersions.V2021_06_01)
+    new(nameof(frontDoor), FrontDoorResource.ResourceVersions.V2025_11_01)
     {
         Name = frontDoorName,
         Location = new AzureLocation("global"),
         EnabledState = FrontDoorEnabledState.Enabled,
-        FrontendEndpoints =
-        {
-            new FrontendEndpointData
-            {
-                Name = frontEndEndpointName,
-                HostName = BicepFunction.Interpolate($"{frontDoorName}.azurefd.net"),
-                SessionAffinityEnabledState = SessionAffinityEnabledState.Disabled
-            }
-        },
         LoadBalancingSettings =
         {
             new FrontDoorLoadBalancingSettingsData
@@ -170,7 +161,7 @@ FrontDoorResource frontDoor =
     };
 infra.Add(frontDoor);
 
-infra.Add(new ProvisioningOutput("name", typeof(string)) { Value = new MemberExpression(new IdentifierExpression( frontDoor.BicepIdentifier), "name") }); // TODO -- update this to use the expression conversion
+infra.Add(new ProvisioningOutput("name", typeof(string)) { Value = new MemberExpression(new IdentifierExpression(frontDoor.BicepIdentifier), "name") }); // TODO -- update this to use the expression conversion
 infra.Add(new ProvisioningOutput("resourceGroupName", typeof(string)) { Value = BicepFunction.GetResourceGroup().Name });
 infra.Add(new ProvisioningOutput("resourceId", typeof(string)) { Value = frontDoor.Id });
 ```
@@ -197,20 +188,11 @@ ProvisioningParameter backendAddress =
 infra.Add(backendAddress);
 
 FrontDoorResource frontDoor =
-    new(nameof(frontDoor), FrontDoorResource.ResourceVersions.V2020_05_01)
+    new(nameof(frontDoor), FrontDoorResource.ResourceVersions.V2025_11_01)
     {
         Name = frontDoorName,
         Location = new AzureLocation("global"),
         EnabledState = FrontDoorEnabledState.Enabled,
-        FrontendEndpoints =
-        {
-            new FrontendEndpointData
-            {
-                Name = "frontendEndpoint1",
-                HostName = BicepFunction.Interpolate($"{frontDoorName}.azurefd.net"),
-                SessionAffinityEnabledState = SessionAffinityEnabledState.Disabled
-            }
-        },
         LoadBalancingSettings =
         {
             new FrontDoorLoadBalancingSettingsData
@@ -306,7 +288,7 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 <opencode@microsoft.com> with any other questions or comments.
 
 <!-- LINKS -->
-[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.FrontDoor_1.0.0-beta.1/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
+[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.FrontDoor_1.0.0-beta.2/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 
