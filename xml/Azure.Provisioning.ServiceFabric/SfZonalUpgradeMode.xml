@@ -1,0 +1,58 @@
+<Type Name="SfZonalUpgradeMode" FullName="Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode">
+  <TypeSignature Language="C#" Value="public enum SfZonalUpgradeMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SfZonalUpgradeMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode" />
+  <TypeSignature Language="VB.NET" Value="Public Enum SfZonalUpgradeMode" />
+  <TypeSignature Language="F#" Value="type SfZonalUpgradeMode = " />
+  <AssemblyInfo>
+    <AssemblyName>Azure.Provisioning.ServiceFabric</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary> This property controls the logical grouping of VMs in upgrade domains (UDs). This property can't be modified if a node type with multiple Availability Zones is already present in the cluster. </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Hierarchical">
+      <MemberSignature Language="C#" Value="Hierarchical" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode Hierarchical = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode.Hierarchical" />
+      <MemberSignature Language="VB.NET" Value="Hierarchical" />
+      <MemberSignature Language="F#" Value="Hierarchical = 1" Usage="Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode.Hierarchical" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.ServiceFabric</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary> If this value is omitted or set to Hierarchical, VMs are grouped to reflect the zonal distribution in up to 15 UDs. Each of the three zones has five UDs. This ensures that the zones are updated one at a time, moving to next zone only after completing five UDs within the first zone. This update process is safer for the cluster and the user application. </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Parallel">
+      <MemberSignature Language="C#" Value="Parallel" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode Parallel = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode.Parallel" />
+      <MemberSignature Language="VB.NET" Value="Parallel" />
+      <MemberSignature Language="F#" Value="Parallel = 0" Usage="Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode.Parallel" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.ServiceFabric</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.ServiceFabric.SfZonalUpgradeMode</ReturnType>
+      </ReturnValue>
+      <MemberValue>0</MemberValue>
+      <Docs>
+        <summary> VMs under the node type are grouped into UDs and ignore the zone info in five UDs. This setting causes UDs across all zones to be upgraded at the same time. This deployment mode is faster for upgrades, we don't recommend it because it goes against the SDP guidelines, which state that the updates should be applied to one zone at a time. </summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
