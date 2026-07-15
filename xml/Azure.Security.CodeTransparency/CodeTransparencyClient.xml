@@ -34,6 +34,26 @@
       </Docs>
     </Member>
     <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTransparencyClient (Azure.Security.CodeTransparency.CodeTransparencyClientSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.Security.CodeTransparency.CodeTransparencyClientSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.#ctor(Azure.Security.CodeTransparency.CodeTransparencyClientSettings)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (settings As CodeTransparencyClientSettings)" />
+      <MemberSignature Language="F#" Value="new Azure.Security.CodeTransparency.CodeTransparencyClient : Azure.Security.CodeTransparency.CodeTransparencyClientSettings -&gt; Azure.Security.CodeTransparency.CodeTransparencyClient" Usage="new Azure.Security.CodeTransparency.CodeTransparencyClient settings" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settings" Type="Azure.Security.CodeTransparency.CodeTransparencyClientSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings"> The settings for CodeTransparencyClient. </param>
+        <summary> Initializes a new instance of CodeTransparencyClient from a <see cref="T:Azure.Security.CodeTransparency.CodeTransparencyClientSettings" />. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public CodeTransparencyClient (Uri endpoint, Azure.AzureKeyCredential credential);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri endpoint, class Azure.AzureKeyCredential credential) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.#ctor(System.Uri,Azure.AzureKeyCredential)" />
@@ -116,6 +136,34 @@
       </Docs>
     </Member>
     <Member MemberName="CreateEntry">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response CreateEntry (Azure.Core.RequestContent content, bool? waitForCommit = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response CreateEntry(class Azure.Core.RequestContent content, valuetype System.Nullable`1&lt;bool&gt; waitForCommit, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntry(Azure.Core.RequestContent,System.Nullable{System.Boolean},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEntry (content As RequestContent, Optional waitForCommit As Nullable(Of Boolean) = Nothing, Optional context As RequestContext = Nothing) As Response" />
+      <MemberSignature Language="F#" Value="abstract member CreateEntry : Azure.Core.RequestContent * Nullable&lt;bool&gt; * Azure.RequestContext -&gt; Azure.Response&#xA;override this.CreateEntry : Azure.Core.RequestContent * Nullable&lt;bool&gt; * Azure.RequestContext -&gt; Azure.Response" Usage="codeTransparencyClient.CreateEntry (content, waitForCommit, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="Azure.Core.RequestContent" />
+        <Parameter Name="waitForCommit" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="content">To be added.</param>
+        <param name="waitForCommit">To be added.</param>
+        <param name="context">To be added.</param>
+        <summary> Post an entry to be registered on the CodeTransparency instance. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntry">
       <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; CreateEntry (Azure.WaitUntil waitUntil, BinaryData body, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Operation`1&lt;class System.BinaryData&gt; CreateEntry(valuetype Azure.WaitUntil waitUntil, class System.BinaryData body, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntry(Azure.WaitUntil,System.BinaryData,System.Threading.CancellationToken)" />
@@ -126,6 +174,12 @@
         <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("Use CreateEntry(BinaryData, bool, CancellationToken) instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("Use CreateEntry(BinaryData, bool, CancellationToken) instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Operation&lt;System.BinaryData&gt;</ReturnType>
       </ReturnValue>
@@ -146,6 +200,62 @@
           <paramref name="body" /> is null. </exception>
       </Docs>
     </Member>
+    <Member MemberName="CreateEntry">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;BinaryData&gt; CreateEntry (BinaryData body, bool? waitForCommit = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class System.BinaryData&gt; CreateEntry(class System.BinaryData body, valuetype System.Nullable`1&lt;bool&gt; waitForCommit, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntry(System.BinaryData,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEntry (body As BinaryData, Optional waitForCommit As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Response(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member CreateEntry : BinaryData * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;&#xA;override this.CreateEntry : BinaryData * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;" Usage="codeTransparencyClient.CreateEntry (body, waitForCommit, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="body" Type="System.BinaryData" />
+        <Parameter Name="waitForCommit" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="body">To be added.</param>
+        <param name="waitForCommit">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary> Post an entry to be registered on the CodeTransparency instance. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; CreateEntryAsync (Azure.Core.RequestContent content, bool? waitForCommit = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; CreateEntryAsync(class Azure.Core.RequestContent content, valuetype System.Nullable`1&lt;bool&gt; waitForCommit, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntryAsync(Azure.Core.RequestContent,System.Nullable{System.Boolean},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEntryAsync (content As RequestContent, Optional waitForCommit As Nullable(Of Boolean) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member CreateEntryAsync : Azure.Core.RequestContent * Nullable&lt;bool&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.CreateEntryAsync : Azure.Core.RequestContent * Nullable&lt;bool&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="codeTransparencyClient.CreateEntryAsync (content, waitForCommit, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="Azure.Core.RequestContent" />
+        <Parameter Name="waitForCommit" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="content">To be added.</param>
+        <param name="waitForCommit">To be added.</param>
+        <param name="context">To be added.</param>
+        <summary> Post an entry to be registered on the CodeTransparency instance. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="CreateEntryAsync">
       <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; CreateEntryAsync (Azure.WaitUntil waitUntil, BinaryData body, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Operation`1&lt;class System.BinaryData&gt;&gt; CreateEntryAsync(valuetype Azure.WaitUntil waitUntil, class System.BinaryData body, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -157,6 +267,12 @@
         <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("Use CreateEntryAsync(BinaryData, bool, CancellationToken) instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("Use CreateEntryAsync(BinaryData, bool, CancellationToken) instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Operation&lt;System.BinaryData&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -175,6 +291,162 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="body" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt; CreateEntryAsync (BinaryData body, bool? waitForCommit = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class System.BinaryData&gt;&gt; CreateEntryAsync(class System.BinaryData body, valuetype System.Nullable`1&lt;bool&gt; waitForCommit, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntryAsync(System.BinaryData,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEntryAsync (body As BinaryData, Optional waitForCommit As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member CreateEntryAsync : BinaryData * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;&#xA;override this.CreateEntryAsync : BinaryData * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;" Usage="codeTransparencyClient.CreateEntryAsync (body, waitForCommit, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="body" Type="System.BinaryData" />
+        <Parameter Name="waitForCommit" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="body">To be added.</param>
+        <param name="waitForCommit">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary> Post an entry to be registered on the CodeTransparency instance. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntryV09">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response CreateEntryV09 (Azure.Core.RequestContent content, bool? waitForCommit = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response CreateEntryV09(class Azure.Core.RequestContent content, valuetype System.Nullable`1&lt;bool&gt; waitForCommit, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntryV09(Azure.Core.RequestContent,System.Nullable{System.Boolean},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEntryV09 (content As RequestContent, Optional waitForCommit As Nullable(Of Boolean) = Nothing, Optional context As RequestContext = Nothing) As Response" />
+      <MemberSignature Language="F#" Value="abstract member CreateEntryV09 : Azure.Core.RequestContent * Nullable&lt;bool&gt; * Azure.RequestContext -&gt; Azure.Response&#xA;override this.CreateEntryV09 : Azure.Core.RequestContent * Nullable&lt;bool&gt; * Azure.RequestContext -&gt; Azure.Response" Usage="codeTransparencyClient.CreateEntryV09 (content, waitForCommit, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="Azure.Core.RequestContent" />
+        <Parameter Name="waitForCommit" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="waitForCommit"> If true, waits for the entry to be committed before returning. Returns 201 with receipt or 503 on rollback. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Post an entry to be registered on the CodeTransparency instance, mandatory in IETF SCITT draft
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="content" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntryV09">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;BinaryData&gt; CreateEntryV09 (BinaryData body, bool? waitForCommit = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class System.BinaryData&gt; CreateEntryV09(class System.BinaryData body, valuetype System.Nullable`1&lt;bool&gt; waitForCommit, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntryV09(System.BinaryData,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEntryV09 (body As BinaryData, Optional waitForCommit As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Response(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member CreateEntryV09 : BinaryData * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;&#xA;override this.CreateEntryV09 : BinaryData * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;" Usage="codeTransparencyClient.CreateEntryV09 (body, waitForCommit, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="body" Type="System.BinaryData" />
+        <Parameter Name="waitForCommit" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="body"> CoseSign1 signature envelope. </param>
+        <param name="waitForCommit"> If true, waits for the entry to be committed before returning. Returns 201 with receipt or 503 on rollback. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Post an entry to be registered on the CodeTransparency instance, mandatory in IETF SCITT draft. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="body" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntryV09Async">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; CreateEntryV09Async (Azure.Core.RequestContent content, bool? waitForCommit = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; CreateEntryV09Async(class Azure.Core.RequestContent content, valuetype System.Nullable`1&lt;bool&gt; waitForCommit, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntryV09Async(Azure.Core.RequestContent,System.Nullable{System.Boolean},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEntryV09Async (content As RequestContent, Optional waitForCommit As Nullable(Of Boolean) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member CreateEntryV09Async : Azure.Core.RequestContent * Nullable&lt;bool&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.CreateEntryV09Async : Azure.Core.RequestContent * Nullable&lt;bool&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="codeTransparencyClient.CreateEntryV09Async (content, waitForCommit, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="Azure.Core.RequestContent" />
+        <Parameter Name="waitForCommit" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="waitForCommit"> If true, waits for the entry to be committed before returning. Returns 201 with receipt or 503 on rollback. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Post an entry to be registered on the CodeTransparency instance, mandatory in IETF SCITT draft
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="content" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntryV09Async">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt; CreateEntryV09Async (BinaryData body, bool? waitForCommit = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class System.BinaryData&gt;&gt; CreateEntryV09Async(class System.BinaryData body, valuetype System.Nullable`1&lt;bool&gt; waitForCommit, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.CreateEntryV09Async(System.BinaryData,System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEntryV09Async (body As BinaryData, Optional waitForCommit As Nullable(Of Boolean) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member CreateEntryV09Async : BinaryData * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;&#xA;override this.CreateEntryV09Async : BinaryData * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;" Usage="codeTransparencyClient.CreateEntryV09Async (body, waitForCommit, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="body" Type="System.BinaryData" />
+        <Parameter Name="waitForCommit" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="body"> CoseSign1 signature envelope. </param>
+        <param name="waitForCommit"> If true, waits for the entry to be committed before returning. Returns 201 with receipt or 503 on rollback. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Post an entry to be registered on the CodeTransparency instance, mandatory in IETF SCITT draft. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="body" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetEntry">
@@ -198,9 +470,7 @@
       <Docs>
         <param name="entryId"> ID of the entry to retrieve. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary>
-            [Protocol Method] Get receipt
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <summary> Get receipt. </summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <example>
@@ -283,9 +553,7 @@ Response<BinaryData> response = client.GetEntry("2.131");
       <Docs>
         <param name="entryId"> ID of the entry to retrieve. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary>
-            [Protocol Method] Get receipt
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <summary> Get receipt. </summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <example>
@@ -347,6 +615,32 @@ Response<BinaryData> response = await client.GetEntryAsync("2.131");
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
+    <Member MemberName="GetEntryIdFromLocation">
+      <MemberSignature Language="C#" Value="public static string GetEntryIdFromLocation (Azure.Response response);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetEntryIdFromLocation(class Azure.Response response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryIdFromLocation(Azure.Response)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetEntryIdFromLocation (response As Response) As String" />
+      <MemberSignature Language="F#" Value="static member GetEntryIdFromLocation : Azure.Response -&gt; string" Usage="Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryIdFromLocation response" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="Azure.Response" />
+      </Parameters>
+      <Docs>
+        <param name="response">The response to extract the entry id from.</param>
+        <summary>
+            Extracts the entry id from the Location header of a response.
+            </summary>
+        <returns>The entry id.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="GetEntryStatement">
       <MemberSignature Language="C#" Value="public virtual Azure.Response GetEntryStatement (string entryId, Azure.RequestContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetEntryStatement(string entryId, class Azure.RequestContext context) cil managed" />
@@ -368,9 +662,7 @@ Response<BinaryData> response = await client.GetEntryAsync("2.131");
       <Docs>
         <param name="entryId"> ID of the entry to retrieve. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary>
-            [Protocol Method] Get the transparent statement consisting of the signed statement and the receipt embedded in the header
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <summary> Get the transparent statement. </summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <example>
@@ -413,7 +705,7 @@ Console.WriteLine(result.ToString());
       <Docs>
         <param name="entryId"> ID of the entry to retrieve. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Get the transparent statement consisting of the signed statement and the receipt embedded in the header. </summary>
+        <summary> Get the transparent statement. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <example>
@@ -453,9 +745,7 @@ Response<BinaryData> response = client.GetEntryStatement("2.131");
       <Docs>
         <param name="entryId"> ID of the entry to retrieve. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary>
-            [Protocol Method] Get the transparent statement consisting of the signed statement and the receipt embedded in the header
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <summary> Get the transparent statement. </summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <example>
@@ -498,7 +788,7 @@ Console.WriteLine(result.ToString());
       <Docs>
         <param name="entryId"> ID of the entry to retrieve. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Get the transparent statement consisting of the signed statement and the receipt embedded in the header. </summary>
+        <summary> Get the transparent statement. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <example>
@@ -517,6 +807,262 @@ Response<BinaryData> response = await client.GetEntryStatementAsync("2.131");
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
+    <Member MemberName="GetEntryStatementV09">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetEntryStatementV09 (string entryId, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetEntryStatementV09(string entryId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryStatementV09(System.String,Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEntryStatementV09 (entryId As String, context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member GetEntryStatementV09 : string * Azure.RequestContext -&gt; Azure.Response&#xA;override this.GetEntryStatementV09 : string * Azure.RequestContext -&gt; Azure.Response" Usage="codeTransparencyClient.GetEntryStatementV09 (entryId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryId" Type="System.String" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="entryId"> ID of the entry to retrieve. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Get the transparent statement consisting of the signed statement and the receipt embedded in the header
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntryStatementV09">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;BinaryData&gt; GetEntryStatementV09 (string entryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class System.BinaryData&gt; GetEntryStatementV09(string entryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryStatementV09(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEntryStatementV09 (entryId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member GetEntryStatementV09 : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;&#xA;override this.GetEntryStatementV09 : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;" Usage="codeTransparencyClient.GetEntryStatementV09 (entryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="entryId"> ID of the entry to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Get the transparent statement consisting of the signed statement and the receipt embedded in the header. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntryStatementV09Async">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetEntryStatementV09Async (string entryId, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetEntryStatementV09Async(string entryId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryStatementV09Async(System.String,Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEntryStatementV09Async (entryId As String, context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member GetEntryStatementV09Async : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetEntryStatementV09Async : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="codeTransparencyClient.GetEntryStatementV09Async (entryId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryId" Type="System.String" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="entryId"> ID of the entry to retrieve. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Get the transparent statement consisting of the signed statement and the receipt embedded in the header
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntryStatementV09Async">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt; GetEntryStatementV09Async (string entryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class System.BinaryData&gt;&gt; GetEntryStatementV09Async(string entryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryStatementV09Async(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEntryStatementV09Async (entryId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member GetEntryStatementV09Async : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;&#xA;override this.GetEntryStatementV09Async : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;" Usage="codeTransparencyClient.GetEntryStatementV09Async (entryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="entryId"> ID of the entry to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Get the transparent statement consisting of the signed statement and the receipt embedded in the header. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntryV09">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetEntryV09 (string entryId, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetEntryV09(string entryId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryV09(System.String,Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEntryV09 (entryId As String, context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member GetEntryV09 : string * Azure.RequestContext -&gt; Azure.Response&#xA;override this.GetEntryV09 : string * Azure.RequestContext -&gt; Azure.Response" Usage="codeTransparencyClient.GetEntryV09 (entryId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryId" Type="System.String" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="entryId"> ID of the entry to retrieve. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Get receipt
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntryV09">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;BinaryData&gt; GetEntryV09 (string entryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class System.BinaryData&gt; GetEntryV09(string entryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryV09(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEntryV09 (entryId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member GetEntryV09 : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;&#xA;override this.GetEntryV09 : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;" Usage="codeTransparencyClient.GetEntryV09 (entryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="entryId"> ID of the entry to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Get receipt. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntryV09Async">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetEntryV09Async (string entryId, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetEntryV09Async(string entryId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryV09Async(System.String,Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEntryV09Async (entryId As String, context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member GetEntryV09Async : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetEntryV09Async : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="codeTransparencyClient.GetEntryV09Async (entryId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryId" Type="System.String" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="entryId"> ID of the entry to retrieve. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Get receipt
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntryV09Async">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt; GetEntryV09Async (string entryId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class System.BinaryData&gt;&gt; GetEntryV09Async(string entryId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetEntryV09Async(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEntryV09Async (entryId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member GetEntryV09Async : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;&#xA;override this.GetEntryV09Async : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;" Usage="codeTransparencyClient.GetEntryV09Async (entryId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="entryId"> ID of the entry to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Get receipt. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entryId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
     <Member MemberName="GetOperation">
       <MemberSignature Language="C#" Value="public virtual Azure.Response GetOperation (string operationId, Azure.RequestContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetOperation(string operationId, class Azure.RequestContext context) cil managed" />
@@ -528,6 +1074,12 @@ Response<BinaryData> response = await client.GetEntryStatementAsync("2.131");
         <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("GetOperation is deprecated as it was removed from the recent IETF SCITT draft.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("GetOperation is deprecated as it was removed from the recent IETF SCITT draft.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
       </ReturnValue>
@@ -538,9 +1090,7 @@ Response<BinaryData> response = await client.GetEntryStatementAsync("2.131");
       <Docs>
         <param name="operationId"> ID of the operation to retrieve. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary>
-            [Protocol Method] Get status of the long running registration operation, mandatory in IETF SCITT draft
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <summary> Get operation status. </summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <example>
@@ -573,6 +1123,12 @@ Console.WriteLine(result.ToString());
         <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("GetOperation is deprecated as it was removed from the recent IETF SCITT draft.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("GetOperation is deprecated as it was removed from the recent IETF SCITT draft.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
       </ReturnValue>
@@ -583,7 +1139,7 @@ Console.WriteLine(result.ToString());
       <Docs>
         <param name="operationId"> ID of the operation to retrieve. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Get status of the long running registration operation, mandatory in IETF SCITT draft. </summary>
+        <summary> Get operation status. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <example>
@@ -613,6 +1169,12 @@ Response<BinaryData> response = client.GetOperation("2.131");
         <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("GetOperationAsync is deprecated as it was removed from the recent IETF SCITT draft.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("GetOperationAsync is deprecated as it was removed from the recent IETF SCITT draft.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
       </ReturnValue>
@@ -623,9 +1185,7 @@ Response<BinaryData> response = client.GetOperation("2.131");
       <Docs>
         <param name="operationId"> ID of the operation to retrieve. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary>
-            [Protocol Method] Get status of the long running registration operation, mandatory in IETF SCITT draft
-            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <summary> Get operation status. </summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <example>
@@ -658,6 +1218,12 @@ Console.WriteLine(result.ToString());
         <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Obsolete("GetOperationAsync is deprecated as it was removed from the recent IETF SCITT draft.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("GetOperationAsync is deprecated as it was removed from the recent IETF SCITT draft.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -668,7 +1234,7 @@ Console.WriteLine(result.ToString());
       <Docs>
         <param name="operationId"> ID of the operation to retrieve. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
-        <summary> Get status of the long running registration operation, mandatory in IETF SCITT draft. </summary>
+        <summary> Get operation status. </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <example>
@@ -680,6 +1246,134 @@ CodeTransparencyClient client = new CodeTransparencyClient(endpoint, credential)
 
 Response<BinaryData> response = await client.GetOperationAsync("2.131");
 ]]></code></example>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="operationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOperationV09">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetOperationV09 (string operationId, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetOperationV09(string operationId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetOperationV09(System.String,Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOperationV09 (operationId As String, context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member GetOperationV09 : string * Azure.RequestContext -&gt; Azure.Response&#xA;override this.GetOperationV09 : string * Azure.RequestContext -&gt; Azure.Response" Usage="codeTransparencyClient.GetOperationV09 (operationId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationId" Type="System.String" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="operationId"> ID of the operation to retrieve. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Get status of the long running registration operation. Deprecated in SCRAPI v09 but retained unchanged for backward compatibility; clients should poll /entries/{entryId} directly.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="operationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOperationV09">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;BinaryData&gt; GetOperationV09 (string operationId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class System.BinaryData&gt; GetOperationV09(string operationId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetOperationV09(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOperationV09 (operationId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member GetOperationV09 : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;&#xA;override this.GetOperationV09 : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;" Usage="codeTransparencyClient.GetOperationV09 (operationId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="operationId"> ID of the operation to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Get status of the long running registration operation. Deprecated in SCRAPI v09 but retained unchanged for backward compatibility; clients should poll /entries/{entryId} directly. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="operationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOperationV09Async">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetOperationV09Async (string operationId, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetOperationV09Async(string operationId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetOperationV09Async(System.String,Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOperationV09Async (operationId As String, context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member GetOperationV09Async : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetOperationV09Async : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="codeTransparencyClient.GetOperationV09Async (operationId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationId" Type="System.String" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="operationId"> ID of the operation to retrieve. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Get status of the long running registration operation. Deprecated in SCRAPI v09 but retained unchanged for backward compatibility; clients should poll /entries/{entryId} directly.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="operationId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="operationId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOperationV09Async">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt; GetOperationV09Async (string operationId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class System.BinaryData&gt;&gt; GetOperationV09Async(string operationId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetOperationV09Async(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetOperationV09Async (operationId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member GetOperationV09Async : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;&#xA;override this.GetOperationV09Async : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;" Usage="codeTransparencyClient.GetOperationV09Async (operationId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="operationId"> ID of the operation to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Get status of the long running registration operation. Deprecated in SCRAPI v09 but retained unchanged for backward compatibility; clients should poll /entries/{entryId} directly. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="operationId" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
@@ -830,6 +1524,238 @@ CodeTransparencyClient client = new CodeTransparencyClient(endpoint, credential)
 
 Response<JwksDocument> response = await client.GetPublicKeysAsync();
 ]]></code></example>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScittKey">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetScittKey (string kid, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetScittKey(string kid, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetScittKey(System.String,Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetScittKey (kid As String, context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member GetScittKey : string * Azure.RequestContext -&gt; Azure.Response&#xA;override this.GetScittKey : string * Azure.RequestContext -&gt; Azure.Response" Usage="codeTransparencyClient.GetScittKey (kid, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kid" Type="System.String" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="kid"> Key ID (kid) of the SCITT key to retrieve. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Get a single service key by kid, per Section 2.2 of draft-ietf-scitt-scrapi-09
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="kid" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="kid" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScittKey">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;BinaryData&gt; GetScittKey (string kid, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class System.BinaryData&gt; GetScittKey(string kid, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetScittKey(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetScittKey (kid As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member GetScittKey : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;&#xA;override this.GetScittKey : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;" Usage="codeTransparencyClient.GetScittKey (kid, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kid" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="kid"> Key ID (kid) of the SCITT key to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Get a single service key by kid, per Section 2.2 of draft-ietf-scitt-scrapi-09. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="kid" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="kid" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScittKeyAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetScittKeyAsync (string kid, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetScittKeyAsync(string kid, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetScittKeyAsync(System.String,Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetScittKeyAsync (kid As String, context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member GetScittKeyAsync : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetScittKeyAsync : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="codeTransparencyClient.GetScittKeyAsync (kid, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kid" Type="System.String" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="kid"> Key ID (kid) of the SCITT key to retrieve. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Get a single service key by kid, per Section 2.2 of draft-ietf-scitt-scrapi-09
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="kid" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="kid" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScittKeyAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt; GetScittKeyAsync (string kid, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class System.BinaryData&gt;&gt; GetScittKeyAsync(string kid, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetScittKeyAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetScittKeyAsync (kid As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member GetScittKeyAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;&#xA;override this.GetScittKeyAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;" Usage="codeTransparencyClient.GetScittKeyAsync (kid, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kid" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="kid"> Key ID (kid) of the SCITT key to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Get a single service key by kid, per Section 2.2 of draft-ietf-scitt-scrapi-09. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="kid" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="kid" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScittKeys">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetScittKeys (Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetScittKeys(class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetScittKeys(Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetScittKeys (context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member GetScittKeys : Azure.RequestContext -&gt; Azure.Response&#xA;override this.GetScittKeys : Azure.RequestContext -&gt; Azure.Response" Usage="codeTransparencyClient.GetScittKeys context" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] List all service keys in COSE_Key_Set format, per Section 2.1 of draft-ietf-scitt-scrapi-09
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScittKeys">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;BinaryData&gt; GetScittKeys (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class System.BinaryData&gt; GetScittKeys(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetScittKeys(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetScittKeys (Optional cancellationToken As CancellationToken = Nothing) As Response(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member GetScittKeys : System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;&#xA;override this.GetScittKeys : System.Threading.CancellationToken -&gt; Azure.Response&lt;BinaryData&gt;" Usage="codeTransparencyClient.GetScittKeys cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List all service keys in COSE_Key_Set format, per Section 2.1 of draft-ietf-scitt-scrapi-09. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScittKeysAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetScittKeysAsync (Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetScittKeysAsync(class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetScittKeysAsync(Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetScittKeysAsync (context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member GetScittKeysAsync : Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetScittKeysAsync : Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="codeTransparencyClient.GetScittKeysAsync context" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] List all service keys in COSE_Key_Set format, per Section 2.1 of draft-ietf-scitt-scrapi-09
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScittKeysAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt; GetScittKeysAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class System.BinaryData&gt;&gt; GetScittKeysAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyClient.GetScittKeysAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetScittKeysAsync (Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member GetScittKeysAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;&#xA;override this.GetScittKeysAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;BinaryData&gt;&gt;" Usage="codeTransparencyClient.GetScittKeysAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> List all service keys in COSE_Key_Set format, per Section 2.1 of draft-ietf-scitt-scrapi-09. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
