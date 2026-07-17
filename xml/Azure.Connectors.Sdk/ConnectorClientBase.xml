@@ -1,0 +1,415 @@
+<Type Name="ConnectorClientBase" FullName="Azure.Connectors.Sdk.ConnectorClientBase">
+  <TypeSignature Language="C#" Value="public abstract class ConnectorClientBase : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ConnectorClientBase extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:Azure.Connectors.Sdk.ConnectorClientBase" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ConnectorClientBase&#xA;Implements IDisposable" />
+  <TypeSignature Language="F#" Value="type ConnectorClientBase = class&#xA;    interface IDisposable" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+    <AssemblyVersion>0.13.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Abstract base class for generated connector clients.
+            Provides shared infrastructure: authentication via Azure.Core <see cref="T:Azure.Core.Pipeline.HttpPipeline" />,
+            JSON serialization, URL resolution with SSRF protection, and configurable retry/diagnostics
+            through <see cref="T:Azure.Connectors.Sdk.ConnectorClientOptions" />.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConnectorClientBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.Connectors.Sdk.ConnectorClientBase" /> class.
+            This constructor exists for mocking frameworks (e.g. Moq) and should not be used directly.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConnectorClientBase (string connectionRuntimeUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string connectionRuntimeUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (connectionRuntimeUrl As String)" />
+      <MemberSignature Language="F#" Value="new Azure.Connectors.Sdk.ConnectorClientBase : string -&gt; Azure.Connectors.Sdk.ConnectorClientBase" Usage="new Azure.Connectors.Sdk.ConnectorClientBase connectionRuntimeUrl" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionRuntimeUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionRuntimeUrl">The connection runtime URL from Azure Portal.</param>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.Connectors.Sdk.ConnectorClientBase" /> class
+            with a string connection runtime URL. Uses <see cref="T:Azure.Identity.ManagedIdentityCredential" /> by default.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConnectorClientBase (Uri connectionRuntimeUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Uri connectionRuntimeUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.#ctor(System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (connectionRuntimeUrl As Uri)" />
+      <MemberSignature Language="F#" Value="new Azure.Connectors.Sdk.ConnectorClientBase : Uri -&gt; Azure.Connectors.Sdk.ConnectorClientBase" Usage="new Azure.Connectors.Sdk.ConnectorClientBase connectionRuntimeUrl" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionRuntimeUrl" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="connectionRuntimeUrl">The connection runtime URL from Azure Portal.</param>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.Connectors.Sdk.ConnectorClientBase" /> class
+            with a connection runtime URL. Uses <see cref="T:Azure.Identity.ManagedIdentityCredential" /> by default.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConnectorClientBase (Uri connectionRuntimeUrl, Azure.Core.TokenCredential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Uri connectionRuntimeUrl, class Azure.Core.TokenCredential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.#ctor(System.Uri,Azure.Core.TokenCredential)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (connectionRuntimeUrl As Uri, credential As TokenCredential)" />
+      <MemberSignature Language="F#" Value="new Azure.Connectors.Sdk.ConnectorClientBase : Uri * Azure.Core.TokenCredential -&gt; Azure.Connectors.Sdk.ConnectorClientBase" Usage="new Azure.Connectors.Sdk.ConnectorClientBase (connectionRuntimeUrl, credential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionRuntimeUrl" Type="System.Uri" />
+        <Parameter Name="credential" Type="Azure.Core.TokenCredential" />
+      </Parameters>
+      <Docs>
+        <param name="connectionRuntimeUrl">The connection runtime URL from Azure Portal.</param>
+        <param name="credential">The Azure credential for authentication.</param>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.Connectors.Sdk.ConnectorClientBase" /> class
+            with a connection runtime URL and explicit Azure credential.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConnectorClientBase (Uri connectionRuntimeUrl, Azure.Core.TokenCredential credential, Azure.Connectors.Sdk.ConnectorClientOptions? options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Uri connectionRuntimeUrl, class Azure.Core.TokenCredential credential, class Azure.Connectors.Sdk.ConnectorClientOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.#ctor(System.Uri,Azure.Core.TokenCredential,Azure.Connectors.Sdk.ConnectorClientOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (connectionRuntimeUrl As Uri, credential As TokenCredential, Optional options As ConnectorClientOptions = Nothing)" />
+      <MemberSignature Language="F#" Value="new Azure.Connectors.Sdk.ConnectorClientBase : Uri * Azure.Core.TokenCredential * Azure.Connectors.Sdk.ConnectorClientOptions -&gt; Azure.Connectors.Sdk.ConnectorClientBase" Usage="new Azure.Connectors.Sdk.ConnectorClientBase (connectionRuntimeUrl, credential, options)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionRuntimeUrl" Type="System.Uri" />
+        <Parameter Name="credential" Type="Azure.Core.TokenCredential" />
+        <Parameter Name="options" Type="Azure.Connectors.Sdk.ConnectorClientOptions">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(2)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(2)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="connectionRuntimeUrl">The connection runtime URL from Azure Portal.</param>
+        <param name="credential">The Azure credential for authentication.</param>
+        <param name="options">Optional client options for retry, transport, diagnostics, etc.</param>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.Connectors.Sdk.ConnectorClientBase" /> class
+            with a connection runtime URL and explicit Azure credential.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApiHubScopes">
+      <MemberSignature Language="C#" Value="protected static readonly string[] ApiHubScopes;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly string[] ApiHubScopes" />
+      <MemberSignature Language="DocId" Value="F:Azure.Connectors.Sdk.ConnectorClientBase.ApiHubScopes" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared ReadOnly ApiHubScopes As String() " />
+      <MemberSignature Language="F#" Value=" staticval mutable ApiHubScopes : string[]" Usage="Azure.Connectors.Sdk.ConnectorClientBase.ApiHubScopes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The default OAuth scopes for API Hub authentication.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallConnectorAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task CallConnectorAsync (System.Net.Http.HttpMethod method, string path, object? body = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task CallConnectorAsync(class System.Net.Http.HttpMethod method, string path, object body, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.CallConnectorAsync(System.Net.Http.HttpMethod,System.String,System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function CallConnectorAsync (method As HttpMethod, path As String, Optional body As Object = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member CallConnectorAsync : System.Net.Http.HttpMethod * string * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.CallConnectorAsync : System.Net.Http.HttpMethod * string * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="connectorClientBase.CallConnectorAsync (method, path, body, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Net.Http.HttpMethod" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="body" Type="System.Object">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(2)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(2)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="method">The HTTP method.</param>
+        <param name="path">The relative path or absolute URL.</param>
+        <param name="body">Optional request body (will be JSON-serialized).</param>
+        <param name="cancellationToken">Cancellation token.</param>
+        <summary>
+            Sends a connector API request with no response body.
+            Uses the Azure.Core <see cref="T:Azure.Core.Pipeline.HttpPipeline" /> for retry, authentication, and diagnostics.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallConnectorAsync&lt;TResponse&gt;">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task&lt;TResponse&gt; CallConnectorAsync&lt;TResponse&gt; (System.Net.Http.HttpMethod method, string path, object? body = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;!!TResponse&gt; CallConnectorAsync&lt;TResponse&gt;(class System.Net.Http.HttpMethod method, string path, object body, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.CallConnectorAsync``1(System.Net.Http.HttpMethod,System.String,System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function CallConnectorAsync(Of TResponse) (method As HttpMethod, path As String, Optional body As Object = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of TResponse)" />
+      <MemberSignature Language="F#" Value="abstract member CallConnectorAsync : System.Net.Http.HttpMethod * string * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;'Response&gt;&#xA;override this.CallConnectorAsync : System.Net.Http.HttpMethod * string * obj * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;'Response&gt;" Usage="connectorClientBase.CallConnectorAsync (method, path, body, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResponse&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResponse">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(2)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(2)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="method" Type="System.Net.Http.HttpMethod" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="body" Type="System.Object">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(2)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(2)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResponse">The response type.</typeparam>
+        <param name="method">The HTTP method.</param>
+        <param name="path">The relative path or absolute URL.</param>
+        <param name="body">Optional request body (will be JSON-serialized).</param>
+        <param name="cancellationToken">Cancellation token.</param>
+        <summary>
+            Sends a connector API request and deserializes the JSON response.
+            Uses the Azure.Core <see cref="T:Azure.Core.Pipeline.HttpPipeline" /> for retry, authentication, and diagnostics.
+            </summary>
+        <returns>The deserialized response.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorName">
+      <MemberSignature Language="C#" Value="public abstract string ConnectorName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectorName" />
+      <MemberSignature Language="DocId" Value="P:Azure.Connectors.Sdk.ConnectorClientBase.ConnectorName" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride ReadOnly Property ConnectorName As String" />
+      <MemberSignature Language="F#" Value="member this.ConnectorName : string" Usage="Azure.Connectors.Sdk.ConnectorClientBase.ConnectorName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <inheritdoc />
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="connectorClientBase.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+        <inheritdoc />
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : bool -&gt; unit&#xA;override this.Dispose : bool -&gt; unit" Usage="connectorClientBase.Dispose disposing" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">True if called from Dispose, false if from finalizer.</param>
+        <summary>
+            Disposes the connector client resources.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JsonOptions">
+      <MemberSignature Language="C#" Value="protected static readonly System.Text.Json.JsonSerializerOptions JsonOptions;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly class System.Text.Json.JsonSerializerOptions JsonOptions" />
+      <MemberSignature Language="DocId" Value="F:Azure.Connectors.Sdk.ConnectorClientBase.JsonOptions" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared ReadOnly JsonOptions As JsonSerializerOptions " />
+      <MemberSignature Language="F#" Value=" staticval mutable JsonOptions : System.Text.Json.JsonSerializerOptions" Usage="Azure.Connectors.Sdk.ConnectorClientBase.JsonOptions" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Json.JsonSerializerOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The default JSON serializer options for connector operations.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pipeline">
+      <MemberSignature Language="C#" Value="protected Azure.Core.Pipeline.HttpPipeline Pipeline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Core.Pipeline.HttpPipeline Pipeline" />
+      <MemberSignature Language="DocId" Value="P:Azure.Connectors.Sdk.ConnectorClientBase.Pipeline" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property Pipeline As HttpPipeline" />
+      <MemberSignature Language="F#" Value="member this.Pipeline : Azure.Core.Pipeline.HttpPipeline" Usage="Azure.Connectors.Sdk.ConnectorClientBase.Pipeline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Core.Pipeline.HttpPipeline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the HTTP pipeline for making connector requests.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveUrl">
+      <MemberSignature Language="C#" Value="protected string ResolveUrl (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string ResolveUrl(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Connectors.Sdk.ConnectorClientBase.ResolveUrl(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Function ResolveUrl (path As String) As String" />
+      <MemberSignature Language="F#" Value="member this.ResolveUrl : string -&gt; string" Usage="connectorClientBase.ResolveUrl path" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Connectors.Sdk</AssemblyName>
+        <AssemblyVersion>0.13.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">The relative path or absolute URL to resolve.</param>
+        <summary>
+            Resolves a relative path or validates an absolute URL against the connection runtime URL.
+            When the NextLink host matches the connection URL, it's used as-is.
+            When it doesn't match (codeless connectors like ARM return nextLink pointing to the backend
+            host e.g. management.azure.com), the path+query is extracted and routed through the APIM proxy.
+            This is safe because the request still goes through the connection runtime URL with API Hub auth.
+            </summary>
+        <returns>The resolved absolute URL.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

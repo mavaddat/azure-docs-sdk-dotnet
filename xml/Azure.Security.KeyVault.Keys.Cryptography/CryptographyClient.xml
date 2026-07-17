@@ -724,6 +724,158 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="SecureUnwrapKey">
+      <MemberSignature Language="C#" Value="public virtual Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult SecureUnwrapKey (Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm algorithm, byte[] encryptedKey, string targetAttestationToken, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult SecureUnwrapKey(valuetype Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm algorithm, unsigned int8[] encryptedKey, string targetAttestationToken, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient.SecureUnwrapKey(Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm,System.Byte[],System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function SecureUnwrapKey (algorithm As SecureKeyWrapAlgorithm, encryptedKey As Byte(), targetAttestationToken As String, Optional cancellationToken As CancellationToken = Nothing) As SecureUnwrapResult" />
+      <MemberSignature Language="F#" Value="abstract member SecureUnwrapKey : Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm * byte[] * string * System.Threading.CancellationToken -&gt; Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult&#xA;override this.SecureUnwrapKey : Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm * byte[] * string * System.Threading.CancellationToken -&gt; Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult" Usage="cryptographyClient.SecureUnwrapKey (algorithm, encryptedKey, targetAttestationToken, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="encryptedKey" Type="System.Byte[]" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="targetAttestationToken" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">The <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm" /> to use.</param>
+        <param name="encryptedKey">The encrypted key bytes to unwrap.</param>
+        <param name="targetAttestationToken">The target attestation token for the unwrap operation.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> to cancel the operation.</param>
+        <summary>
+            Unwraps the specified wrapped key using secure unwrap.
+            </summary>
+        <returns>
+            The result of the unwrap operation. The returned <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult" /> contains the unwrapped key
+            along with all other information needed to identify it. This information should be stored with the unwrapped key.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">The specified <paramref name="algorithm" /> does not match the key corresponding to the key identifier.</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">The local cryptographic provider threw an exception.</exception>
+        <exception cref="T:System.InvalidOperationException">The key is invalid for the current operation.</exception>
+        <exception cref="T:System.NotSupportedException">The operation is not supported with the specified key.</exception>
+        <exception cref="T:Azure.RequestFailedException">The server returned an error. See <see cref="P:System.Exception.Message" /> for details returned from the server.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureUnwrapKeyAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult&gt; SecureUnwrapKeyAsync (Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm algorithm, byte[] encryptedKey, string targetAttestationToken, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult&gt; SecureUnwrapKeyAsync(valuetype Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm algorithm, unsigned int8[] encryptedKey, string targetAttestationToken, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient.SecureUnwrapKeyAsync(Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm,System.Byte[],System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function SecureUnwrapKeyAsync (algorithm As SecureKeyWrapAlgorithm, encryptedKey As Byte(), targetAttestationToken As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of SecureUnwrapResult)" />
+      <MemberSignature Language="F#" Value="abstract member SecureUnwrapKeyAsync : Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm * byte[] * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult&gt;&#xA;override this.SecureUnwrapKeyAsync : Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm * byte[] * string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult&gt;" Usage="cryptographyClient.SecureUnwrapKeyAsync (algorithm, encryptedKey, targetAttestationToken, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="encryptedKey" Type="System.Byte[]" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="targetAttestationToken" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">The <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm" /> to use.</param>
+        <param name="encryptedKey">The encrypted key bytes to unwrap.</param>
+        <param name="targetAttestationToken">The target attestation token for the unwrap operation.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> to cancel the operation.</param>
+        <summary>
+            Unwraps the specified wrapped key using secure unwrap.
+            </summary>
+        <returns>
+            The result of the unwrap operation. The returned <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.SecureUnwrapResult" /> contains the unwrapped key
+            along with all other information needed to identify it. This information should be stored with the unwrapped key.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">The specified <paramref name="algorithm" /> does not match the key corresponding to the key identifier.</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">The local cryptographic provider threw an exception.</exception>
+        <exception cref="T:System.InvalidOperationException">The key is invalid for the current operation.</exception>
+        <exception cref="T:System.NotSupportedException">The operation is not supported with the specified key.</exception>
+        <exception cref="T:Azure.RequestFailedException">The server returned an error. See <see cref="P:System.Exception.Message" /> for details returned from the server.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureWrapKey">
+      <MemberSignature Language="C#" Value="public virtual Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult SecureWrapKey (Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm algorithm, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult SecureWrapKey(valuetype Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm algorithm, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient.SecureWrapKey(Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function SecureWrapKey (algorithm As SecureKeyWrapAlgorithm, Optional cancellationToken As CancellationToken = Nothing) As SecureWrapResult" />
+      <MemberSignature Language="F#" Value="abstract member SecureWrapKey : Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm * System.Threading.CancellationToken -&gt; Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult&#xA;override this.SecureWrapKey : Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm * System.Threading.CancellationToken -&gt; Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult" Usage="cryptographyClient.SecureWrapKey (algorithm, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">The <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm" /> to use.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> to cancel the operation.</param>
+        <summary>
+            Wraps the specified key using secure wrap.
+            </summary>
+        <returns>
+            The result of the secure wrap operation. The returned <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult" /> contains the wrapped key
+            along with all other information needed to unwrap it. This information should be stored with the wrapped key.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">The specified <paramref name="algorithm" /> does not match the key corresponding to the key identifier.</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">The local cryptographic provider threw an exception.</exception>
+        <exception cref="T:System.InvalidOperationException">The key is invalid for the current operation.</exception>
+        <exception cref="T:System.NotSupportedException">The operation is not supported with the specified key.</exception>
+        <exception cref="T:Azure.RequestFailedException">The server returned an error. See <see cref="P:System.Exception.Message" /> for details returned from the server.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureWrapKeyAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult&gt; SecureWrapKeyAsync (Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm algorithm, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult&gt; SecureWrapKeyAsync(valuetype Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm algorithm, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient.SecureWrapKeyAsync(Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function SecureWrapKeyAsync (algorithm As SecureKeyWrapAlgorithm, Optional cancellationToken As CancellationToken = Nothing) As Task(Of SecureWrapResult)" />
+      <MemberSignature Language="F#" Value="abstract member SecureWrapKeyAsync : Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult&gt;&#xA;override this.SecureWrapKeyAsync : Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult&gt;" Usage="cryptographyClient.SecureWrapKeyAsync (algorithm, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">The <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.SecureKeyWrapAlgorithm" /> to use.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> to cancel the operation.</param>
+        <summary>
+            Wraps the specified key using secure wrap.
+            </summary>
+        <returns>
+            The result of the secure wrap operation. The returned <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.SecureWrapResult" /> contains the wrapped key
+            along with all other information needed to unwrap it. This information should be stored with the wrapped key.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">The specified <paramref name="algorithm" /> does not match the key corresponding to the key identifier.</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">The local cryptographic provider threw an exception.</exception>
+        <exception cref="T:System.InvalidOperationException">The key is invalid for the current operation.</exception>
+        <exception cref="T:System.NotSupportedException">The operation is not supported with the specified key.</exception>
+        <exception cref="T:Azure.RequestFailedException">The server returned an error. See <see cref="P:System.Exception.Message" /> for details returned from the server.</exception>
+      </Docs>
+    </Member>
     <Member MemberName="Sign">
       <MemberSignature Language="C#" Value="public virtual Azure.Security.KeyVault.Keys.Cryptography.SignResult Sign (Azure.Security.KeyVault.Keys.Cryptography.SignatureAlgorithm algorithm, byte[] digest, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Security.KeyVault.Keys.Cryptography.SignResult Sign(valuetype Azure.Security.KeyVault.Keys.Cryptography.SignatureAlgorithm algorithm, unsigned int8[] digest, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
