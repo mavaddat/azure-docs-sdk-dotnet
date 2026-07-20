@@ -1,7 +1,7 @@
 ---
 title: Azure Domainregistration SDK for .NET
 description: Reference for Azure Domainregistration SDK for .NET
-ms.date: 07/17/2026
+ms.date: 07/20/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: domainregistration
