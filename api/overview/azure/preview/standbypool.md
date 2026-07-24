@@ -1,7 +1,7 @@
 ---
 title: Azure Standbypool SDK for .NET
 description: Reference for Azure Standbypool SDK for .NET
-ms.date: 07/23/2026
+ms.date: 07/24/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: standbypool
