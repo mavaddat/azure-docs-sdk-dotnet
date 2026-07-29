@@ -14,13 +14,14 @@
     <AssemblyVersion>1.1.5.0</AssemblyVersion>
     <AssemblyVersion>1.1.6.0</AssemblyVersion>
     <AssemblyVersion>1.1.7.0</AssemblyVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.ResourceManager.ArmResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> A class to add extension methods to SubscriptionResource. </summary>
+    <summary> A class to add extension methods to <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -33,10 +34,204 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
         <AssemblyVersion>1.1.7.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary> Initializes a new instance of the <see cref="T:Azure.ResourceManager.Authorization.Mocking.MockableAuthorizationSubscriptionResource" /> class for mocking. </summary>
+        <summary> Initializes a new instance of MockableAuthorizationSubscriptionResource for mocking. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessReviewDefaultSetting">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Authorization.AccessReviewDefaultSettingResource GetAccessReviewDefaultSetting ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Authorization.AccessReviewDefaultSettingResource GetAccessReviewDefaultSetting() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Authorization.Mocking.MockableAuthorizationSubscriptionResource.GetAccessReviewDefaultSetting" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAccessReviewDefaultSetting () As AccessReviewDefaultSettingResource" />
+      <MemberSignature Language="F#" Value="abstract member GetAccessReviewDefaultSetting : unit -&gt; Azure.ResourceManager.Authorization.AccessReviewDefaultSettingResource&#xA;override this.GetAccessReviewDefaultSetting : unit -&gt; Azure.ResourceManager.Authorization.AccessReviewDefaultSettingResource" Usage="mockableAuthorizationSubscriptionResource.GetAccessReviewDefaultSetting " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Authorization.AccessReviewDefaultSettingResource</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Get access review default settings for the subscription
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleSettings/default. </description></item><item><term> Operation Id. </term><description> AccessReviewDefaultSettingsOperationGroup_Get. </description></item><item><term> Default Api Version. </term><description> 2021-12-01-preview. </description></item><item><term> Resource. </term><description><see cref="T:Azure.ResourceManager.Authorization.AccessReviewDefaultSettingResource" />. </description></item></list></summary>
+        <returns> Returns a <see cref="T:Azure.ResourceManager.Authorization.AccessReviewDefaultSettingResource" /> object. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessReviewHistoryDefinition">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt; GetAccessReviewHistoryDefinition (string historyDefinitionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt; GetAccessReviewHistoryDefinition(string historyDefinitionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Authorization.Mocking.MockableAuthorizationSubscriptionResource.GetAccessReviewHistoryDefinition(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAccessReviewHistoryDefinition (historyDefinitionId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AccessReviewHistoryDefinitionResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAccessReviewHistoryDefinition : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt;&#xA;override this.GetAccessReviewHistoryDefinition : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt;" Usage="mockableAuthorizationSubscriptionResource.GetAccessReviewHistoryDefinition (historyDefinitionId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="historyDefinitionId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="historyDefinitionId"> The id of the access review history definition. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get access review history definition by definition Id
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewHistoryDefinitions/{historyDefinitionId}. </description></item><item><term> Operation Id. </term><description> AccessReviewHistoryDefinitions_GetById. </description></item><item><term> Default Api Version. </term><description> 2021-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="historyDefinitionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="historyDefinitionId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessReviewHistoryDefinitionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt;&gt; GetAccessReviewHistoryDefinitionAsync (string historyDefinitionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt;&gt; GetAccessReviewHistoryDefinitionAsync(string historyDefinitionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Authorization.Mocking.MockableAuthorizationSubscriptionResource.GetAccessReviewHistoryDefinitionAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAccessReviewHistoryDefinitionAsync (historyDefinitionId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AccessReviewHistoryDefinitionResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetAccessReviewHistoryDefinitionAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt;&gt;&#xA;override this.GetAccessReviewHistoryDefinitionAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt;&gt;" Usage="mockableAuthorizationSubscriptionResource.GetAccessReviewHistoryDefinitionAsync (historyDefinitionId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="historyDefinitionId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="historyDefinitionId"> The id of the access review history definition. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get access review history definition by definition Id
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewHistoryDefinitions/{historyDefinitionId}. </description></item><item><term> Operation Id. </term><description> AccessReviewHistoryDefinitions_GetById. </description></item><item><term> Default Api Version. </term><description> 2021-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="historyDefinitionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="historyDefinitionId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessReviewHistoryDefinitions">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionCollection GetAccessReviewHistoryDefinitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionCollection GetAccessReviewHistoryDefinitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Authorization.Mocking.MockableAuthorizationSubscriptionResource.GetAccessReviewHistoryDefinitions" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAccessReviewHistoryDefinitions () As AccessReviewHistoryDefinitionCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetAccessReviewHistoryDefinitions : unit -&gt; Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionCollection&#xA;override this.GetAccessReviewHistoryDefinitions : unit -&gt; Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionCollection" Usage="mockableAuthorizationSubscriptionResource.GetAccessReviewHistoryDefinitions " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Authorization.AccessReviewHistoryDefinitionCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Gets a collection of AccessReviewHistoryDefinitions in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of AccessReviewHistoryDefinitions and their operations over a AccessReviewHistoryDefinitionResource. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessReviewScheduleDefinition">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt; GetAccessReviewScheduleDefinition (string scheduleDefinitionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt; GetAccessReviewScheduleDefinition(string scheduleDefinitionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Authorization.Mocking.MockableAuthorizationSubscriptionResource.GetAccessReviewScheduleDefinition(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAccessReviewScheduleDefinition (scheduleDefinitionId As String, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AccessReviewScheduleDefinitionResource)" />
+      <MemberSignature Language="F#" Value="abstract member GetAccessReviewScheduleDefinition : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt;&#xA;override this.GetAccessReviewScheduleDefinition : string * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt;" Usage="mockableAuthorizationSubscriptionResource.GetAccessReviewScheduleDefinition (scheduleDefinitionId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scheduleDefinitionId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scheduleDefinitionId"> The id of the access review schedule definition. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get single access review definition
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}. </description></item><item><term> Operation Id. </term><description> AccessReviewScheduleDefinitions_GetById. </description></item><item><term> Default Api Version. </term><description> 2021-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scheduleDefinitionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="scheduleDefinitionId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessReviewScheduleDefinitionAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt;&gt; GetAccessReviewScheduleDefinitionAsync (string scheduleDefinitionId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt;&gt; GetAccessReviewScheduleDefinitionAsync(string scheduleDefinitionId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Authorization.Mocking.MockableAuthorizationSubscriptionResource.GetAccessReviewScheduleDefinitionAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAccessReviewScheduleDefinitionAsync (scheduleDefinitionId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AccessReviewScheduleDefinitionResource))" />
+      <MemberSignature Language="F#" Value="abstract member GetAccessReviewScheduleDefinitionAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt;&gt;&#xA;override this.GetAccessReviewScheduleDefinitionAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt;&gt;" Usage="mockableAuthorizationSubscriptionResource.GetAccessReviewScheduleDefinitionAsync (scheduleDefinitionId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionResource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scheduleDefinitionId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="scheduleDefinitionId"> The id of the access review schedule definition. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Get single access review definition
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}. </description></item><item><term> Operation Id. </term><description> AccessReviewScheduleDefinitions_GetById. </description></item><item><term> Default Api Version. </term><description> 2021-12-01-preview. </description></item></list></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scheduleDefinitionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="scheduleDefinitionId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessReviewScheduleDefinitions">
+      <MemberSignature Language="C#" Value="public virtual Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionCollection GetAccessReviewScheduleDefinitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionCollection GetAccessReviewScheduleDefinitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Authorization.Mocking.MockableAuthorizationSubscriptionResource.GetAccessReviewScheduleDefinitions" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAccessReviewScheduleDefinitions () As AccessReviewScheduleDefinitionCollection" />
+      <MemberSignature Language="F#" Value="abstract member GetAccessReviewScheduleDefinitions : unit -&gt; Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionCollection&#xA;override this.GetAccessReviewScheduleDefinitions : unit -&gt; Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionCollection" Usage="mockableAuthorizationSubscriptionResource.GetAccessReviewScheduleDefinitions " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Authorization.AccessReviewScheduleDefinitionCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Gets a collection of AccessReviewScheduleDefinitions in the <see cref="T:Azure.ResourceManager.Resources.SubscriptionResource" />. </summary>
+        <returns> An object representing collection of AccessReviewScheduleDefinitions and their operations over a AccessReviewScheduleDefinitionResource. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -50,6 +245,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
         <AssemblyVersion>1.1.7.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.ResourceManager.Authorization.Models.AuthorizationClassicAdministrator&gt;</ReturnType>
@@ -61,7 +257,7 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets service administrator, account administrator, and co-administrators for the subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/classicAdministrators</description></item><item><term>Operation Id</term><description>ClassicAdministrators_List</description></item><item><term>Default Api Version</term><description>2015-07-01</description></item></list></summary>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/classicAdministrators. </description></item><item><term> Operation Id. </term><description> ClassicAdministratorsOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2015-07-01. </description></item></list></summary>
         <returns> A collection of <see cref="T:Azure.ResourceManager.Authorization.Models.AuthorizationClassicAdministrator" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -76,6 +272,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Authorization</AssemblyName>
         <AssemblyVersion>1.1.7.0</AssemblyVersion>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.ResourceManager.Authorization.Models.AuthorizationClassicAdministrator&gt;</ReturnType>
@@ -87,8 +284,8 @@
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
             Gets service administrator, account administrator, and co-administrators for the subscription.
-            <list type="bullet"><item><term>Request Path</term><description>/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/classicAdministrators</description></item><item><term>Operation Id</term><description>ClassicAdministrators_List</description></item><item><term>Default Api Version</term><description>2015-07-01</description></item></list></summary>
-        <returns> An async collection of <see cref="T:Azure.ResourceManager.Authorization.Models.AuthorizationClassicAdministrator" /> that may take multiple service requests to iterate over. </returns>
+            <list type="bullet"><item><term> Request Path. </term><description> /subscriptions/{subscriptionId}/providers/Microsoft.Authorization/classicAdministrators. </description></item><item><term> Operation Id. </term><description> ClassicAdministratorsOperationGroup_List. </description></item><item><term> Default Api Version. </term><description> 2015-07-01. </description></item></list></summary>
+        <returns> A collection of <see cref="T:Azure.ResourceManager.Authorization.Models.AuthorizationClassicAdministrator" /> that may take multiple service requests to iterate over. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
