@@ -1004,11 +1004,11 @@
       </Docs>
     </Member>
     <Member MemberName="ComputeFleetVirtualMachine">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine ComputeFleetVirtualMachine (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus operationStatus = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine ComputeFleetVirtualMachine(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus operationStatus, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVirtualMachine(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVirtualMachine (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional operationStatus As ComputeFleetVmOperationStatus = Nothing, Optional error As ComputeFleetApiError = Nothing) As ComputeFleetVirtualMachine" />
-      <MemberSignature Language="F#" Value="static member ComputeFleetVirtualMachine : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVirtualMachine (id, name, resourceType, systemData, operationStatus, error)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine ComputeFleetVirtualMachine (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus operationStatus = default, Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error = default, string vmSize = default, string zone = default, string priority = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine ComputeFleetVirtualMachine(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, valuetype Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus operationStatus, class Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError error, string vmSize, string zone, string priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVirtualMachine(Azure.Core.ResourceIdentifier,System.String,Azure.Core.ResourceType,Azure.ResourceManager.Models.SystemData,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus,Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeFleetVirtualMachine (Optional id As ResourceIdentifier = Nothing, Optional name As String = Nothing, Optional resourceType As ResourceType = Nothing, Optional systemData As SystemData = Nothing, Optional operationStatus As ComputeFleetVmOperationStatus = Nothing, Optional error As ComputeFleetApiError = Nothing, Optional vmSize As String = Nothing, Optional zone As String = Nothing, Optional priority As String = Nothing) As ComputeFleetVirtualMachine" />
+      <MemberSignature Language="F#" Value="static member ComputeFleetVirtualMachine : Azure.Core.ResourceIdentifier * string * Azure.Core.ResourceType * Azure.ResourceManager.Models.SystemData * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus * Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError * string * string * string -&gt; Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine" Usage="Azure.ResourceManager.ComputeFleet.Models.ArmComputeFleetModelFactory.ComputeFleetVirtualMachine (id, name, resourceType, systemData, operationStatus, error, vmSize, zone, priority)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.ComputeFleet</AssemblyName>
@@ -1024,6 +1024,9 @@
         <Parameter Name="systemData" Type="Azure.ResourceManager.Models.SystemData" Index="3" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="operationStatus" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVmOperationStatus" Index="4" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="error" Type="Azure.ResourceManager.ComputeFleet.Models.ComputeFleetApiError" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="vmSize" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="zone" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="priority" Type="System.String" Index="8" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
@@ -1032,7 +1035,10 @@
         <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         <param name="operationStatus"> This represents the operationStatus of the virtual machine in response to the last operation that was performed on it by Azure Fleet resource. </param>
         <param name="error"> Error information when `operationStatus` is `Failed`. </param>
-        <summary> An instant Fleet's virtual machine. </summary>
+        <param name="vmSize"> The VM size of the virtual machine. </param>
+        <param name="zone"> The availability zone of the virtual machine. </param>
+        <param name="priority"> The priority of the virtual machine. </param>
+        <summary>To be added.</summary>
         <returns> A new <see cref="T:Azure.ResourceManager.ComputeFleet.Models.ComputeFleetVirtualMachine" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
