@@ -1,0 +1,11 @@
+---
+title: Azure Workloads SAP Virtual Instance SDK for .NET
+description: Reference for Azure Workloads SAP Virtual Instance SDK for .NET
+ms.date: 08/03/2026
+ms.topic: reference
+ms.devlang: dotnet
+ms.service: workloadssapvirtualinstance
+---
+# Azure Workloads SAP Virtual Instance SDK for .NET - latest
+## Packages - latest
+[!INCLUDE [packages](workloads-sap-virtual-instance-index.md)]

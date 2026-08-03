@@ -1,0 +1,11 @@
+---
+title: Azure Artifact Signing SDK for .NET
+description: Reference for Azure Artifact Signing SDK for .NET
+ms.date: 08/03/2026
+ms.topic: reference
+ms.devlang: dotnet
+ms.service: artifactsigning
+---
+# Azure Artifact Signing SDK for .NET - latest
+## Packages - latest
+[!INCLUDE [packages](artifact-signing-index.md)]

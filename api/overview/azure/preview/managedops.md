@@ -1,7 +1,7 @@
 ---
-title: Azure Managedops SDK for .NET
-description: Reference for Azure Managedops SDK for .NET
-ms.date: 07/31/2026
+title: Azure ManagedOps SDK for .NET
+description: Reference for Azure ManagedOps SDK for .NET
+ms.date: 08/03/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: managedops

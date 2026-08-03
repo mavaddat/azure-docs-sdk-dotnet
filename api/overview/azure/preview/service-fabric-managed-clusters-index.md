@@ -1,3 +1,3 @@
 | Reference | Package | Source |
 |---|---|---|
-|[Resource Management - Service Fabric Managed Clusters](resourcemanager.servicefabricmanagedclusters-readme.md)|[Azure.ResourceManager.ServiceFabricManagedClusters](https://www.nuget.org/packages/Azure.ResourceManager.ServiceFabricManagedClusters)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/servicefabricmanagedclusters/Azure.ResourceManager.ServiceFabricManagedClusters)|
+|[Provisioning - Service Fabric Managed Clusters](provisioning.servicefabricmanagedclusters-readme.md)|[Azure.Provisioning.ServiceFabricManagedClusters](https://www.nuget.org/packages/Azure.Provisioning.ServiceFabricManagedClusters)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/servicefabricmanagedclusters/Azure.Provisioning.ServiceFabricManagedClusters)|

@@ -1,0 +1,11 @@
+---
+title: Azure Carbon Optimization SDK for .NET
+description: Reference for Azure Carbon Optimization SDK for .NET
+ms.date: 08/03/2026
+ms.topic: reference
+ms.devlang: dotnet
+ms.service: carbonoptimization
+---
+# Azure Carbon Optimization SDK for .NET - latest
+## Packages - latest
+[!INCLUDE [packages](carbon-optimization-index.md)]
