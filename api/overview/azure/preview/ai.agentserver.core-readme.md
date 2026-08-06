@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.AI.AgentServer.Core, agentserver
-ms.date: 06/28/2026
+ms.date: 08/06/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: agentserver
@@ -156,9 +156,13 @@ OpenTelemetry is configured automatically via the `Microsoft.OpenTelemetry` dist
 
 A `/readiness` endpoint is registered by default, responding to liveness and readiness probes. It reports healthy as soon as the host finishes starting.
 
+### Durable state store
+
+`FoundryStateStore` is a durable, server-backed store for agent state. Each store is bound to a caller-chosen name and holds items — keyed JSON values — that you read, write, and list. Use it to persist checkpoints, conversation state, or counters across requests and restarts. `FoundryStateStore.GetOrCreateAsync` fetches or creates the store in one call, and items support tags, store-level TTL, and optimistic concurrency via `If-Match`. See the [state store guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Core/docs/StateStoreGuide.md).
+
 ## Examples
 
-You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Core/samples).
+You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Core/samples).
 
 ## Troubleshooting
 
@@ -173,7 +177,8 @@ The library emits OpenTelemetry traces via the `Azure.AI.AgentServer.Responses` 
 
 ## Next steps
 
-- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Core/samples) — Getting started, multi-protocol composition
+- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Core/samples) — Getting started, multi-protocol composition
+- [State store guide](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Core/docs/StateStoreGuide.md) — Persist agent state with `FoundryStateStore`
 
 ## Contributing
 
@@ -184,12 +189,12 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 <!-- LINKS -->
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Core/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Core/src
 [nuget]: https://www.nuget.org/packages/Azure.AI.AgentServer.Core
 [product_doc]: https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agents
-[migration]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Core/MigrationGuide.md
-[responses]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Responses
-[invocations]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Invocations
-[responses_tier3]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample9_Tier3SelfHosting.md
-[invocations_tier3]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.26/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md
+[migration]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Core/MigrationGuide.md
+[responses]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Responses
+[invocations]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Invocations
+[responses_tier3]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Responses/samples/Sample9_Tier3SelfHosting.md
+[invocations_tier3]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.AgentServer.Core_1.0.0-beta.27/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md
 
