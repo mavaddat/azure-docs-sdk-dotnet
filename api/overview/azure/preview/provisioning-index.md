@@ -1,7 +1,6 @@
 | Reference | Package | Source |
 |---|---|---|
 |[Provisioning](provisioning-readme.md)|[Azure.Provisioning](https://www.nuget.org/packages/Azure.Provisioning)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/provisioning/Azure.Provisioning)|
-|[Provisioning - Resources](provisioning.resources-readme.md)|[Azure.Provisioning.Resources](https://www.nuget.org/packages/Azure.Provisioning.Resources)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/provisioning/Azure.Provisioning.Resources)|
 |[Provisioning - App Configuration](provisioning.appconfiguration-readme.md)|[Azure.Provisioning.AppConfiguration](https://www.nuget.org/packages/Azure.Provisioning.AppConfiguration)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/provisioning/Azure.Provisioning.AppConfiguration)|
 |[Provisioning - Application Insights](provisioning.applicationinsights-readme.md)|[Azure.Provisioning.ApplicationInsights](https://www.nuget.org/packages/Azure.Provisioning.ApplicationInsights)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/provisioning/Azure.Provisioning.ApplicationInsights)|
 |[Provisioning - Cognitive Services](provisioning.cognitiveservices-readme.md)|[Azure.Provisioning.CognitiveServices](https://www.nuget.org/packages/Azure.Provisioning.CognitiveServices)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/provisioning/Azure.Provisioning.CognitiveServices)|
