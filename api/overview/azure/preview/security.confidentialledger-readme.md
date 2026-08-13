@@ -1,12 +1,12 @@
 ---
 title: Azure confidential ledger client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.Security.ConfidentialLedger, confidentialledger
-ms.date: 08/05/2026
+ms.date: 08/13/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: confidentialledger
 ---
-# Azure confidential ledger client library for .NET - version 2.0.0-beta.1 
+# Azure confidential ledger client library for .NET - version 2.0.0-beta.2 
 
 
 Azure confidential ledger provides a service for logging to an immutable, tamper-proof ledger. As part of the [Azure Confidential Computing][azure_confidential_computing]
@@ -110,6 +110,31 @@ The `ConfidentialLedgerClient` automatically follows HTTP 307 and 308 redirects 
 The SDK also caches the latest primary node URL from redirect responses and reuses it for subsequent non-`GET` requests to reduce extra network round-trips for write-heavy workloads.
 
 No additional configuration is required to enable this behavior.
+
+### Read failover and retry behavior
+
+The client discovers failover ledgers through the configured confidential ledger Identity Service. Failover is limited to the synchronous and asynchronous `GetLedgerEntry` and `GetCurrentLedgerEntry` methods. Writes, receipts, governance operations, transaction status, ranged queries, and all other `GET` operations remain on the primary ledger.
+
+Failover occurs for HTTP 408, 429, and 5xx responses and for retryable transport failures such as connection failures and network timeouts. The primary endpoint first consumes its normal `Retry.MaxRetries` budget. Each discovered failover endpoint then receives a fresh, independent retry budget. Caller-requested cancellation stops immediately and never triggers discovery or failover. If discovery is unavailable, metadata is malformed, or every failover fails, the original primary response or exception is surfaced.
+
+```C#
+var options = new ConfidentialLedgerClientOptions
+{
+    Failover = ConfidentialLedgerClientOptions.FailoverSelection.Ordered,
+    FailoverNetworkTimeout = TimeSpan.FromSeconds(30),
+};
+options.Retry.MaxRetries = 3;
+
+var ledgerClient = new ConfidentialLedgerClient(ledgerEndpoint, credential, options);
+```
+
+`Ordered` uses the Identity Service order. `Random` shuffles candidates independently for each request. `FailoverNetworkTimeout`, when set, replaces the network timeout for each failover endpoint attempt; it does not create an overall operation deadline. Use the request `CancellationToken` for an overall deadline.
+
+`GetLedgerEntry` automatically re-polls a successful response whose state is `Loading`. The configured `Retry.MaxRetries` bounds the additional loading polls and `Retry.Delay` controls their spacing.
+
+Collection pruning can remove the live value while retaining its history. Archived fallback is enabled by default, so `GetCurrentLedgerEntry` handles a collection-specific 404 by querying history and returning the latest retained entry, including tags, without additional caller logic or configuration. A missing collection still surfaces the original 404 when history contains no entry. Set `EnableArchivedCollectionFallback = false` only to restore the legacy 404 behavior for pruned collections.
+
+Each endpoint uses its own transport pipeline and the TLS identity certificate returned by the independently validated Identity Service is pinned specifically to that endpoint's ledger id. A certificate trusted for one ledger is not accepted for another ledger, including during concurrent failover. Custom transports remain in use; their TLS behavior remains the custom transport owner's responsibility. Do not disable `VerifyConnection` in production.
 
 #### Receipts
 
@@ -423,11 +448,11 @@ We guarantee that all client instance methods are thread-safe and independent of
 ### Additional concepts
 
 <!-- CLIENT COMMON BAR -->
-[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
-[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
-[Long-running operations](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt) |
-[Handling failures](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception) |
-[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/core/Azure.Core/samples/Diagnostics.md) |
+[Client options](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/core/Azure.Core/README.md#configuring-service-clients-using-clientoptions) |
+[Accessing the response](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/core/Azure.Core/README.md#accessing-http-response-details-using-responset) |
+[Long-running operations](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/core/Azure.Core/README.md#consuming-long-running-operations-using-operationt) |
+[Handling failures](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/core/Azure.Core/README.md#reporting-errors-requestfailedexception) |
+[Diagnostics](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/core/Azure.Core/samples/Diagnostics.md) |
 [Mocking](https://learn.microsoft.com/dotnet/azure/sdk/unit-testing-mocking) |
 [Client lifetime](https://devblogs.microsoft.com/azure-sdk/lifetime-management-and-thread-safety-guarantees-of-azure-sdk-net-clients/)
 <!-- CLIENT COMMON BAR -->
@@ -436,11 +461,11 @@ We guarantee that all client instance methods are thread-safe and independent of
 
 The [samples directory][samples] includes end-to-end usage patterns:
 
-- [Hello World — Create a client, append entries and check status](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample1_HelloWorld.md)
-- [Collections — Organize entries by collection](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample2_Collections.md)
-- [Tags — Create and query entries with tags](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample3_Tags.md)
-- [Users and Consortium — Manage users and view consortium info](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample4_UsersAndConsortium.md)
-- [Advanced — Custom TLS certificate validation](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample5_Advanced.md)
+- [Hello World — Create a client, append entries and check status](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample1_HelloWorld.md)
+- [Collections — Organize entries by collection](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample2_Collections.md)
+- [Tags — Create and query entries with tags](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample3_Tags.md)
+- [Users and Consortium — Manage users and view consortium info](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample4_UsersAndConsortium.md)
+- [Advanced — Custom TLS certificate validation](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples/Sample5_Advanced.md)
 
 ## Troubleshooting
 
@@ -477,18 +502,18 @@ For more information see the [Code of Conduct FAQ][coc_faq] or contact
 <!-- LINKS -->
 [style-guide-msft]: https://learn.microsoft.com/style-guide/capitalization
 [style-guide-cloud]: https://aka.ms/azsdk/cloud-style-guide
-[client_src]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/confidentialledger/Azure.Security.ConfidentialLedger
+[client_src]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/confidentialledger/Azure.Security.ConfidentialLedger
 [client_nuget_package]: https://www.nuget.org/packages?q=Azure.Security.ConfidentialLedger
-[samples]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples
+[samples]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/confidentialledger/Azure.Security.ConfidentialLedger/samples
 [azure_cli]: https://learn.microsoft.com/cli/azure
 [azure_cloud_shell]: https://shell.azure.com/bash
 [azure_confidential_computing]: https://azure.microsoft.com/solutions/confidential-compute
-[client_construction_sample]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/confidentialledger/Azure.Security.ConfidentialLedger/tests/samples/CertificateServiceSample.md
+[client_construction_sample]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/confidentialledger/Azure.Security.ConfidentialLedger/tests/samples/CertificateServiceSample.md
 [azure_sub]: https://azure.microsoft.com/free/dotnet/
 [ccf]: https://github.com/Microsoft/CCF
-[azure_identity]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/identity/Azure.Identity
-[default_cred_ref]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/identity/Azure.Identity/README.md#defaultazurecredential
-[logging]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.1/sdk/core/Azure.Core/samples/Diagnostics.md
+[azure_identity]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/identity/Azure.Identity
+[default_cred_ref]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/identity/Azure.Identity/README.md#defaultazurecredential
+[logging]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Security.ConfidentialLedger_2.0.0-beta.2/sdk/core/Azure.Core/samples/Diagnostics.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq
 [cla]: https://cla.microsoft.com
