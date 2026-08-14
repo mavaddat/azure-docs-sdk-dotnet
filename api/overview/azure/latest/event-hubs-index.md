@@ -2,4 +2,5 @@
 |---|---|---|
 |[Event Hubs](messaging.eventhubs-readme.md)|[Azure.Messaging.EventHubs](https://www.nuget.org/packages/Azure.Messaging.EventHubs)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/eventhub/Azure.Messaging.EventHubs)|
 |[Event Hubs - Event Processor](messaging.eventhubs.processor-readme.md)|[Azure.Messaging.EventHubs.Processor](https://www.nuget.org/packages/Azure.Messaging.EventHubs.Processor)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/eventhub/Azure.Messaging.EventHubs.Processor)|
+|[Provisioning - Event Hubs](provisioning.eventhubs-readme.md)|[Azure.Provisioning.EventHubs](https://www.nuget.org/packages/Azure.Provisioning.EventHubs)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/provisioning/Azure.Provisioning.EventHubs)|
 |[Resource Management - Event Hubs](resourcemanager.eventhubs-readme.md)|[Azure.ResourceManager.EventHubs](https://www.nuget.org/packages/Azure.ResourceManager.EventHubs)|[GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/eventhub/Azure.ResourceManager.EventHubs)|
