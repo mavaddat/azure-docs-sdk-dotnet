@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.AI.AgentServer.Invocations, agentserver
-ms.date: 06/28/2026
+ms.date: 08/14/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: agentserver
@@ -65,7 +65,7 @@ For more control over the host (adding services, configuring middleware, composi
 
 ### InvocationHandler
 
-The abstract base class you subclass for HTTP-only handlers. Only `HandleAsync` is abstract — the remaining operations (`GetAsync`, `CancelAsync`, `GetOpenApiAsync`) return 404 by default and can be overridden as needed.
+The abstract base class you subclass for HTTP-only handlers. Only `HandleAsync` is abstract — the remaining operations (`GetAsync`, `CancelAsync`, `GetOpenApiAsync`, `GetAsyncApiJsonAsync`, `GetAsyncApiYamlAsync`) return 404 by default and can be overridden as needed.
 
 ### InvocationWebSocketHandler
 
@@ -86,15 +86,37 @@ Provides request metadata to the handler. All properties are read-only and resol
 ### Customizing the host
 
 When you need to add services, configure middleware, or compose multiple protocols on a single host, see the hosting tier samples:
-- [Tier 1 hosting customization](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample5_Tier1HostingCustomize.md)
-- [Tier 2 builder](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample6_Tier2HostingBuilder.md)
-- [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md)
+- [Tier 1 hosting customization](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample5_Tier1HostingCustomize.md)
+- [Tier 2 builder](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample6_Tier2HostingBuilder.md)
+- [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md)
 
-`InvocationsServerOptions` can be configured via the `AddInvocationsServer(options => { ... })` delegate on any tier. See the [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md) sample for a complete example.
+`InvocationsServerOptions` can be configured via the `AddInvocationsServer(options => { ... })` delegate on any tier. See the [Tier 3 self-hosting](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples/Sample7_Tier3SelfHosting.md) sample for a complete example.
 
 ### Handler lifetime
 
 Handlers registered via `AddInvocations<THandler>()` or `InvocationsServer.Run<THandler>()` are resolved per request by default (scoped lifetime). Instance fields on your `InvocationHandler` subclass will not persist across requests. Store long-lived state in separate services or storage keyed by `InvocationContext.SessionId` or `InvocationContext.InvocationId`, or register a singleton handler explicitly if you require a single shared instance.
+
+### Serving discovery specs (OpenAPI / AsyncAPI)
+
+The Invocations host exposes three optional discovery endpoints for machine-readable agent contracts. Override the corresponding methods on your `InvocationHandler`; each returns `404` by default.
+
+| Method | Endpoint | Response media type |
+|---|---|---|
+| `GetOpenApiAsync` | `GET /invocations/docs/openapi.json` | `application/json` |
+| `GetAsyncApiJsonAsync` | `GET /invocations/docs/asyncapi.json` | `application/json` |
+| `GetAsyncApiYamlAsync` | `GET /invocations/docs/asyncapi.yaml` | `application/yaml` |
+
+AsyncAPI is the companion to OpenAPI for event-driven / streaming surfaces (e.g. the `invocations_ws` WebSocket protocol) that OpenAPI cannot express. The path extension is authoritative for the returned content type — there is no `Accept` negotiation and no format conversion between the JSON and YAML representations. Override `GetAsyncApiJsonAsync` and `GetAsyncApiYamlAsync` independently; publishing both is recommended for tooling compatibility.
+
+```C#
+public override async Task GetAsyncApiJsonAsync(
+    HttpRequest request, HttpResponse response, CancellationToken cancellationToken)
+{
+    response.StatusCode = 200;
+    response.ContentType = "application/json";
+    await response.WriteAsync(_asyncApiJson, cancellationToken);
+}
+```
 
 ### WebSocket protocol (`invocations_ws`)
 
@@ -143,7 +165,7 @@ The session ID honours `FOUNDRY_AGENT_SESSION_ID` (matching the HTTP `POST /invo
 
 ## Examples
 
-You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples).
+You can familiarise yourself with different APIs using [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples).
 
 ### Multi-user session (per-request call ID)
 
@@ -210,9 +232,9 @@ The library emits OpenTelemetry traces via the `Azure.AI.AgentServer.Invocations
 
 ## Next steps
 
-- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples) — Getting started, custom operations
-- [Azure.AI.AgentServer.Core](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Core) — Shared hosting foundation
-- [Azure.AI.AgentServer.Responses](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Responses) — Responses protocol implementation
+- [Samples](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Invocations/samples) — Getting started, custom operations
+- [Azure.AI.AgentServer.Core](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Core) — Shared hosting foundation
+- [Azure.AI.AgentServer.Responses](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Responses) — Responses protocol implementation
 
 ## Contributing
 
@@ -223,7 +245,7 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 <!-- LINKS -->
-[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.5/sdk/agentserver/Azure.AI.AgentServer.Invocations/src
+[source]: https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.AgentServer.Invocations_1.0.0-beta.6/sdk/agentserver/Azure.AI.AgentServer.Invocations/src
 [nuget]: https://www.nuget.org/packages/Azure.AI.AgentServer.Invocations
 [product_doc]: https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agents
 
