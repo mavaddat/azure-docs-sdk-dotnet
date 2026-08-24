@@ -1,17 +1,17 @@
 ---
 title: Azure AI Projects Agents client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.AI.Projects.Agents, ai
-ms.date: 07/01/2026
+ms.date: 08/24/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: ai
 ---
-# Azure AI Projects Agents client library for .NET - version 2.1.0-beta.4 
+# Azure AI Projects Agents client library for .NET - version 3.0.0-beta.1 
 
 
 Develop Agents using the Azure AI Foundry platform, leveraging an extensive ecosystem of models, tools, and capabilities from OpenAI, Microsoft, and other LLM providers.
 
-**Note:** This package is dedicated to perform CRUD operations on Agents and can be used to enable the telemetry.
+**Note:** This package is dedicated to performing CRUD operations on Agents and can be used to enable telemetry.
 
 [Product documentation][product_doc]
 | [Samples][samples]
@@ -30,16 +30,19 @@ Develop Agents using the Azure AI Foundry platform, leveraging an extensive ecos
   - [Select a service API version](#select-a-service-api-version)
 - [Additional concepts](#additional-concepts)
 - [Examples](#examples)
-  - [Prompt Agents](#prompt-agents)
+  - [Declarative Agents](#declarative-agents)
+    - [Agent version drafts](#agent-version-drafts)
   - [Hosted Agents](#hosted-agents)
     - [Hosted Agents from Docker images](#hosted-docker-based)
     - [Hosted Agents from Code](#hosted-code-based)
+    - [Enabling and disabling Hosted Agents](#hosted-agent-management)
   - [External Agents](#external-agents)
   - [Toolboxes](#toolboxes)
   - [Sessions](#sessions)
   - [Skills](#skills)
   - [Agent endpoints](#agent-endpoints)
   - [Streaming the logs](#streaming-the-logs)
+  - [Agent optimization](#agent-optimization)
 - [Tracing](#tracing)
   - [Enabling GenAI Tracing](#enabling-genai-tracing)
   - [Tracing to Azure Monitor](#tracing-to-azure-monitor)
@@ -59,15 +62,15 @@ To use Azure AI Agents capabilities, you must have an [Azure subscription](https
 
 Install the client library for .NET with [NuGet](https://www.nuget.org/ ):
 
-```shell
-dotnet add package Azure.AI.Extensions.OpenAI --prerelease
+```dotnetcli
+dotnet add package Azure.AI.Projects.Agents --prerelease
 ```
 
-> You must have an [Azure subscription](https://azure.microsoft.com/free/dotnet/) and [Cosmos DB account](/azure/cosmos-db/account-overview) (SQL API). In order to take advantage of the C# 8.0 syntax, it is recommended that you compile using the [.NET Core SDK](https://dotnet.microsoft.com/download) 3.0 or higher with a [language version](/dotnet/csharp/language-reference/configure-language-version#override-a-default) of `latest`.  It is also possible to compile with the .NET Core SDK 2.1.x using a language version of `preview`.
+> You must have an [Azure subscription](https://azure.microsoft.com/free/dotnet/). In order to take advantage of the C# 8.0 syntax, it is recommended that you compile using the [.NET Core SDK](https://dotnet.microsoft.com/download) 3.0 or higher with a [language version](/dotnet/csharp/language-reference/configure-language-version#override-a-default) of `latest`.
 
 ### Authenticate the client
 
-To be able to create, update and delete Agents, please use `AgentAdministrationClient`. It is a good practice to only allow this operation for users with elevated permissions, for example, administrators.
+To be able to create, update, and delete Agents, please use `AgentAdministrationClient`. It is a good practice to only allow these operations for users with elevated permissions, for example, administrators.
 
 ```C# Snippet:Sample_Agents_CreateAgentClientCRUD
 var projectEndpoint = System.Environment.GetEnvironmentVariable("FOUNDRY_PROJECT_ENDPOINT");
@@ -83,7 +86,7 @@ When clients send REST requests to the endpoint, one of the query parameters is 
 
 #### Select a service API version
 
-The API version may be set supplying `version` parameter to `AgentAdministrationClientOptions` constructor as shown in the example code below.
+The API version may be set by supplying the `version` parameter to the `AgentAdministrationClientOptions` constructor as shown in the example code below.
 
 ```C# Snippet:Sample_Agents_API_version
 AgentAdministrationClientOptions options = new(version: AgentAdministrationClientOptions.ServiceVersion.V1);
@@ -91,7 +94,8 @@ AgentAdministrationClient agentsClient = new(endpoint: new Uri(projectEndpoint),
 ```
 
 ### Additional concepts
-The Azure.AI.Projects.Agents framework organized in a way that for each call, requiring the REST API request, there are synchronous and asynchronous counterparts where the letter has the "Async" suffix. For example, the following code demonstrates the creation of a `ProjectsAgentVersion` object.
+
+The Azure.AI.Projects.Agents framework is organized so that for each call requiring a REST API request, there are synchronous and asynchronous counterparts, where the latter has the "Async" suffix. For example, the following code demonstrates the creation of a `ProjectsAgentVersion` object.
 
 Synchronous call:
 ```C# Snippet:Sample_Agents_CreateAgentVersionCRUD_Sync
@@ -126,13 +130,13 @@ ProjectsAgentVersion agentVersion2 = await agentsClient.CreateAgentVersionAsync(
 Console.WriteLine($"Agent created (id: {agentVersion2.Id}, name: {agentVersion2.Name}, version: {agentVersion2.Version})");
 ```
 
-In the most of code snippets we will show only asynchronous sample for brevity. Please refer individual [samples][samples] for both synchronous and asynchronous code.
+In most of the code snippets we will show only the asynchronous sample for brevity. Please refer to the individual [samples][samples] for both synchronous and asynchronous code.
 
 ## Examples
 
-## Declarative Agents
+### Declarative Agents
 
-When creating the Agents we need to supply Agent definitions to its constructor. To create a declarative prompt Agent, use the `DeclarativeAgentDefinition`:
+When creating Agents, we need to supply Agent definitions to the constructor. To create a declarative prompt Agent, use the `DeclarativeAgentDefinition`:
 
 ```C# Snippet:Sample_Agents_CreateAgentVersionCRUD_Async
 DeclarativeAgentDefinition agentDefinition = new(model: modelDeploymentName)
@@ -149,14 +153,63 @@ ProjectsAgentVersion agentVersion2 = await agentsClient.CreateAgentVersionAsync(
 Console.WriteLine($"Agent created (id: {agentVersion2.Id}, name: {agentVersion2.Name}, version: {agentVersion2.Version})");
 ```
 
-The code above will result in creation of `ProjectsAgentVersion` object, which is the data object containing Agent's name and version.
+The code above will result in the creation of a `ProjectsAgentVersion` object, which is the data object containing the Agent's name and version.
+
+#### Agent version drafts
+
+**Note:** This is a preview feature; to use it the `AAIP001` warning needs to be ignored.
+
+```C#
+#pragma warning disable AAIP001
+```
+
+If the Agent Version is not ready for production, it may be created with the `Draft` flag set to `true`. The draft Agent version
+is a string like `draft-1784249270168`. The draft will not be set as the Agent's latest version.
+
+Create `AgentAdministrationClient` with the draft feature enabled:
+
+```C# Snippet:Sample_CreateAgentClient_AgentsDraft
+var projectEndpoint = System.Environment.GetEnvironmentVariable("FOUNDRY_PROJECT_ENDPOINT");
+var modelDeploymentName = System.Environment.GetEnvironmentVariable("FOUNDRY_MODEL_NAME");
+AgentAdministrationClient agentsClient = new(endpoint: new Uri(projectEndpoint), tokenProvider: new DefaultAzureCredential());
+```
+
+Create a draft version:
+
+```C# Snippet:Sample_CreateDraft_AgentsDraft_Async
+agentDefinition = new(model: modelDeploymentName)
+{
+    Instructions = "You are a prompt agent which gives wrong answers with 0.1 probability."
+};
+ProjectsAgentVersion agentVersionDraft = await agentsClient.CreateAgentVersionAsync(
+    agentName: agent.Name,
+    options: new(agentDefinition)
+    {
+        Draft = true
+    }
+);
+Console.WriteLine($"Agent created draft name: {agentVersionDraft.Name}, version: {agentVersionDraft.Version}");
+agent = await agentsClient.GetAgentAsync(agentName: agentVersion1.Name);
+Console.WriteLine($"The latest version of agent \"{agent.Name}\" is still {agent.Versions.Latest.Version}.");
+```
+
+By default, draft versions are not listed. To include them, `includeDrafts` needs to be set to `true`.
+
+```C# Snippet:Sample_ListReleaseAgentsWithDrafts_AgentsDraft_Async
+Console.WriteLine($"Here are \"release\" versions of the agent {agent.Name}:");
+await foreach (ProjectsAgentVersion agentVersion in agentsClient.GetAgentVersionsAsync(agentName: agent.Name, includeDrafts: true))
+{
+    Console.WriteLine($"    {agentVersion.Version}, is draft: {agentVersion.Draft ?? false}");
+}
+```
 
 ### Hosted Agents
 
-Hosted agents simplify the custom agent deployment on fully controlled environment [see more](https://learn.microsoft.com/azure/ai-foundry/agents/concepts/hosted-agents).
+Hosted agents simplify custom agent deployment in a fully controlled environment ([see more](https://learn.microsoft.com/azure/ai-foundry/agents/concepts/hosted-agents)).
 
 #### Hosted Agents from Docker images<a id="hosted-docker-based"></a>
-To create the hosted agent from existing Docker image, please use the `HostedAgentDefinition` while creating the AgentVersion object.
+
+To create a hosted agent from an existing Docker image, please use the `HostedAgentDefinition` while creating the AgentVersion object.
 
 ```C# Snippet:Sample_Agents_ImageBasedHostedAgentDefinition_HostedAgent
 private static HostedAgentDefinition GetAgentDefinition(string dockerImage)
@@ -173,7 +226,7 @@ private static HostedAgentDefinition GetAgentDefinition(string dockerImage)
 }
 ```
 
-The next code will deploy the hosted Agent.
+The following code will deploy the hosted Agent.
 ```C# Snippet:Sample_Agents_Deployment_HostedAgent
 Uri uriEndpoint = new(projectEndpoint);
 AgentAdministrationClient agentsClient = new(endpoint: new Uri(projectEndpoint), tokenProvider: new DefaultAzureCredential());
@@ -197,22 +250,55 @@ if (agentVersion.Status != AgentVersionStatus.Active)
 ```
 
 #### Hosted Agents from Code<a id="hosted-code-based"></a>
-Hosted Agents also can be deployed using local code. To deploy the Agent from code, please prepare the folder with the Agent code and dependencies.
-In the example below, we use source code on Python.
 
-1. Create a folder, containing agent code and dependencies. In our example, it should be located `Assets/AgentsCode` folder next to the sample itself (this folder is not provided).
-2. Copy the contents of a [sample](https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/agentserver/azure-ai-agentserver-responses/samples/sample_01_getting_started.py) to the file main.py in the `Assets` folder.
-3. Create the `requirements.txt` in `Assets` folder with the next contents.
+Hosted Agents can also be deployed using local code. To deploy the Agent from code, please prepare the folder with the Agent code and dependencies.
+In the example below, we use C# source code.
 
+1. Create a project and add `Azure.AI.AgentServer.Responses` package as a dependency.
+
+```bash
+dotnet new console --name EchoAgent --output EchoAgent
+dotnet add package Azure.AI.AgentServer.Responses --prerelease
 ```
-azure-ai-agentserver-core
-azure-ai-agentserver-invocations
-azure-ai-agentserver-responses
+
+2. Populate the code in Program.cs
+
+```C#
+using Azure.AI.AgentServer.Responses;
+using Azure.AI.AgentServer.Responses.Models;
+
+ResponsesServer.Run<EchoHandler>();
+
+public class EchoHandler : ResponseHandler
+{
+    public override IAsyncEnumerable<ResponseStreamEvent> CreateAsync(
+        CreateResponse request,
+        ResponseContext context,
+        CancellationToken cancellationToken)
+    {
+        return new TextResponse(context, request,
+            createText: async ct =>
+            {
+                var input = await context.GetInputTextAsync(cancellationToken: ct);
+                return $"Echo: {input}";
+            });
+    }
+}
 ```
+
+3. Compile the application.
+
+```bash
+dotnet publish
+```
+
+This will create the publish output in the `bin\Release\net%version%\publish\` folder, where `%version%` is the .NET version used to build the application.
+4. Copy the contents of `publish` folder to `Assets/AgentsCode`.
+**Note:** In this example we are uploading the project. It is also possible to place source codes and a C# project file to the `Assets/AgentsCode` folder. In this case we will need to set `dependencyResolution: CodeDependencyResolution.RemoteBuild`.
 
 Prepare the metadata for Agent:
 
-```C# Snippet:Sample_CodeAgentMetadata_CodeAgent
+```C# Snippet:Sample_CodeAgentMetadata_CodeAgentProj
 private static AgentVersionFromCodeMetadata GetAgentMetadata()
 {
     HostedAgentDefinition agentDefinition = new(
@@ -222,9 +308,9 @@ private static AgentVersionFromCodeMetadata GetAgentMetadata()
     {
         Versions = { new ProtocolVersionRecord(ProjectsAgentProtocol.Responses, "1.0.0") },
         CodeConfiguration = new(
-            runtime: "python_3_14",
-            entryPoint: ["python", "main.py"],
-            dependencyResolution: CodeDependencyResolution.RemoteBuild
+            runtime: "dotnet_10",
+            entryPoint: ["dotnet", "EchoAgent.dll"],
+            dependencyResolution: CodeDependencyResolution.Bundled
         ),
     };
     AgentVersionFromCodeMetadata metadata = new(agentDefinition);
@@ -235,7 +321,7 @@ private static AgentVersionFromCodeMetadata GetAgentMetadata()
 
 Deploy the Agent.
 
-```C# Snippet:Sample_CodeAgentDeployment_CodeAgent_Async
+```C# Snippet:Sample_CodeAgentDeployment_CodeAgentProj_Async
 AgentAdministrationClient agentsClient = new(endpoint: new Uri(projectEndpoint), tokenProvider: new DefaultAzureCredential());
 ProjectsAgentVersion agentVersion = await agentsClient.CreateAgentVersionFromCodeAsync(
     agentName: "myCodeAgent",
@@ -253,16 +339,46 @@ if (agentVersion.Status != AgentVersionStatus.Active)
 }
 ```
 
+#### Enabling and disabling Hosted Agents<a id="hosted-agent-management"></a>
+
+Hosted agents may be disabled. In this case, the task running in an existing session will complete, but no new tasks
+or session creations will be allowed. An attempt to create a session on a disabled Agent will result in a 403 error.
+
+```C# Snippet:Sample_DisableTheAgent_HostedAgentSessionsAgents_Async
+await agentsClient.DisableAgentAsync(agentVersion.Name);
+// The new session cannot be created.
+try
+{
+    await agentsClient.CreateSessionAsync(agentVersion.Name, new VersionRefIndicator(agentVersion.Version));
+    throw new InvalidOperationException("Stopped Agent was unexpectedly able to create session.");
+}
+catch (ClientResultException ex)
+{
+    if (ex.Status != 403)
+    {
+        throw;
+    }
+    Console.WriteLine(ex.Message);
+}
+```
+
+The disabled Agent may be enabled, and it will be able to accept requests and sessions again.
+
+```C# Snippet:Sample_EnableTheAgent_HostedAgentSessionsAgents_Async
+await agentsClient.EnableAgentAsync(agentVersion.Name);
+ProjectAgentSession session2 = await agentsClient.CreateSessionAsync(agentVersion.Name, new VersionRefIndicator(agentVersion.Version));
+Console.WriteLine($"The session {session2.AgentSessionId} was created.");
+```
+
 ### External Agents
 
-**Note:** This is a preview feature and requires the `Foundry-Features` request header to contain `ExternalAgents=V1Preview`.
-The `AAIP001` warning needs to be ignored.
+**Note:** This is a preview feature; to use it the `AAIP001` warning needs to be ignored.
 
 In this example we will demonstrate management of External Agents step by step. External Agents are the third-party Agents
 hosted outside Foundry (for example, on GCP or AWS). Registration is metadata-only: Foundry records the agent definition to
 light up observability experiences (traces, evaluations) over customer-emitted OpenTelemetry data.
 
-To create External Agent, we need to provide the `ExternalAgentDefinition` with `OpenTelemetry` agent identifier,
+To create an External Agent, we need to provide the `ExternalAgentDefinition` with an `OpenTelemetry` agent identifier,
 used to attribute customer-emitted spans to this Foundry agent, in the `CreateAgentVersionAsync` or `CreateAgentVersion` method.
 
 ```C# Snippet:Sample_CreateAgentVersion_ExternalAgentsCRUD_Async
@@ -288,7 +404,7 @@ Console.WriteLine($"Agent created (id: {agentVersion.Id}, name: {agentVersion.Na
 
 Toolboxes allow us to store tools in Azure so that they can be retrieved and used by the Agents.
 
-In the example below we create two versions of MCP tool and save it to Azure.
+In the example below we create two versions of an MCP tool and save them to Azure.
 ```C# Snippet:Sample_CreateToolbox_ToolboxesAgentsCRUD_Async
 MCPToolboxTool tool = new(serverLabel: "api-specs")
 {
@@ -319,14 +435,14 @@ Console.WriteLine($"Toolbox: {toolBox1.Name}, version: {toolBox1.Version}, (tool
 ```
 
 There are two objects which help to work with the Toolboxes: `ToolboxRecord` and `ToolboxVersion`. `ToolboxRecord` can be retrieved by
-name, it contains the default version of the Toolbox.
+name, and it contains the default version of the Toolbox.
 
 ```C# Snippet:Sample_GetToolbox_ToolboxesAgentsCRUD_Async
 ToolboxRecord record = await toolboxClient.GetAsync(name: toolBox1.Name);
 Console.WriteLine($"The default version for a toolbox {record.Name} is {record.DefaultVersion}");
 ```
 
-The name of Toolbox and its version allow to get the `ToolboxVersion`, containing the tools, which can be used by Agent.
+The name of the Toolbox and its version allow us to get the `ToolboxVersion`, which contains the tools that can be used by an Agent.
 
 ```C# Snippet:Sample_GetToolboxVersion_ToolboxesAgentsCRUD_Async
 ToolboxVersion toolBox = await toolboxClient.GetVersionAsync(record.Name, record.DefaultVersion);
@@ -365,7 +481,7 @@ while (session2.Status != AgentSessionStatus.Failed && session2.Status != AgentS
 }
 ```
 
-It is also possible to upload the files to the session store, so that it will only be accessible inside its session.
+It is also possible to upload files to the session store, so that they will only be accessible inside their session.
 To use this feature we need to create the `AgentSessionFiles` client:
 
 ```C# Snippet:Sample_CreateAgentAndSession_SessionFiles_Async
@@ -388,11 +504,10 @@ while (session.Status != AgentSessionStatus.Failed && session.Status != AgentSes
 
 ### Skills
 
-**Note:** This is a preview feature and requires the `Foundry-Features` request header to contain `Skills=V1Preview`.
-The `AAIP001` warning needs to be ignored.
+**Note:** This is a preview feature; to use it the `AAIP001` warning needs to be ignored.
 
-The skills can be used to provide the portable packages of instructions for Agents. `Azure.AI.Projects.Agents` allows
-to manage skills in Microsoft foundry. Skills may be created from the folder with instructions or on-the-fly.
+Skills can be used to provide portable packages of instructions for Agents. `Azure.AI.Projects.Agents` allows
+managing skills in Microsoft Foundry. Skills may be created from a folder with instructions or on-the-fly.
 
 ```C# Snippet:Sample_CreateSkill_SkillsCRUD_Async
 AgentsSkill skillFromFile = await skillsClient.CreateSkillVersionFromFilesAsync("roll-dice", GetDirectory("roll-dice"));
@@ -412,15 +527,13 @@ SkillVersion simpleSkill = await skillsClient.CreateSkillVersionAsync(name: "sim
 Console.WriteLine($"Created skill {simpleSkill.Name}: {simpleSkill.Description}");
 ```
 
-For more information on skills please see the [Microsoft learning](https://learn.microsoft.com/agent-framework/agents/skills) page.
+For more information on skills, please see the [Microsoft Learn](https://learn.microsoft.com/agent-framework/agents/skills) page.
 
 ### Agent endpoints
 
-**Note:** This is a preview feature and requires the `Foundry-Features` request header to contain `AgentEndpoints=V1Preview`.
-The `AAIP001` warning needs to be ignored. In the sample below the `Foundry-Features` header needs to be `HostedAgents=V1Preview,AgentEndpoints=V1Preview,Skills=V1Preview`
-because we are using three experimental features: hosted agents, skills and Agent endpoints.
+**Note:** This is a preview feature; to use it the `AAIP001` warning needs to be ignored.
 
-The hosted agent can be further configurable by using `PatchAgentObject` and `PatchAgentObjectAsync` methods.
+The hosted agent can be further configured by using the `PatchAgentObject` and `PatchAgentObjectAsync` methods.
 1. Retrieve the agent
 
 ```C# Snippet:Sample_GetAgentAndCreateSession_AgentsEndpoint_Async
@@ -447,7 +560,7 @@ SkillInlineContent content = new(
 SkillVersion simpleSkill = await skillsClient.CreateSkillVersionAsync(name: "simpleSkill", inlineContent: content);
 ```
 
-3. We will create configure hosted agent so that it will use the 74% of traffic to the endpoint and will also
+3. We will configure the hosted agent so that it will route 74% of the traffic to the endpoint and will also
 make it aware of the skill we have created.
 
 ```C# Snippet:Sample_CreateEndpoint_AgentsEndpoint_Async
@@ -486,6 +599,119 @@ SessionLogEvent logEvent = await agentsClient.GetSessionLogStreamAsync(agentName
 Console.WriteLine(logEvent.Data);
 ```
 
+### Agent optimization
+
+Agent performance may be improved by optimizing the models used, skill text, system prompt, and tool descriptions. The `AgentOptimizationJobs` client allows
+managing these tasks.
+
+```C# Snippet:Sample_CreateClient_AgentsOptimizationCandidates
+var projectEndpoint = System.Environment.GetEnvironmentVariable("FOUNDRY_PROJECT_ENDPOINT");
+var modelDeploymentName = System.Environment.GetEnvironmentVariable("FOUNDRY_MODEL_NAME");
+var anotherModelDeploymentName = System.Environment.GetEnvironmentVariable("FOUNDRY_MODEL_NAME2");
+AgentAdministrationClient agentsClient = new(endpoint: new Uri(projectEndpoint), tokenProvider: new DefaultAzureCredential());
+AgentOptimizationJobs jobsClient = agentsClient.GetAgentOptimizationJobs();
+```
+
+An Agent optimization job accepts optimization criteria, evaluators, and several models as parameters. It also accepts baselines used as an optimization starting point.
+Several models need to be defined for different purposes:
+  - `OptimizationModel` - reads the Agent evaluation result and reason and creates the improved target description: system prompt, tool description or skill.
+  - `EvalModel` - used for Agent evaluation.
+  - `model_search_space` - the models considered during Agent optimization.
+  - `model` - the model used by Hosted Agent, for Declarative Agent, the model from definition is being used. For more information about optimizing Hosted Agents please see the [document](https://learn.microsoft.com/azure/foundry/agents/how-to/make-agent-optimizer-ready).
+
+```C# Snippet:Sample_CreateOptimizationJob_AgentsOptimizationCandidates_Async
+AgentOptimizationJob job = new()
+{
+    Inputs = new(
+        agent: new OptimizedAgentIdentifier(agentName: agentVersion.Name)
+        {
+            AgentVersion = agentVersion.Version
+        },
+        trainDataset: GetDataset(0, 7),
+        evaluators: [new AgentOptimizationEvaluatorRef(name: "builtin.meteor_score")]
+    )
+    {
+        ValidationDataset = GetDataset(7, 3),
+        Options = new AgentOptimizationOptions()
+        {
+            OptimizationModel = modelDeploymentName,
+            EvalModel = modelDeploymentName,
+            MaxCandidates = 3,
+            OptimizationConfig =
+            {
+                // Start from bad prompt.
+                {"system_prompt", BinaryData.FromString(JsonSerializer.Serialize("You are a prompt agent, who always give wrong answers.")) },
+                {"model_search_space",  BinaryData.FromObjectAsJson(new[] {modelDeploymentName, anotherModelDeploymentName})},
+                {"model", BinaryData.FromString(JsonSerializer.Serialize(modelDeploymentName)) },
+                {"skills", BinaryData.FromObjectAsJson(new[]
+                    {new {
+                        name = "add two numbers",
+                        description = "Adds two numbers",
+                        body = "When asked calculate the sum of two numbers. Use echo $((<first> + <second>)) in bash and (<first> + <second>) in PowerShell."
+                    }}
+                )},
+                {"tools",  BinaryData.FromObjectAsJson(new[]{
+                    new
+                    {
+                        type = "function",
+                        function = new
+                        {
+                            name = "sum_numbers",
+                            description = "Sum two numbers",
+                            parameters = new
+                            {
+                                type = "object",
+                                properties = new
+                                {
+                                    First = new
+                                    {
+                                        type = "number",
+                                        description = "First addend"
+                                    },
+                                    Second = new
+                                    {
+                                        type = "number",
+                                        description = "Second addend"
+                                    }
+                                },
+                                required = new[] { "First", "Second"},
+                                additionalProperties = false
+                            }
+                        }
+                    }
+                })}
+            }
+        }
+    }
+};
+AgentOptimizationJob submittedJob = await jobsClient.CreateAsync(job: job, operationId: null, cancellationToken: default);
+Console.WriteLine($"Submitted optimization job: {submittedJob.Id}");
+```
+
+After the job has completed, the optimization candidates may be listed along with the optimized parameters:
+
+```C# Snippet:Sample_ListCandidates_AgentsOptimizationCandidates
+foreach (AgentOptimizationCandidate candidate in submittedJob.Result.Candidates)
+{
+    Console.WriteLine("======================================================");
+    Console.WriteLine($"CandidateID: {candidate.CandidateId}, Candidate evaluation ID:  {candidate.EvalId}, Score: {candidate.AvgScore}.");
+    if (candidate.Mutations.Count == 0)
+    {
+        Console.WriteLine("<No mutations, baseline>");
+    }
+    else
+    {
+        Console.WriteLine("Mutations:");
+        foreach (KeyValuePair<string, BinaryData> mutation in candidate.Mutations)
+        {
+            Console.WriteLine($"    {mutation.Key}: {mutation.Value}");
+        }
+    }
+    Console.WriteLine("======================================================");
+}
+```
+
+
 ## Tracing
 
 **Note:** Tracing functionality is in preliminary preview and is subject to change. Spans, attributes, and events may be modified in future versions.
@@ -514,7 +740,7 @@ For tracing to Azure Monitor from your application, the preferred option is to u
 dotnet add package Azure.Monitor.OpenTelemetry.AspNetCore
 ```
 
-More information about using the Azure.Monitor.OpenTelemetry.AspNetCore package can be found [here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects.Agents_2.1.0-beta.4/sdk/monitor/Azure.Monitor.OpenTelemetry.AspNetCore/README.md).
+More information about using the Azure.Monitor.OpenTelemetry.AspNetCore package can be found [here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects.Agents_3.0.0-beta.1/sdk/monitor/Azure.Monitor.OpenTelemetry.AspNetCore/README.md).
 
 Another option is to use Azure.Monitor.OpenTelemetry.Exporter package. Install the package with [NuGet](https://www.nuget.org/ ):
 ```dotnetcli
@@ -581,7 +807,7 @@ To further diagnose and troubleshoot issues, you can enable logging following th
 
 ## Next steps
 
-Beyond the introductory scenarios discussed, the AI Agents client library offers support for additional scenarios to help take advantage of the full feature set of the AI services.  To help explore some of these scenarios, the AI Agents client library offers a set of samples to serve as an illustration for common scenarios.  Please see the [Samples][samples]
+Beyond the introductory scenarios discussed, the AI Agents client library offers support for additional scenarios to help take advantage of the full feature set of the AI services. To help explore some of these scenarios, the AI Agents client library offers a set of samples to serve as an illustration for common scenarios. Please see the [Samples][samples].
 
 ## Contributing
 
@@ -591,7 +817,7 @@ See the [Azure SDK CONTRIBUTING.md][aiprojects_contrib] for details on building,
 [style-guide-msft]: /style-guide/capitalization
 [style-guide-cloud]: https://aka.ms/azsdk/cloud-style-guide
 
-![Impressions](https://azure-sdk-impressions.azurewebsites.net/api/impressions/azure-sdk-for-net/sdk/ai/Azure.AI.Extensions.OpenAI/README.png)
+![Impressions](https://azure-sdk-impressions.azurewebsites.net/api/impressions/azure-sdk-for-net/sdk/ai/Azure.AI.Projects.Agents/README.png)
 
 <!-- LINKS -->
 [ClientResultException]: https://learn.microsoft.com/dotnet/api/system.clientmodel.clientresultexception
@@ -602,7 +828,7 @@ See the [Azure SDK CONTRIBUTING.md][aiprojects_contrib] for details on building,
 [product_doc]: https://aka.ms/azsdk/azure-ai-projects-v2/product-doc
 [azure_identity]: https://learn.microsoft.com/dotnet/api/overview/azure/identity-readme?view=azure-dotnet
 [azure_identity_dac]: https://learn.microsoft.com/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet
-[aiprojects_contrib]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects.Agents_2.1.0-beta.4/CONTRIBUTING.md
+[aiprojects_contrib]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects.Agents_3.0.0-beta.1/CONTRIBUTING.md
 [cla]: https://cla.microsoft.com
 [code_of_conduct]: https://opensource.microsoft.com/codeofconduct/
 [code_of_conduct_faq]: https://opensource.microsoft.com/codeofconduct/faq/
