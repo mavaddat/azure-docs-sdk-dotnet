@@ -1,12 +1,12 @@
 ---
 title: Azure AI Projects client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.AI.Projects, ai
-ms.date: 07/01/2026
+ms.date: 08/24/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: ai
 ---
-# Azure AI Projects client library for .NET - version 2.1.0-beta.4 
+# Azure AI Projects client library for .NET - version 3.0.0-beta.1 
 
 The AI Projects client library is part of the Azure AI Foundry SDK and provides easy access to resources in your Azure AI Foundry Project. Use it to:
 
@@ -43,6 +43,7 @@ The client library uses version `v1` of the AI Foundry [data plane REST APIs](ht
   - [Files operations](#files-operations)
   - [Fine-Tuning operations](#fine-tuning-operations)
   - [Memory store operations](#memory-store-operations)
+  - [Model weights](#model-weights)
   - [Evaluations](#evalustions)
     - [Agent evaluation](#agent-evaluation)
     - [Model evaluation](#model-evaluation)
@@ -640,6 +641,75 @@ Console.WriteLine($"Memory Item with ID {response.MemoryId} was{(response.Delete
 
 For more information about memory stores please refer [this article](https://learn.microsoft.com/azure/ai-foundry/agents/concepts/agent-memory)
 
+### Model weights
+
+Microsoft Foundry is capable to register and store the custom model weights. First the model weights need to be uploaded to BLOB store.
+The store URI must be used to register the model.
+
+Create a new model:
+
+```C# Snippet:Sample_CreateModel_Models_Async
+ModelVersion modelVersionObj = new(dataUri)
+{
+    WeightType = FoundryModelWeightType.FullWeight,
+    Description = "Sample model registered from Azure.AI.Projects",
+};
+modelVersionObj.Tags["source"] = "Model from sample";
+await projectClient.Models.CreateModelVersionRequestAsync(
+    name: modelName,
+    version: modelVersion,
+    modelVersion: modelVersionObj);
+```
+
+Update models:
+
+```C# Snippet:Sample_UpdateModel_Models_Async
+UpdateModelVersionOptions updateOptions = new()
+{
+    Description = "Updated model description."
+};
+updateOptions.Tags["new_tag"] = "The tag from update";
+ModelVersion updatedModel = await projectClient.Models.UpdateModelVersionAsync(
+    name: retrievedModel.Name,
+    version: retrievedModel.Version,
+    updateOptions: updateOptions
+);
+Console.WriteLine($"The model was updated. New description is: {updatedModel.Description}. Tags:");
+foreach (KeyValuePair<string, string> keyValuePair in updatedModel.Tags)
+{
+    Console.WriteLine($"    Key: {keyValuePair.Key} Value: {keyValuePair.Value}");
+}
+```
+
+List model versions:
+
+```C# Snippet:Sample_ListModelVersions_Models_Async
+AsyncCollectionResult<ModelVersion> modelVersions = projectClient.Models.GetModelVersionsAsync(name: updatedModel.Name);
+Console.WriteLine($"For model {updatedModel.Name} there are next versions available:");
+await foreach (ModelVersion oneModelVersion in modelVersions)
+{
+    Console.WriteLine($"    {oneModelVersion.Version}");
+}
+```
+
+List latest versions of all models:
+
+```C# Snippet:Sample_ListLatestVersions_Models_Async
+AsyncCollectionResult<ModelVersion> models = projectClient.Models.GetLatestModelVersionsAsync();
+Console.WriteLine("The next models are available in the project:");
+await foreach (ModelVersion oneModel in models)
+{
+    Console.WriteLine($"    {oneModel.Name}, latest version: {oneModel.Version}");
+}
+```
+
+Delete a version of a model weights:
+
+```C# Snippet:Sample_Cleanup_Models_Sync
+projectClient.Models.DeleteModelVersion(name: updatedModel.Name, version: updatedModel.Version);
+```
+
+
 ### Evaluations
 
 Evaluation in Azure AI Project client library provides quantitative, AI-assisted quality and safety metrics to asses
@@ -993,8 +1063,9 @@ private EvaluatorVersion GetPromptVersion()
                 new
                 {
                     required = new[] { "query", "response", "ground_truth" },
-                    type ="object",
-                    properties = new {
+                    type = "object",
+                    properties = new
+                    {
                         query = new { type = "string" },
                         response = new { type = "string" },
                         ground_truth = new { type = "string" },
@@ -1286,7 +1357,7 @@ ProjectsInsight clusterInsight = await projectClient.Insights.GenerateAsync(
         displayName: "Cluster analysis",
         request: new EvaluationRunClusterInsightRequest(
             evalId: evaluationId,
-            runIds: [ runId ])
+            runIds: [runId])
         {
             ModelConfiguration = new InsightModelConfiguration(modelDeploymentName)
         }));
@@ -1757,6 +1828,29 @@ Console.WriteLine($"Created routine: {created.Name} enabled={created.IsEnabled}.
 Console.WriteLine($"Fire at: {((TimerRoutineTrigger)routineOptions.Triggers["once"]).At.Value.ToString("o")}");
 ```
 
+The routine can be triggered based on GitHub event.
+
+```C# Snippet:Sample_CreateRoutine_RoutinesGithub_Sync
+RoutineAction action = new AgentResponsesApiRoutineAction
+{
+    AgentName = agentVersion.Name,
+};
+ProjectsRoutineOptions routineOptions = new(action: action, description: "Routine used by GitHub trigger sample.", enabled: true);
+routineOptions.Triggers.Add("on-issue",
+    new GitHubIssueRoutineTrigger(
+        connectionId: connectionName,
+        owner: owner,
+        repository: repository,
+        issueEvent: GitHubIssueEvent.Opened
+    )
+);
+ProjectsRoutine created = routinesClient.CreateOrUpdate(
+    name: routineName,
+    options: routineOptions
+);
+Console.WriteLine($"Created routine: {created.Name} enabled={created.IsEnabled}.");
+```
+
 Routines runs can be manually dispatched by calling `DispatchAsyncRoutineAsync` or `DispatchAsyncRoutine` methods.
 
 ```C# Snippet:Sample_DispatchTask_RoutinesManualDispatch_Async
@@ -1792,7 +1886,7 @@ For tracing to Azure Monitor from your application, the preferred option is to u
 dotnet add package Azure.Monitor.OpenTelemetry.AspNetCore
 ```
 
-More information about using the Azure.Monitor.OpenTelemetry.AspNetCore package can be found [here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects_2.1.0-beta.4/sdk/monitor/Azure.Monitor.OpenTelemetry.AspNetCore/README.md).
+More information about using the Azure.Monitor.OpenTelemetry.AspNetCore package can be found [here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects_3.0.0-beta.1/sdk/monitor/Azure.Monitor.OpenTelemetry.AspNetCore/README.md).
 
 Another option is to use Azure.Monitor.OpenTelemetry.Exporter package. Install the package with [NuGet](https://www.nuget.org/ ):
 ```dotnetcli
@@ -1960,7 +2054,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct][code_of_con
 [product_doc]: https://aka.ms/azsdk/azure-ai-projects-v2/product-doc
 [azure_identity]: https://learn.microsoft.com/dotnet/api/overview/azure/identity-readme?view=azure-dotnet
 [azure_identity_dac]: https://learn.microsoft.com/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet
-[aiprojects_contrib]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects_2.1.0-beta.4/CONTRIBUTING.md
+[aiprojects_contrib]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.Projects_3.0.0-beta.1/CONTRIBUTING.md
 [cla]: https://cla.microsoft.com
 [code_of_conduct]: https://opensource.microsoft.com/codeofconduct/
 [code_of_conduct_faq]: https://opensource.microsoft.com/codeofconduct/faq/
