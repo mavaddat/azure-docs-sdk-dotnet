@@ -1,7 +1,7 @@
 ---
 title: Azure Fabric SDK for .NET
 description: Reference for Azure Fabric SDK for .NET
-ms.date: 08/25/2026
+ms.date: 08/26/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: fabric
