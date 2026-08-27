@@ -1,7 +1,7 @@
 ---
 title: 
 keywords: Azure, dotnet, SDK, API, Azure.ResourceManager.HardwareSecurityModules, hardwaresecuritymodules
-ms.date: 11/04/2024
+ms.date: 08/27/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: hardwaresecuritymodules
@@ -11,6 +11,8 @@ ms.service: hardwaresecuritymodules
 **Azure Cloud HSM:** Azure Cloud HSM is a single-tenant HSM solution, granting customers administrative control over a highly available HSM cluster for various functionalities like PKCS#11, TDE, SSL/TLS processing, and custom applications, while Microsoft manages service provisioning, patching, and hosting.
 
 **Azure Dedicated HSM:** Azure Dedicated HSM is a single-tenant bare metal HSM service that allows customers to lease a general-purpose HSM appliance within Microsoft datacenters, providing complete ownership, management and control. It is particularly beneficial for legacy lift-and-shift workloads.
+
+**Azure Payment HSM:** Azure Payment HSM is a single-tenant HSM service that provides cryptographic key operations for real-time, critical payment transactions in Azure. It is designed to help payment service providers and financial institutions meet PCI DSS, PCI 3DS and PCI PIN compliance requirements.
 
 This library follows the [new Azure SDK guidelines](https://azure.github.io/azure-sdk/general_introduction.html), and provides many core capabilities:
 
@@ -27,7 +29,7 @@ This library follows the [new Azure SDK guidelines](https://azure.github.io/azur
 Install the Microsoft Azure Hardware Security Modules management library for .NET with [NuGet](https://www.nuget.org/):
 
 ```dotnetcli
-dotnet add package Azure.ResourceManager.HardwareSecurityModules --prerelease
+dotnet add package Azure.ResourceManager.HardwareSecurityModules
 ```
 
 ### Prerequisites
@@ -36,7 +38,7 @@ dotnet add package Azure.ResourceManager.HardwareSecurityModules --prerelease
 
 ### Authenticate the Client
 
-To create an authenticated client and start interacting with Microsoft Azure resources, see the [quickstart guide here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.HardwareSecurityModules_1.0.0-beta.4/doc/dev/mgmt_quickstart.md).
+To create an authenticated client and start interacting with Microsoft Azure resources, see the [quickstart guide here](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.HardwareSecurityModules_1.1.0-beta.1/doc/dev/mgmt_quickstart.md).
 
 ## Key concepts
 
@@ -46,9 +48,9 @@ Key concepts of the Microsoft Azure SDK for .NET can be found [here](https://azu
 
 Documentation is available to help you learn how to use this package:
 
-- [Quickstart](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.HardwareSecurityModules_1.0.0-beta.4/doc/dev/mgmt_quickstart.md).
-- [API References](/dotnet/api/?view=azure-dotnet).
-- [Authentication](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.HardwareSecurityModules_1.0.0-beta.4/sdk/identity/Azure.Identity/README.md).
+- [Quickstart](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.HardwareSecurityModules_1.1.0-beta.1/doc/dev/mgmt_quickstart.md).
+- [API References](https://learn.microsoft.com/dotnet/api/?view=azure-dotnet).
+- [Authentication](https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.HardwareSecurityModules_1.1.0-beta.1/sdk/identity/Azure.Identity/README.md).
 
 ## Examples
 
@@ -85,7 +87,7 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 <opencode@microsoft.com> with any other questions or comments.
 
 <!-- LINKS -->
-[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.HardwareSecurityModules_1.0.0-beta.4/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
+[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.ResourceManager.HardwareSecurityModules_1.1.0-beta.1/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 
