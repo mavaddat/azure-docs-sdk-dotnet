@@ -1,12 +1,13 @@
 ---
-title: 
-keywords: Azure, dotnet, SDK, API, Azure.Provisioning.SignalR, provisioning
-ms.date: 10/05/2024
+title: Azure Provisioning SignalR client library for .NET
+keywords: Azure, dotnet, SDK, API, Azure.Provisioning.SignalR, signalr
+ms.date: 08/27/2026
 ms.topic: reference
 ms.devlang: dotnet
-ms.service: provisioning
+ms.service: signalr
 ---
-# Azure.Provisioning.SignalR client library for .NET
+# Azure Provisioning SignalR client library for .NET - version 1.2.0-beta.1 
+
 
 Azure.Provisioning.SignalR simplifies declarative resource provisioning in .NET.
 
@@ -17,7 +18,7 @@ Azure.Provisioning.SignalR simplifies declarative resource provisioning in .NET.
 Install the client library for .NET with [NuGet](https://www.nuget.org/ ):
 
 ```dotnetcli
-dotnet add package Azure.Provisioning.SignalR --prerelease
+dotnet add package Azure.Provisioning.SignalR
 ```
 
 ### Prerequisites
@@ -29,6 +30,80 @@ dotnet add package Azure.Provisioning.SignalR --prerelease
 ## Key concepts
 
 This library allows you to specify your infrastructure in a declarative style using dotnet.  You can then use azd to deploy your infrastructure to Azure directly without needing to write or maintain bicep or arm templates.
+
+## Examples
+
+### Create a SignalR Service
+
+This example demonstrates how to create an Azure SignalR Service for real-time web functionality.
+
+```C# Snippet:SignalRBasic
+Infrastructure infra = new();
+
+ProvisioningParameter endpointName =
+    new(nameof(endpointName), typeof(string))
+    {
+        Value = "mySignalRService.55e432ab-7428-3695-b637-de57b20d40e5"
+    };
+infra.Add(endpointName);
+
+SignalRService signalr =
+    new(nameof(signalr), "2022-02-01")
+    {
+        Sku = new SignalRResourceSku { Name = "Standard_S1", Capacity = 1 },
+        Kind = SignalRServiceKind.SignalR,
+        Identity = new ManagedServiceIdentity { ManagedServiceIdentityType = ManagedServiceIdentityType.SystemAssigned },
+        IsClientCertEnabled = false,
+        Features =
+        {
+            new SignalRFeature
+            {
+                Flag = SignalRFeatureFlag.ServiceMode,
+                Value = "Default"
+            },
+            new SignalRFeature
+            {
+                Flag = SignalRFeatureFlag.EnableConnectivityLogs,
+                Value = "true"
+            },
+            new SignalRFeature
+            {
+                Flag = SignalRFeatureFlag.EnableLiveTrace,
+                Value = "true"
+            },
+        },
+        CorsAllowedOrigins = { "*" },
+        NetworkACLs =
+            new SignalRNetworkAcls
+            {
+                DefaultAction = SignalRNetworkAclAction.Deny,
+                PublicNetwork =
+                    new SignalRNetworkAcl
+                    {
+                        Allow = { SignalRRequestType.ClientConnection }
+                    },
+                PrivateEndpoints =
+                {
+                    new SignalRPrivateEndpointAcl
+                    {
+                        Name = endpointName,
+                        Allow = { SignalRRequestType.ServerConnection }
+                    }
+                },
+            },
+        UpstreamTemplates =
+        {
+            new SignalRUpstreamTemplate
+            {
+                CategoryPattern = "*",
+                EventPattern = "connect,disconnect",
+                HubPattern = "*",
+                UrlTemplate = "https://example.com/chat/api/connect"
+            }
+        }
+    };
+infra.Add(signalr);
+```
 
 ## Troubleshooting
 
@@ -58,7 +133,7 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 <opencode@microsoft.com> with any other questions or comments.
 
 <!-- LINKS -->
-[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.SignalR_1.0.0-beta.1/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
+[cg]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Provisioning.SignalR_1.2.0-beta.1/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
 
