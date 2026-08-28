@@ -20,11 +20,11 @@
   </Docs>
   <Members>
     <Member MemberName="ToLlmInput">
-      <MemberSignature Language="C#" Value="public static string ToLlmInput (this Azure.AI.ContentUnderstanding.AnalysisResult result, System.Collections.Generic.IDictionary&lt;string,object&gt;? metadata = default, Azure.AI.ContentUnderstanding.LlmInputOptions? options = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToLlmInput(class Azure.AI.ContentUnderstanding.AnalysisResult result, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; metadata, class Azure.AI.ContentUnderstanding.LlmInputOptions options) cil managed" />
+      <MemberSignature Language="C#" Value="public static string ToLlmInput (this Azure.AI.ContentUnderstanding.AnalysisResult result, System.Collections.Generic.IDictionary&lt;string,object&gt;? customMetadata = default, Azure.AI.ContentUnderstanding.LlmInputOptions? options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToLlmInput(class Azure.AI.ContentUnderstanding.AnalysisResult result, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; customMetadata, class Azure.AI.ContentUnderstanding.LlmInputOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.LlmInputHelper.ToLlmInput(Azure.AI.ContentUnderstanding.AnalysisResult,System.Collections.Generic.IDictionary{System.String,System.Object},Azure.AI.ContentUnderstanding.LlmInputOptions)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function ToLlmInput (result As AnalysisResult, Optional metadata As IDictionary(Of String, Object) = Nothing, Optional options As LlmInputOptions = Nothing) As String" />
-      <MemberSignature Language="F#" Value="static member ToLlmInput : Azure.AI.ContentUnderstanding.AnalysisResult * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Azure.AI.ContentUnderstanding.LlmInputOptions -&gt; string" Usage="Azure.AI.ContentUnderstanding.LlmInputHelper.ToLlmInput (result, metadata, options)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function ToLlmInput (result As AnalysisResult, Optional customMetadata As IDictionary(Of String, Object) = Nothing, Optional options As LlmInputOptions = Nothing) As String" />
+      <MemberSignature Language="F#" Value="static member ToLlmInput : Azure.AI.ContentUnderstanding.AnalysisResult * System.Collections.Generic.IDictionary&lt;string, obj&gt; * Azure.AI.ContentUnderstanding.LlmInputOptions -&gt; string" Usage="Azure.AI.ContentUnderstanding.LlmInputHelper.ToLlmInput (result, customMetadata, options)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
@@ -35,14 +35,15 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="result" Type="Azure.AI.ContentUnderstanding.AnalysisResult" RefType="this" />
-        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="customMetadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
         <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.LlmInputOptions" />
       </Parameters>
       <Docs>
         <param name="result">The <see cref="T:Azure.AI.ContentUnderstanding.AnalysisResult" /> from a Content Understanding analyze operation.</param>
-        <param name="metadata">Optional user-supplied key-value pairs to include in the YAML front matter.
-            Keys must not conflict with helper-generated front matter keys
-            (<c>contentType</c>, <c>timeRange</c>, <c>category</c>, <c>pages</c>, <c>fields</c>, <c>rai_warnings</c>).</param>
+        <param name="customMetadata">Optional caller-supplied key-value pairs emitted under a nested
+            <c>customMetadata</c> YAML front-matter block (kept separate from service
+            <see cref="P:Azure.AI.ContentUnderstanding.AnalysisContent.Metadata" /> / <c>metadata</c>). Common keys include
+            <c>source</c>, <c>documentId</c>, or <c>department</c>.</param>
         <param name="options">Optional rendering options controlling field/markdown inclusion.</param>
         <summary>
             Converts a Content Understanding analysis result into LLM-friendly text.
@@ -52,13 +53,14 @@
             as tool output.
             </para><para>
             The YAML front matter (delimited by <c>---</c>) may include:
-            <c>contentType</c> (document, image, audio, video),
+            <c>mimeType</c> (detected content MIME type),
+            <c>customMetadata</c> (caller-supplied key-value pairs from <paramref name="customMetadata" />),
+            <c>metadata</c> (analysis-result metadata from <see cref="P:Azure.AI.ContentUnderstanding.AnalysisContent.Metadata" />),
             <c>pages</c> (page range),
             <c>timeRange</c> (media time span),
             <c>category</c> (classification label),
             <c>fields</c> (extracted structured fields as YAML),
-            <c>rai_warnings</c> (content safety flags),
-            and any caller-supplied <paramref name="metadata" /> entries.
+            and <c>warnings</c> (content safety flags).
             </para><para>
             The markdown body contains the extracted text with page-break markers
             (<c>&lt;!-- InputPageNumber: N --&gt;</c>) inserted at page boundaries so
@@ -76,14 +78,14 @@
             duplicate markers.
             </para><para>
             Internal telemetry messages such as <c>LLMStats: ...</c> are filtered
-            from the rendered <c>rai_warnings</c> front matter.
+            from the rendered <c>warnings</c> front matter.
             </para></summary>
         <returns>A formatted text string with YAML front matter followed by markdown content.</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="result" /> is <c>null</c>.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="metadata" /> contains a reserved front matter key.</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="result" /> is <c>null</c>.</exception>
       </Docs>
     </Member>
   </Members>

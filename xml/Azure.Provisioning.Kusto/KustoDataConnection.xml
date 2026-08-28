@@ -14,13 +14,14 @@
   <Interfaces />
   <Docs>
     <summary>
-            KustoDataConnection.
+            Class representing an data connection.
+            Please note this is the base class. The derived classes available for instantiation are: <see cref="T:Azure.Provisioning.Kusto.KustoEventHubDataConnection" />, <see cref="T:Azure.Provisioning.Kusto.KustoIotHubDataConnection" />, <see cref="T:Azure.Provisioning.Kusto.KustoEventGridDataConnection" />, <see cref="T:Azure.Provisioning.Kusto.KustoCosmosDBDataConnection" />, <see cref="T:Azure.Provisioning.Kusto.EventGridDataConnectionWithManagedIdentity" />, and <see cref="T:Azure.Provisioning.Kusto.EventHubDataConnectionWithManagedIdentity" />.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public KustoDataConnection (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public KustoDataConnection (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Kusto.KustoDataConnection.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
@@ -35,16 +36,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the KustoDataConnection resource.
-            This can be used to refer to the resource in expressions, but is not
-            the Azure name of the resource.  This value can contain letters,
-            numbers, and underscores.
-            </param>
-        <param name="resourceVersion">Version of the KustoDataConnection.</param>
-        <summary>
-            Creates a new KustoDataConnection.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new KustoDataConnection. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,14 +58,12 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of KustoDataConnection.
-            </summary>
+        <summary> Define all the provisionable properties for KustoDataConnection. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Kusto.KustoDataConnection FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Kusto.KustoDataConnection FromExisting (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.Kusto.KustoDataConnection FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Kusto.KustoDataConnection.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As KustoDataConnection" />
@@ -89,17 +81,37 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the KustoDataConnection resource.
-            This can be used to refer to the resource in expressions, but is not
-            the Azure name of the resource.  This value can contain letters,
-            numbers, and underscores.
-            </param>
-        <param name="resourceVersion">Version of the KustoDataConnection.</param>
-        <summary>
-            Creates a reference to an existing KustoDataConnection.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing KustoDataConnection. </summary>
         <returns>The existing KustoDataConnection resource.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResourceNameRequirements">
+      <MemberSignature Language="C#" Value="public override Azure.Provisioning.Primitives.ResourceNameRequirements GetResourceNameRequirements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype Azure.Provisioning.Primitives.ResourceNameRequirements GetResourceNameRequirements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Kusto.KustoDataConnection.GetResourceNameRequirements" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResourceNameRequirements () As ResourceNameRequirements" />
+      <MemberSignature Language="F#" Value="override this.GetResourceNameRequirements : unit -&gt; Azure.Provisioning.Primitives.ResourceNameRequirements" Usage="kustoDataConnection.GetResourceNameRequirements " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Kusto</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.Primitives.ResourceNameRequirements</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Get the requirements for naming this resource. </summary>
+        <returns> Naming requirements. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -118,9 +130,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -140,9 +150,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Resource location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -162,15 +170,13 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The name of the data connection.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Parent">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.Kusto.KustoDatabase? Parent { get; set; }" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Kusto.KustoDatabase Parent { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.Kusto.KustoDatabase Parent" />
       <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Kusto.KustoDataConnection.Parent" />
       <MemberSignature Language="VB.NET" Value="Public Property Parent As KustoDatabase" />
@@ -184,9 +190,7 @@
         <ReturnType>Azure.Provisioning.Kusto.KustoDatabase</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets a reference to the parent KustoDatabase.
-            </summary>
+        <summary> Gets or sets the Parent. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -206,9 +210,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

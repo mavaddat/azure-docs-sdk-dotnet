@@ -1,0 +1,123 @@
+<Type Name="TaskRetryPolicy" FullName="Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy">
+  <TypeSignature Language="C#" Value="public sealed class TaskRetryPolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TaskRetryPolicy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class TaskRetryPolicy" />
+  <TypeSignature Language="F#" Value="type TaskRetryPolicy = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Controls how a failed task handler is retried: the maximum number of attempts, the delay
+            between attempts, and an optional predicate selecting which exceptions are retryable. The delay
+            is expressed as an <see cref="T:Azure.Core.DelayStrategy" /> so fixed, exponential, jittered, and
+            custom-derived backoff all use one delay model instead of a second bespoke one.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskRetryPolicy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delay">
+      <MemberSignature Language="C#" Value="public Azure.Core.DelayStrategy Delay { get; init; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Core.DelayStrategy Delay" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy.Delay" />
+      <MemberSignature Language="VB.NET" Value="Public Property Delay As DelayStrategy" />
+      <MemberSignature Language="F#" Value="member this.Delay : Azure.Core.DelayStrategy with get, set" Usage="Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy.Delay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Core.DelayStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The delay strategy applied between attempts. Defaults to an exponential strategy. Use
+            <see cref="M:Azure.Core.DelayStrategy.CreateExponentialDelayStrategy(System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})" />,
+            <see cref="M:Azure.Core.DelayStrategy.CreateFixedDelayStrategy(System.Nullable{System.TimeSpan})" />, or a custom derived strategy for linear
+            or service-specific behavior. The strategy owns its own jitter and maximum-delay handling.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxAttempts">
+      <MemberSignature Language="C#" Value="public int MaxAttempts { get; init; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxAttempts" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy.MaxAttempts" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxAttempts As Integer" />
+      <MemberSignature Language="F#" Value="member this.MaxAttempts : int with get, set" Usage="Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy.MaxAttempts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The maximum number of attempts, including the first. Defaults to 3. Must be between 1 and the
+            hard cap of 10; a larger or non-positive value throws <see cref="T:System.ArgumentOutOfRangeException" />.
+            Set to 1 to disable retries.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetryOn">
+      <MemberSignature Language="C#" Value="public Func&lt;Exception,bool&gt;? RetryOn { get; init; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;class System.Exception, bool&gt; RetryOn" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy.RetryOn" />
+      <MemberSignature Language="VB.NET" Value="Public Property RetryOn As Func(Of Exception, Boolean)" />
+      <MemberSignature Language="F#" Value="member this.RetryOn : Func&lt;Exception, bool&gt; with get, set" Usage="Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy.RetryOn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 2, 1 })]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 2, 1 })&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Exception,System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>An optional predicate deciding whether a given exception is retryable; <see langword="null" /> retries all.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

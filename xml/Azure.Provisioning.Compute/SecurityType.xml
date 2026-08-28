@@ -12,20 +12,16 @@
     <BaseTypeName>System.Enum</BaseTypeName>
   </Base>
   <Docs>
-    <summary>
-            Specifies the SecurityType of the virtual machine. It has to be set to any
-            specified value to enable UefiSettings. The default behavior is:
-            UefiSettings will not be enabled unless this property is set.
-            </summary>
+    <summary> Specifies the VM securityType; UefiSettings are enabled only when set to TrustedLaunch or ConfidentialVM, and returns a Standard value starting API version 2025-11-01. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName="ConfidentialVm">
       <MemberSignature Language="C#" Value="ConfidentialVm" />
-      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Azure.Provisioning.Compute.SecurityType ConfidentialVm = int32(1)" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Azure.Provisioning.Compute.SecurityType ConfidentialVm = int32(2)" />
       <MemberSignature Language="DocId" Value="F:Azure.Provisioning.Compute.SecurityType.ConfidentialVm" />
       <MemberSignature Language="VB.NET" Value="ConfidentialVm" />
-      <MemberSignature Language="F#" Value="ConfidentialVm = 1" Usage="Azure.Provisioning.Compute.SecurityType.ConfidentialVm" />
+      <MemberSignature Language="F#" Value="ConfidentialVm = 2" Usage="Azure.Provisioning.Compute.SecurityType.ConfidentialVm" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Compute</AssemblyName>
@@ -40,19 +36,17 @@
       <ReturnValue>
         <ReturnType>Azure.Provisioning.Compute.SecurityType</ReturnType>
       </ReturnValue>
-      <MemberValue>1</MemberValue>
+      <MemberValue>2</MemberValue>
       <Docs>
-        <summary>
-            ConfidentialVM.
-            </summary>
+        <summary> ConfidentialVm. </summary>
       </Docs>
     </Member>
-    <Member MemberName="TrustedLaunch">
-      <MemberSignature Language="C#" Value="TrustedLaunch" />
-      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Azure.Provisioning.Compute.SecurityType TrustedLaunch = int32(0)" />
-      <MemberSignature Language="DocId" Value="F:Azure.Provisioning.Compute.SecurityType.TrustedLaunch" />
-      <MemberSignature Language="VB.NET" Value="TrustedLaunch" />
-      <MemberSignature Language="F#" Value="TrustedLaunch = 0" Usage="Azure.Provisioning.Compute.SecurityType.TrustedLaunch" />
+    <Member MemberName="Standard">
+      <MemberSignature Language="C#" Value="Standard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Azure.Provisioning.Compute.SecurityType Standard = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Azure.Provisioning.Compute.SecurityType.Standard" />
+      <MemberSignature Language="VB.NET" Value="Standard" />
+      <MemberSignature Language="F#" Value="Standard = 0" Usage="Azure.Provisioning.Compute.SecurityType.Standard" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Compute</AssemblyName>
@@ -63,9 +57,26 @@
       </ReturnValue>
       <MemberValue>0</MemberValue>
       <Docs>
-        <summary>
-            TrustedLaunch.
-            </summary>
+        <summary> Indicates a VM without UEFI features such as SecureBoot or vTPM; returned as the default value when securityType is not specified. </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedLaunch">
+      <MemberSignature Language="C#" Value="TrustedLaunch" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Azure.Provisioning.Compute.SecurityType TrustedLaunch = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Azure.Provisioning.Compute.SecurityType.TrustedLaunch" />
+      <MemberSignature Language="VB.NET" Value="TrustedLaunch" />
+      <MemberSignature Language="F#" Value="TrustedLaunch = 1" Usage="Azure.Provisioning.Compute.SecurityType.TrustedLaunch" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Compute</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.Compute.SecurityType</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary> TrustedLaunch. </summary>
       </Docs>
     </Member>
   </Members>

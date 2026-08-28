@@ -166,6 +166,37 @@
       </Docs>
     </Member>
     <Member MemberName="Analyze">
+      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; Analyze (Azure.WaitUntil waitUntil, Azure.AI.ContentUnderstanding.AnalyzeOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Operation`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; Analyze(valuetype Azure.WaitUntil waitUntil, class Azure.AI.ContentUnderstanding.AnalyzeOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.Analyze(Azure.WaitUntil,Azure.AI.ContentUnderstanding.AnalyzeOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Analyze (waitUntil As WaitUntil, options As AnalyzeOptions, Optional cancellationToken As CancellationToken = Nothing) As Operation(Of AnalysisResult)" />
+      <MemberSignature Language="F#" Value="abstract member Analyze : Azure.WaitUntil * Azure.AI.ContentUnderstanding.AnalyzeOptions * System.Threading.CancellationToken -&gt; Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&#xA;override this.Analyze : Azure.WaitUntil * Azure.AI.ContentUnderstanding.AnalyzeOptions * System.Threading.CancellationToken -&gt; Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" Usage="contentUnderstandingClient.Analyze (waitUntil, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.AnalyzeOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="options"> Options for the analysis request. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from input. </summary>
+        <returns> The <see cref="T:Azure.Operation`1" /> with operation ID accessible via the <c>Id</c> property. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Analyze">
       <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; Analyze (Azure.WaitUntil waitUntil, string analyzerId, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt; inputs, System.Collections.Generic.IDictionary&lt;string,string&gt;? modelDeployments = default, Azure.AI.ContentUnderstanding.ProcessingLocation? processingLocation = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Operation`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; Analyze(valuetype Azure.WaitUntil waitUntil, string analyzerId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentUnderstanding.AnalysisInput&gt; inputs, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; modelDeployments, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.ProcessingLocation&gt; processingLocation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.Analyze(Azure.WaitUntil,System.String,System.Collections.Generic.IEnumerable{Azure.AI.ContentUnderstanding.AnalysisInput},System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{Azure.AI.ContentUnderstanding.ProcessingLocation},System.Threading.CancellationToken)" />
@@ -195,7 +226,7 @@
         <param name="inputs"> Inputs to analyze. </param>
         <param name="modelDeployments">
             Override default mapping of model names to deployments.
-            Ex. { "gpt-4.1": "myGpt41Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }.
+            Ex. { "gpt-5.2": "myGpt52Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }.
             </param>
         <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
@@ -209,17 +240,25 @@
       </Docs>
     </Member>
     <Member MemberName="Analyze">
-      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; Analyze (Azure.WaitUntil waitUntil, string analyzerId, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; Analyze (Azure.WaitUntil waitUntil, string analyzerId, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Operation`1&lt;class System.BinaryData&gt; Analyze(valuetype Azure.WaitUntil waitUntil, string analyzerId, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.Analyze(Azure.WaitUntil,System.String,Azure.Core.RequestContent,System.String,System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function Analyze (waitUntil As WaitUntil, analyzerId As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Operation(Of BinaryData)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Analyze (waitUntil As WaitUntil, analyzerId As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Operation(Of BinaryData)" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="abstract member Analyze : Azure.WaitUntil * string * Azure.Core.RequestContent * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Operation&lt;BinaryData&gt;&#xA;override this.Analyze : Azure.WaitUntil * string * Azure.Core.RequestContent * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Operation&lt;BinaryData&gt;" Usage="contentUnderstandingClient.Analyze (waitUntil, analyzerId, content, stringEncoding, processingLocation, clientRequestId, context)" />
+      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; Analyze (Azure.WaitUntil waitUntil, string analyzerId, Azure.Core.RequestContent content, string stringEncoding, string processingLocation, Guid? clientRequestId, Azure.RequestContext context);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Analyze (waitUntil As WaitUntil, analyzerId As String, content As RequestContent, stringEncoding As String, processingLocation As String, clientRequestId As Nullable(Of Guid), context As RequestContext) As Operation(Of BinaryData)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Operation&lt;System.BinaryData&gt;</ReturnType>
       </ReturnValue>
@@ -244,6 +283,52 @@
         <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
         <param name="clientRequestId"> An optional, client-generated GUID that uniquely identifies the request. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary> Compatibility overload retained for ApiCompat with the previous protocol signature. </summary>
+        <returns> The <see cref="T:Azure.Operation`1" /> representing an asynchronous operation on the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Analyze">
+      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; Analyze (Azure.WaitUntil waitUntil, string analyzerId, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, bool? allowInputTruncation = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Operation`1&lt;class System.BinaryData&gt; Analyze(valuetype Azure.WaitUntil waitUntil, string analyzerId, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;bool&gt; allowInputTruncation, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.Analyze(Azure.WaitUntil,System.String,Azure.Core.RequestContent,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Analyze (waitUntil As WaitUntil, analyzerId As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional allowInputTruncation As Nullable(Of Boolean) = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Operation(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member Analyze : Azure.WaitUntil * string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Operation&lt;BinaryData&gt;&#xA;override this.Analyze : Azure.WaitUntil * string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Operation&lt;BinaryData&gt;" Usage="contentUnderstandingClient.Analyze (waitUntil, analyzerId, content, stringEncoding, processingLocation, allowInputTruncation, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Operation&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="analyzerId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowInputTruncation" Type="System.Nullable&lt;System.Boolean&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="stringEncoding">
+              The string encoding format for content spans in the response.
+              Possible values are 'codePoint', 'utf16', and `utf8`.  Default is `codePoint`.
+            </param>
+        <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
+        <param name="allowInputTruncation"> Overrides the analyzer's allowInputTruncation setting for this request. When omitted, the analyzer's configured value applies. </param>
+        <param name="clientRequestId"> An optional, client-generated GUID that uniquely identifies the request. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary> Extract content and fields from input. </summary>
         <returns> The <see cref="T:Azure.Operation`1" /> representing an asynchronous operation on the service. </returns>
         <remarks>To be added.</remarks>
@@ -251,6 +336,37 @@
           <paramref name="analyzerId" /> or <paramref name="content" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeAsync (Azure.WaitUntil waitUntil, Azure.AI.ContentUnderstanding.AnalyzeOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Operation`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeAsync(valuetype Azure.WaitUntil waitUntil, class Azure.AI.ContentUnderstanding.AnalyzeOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeAsync(Azure.WaitUntil,Azure.AI.ContentUnderstanding.AnalyzeOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeAsync (waitUntil As WaitUntil, options As AnalyzeOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Operation(Of AnalysisResult))" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeAsync : Azure.WaitUntil * Azure.AI.ContentUnderstanding.AnalyzeOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;&#xA;override this.AnalyzeAsync : Azure.WaitUntil * Azure.AI.ContentUnderstanding.AnalyzeOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeAsync (waitUntil, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.AnalyzeOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="options"> Options for the analysis request. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from input. </summary>
+        <returns> The <see cref="T:Azure.Operation`1" /> with operation ID accessible via the <c>Id</c> property. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="AnalyzeAsync">
@@ -283,7 +399,7 @@
         <param name="inputs"> Inputs to analyze. </param>
         <param name="modelDeployments">
             Override default mapping of model names to deployments.
-            Ex. { "gpt-4.1": "myGpt41Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }.
+            Ex. { "gpt-5.2": "myGpt52Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }.
             </param>
         <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
@@ -297,17 +413,25 @@
       </Docs>
     </Member>
     <Member MemberName="AnalyzeAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; AnalyzeAsync (Azure.WaitUntil waitUntil, string analyzerId, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; AnalyzeAsync (Azure.WaitUntil waitUntil, string analyzerId, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Operation`1&lt;class System.BinaryData&gt;&gt; AnalyzeAsync(valuetype Azure.WaitUntil waitUntil, string analyzerId, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeAsync(Azure.WaitUntil,System.String,Azure.Core.RequestContent,System.String,System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeAsync (waitUntil As WaitUntil, analyzerId As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Operation(Of BinaryData))" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeAsync (waitUntil As WaitUntil, analyzerId As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Operation(Of BinaryData))" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="abstract member AnalyzeAsync : Azure.WaitUntil * string * Azure.Core.RequestContent * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt;&#xA;override this.AnalyzeAsync : Azure.WaitUntil * string * Azure.Core.RequestContent * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeAsync (waitUntil, analyzerId, content, stringEncoding, processingLocation, clientRequestId, context)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; AnalyzeAsync (Azure.WaitUntil waitUntil, string analyzerId, Azure.Core.RequestContent content, string stringEncoding, string processingLocation, Guid? clientRequestId, Azure.RequestContext context);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeAsync (waitUntil As WaitUntil, analyzerId As String, content As RequestContent, stringEncoding As String, processingLocation As String, clientRequestId As Nullable(Of Guid), context As RequestContext) As Task(Of Operation(Of BinaryData))" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Operation&lt;System.BinaryData&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -332,6 +456,52 @@
         <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
         <param name="clientRequestId"> An optional, client-generated GUID that uniquely identifies the request. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary> Compatibility overload retained for ApiCompat with the previous protocol signature. </summary>
+        <returns> The <see cref="T:Azure.Operation`1" /> representing an asynchronous operation on the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; AnalyzeAsync (Azure.WaitUntil waitUntil, string analyzerId, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, bool? allowInputTruncation = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Operation`1&lt;class System.BinaryData&gt;&gt; AnalyzeAsync(valuetype Azure.WaitUntil waitUntil, string analyzerId, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;bool&gt; allowInputTruncation, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeAsync(Azure.WaitUntil,System.String,Azure.Core.RequestContent,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeAsync (waitUntil As WaitUntil, analyzerId As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional allowInputTruncation As Nullable(Of Boolean) = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Operation(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeAsync : Azure.WaitUntil * string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt;&#xA;override this.AnalyzeAsync : Azure.WaitUntil * string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeAsync (waitUntil, analyzerId, content, stringEncoding, processingLocation, allowInputTruncation, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Operation&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="analyzerId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowInputTruncation" Type="System.Nullable&lt;System.Boolean&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="stringEncoding">
+              The string encoding format for content spans in the response.
+              Possible values are 'codePoint', 'utf16', and `utf8`.  Default is `codePoint`.
+            </param>
+        <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
+        <param name="allowInputTruncation"> Overrides the analyzer's allowInputTruncation setting for this request. When omitted, the analyzer's configured value applies. </param>
+        <param name="clientRequestId"> An optional, client-generated GUID that uniquely identifies the request. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary> Extract content and fields from input. </summary>
         <returns> The <see cref="T:Azure.Operation`1" /> representing an asynchronous operation on the service. </returns>
         <remarks>To be added.</remarks>
@@ -339,6 +509,37 @@
           <paramref name="analyzerId" /> or <paramref name="content" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinary">
+      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeBinary (Azure.WaitUntil waitUntil, Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Operation`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeBinary(valuetype Azure.WaitUntil waitUntil, class Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinary(Azure.WaitUntil,Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinary (waitUntil As WaitUntil, options As AnalyzeBinaryOptions, Optional cancellationToken As CancellationToken = Nothing) As Operation(Of AnalysisResult)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinary : Azure.WaitUntil * Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions * System.Threading.CancellationToken -&gt; Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&#xA;override this.AnalyzeBinary : Azure.WaitUntil * Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions * System.Threading.CancellationToken -&gt; Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" Usage="contentUnderstandingClient.AnalyzeBinary (waitUntil, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="options"> Additional options for the binary analysis request. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from binary input. </summary>
+        <returns> The <see cref="T:Azure.Operation`1" /> with operation ID accessible via the <c>Id</c> property. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="AnalyzeBinary">
@@ -372,7 +573,7 @@
         <param name="binaryInput"> The binary content of the document to analyze. </param>
         <param name="contentRange"> Range of the input to analyze. Use factory methods such as <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.Pages(System.Int32,System.Int32)" />, <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.TimeRange(System.TimeSpan,System.TimeSpan)" />, or <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.Combine(Azure.AI.ContentUnderstanding.ContentRange[])" /> to build the range. </param>
         <param name="contentType"> Request content type. If not specified, uses <paramref name="binaryInput" />'s <see cref="P:System.BinaryData.MediaType" /> if available, otherwise defaults to "application/octet-stream". </param>
-        <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Extract content and fields from binary input. </summary>
         <returns> The <see cref="T:Azure.Operation`1" /> with operation ID accessible via the <c>Id</c> property. </returns>
@@ -384,17 +585,25 @@
       </Docs>
     </Member>
     <Member MemberName="AnalyzeBinary">
-      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; AnalyzeBinary (Azure.WaitUntil waitUntil, string analyzerId, string contentType, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, string contentRange = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; AnalyzeBinary (Azure.WaitUntil waitUntil, string analyzerId, string contentType, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, string contentRange = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Operation`1&lt;class System.BinaryData&gt; AnalyzeBinary(valuetype Azure.WaitUntil waitUntil, string analyzerId, string contentType, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, string contentRange, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinary(Azure.WaitUntil,System.String,System.String,Azure.Core.RequestContent,System.String,System.String,System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinary (waitUntil As WaitUntil, analyzerId As String, contentType As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional contentRange As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Operation(Of BinaryData)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinary (waitUntil As WaitUntil, analyzerId As String, contentType As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional contentRange As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Operation(Of BinaryData)" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="abstract member AnalyzeBinary : Azure.WaitUntil * string * string * Azure.Core.RequestContent * string * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Operation&lt;BinaryData&gt;&#xA;override this.AnalyzeBinary : Azure.WaitUntil * string * string * Azure.Core.RequestContent * string * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Operation&lt;BinaryData&gt;" Usage="contentUnderstandingClient.AnalyzeBinary (waitUntil, analyzerId, contentType, content, stringEncoding, processingLocation, contentRange, clientRequestId, context)" />
+      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; AnalyzeBinary (Azure.WaitUntil waitUntil, string analyzerId, string contentType, Azure.Core.RequestContent content, string stringEncoding, string processingLocation, string contentRange, Guid? clientRequestId, Azure.RequestContext context);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinary (waitUntil As WaitUntil, analyzerId As String, contentType As String, content As RequestContent, stringEncoding As String, processingLocation As String, contentRange As String, clientRequestId As Nullable(Of Guid), context As RequestContext) As Operation(Of BinaryData)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Operation&lt;System.BinaryData&gt;</ReturnType>
       </ReturnValue>
@@ -423,13 +632,87 @@
         <param name="contentRange"> Range of the input to analyze (ex. `1-3,5,9-`).  Document content uses 1-based page numbers, while audio visual content uses integer milliseconds. </param>
         <param name="clientRequestId"> An optional, client-generated GUID that uniquely identifies the request. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary> Extract content and fields from input. </summary>
+        <summary> Compatibility overload retained for ApiCompat with the previous protocol signature. </summary>
         <returns> The <see cref="T:Azure.Operation`1" /> representing an asynchronous operation on the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="analyzerId" /> or <paramref name="content" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinary">
+      <MemberSignature Language="C#" Value="public virtual Azure.Operation&lt;BinaryData&gt; AnalyzeBinary (Azure.WaitUntil waitUntil, string analyzerId, string contentType, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, bool? allowInputTruncation = default, string contentRange = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Operation`1&lt;class System.BinaryData&gt; AnalyzeBinary(valuetype Azure.WaitUntil waitUntil, string analyzerId, string contentType, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;bool&gt; allowInputTruncation, string contentRange, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinary(Azure.WaitUntil,System.String,System.String,Azure.Core.RequestContent,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinary (waitUntil As WaitUntil, analyzerId As String, contentType As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional allowInputTruncation As Nullable(Of Boolean) = Nothing, Optional contentRange As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Operation(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinary : Azure.WaitUntil * string * string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Operation&lt;BinaryData&gt;&#xA;override this.AnalyzeBinary : Azure.WaitUntil * string * string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Operation&lt;BinaryData&gt;" Usage="contentUnderstandingClient.AnalyzeBinary (waitUntil, analyzerId, contentType, content, stringEncoding, processingLocation, allowInputTruncation, contentRange, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Operation&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="analyzerId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentType" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowInputTruncation" Type="System.Nullable&lt;System.Boolean&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentRange" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. </param>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="contentType"> Request content type. Defaults to application/octet-stream if not specified. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="stringEncoding"> The string encoding format for content spans in the response. </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
+        <param name="allowInputTruncation"> Overrides the analyzer's allowInputTruncation setting for this request. When omitted, the analyzer's configured value applies. </param>
+        <param name="contentRange"> Range of the input to analyze. </param>
+        <param name="clientRequestId"> An optional, client-generated GUID that uniquely identifies the request. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary> Extract content and fields from binary input. </summary>
+        <returns> The <see cref="T:Azure.Operation`1" /> representing an asynchronous operation on the service. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeBinaryAsync (Azure.WaitUntil waitUntil, Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Operation`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeBinaryAsync(valuetype Azure.WaitUntil waitUntil, class Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryAsync(Azure.WaitUntil,Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryAsync (waitUntil As WaitUntil, options As AnalyzeBinaryOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Operation(Of AnalysisResult))" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryAsync : Azure.WaitUntil * Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;&#xA;override this.AnalyzeBinaryAsync : Azure.WaitUntil * Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryAsync (waitUntil, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
+        <param name="options"> Additional options for the binary analysis request. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from binary input. </summary>
+        <returns> The <see cref="T:Azure.Operation`1" /> with operation ID accessible via the <c>Id</c> property. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="AnalyzeBinaryAsync">
@@ -463,7 +746,7 @@
         <param name="binaryInput"> The binary content of the document to analyze. </param>
         <param name="contentRange"> Range of the input to analyze. Use factory methods such as <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.Pages(System.Int32,System.Int32)" />, <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.TimeRange(System.TimeSpan,System.TimeSpan)" />, or <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.Combine(Azure.AI.ContentUnderstanding.ContentRange[])" /> to build the range. </param>
         <param name="contentType"> Request content type. If not specified, uses <paramref name="binaryInput" />'s <see cref="P:System.BinaryData.MediaType" /> if available, otherwise defaults to "application/octet-stream". </param>
-        <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Extract content and fields from binary input. </summary>
         <returns> The <see cref="T:Azure.Operation`1" /> with operation ID accessible via the <c>Id</c> property. </returns>
@@ -475,17 +758,25 @@
       </Docs>
     </Member>
     <Member MemberName="AnalyzeBinaryAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; AnalyzeBinaryAsync (Azure.WaitUntil waitUntil, string analyzerId, string contentType, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, string contentRange = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; AnalyzeBinaryAsync (Azure.WaitUntil waitUntil, string analyzerId, string contentType, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, string contentRange = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Operation`1&lt;class System.BinaryData&gt;&gt; AnalyzeBinaryAsync(valuetype Azure.WaitUntil waitUntil, string analyzerId, string contentType, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, string contentRange, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryAsync(Azure.WaitUntil,System.String,System.String,Azure.Core.RequestContent,System.String,System.String,System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryAsync (waitUntil As WaitUntil, analyzerId As String, contentType As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional contentRange As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Operation(Of BinaryData))" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryAsync (waitUntil As WaitUntil, analyzerId As String, contentType As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional contentRange As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Operation(Of BinaryData))" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryAsync : Azure.WaitUntil * string * string * Azure.Core.RequestContent * string * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt;&#xA;override this.AnalyzeBinaryAsync : Azure.WaitUntil * string * string * Azure.Core.RequestContent * string * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryAsync (waitUntil, analyzerId, contentType, content, stringEncoding, processingLocation, contentRange, clientRequestId, context)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; AnalyzeBinaryAsync (Azure.WaitUntil waitUntil, string analyzerId, string contentType, Azure.Core.RequestContent content, string stringEncoding, string processingLocation, string contentRange, Guid? clientRequestId, Azure.RequestContext context);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryAsync (waitUntil As WaitUntil, analyzerId As String, contentType As String, content As RequestContent, stringEncoding As String, processingLocation As String, contentRange As String, clientRequestId As Nullable(Of Guid), context As RequestContext) As Task(Of Operation(Of BinaryData))" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Operation&lt;System.BinaryData&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -514,13 +805,610 @@
         <param name="contentRange"> Range of the input to analyze (ex. `1-3,5,9-`).  Document content uses 1-based page numbers, while audio visual content uses integer milliseconds. </param>
         <param name="clientRequestId"> An optional, client-generated GUID that uniquely identifies the request. </param>
         <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
-        <summary> Extract content and fields from input. </summary>
+        <summary> Compatibility overload retained for ApiCompat with the previous protocol signature. </summary>
         <returns> The <see cref="T:Azure.Operation`1" /> representing an asynchronous operation on the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="analyzerId" /> or <paramref name="content" /> is null. </exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt; AnalyzeBinaryAsync (Azure.WaitUntil waitUntil, string analyzerId, string contentType, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, bool? allowInputTruncation = default, string contentRange = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Operation`1&lt;class System.BinaryData&gt;&gt; AnalyzeBinaryAsync(valuetype Azure.WaitUntil waitUntil, string analyzerId, string contentType, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;bool&gt; allowInputTruncation, string contentRange, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryAsync(Azure.WaitUntil,System.String,System.String,Azure.Core.RequestContent,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryAsync (waitUntil As WaitUntil, analyzerId As String, contentType As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional allowInputTruncation As Nullable(Of Boolean) = Nothing, Optional contentRange As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Operation(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryAsync : Azure.WaitUntil * string * string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt;&#xA;override this.AnalyzeBinaryAsync : Azure.WaitUntil * string * string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Operation&lt;BinaryData&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryAsync (waitUntil, analyzerId, contentType, content, stringEncoding, processingLocation, allowInputTruncation, contentRange, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Operation&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitUntil" Type="Azure.WaitUntil" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="analyzerId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentType" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowInputTruncation" Type="System.Nullable&lt;System.Boolean&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentRange" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="waitUntil">
+          <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. </param>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="contentType"> Request content type. Defaults to application/octet-stream if not specified. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="stringEncoding"> The string encoding format for content spans in the response. </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
+        <param name="allowInputTruncation"> Overrides the analyzer's allowInputTruncation setting for this request. When omitted, the analyzer's configured value applies. </param>
+        <param name="contentRange"> Range of the input to analyze. </param>
+        <param name="clientRequestId"> An optional, client-generated GUID that uniquely identifies the request. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary> Extract content and fields from binary input. </summary>
+        <returns> The <see cref="T:Azure.Operation`1" /> representing an asynchronous operation on the service. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryInline">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeBinaryInline (Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeBinaryInline(class Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryInline(Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryInline (options As AnalyzeBinaryOptions, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AnalysisResult)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryInline : Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&#xA;override this.AnalyzeBinaryInline : Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryInline (options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="options"> Additional options for the binary analysis request. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from binary input using an options bag. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation. </summary>
+        <returns>To be added.</returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code, or the inline operation status was not Succeeded. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryInline">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeBinaryInline (string analyzerId, BinaryData binaryInput, Azure.AI.ContentUnderstanding.ContentRange? contentRange = default, string? contentType = default, Azure.AI.ContentUnderstanding.ProcessingLocation? processingLocation = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeBinaryInline(string analyzerId, class System.BinaryData binaryInput, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.ContentRange&gt; contentRange, string contentType, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.ProcessingLocation&gt; processingLocation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryInline(System.String,System.BinaryData,System.Nullable{Azure.AI.ContentUnderstanding.ContentRange},System.String,System.Nullable{Azure.AI.ContentUnderstanding.ProcessingLocation},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryInline (analyzerId As String, binaryInput As BinaryData, Optional contentRange As Nullable(Of ContentRange) = Nothing, Optional contentType As String = Nothing, Optional processingLocation As Nullable(Of ProcessingLocation) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AnalysisResult)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryInline : string * BinaryData * Nullable&lt;Azure.AI.ContentUnderstanding.ContentRange&gt; * string * Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&#xA;override this.AnalyzeBinaryInline : string * BinaryData * Nullable&lt;Azure.AI.ContentUnderstanding.ContentRange&gt; * string * Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryInline (analyzerId, binaryInput, contentRange, contentType, processingLocation, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="binaryInput" Type="System.BinaryData" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentRange" Type="System.Nullable&lt;Azure.AI.ContentUnderstanding.ContentRange&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentType" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="binaryInput"> The binary content of the document to analyze. </param>
+        <param name="contentRange"> Range of the input to analyze. Use factory methods such as <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.Pages(System.Int32,System.Int32)" />, <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.TimeRange(System.TimeSpan,System.TimeSpan)" />, or <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.Combine(Azure.AI.ContentUnderstanding.ContentRange[])" /> to build the range. </param>
+        <param name="contentType"> Request content type. If not specified, uses <paramref name="binaryInput" />'s <see cref="P:System.BinaryData.MediaType" /> if available, otherwise defaults to "application/octet-stream". </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from binary input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation. </summary>
+        <returns>To be added.</returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" /> or <paramref name="binaryInput" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code, or the inline operation status was not Succeeded. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryInline">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response AnalyzeBinaryInline (string analyzerId, Azure.Core.RequestContent content, string contentType, string stringEncoding, string processingLocation, string contentRange, Guid? clientRequestId, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response AnalyzeBinaryInline(string analyzerId, class Azure.Core.RequestContent content, string contentType, string stringEncoding, string processingLocation, string contentRange, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryInline(System.String,Azure.Core.RequestContent,System.String,System.String,System.String,System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryInline (analyzerId As String, content As RequestContent, contentType As String, stringEncoding As String, processingLocation As String, contentRange As String, clientRequestId As Nullable(Of Guid), context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryInline : string * Azure.Core.RequestContent * string * string * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Response&#xA;override this.AnalyzeBinaryInline : string * Azure.Core.RequestContent * string * string * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Response" Usage="contentUnderstandingClient.AnalyzeBinaryInline (analyzerId, content, contentType, stringEncoding, processingLocation, contentRange, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentType" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentRange" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId">To be added.</param>
+        <param name="content">To be added.</param>
+        <param name="contentType">To be added.</param>
+        <param name="stringEncoding">To be added.</param>
+        <param name="processingLocation">To be added.</param>
+        <param name="contentRange">To be added.</param>
+        <param name="clientRequestId">To be added.</param>
+        <param name="context">To be added.</param>
+        <summary> Compatibility overload retained for ApiCompat with the previous protocol signature. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryInline">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response AnalyzeBinaryInline (string analyzerId, Azure.Core.RequestContent content, string contentType, string stringEncoding = default, string processingLocation = default, bool? allowInputTruncation = default, string contentRange = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response AnalyzeBinaryInline(string analyzerId, class Azure.Core.RequestContent content, string contentType, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;bool&gt; allowInputTruncation, string contentRange, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryInline(System.String,Azure.Core.RequestContent,System.String,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryInline (analyzerId As String, content As RequestContent, contentType As String, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional allowInputTruncation As Nullable(Of Boolean) = Nothing, Optional contentRange As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Response" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryInline : string * Azure.Core.RequestContent * string * string * string * Nullable&lt;bool&gt; * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Response&#xA;override this.AnalyzeBinaryInline : string * Azure.Core.RequestContent * string * string * string * Nullable&lt;bool&gt; * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Response" Usage="contentUnderstandingClient.AnalyzeBinaryInline (analyzerId, content, contentType, stringEncoding, processingLocation, allowInputTruncation, contentRange, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentType" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowInputTruncation" Type="System.Nullable&lt;System.Boolean&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentRange" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="contentType"> Request content type. </param>
+        <param name="stringEncoding">
+              The string encoding format for content spans in the response.
+              Possible values are 'codePoint', 'utf16', and `utf8`.  Default is `codePoint`.
+            </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
+        <param name="allowInputTruncation"> Overrides the analyzer's allowInputTruncation setting for this request. When omitted, the analyzer's configured value applies. </param>
+        <param name="contentRange"> Range of the input to analyze (ex. `1-3,5,9-`). Document content uses 1-based page numbers, while audio visual content uses integer milliseconds. </param>
+        <param name="clientRequestId"> An opaque, globally-unique, client-generated string identifier for the request. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Extract content and fields from binary input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" />, <paramref name="content" /> or <paramref name="contentType" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> or <paramref name="contentType" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryInlineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeBinaryInlineAsync (Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeBinaryInlineAsync(class Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryInlineAsync(Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryInlineAsync (options As AnalyzeBinaryOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AnalysisResult))" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryInlineAsync : Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;&#xA;override this.AnalyzeBinaryInlineAsync : Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryInlineAsync (options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.AnalyzeBinaryOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="options"> Additional options for the binary analysis request. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from binary input using an options bag. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation. </summary>
+        <returns>To be added.</returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code, or the inline operation status was not Succeeded. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryInlineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeBinaryInlineAsync (string analyzerId, BinaryData binaryInput, Azure.AI.ContentUnderstanding.ContentRange? contentRange = default, string? contentType = default, Azure.AI.ContentUnderstanding.ProcessingLocation? processingLocation = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeBinaryInlineAsync(string analyzerId, class System.BinaryData binaryInput, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.ContentRange&gt; contentRange, string contentType, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.ProcessingLocation&gt; processingLocation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryInlineAsync(System.String,System.BinaryData,System.Nullable{Azure.AI.ContentUnderstanding.ContentRange},System.String,System.Nullable{Azure.AI.ContentUnderstanding.ProcessingLocation},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryInlineAsync (analyzerId As String, binaryInput As BinaryData, Optional contentRange As Nullable(Of ContentRange) = Nothing, Optional contentType As String = Nothing, Optional processingLocation As Nullable(Of ProcessingLocation) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AnalysisResult))" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryInlineAsync : string * BinaryData * Nullable&lt;Azure.AI.ContentUnderstanding.ContentRange&gt; * string * Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;&#xA;override this.AnalyzeBinaryInlineAsync : string * BinaryData * Nullable&lt;Azure.AI.ContentUnderstanding.ContentRange&gt; * string * Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryInlineAsync (analyzerId, binaryInput, contentRange, contentType, processingLocation, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="binaryInput" Type="System.BinaryData" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentRange" Type="System.Nullable&lt;Azure.AI.ContentUnderstanding.ContentRange&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentType" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="binaryInput"> The binary content of the document to analyze. </param>
+        <param name="contentRange"> Range of the input to analyze. Use factory methods such as <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.Pages(System.Int32,System.Int32)" />, <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.TimeRange(System.TimeSpan,System.TimeSpan)" />, or <see cref="M:Azure.AI.ContentUnderstanding.ContentRange.Combine(Azure.AI.ContentUnderstanding.ContentRange[])" /> to build the range. </param>
+        <param name="contentType"> Request content type. If not specified, uses <paramref name="binaryInput" />'s <see cref="P:System.BinaryData.MediaType" /> if available, otherwise defaults to "application/octet-stream". </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from binary input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation. </summary>
+        <returns>To be added.</returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" /> or <paramref name="binaryInput" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code, or the inline operation status was not Succeeded. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryInlineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; AnalyzeBinaryInlineAsync (string analyzerId, Azure.Core.RequestContent content, string contentType, string stringEncoding, string processingLocation, string contentRange, Guid? clientRequestId, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; AnalyzeBinaryInlineAsync(string analyzerId, class Azure.Core.RequestContent content, string contentType, string stringEncoding, string processingLocation, string contentRange, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryInlineAsync(System.String,Azure.Core.RequestContent,System.String,System.String,System.String,System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryInlineAsync (analyzerId As String, content As RequestContent, contentType As String, stringEncoding As String, processingLocation As String, contentRange As String, clientRequestId As Nullable(Of Guid), context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryInlineAsync : string * Azure.Core.RequestContent * string * string * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.AnalyzeBinaryInlineAsync : string * Azure.Core.RequestContent * string * string * string * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryInlineAsync (analyzerId, content, contentType, stringEncoding, processingLocation, contentRange, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentType" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentRange" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId">To be added.</param>
+        <param name="content">To be added.</param>
+        <param name="contentType">To be added.</param>
+        <param name="stringEncoding">To be added.</param>
+        <param name="processingLocation">To be added.</param>
+        <param name="contentRange">To be added.</param>
+        <param name="clientRequestId">To be added.</param>
+        <param name="context">To be added.</param>
+        <summary> Compatibility overload retained for ApiCompat with the previous protocol signature. </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeBinaryInlineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; AnalyzeBinaryInlineAsync (string analyzerId, Azure.Core.RequestContent content, string contentType, string stringEncoding = default, string processingLocation = default, bool? allowInputTruncation = default, string contentRange = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; AnalyzeBinaryInlineAsync(string analyzerId, class Azure.Core.RequestContent content, string contentType, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;bool&gt; allowInputTruncation, string contentRange, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeBinaryInlineAsync(System.String,Azure.Core.RequestContent,System.String,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeBinaryInlineAsync (analyzerId As String, content As RequestContent, contentType As String, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional allowInputTruncation As Nullable(Of Boolean) = Nothing, Optional contentRange As String = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeBinaryInlineAsync : string * Azure.Core.RequestContent * string * string * string * Nullable&lt;bool&gt; * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.AnalyzeBinaryInlineAsync : string * Azure.Core.RequestContent * string * string * string * Nullable&lt;bool&gt; * string * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="contentUnderstandingClient.AnalyzeBinaryInlineAsync (analyzerId, content, contentType, stringEncoding, processingLocation, allowInputTruncation, contentRange, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentType" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowInputTruncation" Type="System.Nullable&lt;System.Boolean&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="contentRange" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="contentType"> Request content type. </param>
+        <param name="stringEncoding">
+              The string encoding format for content spans in the response.
+              Possible values are 'codePoint', 'utf16', and `utf8`.  Default is `codePoint`.
+            </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
+        <param name="allowInputTruncation"> Overrides the analyzer's allowInputTruncation setting for this request. When omitted, the analyzer's configured value applies. </param>
+        <param name="contentRange"> Range of the input to analyze (ex. `1-3,5,9-`). Document content uses 1-based page numbers, while audio visual content uses integer milliseconds. </param>
+        <param name="clientRequestId"> An opaque, globally-unique, client-generated string identifier for the request. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Extract content and fields from binary input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" />, <paramref name="content" /> or <paramref name="contentType" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> or <paramref name="contentType" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeInline">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeInline (Azure.AI.ContentUnderstanding.AnalyzeOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeInline(class Azure.AI.ContentUnderstanding.AnalyzeOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeInline(Azure.AI.ContentUnderstanding.AnalyzeOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeInline (options As AnalyzeOptions, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AnalysisResult)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeInline : Azure.AI.ContentUnderstanding.AnalyzeOptions * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&#xA;override this.AnalyzeInline : Azure.AI.ContentUnderstanding.AnalyzeOptions * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" Usage="contentUnderstandingClient.AnalyzeInline (options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.AnalyzeOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="options"> Options for the analysis request. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation. </summary>
+        <returns>To be added.</returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code, or the inline operation status was not Succeeded. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeInline">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeInline (string analyzerId, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt; inputs, System.Collections.Generic.IDictionary&lt;string,string&gt;? modelDeployments = default, Azure.AI.ContentUnderstanding.ProcessingLocation? processingLocation = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; AnalyzeInline(string analyzerId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentUnderstanding.AnalysisInput&gt; inputs, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; modelDeployments, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.ProcessingLocation&gt; processingLocation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeInline(System.String,System.Collections.Generic.IEnumerable{Azure.AI.ContentUnderstanding.AnalysisInput},System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{Azure.AI.ContentUnderstanding.ProcessingLocation},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeInline (analyzerId As String, inputs As IEnumerable(Of AnalysisInput), Optional modelDeployments As IDictionary(Of String, String) = Nothing, Optional processingLocation As Nullable(Of ProcessingLocation) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Response(Of AnalysisResult)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeInline : string * seq&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt; * System.Collections.Generic.IDictionary&lt;string, string&gt; * Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&#xA;override this.AnalyzeInline : string * seq&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt; * System.Collections.Generic.IDictionary&lt;string, string&gt; * Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" Usage="contentUnderstandingClient.AnalyzeInline (analyzerId, inputs, modelDeployments, processingLocation, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="inputs" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="modelDeployments" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="inputs"> Inputs to analyze. </param>
+        <param name="modelDeployments">
+            Override default mapping of model names to deployments.
+            Ex. { "gpt-5.2": "myGpt52Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }.
+            </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation. </summary>
+        <returns>To be added.</returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" /> or <paramref name="inputs" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code, or the inline operation status was not Succeeded. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeInline">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response AnalyzeInline (string analyzerId, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, bool? allowInputTruncation = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response AnalyzeInline(string analyzerId, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;bool&gt; allowInputTruncation, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeInline(System.String,Azure.Core.RequestContent,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeInline (analyzerId As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional allowInputTruncation As Nullable(Of Boolean) = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Response" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeInline : string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Response&#xA;override this.AnalyzeInline : string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; Azure.Response" Usage="contentUnderstandingClient.AnalyzeInline (analyzerId, content, stringEncoding, processingLocation, allowInputTruncation, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowInputTruncation" Type="System.Nullable&lt;System.Boolean&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="stringEncoding">
+              The string encoding format for content spans in the response.
+              Possible values are 'codePoint', 'utf16', and `utf8`.  Default is `codePoint`.")
+            </param>
+        <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
+        <param name="allowInputTruncation"> Overrides the analyzer's allowInputTruncation setting for this request. When omitted, the analyzer's configured value applies. </param>
+        <param name="clientRequestId"> An opaque, globally-unique, client-generated string identifier for the request. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Extract content and fields from input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation — no polling or separate result retrieval is needed. Intended for lightweight analysis scenarios (e.g., document analyzers without field extraction, small page counts). The result is not persisted on the server. See service documentation for current constraints.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeInlineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeInlineAsync (Azure.AI.ContentUnderstanding.AnalyzeOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeInlineAsync(class Azure.AI.ContentUnderstanding.AnalyzeOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeInlineAsync(Azure.AI.ContentUnderstanding.AnalyzeOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeInlineAsync (options As AnalyzeOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AnalysisResult))" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeInlineAsync : Azure.AI.ContentUnderstanding.AnalyzeOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;&#xA;override this.AnalyzeInlineAsync : Azure.AI.ContentUnderstanding.AnalyzeOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeInlineAsync (options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="Azure.AI.ContentUnderstanding.AnalyzeOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="options"> Options for the analysis request. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation. </summary>
+        <returns>To be added.</returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code, or the inline operation status was not Succeeded. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeInlineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeInlineAsync (string analyzerId, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt; inputs, System.Collections.Generic.IDictionary&lt;string,string&gt;? modelDeployments = default, Azure.AI.ContentUnderstanding.ProcessingLocation? processingLocation = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt; AnalyzeInlineAsync(string analyzerId, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentUnderstanding.AnalysisInput&gt; inputs, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; modelDeployments, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.ProcessingLocation&gt; processingLocation, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeInlineAsync(System.String,System.Collections.Generic.IEnumerable{Azure.AI.ContentUnderstanding.AnalysisInput},System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{Azure.AI.ContentUnderstanding.ProcessingLocation},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeInlineAsync (analyzerId As String, inputs As IEnumerable(Of AnalysisInput), Optional modelDeployments As IDictionary(Of String, String) = Nothing, Optional processingLocation As Nullable(Of ProcessingLocation) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of AnalysisResult))" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeInlineAsync : string * seq&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt; * System.Collections.Generic.IDictionary&lt;string, string&gt; * Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;&#xA;override this.AnalyzeInlineAsync : string * seq&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt; * System.Collections.Generic.IDictionary&lt;string, string&gt; * Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;" Usage="contentUnderstandingClient.AnalyzeInlineAsync (analyzerId, inputs, modelDeployments, processingLocation, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="inputs" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentUnderstanding.AnalysisInput&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="modelDeployments" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.Nullable&lt;Azure.AI.ContentUnderstanding.ProcessingLocation&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="inputs"> Inputs to analyze. </param>
+        <param name="modelDeployments">
+            Override default mapping of model names to deployments.
+            Ex. { "gpt-5.2": "myGpt52Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }.
+            </param>
+        <param name="processingLocation"> The location where the data may be processed. Defaults to global. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Extract content and fields from input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation. </summary>
+        <returns>To be added.</returns>
+        <remarks> Available only when the client is configured for service API version <c>2026-06-01-preview</c>. </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" /> or <paramref name="inputs" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code, or the inline operation status was not Succeeded. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeInlineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; AnalyzeInlineAsync (string analyzerId, Azure.Core.RequestContent content, string stringEncoding = default, string processingLocation = default, bool? allowInputTruncation = default, Guid? clientRequestId = default, Azure.RequestContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; AnalyzeInlineAsync(string analyzerId, class Azure.Core.RequestContent content, string stringEncoding, string processingLocation, valuetype System.Nullable`1&lt;bool&gt; allowInputTruncation, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; clientRequestId, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeInlineAsync(System.String,Azure.Core.RequestContent,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Guid},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function AnalyzeInlineAsync (analyzerId As String, content As RequestContent, Optional stringEncoding As String = Nothing, Optional processingLocation As String = Nothing, Optional allowInputTruncation As Nullable(Of Boolean) = Nothing, Optional clientRequestId As Nullable(Of Guid) = Nothing, Optional context As RequestContext = Nothing) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member AnalyzeInlineAsync : string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.AnalyzeInlineAsync : string * Azure.Core.RequestContent * string * string * Nullable&lt;bool&gt; * Nullable&lt;Guid&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="contentUnderstandingClient.AnalyzeInlineAsync (analyzerId, content, stringEncoding, processingLocation, allowInputTruncation, clientRequestId, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analyzerId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="Azure.Core.RequestContent" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="stringEncoding" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="processingLocation" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="allowInputTruncation" Type="System.Nullable&lt;System.Boolean&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="clientRequestId" Type="System.Nullable&lt;System.Guid&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.RequestContext" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="analyzerId"> The unique identifier of the analyzer. </param>
+        <param name="content"> The content to send as the body of the request. </param>
+        <param name="stringEncoding">
+              The string encoding format for content spans in the response.
+              Possible values are 'codePoint', 'utf16', and `utf8`.  Default is `codePoint`.")
+            </param>
+        <param name="processingLocation"> The location where the data may be processed.  Defaults to global. </param>
+        <param name="allowInputTruncation"> Overrides the analyzer's allowInputTruncation setting for this request. When omitted, the analyzer's configured value applies. </param>
+        <param name="clientRequestId"> An opaque, globally-unique, client-generated string identifier for the request. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Extract content and fields from input. The analysis result is embedded inline in the JSON response body (HTTP 200) without creating a long-running operation — no polling or separate result retrieval is needed. Intended for lightweight analysis scenarios (e.g., document analyzers without field extraction, small page counts). The result is not persisted on the server. See service documentation for current constraints.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analyzerId" /> or <paramref name="content" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="analyzerId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="CopyAnalyzer">
@@ -1944,7 +2832,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="modelDeployments"> Mapping of model names to deployment names. For example: { "gpt-4.1": "myGpt41Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }. </param>
+        <param name="modelDeployments"> Mapping of model names to deployment names. For example: { "gpt-5.2": "myGpt52Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Update default model deployment settings. </summary>
         <returns> The response returned from the service. </returns>
@@ -2010,7 +2898,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="modelDeployments"> Mapping of model names to deployment names. For example: { "gpt-4.1": "myGpt41Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }. </param>
+        <param name="modelDeployments"> Mapping of model names to deployment names. For example: { "gpt-5.2": "myGpt52Deployment", "text-embedding-3-large": "myTextEmbedding3LargeDeployment" }. </param>
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Update default model deployment settings asynchronously. </summary>
         <returns> The response returned from the service. </returns>

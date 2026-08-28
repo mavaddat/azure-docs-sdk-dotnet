@@ -1,0 +1,403 @@
+<Type Name="ConnectionAnalyzerEndpoint" FullName="Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint">
+  <TypeSignature Language="C#" Value="public class ConnectionAnalyzerEndpoint : System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;, System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionAnalyzerEndpoint extends System.Object implements class System.ClientModel.Primitives.IJsonModel`1&lt;class Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;, class System.ClientModel.Primitives.IPersistableModel`1&lt;class Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;" />
+  <TypeSignature Language="DocId" Value="T:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint" />
+  <TypeSignature Language="VB.NET" Value="Public Class ConnectionAnalyzerEndpoint&#xA;Implements IJsonModel(Of ConnectionAnalyzerEndpoint), IPersistableModel(Of ConnectionAnalyzerEndpoint)" />
+  <TypeSignature Language="F#" Value="type ConnectionAnalyzerEndpoint = class&#xA;    interface IJsonModel&lt;ConnectionAnalyzerEndpoint&gt;&#xA;    interface IPersistableModel&lt;ConnectionAnalyzerEndpoint&gt;" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+    <AssemblyVersion>1.17.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ClientModel.Primitives.IPersistableModel&lt;T&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            Describes a source or destination endpoint of a connection analyzer.
+            The schema is intentionally permissive (a flat object) because the set of
+            valid fields is determined by `type` and is enforced server-side by the
+            Network Resource Provider. The required and allowed fields per `type` are:
+            <list type="bullet"><item><description>`VM`, `VMSS`, `BastionHost`, `ApplicationGateway`: `resourceId` is</description></item></list>
+              required and must be the ARM resource ID of the corresponding resource
+              (a virtual machine, virtual machine scale set or VMSS instance, Azure
+              Bastion host, or Application Gateway, respectively); `address` is not
+              used; `port` is optional.
+            <list type="bullet"><item><description>`ExternalAddress`: `address` is required and must be an IP address or</description></item></list>
+              FQDN reachable from outside Azure; `resourceId` is not used; `port` is
+              optional.
+            Requests that supply fields not allowed for the chosen `type`, or omit a
+            required field, are rejected by the service with a validation error. This
+            follows the same convention used by `ConnectivitySource` and
+            `ConnectivityDestination` on Network Watcher.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionAnalyzerEndpoint (Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.#ctor(Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (type As ConnectionAnalyzerEndpointType)" />
+      <MemberSignature Language="F#" Value="new Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint : Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint" Usage="new Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint type" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType" />
+      </Parameters>
+      <Docs>
+        <param name="type">
+            The type of the endpoint. Determines which of `resourceId` and `address`
+            are required; see the model-level documentation for the per-type contract.
+            </param>
+        <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint" />. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public string Address { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Address" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.Address" />
+      <MemberSignature Language="VB.NET" Value="Public Property Address As String" />
+      <MemberSignature Language="F#" Value="member this.Address : string with get, set" Usage="Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            IP address or FQDN of the endpoint. Required when `type` is
+            `ExternalAddress`. Not used for the resource-typed endpoint kinds (`VM`,
+            `VMSS`, `BastionHost`, `ApplicationGateway`).
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JsonModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint JsonModelCreateCore (ref System.Text.Json.Utf8JsonReader reader, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint JsonModelCreateCore(valuetype System.Text.Json.Utf8JsonReader&amp; reader, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.JsonModelCreateCore(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function JsonModelCreateCore (ByRef reader As Utf8JsonReader, options As ModelReaderWriterOptions) As ConnectionAnalyzerEndpoint" />
+      <MemberSignature Language="F#" Value="abstract member JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&#xA;override this.JsonModelCreateCore : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint" Usage="connectionAnalyzerEndpoint.JsonModelCreateCore (reader, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JsonModelWriteCore">
+      <MemberSignature Language="C#" Value="protected virtual void JsonModelWriteCore (System.Text.Json.Utf8JsonWriter writer, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void JsonModelWriteCore(class System.Text.Json.Utf8JsonWriter writer, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.JsonModelWriteCore(System.Text.Json.Utf8JsonWriter,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub JsonModelWriteCore (writer As Utf8JsonWriter, options As ModelReaderWriterOptions)" />
+      <MemberSignature Language="F#" Value="abstract member JsonModelWriteCore : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit&#xA;override this.JsonModelWriteCore : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit" Usage="connectionAnalyzerEndpoint.JsonModelWriteCore (writer, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Text.Json.Utf8JsonWriter" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="writer"> The JSON writer. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelCreateCore">
+      <MemberSignature Language="C#" Value="protected virtual Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint PersistableModelCreateCore (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint PersistableModelCreateCore(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.PersistableModelCreateCore(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelCreateCore (data As BinaryData, options As ModelReaderWriterOptions) As ConnectionAnalyzerEndpoint" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&#xA;override this.PersistableModelCreateCore : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint" Usage="connectionAnalyzerEndpoint.PersistableModelCreateCore (data, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.BinaryData" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistableModelWriteCore">
+      <MemberSignature Language="C#" Value="protected virtual BinaryData PersistableModelWriteCore (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.BinaryData PersistableModelWriteCore(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.PersistableModelWriteCore(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function PersistableModelWriteCore (options As ModelReaderWriterOptions) As BinaryData" />
+      <MemberSignature Language="F#" Value="abstract member PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData&#xA;override this.PersistableModelWriteCore : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData" Usage="connectionAnalyzerEndpoint.PersistableModelWriteCore options" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int? Port { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; Port" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.Port" />
+      <MemberSignature Language="VB.NET" Value="Public Property Port As Nullable(Of Integer)" />
+      <MemberSignature Language="F#" Value="member this.Port : Nullable&lt;int&gt; with get, set" Usage="Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Port to use for the endpoint (0-65535). </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceId">
+      <MemberSignature Language="C#" Value="public Azure.Core.ResourceIdentifier ResourceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Core.ResourceIdentifier ResourceId" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.ResourceId" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResourceId As ResourceIdentifier" />
+      <MemberSignature Language="F#" Value="member this.ResourceId : Azure.Core.ResourceIdentifier with get, set" Usage="Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.ResourceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Core.ResourceIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            ARM resource ID of the endpoint resource. Required when `type` is `VM`,
+            `VMSS`, `BastionHost`, or `ApplicationGateway`. Not used when `type` is
+            `ExternalAddress`.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create">
+      <MemberSignature Language="C#" Value="Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint IJsonModel&lt;ConnectionAnalyzerEndpoint&gt;.Create (ref System.Text.Json.Utf8JsonReader reader, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create(valuetype System.Text.Json.Utf8JsonReader&amp; reader, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.System#ClientModel#Primitives#IJsonModel&lt;Azure#ResourceManager#Network#Models#ConnectionAnalyzerEndpoint&gt;#Create(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Function Create (ByRef reader As Utf8JsonReader, options As ModelReaderWriterOptions) As ConnectionAnalyzerEndpoint Implements IJsonModel(Of ConnectionAnalyzerEndpoint).Create" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&#xA;override this.System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create : Utf8JsonReader * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint" Usage="connectionAnalyzerEndpoint.System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create (reader, options)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IJsonModel`1.Create(System.Text.Json.Utf8JsonReader@,System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Text.Json.Utf8JsonReader" RefType="ref" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="reader"> The JSON reader. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write">
+      <MemberSignature Language="C#" Value="void IJsonModel&lt;ConnectionAnalyzerEndpoint&gt;.Write (System.Text.Json.Utf8JsonWriter writer, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write(class System.Text.Json.Utf8JsonWriter writer, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.System#ClientModel#Primitives#IJsonModel&lt;Azure#ResourceManager#Network#Models#ConnectionAnalyzerEndpoint&gt;#Write(System.Text.Json.Utf8JsonWriter,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Sub Write (writer As Utf8JsonWriter, options As ModelReaderWriterOptions) Implements IJsonModel(Of ConnectionAnalyzerEndpoint).Write" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit&#xA;override this.System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write : System.Text.Json.Utf8JsonWriter * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; unit" Usage="connectionAnalyzerEndpoint.System.ClientModel.Primitives.IJsonModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write (writer, options)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IJsonModel`1.Write(System.Text.Json.Utf8JsonWriter,System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Text.Json.Utf8JsonWriter" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="writer"> The JSON writer. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create">
+      <MemberSignature Language="C#" Value="Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint IPersistableModel&lt;ConnectionAnalyzerEndpoint&gt;.Create (BinaryData data, System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create(class System.BinaryData data, class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.System#ClientModel#Primitives#IPersistableModel&lt;Azure#ResourceManager#Network#Models#ConnectionAnalyzerEndpoint&gt;#Create(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Function Create (data As BinaryData, options As ModelReaderWriterOptions) As ConnectionAnalyzerEndpoint Implements IPersistableModel(Of ConnectionAnalyzerEndpoint).Create" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&#xA;override this.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create : BinaryData * System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint" Usage="connectionAnalyzerEndpoint.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Create (data, options)" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IPersistableModel`1.Create(System.BinaryData,System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.BinaryData" />
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="data"> The data to parse. </param>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.GetFormatFromOptions">
+      <MemberSignature Language="C#" Value="string IPersistableModel&lt;ConnectionAnalyzerEndpoint&gt;.GetFormatFromOptions (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.GetFormatFromOptions(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.System#ClientModel#Primitives#IPersistableModel&lt;Azure#ResourceManager#Network#Models#ConnectionAnalyzerEndpoint&gt;#GetFormatFromOptions(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Function GetFormatFromOptions (options As ModelReaderWriterOptions) As String Implements IPersistableModel(Of ConnectionAnalyzerEndpoint).GetFormatFromOptions" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.GetFormatFromOptions : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; string&#xA;override this.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.GetFormatFromOptions : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; string" Usage="connectionAnalyzerEndpoint.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.GetFormatFromOptions options" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IPersistableModel`1.GetFormatFromOptions(System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write">
+      <MemberSignature Language="C#" Value="BinaryData IPersistableModel&lt;ConnectionAnalyzerEndpoint&gt;.Write (System.ClientModel.Primitives.ModelReaderWriterOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.BinaryData System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write(class System.ClientModel.Primitives.ModelReaderWriterOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.System#ClientModel#Primitives#IPersistableModel&lt;Azure#ResourceManager#Network#Models#ConnectionAnalyzerEndpoint&gt;#Write(System.ClientModel.Primitives.ModelReaderWriterOptions)" />
+      <MemberSignature Language="VB.NET" Value="Function Write (options As ModelReaderWriterOptions) As BinaryData Implements IPersistableModel(Of ConnectionAnalyzerEndpoint).Write" />
+      <MemberSignature Language="F#" Value="abstract member System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData&#xA;override this.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write : System.ClientModel.Primitives.ModelReaderWriterOptions -&gt; BinaryData" Usage="connectionAnalyzerEndpoint.System.ClientModel.Primitives.IPersistableModel&lt;Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint&gt;.Write options" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ClientModel.Primitives.IPersistableModel`1.Write(System.ClientModel.Primitives.ModelReaderWriterOptions)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ClientModel.Primitives.ModelReaderWriterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The client options for reading and writing models. </param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType Type" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.Type" />
+      <MemberSignature Language="VB.NET" Value="Public Property Type As ConnectionAnalyzerEndpointType" />
+      <MemberSignature Language="F#" Value="member this.Type : Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType with get, set" Usage="Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpoint.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Network</AssemblyName>
+        <AssemblyVersion>1.17.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Network.Models.ConnectionAnalyzerEndpointType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The type of the endpoint. Determines which of `resourceId` and `address`
+            are required; see the model-level documentation for the per-type contract.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

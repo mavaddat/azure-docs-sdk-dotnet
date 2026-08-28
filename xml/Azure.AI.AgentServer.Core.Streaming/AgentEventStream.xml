@@ -1,0 +1,192 @@
+<Type Name="AgentEventStream" FullName="Azure.AI.AgentServer.Core.Streaming.AgentEventStream">
+  <TypeSignature Language="C#" Value="public abstract class AgentEventStream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AgentEventStream extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.Streaming.AgentEventStream" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class AgentEventStream" />
+  <TypeSignature Language="F#" Value="type AgentEventStream = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            A single producer/consumer event stream: one or more producers
+            <see cref="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStream.EmitAsync(System.Net.ServerSentEvents.SseItem{System.String},System.Boolean,System.Threading.CancellationToken)" /><see cref="T:System.Net.ServerSentEvents.SseItem`1" /> events that every attached
+            subscriber receives by iterating <see cref="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStream.Subscribe(System.String,System.Threading.CancellationToken)" />. The event payload is a
+            Server-Sent-Events item (<see cref="T:System.Net.ServerSentEvents.SseItem`1" /> of <see cref="T:System.String" />): the
+            caller places the already-serialized event text in <see cref="P:System.Net.ServerSentEvents.SseItem`1.Data" />
+            and, for a replay backing, an opaque <see cref="P:System.Net.ServerSentEvents.SseItem`1.EventId" /> used as the
+            resume/reconnect token. Obtain instances from <see cref="T:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamRegistry" />.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AgentEventStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStream.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:Azure.AI.AgentServer.Core.Streaming.AgentEventStream" /> class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.ValueTask CloseAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask CloseAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStream.CloseAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CloseAsync (Optional cancellationToken As CancellationToken = Nothing) As ValueTask" />
+      <MemberSignature Language="F#" Value="abstract member CloseAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask" Usage="agentEventStream.CloseAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">A token to cancel the operation.</param>
+        <summary>
+            Marks the stream done. Idempotent — calling it twice (or on a destroyed
+            stream) is a no-op. After close, <see cref="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStream.EmitAsync(System.Net.ServerSentEvents.SseItem{System.String},System.Boolean,System.Threading.CancellationToken)" /> raises
+            <see cref="T:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamClosedException" /> and subscriber iterators drain
+            then complete.
+            </summary>
+        <returns>A task that completes when the stream is closed.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.ValueTask EmitAsync (System.Net.ServerSentEvents.SseItem&lt;string&gt; item, bool close = false, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask EmitAsync(valuetype System.Net.ServerSentEvents.SseItem`1&lt;string&gt; item, bool close, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStream.EmitAsync(System.Net.ServerSentEvents.SseItem{System.String},System.Boolean,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function EmitAsync (item As SseItem(Of String), Optional close As Boolean = false, Optional cancellationToken As CancellationToken = Nothing) As ValueTask" />
+      <MemberSignature Language="F#" Value="abstract member EmitAsync : System.Net.ServerSentEvents.SseItem&lt;string&gt; * bool * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask" Usage="agentEventStream.EmitAsync (item, close, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Net.ServerSentEvents.SseItem&lt;System.String&gt;">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 1 })]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 1 })&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="close" Type="System.Boolean" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="item">
+            The event to publish. <see cref="P:System.Net.ServerSentEvents.SseItem`1.Data" /> is the event text; a replay
+            backing uses <see cref="P:System.Net.ServerSentEvents.SseItem`1.EventId" /> as the opaque resume token.
+            </param>
+        <param name="close">Whether to close the stream atomically after delivering the item.</param>
+        <param name="cancellationToken">A token to cancel the operation.</param>
+        <summary>
+            Publishes one event to every currently-attached subscriber. When
+            <paramref name="close" /> is <see langword="true" />, the item is delivered and
+            the stream is closed atomically.
+            </summary>
+        <returns>A task that completes when the event has been published.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastEventIdAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.ValueTask&lt;string?&gt; GetLastEventIdAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask`1&lt;string&gt; GetLastEventIdAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStream.GetLastEventIdAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetLastEventIdAsync (Optional cancellationToken As CancellationToken = Nothing) As ValueTask(Of String)" />
+      <MemberSignature Language="F#" Value="abstract member GetLastEventIdAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask&lt;string&gt;" Usage="agentEventStream.GetLastEventIdAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask&lt;System.String&gt;</ReturnType>
+        <Attributes>
+          <Attribute>
+            <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 2 })]</AttributeName>
+            <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 2 })&gt;]</AttributeName>
+          </Attribute>
+        </Attributes>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">A token to cancel the operation.</param>
+        <summary>
+            Returns the most recently assigned event id — the <see cref="P:System.Net.ServerSentEvents.SseItem`1.EventId" /> of the
+            latest emitted item that carried one — or <see langword="null" /> when no emitted item has
+            carried an id. An item emitted without an <see cref="P:System.Net.ServerSentEvents.SseItem`1.EventId" /> leaves the last
+            assigned id unchanged (matching SSE last-event-ID buffer semantics). Safe to call on a closed
+            stream (the producer's recovery primitive).
+            </summary>
+        <returns>The most recently assigned event id, or <see langword="null" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subscribe">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IAsyncEnumerable&lt;System.Net.ServerSentEvents.SseItem&lt;string&gt;&gt; Subscribe (string? afterEventId = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IAsyncEnumerable`1&lt;valuetype System.Net.ServerSentEvents.SseItem`1&lt;string&gt;&gt; Subscribe(string afterEventId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStream.Subscribe(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function Subscribe (Optional afterEventId As String = Nothing, Optional cancellationToken As CancellationToken = Nothing) As IAsyncEnumerable(Of SseItem(Of String))" />
+      <MemberSignature Language="F#" Value="abstract member Subscribe : string * System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerable&lt;System.Net.ServerSentEvents.SseItem&lt;string&gt;&gt;" Usage="agentEventStream.Subscribe (afterEventId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IAsyncEnumerable&lt;System.Net.ServerSentEvents.SseItem&lt;System.String&gt;&gt;</ReturnType>
+        <Attributes>
+          <Attribute>
+            <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 1, 0, 1 })]</AttributeName>
+            <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 1, 0, 1 })&gt;]</AttributeName>
+          </Attribute>
+        </Attributes>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="afterEventId" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="afterEventId">The event id to resume strictly after, or <see langword="null" /> for all retained items.</param>
+        <param name="cancellationToken">A token to stop iterating.</param>
+        <summary>
+            Returns an async iterator over emitted items. With a replay backing,
+            <paramref name="afterEventId" /> resumes strictly after the retained item whose
+            <see cref="P:System.Net.ServerSentEvents.SseItem`1.EventId" /> equals it (the reconnection primitive); a
+            <see langword="null" /> value yields all retained items, and an id no longer in
+            the retained window replays all retained items (best-effort, matching SSE
+            <c>Last-Event-ID</c> semantics). It is silently ignored by a live (non-replay)
+            backing, which has no history.
+            </summary>
+        <returns>An asynchronous sequence of event items.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

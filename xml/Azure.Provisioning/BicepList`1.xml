@@ -67,7 +67,6 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -87,7 +86,6 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -113,7 +111,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -123,9 +120,10 @@
         <Parameter Name="item" Type="Azure.Provisioning.BicepValue&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+        <summary>Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1" />.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.</exception>
       </Docs>
     </Member>
     <Member MemberName="Assign">
@@ -137,7 +135,6 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -153,8 +150,10 @@
         <Parameter Name="source" Type="Azure.Provisioning.BicepList&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="source">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="source">The source list to assign from.</param>
+        <summary>
+            Assigns a source list to this instance, copying its literal or expression state.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -170,7 +169,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -178,8 +176,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1" />.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.</exception>
       </Docs>
     </Member>
     <Member MemberName="Contains">
@@ -194,7 +193,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -204,9 +202,10 @@
         <Parameter Name="item" Type="Azure.Provisioning.BicepValue&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+        <summary>Determines whether the <see cref="T:System.Collections.Generic.ICollection`1" /> contains a specific value.</summary>
+        <returns>
+          <see langword="true" /> if <paramref name="item" /> is found in the <see cref="T:System.Collections.Generic.ICollection`1" />; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -222,7 +221,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -233,10 +231,15 @@
         <Parameter Name="arrayIndex" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="array">To be added.</param>
-        <param name="arrayIndex">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="array">The one-dimensional <see cref="T:System.Array" /> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1" />. The <see cref="T:System.Array" /> must have zero-based indexing.</param>
+        <param name="arrayIndex">The zero-based index in <paramref name="array" /> at which copying begins.</param>
+        <summary>Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1" /> to an <see cref="T:System.Array" />, starting at a particular <see cref="T:System.Array" /> index.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> is <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="arrayIndex" /> is less than 0.</exception>
+        <exception cref="T:System.ArgumentException">The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1" /> is greater than the available space from <paramref name="arrayIndex" /> to the end of the destination <paramref name="array" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Count">
@@ -252,15 +255,14 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1" />.</summary>
+        <value>The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -273,7 +275,6 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -316,7 +317,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -324,8 +324,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>Returns an enumerator that iterates through the collection.</summary>
+        <returns>An enumerator that can be used to iterate through the collection.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -341,7 +341,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -351,9 +350,9 @@
         <Parameter Name="item" Type="Azure.Provisioning.BicepValue&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1" />.</param>
+        <summary>Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IList`1" />.</summary>
+        <returns>The index of <paramref name="item" /> if found in the list; otherwise, -1.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -369,7 +368,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -380,10 +378,13 @@
         <Parameter Name="item" Type="Azure.Provisioning.BicepValue&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="index">The zero-based index at which <paramref name="item" /> should be inserted.</param>
+        <param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1" />.</param>
+        <summary>Inserts an item to the <see cref="T:System.Collections.Generic.IList`1" /> at the specified index.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1" />.</exception>
+        <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1" /> is read-only.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsReadOnly">
@@ -398,15 +399,15 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.</summary>
+        <value>
+          <see langword="true" /> if the <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only; otherwise, <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -422,7 +423,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -449,7 +449,6 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -477,7 +476,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -487,10 +485,12 @@
         <Parameter Name="item" Type="Azure.Provisioning.BicepValue&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1" />.</param>
+        <summary>Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1" />.</summary>
+        <returns>
+          <see langword="true" /> if <paramref name="item" /> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1" />; otherwise, <see langword="false" />. This method also returns <see langword="false" /> if <paramref name="item" /> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1" />.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.</exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveAt">
@@ -505,7 +505,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -515,9 +514,12 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="index">The zero-based index of the item to remove.</param>
+        <summary>Removes the <see cref="T:System.Collections.Generic.IList`1" /> item at the specified index.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1" />.</exception>
+        <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1" /> is read-only.</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
@@ -532,7 +534,6 @@
       </Implements>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning</AssemblyName>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
         <AssemblyVersion>1.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>

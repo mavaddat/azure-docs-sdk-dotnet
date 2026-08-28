@@ -8,6 +8,7 @@
     <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -21,22 +22,21 @@
   </Docs>
   <Members>
     <Member MemberName="AsAgentResponseItem">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Extensions.OpenAI.AgentResponseItem AsAgentResponseItem (this OpenAI.Responses.ResponseItem responseItem);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Extensions.OpenAI.AgentResponseItem AsAgentResponseItem(class OpenAI.Responses.ResponseItem responseItem) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.AzureAIExtensions.AsAgentResponseItem(OpenAI.Responses.ResponseItem)" />
-      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AsAgentResponseItem (responseItem As ResponseItem) As AgentResponseItem" />
-      <MemberSignature Language="F#" Value="static member AsAgentResponseItem : OpenAI.Responses.ResponseItem -&gt; Azure.AI.Extensions.OpenAI.AgentResponseItem" Usage="Azure.AI.Extensions.OpenAI.AzureAIExtensions.AsAgentResponseItem responseItem" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.Extensions.OpenAI.AgentResponseItem AsAgentResponseItem (this OpenAI.Responses.ResponseItem responseItem);" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Extensions.OpenAI.AgentResponseItem AsAgentResponseItem(class OpenAI.Responses.ResponseItem responseItem) cil managed" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.AzureAIExtensions.AsAgentResponseItem(OpenAI.Responses.ResponseItem)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AsAgentResponseItem (responseItem As ResponseItem) As AgentResponseItem" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="static member AsAgentResponseItem : OpenAI.Responses.ResponseItem -&gt; Azure.AI.Extensions.OpenAI.AgentResponseItem" Usage="Azure.AI.Extensions.OpenAI.AzureAIExtensions.AsAgentResponseItem responseItem" FrameworkAlternate="azure-dotnet" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.Extensions.OpenAI.AgentResponseItem</ReturnType>
+        <ReturnType FrameworkAlternate="azure-dotnet">Azure.AI.Extensions.OpenAI.AgentResponseItem</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="responseItem" Type="OpenAI.Responses.ResponseItem" RefType="this" />
+        <Parameter Name="responseItem" Type="OpenAI.Responses.ResponseItem" Index="0" FrameworkAlternate="azure-dotnet" RefType="this" />
       </Parameters>
       <Docs>
         <param name="responseItem"> The OpenAI response item to convert. </param>
@@ -55,16 +55,45 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="responseClient" Type="OpenAI.Responses.ResponsesClient" RefType="this" />
-        <Parameter Name="conversation" Type="Azure.AI.Extensions.OpenAI.ProjectConversation" />
-        <Parameter Name="agentRef" Type="Azure.AI.Extensions.OpenAI.AgentReference" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="responseClient" Type="OpenAI.Responses.ResponsesClient" Index="0" FrameworkAlternate="azure-dotnet" RefType="this" />
+        <Parameter Name="conversation" Type="Azure.AI.Extensions.OpenAI.ProjectConversation" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="agentRef" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="responseClient"> The response client used to send the request. </param>
+        <param name="conversation"> The project conversation to continue. </param>
+        <param name="agentRef"> The agent that should create the response. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Creates a response for an existing project conversation and agent. </summary>
+        <returns> The created response result. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateResponse">
+      <MemberSignature Language="C#" Value="public static System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt; CreateResponse (this OpenAI.Responses.ResponsesClient responseClient, OpenAI.Conversations.ConversationResource conversation, Azure.AI.Extensions.OpenAI.AgentReference agentRef, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ClientModel.ClientResult`1&lt;class OpenAI.Responses.ResponseResult&gt; CreateResponse(class OpenAI.Responses.ResponsesClient responseClient, class OpenAI.Conversations.ConversationResource conversation, class Azure.AI.Extensions.OpenAI.AgentReference agentRef, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.AzureAIExtensions.CreateResponse(OpenAI.Responses.ResponsesClient,OpenAI.Conversations.ConversationResource,Azure.AI.Extensions.OpenAI.AgentReference,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CreateResponse (responseClient As ResponsesClient, conversation As ConversationResource, agentRef As AgentReference, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ResponseResult)" />
+      <MemberSignature Language="F#" Value="static member CreateResponse : OpenAI.Responses.ResponsesClient * OpenAI.Conversations.ConversationResource * Azure.AI.Extensions.OpenAI.AgentReference * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;" Usage="Azure.AI.Extensions.OpenAI.AzureAIExtensions.CreateResponse (responseClient, conversation, agentRef, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseClient" Type="OpenAI.Responses.ResponsesClient" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+        <Parameter Name="conversation" Type="OpenAI.Conversations.ConversationResource" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentRef" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="responseClient"> The response client used to send the request. </param>
@@ -86,16 +115,45 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="responseClient" Type="OpenAI.Responses.ResponsesClient" RefType="this" />
-        <Parameter Name="conversation" Type="Azure.AI.Extensions.OpenAI.ProjectConversation" />
-        <Parameter Name="agentRef" Type="Azure.AI.Extensions.OpenAI.AgentReference" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="responseClient" Type="OpenAI.Responses.ResponsesClient" Index="0" FrameworkAlternate="azure-dotnet" RefType="this" />
+        <Parameter Name="conversation" Type="Azure.AI.Extensions.OpenAI.ProjectConversation" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="agentRef" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="responseClient"> The response client used to send the request. </param>
+        <param name="conversation"> The project conversation to continue. </param>
+        <param name="agentRef"> The agent that should create the response. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Asynchronously creates a response for an existing project conversation and agent. </summary>
+        <returns> The created response result. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateResponseAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt; CreateResponseAsync (this OpenAI.Responses.ResponsesClient responseClient, OpenAI.Conversations.ConversationResource conversation, Azure.AI.Extensions.OpenAI.AgentReference agentRef, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class OpenAI.Responses.ResponseResult&gt;&gt; CreateResponseAsync(class OpenAI.Responses.ResponsesClient responseClient, class OpenAI.Conversations.ConversationResource conversation, class Azure.AI.Extensions.OpenAI.AgentReference agentRef, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.AzureAIExtensions.CreateResponseAsync(OpenAI.Responses.ResponsesClient,OpenAI.Conversations.ConversationResource,Azure.AI.Extensions.OpenAI.AgentReference,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CreateResponseAsync (responseClient As ResponsesClient, conversation As ConversationResource, agentRef As AgentReference, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ResponseResult))" />
+      <MemberSignature Language="F#" Value="static member CreateResponseAsync : OpenAI.Responses.ResponsesClient * OpenAI.Conversations.ConversationResource * Azure.AI.Extensions.OpenAI.AgentReference * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;" Usage="Azure.AI.Extensions.OpenAI.AzureAIExtensions.CreateResponseAsync (responseClient, conversation, agentRef, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseClient" Type="OpenAI.Responses.ResponsesClient" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+        <Parameter Name="conversation" Type="OpenAI.Conversations.ConversationResource" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentRef" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="responseClient"> The response client used to send the request. </param>
@@ -117,13 +175,12 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Extensions.OpenAI.AgentReference</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="options" Type="OpenAI.Responses.CreateResponseOptions" />
+        <Parameter Name="options" Type="OpenAI.Responses.CreateResponseOptions" Index="0" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
         <param name="options">To be added.</param>
@@ -142,13 +199,12 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Extensions.OpenAI.AgentReference</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="response" Type="OpenAI.Responses.ResponseResult" />
+        <Parameter Name="response" Type="OpenAI.Responses.ResponseResult" Index="0" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
         <param name="response">To be added.</param>
@@ -167,13 +223,12 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="options" Type="OpenAI.Responses.CreateResponseOptions" />
+        <Parameter Name="options" Type="OpenAI.Responses.CreateResponseOptions" Index="0" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
         <param name="options">To be added.</param>
@@ -192,13 +247,12 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="response" Type="OpenAI.Responses.ResponseResult" />
+        <Parameter Name="response" Type="OpenAI.Responses.ResponseResult" Index="0" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
         <param name="response">To be added.</param>
@@ -217,7 +271,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -242,14 +296,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="options" Type="OpenAI.Responses.CreateResponseOptions" />
-        <Parameter Name="value" Type="Azure.AI.Extensions.OpenAI.AgentReference" />
+        <Parameter Name="options" Type="OpenAI.Responses.CreateResponseOptions" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="value" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="1" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
         <param name="options">To be added.</param>
@@ -268,14 +321,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="options" Type="OpenAI.Responses.CreateResponseOptions" />
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="options" Type="OpenAI.Responses.CreateResponseOptions" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="value" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
       </Parameters>
       <Docs>
         <param name="options">To be added.</param>

@@ -21,8 +21,8 @@
   <Docs>
     <summary>
             Base class for handling invocation requests. Only <see cref="M:Azure.AI.AgentServer.Invocations.InvocationHandler.HandleAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />
-            is required. Override the optional methods to opt in to GET, cancel, and
-            OpenAPI endpoints (they return 404 by default).
+            is required. Override the optional methods to opt in to GET, cancel, OpenAPI,
+            and AsyncAPI endpoints (they return 404 by default).
             </summary>
     <remarks>
             To opt in to the <c>invocations_ws</c> (WebSocket) transport, derive from
@@ -114,6 +114,95 @@
             </summary>
         <returns>A task representing the async operation.</returns>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsyncApiJsonAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task GetAsyncApiJsonAsync (Microsoft.AspNetCore.Http.HttpRequest request, Microsoft.AspNetCore.Http.HttpResponse response, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task GetAsyncApiJsonAsync(class Microsoft.AspNetCore.Http.HttpRequest request, class Microsoft.AspNetCore.Http.HttpResponse response, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationHandler.GetAsyncApiJsonAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAsyncApiJsonAsync (request As HttpRequest, response As HttpResponse, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member GetAsyncApiJsonAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.GetAsyncApiJsonAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="invocationHandler.GetAsyncApiJsonAsync (request, response, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="response" Type="Microsoft.AspNetCore.Http.HttpResponse" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="request">The incoming HTTP request.</param>
+        <param name="response">The outgoing HTTP response.</param>
+        <param name="cancellationToken">A token to observe for cancellation.</param>
+        <summary>
+            Handles <c>GET /invocations/docs/asyncapi.json</c>. Returns 404 by default.
+            Override to return an AsyncAPI (JSON) spec for the agent's event-driven
+            contract (e.g. the <c>invocations_ws</c> WebSocket protocol) — the AsyncAPI
+            companion to <see cref="M:Azure.AI.AgentServer.Invocations.InvocationHandler.GetOpenApiAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,System.Threading.CancellationToken)" /> for streaming/bidirectional
+            surfaces that OpenAPI cannot express.
+            </summary>
+        <returns>A task representing the async operation.</returns>
+        <remarks>
+            The path extension is authoritative for the returned content type — no
+            <c>Accept</c> negotiation and no format conversion between the JSON and
+            YAML representations. Override <see cref="M:Azure.AI.AgentServer.Invocations.InvocationHandler.GetAsyncApiYamlAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,System.Threading.CancellationToken)" />
+            independently; publishing both is recommended for tooling compatibility.
+            <para>
+            When overriding, you MUST set <see cref="P:Microsoft.AspNetCore.Http.HttpResponse.StatusCode" />
+            explicitly. This method returns 404 by default; once you override it the
+            default no longer runs (unless the override calls <c>base.GetAsyncApiJsonAsync(...)</c>
+            / <c>base.GetAsyncApiYamlAsync(...)</c>), so if you forget to set a status the
+            response defaults to 200 with whatever body you wrote (or empty).
+            </para></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsyncApiYamlAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task GetAsyncApiYamlAsync (Microsoft.AspNetCore.Http.HttpRequest request, Microsoft.AspNetCore.Http.HttpResponse response, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task GetAsyncApiYamlAsync(class Microsoft.AspNetCore.Http.HttpRequest request, class Microsoft.AspNetCore.Http.HttpResponse response, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.InvocationHandler.GetAsyncApiYamlAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAsyncApiYamlAsync (request As HttpRequest, response As HttpResponse, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member GetAsyncApiYamlAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.GetAsyncApiYamlAsync : Microsoft.AspNetCore.Http.HttpRequest * Microsoft.AspNetCore.Http.HttpResponse * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="invocationHandler.GetAsyncApiYamlAsync (request, response, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="Microsoft.AspNetCore.Http.HttpRequest" />
+        <Parameter Name="response" Type="Microsoft.AspNetCore.Http.HttpResponse" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="request">The incoming HTTP request.</param>
+        <param name="response">The outgoing HTTP response.</param>
+        <param name="cancellationToken">A token to observe for cancellation.</param>
+        <summary>
+            Handles <c>GET /invocations/docs/asyncapi.yaml</c>. Returns 404 by default.
+            Override to return an AsyncAPI (YAML) spec for the agent's event-driven
+            contract. Companion to <see cref="M:Azure.AI.AgentServer.Invocations.InvocationHandler.GetAsyncApiJsonAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,System.Threading.CancellationToken)" />; each format is
+            served independently at its own path.
+            </summary>
+        <returns>A task representing the async operation.</returns>
+        <remarks>
+            The path extension is authoritative for the returned content type — no
+            <c>Accept</c> negotiation and no format conversion between the JSON and
+            YAML representations. Override <see cref="M:Azure.AI.AgentServer.Invocations.InvocationHandler.GetAsyncApiJsonAsync(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.AspNetCore.Http.HttpResponse,System.Threading.CancellationToken)" />
+            independently; publishing both is recommended for tooling compatibility.
+            <para>
+            When overriding, you MUST set <see cref="P:Microsoft.AspNetCore.Http.HttpResponse.StatusCode" />
+            explicitly. This method returns 404 by default; once you override it the
+            default no longer runs (unless the override calls <c>base.GetAsyncApiJsonAsync(...)</c>
+            / <c>base.GetAsyncApiYamlAsync(...)</c>), so if you forget to set a status the
+            response defaults to 200 with whatever body you wrote (or empty).
+            </para></remarks>
       </Docs>
     </Member>
     <Member MemberName="GetOpenApiAsync">

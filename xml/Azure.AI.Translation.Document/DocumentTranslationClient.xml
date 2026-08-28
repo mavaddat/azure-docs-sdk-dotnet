@@ -8,13 +8,14 @@
     <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary> The DocumentTranslation service client. </summary>
+    <summary> The DocumentTranslationClient. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,12 +28,33 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>
             Protected constructor to allow mocking.
             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DocumentTranslationClient (Azure.AI.Translation.Document.DocumentTranslationClientSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.AI.Translation.Document.DocumentTranslationClientSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Document.DocumentTranslationClient.#ctor(Azure.AI.Translation.Document.DocumentTranslationClientSettings)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (settings As DocumentTranslationClientSettings)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Translation.Document.DocumentTranslationClient : Azure.AI.Translation.Document.DocumentTranslationClientSettings -&gt; Azure.AI.Translation.Document.DocumentTranslationClient" Usage="new Azure.AI.Translation.Document.DocumentTranslationClient settings" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settings" Type="Azure.AI.Translation.Document.DocumentTranslationClientSettings" Index="0" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="settings"> The settings for DocumentTranslationClient. </param>
+        <summary> Initializes a new instance of DocumentTranslationClient from a <see cref="T:Azure.AI.Translation.Document.DocumentTranslationClientSettings" />. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -46,6 +68,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="endpoint" Type="System.Uri" />
@@ -73,6 +96,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="endpoint" Type="System.Uri" />
@@ -100,6 +124,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="endpoint" Type="System.Uri" />
@@ -126,6 +151,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="endpoint" Type="System.Uri" />
@@ -133,8 +159,8 @@
         <Parameter Name="options" Type="Azure.AI.Translation.Document.DocumentTranslationClientOptions" />
       </Parameters>
       <Docs>
-        <param name="endpoint"> Supported document Translation endpoint, protocol and hostname, for example: https://{TranslatorResourceName}.cognitiveservices.azure.com/translator. </param>
-        <param name="credential"> A credential used to authenticate to an Azure Service. </param>
+        <param name="endpoint"> Service endpoint. </param>
+        <param name="credential"> A credential used to authenticate to the service. </param>
         <param name="options"> The options for configuring the client. </param>
         <summary> Initializes a new instance of DocumentTranslationClient. </summary>
         <remarks>To be added.</remarks>
@@ -156,6 +182,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
@@ -168,14 +195,17 @@
       <Docs>
         <param name="translationId"> Format - uuid.  The operation-id. </param>
         <param name="id"> Format - uuid.  The operation-id. </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Cancel a currently processing or queued translation
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.CancelTranslation(System.Guid,System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
+            [Protocol Method] Cancel a currently processing or queued translation.
+            A translation will not be
+            cancelled if it is already completed or failed or cancelling. A bad request
+            will be returned.
+            All documents that have completed translation will not be
+            cancelled and will be charged.
+            All pending documents will be cancelled if
+            possible.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -195,6 +225,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;</ReturnType>
@@ -207,8 +238,17 @@
       <Docs>
         <param name="translationId"> Format - uuid.  The operation-id. </param>
         <param name="id"> Format - uuid.  The operation-id. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Cancel a currently processing or queued translation. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Cancel a currently processing or queued translation.
+            A translation will not be
+            cancelled if it is already completed or failed or cancelling. A bad request
+            will be returned.
+            All documents that have completed translation will not be
+            cancelled and will be charged.
+            All pending documents will be cancelled if
+            possible.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
             Cancel a currently processing or queued translation.
@@ -220,6 +260,7 @@
             All pending documents will be cancelled if
             possible.
             </remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="CancelTranslationAsync">
@@ -236,6 +277,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
@@ -248,14 +290,17 @@
       <Docs>
         <param name="translationId"> Format - uuid.  The operation-id. </param>
         <param name="id"> Format - uuid.  The operation-id. </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Cancel a currently processing or queued translation
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.CancelTranslationAsync(System.Guid,System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
+            [Protocol Method] Cancel a currently processing or queued translation.
+            A translation will not be
+            cancelled if it is already completed or failed or cancelling. A bad request
+            will be returned.
+            All documents that have completed translation will not be
+            cancelled and will be charged.
+            All pending documents will be cancelled if
+            possible.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -275,6 +320,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;&gt;</ReturnType>
@@ -287,8 +333,17 @@
       <Docs>
         <param name="translationId"> Format - uuid.  The operation-id. </param>
         <param name="id"> Format - uuid.  The operation-id. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Cancel a currently processing or queued translation. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Cancel a currently processing or queued translation.
+            A translation will not be
+            cancelled if it is already completed or failed or cancelling. A bad request
+            will be returned.
+            All documents that have completed translation will not be
+            cancelled and will be charged.
+            All pending documents will be cancelled if
+            possible.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
             Cancel a currently processing or queued translation.
@@ -300,6 +355,7 @@
             All pending documents will be cancelled if
             possible.
             </remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetDocumentsStatus">
@@ -316,6 +372,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;System.BinaryData&gt;</ReturnType>
@@ -338,59 +395,87 @@
         <param name="translationId"> Format - uuid.  The operation id. </param>
         <param name="id"> Format - uuid.  The operation id. </param>
         <param name="maxCount">
-             top indicates the total number of records the user wants to be returned across
-             all pages.
-            
-             Clients MAY use top and skip query parameters to
-             specify a number of results to return and an offset into the collection.
-             When
-             both top and skip are given by a client, the server SHOULD first apply skip
-             and then top on the collection.
-            
-             Note: If the server can't honor
-             top and/or skip, the server MUST return an error to the client informing
-             about it instead of just ignoring the query options.
-             </param>
+            top indicates the total number of records the user wants to be returned across
+            all pages.            
+            Clients MAY use top and skip query parameters to
+            specify a number of results to return and an offset into the collection.
+            When
+            both top and skip are given by a client, the server SHOULD first apply skip
+            and then top on the collection.            
+            Note: If the server can't honor
+            top and/or skip, the server MUST return an error to the client informing
+            about it instead of just ignoring the query options.
+            </param>
         <param name="skip">
-             skip indicates the number of records to skip from the list of records held by
-             the server based on the sorting method specified.  By default, we sort by
-             descending start time.
-            
-             Clients MAY use top and skip query
-             parameters to specify a number of results to return and an offset into the
-             collection.
-             When both top and skip are given by a client, the server SHOULD
-             first apply skip and then top on the collection.
-            
-             Note: If the
-             server can't honor top and/or skip, the server MUST return an error to the
-             client informing about it instead of just ignoring the query options.
-             </param>
+            skip indicates the number of records to skip from the list of records held by
+            the server based on the sorting method specified.  By default, we sort by
+            descending start time.            
+            Clients MAY use top and skip query
+            parameters to specify a number of results to return and an offset into the
+            collection.
+            When both top and skip are given by a client, the server SHOULD
+            first apply skip and then top on the collection.            
+            Note: If the
+            server can't honor top and/or skip, the server MUST return an error to the
+            client informing about it instead of just ignoring the query options.
+            </param>
         <param name="maxpagesize">
-             maxpagesize is the maximum items returned in a page.  If more items are
-             requested via top (or top is not specified and there are more items to be
-             returned), @nextLink will contain the link to the next page.
-            
-            
-             Clients MAY request server-driven paging with a specific page size by
-             specifying a maxpagesize preference. The server SHOULD honor this preference
-             if the specified page size is smaller than the server's default page size.
-             </param>
+            maxpagesize is the maximum items returned in a page.  If more items are
+            requested via top (or top is not specified and there are more items to be
+            returned), @nextLink will contain the link to the next page.            
+            Clients MAY request server-driven paging with a specific page size by
+            specifying a maxpagesize preference. The server SHOULD honor this preference
+            if the specified page size is smaller than the server's default page size.
+            </param>
         <param name="documentIds"> Ids to use in filtering. </param>
         <param name="ids"> Ids to use in filtering. </param>
         <param name="statuses"> Statuses to use in filtering. </param>
         <param name="createdDateTimeUtcStart"> the start datetime to get items after. </param>
         <param name="createdDateTimeUtcEnd"> the end datetime to get items before. </param>
         <param name="orderby"> the sorting query for the collection (ex: 'CreatedDateTimeUtc asc','CreatedDateTimeUtc desc'). </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-             [Protocol Method] Returns the status for all documents in a batch document translation request
-             <list type="bullet"><item><description>
-             This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-             </description></item><item><description>
-             Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetDocumentsStatus(System.Guid,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{System.Guid},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-             </description></item></list></summary>
-        <returns> The <see cref="T:Azure.Pageable`1" /> from the service containing a list of <see cref="T:System.BinaryData" /> objects. Details of the body schema for each item in the collection are in the Remarks section below. </returns>
+            [Protocol Method] Returns the status for all documents in a batch document translation request.           
+            If the number of documents in the response exceeds our paging limit,
+            server-side paging is used.
+            Paginated responses indicate a partial result and
+            include a continuation token in the response. The absence of a continuation
+            token means that no additional pages are available.            
+            top, skip
+            and maxpagesize query parameters can be used to specify a number of results to
+            return and an offset for the collection.            
+            top indicates the total
+            number of records the user wants to be returned across all pages.
+            skip
+            indicates the number of records to skip from the list of document status held
+            by the server based on the sorting method specified.  By default, we sort by
+            descending start time.
+            maxpagesize is the maximum items returned in a page. 
+            If more items are requested via top (or top is not specified and there are
+            more items to be returned), @nextLink will contain the link to the next page.           
+            orderby query parameter can be used to sort the returned list (ex
+            "orderby=createdDateTimeUtc asc" or "orderby=createdDateTimeUtc
+            desc").
+            The default sorting is descending by createdDateTimeUtc.
+            Some query
+            parameters can be used to filter the returned list (ex:
+            "status=Succeeded,Cancelled") will only return succeeded and cancelled
+            documents.
+            createdDateTimeUtcStart and createdDateTimeUtcEnd can be used
+            combined or separately to specify a range of datetime to filter the returned
+            list by.
+            The supported filtering query parameters are (status, ids,
+            createdDateTimeUtcStart, createdDateTimeUtcEnd).            
+            When both top
+            and skip are included, the server should first apply skip and then top on
+            the collection.
+            Note: If the server can't honor top and/or skip, the server
+            must return an error to the client informing about it instead of just ignoring
+            the query options.
+            This reduces the risk of the client making assumptions about
+            the data returned.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
@@ -409,6 +494,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.AI.Translation.Document.DocumentStatusResult&gt;</ReturnType>
@@ -431,52 +517,86 @@
         <param name="translationId"> Format - uuid.  The operation id. </param>
         <param name="id"> Format - uuid.  The operation id. </param>
         <param name="maxCount">
-             top indicates the total number of records the user wants to be returned across
-             all pages.
-            
-             Clients MAY use top and skip query parameters to
-             specify a number of results to return and an offset into the collection.
-             When
-             both top and skip are given by a client, the server SHOULD first apply skip
-             and then top on the collection.
-            
-             Note: If the server can't honor
-             top and/or skip, the server MUST return an error to the client informing
-             about it instead of just ignoring the query options.
-             </param>
+            top indicates the total number of records the user wants to be returned across
+            all pages.            
+            Clients MAY use top and skip query parameters to
+            specify a number of results to return and an offset into the collection.
+            When
+            both top and skip are given by a client, the server SHOULD first apply skip
+            and then top on the collection.            
+            Note: If the server can't honor
+            top and/or skip, the server MUST return an error to the client informing
+            about it instead of just ignoring the query options.
+            </param>
         <param name="skip">
-             skip indicates the number of records to skip from the list of records held by
-             the server based on the sorting method specified.  By default, we sort by
-             descending start time.
-            
-             Clients MAY use top and skip query
-             parameters to specify a number of results to return and an offset into the
-             collection.
-             When both top and skip are given by a client, the server SHOULD
-             first apply skip and then top on the collection.
-            
-             Note: If the
-             server can't honor top and/or skip, the server MUST return an error to the
-             client informing about it instead of just ignoring the query options.
-             </param>
+            skip indicates the number of records to skip from the list of records held by
+            the server based on the sorting method specified.  By default, we sort by
+            descending start time.            
+            Clients MAY use top and skip query
+            parameters to specify a number of results to return and an offset into the
+            collection.
+            When both top and skip are given by a client, the server SHOULD
+            first apply skip and then top on the collection.            
+            Note: If the
+            server can't honor top and/or skip, the server MUST return an error to the
+            client informing about it instead of just ignoring the query options.
+            </param>
         <param name="maxpagesize">
-             maxpagesize is the maximum items returned in a page.  If more items are
-             requested via top (or top is not specified and there are more items to be
-             returned), @nextLink will contain the link to the next page.
-            
-            
-             Clients MAY request server-driven paging with a specific page size by
-             specifying a maxpagesize preference. The server SHOULD honor this preference
-             if the specified page size is smaller than the server's default page size.
-             </param>
+            maxpagesize is the maximum items returned in a page.  If more items are
+            requested via top (or top is not specified and there are more items to be
+            returned), @nextLink will contain the link to the next page.            
+            Clients MAY request server-driven paging with a specific page size by
+            specifying a maxpagesize preference. The server SHOULD honor this preference
+            if the specified page size is smaller than the server's default page size.
+            </param>
         <param name="documentIds"> Ids to use in filtering. </param>
         <param name="ids"> Ids to use in filtering. </param>
         <param name="statuses"> Statuses to use in filtering. </param>
         <param name="createdDateTimeUtcStart"> the start datetime to get items after. </param>
         <param name="createdDateTimeUtcEnd"> the end datetime to get items before. </param>
         <param name="orderby"> the sorting query for the collection (ex: 'CreatedDateTimeUtc asc','CreatedDateTimeUtc desc'). </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Returns the status for all documents in a batch document translation request. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Returns the status for all documents in a batch document translation request.           
+            If the number of documents in the response exceeds our paging limit,
+            server-side paging is used.
+            Paginated responses indicate a partial result and
+            include a continuation token in the response. The absence of a continuation
+            token means that no additional pages are available.            
+            top, skip
+            and maxpagesize query parameters can be used to specify a number of results to
+            return and an offset for the collection.            
+            top indicates the total
+            number of records the user wants to be returned across all pages.
+            skip
+            indicates the number of records to skip from the list of document status held
+            by the server based on the sorting method specified.  By default, we sort by
+            descending start time.
+            maxpagesize is the maximum items returned in a page. 
+            If more items are requested via top (or top is not specified and there are
+            more items to be returned), @nextLink will contain the link to the next page.           
+            orderby query parameter can be used to sort the returned list (ex
+            "orderby=createdDateTimeUtc asc" or "orderby=createdDateTimeUtc
+            desc").
+            The default sorting is descending by createdDateTimeUtc.
+            Some query
+            parameters can be used to filter the returned list (ex:
+            "status=Succeeded,Cancelled") will only return succeeded and cancelled
+            documents.
+            createdDateTimeUtcStart and createdDateTimeUtcEnd can be used
+            combined or separately to specify a range of datetime to filter the returned
+            list by.
+            The supported filtering query parameters are (status, ids,
+            createdDateTimeUtcStart, createdDateTimeUtcEnd).            
+            When both top
+            and skip are included, the server should first apply skip and then top on
+            the collection.
+            Note: If the server can't honor top and/or skip, the server
+            must return an error to the client informing about it instead of just ignoring
+            the query options.
+            This reduces the risk of the client making assumptions about
+            the data returned.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
              Returns the status for all documents in a batch document translation request.
@@ -526,6 +646,7 @@
              This reduces the risk of the client making assumptions about
              the data returned.
              </remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetDocumentsStatusAsync">
@@ -542,6 +663,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;System.BinaryData&gt;</ReturnType>
@@ -564,59 +686,87 @@
         <param name="translationId"> Format - uuid.  The operation id. </param>
         <param name="id"> Format - uuid.  The operation id. </param>
         <param name="maxCount">
-             top indicates the total number of records the user wants to be returned across
-             all pages.
-            
-             Clients MAY use top and skip query parameters to
-             specify a number of results to return and an offset into the collection.
-             When
-             both top and skip are given by a client, the server SHOULD first apply skip
-             and then top on the collection.
-            
-             Note: If the server can't honor
-             top and/or skip, the server MUST return an error to the client informing
-             about it instead of just ignoring the query options.
-             </param>
+            top indicates the total number of records the user wants to be returned across
+            all pages.            
+            Clients MAY use top and skip query parameters to
+            specify a number of results to return and an offset into the collection.
+            When
+            both top and skip are given by a client, the server SHOULD first apply skip
+            and then top on the collection.            
+            Note: If the server can't honor
+            top and/or skip, the server MUST return an error to the client informing
+            about it instead of just ignoring the query options.
+            </param>
         <param name="skip">
-             skip indicates the number of records to skip from the list of records held by
-             the server based on the sorting method specified.  By default, we sort by
-             descending start time.
-            
-             Clients MAY use top and skip query
-             parameters to specify a number of results to return and an offset into the
-             collection.
-             When both top and skip are given by a client, the server SHOULD
-             first apply skip and then top on the collection.
-            
-             Note: If the
-             server can't honor top and/or skip, the server MUST return an error to the
-             client informing about it instead of just ignoring the query options.
-             </param>
+            skip indicates the number of records to skip from the list of records held by
+            the server based on the sorting method specified.  By default, we sort by
+            descending start time.            
+            Clients MAY use top and skip query
+            parameters to specify a number of results to return and an offset into the
+            collection.
+            When both top and skip are given by a client, the server SHOULD
+            first apply skip and then top on the collection.            
+            Note: If the
+            server can't honor top and/or skip, the server MUST return an error to the
+            client informing about it instead of just ignoring the query options.
+            </param>
         <param name="maxpagesize">
-             maxpagesize is the maximum items returned in a page.  If more items are
-             requested via top (or top is not specified and there are more items to be
-             returned), @nextLink will contain the link to the next page.
-            
-            
-             Clients MAY request server-driven paging with a specific page size by
-             specifying a maxpagesize preference. The server SHOULD honor this preference
-             if the specified page size is smaller than the server's default page size.
-             </param>
+            maxpagesize is the maximum items returned in a page.  If more items are
+            requested via top (or top is not specified and there are more items to be
+            returned), @nextLink will contain the link to the next page.            
+            Clients MAY request server-driven paging with a specific page size by
+            specifying a maxpagesize preference. The server SHOULD honor this preference
+            if the specified page size is smaller than the server's default page size.
+            </param>
         <param name="documentIds"> Ids to use in filtering. </param>
         <param name="ids"> Ids to use in filtering. </param>
         <param name="statuses"> Statuses to use in filtering. </param>
         <param name="createdDateTimeUtcStart"> the start datetime to get items after. </param>
         <param name="createdDateTimeUtcEnd"> the end datetime to get items before. </param>
         <param name="orderby"> the sorting query for the collection (ex: 'CreatedDateTimeUtc asc','CreatedDateTimeUtc desc'). </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-             [Protocol Method] Returns the status for all documents in a batch document translation request
-             <list type="bullet"><item><description>
-             This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-             </description></item><item><description>
-             Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetDocumentsStatusAsync(System.Guid,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{System.Guid},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-             </description></item></list></summary>
-        <returns> The <see cref="T:Azure.AsyncPageable`1" /> from the service containing a list of <see cref="T:System.BinaryData" /> objects. Details of the body schema for each item in the collection are in the Remarks section below. </returns>
+            [Protocol Method] Returns the status for all documents in a batch document translation request.           
+            If the number of documents in the response exceeds our paging limit,
+            server-side paging is used.
+            Paginated responses indicate a partial result and
+            include a continuation token in the response. The absence of a continuation
+            token means that no additional pages are available.            
+            top, skip
+            and maxpagesize query parameters can be used to specify a number of results to
+            return and an offset for the collection.            
+            top indicates the total
+            number of records the user wants to be returned across all pages.
+            skip
+            indicates the number of records to skip from the list of document status held
+            by the server based on the sorting method specified.  By default, we sort by
+            descending start time.
+            maxpagesize is the maximum items returned in a page. 
+            If more items are requested via top (or top is not specified and there are
+            more items to be returned), @nextLink will contain the link to the next page.           
+            orderby query parameter can be used to sort the returned list (ex
+            "orderby=createdDateTimeUtc asc" or "orderby=createdDateTimeUtc
+            desc").
+            The default sorting is descending by createdDateTimeUtc.
+            Some query
+            parameters can be used to filter the returned list (ex:
+            "status=Succeeded,Cancelled") will only return succeeded and cancelled
+            documents.
+            createdDateTimeUtcStart and createdDateTimeUtcEnd can be used
+            combined or separately to specify a range of datetime to filter the returned
+            list by.
+            The supported filtering query parameters are (status, ids,
+            createdDateTimeUtcStart, createdDateTimeUtcEnd).            
+            When both top
+            and skip are included, the server should first apply skip and then top on
+            the collection.
+            Note: If the server can't honor top and/or skip, the server
+            must return an error to the client informing about it instead of just ignoring
+            the query options.
+            This reduces the risk of the client making assumptions about
+            the data returned.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
@@ -635,6 +785,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.AI.Translation.Document.DocumentStatusResult&gt;</ReturnType>
@@ -657,52 +808,86 @@
         <param name="translationId"> Format - uuid.  The operation id. </param>
         <param name="id"> Format - uuid.  The operation id. </param>
         <param name="maxCount">
-             top indicates the total number of records the user wants to be returned across
-             all pages.
-            
-             Clients MAY use top and skip query parameters to
-             specify a number of results to return and an offset into the collection.
-             When
-             both top and skip are given by a client, the server SHOULD first apply skip
-             and then top on the collection.
-            
-             Note: If the server can't honor
-             top and/or skip, the server MUST return an error to the client informing
-             about it instead of just ignoring the query options.
-             </param>
+            top indicates the total number of records the user wants to be returned across
+            all pages.            
+            Clients MAY use top and skip query parameters to
+            specify a number of results to return and an offset into the collection.
+            When
+            both top and skip are given by a client, the server SHOULD first apply skip
+            and then top on the collection.            
+            Note: If the server can't honor
+            top and/or skip, the server MUST return an error to the client informing
+            about it instead of just ignoring the query options.
+            </param>
         <param name="skip">
-             skip indicates the number of records to skip from the list of records held by
-             the server based on the sorting method specified.  By default, we sort by
-             descending start time.
-            
-             Clients MAY use top and skip query
-             parameters to specify a number of results to return and an offset into the
-             collection.
-             When both top and skip are given by a client, the server SHOULD
-             first apply skip and then top on the collection.
-            
-             Note: If the
-             server can't honor top and/or skip, the server MUST return an error to the
-             client informing about it instead of just ignoring the query options.
-             </param>
+            skip indicates the number of records to skip from the list of records held by
+            the server based on the sorting method specified.  By default, we sort by
+            descending start time.            
+            Clients MAY use top and skip query
+            parameters to specify a number of results to return and an offset into the
+            collection.
+            When both top and skip are given by a client, the server SHOULD
+            first apply skip and then top on the collection.            
+            Note: If the
+            server can't honor top and/or skip, the server MUST return an error to the
+            client informing about it instead of just ignoring the query options.
+            </param>
         <param name="maxpagesize">
-             maxpagesize is the maximum items returned in a page.  If more items are
-             requested via top (or top is not specified and there are more items to be
-             returned), @nextLink will contain the link to the next page.
-            
-            
-             Clients MAY request server-driven paging with a specific page size by
-             specifying a maxpagesize preference. The server SHOULD honor this preference
-             if the specified page size is smaller than the server's default page size.
-             </param>
+            maxpagesize is the maximum items returned in a page.  If more items are
+            requested via top (or top is not specified and there are more items to be
+            returned), @nextLink will contain the link to the next page.            
+            Clients MAY request server-driven paging with a specific page size by
+            specifying a maxpagesize preference. The server SHOULD honor this preference
+            if the specified page size is smaller than the server's default page size.
+            </param>
         <param name="documentIds"> Ids to use in filtering. </param>
         <param name="ids"> Ids to use in filtering. </param>
         <param name="statuses"> Statuses to use in filtering. </param>
         <param name="createdDateTimeUtcStart"> the start datetime to get items after. </param>
         <param name="createdDateTimeUtcEnd"> the end datetime to get items before. </param>
         <param name="orderby"> the sorting query for the collection (ex: 'CreatedDateTimeUtc asc','CreatedDateTimeUtc desc'). </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Returns the status for all documents in a batch document translation request. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Returns the status for all documents in a batch document translation request.           
+            If the number of documents in the response exceeds our paging limit,
+            server-side paging is used.
+            Paginated responses indicate a partial result and
+            include a continuation token in the response. The absence of a continuation
+            token means that no additional pages are available.            
+            top, skip
+            and maxpagesize query parameters can be used to specify a number of results to
+            return and an offset for the collection.            
+            top indicates the total
+            number of records the user wants to be returned across all pages.
+            skip
+            indicates the number of records to skip from the list of document status held
+            by the server based on the sorting method specified.  By default, we sort by
+            descending start time.
+            maxpagesize is the maximum items returned in a page. 
+            If more items are requested via top (or top is not specified and there are
+            more items to be returned), @nextLink will contain the link to the next page.           
+            orderby query parameter can be used to sort the returned list (ex
+            "orderby=createdDateTimeUtc asc" or "orderby=createdDateTimeUtc
+            desc").
+            The default sorting is descending by createdDateTimeUtc.
+            Some query
+            parameters can be used to filter the returned list (ex:
+            "status=Succeeded,Cancelled") will only return succeeded and cancelled
+            documents.
+            createdDateTimeUtcStart and createdDateTimeUtcEnd can be used
+            combined or separately to specify a range of datetime to filter the returned
+            list by.
+            The supported filtering query parameters are (status, ids,
+            createdDateTimeUtcStart, createdDateTimeUtcEnd).            
+            When both top
+            and skip are included, the server should first apply skip and then top on
+            the collection.
+            Note: If the server can't honor top and/or skip, the server
+            must return an error to the client informing about it instead of just ignoring
+            the query options.
+            This reduces the risk of the client making assumptions about
+            the data returned.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
              Returns the status for all documents in a batch document translation request.
@@ -752,6 +937,7 @@
              This reduces the risk of the client making assumptions about
              the data returned.
              </remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetDocumentStatus">
@@ -768,6 +954,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
@@ -782,14 +969,11 @@
         <param name="translationId"> Format - uuid.  The batch id. </param>
         <param name="id"> Format - uuid.  The batch id. </param>
         <param name="documentId"> Format - uuid.  The document id. </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Returns the status for a specific document
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetDocumentStatus(System.Guid,System.Guid,System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
+            [Protocol Method] Returns the translation status for a specific document based on the request Id
+            and document Id.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -809,6 +993,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.AI.Translation.Document.DocumentStatusResult&gt;</ReturnType>
@@ -823,13 +1008,17 @@
         <param name="translationId"> Format - uuid.  The batch id. </param>
         <param name="id"> Format - uuid.  The batch id. </param>
         <param name="documentId"> Format - uuid.  The document id. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Returns the status for a specific document. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Returns the translation status for a specific document based on the request Id
+            and document Id.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
             Returns the translation status for a specific document based on the request Id
             and document Id.
             </remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetDocumentStatusAsync">
@@ -846,6 +1035,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
@@ -860,14 +1050,11 @@
         <param name="translationId"> Format - uuid.  The batch id. </param>
         <param name="id"> Format - uuid.  The batch id. </param>
         <param name="documentId"> Format - uuid.  The document id. </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Returns the status for a specific document
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetDocumentStatusAsync(System.Guid,System.Guid,System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
+            [Protocol Method] Returns the translation status for a specific document based on the request Id
+            and document Id.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -887,6 +1074,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.Translation.Document.DocumentStatusResult&gt;&gt;</ReturnType>
@@ -901,13 +1089,17 @@
         <param name="translationId"> Format - uuid.  The batch id. </param>
         <param name="id"> Format - uuid.  The batch id. </param>
         <param name="documentId"> Format - uuid.  The document id. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Returns the status for a specific document. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Returns the translation status for a specific document based on the request Id
+            and document Id.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
             Returns the translation status for a specific document based on the request Id
             and document Id.
             </remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetDocumentTranslationClient">
@@ -945,7 +1137,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet">
@@ -977,7 +1169,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet">
@@ -1001,6 +1193,36 @@
       </Docs>
     </Member>
     <Member MemberName="GetSupportedFormats">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt; GetSupportedFormats (Azure.AI.Translation.Document.FileFormatType fileFormatType, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.AI.Translation.Document.SupportedFileFormats&gt; GetSupportedFormats(valuetype Azure.AI.Translation.Document.FileFormatType fileFormatType, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetSupportedFormats(Azure.AI.Translation.Document.FileFormatType,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSupportedFormats (fileFormatType As FileFormatType, Optional cancellationToken As CancellationToken = Nothing) As Response(Of SupportedFileFormats)" />
+      <MemberSignature Language="F#" Value="abstract member GetSupportedFormats : Azure.AI.Translation.Document.FileFormatType * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;&#xA;override this.GetSupportedFormats : Azure.AI.Translation.Document.FileFormatType * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;" Usage="documentTranslationClient.GetSupportedFormats (fileFormatType, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileFormatType" Type="Azure.AI.Translation.Document.FileFormatType" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="fileFormatType">The type of format to retrieve. Specify
+            <see cref="P:Azure.AI.Translation.Document.FileFormatType.Document" /> or <see cref="P:Azure.AI.Translation.Document.FileFormatType.Glossary" />.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+        <summary>
+            Get the list of formats supported by the Document Translation service.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException">Service returned a non-success status code.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSupportedFormats">
       <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt; GetSupportedFormats (Azure.AI.Translation.Document.FileFormatType? type = default, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.AI.Translation.Document.SupportedFileFormats&gt; GetSupportedFormats(valuetype System.Nullable`1&lt;valuetype Azure.AI.Translation.Document.FileFormatType&gt; type, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetSupportedFormats(System.Nullable{Azure.AI.Translation.Document.FileFormatType},System.Threading.CancellationToken)" />
@@ -1010,7 +1232,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;</ReturnType>
       </ReturnValue>
@@ -1019,28 +1248,33 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="type"> the type of format like document or glossary. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Returns a list of supported document formats. </summary>
+        <param name="type">The type of format to retrieve. This value is required; specify
+            <see cref="P:Azure.AI.Translation.Document.FileFormatType.Document" /> or <see cref="P:Azure.AI.Translation.Document.FileFormatType.Glossary" />.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+        <summary>
+            Get the list of formats supported by the Document Translation service.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
-            The list of supported formats supported by the Document Translation
-            service.
-            The list includes the common file extension, as well as the
-            content-type if using the upload API.
+            This overload is retained for backwards compatibility. The service requires <paramref name="type" />,
+            so calling it without a type (or with <c>null</c>) throws <see cref="T:System.NotSupportedException" />.
+            Use the <c>GetSupportedFormats</c> overload that takes a required <see cref="T:Azure.AI.Translation.Document.FileFormatType" /> instead.
             </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetSupportedFormats">
-      <MemberSignature Language="C#" Value="public virtual Azure.Response GetSupportedFormats (string type, Azure.RequestContext context);" />
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetSupportedFormats (string type, Azure.RequestContext context = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetSupportedFormats(string type, class Azure.RequestContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetSupportedFormats(System.String,Azure.RequestContext)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSupportedFormats (type As String, context As RequestContext) As Response" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSupportedFormats (type As String, Optional context As RequestContext = Nothing) As Response" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="abstract member GetSupportedFormats : string * Azure.RequestContext -&gt; Azure.Response&#xA;override this.GetSupportedFormats : string * Azure.RequestContext -&gt; Azure.Response" Usage="documentTranslationClient.GetSupportedFormats (type, context)" />
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetSupportedFormats (string type, Azure.RequestContext context);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSupportedFormats (type As String, context As RequestContext) As Response" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
@@ -1050,18 +1284,47 @@
         <Parameter Name="context" Type="Azure.RequestContext" />
       </Parameters>
       <Docs>
-        <param name="type"> the type of format like document or glossary . Allowed values: "document" | "glossary". </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="type"> the type of format like document or glossary . </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Returns a list of supported document formats
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetSupportedFormats(System.Nullable{Azure.AI.Translation.Document.FileFormatType},System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
+            [Protocol Method] The list of supported formats supported by the Document Translation
+            service.
+            The list includes the common file extension, as well as the
+            content-type if using the upload API.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSupportedFormatsAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;&gt; GetSupportedFormatsAsync (Azure.AI.Translation.Document.FileFormatType fileFormatType, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.AI.Translation.Document.SupportedFileFormats&gt;&gt; GetSupportedFormatsAsync(valuetype Azure.AI.Translation.Document.FileFormatType fileFormatType, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetSupportedFormatsAsync(Azure.AI.Translation.Document.FileFormatType,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSupportedFormatsAsync (fileFormatType As FileFormatType, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of SupportedFileFormats))" />
+      <MemberSignature Language="F#" Value="abstract member GetSupportedFormatsAsync : Azure.AI.Translation.Document.FileFormatType * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;&gt;&#xA;override this.GetSupportedFormatsAsync : Azure.AI.Translation.Document.FileFormatType * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;&gt;" Usage="documentTranslationClient.GetSupportedFormatsAsync (fileFormatType, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileFormatType" Type="Azure.AI.Translation.Document.FileFormatType" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="fileFormatType">The type of format to retrieve. Specify
+            <see cref="P:Azure.AI.Translation.Document.FileFormatType.Document" /> or <see cref="P:Azure.AI.Translation.Document.FileFormatType.Glossary" />.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+        <summary>
+            Get the list of formats supported by the Document Translation service.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException">Service returned a non-success status code.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetSupportedFormatsAsync">
@@ -1074,7 +1337,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.Translation.Document.SupportedFileFormats&gt;&gt;</ReturnType>
       </ReturnValue>
@@ -1083,28 +1353,33 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="type"> the type of format like document or glossary. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Returns a list of supported document formats. </summary>
+        <param name="type">The type of format to retrieve. This value is required; specify
+            <see cref="P:Azure.AI.Translation.Document.FileFormatType.Document" /> or <see cref="P:Azure.AI.Translation.Document.FileFormatType.Glossary" />.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+        <summary>
+            Get the list of formats supported by the Document Translation service.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
-            The list of supported formats supported by the Document Translation
-            service.
-            The list includes the common file extension, as well as the
-            content-type if using the upload API.
+            This overload is retained for backwards compatibility. The service requires <paramref name="type" />,
+            so calling it without a type (or with <c>null</c>) throws <see cref="T:System.NotSupportedException" />.
+            Use the <c>GetSupportedFormatsAsync</c> overload that takes a required <see cref="T:Azure.AI.Translation.Document.FileFormatType" /> instead.
             </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetSupportedFormatsAsync">
-      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetSupportedFormatsAsync (string type, Azure.RequestContext context);" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetSupportedFormatsAsync (string type, Azure.RequestContext context = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetSupportedFormatsAsync(string type, class Azure.RequestContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetSupportedFormatsAsync(System.String,Azure.RequestContext)" />
-      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSupportedFormatsAsync (type As String, context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSupportedFormatsAsync (type As String, Optional context As RequestContext = Nothing) As Task(Of Response)" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="abstract member GetSupportedFormatsAsync : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetSupportedFormatsAsync : string * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="documentTranslationClient.GetSupportedFormatsAsync (type, context)" />
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetSupportedFormatsAsync (string type, Azure.RequestContext context);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetSupportedFormatsAsync (type As String, context As RequestContext) As Task(Of Response)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
@@ -1114,15 +1389,14 @@
         <Parameter Name="context" Type="Azure.RequestContext" />
       </Parameters>
       <Docs>
-        <param name="type"> the type of format like document or glossary . Allowed values: "document" | "glossary". </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="type"> the type of format like document or glossary . </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Returns a list of supported document formats
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetSupportedFormatsAsync(System.Nullable{Azure.AI.Translation.Document.FileFormatType},System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
+            [Protocol Method] The list of supported formats supported by the Document Translation
+            service.
+            The list includes the common file extension, as well as the
+            content-type if using the upload API.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -1137,7 +1411,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet">
@@ -1169,7 +1443,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet">
@@ -1202,6 +1476,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;System.BinaryData&gt;</ReturnType>
@@ -1218,45 +1493,9 @@
         <Parameter Name="context" Type="Azure.RequestContext" />
       </Parameters>
       <Docs>
-        <param name="maxCount">
-             $top indicates the total number of records the user wants to be returned across
-             all pages.
-            
-             Clients MAY use $top and $skip query parameters to
-             specify a number of results to return and an offset into the collection.
-             When
-             both $top and $skip are given by a client, the server SHOULD first apply $skip
-             and then $top on the collection.
-            
-             Note: If the server can't honor
-             $top and/or $skip, the server MUST return an error to the client informing
-             about it instead of just ignoring the query options.
-             </param>
-        <param name="skip">
-             $skip indicates the number of records to skip from the list of records held by
-             the server based on the sorting method specified.  By default, we sort by
-             descending start time.
-            
-             Clients MAY use $top and $skip query
-             parameters to specify a number of results to return and an offset into the
-             collection.
-             When both $top and $skip are given by a client, the server SHOULD
-             first apply $skip and then $top on the collection.
-            
-             Note: If the
-             server can't honor $top and/or $skip, the server MUST return an error to the
-             client informing about it instead of just ignoring the query options.
-             </param>
-        <param name="maxpagesize">
-             $maxpagesize is the maximum items returned in a page.  If more items are
-             requested via $top (or $top is not specified and there are more items to be
-             returned), @nextLink will contain the link to the next page.
-            
-            
-             Clients MAY request server-driven paging with a specific page size by
-             specifying a $maxpagesize preference. The server SHOULD honor this preference
-             if the specified page size is smaller than the server's default page size.
-             </param>
+        <param name="maxCount"> top indicates the total number of records the user wants to be returned across all pages. </param>
+        <param name="skip"> skip indicates the number of records to skip from the list of records held by the server based on the sorting method specified. By default, we sort by descending start time. </param>
+        <param name="maxpagesize"> maxpagesize is the maximum items returned in a page. </param>
         <param name="ids"> Ids to use in filtering. </param>
         <param name="statuses"> Statuses to use in filtering. </param>
         <param name="createdDateTimeUtcStart"> the start datetime to get items after. </param>
@@ -1264,12 +1503,8 @@
         <param name="orderBy"> the sorting query for the collection (ex: 'CreatedDateTimeUtc asc','CreatedDateTimeUtc desc'). </param>
         <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-             [Protocol Method] Returns a list of batch requests submitted and the status for each request
-             <list type="bullet"><item><description>
-             This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-             </description></item><item><description>
-             Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetTranslationsStatus(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{System.Guid},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-             </description></item></list></summary>
+            [Protocol Method] Returns a list of batch requests submitted and the status for each request.
+            </summary>
         <returns> The <see cref="T:Azure.Pageable`1" /> from the service containing a list of <see cref="T:System.BinaryData" /> objects. Details of the body schema for each item in the collection are in the Remarks section below. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -1285,6 +1520,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;</ReturnType>
@@ -1301,45 +1537,9 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="maxCount">
-             $top indicates the total number of records the user wants to be returned across
-             all pages.
-            
-             Clients MAY use $top and $skip query parameters to
-             specify a number of results to return and an offset into the collection.
-             When
-             both $top and $skip are given by a client, the server SHOULD first apply $skip
-             and then $top on the collection.
-            
-             Note: If the server can't honor
-             $top and/or $skip, the server MUST return an error to the client informing
-             about it instead of just ignoring the query options.
-             </param>
-        <param name="skip">
-             $skip indicates the number of records to skip from the list of records held by
-             the server based on the sorting method specified.  By default, we sort by
-             descending start time.
-            
-             Clients MAY use $top and $skip query
-             parameters to specify a number of results to return and an offset into the
-             collection.
-             When both $top and $skip are given by a client, the server SHOULD
-             first apply $skip and then $top on the collection.
-            
-             Note: If the
-             server can't honor $top and/or $skip, the server MUST return an error to the
-             client informing about it instead of just ignoring the query options.
-             </param>
-        <param name="maxpagesize">
-             $maxpagesize is the maximum items returned in a page.  If more items are
-             requested via $top (or $top is not specified and there are more items to be
-             returned), @nextLink will contain the link to the next page.
-            
-            
-             Clients MAY request server-driven paging with a specific page size by
-             specifying a $maxpagesize preference. The server SHOULD honor this preference
-             if the specified page size is smaller than the server's default page size.
-             </param>
+        <param name="maxCount"> top indicates the total number of records the user wants to be returned across all pages. </param>
+        <param name="skip"> skip indicates the number of records to skip from the list of records held by the server based on the sorting method specified. By default, we sort by descending start time. </param>
+        <param name="maxpagesize"> maxpagesize is the maximum items returned in a page. </param>
         <param name="ids"> Ids to use in filtering. </param>
         <param name="statuses"> Statuses to use in filtering. </param>
         <param name="createdDateTimeUtcStart"> the start datetime to get items after. </param>
@@ -1414,6 +1614,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;System.BinaryData&gt;</ReturnType>
@@ -1430,45 +1631,9 @@
         <Parameter Name="context" Type="Azure.RequestContext" />
       </Parameters>
       <Docs>
-        <param name="maxCount">
-             $top indicates the total number of records the user wants to be returned across
-             all pages.
-            
-             Clients MAY use $top and $skip query parameters to
-             specify a number of results to return and an offset into the collection.
-             When
-             both $top and $skip are given by a client, the server SHOULD first apply $skip
-             and then $top on the collection.
-            
-             Note: If the server can't honor
-             $top and/or $skip, the server MUST return an error to the client informing
-             about it instead of just ignoring the query options.
-             </param>
-        <param name="skip">
-             $skip indicates the number of records to skip from the list of records held by
-             the server based on the sorting method specified.  By default, we sort by
-             descending start time.
-            
-             Clients MAY use $top and $skip query
-             parameters to specify a number of results to return and an offset into the
-             collection.
-             When both $top and $skip are given by a client, the server SHOULD
-             first apply $skip and then $top on the collection.
-            
-             Note: If the
-             server can't honor $top and/or $skip, the server MUST return an error to the
-             client informing about it instead of just ignoring the query options.
-             </param>
-        <param name="maxpagesize">
-             $maxpagesize is the maximum items returned in a page.  If more items are
-             requested via $top (or $top is not specified and there are more items to be
-             returned), @nextLink will contain the link to the next page.
-            
-            
-             Clients MAY request server-driven paging with a specific page size by
-             specifying a $maxpagesize preference. The server SHOULD honor this preference
-             if the specified page size is smaller than the server's default page size.
-             </param>
+        <param name="maxCount"> top indicates the total number of records the user wants to be returned across all pages. </param>
+        <param name="skip"> skip indicates the number of records to skip from the list of records held by the server based on the sorting method specified. By default, we sort by descending start time. </param>
+        <param name="maxpagesize"> maxpagesize is the maximum items returned in a page. </param>
         <param name="ids"> Ids to use in filtering. </param>
         <param name="statuses"> Statuses to use in filtering. </param>
         <param name="createdDateTimeUtcStart"> the start datetime to get items after. </param>
@@ -1476,12 +1641,8 @@
         <param name="orderBy"> the sorting query for the collection (ex: 'CreatedDateTimeUtc asc','CreatedDateTimeUtc desc'). </param>
         <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-             [Protocol Method] Returns a list of batch requests submitted and the status for each request
-             <list type="bullet"><item><description>
-             This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-             </description></item><item><description>
-             Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetTranslationsStatusAsync(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{System.Guid},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset},System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-             </description></item></list></summary>
+            [Protocol Method] Returns a list of batch requests submitted and the status for each request.
+            </summary>
         <returns> The <see cref="T:Azure.AsyncPageable`1" /> from the service containing a list of <see cref="T:System.BinaryData" /> objects. Details of the body schema for each item in the collection are in the Remarks section below. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -1497,6 +1658,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;</ReturnType>
@@ -1513,45 +1675,9 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="maxCount">
-             $top indicates the total number of records the user wants to be returned across
-             all pages.
-            
-             Clients MAY use $top and $skip query parameters to
-             specify a number of results to return and an offset into the collection.
-             When
-             both $top and $skip are given by a client, the server SHOULD first apply $skip
-             and then $top on the collection.
-            
-             Note: If the server can't honor
-             $top and/or $skip, the server MUST return an error to the client informing
-             about it instead of just ignoring the query options.
-             </param>
-        <param name="skip">
-             $skip indicates the number of records to skip from the list of records held by
-             the server based on the sorting method specified.  By default, we sort by
-             descending start time.
-            
-             Clients MAY use $top and $skip query
-             parameters to specify a number of results to return and an offset into the
-             collection.
-             When both $top and $skip are given by a client, the server SHOULD
-             first apply $skip and then $top on the collection.
-            
-             Note: If the
-             server can't honor $top and/or $skip, the server MUST return an error to the
-             client informing about it instead of just ignoring the query options.
-             </param>
-        <param name="maxpagesize">
-             $maxpagesize is the maximum items returned in a page.  If more items are
-             requested via $top (or $top is not specified and there are more items to be
-             returned), @nextLink will contain the link to the next page.
-            
-            
-             Clients MAY request server-driven paging with a specific page size by
-             specifying a $maxpagesize preference. The server SHOULD honor this preference
-             if the specified page size is smaller than the server's default page size.
-             </param>
+        <param name="maxCount"> top indicates the total number of records the user wants to be returned across all pages. </param>
+        <param name="skip"> skip indicates the number of records to skip from the list of records held by the server based on the sorting method specified. By default, we sort by descending start time. </param>
+        <param name="maxpagesize"> maxpagesize is the maximum items returned in a page. </param>
         <param name="ids"> Ids to use in filtering. </param>
         <param name="statuses"> Statuses to use in filtering. </param>
         <param name="createdDateTimeUtcStart"> the start datetime to get items after. </param>
@@ -1630,6 +1756,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response</ReturnType>
@@ -1642,14 +1769,13 @@
       <Docs>
         <param name="translationId"> Format - uuid.  The operation id. </param>
         <param name="id"> Format - uuid.  The operation id. </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Returns the status for a document translation request
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetTranslationStatus(System.Guid,System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
+            [Protocol Method] Returns the status for a document translation request.
+            The status includes the
+            overall request status, as well as the status for documents that are being
+            translated as part of that request.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -1669,6 +1795,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Response&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;</ReturnType>
@@ -1681,8 +1808,13 @@
       <Docs>
         <param name="translationId"> Format - uuid.  The operation id. </param>
         <param name="id"> Format - uuid.  The operation id. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Returns the status for a document translation request. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Returns the status for a document translation request.
+            The status includes the
+            overall request status, as well as the status for documents that are being
+            translated as part of that request.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
             Returns the status for a document translation request.
@@ -1690,6 +1822,7 @@
             overall request status, as well as the status for documents that are being
             translated as part of that request.
             </remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetTranslationStatusAsync">
@@ -1706,6 +1839,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
@@ -1718,14 +1852,13 @@
       <Docs>
         <param name="translationId"> Format - uuid.  The operation id. </param>
         <param name="id"> Format - uuid.  The operation id. </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Returns the status for a document translation request
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.GetTranslationStatusAsync(System.Guid,System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
+            [Protocol Method] Returns the status for a document translation request.
+            The status includes the
+            overall request status, as well as the status for documents that are being
+            translated as part of that request.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
         <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
@@ -1745,6 +1878,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;&gt;</ReturnType>
@@ -1757,8 +1891,13 @@
       <Docs>
         <param name="translationId"> Format - uuid.  The operation id. </param>
         <param name="id"> Format - uuid.  The operation id. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Returns the status for a document translation request. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Returns the status for a document translation request.
+            The status includes the
+            overall request status, as well as the status for documents that are being
+            translated as part of that request.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
             Returns the status for a document translation request.
@@ -1766,6 +1905,7 @@
             overall request status, as well as the status for documents that are being
             translated as part of that request.
             </remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="GetTranslationStatuses">
@@ -1778,6 +1918,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Pageable&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;</ReturnType>
@@ -1806,6 +1947,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AsyncPageable&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;</ReturnType>
@@ -1834,6 +1976,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Core.Pipeline.HttpPipeline</ReturnType>
@@ -1854,6 +1997,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Translation.Document.DocumentTranslationOperation</ReturnType>
@@ -1886,6 +2030,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Translation.Document.DocumentTranslationOperation</ReturnType>
@@ -1968,7 +2113,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Operation&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;</ReturnType>
@@ -1982,8 +2127,25 @@
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="body"> Translation job submission batch request. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Submit a document translation request to the Document Translation service. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Use this API to submit a bulk (batch) translation request to the Document
+            Translation service.
+            Each request can contain multiple documents and must
+            contain a source and destination container for each document.            
+            The
+            prefix and suffix filter (if supplied) are used to filter folders. The prefix
+            is applied to the subpath after the container name.            
+            Glossaries /
+            Translation memory can be included in the request and are applied by the
+            service when the document is translated.            
+            If the glossary is
+            invalid or unreachable during translation, an error is indicated in the
+            document status.
+            If a file with the same name already exists at the
+            destination, it will be overwritten. The targetUrl for each target language
+            must be unique.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
              Use this API to submit a bulk (batch) translation request to the Document
@@ -2024,6 +2186,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType FrameworkAlternate="azure-dotnet">Azure.Operation&lt;System.BinaryData&gt;</ReturnType>
@@ -2038,19 +2201,64 @@
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="content"> The content to send as the body of the request. </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Submit a document translation request to the Document Translation service
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.StartTranslation(Azure.WaitUntil,Azure.AI.Translation.Document.TranslationBatch,System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
-        <returns> The <see cref="T:Azure.Operation" /> representing an asynchronous operation on the service. </returns>
+            Use this API to submit a bulk (batch) translation request to the Document
+            Translation service.
+            Each request can contain multiple documents and must
+            contain a source and destination container for each document.            
+            The
+            prefix and suffix filter (if supplied) are used to filter folders. The prefix
+            is applied to the subpath after the container name.            
+            Glossaries /
+            Translation memory can be included in the request and are applied by the
+            service when the document is translated.            
+            If the glossary is
+            invalid or unreachable during translation, an error is indicated in the
+            document status.
+            If a file with the same name already exists at the
+            destination, it will be overwritten. The targetUrl for each target language
+            must be unique.
+            </summary>
+        <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="content" /> is null. </exception>
-        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTranslation">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.Translation.Document.DocumentTranslationOperation StartTranslation (System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Document.DocumentTranslationInput&gt; inputs, bool? translateTextWithinImage, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.Translation.Document.DocumentTranslationOperation StartTranslation(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Translation.Document.DocumentTranslationInput&gt; inputs, valuetype System.Nullable`1&lt;bool&gt; translateTextWithinImage, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Document.DocumentTranslationClient.StartTranslation(System.Collections.Generic.IEnumerable{Azure.AI.Translation.Document.DocumentTranslationInput},System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function StartTranslation (inputs As IEnumerable(Of DocumentTranslationInput), translateTextWithinImage As Nullable(Of Boolean), Optional cancellationToken As CancellationToken = Nothing) As DocumentTranslationOperation" />
+      <MemberSignature Language="F#" Value="abstract member StartTranslation : seq&lt;Azure.AI.Translation.Document.DocumentTranslationInput&gt; * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; Azure.AI.Translation.Document.DocumentTranslationOperation&#xA;override this.StartTranslation : seq&lt;Azure.AI.Translation.Document.DocumentTranslationInput&gt; * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; Azure.AI.Translation.Document.DocumentTranslationOperation" Usage="documentTranslationClient.StartTranslation (inputs, translateTextWithinImage, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Translation.Document.DocumentTranslationOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputs" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Document.DocumentTranslationInput&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="translateTextWithinImage" Type="System.Nullable&lt;System.Boolean&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="inputs">Sets the inputs for the translation operation
+            including source and target containers for documents to be translated. </param>
+        <param name="translateTextWithinImage">Whether to translate text embedded within images in the documents.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+        <summary>
+            Starts a translation operation which translates the document(s) in your source container
+            to your <see cref="T:Azure.AI.Translation.Document.TranslationTarget" />(s) in the given language.
+            <para>For document length limits, maximum batch size, and supported document formats, see
+            <a href="https://docs.microsoft.com/azure/cognitive-services/translator/document-translation/overview" />.</para></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException">Service returned a non-success status code. </exception>
       </Docs>
     </Member>
     <Member MemberName="StartTranslationAsync">
@@ -2063,6 +2271,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.AI.Translation.Document.DocumentTranslationOperation&gt;</ReturnType>
@@ -2095,6 +2304,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.AI.Translation.Document.DocumentTranslationOperation&gt;</ReturnType>
@@ -2177,7 +2387,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Azure.Operation&lt;Azure.AI.Translation.Document.TranslationStatusResult&gt;&gt;</ReturnType>
@@ -2191,8 +2401,25 @@
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="body"> Translation job submission batch request. </param>
-        <param name="cancellationToken"> The cancellation token to use. </param>
-        <summary> Submit a document translation request to the Document Translation service. </summary>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Use this API to submit a bulk (batch) translation request to the Document
+            Translation service.
+            Each request can contain multiple documents and must
+            contain a source and destination container for each document.            
+            The
+            prefix and suffix filter (if supplied) are used to filter folders. The prefix
+            is applied to the subpath after the container name.            
+            Glossaries /
+            Translation memory can be included in the request and are applied by the
+            service when the document is translated.            
+            If the glossary is
+            invalid or unreachable during translation, an error is indicated in the
+            document status.
+            If a file with the same name already exists at the
+            destination, it will be overwritten. The targetUrl for each target language
+            must be unique.
+            </summary>
         <returns>To be added.</returns>
         <remarks>
              Use this API to submit a bulk (batch) translation request to the Document
@@ -2233,6 +2460,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType FrameworkAlternate="azure-dotnet">System.Threading.Tasks.Task&lt;Azure.Operation&lt;System.BinaryData&gt;&gt;</ReturnType>
@@ -2247,19 +2475,64 @@
         <param name="waitUntil">
           <see cref="F:Azure.WaitUntil.Completed" /> if the method should wait to return until the long-running operation has completed on the service; <see cref="F:Azure.WaitUntil.Started" /> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         <param name="content"> The content to send as the body of the request. </param>
-        <param name="context"> The request context, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         <summary>
-            [Protocol Method] Submit a document translation request to the Document Translation service
-            <list type="bullet"><item><description>
-            This <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/ProtocolMethods.md">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios.
-            </description></item><item><description>
-            Please try the simpler <see cref="M:Azure.AI.Translation.Document.DocumentTranslationClient.StartTranslationAsync(Azure.WaitUntil,Azure.AI.Translation.Document.TranslationBatch,System.Threading.CancellationToken)" /> convenience overload with strongly typed models first.
-            </description></item></list></summary>
-        <returns> The <see cref="T:Azure.Operation" /> representing an asynchronous operation on the service. </returns>
+            Use this API to submit a bulk (batch) translation request to the Document
+            Translation service.
+            Each request can contain multiple documents and must
+            contain a source and destination container for each document.            
+            The
+            prefix and suffix filter (if supplied) are used to filter folders. The prefix
+            is applied to the subpath after the container name.            
+            Glossaries /
+            Translation memory can be included in the request and are applied by the
+            service when the document is translated.            
+            If the glossary is
+            invalid or unreachable during translation, an error is indicated in the
+            document status.
+            If a file with the same name already exists at the
+            destination, it will be overwritten. The targetUrl for each target language
+            must be unique.
+            </summary>
+        <returns> The response returned from the service. </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="content" /> is null. </exception>
-        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTranslationAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.AI.Translation.Document.DocumentTranslationOperation&gt; StartTranslationAsync (System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Document.DocumentTranslationInput&gt; inputs, bool? translateTextWithinImage, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.AI.Translation.Document.DocumentTranslationOperation&gt; StartTranslationAsync(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Translation.Document.DocumentTranslationInput&gt; inputs, valuetype System.Nullable`1&lt;bool&gt; translateTextWithinImage, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Translation.Document.DocumentTranslationClient.StartTranslationAsync(System.Collections.Generic.IEnumerable{Azure.AI.Translation.Document.DocumentTranslationInput},System.Nullable{System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function StartTranslationAsync (inputs As IEnumerable(Of DocumentTranslationInput), translateTextWithinImage As Nullable(Of Boolean), Optional cancellationToken As CancellationToken = Nothing) As Task(Of DocumentTranslationOperation)" />
+      <MemberSignature Language="F#" Value="abstract member StartTranslationAsync : seq&lt;Azure.AI.Translation.Document.DocumentTranslationInput&gt; * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.AI.Translation.Document.DocumentTranslationOperation&gt;&#xA;override this.StartTranslationAsync : seq&lt;Azure.AI.Translation.Document.DocumentTranslationInput&gt; * Nullable&lt;bool&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.AI.Translation.Document.DocumentTranslationOperation&gt;" Usage="documentTranslationClient.StartTranslationAsync (inputs, translateTextWithinImage, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Translation.Document</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.AI.Translation.Document.DocumentTranslationOperation&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputs" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Translation.Document.DocumentTranslationInput&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="translateTextWithinImage" Type="System.Nullable&lt;System.Boolean&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="inputs">Sets the inputs for the translation operation
+            including source and target containers for documents to be translated. </param>
+        <param name="translateTextWithinImage">Whether to translate text embedded within images in the documents.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+        <summary>
+            Starts a translation operation which translates the document(s) in your source container
+            to your <see cref="T:Azure.AI.Translation.Document.TranslationTarget" />(s) in the given language.
+            <para>For document length limits, maximum batch size, and supported document formats, see
+            <a href="https://docs.microsoft.com/azure/cognitive-services/translator/document-translation/overview" />.</para></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException">Service returned a non-success status code. </exception>
       </Docs>
     </Member>
   </Members>

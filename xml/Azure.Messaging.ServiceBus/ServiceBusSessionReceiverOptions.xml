@@ -43,6 +43,7 @@
     <AssemblyVersion>7.19.0.0</AssemblyVersion>
     <AssemblyVersion>7.20.1.0</AssemblyVersion>
     <AssemblyVersion>7.20.2.0</AssemblyVersion>
+    <AssemblyVersion>7.21.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -64,13 +65,46 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableNonExclusiveSession">
+      <MemberSignature Language="C#" Value="public bool EnableNonExclusiveSession { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableNonExclusiveSession" />
+      <MemberSignature Language="DocId" Value="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiverOptions.EnableNonExclusiveSession" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnableNonExclusiveSession As Boolean" />
+      <MemberSignature Language="F#" Value="member this.EnableNonExclusiveSession : bool with get, set" Usage="Azure.Messaging.ServiceBus.ServiceBusSessionReceiverOptions.EnableNonExclusiveSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets a value indicating whether the session is locked non-exclusively, allowing another receiver to
+             cooperatively take over the session by presenting its <see cref="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiverOptions.SessionLockToken" />. When <c>false</c>
+             (the default), the session is locked exclusively and no other receiver can access it until the lock is released.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             Because a non-exclusive session can change hands, settlement for such a session is routed over the management
+             link rather than the receive link, so that messages delivered to a previous holder can still be settled. This
+             costs a request/response exchange on the shared management link per settlement rather than a disposition on
+             the receiver's own link, which lowers settlement throughput compared to an exclusive session.
+            
+             <para>Accepting a session with this set throws <see cref="T:System.NotSupportedException" /> when the endpoint declines it,
+             either by refusing the request outright or by accepting it without assigning a lock token, so catching that is how
+             a caller detects whether the feature is available for a namespace. An endpoint that declines in some other way
+             surfaces the exception its own error maps to.</para></remarks>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -82,8 +116,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -116,8 +150,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -146,8 +180,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -170,8 +204,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -198,8 +232,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Messaging.ServiceBus.ServiceBusReceiveMode</ReturnType>
@@ -212,6 +246,38 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="SessionLockToken">
+      <MemberSignature Language="C#" Value="public Guid? SessionLockToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Guid&gt; SessionLockToken" />
+      <MemberSignature Language="DocId" Value="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiverOptions.SessionLockToken" />
+      <MemberSignature Language="VB.NET" Value="Public Property SessionLockToken As Nullable(Of Guid)" />
+      <MemberSignature Language="F#" Value="member this.SessionLockToken : Nullable&lt;Guid&gt; with get, set" Usage="Azure.Messaging.ServiceBus.ServiceBusSessionReceiverOptions.SessionLockToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the session lock token to present when cooperatively taking over a non-exclusive session. This must be
+             the token previously assigned by the service to the session, as reported by
+             <see cref="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiver.SessionLockToken" /> on the receiver that currently holds it, and is only valid
+             when <see cref="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiverOptions.EnableNonExclusiveSession" /> is <c>true</c> and a specific session is being accepted (validated when
+             the receiver is created).
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The service represents this token as a GUID on the wire, so it is taken here as a <see cref="T:System.Guid" /> while the
+             receiver reports it as a <see cref="T:System.String" />, matching how lock tokens are surfaced elsewhere in the library.
+             Convert with <see cref="M:System.Guid.Parse(System.String)" /> when taking a session over from another receiver.
+            
+             <para>This token authorizes taking over the session lock for any caller with Listen rights on the entity, so treat
+             it as sensitive: do not log it, do not persist it unprotected, and transmit it only over a trusted channel.</para></remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ToString">
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
@@ -221,8 +287,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

@@ -28,31 +28,31 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public HealthModelDiscoveryRuleProperties (string resourceGraphQuery, string authenticationSetting, Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior discoverRelationships, Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior addRecommendedSignals);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string resourceGraphQuery, string authenticationSetting, valuetype Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior discoverRelationships, valuetype Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior addRecommendedSignals) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.#ctor(System.String,System.String,Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior,Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (resourceGraphQuery As String, authenticationSetting As String, discoverRelationships As DiscoveryRuleRelationshipDiscoveryBehavior, addRecommendedSignals As DiscoveryRuleRecommendedSignalsBehavior)" />
-      <MemberSignature Language="F#" Value="new Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties : string * string * Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior * Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior -&gt; Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties" Usage="new Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties (resourceGraphQuery, authenticationSetting, discoverRelationships, addRecommendedSignals)" />
+      <MemberSignature Language="C#" Value="public HealthModelDiscoveryRuleProperties (string authenticationSetting, Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior discoverRelationships, Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior addRecommendedSignals, Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification specification);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string authenticationSetting, valuetype Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior discoverRelationships, valuetype Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior addRecommendedSignals, class Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification specification) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.#ctor(System.String,Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior,Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior,Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (authenticationSetting As String, discoverRelationships As DiscoveryRuleRelationshipDiscoveryBehavior, addRecommendedSignals As DiscoveryRuleRecommendedSignalsBehavior, specification As DiscoveryRuleSpecification)" />
+      <MemberSignature Language="F#" Value="new Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties : string * Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior * Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior * Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification -&gt; Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties" Usage="new Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties (authenticationSetting, discoverRelationships, addRecommendedSignals, specification)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CloudHealth</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="resourceGraphQuery" Type="System.String" />
         <Parameter Name="authenticationSetting" Type="System.String" />
         <Parameter Name="discoverRelationships" Type="Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRelationshipDiscoveryBehavior" />
         <Parameter Name="addRecommendedSignals" Type="Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleRecommendedSignalsBehavior" />
+        <Parameter Name="specification" Type="Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification" />
       </Parameters>
       <Docs>
-        <param name="resourceGraphQuery"> Azure Resource Graph query text in KQL syntax. The query must return at least a column named 'id' which contains the resource ID of the discovered resources. </param>
         <param name="authenticationSetting"> Reference to the name of the authentication setting which is used for querying Azure Resource Graph. The same authentication setting will also be assigned to any discovered entities. </param>
         <param name="discoverRelationships"> Whether to create relationships between the discovered entities based on a set of built-in rules. These relationships cannot be manually deleted. </param>
         <param name="addRecommendedSignals"> Whether to add all recommended signals to the discovered entities. </param>
+        <param name="specification"> Specification of the discovery rule defining how entities are discovered. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="resourceGraphQuery" /> or <paramref name="authenticationSetting" /> is null. </exception>
+          <paramref name="authenticationSetting" /> or <paramref name="specification" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="AddRecommendedSignals">
@@ -75,6 +75,26 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="AddResourceHealthSignal">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.CloudHealth.Models.ResourceHealthAvailabilityStateSignalBehavior? AddResourceHealthSignal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.CloudHealth.Models.ResourceHealthAvailabilityStateSignalBehavior&gt; AddResourceHealthSignal" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.AddResourceHealthSignal" />
+      <MemberSignature Language="VB.NET" Value="Public Property AddResourceHealthSignal As Nullable(Of ResourceHealthAvailabilityStateSignalBehavior)" />
+      <MemberSignature Language="F#" Value="member this.AddResourceHealthSignal : Nullable&lt;Azure.ResourceManager.CloudHealth.Models.ResourceHealthAvailabilityStateSignalBehavior&gt; with get, set" Usage="Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.AddResourceHealthSignal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.CloudHealth</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.ResourceManager.CloudHealth.Models.ResourceHealthAvailabilityStateSignalBehavior&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Whether to automatically add a signal for the Azure resource's availability state from Azure Resource Health to the discovered entities. Defaults to `Enabled`: discovery rules updated via this API version without setting this field will begin emitting a Resource Health availability signal. Pass `Disabled` to preserve pre-`2026-05-01-preview` behavior. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="AuthenticationSetting">
       <MemberSignature Language="C#" Value="public string AuthenticationSetting { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationSetting" />
@@ -91,26 +111,6 @@
       </ReturnValue>
       <Docs>
         <summary> Reference to the name of the authentication setting which is used for querying Azure Resource Graph. The same authentication setting will also be assigned to any discovered entities. </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="DeletedOn">
-      <MemberSignature Language="C#" Value="public DateTimeOffset? DeletedOn { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; DeletedOn" />
-      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.DeletedOn" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DeletedOn As Nullable(Of DateTimeOffset)" />
-      <MemberSignature Language="F#" Value="member this.DeletedOn : Nullable&lt;DateTimeOffset&gt;" Usage="Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.DeletedOn" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.CloudHealth</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary> Date when the discovery rule was (soft-)deleted. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -175,22 +175,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ErrorMessage">
-      <MemberSignature Language="C#" Value="public string ErrorMessage { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance string ErrorMessage" />
-      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.ErrorMessage" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ErrorMessage As String" />
-      <MemberSignature Language="F#" Value="member this.ErrorMessage : string" Usage="Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.ErrorMessage" />
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.CloudHealth.Models.DiscoveryError Error { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.ResourceManager.CloudHealth.Models.DiscoveryError Error" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.Error" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Error As DiscoveryError" />
+      <MemberSignature Language="F#" Value="member this.Error : Azure.ResourceManager.CloudHealth.Models.DiscoveryError" Usage="Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.Error" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CloudHealth</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.String</ReturnType>
+        <ReturnType>Azure.ResourceManager.CloudHealth.Models.DiscoveryError</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Error message if the last discovery operation failed. </summary>
+        <summary> Error details if the last discovery operation failed. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -243,26 +243,6 @@
         <param name="writer"> The JSON writer. </param>
         <param name="options"> The client options for reading and writing models. </param>
         <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="NumberOfDiscoveredEntities">
-      <MemberSignature Language="C#" Value="public int? NumberOfDiscoveredEntities { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; NumberOfDiscoveredEntities" />
-      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.NumberOfDiscoveredEntities" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property NumberOfDiscoveredEntities As Nullable(Of Integer)" />
-      <MemberSignature Language="F#" Value="member this.NumberOfDiscoveredEntities : Nullable&lt;int&gt;" Usage="Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.NumberOfDiscoveredEntities" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.ResourceManager.CloudHealth</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary> Number of discovered entities in the last discovery operation. </summary>
-        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -336,22 +316,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ResourceGraphQuery">
-      <MemberSignature Language="C#" Value="public string ResourceGraphQuery { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance string ResourceGraphQuery" />
-      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.ResourceGraphQuery" />
-      <MemberSignature Language="VB.NET" Value="Public Property ResourceGraphQuery As String" />
-      <MemberSignature Language="F#" Value="member this.ResourceGraphQuery : string with get, set" Usage="Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.ResourceGraphQuery" />
+    <Member MemberName="Specification">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification Specification { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification Specification" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.Specification" />
+      <MemberSignature Language="VB.NET" Value="Public Property Specification As DiscoveryRuleSpecification" />
+      <MemberSignature Language="F#" Value="member this.Specification : Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification with get, set" Usage="Azure.ResourceManager.CloudHealth.Models.HealthModelDiscoveryRuleProperties.Specification" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.CloudHealth</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>System.String</ReturnType>
+        <ReturnType>Azure.ResourceManager.CloudHealth.Models.DiscoveryRuleSpecification</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Azure Resource Graph query text in KQL syntax. The query must return at least a column named 'id' which contains the resource ID of the discovered resources. </summary>
+        <summary> Specification of the discovery rule defining how entities are discovered. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

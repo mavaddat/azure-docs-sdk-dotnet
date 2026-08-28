@@ -1,0 +1,333 @@
+<Type Name="TaskContext&lt;TInput&gt;" FullName="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;TInput&gt;">
+  <TypeSignature Language="C#" Value="public class TaskContext&lt;TInput&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TaskContext`1&lt;TInput&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.Tasks.TaskContext`1" />
+  <TypeSignature Language="VB.NET" Value="Public Class TaskContext(Of TInput)" />
+  <TypeSignature Language="F#" Value="type TaskContext&lt;'Input&gt; = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TInput">
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(2)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(2)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="TInput">The task input type.</typeparam>
+    <summary>
+            The handler-facing context for a single task turn. Exposes the typed input,
+            identity, entry mode, retry/steering signals, the crash-recovery
+            count, and cooperative cancellation, matching Python's <c>TaskContext</c>. The protected
+            constructor supports mocking; the engine populates instances internally.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TaskContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:Azure.AI.AgentServer.Core.Tasks.TaskContext`1" /> class for mocking.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancellation">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.CancellationToken Cancellation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken Cancellation" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.Cancellation" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Cancellation As CancellationToken" />
+      <MemberSignature Language="F#" Value="member this.Cancellation : System.Threading.CancellationToken" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.Cancellation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A token signaled for any cancellation cause (timeout, steering-cancel, shutdown).</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelRequested">
+      <MemberSignature Language="C#" Value="public virtual bool CancelRequested { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CancelRequested" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.CancelRequested" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CancelRequested As Boolean" />
+      <MemberSignature Language="F#" Value="member this.CancelRequested : bool" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.CancelRequested" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Whether cancellation was requested by an explicit cancel cause.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntryMode">
+      <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Core.Tasks.EntryMode EntryMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.AI.AgentServer.Core.Tasks.EntryMode EntryMode" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.EntryMode" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property EntryMode As EntryMode" />
+      <MemberSignature Language="F#" Value="member this.EntryMode : Azure.AI.AgentServer.Core.Tasks.EntryMode" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.EntryMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.Tasks.EntryMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>How the handler was entered for this turn.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitForRecoveryAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task ExitForRecoveryAsync (System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task ExitForRecoveryAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.ExitForRecoveryAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExitForRecoveryAsync (Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member ExitForRecoveryAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.ExitForRecoveryAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="taskContext.ExitForRecoveryAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">A cancellation token.</param>
+        <summary>
+            Exits the current turn for later recovery: releases the lease without a terminal status
+            and signals the engine to park the task <c>in_progress</c> so it can be
+            resumed elsewhere. This does <b>not</b> throw — after calling it the handler should return
+            (any returned value is ignored). Only valid while <see cref="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.Shutdown" /> is signaled;
+            calling it otherwise throws <see cref="T:System.InvalidOperationException" />.
+            </summary>
+        <returns>A task that completes once the deferral has been signaled.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Input">
+      <MemberSignature Language="C#" Value="public virtual TInput Input { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TInput Input" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.Input" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Input As TInput" />
+      <MemberSignature Language="F#" Value="member this.Input : 'Input" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.Input" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TInput</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The typed input for this turn.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputId">
+      <MemberSignature Language="C#" Value="public virtual string InputId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InputId" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.InputId" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property InputId As String" />
+      <MemberSignature Language="F#" Value="member this.InputId : string" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.InputId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The input id for this turn.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSteeredTurn">
+      <MemberSignature Language="C#" Value="public virtual bool IsSteeredTurn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSteeredTurn" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.IsSteeredTurn" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsSteeredTurn As Boolean" />
+      <MemberSignature Language="F#" Value="member this.IsSteeredTurn : bool" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.IsSteeredTurn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Whether the current turn was triggered by a steering input.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PendingInputCount">
+      <MemberSignature Language="C#" Value="public virtual int PendingInputCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PendingInputCount" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.PendingInputCount" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property PendingInputCount As Integer" />
+      <MemberSignature Language="F#" Value="member this.PendingInputCount : int" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.PendingInputCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The number of pending (queued) steering inputs.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecoveryCount">
+      <MemberSignature Language="C#" Value="public virtual int RecoveryCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecoveryCount" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.RecoveryCount" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property RecoveryCount As Integer" />
+      <MemberSignature Language="F#" Value="member this.RecoveryCount : int" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.RecoveryCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The crash-recovery count for this task (spec §22): 0 on a fresh run, incremented each
+            time the task's lease is re-acquired under a new process instance (a crash/takeover
+            recovery). Mirrors the persisted lease <c>generation</c>.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetryAttempt">
+      <MemberSignature Language="C#" Value="public virtual int RetryAttempt { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RetryAttempt" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.RetryAttempt" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property RetryAttempt As Integer" />
+      <MemberSignature Language="F#" Value="member this.RetryAttempt : int" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.RetryAttempt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The zero-based retry attempt for the current turn (0 on the first try).</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.CancellationToken Shutdown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken Shutdown" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.Shutdown" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Shutdown As CancellationToken" />
+      <MemberSignature Language="F#" Value="member this.Shutdown : System.Threading.CancellationToken" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.Shutdown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A token signaled when the host is shutting down.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskId">
+      <MemberSignature Language="C#" Value="public virtual string TaskId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TaskId" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.TaskId" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property TaskId As String" />
+      <MemberSignature Language="F#" Value="member this.TaskId : string" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.TaskId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The task id.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeoutExceeded">
+      <MemberSignature Language="C#" Value="public virtual bool TimeoutExceeded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TimeoutExceeded" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskContext`1.TimeoutExceeded" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property TimeoutExceeded As Boolean" />
+      <MemberSignature Language="F#" Value="member this.TimeoutExceeded : bool" Usage="Azure.AI.AgentServer.Core.Tasks.TaskContext&lt;'Input&gt;.TimeoutExceeded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Whether the per-task execution timeout was exceeded.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,240 @@
+<Type Name="TaskFailureDetail" FullName="Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail">
+  <TypeSignature Language="C#" Value="public sealed class TaskFailureDetail" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TaskFailureDetail extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class TaskFailureDetail" />
+  <TypeSignature Language="F#" Value="type TaskFailureDetail = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Structured detail describing why a task failed. Projects the cross-language
+            failure record (handler error vs. exhausted retries) into typed members.
+            </summary>
+    <remarks>
+            The original handler exception is also preserved as
+            <see cref="P:System.Exception.InnerException" /> on the
+            <see cref="T:Azure.AI.AgentServer.Core.Tasks.ResilientTaskException" /> (with a <see cref="P:Azure.AI.AgentServer.Core.Tasks.ResilientTaskErrorCode.HandlerError" /> or
+            <see cref="P:Azure.AI.AgentServer.Core.Tasks.ResilientTaskErrorCode.ExhaustedRetries" /> code). <see cref="P:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Traceback" /> captures the same
+            formatted stack trace as a string for cross-language parity with the persisted
+            failure record.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskFailureDetail (Azure.AI.AgentServer.Core.Tasks.TaskFailureKind kind, string errorType, string message, int? attempts = default, string? lastError = default, string? lastErrorType = default, string? traceback = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Azure.AI.AgentServer.Core.Tasks.TaskFailureKind kind, string errorType, string message, valuetype System.Nullable`1&lt;int32&gt; attempts, string lastError, string lastErrorType, string traceback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.#ctor(Azure.AI.AgentServer.Core.Tasks.TaskFailureKind,System.String,System.String,System.Nullable{System.Int32},System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (kind As TaskFailureKind, errorType As String, message As String, Optional attempts As Nullable(Of Integer) = Nothing, Optional lastError As String = Nothing, Optional lastErrorType As String = Nothing, Optional traceback As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail : Azure.AI.AgentServer.Core.Tasks.TaskFailureKind * string * string * Nullable&lt;int&gt; * string * string * string -&gt; Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail" Usage="new Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail (kind, errorType, message, attempts, lastError, lastErrorType, traceback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="kind" Type="Azure.AI.AgentServer.Core.Tasks.TaskFailureKind" />
+        <Parameter Name="errorType" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(1)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(1)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="message" Type="System.String">
+          <Attributes>
+            <Attribute>
+              <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(1)]</AttributeName>
+              <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(1)&gt;]</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+        <Parameter Name="attempts" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="lastError" Type="System.String" />
+        <Parameter Name="lastErrorType" Type="System.String" />
+        <Parameter Name="traceback" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="kind">Whether this was a direct handler error or exhausted retries.</param>
+        <param name="errorType">The exception type name (or <c>"exhausted_retries"</c>).</param>
+        <param name="message">A human-readable summary of the failure.</param>
+        <param name="attempts">For exhausted-retries failures, the number of attempts made.</param>
+        <param name="lastError">For exhausted-retries failures, the message of the final error.</param>
+        <param name="lastErrorType">For exhausted-retries failures, the type name of the final error.</param>
+        <param name="traceback">The formatted stack trace of the underlying exception, when available.</param>
+        <summary>
+            Initializes a new instance of the <see cref="T:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail" /> class.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attempts">
+      <MemberSignature Language="C#" Value="public int? Attempts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; Attempts" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Attempts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Attempts As Nullable(Of Integer)" />
+      <MemberSignature Language="F#" Value="member this.Attempts : Nullable&lt;int&gt;" Usage="Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Attempts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>For exhausted-retries failures, the number of attempts made; otherwise <see langword="null" />.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorType">
+      <MemberSignature Language="C#" Value="public string ErrorType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorType" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.ErrorType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ErrorType As String" />
+      <MemberSignature Language="F#" Value="member this.ErrorType : string" Usage="Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.ErrorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(1)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(1)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The exception type name, or <c>"exhausted_retries"</c> for retry exhaustion.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Kind">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.Tasks.TaskFailureKind Kind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.AI.AgentServer.Core.Tasks.TaskFailureKind Kind" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Kind" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Kind As TaskFailureKind" />
+      <MemberSignature Language="F#" Value="member this.Kind : Azure.AI.AgentServer.Core.Tasks.TaskFailureKind" Usage="Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Kind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.Tasks.TaskFailureKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Whether the failure was a direct handler error or exhausted retries.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastError">
+      <MemberSignature Language="C#" Value="public string? LastError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LastError" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.LastError" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LastError As String" />
+      <MemberSignature Language="F#" Value="member this.LastError : string" Usage="Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.LastError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>For exhausted-retries failures, the message of the final error; otherwise <see langword="null" />.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastErrorType">
+      <MemberSignature Language="C#" Value="public string? LastErrorType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LastErrorType" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.LastErrorType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LastErrorType As String" />
+      <MemberSignature Language="F#" Value="member this.LastErrorType : string" Usage="Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.LastErrorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>For exhausted-retries failures, the type name of the final error; otherwise <see langword="null" />.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Message" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Message As String" />
+      <MemberSignature Language="F#" Value="member this.Message : string" Usage="Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(1)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(1)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A human-readable summary of the failure.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Traceback">
+      <MemberSignature Language="C#" Value="public string? Traceback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Traceback" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Traceback" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Traceback As String" />
+      <MemberSignature Language="F#" Value="member this.Traceback : string" Usage="Azure.AI.AgentServer.Core.Tasks.TaskFailureDetail.Traceback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The formatted stack trace of the underlying exception (parity with the persisted
+            failure record's <c>traceback</c>), or <see langword="null" /> when unavailable.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

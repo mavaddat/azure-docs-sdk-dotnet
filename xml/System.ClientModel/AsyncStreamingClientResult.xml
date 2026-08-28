@@ -1,0 +1,199 @@
+<Type Name="AsyncStreamingClientResult" FullName="System.ClientModel.AsyncStreamingClientResult">
+  <TypeSignature Language="C#" Value="public static class AsyncStreamingClientResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AsyncStreamingClientResult extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ClientModel.AsyncStreamingClientResult" />
+  <TypeSignature Language="VB.NET" Value="Public Class AsyncStreamingClientResult" />
+  <TypeSignature Language="F#" Value="type AsyncStreamingClientResult = class" />
+  <AssemblyInfo>
+    <AssemblyName>System.ClientModel</AssemblyName>
+    <AssemblyVersion>1.15.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Creates asynchronous streaming results for established service responses.
+            </summary>
+    <remarks>
+            The supplied <see cref="T:System.ClientModel.Primitives.PipelineResponse" /> must already be established and
+            have a non-null <see cref="P:System.ClientModel.Primitives.PipelineResponse.ContentStream" />. Factories do
+            not send a request or process response establishment errors.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.ClientModel.AsyncStreamingClientResult&lt;T&gt; Create&lt;T&gt; (System.ClientModel.Primitives.PipelineResponse response, Func&lt;System.IO.Stream,System.Threading.CancellationToken,System.Collections.Generic.IAsyncEnumerable&lt;T&gt;&gt; producer, System.Threading.CancellationToken operationCancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ClientModel.AsyncStreamingClientResult`1&lt;!!T&gt; Create&lt;T&gt;(class System.ClientModel.Primitives.PipelineResponse response, class System.Func`3&lt;class System.IO.Stream, valuetype System.Threading.CancellationToken, class System.Collections.Generic.IAsyncEnumerable`1&lt;!!T&gt;&gt; producer, valuetype System.Threading.CancellationToken operationCancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.AsyncStreamingClientResult.Create``1(System.ClientModel.Primitives.PipelineResponse,System.Func{System.IO.Stream,System.Threading.CancellationToken,System.Collections.Generic.IAsyncEnumerable{``0}},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create(Of T) (response As PipelineResponse, producer As Func(Of Stream, CancellationToken, IAsyncEnumerable(Of T)), Optional operationCancellationToken As CancellationToken = Nothing) As AsyncStreamingClientResult(Of T)" />
+      <MemberSignature Language="F#" Value="static member Create : System.ClientModel.Primitives.PipelineResponse * Func&lt;System.IO.Stream, System.Threading.CancellationToken, System.Collections.Generic.IAsyncEnumerable&lt;'T&gt;&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncStreamingClientResult&lt;'T&gt;" Usage="System.ClientModel.AsyncStreamingClientResult.Create (response, producer, operationCancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncStreamingClientResult&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="response" Type="System.ClientModel.Primitives.PipelineResponse" />
+        <Parameter Name="producer" Type="System.Func&lt;System.IO.Stream,System.Threading.CancellationToken,System.Collections.Generic.IAsyncEnumerable&lt;T&gt;&gt;" />
+        <Parameter Name="operationCancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">The type of values in the stream.</typeparam>
+        <param name="response">An established response containing the stream.</param>
+        <param name="producer">The function that reads values from the stream.
+            The producer must observe cancellation or stream closure. Otherwise,
+            <see cref="M:System.ClientModel.AsyncStreamingClientResult`1.DisposeAsync" /> can wait indefinitely
+            for an active read to complete.</param>
+        <param name="operationCancellationToken">The cancellation token for the operation.</param>
+        <summary>
+            Creates a result whose values are produced from the response content stream.
+            </summary>
+        <returns>A one-shot asynchronous streaming result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonLines">
+      <MemberSignature Language="C#" Value="public static System.ClientModel.AsyncStreamingClientResult&lt;BinaryData&gt; CreateJsonLines (System.ClientModel.Primitives.PipelineResponse response, System.Threading.CancellationToken operationCancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ClientModel.AsyncStreamingClientResult`1&lt;class System.BinaryData&gt; CreateJsonLines(class System.ClientModel.Primitives.PipelineResponse response, valuetype System.Threading.CancellationToken operationCancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.AsyncStreamingClientResult.CreateJsonLines(System.ClientModel.Primitives.PipelineResponse,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateJsonLines (response As PipelineResponse, Optional operationCancellationToken As CancellationToken = Nothing) As AsyncStreamingClientResult(Of BinaryData)" />
+      <MemberSignature Language="F#" Value="static member CreateJsonLines : System.ClientModel.Primitives.PipelineResponse * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncStreamingClientResult&lt;BinaryData&gt;" Usage="System.ClientModel.AsyncStreamingClientResult.CreateJsonLines (response, operationCancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncStreamingClientResult&lt;System.BinaryData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="System.ClientModel.Primitives.PipelineResponse" />
+        <Parameter Name="operationCancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="response">An established response containing the stream.</param>
+        <param name="operationCancellationToken">The cancellation token for the operation.</param>
+        <summary>
+            Creates a result that parses raw newline-delimited JSON values.
+            </summary>
+        <returns>A one-shot asynchronous streaming result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonLines&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.ClientModel.AsyncStreamingClientResult&lt;T&gt; CreateJsonLines&lt;T&gt; (System.ClientModel.Primitives.PipelineResponse response, Func&lt;BinaryData,T&gt; itemParser, System.Threading.CancellationToken operationCancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ClientModel.AsyncStreamingClientResult`1&lt;!!T&gt; CreateJsonLines&lt;T&gt;(class System.ClientModel.Primitives.PipelineResponse response, class System.Func`2&lt;class System.BinaryData, !!T&gt; itemParser, valuetype System.Threading.CancellationToken operationCancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.AsyncStreamingClientResult.CreateJsonLines``1(System.ClientModel.Primitives.PipelineResponse,System.Func{System.BinaryData,``0},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateJsonLines(Of T) (response As PipelineResponse, itemParser As Func(Of BinaryData, T), Optional operationCancellationToken As CancellationToken = Nothing) As AsyncStreamingClientResult(Of T)" />
+      <MemberSignature Language="F#" Value="static member CreateJsonLines : System.ClientModel.Primitives.PipelineResponse * Func&lt;BinaryData, 'T&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncStreamingClientResult&lt;'T&gt;" Usage="System.ClientModel.AsyncStreamingClientResult.CreateJsonLines (response, itemParser, operationCancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncStreamingClientResult&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="response" Type="System.ClientModel.Primitives.PipelineResponse" />
+        <Parameter Name="itemParser" Type="System.Func&lt;System.BinaryData,T&gt;" />
+        <Parameter Name="operationCancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">The type of parsed values.</typeparam>
+        <param name="response">An established response containing the stream.</param>
+        <param name="itemParser">The parser for each JSON line.</param>
+        <param name="operationCancellationToken">The cancellation token for the operation.</param>
+        <summary>
+            Creates a result that parses newline-delimited JSON values.
+            </summary>
+        <returns>A one-shot asynchronous streaming result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSse">
+      <MemberSignature Language="C#" Value="public static System.ClientModel.AsyncStreamingClientResult&lt;System.Net.ServerSentEvents.SseItem&lt;BinaryData&gt;&gt; CreateSse (System.ClientModel.Primitives.PipelineResponse response, Func&lt;System.Net.ServerSentEvents.SseItem&lt;BinaryData&gt;,bool&gt;? isTerminal = default, System.Threading.CancellationToken operationCancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ClientModel.AsyncStreamingClientResult`1&lt;valuetype System.Net.ServerSentEvents.SseItem`1&lt;class System.BinaryData&gt;&gt; CreateSse(class System.ClientModel.Primitives.PipelineResponse response, class System.Func`2&lt;valuetype System.Net.ServerSentEvents.SseItem`1&lt;class System.BinaryData&gt;, bool&gt; isTerminal, valuetype System.Threading.CancellationToken operationCancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.AsyncStreamingClientResult.CreateSse(System.ClientModel.Primitives.PipelineResponse,System.Func{System.Net.ServerSentEvents.SseItem{System.BinaryData},System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateSse (response As PipelineResponse, Optional isTerminal As Func(Of SseItem(Of BinaryData), Boolean) = Nothing, Optional operationCancellationToken As CancellationToken = Nothing) As AsyncStreamingClientResult(Of SseItem(Of BinaryData))" />
+      <MemberSignature Language="F#" Value="static member CreateSse : System.ClientModel.Primitives.PipelineResponse * Func&lt;System.Net.ServerSentEvents.SseItem&lt;BinaryData&gt;, bool&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncStreamingClientResult&lt;System.Net.ServerSentEvents.SseItem&lt;BinaryData&gt;&gt;" Usage="System.ClientModel.AsyncStreamingClientResult.CreateSse (response, isTerminal, operationCancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncStreamingClientResult&lt;System.Net.ServerSentEvents.SseItem&lt;System.BinaryData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="System.ClientModel.Primitives.PipelineResponse" />
+        <Parameter Name="isTerminal" Type="System.Func&lt;System.Net.ServerSentEvents.SseItem&lt;System.BinaryData&gt;,System.Boolean&gt;" />
+        <Parameter Name="operationCancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="response">An established response containing the stream.</param>
+        <param name="isTerminal">An optional predicate identifying the terminal event.
+            The terminal event is not returned. If provided, reaching the end of the
+            stream before a terminal event throws <see cref="T:System.IO.InvalidDataException" />.</param>
+        <param name="operationCancellationToken">The cancellation token for the operation.</param>
+        <summary>
+            Creates a result that parses raw server-sent events.
+            </summary>
+        <returns>A one-shot asynchronous streaming result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSse&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.ClientModel.AsyncStreamingClientResult&lt;System.Net.ServerSentEvents.SseItem&lt;T&gt;&gt; CreateSse&lt;T&gt; (System.ClientModel.Primitives.PipelineResponse response, System.Net.ServerSentEvents.SseItemParser&lt;T&gt; itemParser, Func&lt;System.Net.ServerSentEvents.SseItem&lt;BinaryData&gt;,bool&gt;? isTerminal = default, System.Threading.CancellationToken operationCancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ClientModel.AsyncStreamingClientResult`1&lt;valuetype System.Net.ServerSentEvents.SseItem`1&lt;!!T&gt;&gt; CreateSse&lt;T&gt;(class System.ClientModel.Primitives.PipelineResponse response, class System.Net.ServerSentEvents.SseItemParser`1&lt;!!T&gt; itemParser, class System.Func`2&lt;valuetype System.Net.ServerSentEvents.SseItem`1&lt;class System.BinaryData&gt;, bool&gt; isTerminal, valuetype System.Threading.CancellationToken operationCancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.AsyncStreamingClientResult.CreateSse``1(System.ClientModel.Primitives.PipelineResponse,System.Net.ServerSentEvents.SseItemParser{``0},System.Func{System.Net.ServerSentEvents.SseItem{System.BinaryData},System.Boolean},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateSse(Of T) (response As PipelineResponse, itemParser As SseItemParser(Of T), Optional isTerminal As Func(Of SseItem(Of BinaryData), Boolean) = Nothing, Optional operationCancellationToken As CancellationToken = Nothing) As AsyncStreamingClientResult(Of SseItem(Of T))" />
+      <MemberSignature Language="F#" Value="static member CreateSse : System.ClientModel.Primitives.PipelineResponse * System.Net.ServerSentEvents.SseItemParser&lt;'T&gt; * Func&lt;System.Net.ServerSentEvents.SseItem&lt;BinaryData&gt;, bool&gt; * System.Threading.CancellationToken -&gt; System.ClientModel.AsyncStreamingClientResult&lt;System.Net.ServerSentEvents.SseItem&lt;'T&gt;&gt;" Usage="System.ClientModel.AsyncStreamingClientResult.CreateSse (response, itemParser, isTerminal, operationCancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.AsyncStreamingClientResult&lt;System.Net.ServerSentEvents.SseItem&lt;T&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="response" Type="System.ClientModel.Primitives.PipelineResponse" />
+        <Parameter Name="itemParser" Type="System.Net.ServerSentEvents.SseItemParser&lt;T&gt;" />
+        <Parameter Name="isTerminal" Type="System.Func&lt;System.Net.ServerSentEvents.SseItem&lt;System.BinaryData&gt;,System.Boolean&gt;" />
+        <Parameter Name="operationCancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">The type of data in each event.</typeparam>
+        <param name="response">An established response containing the stream.</param>
+        <param name="itemParser">The parser for each event payload.</param>
+        <param name="isTerminal">An optional predicate that receives each raw
+            <c>SseItem&lt;BinaryData&gt;</c> and identifies the terminal event from
+            its envelope and payload before
+            <paramref name="itemParser" /> is invoked.
+            The terminal event is not returned. If provided, reaching the end of the
+            stream before a terminal event throws <see cref="T:System.IO.InvalidDataException" />.</param>
+        <param name="operationCancellationToken">The cancellation token for the operation.</param>
+        <summary>
+            Creates a result that parses server-sent events.
+            </summary>
+        <returns>A one-shot asynchronous streaming result.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

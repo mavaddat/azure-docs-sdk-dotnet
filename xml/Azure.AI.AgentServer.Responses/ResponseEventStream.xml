@@ -70,6 +70,38 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResponseEventStream (Azure.AI.AgentServer.Responses.ResponseContext context, Azure.AI.AgentServer.Responses.Models.ResponseObject persistedResponse);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Azure.AI.AgentServer.Responses.ResponseContext context, class Azure.AI.AgentServer.Responses.Models.ResponseObject persistedResponse) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.#ctor(Azure.AI.AgentServer.Responses.ResponseContext,Azure.AI.AgentServer.Responses.Models.ResponseObject)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (context As ResponseContext, persistedResponse As ResponseObject)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.AgentServer.Responses.ResponseEventStream : Azure.AI.AgentServer.Responses.ResponseContext * Azure.AI.AgentServer.Responses.Models.ResponseObject -&gt; Azure.AI.AgentServer.Responses.ResponseEventStream" Usage="new Azure.AI.AgentServer.Responses.ResponseEventStream (context, persistedResponse)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Responses.ResponseContext" />
+        <Parameter Name="persistedResponse" Type="Azure.AI.AgentServer.Responses.Models.ResponseObject" />
+      </Parameters>
+      <Docs>
+        <param name="context">Context providing the response ID and recovery state.</param>
+        <param name="persistedResponse">The last durable snapshot to seed the resumed stream from.</param>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.AI.AgentServer.Responses.ResponseEventStream" /> seeded from a prior durable
+            snapshot for a crash-recovery re-invocation. The recovered handler passes
+            <see cref="P:Azure.AI.AgentServer.Responses.ResponseContext.PersistedResponse" /> so the resumed stream continues from the
+            output items already emitted before the crash rather than restarting: the seeded response's
+            output items are retained and the output-index allocator is advanced to
+            <c>persistedResponse.Output.Count</c> so new <c>AddOutputItem*</c> calls do not collide with
+            the already-emitted slots (mirrors Python's <c>ResponseEventStream(response=...)</c> recovery
+            branch). Emit <see cref="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitCreated(Azure.AI.AgentServer.Responses.Models.ResponseStatus)" /> (idempotent on recovery) then
+            <see cref="M:Azure.AI.AgentServer.Responses.ResponseEventStream.EmitInProgress" /> as the client-visible reset carrying the seeded output.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="AddOutputItem&lt;T&gt;">
       <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.OutputItemBuilder&lt;T&gt; AddOutputItem&lt;T&gt; (string itemId) where T : Azure.AI.AgentServer.Responses.Models.OutputItem;" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.OutputItemBuilder`1&lt;!!T&gt; AddOutputItem&lt;(class Azure.AI.AgentServer.Responses.Models.OutputItem) T&gt;(string itemId) cil managed" />
@@ -689,6 +721,39 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="Checkpoint">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent Checkpoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent Checkpoint() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Responses.ResponseEventStream.Checkpoint" />
+      <MemberSignature Language="VB.NET" Value="Public Function Checkpoint () As ResponseStreamEvent" />
+      <MemberSignature Language="F#" Value="member this.Checkpoint : unit -&gt; Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent" Usage="responseEventStream.Checkpoint " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Responses.Models.ResponseStreamEvent</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Produces a checkpoint control signal to <c>yield</c> at a phase boundary so the framework
+            persists the current <see cref="P:Azure.AI.AgentServer.Responses.ResponseEventStream.Response" /> snapshot as a resume watermark.
+            <para>
+            Usage inside a handler: <c>yield return stream.Checkpoint();</c>. The <c>yield</c> is
+            <b>backpressured</b> — control does not return to the handler until the persist completes.
+            The checkpoint is a <b>no-op</b> unless the response is a resilient background response
+            (<c>ResilientBackground=true</c> + <c>store=true</c> + <c>background=true</c>). On recovery,
+            <see cref="P:Azure.AI.AgentServer.Responses.ResponseContext.PersistedResponse" /> is hydrated from the last successful
+            checkpoint, so an idempotent handler resumes from its last phase rather than restarting.
+            </para>
+            The signal is never emitted to the SSE wire; it does not consume a sequence number.
+            </summary>
+        <returns>A checkpoint control event to yield for persistence.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="EmitCompleted">
       <MemberSignature Language="C#" Value="public virtual Azure.AI.AgentServer.Responses.Models.ResponseCompletedEvent EmitCompleted (Azure.AI.AgentServer.Responses.Models.ResponseUsage? usage = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.AI.AgentServer.Responses.Models.ResponseCompletedEvent EmitCompleted(class Azure.AI.AgentServer.Responses.Models.ResponseUsage usage) cil managed" />
@@ -915,6 +980,38 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="InternalMetadata">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IDictionary&lt;string,string&gt; InternalMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; InternalMetadata" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Responses.ResponseEventStream.InternalMetadata" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property InternalMetadata As IDictionary(Of String, String)" />
+      <MemberSignature Language="F#" Value="member this.InternalMetadata : System.Collections.Generic.IDictionary&lt;string, string&gt;" Usage="Azure.AI.AgentServer.Responses.ResponseEventStream.InternalMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Responses</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the internal metadata map for this response — the .NET equivalent of Python's
+            <c>stream.internal_metadata</c>. Unlike <see cref="P:Azure.AI.AgentServer.Responses.Models.ResponseObject.Metadata" /> (the
+            client's own metadata, which is never stripped), internal metadata is framework-reserved:
+            every mutation is folded into the response snapshot as a compact JSON string under the
+            reserved key <c>_internal_metadata</c> inside <see cref="P:Azure.AI.AgentServer.Responses.Models.ResponseObject.Metadata" />,
+            so it is persisted <em>with</em> the response on every snapshot the orchestrator writes and
+            survives crash/recovery (read back on recovery via
+            <see cref="P:Azure.AI.AgentServer.Responses.ResponseContext.PersistedResponse" />). It is stripped from every client-facing
+            ingress/egress payload by <see cref="T:Azure.AI.AgentServer.Responses.Internal.Resilience.InternalMetadataEgress" />. Keys are
+            free-form; values are strings. On a mock-constructed stream (no backing response) the map is
+            purely in-memory.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="NextSequenceNumber">
       <MemberSignature Language="C#" Value="public virtual long NextSequenceNumber ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int64 NextSequenceNumber() cil managed" />
@@ -952,8 +1049,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCall&gt;d__60))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCall&gt;d__60))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCall&gt;d__62))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCall&gt;d__62))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -990,8 +1087,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCallOutput&gt;d__61))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCallOutput&gt;d__61))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCallOutput&gt;d__63))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemApplyPatchCallOutput&gt;d__63))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1026,8 +1123,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCompaction&gt;d__65))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCompaction&gt;d__65))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCompaction&gt;d__67))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCompaction&gt;d__67))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1060,8 +1157,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCall&gt;d__54))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCall&gt;d__54))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCall&gt;d__56))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCall&gt;d__56))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1100,8 +1197,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCallOutput&gt;d__55))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCallOutput&gt;d__55))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCallOutput&gt;d__57))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemComputerCallOutput&gt;d__57))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1136,8 +1233,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCustomToolCallOutput&gt;d__62))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCustomToolCallOutput&gt;d__62))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCustomToolCallOutput&gt;d__64))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemCustomToolCallOutput&gt;d__64))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1172,8 +1269,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__47))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__47))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__49))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__49))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1209,8 +1306,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__48))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__48))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__50))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCall&gt;d__50))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1255,8 +1352,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCallOutput&gt;d__49))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCallOutput&gt;d__49))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCallOutput&gt;d__51))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionCallOutput&gt;d__51))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1291,8 +1388,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCall&gt;d__58))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCall&gt;d__58))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCall&gt;d__60))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCall&gt;d__60))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1331,8 +1428,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCallOutput&gt;d__59))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCallOutput&gt;d__59))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCallOutput&gt;d__61))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemFunctionShellCallOutput&gt;d__61))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1371,8 +1468,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemImageGenCall&gt;d__52))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemImageGenCall&gt;d__52))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemImageGenCall&gt;d__54))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemImageGenCall&gt;d__54))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1415,8 +1512,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCall&gt;d__56))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCall&gt;d__56))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCall&gt;d__58))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCall&gt;d__58))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1453,8 +1550,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCallOutput&gt;d__57))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCallOutput&gt;d__57))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCallOutput&gt;d__59))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemLocalShellCallOutput&gt;d__59))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1487,8 +1584,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalRequest&gt;d__63))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalRequest&gt;d__63))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalRequest&gt;d__65))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalRequest&gt;d__65))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1525,8 +1622,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalResponse&gt;d__64))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalResponse&gt;d__64))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalResponse&gt;d__66))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMcpApprovalResponse&gt;d__66))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1588,8 +1685,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__46))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__46))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__48))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__48))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1630,8 +1727,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__45))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__45))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__47))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemMessage&gt;d__47))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1665,8 +1762,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__50))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__50))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__52))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__52))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1698,8 +1795,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__51))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__51))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__53))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.AsyncIteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemReasoningItem&gt;d__53))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1740,8 +1837,8 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemStructuredOutputs&gt;d__53))]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemStructuredOutputs&gt;d__53))&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemStructuredOutputs&gt;d__55))]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.IteratorStateMachine(typeof(Azure.AI.AgentServer.Responses.ResponseEventStream+&lt;OutputItemStructuredOutputs&gt;d__55))&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>

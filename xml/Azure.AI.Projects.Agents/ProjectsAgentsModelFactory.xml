@@ -8,6 +8,7 @@
     <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -30,7 +31,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -70,7 +71,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.A2APreviewTool</ReturnType>
@@ -110,7 +111,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.A2APreviewToolboxTool</ReturnType>
@@ -160,7 +161,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.A2AProtocolConfiguration</ReturnType>
@@ -169,6 +170,100 @@
       <Docs>
         <summary> Configuration specific to the A2A protocol. </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.A2AProtocolConfiguration" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="A2ATool">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.A2ATool A2ATool (Uri baseUrl = default, string agentCardPath = default, string projectConnectionId = default, bool? sendCredentialsForAgentCard = default, Azure.AI.Projects.Agents.A2AProtocolVersion a2aVersion = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.A2ATool A2ATool(class System.Uri baseUrl, string agentCardPath, string projectConnectionId, valuetype System.Nullable`1&lt;bool&gt; sendCredentialsForAgentCard, valuetype Azure.AI.Projects.Agents.A2AProtocolVersion a2aVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.A2ATool(System.Uri,System.String,System.String,System.Nullable{System.Boolean},Azure.AI.Projects.Agents.A2AProtocolVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function A2ATool (Optional baseUrl As Uri = Nothing, Optional agentCardPath As String = Nothing, Optional projectConnectionId As String = Nothing, Optional sendCredentialsForAgentCard As Nullable(Of Boolean) = Nothing, Optional a2aVersion As A2AProtocolVersion = Nothing) As A2ATool" />
+      <MemberSignature Language="F#" Value="static member A2ATool : Uri * string * string * Nullable&lt;bool&gt; * Azure.AI.Projects.Agents.A2AProtocolVersion -&gt; Azure.AI.Projects.Agents.A2ATool" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.A2ATool (baseUrl, agentCardPath, projectConnectionId, sendCredentialsForAgentCard, a2aVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.A2ATool</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentCardPath" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="projectConnectionId" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sendCredentialsForAgentCard" Type="System.Nullable&lt;System.Boolean&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="a2aVersion" Type="Azure.AI.Projects.Agents.A2AProtocolVersion" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl"> Base URL of the agent. </param>
+        <param name="agentCardPath">
+            The path to the agent card relative to the `base_url`.
+            If not provided, defaults to  `/.well-known/agent-card.json`
+            </param>
+        <param name="projectConnectionId">
+            The connection ID in the project for the A2A server.
+            The connection stores authentication and other connection details needed to connect to the A2A server.
+            </param>
+        <param name="sendCredentialsForAgentCard">
+            When `true`, Foundry sends its credentials when fetching the remote
+            agent's Agent Card. The service defaults to `false` if a value is not
+            specified by the caller (anonymous fetch).
+            </param>
+        <param name="a2aVersion"> The A2A protocol version supported by the agent. </param>
+        <summary> An agent implementing the A2A protocol. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.A2ATool" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="A2AToolboxTool">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.A2AToolboxTool A2AToolboxTool (string name = default, string description = default, System.Collections.Generic.IDictionary&lt;string,Azure.AI.Projects.Agents.ToolConfig&gt; toolConfigs = default, Uri baseUrl = default, string agentCardPath = default, string projectConnectionId = default, bool? sendCredentialsForAgentCard = default, Azure.AI.Projects.Agents.A2AProtocolVersion a2aVersion = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.A2AToolboxTool A2AToolboxTool(string name, string description, class System.Collections.Generic.IDictionary`2&lt;string, class Azure.AI.Projects.Agents.ToolConfig&gt; toolConfigs, class System.Uri baseUrl, string agentCardPath, string projectConnectionId, valuetype System.Nullable`1&lt;bool&gt; sendCredentialsForAgentCard, valuetype Azure.AI.Projects.Agents.A2AProtocolVersion a2aVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.A2AToolboxTool(System.String,System.String,System.Collections.Generic.IDictionary{System.String,Azure.AI.Projects.Agents.ToolConfig},System.Uri,System.String,System.String,System.Nullable{System.Boolean},Azure.AI.Projects.Agents.A2AProtocolVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function A2AToolboxTool (Optional name As String = Nothing, Optional description As String = Nothing, Optional toolConfigs As IDictionary(Of String, ToolConfig) = Nothing, Optional baseUrl As Uri = Nothing, Optional agentCardPath As String = Nothing, Optional projectConnectionId As String = Nothing, Optional sendCredentialsForAgentCard As Nullable(Of Boolean) = Nothing, Optional a2aVersion As A2AProtocolVersion = Nothing) As A2AToolboxTool" />
+      <MemberSignature Language="F#" Value="static member A2AToolboxTool : string * string * System.Collections.Generic.IDictionary&lt;string, Azure.AI.Projects.Agents.ToolConfig&gt; * Uri * string * string * Nullable&lt;bool&gt; * Azure.AI.Projects.Agents.A2AProtocolVersion -&gt; Azure.AI.Projects.Agents.A2AToolboxTool" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.A2AToolboxTool (name, description, toolConfigs, baseUrl, agentCardPath, projectConnectionId, sendCredentialsForAgentCard, a2aVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.A2AToolboxTool</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="toolConfigs" Type="System.Collections.Generic.IDictionary&lt;System.String,Azure.AI.Projects.Agents.ToolConfig&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="baseUrl" Type="System.Uri" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentCardPath" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="projectConnectionId" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sendCredentialsForAgentCard" Type="System.Nullable&lt;System.Boolean&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="a2aVersion" Type="Azure.AI.Projects.Agents.A2AProtocolVersion" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> Optional user-defined name for this tool or configuration. </param>
+        <param name="description"> Optional user-defined description for this tool or configuration. </param>
+        <param name="toolConfigs">
+            Per-tool configuration map. Keys are tool names or `*` (catch-all default).
+            Resolution order: exact tool name match takes priority over `*`.
+            Unknown tool names are silently ignored at runtime.
+            </param>
+        <param name="baseUrl"> Base URL of the agent. </param>
+        <param name="agentCardPath">
+            The path to the agent card relative to the `base_url`.
+            If not provided, defaults to  `/.well-known/agent-card.json`
+            </param>
+        <param name="projectConnectionId">
+            The connection ID in the project for the A2A server.
+            The connection stores authentication and other connection details needed to connect to the A2A server.
+            </param>
+        <param name="sendCredentialsForAgentCard">
+            When `true`, Foundry sends its credentials when fetching the remote
+            agent's Agent Card. The service defaults to `false` if a value is not
+            specified by the caller (anonymous fetch).
+            </param>
+        <param name="a2aVersion"> The A2A protocol version supported by the agent. </param>
+        <summary> An A2A tool stored in a toolbox. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.A2AToolboxTool" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -181,7 +276,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ActivityProtocolConfiguration</ReturnType>
@@ -205,7 +300,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentBlueprintReference</ReturnType>
@@ -232,7 +327,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentCard</ReturnType>
@@ -260,7 +355,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentCardSkill</ReturnType>
@@ -292,7 +387,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentEndpointAuthorizationScheme</ReturnType>
@@ -319,7 +414,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentEndpointConfiguration</ReturnType>
@@ -347,7 +442,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentFromCodeOptions</ReturnType>
@@ -365,15 +460,15 @@
       </Docs>
     </Member>
     <Member MemberName="AgentIdentity">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentIdentity AgentIdentity (string principalId = default, string clientId = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentIdentity AgentIdentity(string principalId, string clientId) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentIdentity(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentIdentity (Optional principalId As String = Nothing, Optional clientId As String = Nothing) As AgentIdentity" />
-      <MemberSignature Language="F#" Value="static member AgentIdentity : string * string -&gt; Azure.AI.Projects.Agents.AgentIdentity" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentIdentity (principalId, clientId)" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentIdentity AgentIdentity (string principalId = default, string clientId = default, Azure.AI.Projects.Agents.AgentIdentityStatus? status = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentIdentity AgentIdentity(string principalId, string clientId, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentIdentityStatus&gt; status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentIdentity(System.String,System.String,System.Nullable{Azure.AI.Projects.Agents.AgentIdentityStatus})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentIdentity (Optional principalId As String = Nothing, Optional clientId As String = Nothing, Optional status As Nullable(Of AgentIdentityStatus) = Nothing) As AgentIdentity" />
+      <MemberSignature Language="F#" Value="static member AgentIdentity : string * string * Nullable&lt;Azure.AI.Projects.Agents.AgentIdentityStatus&gt; -&gt; Azure.AI.Projects.Agents.AgentIdentity" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentIdentity (principalId, clientId, status)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentIdentity</ReturnType>
@@ -381,10 +476,12 @@
       <Parameters>
         <Parameter Name="principalId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="clientId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="status" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentIdentityStatus&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="principalId"> The principal ID of the agent instance. </param>
         <param name="clientId"> The client ID of the agent instance. Also referred to as the instance ID. </param>
+        <param name="status"> The status of the agent identity. Present for both the agent instance identity and the agent blueprint. </param>
         <summary> The AgentIdentity. </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentIdentity" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -400,7 +497,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentManifestOptions</ReturnType>
@@ -427,16 +524,335 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="AgentsSkill">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentsSkill AgentsSkill (string id = default, string name = default, string description = default, DateTimeOffset createdAt = default, string defaultVersion = default, string latestVersion = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentsSkill AgentsSkill(string id, string name, string description, valuetype System.DateTimeOffset createdAt, string defaultVersion, string latestVersion) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentsSkill(System.String,System.String,System.String,System.DateTimeOffset,System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentsSkill (Optional id As String = Nothing, Optional name As String = Nothing, Optional description As String = Nothing, Optional createdAt As DateTimeOffset = Nothing, Optional defaultVersion As String = Nothing, Optional latestVersion As String = Nothing) As AgentsSkill" />
-      <MemberSignature Language="F#" Value="static member AgentsSkill : string * string * string * DateTimeOffset * string * string -&gt; Azure.AI.Projects.Agents.AgentsSkill" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentsSkill (id, name, description, createdAt, defaultVersion, latestVersion)" />
+    <Member MemberName="AgentOptimizationCandidate">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationCandidate AgentOptimizationCandidate (string candidateId = default, string name = default, System.Collections.Generic.IDictionary&lt;string,BinaryData&gt; mutations = default, double avgScore = 0, double avgTokens = 0, string evalId = default, string evalRunId = default, Azure.AI.Projects.Agents.PromotionInfo promotion = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationCandidate AgentOptimizationCandidate(string candidateId, string name, class System.Collections.Generic.IDictionary`2&lt;string, class System.BinaryData&gt; mutations, float64 avgScore, float64 avgTokens, string evalId, string evalRunId, class Azure.AI.Projects.Agents.PromotionInfo promotion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationCandidate(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.BinaryData},System.Double,System.Double,System.String,System.String,Azure.AI.Projects.Agents.PromotionInfo)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationCandidate (Optional candidateId As String = Nothing, Optional name As String = Nothing, Optional mutations As IDictionary(Of String, BinaryData) = Nothing, Optional avgScore As Double = 0, Optional avgTokens As Double = 0, Optional evalId As String = Nothing, Optional evalRunId As String = Nothing, Optional promotion As PromotionInfo = Nothing) As AgentOptimizationCandidate" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationCandidate : string * string * System.Collections.Generic.IDictionary&lt;string, BinaryData&gt; * double * double * string * string * Azure.AI.Projects.Agents.PromotionInfo -&gt; Azure.AI.Projects.Agents.AgentOptimizationCandidate" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationCandidate (candidateId, name, mutations, avgScore, avgTokens, evalId, evalRunId, promotion)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationCandidate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="candidateId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="mutations" Type="System.Collections.Generic.IDictionary&lt;System.String,System.BinaryData&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="avgScore" Type="System.Double" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="avgTokens" Type="System.Double" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="evalId" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="evalRunId" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="promotion" Type="Azure.AI.Projects.Agents.PromotionInfo" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="candidateId"> Server-assigned candidate identifier. Use with GET /candidates/{id} sub-endpoints. </param>
+        <param name="name"> Display name of the candidate (e.g., 'baseline', 'instruction-v2'). </param>
+        <param name="mutations"> What was mutated from the baseline (e.g., {system_prompt: 'new prompt'}). </param>
+        <param name="avgScore"> Average composite score across all tasks. </param>
+        <param name="avgTokens"> Average token usage across all tasks. </param>
+        <param name="evalId"> Foundry evaluation identifier used to score this candidate. </param>
+        <param name="evalRunId"> Foundry evaluation run identifier for this candidate's scoring run. </param>
+        <param name="promotion"> Promotion metadata. Null if the candidate has not been promoted. </param>
+        <summary> Aggregated evaluation result for a single candidate agent configuration across all tasks. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationCandidate" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationDatasetCriterion">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion AgentOptimizationDatasetCriterion (string name = default, string instruction = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion AgentOptimizationDatasetCriterion(string name, string instruction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationDatasetCriterion(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationDatasetCriterion (Optional name As String = Nothing, Optional instruction As String = Nothing) As AgentOptimizationDatasetCriterion" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationDatasetCriterion : string * string -&gt; Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationDatasetCriterion (name, instruction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="instruction" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> Criterion name. </param>
+        <param name="instruction"> Criterion instruction / description. </param>
+        <summary> Evaluation criterion: a name + instruction pair used for per-item scoring. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationDatasetInput">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationDatasetInput AgentOptimizationDatasetInput (string type = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationDatasetInput AgentOptimizationDatasetInput(string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationDatasetInput(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationDatasetInput (Optional type As String = Nothing) As AgentOptimizationDatasetInput" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationDatasetInput : string -&gt; Azure.AI.Projects.Agents.AgentOptimizationDatasetInput" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationDatasetInput type" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationDatasetInput</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="type"> Dataset input type discriminator. </param>
+        <summary>
+            Base discriminated model for dataset input. Either inline items or a registered reference.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationInlineDatasetInput" /> and <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationReferenceDatasetInput" />.
+            </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationDatasetInput" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationDatasetItem">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationDatasetItem AgentOptimizationDatasetItem (string query = default, string groundTruth = default, int? desiredTurnCount = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion&gt; criteria = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationDatasetItem AgentOptimizationDatasetItem(string query, string groundTruth, valuetype System.Nullable`1&lt;int32&gt; desiredTurnCount, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion&gt; criteria) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationDatasetItem(System.String,System.String,System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationDatasetItem (Optional query As String = Nothing, Optional groundTruth As String = Nothing, Optional desiredTurnCount As Nullable(Of Integer) = Nothing, Optional criteria As IEnumerable(Of AgentOptimizationDatasetCriterion) = Nothing) As AgentOptimizationDatasetItem" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationDatasetItem : string * string * Nullable&lt;int&gt; * seq&lt;Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion&gt; -&gt; Azure.AI.Projects.Agents.AgentOptimizationDatasetItem" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationDatasetItem (query, groundTruth, desiredTurnCount, criteria)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationDatasetItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="groundTruth" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="desiredTurnCount" Type="System.Nullable&lt;System.Int32&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="criteria" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentOptimizationDatasetCriterion&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="query"> The user query / prompt. </param>
+        <param name="groundTruth"> Expected ground truth answer. </param>
+        <param name="desiredTurnCount"> Desired number of conversation turns for simulation mode (1-20). </param>
+        <param name="criteria"> Per-item evaluation criteria. </param>
+        <summary> A single item in an inline dataset. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationDatasetItem" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationEvaluatorRef">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef AgentOptimizationEvaluatorRef (string name = default, string version = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef AgentOptimizationEvaluatorRef(string name, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationEvaluatorRef(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationEvaluatorRef (Optional name As String = Nothing, Optional version As String = Nothing) As AgentOptimizationEvaluatorRef" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationEvaluatorRef : string * string -&gt; Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationEvaluatorRef (name, version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="version" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> Evaluator name. </param>
+        <param name="version"> Evaluator version. If not specified, the latest version is used. </param>
+        <summary> Reference to a named evaluator, optionally pinned to a version. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationInlineDatasetInput">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationInlineDatasetInput AgentOptimizationInlineDatasetInput (System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentOptimizationDatasetItem&gt; items = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationInlineDatasetInput AgentOptimizationInlineDatasetInput(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.AgentOptimizationDatasetItem&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationInlineDatasetInput(System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.AgentOptimizationDatasetItem})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationInlineDatasetInput (Optional items As IEnumerable(Of AgentOptimizationDatasetItem) = Nothing) As AgentOptimizationInlineDatasetInput" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationInlineDatasetInput : seq&lt;Azure.AI.Projects.Agents.AgentOptimizationDatasetItem&gt; -&gt; Azure.AI.Projects.Agents.AgentOptimizationInlineDatasetInput" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationInlineDatasetInput items" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationInlineDatasetInput</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentOptimizationDatasetItem&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="items"> Dataset items. </param>
+        <summary> Inline dataset — items supplied directly in the request body. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationInlineDatasetInput" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationJobInputs">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationJobInputs AgentOptimizationJobInputs (Azure.AI.Projects.Agents.OptimizedAgentIdentifier agent = default, Azure.AI.Projects.Agents.AgentOptimizationDatasetInput trainDataset = default, Azure.AI.Projects.Agents.AgentOptimizationDatasetInput validationDataset = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef&gt; evaluators = default, Azure.AI.Projects.Agents.AgentOptimizationOptions options = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationJobInputs AgentOptimizationJobInputs(class Azure.AI.Projects.Agents.OptimizedAgentIdentifier agent, class Azure.AI.Projects.Agents.AgentOptimizationDatasetInput trainDataset, class Azure.AI.Projects.Agents.AgentOptimizationDatasetInput validationDataset, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef&gt; evaluators, class Azure.AI.Projects.Agents.AgentOptimizationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationJobInputs(Azure.AI.Projects.Agents.OptimizedAgentIdentifier,Azure.AI.Projects.Agents.AgentOptimizationDatasetInput,Azure.AI.Projects.Agents.AgentOptimizationDatasetInput,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef},Azure.AI.Projects.Agents.AgentOptimizationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationJobInputs (Optional agent As OptimizedAgentIdentifier = Nothing, Optional trainDataset As AgentOptimizationDatasetInput = Nothing, Optional validationDataset As AgentOptimizationDatasetInput = Nothing, Optional evaluators As IEnumerable(Of AgentOptimizationEvaluatorRef) = Nothing, Optional options As AgentOptimizationOptions = Nothing) As AgentOptimizationJobInputs" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationJobInputs : Azure.AI.Projects.Agents.OptimizedAgentIdentifier * Azure.AI.Projects.Agents.AgentOptimizationDatasetInput * Azure.AI.Projects.Agents.AgentOptimizationDatasetInput * seq&lt;Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef&gt; * Azure.AI.Projects.Agents.AgentOptimizationOptions -&gt; Azure.AI.Projects.Agents.AgentOptimizationJobInputs" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationJobInputs (agent, trainDataset, validationDataset, evaluators, options)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationJobInputs</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agent" Type="Azure.AI.Projects.Agents.OptimizedAgentIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="trainDataset" Type="Azure.AI.Projects.Agents.AgentOptimizationDatasetInput" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="validationDataset" Type="Azure.AI.Projects.Agents.AgentOptimizationDatasetInput" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="evaluators" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentOptimizationEvaluatorRef&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="options" Type="Azure.AI.Projects.Agents.AgentOptimizationOptions" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agent"> The agent (and pinned version) being optimized. </param>
+        <param name="trainDataset"> Training dataset — either inline items or a reference to a registered dataset. Required. </param>
+        <param name="validationDataset"> Optional held-out validation dataset for measuring generalization of the final candidate. </param>
+        <param name="evaluators"> Job-level evaluators referenced by name and optional version. Required; at least one must be provided. </param>
+        <param name="options"> Tuning knobs and run-mode. </param>
+        <summary> Caller-supplied inputs for an optimization job. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationJobInputs" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationJobProgress">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationJobProgress AgentOptimizationJobProgress (int candidatesCompleted = 0, double bestScore = 0, double elapsedSeconds = 0);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationJobProgress AgentOptimizationJobProgress(int32 candidatesCompleted, float64 bestScore, float64 elapsedSeconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationJobProgress(System.Int32,System.Double,System.Double)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationJobProgress (Optional candidatesCompleted As Integer = 0, Optional bestScore As Double = 0, Optional elapsedSeconds As Double = 0) As AgentOptimizationJobProgress" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationJobProgress : int * double * double -&gt; Azure.AI.Projects.Agents.AgentOptimizationJobProgress" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationJobProgress (candidatesCompleted, bestScore, elapsedSeconds)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationJobProgress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="candidatesCompleted" Type="System.Int32" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="bestScore" Type="System.Double" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="elapsedSeconds" Type="System.Double" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="candidatesCompleted"> Number of candidates whose evaluation has completed so far. </param>
+        <param name="bestScore"> Best score observed so far across all candidates. </param>
+        <param name="elapsedSeconds"> Wall-clock time elapsed in seconds since the job began executing. </param>
+        <summary> In-flight progress; only populated while status is queued or in_progress. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationJobProgress" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationJobResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationJobResult AgentOptimizationJobResult (string baseline = default, string best = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentOptimizationCandidate&gt; candidates = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationJobResult AgentOptimizationJobResult(string baseline, string best, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.AgentOptimizationCandidate&gt; candidates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationJobResult(System.String,System.String,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.AgentOptimizationCandidate})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationJobResult (Optional baseline As String = Nothing, Optional best As String = Nothing, Optional candidates As IEnumerable(Of AgentOptimizationCandidate) = Nothing) As AgentOptimizationJobResult" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationJobResult : string * string * seq&lt;Azure.AI.Projects.Agents.AgentOptimizationCandidate&gt; -&gt; Azure.AI.Projects.Agents.AgentOptimizationJobResult" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationJobResult (baseline, best, candidates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationJobResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseline" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="best" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="candidates" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.AgentOptimizationCandidate&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="baseline"> Candidate ID of the original (un-optimized) baseline evaluation. </param>
+        <param name="best"> Candidate ID of the highest-scoring candidate found during optimization. </param>
+        <param name="candidates"> All evaluated candidates including baseline. </param>
+        <summary> Terminal-state result body. Populated when status is succeeded or failed. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationJobResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationOptions AgentOptimizationOptions (int? maxCandidates = default, System.Collections.Generic.IDictionary&lt;string,BinaryData&gt; optimizationConfig = default, string evalModel = default, string optimizationModel = default, Azure.AI.Projects.Agents.AgentsEvaluationLevel? evaluationLevel = default, int? maxStalls = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationOptions AgentOptimizationOptions(valuetype System.Nullable`1&lt;int32&gt; maxCandidates, class System.Collections.Generic.IDictionary`2&lt;string, class System.BinaryData&gt; optimizationConfig, string evalModel, string optimizationModel, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentsEvaluationLevel&gt; evaluationLevel, valuetype System.Nullable`1&lt;int32&gt; maxStalls) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationOptions(System.Nullable{System.Int32},System.Collections.Generic.IDictionary{System.String,System.BinaryData},System.String,System.String,System.Nullable{Azure.AI.Projects.Agents.AgentsEvaluationLevel},System.Nullable{System.Int32})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationOptions (Optional maxCandidates As Nullable(Of Integer) = Nothing, Optional optimizationConfig As IDictionary(Of String, BinaryData) = Nothing, Optional evalModel As String = Nothing, Optional optimizationModel As String = Nothing, Optional evaluationLevel As Nullable(Of AgentsEvaluationLevel) = Nothing, Optional maxStalls As Nullable(Of Integer) = Nothing) As AgentOptimizationOptions" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationOptions : Nullable&lt;int&gt; * System.Collections.Generic.IDictionary&lt;string, BinaryData&gt; * string * string * Nullable&lt;Azure.AI.Projects.Agents.AgentsEvaluationLevel&gt; * Nullable&lt;int&gt; -&gt; Azure.AI.Projects.Agents.AgentOptimizationOptions" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationOptions (maxCandidates, optimizationConfig, evalModel, optimizationModel, evaluationLevel, maxStalls)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maxCandidates" Type="System.Nullable&lt;System.Int32&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="optimizationConfig" Type="System.Collections.Generic.IDictionary&lt;System.String,System.BinaryData&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="evalModel" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="optimizationModel" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="evaluationLevel" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentsEvaluationLevel&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="maxStalls" Type="System.Nullable&lt;System.Int32&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="maxCandidates"> Maximum number of optimization candidates to generate. Must be &gt;= 1. Default: 5. </param>
+        <param name="optimizationConfig"> Per-target-attribute configuration overrides. Contains skills, tools, system_prompt for the agent, plus model space for model optimization. </param>
+        <param name="evalModel"> Model deployment used for evaluation. Defaults to server config (typically 'gpt-4o'). </param>
+        <param name="optimizationModel"> Model deployment for optimization reasoning (must be gpt-5 family). Falls back to the default eval model when not set. </param>
+        <param name="evaluationLevel"> Evaluation granularity. Null/omitted means per-item single-turn. Set to 'conversation' for per-conversation multi-turn simulation scoring. </param>
+        <param name="maxStalls"> Maximum number of consecutive reflective minibatch rejections before stopping early. A 'stall' occurs when the optimizer proposes a prompt change, evaluates it on a small subset, and the score does not improve — so no full validation-set evaluation is triggered. The counter resets whenever a minibatch passes and its full-validation score beats the current best. Only a sustained plateau of `max_stalls` consecutive minibatch failures triggers the stop. The service defaults to 5 if a value is not specified by the caller. Must be &gt;= 1 when set. </param>
+        <summary> Tuning knobs and run-mode for an optimization job. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationOptions" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentOptimizationReferenceDatasetInput">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentOptimizationReferenceDatasetInput AgentOptimizationReferenceDatasetInput (string name = default, string version = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentOptimizationReferenceDatasetInput AgentOptimizationReferenceDatasetInput(string name, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationReferenceDatasetInput(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentOptimizationReferenceDatasetInput (Optional name As String = Nothing, Optional version As String = Nothing) As AgentOptimizationReferenceDatasetInput" />
+      <MemberSignature Language="F#" Value="static member AgentOptimizationReferenceDatasetInput : string * string -&gt; Azure.AI.Projects.Agents.AgentOptimizationReferenceDatasetInput" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentOptimizationReferenceDatasetInput (name, version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.AgentOptimizationReferenceDatasetInput</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="version" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> Registered dataset name. </param>
+        <param name="version"> Dataset version. If not specified, the latest version is used. </param>
+        <summary> Reference to a registered Foundry dataset. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.AgentOptimizationReferenceDatasetInput" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AgentsSkill">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.AgentsSkill AgentsSkill (string id = default, string name = default, string description = default, DateTimeOffset createdOn = default, string defaultVersion = default, string latestVersion = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.AgentsSkill AgentsSkill(string id, string name, string description, valuetype System.DateTimeOffset createdOn, string defaultVersion, string latestVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentsSkill(System.String,System.String,System.String,System.DateTimeOffset,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AgentsSkill (Optional id As String = Nothing, Optional name As String = Nothing, Optional description As String = Nothing, Optional createdOn As DateTimeOffset = Nothing, Optional defaultVersion As String = Nothing, Optional latestVersion As String = Nothing) As AgentsSkill" />
+      <MemberSignature Language="F#" Value="static member AgentsSkill : string * string * string * DateTimeOffset * string * string -&gt; Azure.AI.Projects.Agents.AgentsSkill" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.AgentsSkill (id, name, description, createdOn, defaultVersion, latestVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentsSkill</ReturnType>
@@ -445,7 +861,7 @@
         <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="description" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="createdAt" Type="System.DateTimeOffset" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdOn" Type="System.DateTimeOffset" Index="3" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="defaultVersion" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="latestVersion" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
@@ -453,7 +869,7 @@
         <param name="id"> The unique identifier of the skill. </param>
         <param name="name"> The unique name of the skill. </param>
         <param name="description"> A human-readable description of the skill. </param>
-        <param name="createdAt"> The Unix timestamp (seconds) when the skill was created. </param>
+        <param name="createdOn"> The Unix timestamp (seconds) when the skill was created. </param>
         <param name="defaultVersion"> The default version for the skill. Can be changed via updateSkill. </param>
         <param name="latestVersion"> The latest version for the skill. </param>
         <summary> A skill resource. </summary>
@@ -470,7 +886,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AgentVersionFromCodeMetadata</ReturnType>
@@ -512,7 +928,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -542,7 +958,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureAISearchTool</ReturnType>
@@ -572,7 +988,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureAISearchToolboxTool</ReturnType>
@@ -607,7 +1023,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureAISearchToolIndex</ReturnType>
@@ -642,7 +1058,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureAISearchToolOptions</ReturnType>
@@ -670,7 +1086,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureFunctionBinding</ReturnType>
@@ -695,7 +1111,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureFunctionDefinition</ReturnType>
@@ -724,7 +1140,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureFunctionDefinitionFunction</ReturnType>
@@ -753,7 +1169,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureFunctionStorageQueue</ReturnType>
@@ -782,7 +1198,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -812,7 +1228,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.AzureFunctionTool</ReturnType>
@@ -839,7 +1255,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BingCustomSearchConfiguration</ReturnType>
@@ -874,7 +1290,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BingCustomSearchPreviewTool</ReturnType>
@@ -899,7 +1315,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BingCustomSearchToolOptions</ReturnType>
@@ -927,7 +1343,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BingGroundingSearchConfiguration</ReturnType>
@@ -960,7 +1376,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BingGroundingSearchToolOptions</ReturnType>
@@ -990,7 +1406,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -1020,7 +1436,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BingGroundingTool</ReturnType>
@@ -1050,7 +1466,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BotServiceAuthorizationScheme</ReturnType>
@@ -1071,7 +1487,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BotServiceRbacAuthorizationScheme</ReturnType>
@@ -1092,7 +1508,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BotServiceTenantAuthorizationScheme</ReturnType>
@@ -1114,7 +1530,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BrowserAutomationPreviewTool</ReturnType>
@@ -1138,7 +1554,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BrowserAutomationPreviewToolboxTool</ReturnType>
@@ -1173,7 +1589,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BrowserAutomationToolConnectionParameters</ReturnType>
@@ -1198,7 +1614,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.BrowserAutomationToolOptions</ReturnType>
@@ -1225,7 +1641,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -1255,7 +1671,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.CaptureStructuredOutputsTool</ReturnType>
@@ -1285,7 +1701,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.CodeConfiguration</ReturnType>
@@ -1320,7 +1736,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.CodeInterpreterToolboxTool</ReturnType>
@@ -1351,24 +1767,32 @@
       </Docs>
     </Member>
     <Member MemberName="ContainerConfiguration">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ContainerConfiguration ContainerConfiguration (string image = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ContainerConfiguration ContainerConfiguration(string image) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ContainerConfiguration(System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ContainerConfiguration (Optional image As String = Nothing) As ContainerConfiguration" />
-      <MemberSignature Language="F#" Value="static member ContainerConfiguration : string -&gt; Azure.AI.Projects.Agents.ContainerConfiguration" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ContainerConfiguration image" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ContainerConfiguration ContainerConfiguration (string image = default, string registryConnectionId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ContainerConfiguration ContainerConfiguration(string image, string registryConnectionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ContainerConfiguration(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ContainerConfiguration (Optional image As String = Nothing, Optional registryConnectionId As String = Nothing) As ContainerConfiguration" />
+      <MemberSignature Language="F#" Value="static member ContainerConfiguration : string * string -&gt; Azure.AI.Projects.Agents.ContainerConfiguration" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ContainerConfiguration (image, registryConnectionId)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ContainerConfiguration</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="image" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="registryConnectionId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="image"> The container image for the hosted agent. </param>
+        <param name="registryConnectionId">
+            The id (or name) of the Foundry project connection that provides the credentials used to
+            authenticate to the private container registry hosting `image`. The connection abstracts the
+            auth mechanism — for example a managed-identity-federated token exchange, or a username/token
+            secret — so registry credentials are never part of the agent definition. Omit for public images
+            or registries already reachable by the platform's default identity (for example, Azure Container Registry).
+            </param>
         <summary> Container-based deployment configuration for a hosted agent. </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.ContainerConfiguration" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -1384,7 +1808,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ContentFilterConfiguration</ReturnType>
@@ -1409,7 +1833,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.CreateAgentVersionFromManifestRequest</ReturnType>
@@ -1445,7 +1869,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.DeclarativeAgentDefinition</ReturnType>
@@ -1502,7 +1926,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>OpenAI.EmptyModelParam</ReturnType>
@@ -1523,7 +1947,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.EntraAuthorizationScheme</ReturnType>
@@ -1544,7 +1968,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ExternalAgentDefinition</ReturnType>
@@ -1581,7 +2005,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.FabricDataAgentToolOptions</ReturnType>
@@ -1608,7 +2032,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.FabricIQPreviewTool</ReturnType>
@@ -1638,7 +2062,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.FabricIQPreviewToolboxTool</ReturnType>
@@ -1678,7 +2102,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.FixedRatioVersionSelectionRule</ReturnType>
@@ -1704,7 +2128,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.HeaderTelemetryEndpointAuth</ReturnType>
@@ -1735,7 +2159,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -1772,15 +2196,15 @@
       </Docs>
     </Member>
     <Member MemberName="HostedAgentDefinition">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.HostedAgentDefinition HostedAgentDefinition (Azure.AI.Projects.Agents.ContentFilterConfiguration contentFilterConfiguration = default, string cpu = default, string memory = default, System.Collections.Generic.IDictionary&lt;string,string&gt; environmentVariables = default, Azure.AI.Projects.Agents.ContainerConfiguration containerConfiguration = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; versions = default, Azure.AI.Projects.Agents.CodeConfiguration codeConfiguration = default, Azure.AI.Projects.Agents.TelemetryConfig telemetryConfig = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.HostedAgentDefinition HostedAgentDefinition(class Azure.AI.Projects.Agents.ContentFilterConfiguration contentFilterConfiguration, string cpu, string memory, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; environmentVariables, class Azure.AI.Projects.Agents.ContainerConfiguration containerConfiguration, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; versions, class Azure.AI.Projects.Agents.CodeConfiguration codeConfiguration, class Azure.AI.Projects.Agents.TelemetryConfig telemetryConfig) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.HostedAgentDefinition(Azure.AI.Projects.Agents.ContentFilterConfiguration,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},Azure.AI.Projects.Agents.ContainerConfiguration,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.ProtocolVersionRecord},Azure.AI.Projects.Agents.CodeConfiguration,Azure.AI.Projects.Agents.TelemetryConfig)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function HostedAgentDefinition (Optional contentFilterConfiguration As ContentFilterConfiguration = Nothing, Optional cpu As String = Nothing, Optional memory As String = Nothing, Optional environmentVariables As IDictionary(Of String, String) = Nothing, Optional containerConfiguration As ContainerConfiguration = Nothing, Optional versions As IEnumerable(Of ProtocolVersionRecord) = Nothing, Optional codeConfiguration As CodeConfiguration = Nothing, Optional telemetryConfig As TelemetryConfig = Nothing) As HostedAgentDefinition" />
-      <MemberSignature Language="F#" Value="static member HostedAgentDefinition : Azure.AI.Projects.Agents.ContentFilterConfiguration * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.AI.Projects.Agents.ContainerConfiguration * seq&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; * Azure.AI.Projects.Agents.CodeConfiguration * Azure.AI.Projects.Agents.TelemetryConfig -&gt; Azure.AI.Projects.Agents.HostedAgentDefinition" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.HostedAgentDefinition (contentFilterConfiguration, cpu, memory, environmentVariables, containerConfiguration, versions, codeConfiguration, telemetryConfig)" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.HostedAgentDefinition HostedAgentDefinition (Azure.AI.Projects.Agents.ContentFilterConfiguration contentFilterConfiguration = default, string cpu = default, string memory = default, System.Collections.Generic.IDictionary&lt;string,string&gt; environmentVariables = default, Azure.AI.Projects.Agents.ContainerConfiguration containerConfiguration = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; versions = default, Azure.AI.Projects.Agents.CodeConfiguration codeConfiguration = default, Azure.AI.Projects.Agents.TelemetryConfig telemetryConfig = default, Azure.AI.Projects.Agents.SessionConfiguration sessionConfiguration = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.HostedAgentDefinition HostedAgentDefinition(class Azure.AI.Projects.Agents.ContentFilterConfiguration contentFilterConfiguration, string cpu, string memory, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; environmentVariables, class Azure.AI.Projects.Agents.ContainerConfiguration containerConfiguration, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; versions, class Azure.AI.Projects.Agents.CodeConfiguration codeConfiguration, class Azure.AI.Projects.Agents.TelemetryConfig telemetryConfig, class Azure.AI.Projects.Agents.SessionConfiguration sessionConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.HostedAgentDefinition(Azure.AI.Projects.Agents.ContentFilterConfiguration,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},Azure.AI.Projects.Agents.ContainerConfiguration,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.ProtocolVersionRecord},Azure.AI.Projects.Agents.CodeConfiguration,Azure.AI.Projects.Agents.TelemetryConfig,Azure.AI.Projects.Agents.SessionConfiguration)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function HostedAgentDefinition (Optional contentFilterConfiguration As ContentFilterConfiguration = Nothing, Optional cpu As String = Nothing, Optional memory As String = Nothing, Optional environmentVariables As IDictionary(Of String, String) = Nothing, Optional containerConfiguration As ContainerConfiguration = Nothing, Optional versions As IEnumerable(Of ProtocolVersionRecord) = Nothing, Optional codeConfiguration As CodeConfiguration = Nothing, Optional telemetryConfig As TelemetryConfig = Nothing, Optional sessionConfiguration As SessionConfiguration = Nothing) As HostedAgentDefinition" />
+      <MemberSignature Language="F#" Value="static member HostedAgentDefinition : Azure.AI.Projects.Agents.ContentFilterConfiguration * string * string * System.Collections.Generic.IDictionary&lt;string, string&gt; * Azure.AI.Projects.Agents.ContainerConfiguration * seq&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt; * Azure.AI.Projects.Agents.CodeConfiguration * Azure.AI.Projects.Agents.TelemetryConfig * Azure.AI.Projects.Agents.SessionConfiguration -&gt; Azure.AI.Projects.Agents.HostedAgentDefinition" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.HostedAgentDefinition (contentFilterConfiguration, cpu, memory, environmentVariables, containerConfiguration, versions, codeConfiguration, telemetryConfig, sessionConfiguration)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.HostedAgentDefinition</ReturnType>
@@ -1794,6 +2218,7 @@
         <Parameter Name="versions" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ProtocolVersionRecord&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="codeConfiguration" Type="Azure.AI.Projects.Agents.CodeConfiguration" Index="6" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="telemetryConfig" Type="Azure.AI.Projects.Agents.TelemetryConfig" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sessionConfiguration" Type="Azure.AI.Projects.Agents.SessionConfiguration" Index="8" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="contentFilterConfiguration"> Configuration for Responsible AI (RAI) content filtering and safety features. </param>
@@ -1804,6 +2229,7 @@
         <param name="versions"> The protocols that the agent supports for ingress communication. </param>
         <param name="codeConfiguration"> Code-based deployment configuration. Provide this for code-based deployments. Mutually exclusive with container_configuration — the service validates that exactly one is set. </param>
         <param name="telemetryConfig"> Optional customer-supplied telemetry configuration for exporting container logs, traces, and metrics. </param>
+        <param name="sessionConfiguration"> Optional session defaults (for example, the idle timeout) applied to sessions created for this agent version. </param>
         <summary> The hosted agent definition. </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.HostedAgentDefinition" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -1818,7 +2244,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.InvocationsProtocolConfiguration</ReturnType>
@@ -1839,7 +2265,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.InvocationsWsProtocolConfiguration</ReturnType>
@@ -1860,7 +2286,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ManagedAgentIdentityBlueprintReference</ReturnType>
@@ -1884,7 +2310,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.McpProtocolConfiguration</ReturnType>
@@ -1905,7 +2331,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.MCPToolboxTool</ReturnType>
@@ -1970,7 +2396,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.MemorySearchPreviewTool</ReturnType>
@@ -2005,7 +2431,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.MemorySearchToolOptions</ReturnType>
@@ -2030,7 +2456,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.MicrosoftFabricPreviewTool</ReturnType>
@@ -2055,7 +2481,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenAPIAnonymousAuthenticationDetails</ReturnType>
@@ -2077,7 +2503,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenApiAuthenticationDetails</ReturnType>
@@ -2105,7 +2531,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenApiFunctionDefinition</ReturnType>
@@ -2140,7 +2566,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenAPIFunctionEntry</ReturnType>
@@ -2169,7 +2595,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenAPIManagedAuthenticationDetails</ReturnType>
@@ -2194,7 +2620,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenAPIManagedSecurityScheme</ReturnType>
@@ -2219,7 +2645,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenApiProjectConnectionAuthenticationDetails</ReturnType>
@@ -2244,7 +2670,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenApiProjectConnectionSecurityScheme</ReturnType>
@@ -2271,7 +2697,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -2301,7 +2727,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenAPITool</ReturnType>
@@ -2327,7 +2753,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OpenApiToolboxTool</ReturnType>
@@ -2352,19 +2778,19 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="OptimizationAgentIdentifier">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationAgentIdentifier OptimizationAgentIdentifier (string agentName = default, string agentVersion = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationAgentIdentifier OptimizationAgentIdentifier(string agentName, string agentVersion) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationAgentIdentifier(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationAgentIdentifier (Optional agentName As String = Nothing, Optional agentVersion As String = Nothing) As OptimizationAgentIdentifier" />
-      <MemberSignature Language="F#" Value="static member OptimizationAgentIdentifier : string * string -&gt; Azure.AI.Projects.Agents.OptimizationAgentIdentifier" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationAgentIdentifier (agentName, agentVersion)" />
+    <Member MemberName="OptimizedAgentIdentifier">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizedAgentIdentifier OptimizedAgentIdentifier (string agentName = default, string agentVersion = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizedAgentIdentifier OptimizedAgentIdentifier(string agentName, string agentVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizedAgentIdentifier(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizedAgentIdentifier (Optional agentName As String = Nothing, Optional agentVersion As String = Nothing) As OptimizedAgentIdentifier" />
+      <MemberSignature Language="F#" Value="static member OptimizedAgentIdentifier : string * string -&gt; Azure.AI.Projects.Agents.OptimizedAgentIdentifier" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizedAgentIdentifier (agentName, agentVersion)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationAgentIdentifier</ReturnType>
+        <ReturnType>Azure.AI.Projects.Agents.OptimizedAgentIdentifier</ReturnType>
       </ReturnValue>
       <Parameters>
         <Parameter Name="agentName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
@@ -2374,324 +2800,7 @@
         <param name="agentName"> Registered Foundry agent name (required). </param>
         <param name="agentVersion"> Pinned agent version. Defaults to latest if omitted. </param>
         <summary> Identifies the registered Foundry agent to optimize (request-only). Skills, tools, and system_prompt are specified in options.optimization_config. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationAgentIdentifier" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationCandidate">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationCandidate OptimizationCandidate (string candidateId = default, string name = default, System.Collections.Generic.IDictionary&lt;string,BinaryData&gt; mutations = default, double avgScore = 0, double avgTokens = 0, string evalId = default, string evalRunId = default, Azure.AI.Projects.Agents.PromotionInfo promotion = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationCandidate OptimizationCandidate(string candidateId, string name, class System.Collections.Generic.IDictionary`2&lt;string, class System.BinaryData&gt; mutations, float64 avgScore, float64 avgTokens, string evalId, string evalRunId, class Azure.AI.Projects.Agents.PromotionInfo promotion) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationCandidate(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.BinaryData},System.Double,System.Double,System.String,System.String,Azure.AI.Projects.Agents.PromotionInfo)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationCandidate (Optional candidateId As String = Nothing, Optional name As String = Nothing, Optional mutations As IDictionary(Of String, BinaryData) = Nothing, Optional avgScore As Double = 0, Optional avgTokens As Double = 0, Optional evalId As String = Nothing, Optional evalRunId As String = Nothing, Optional promotion As PromotionInfo = Nothing) As OptimizationCandidate" />
-      <MemberSignature Language="F#" Value="static member OptimizationCandidate : string * string * System.Collections.Generic.IDictionary&lt;string, BinaryData&gt; * double * double * string * string * Azure.AI.Projects.Agents.PromotionInfo -&gt; Azure.AI.Projects.Agents.OptimizationCandidate" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationCandidate (candidateId, name, mutations, avgScore, avgTokens, evalId, evalRunId, promotion)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationCandidate</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="candidateId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="mutations" Type="System.Collections.Generic.IDictionary&lt;System.String,System.BinaryData&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="avgScore" Type="System.Double" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="avgTokens" Type="System.Double" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="evalId" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="evalRunId" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="promotion" Type="Azure.AI.Projects.Agents.PromotionInfo" Index="7" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="candidateId"> Server-assigned candidate identifier. Use with GET /candidates/{id} sub-endpoints. </param>
-        <param name="name"> Display name of the candidate (e.g., 'baseline', 'instruction-v2'). </param>
-        <param name="mutations"> What was mutated from the baseline (e.g., {system_prompt: 'new prompt'}). </param>
-        <param name="avgScore"> Average composite score across all tasks. </param>
-        <param name="avgTokens"> Average token usage across all tasks. </param>
-        <param name="evalId"> Foundry evaluation identifier used to score this candidate. </param>
-        <param name="evalRunId"> Foundry evaluation run identifier for this candidate's scoring run. </param>
-        <param name="promotion"> Promotion metadata. Null if the candidate has not been promoted. </param>
-        <summary> Aggregated evaluation result for a single candidate agent configuration across all tasks. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationCandidate" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationDatasetCriterion">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationDatasetCriterion OptimizationDatasetCriterion (string name = default, string instruction = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationDatasetCriterion OptimizationDatasetCriterion(string name, string instruction) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationDatasetCriterion(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationDatasetCriterion (Optional name As String = Nothing, Optional instruction As String = Nothing) As OptimizationDatasetCriterion" />
-      <MemberSignature Language="F#" Value="static member OptimizationDatasetCriterion : string * string -&gt; Azure.AI.Projects.Agents.OptimizationDatasetCriterion" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationDatasetCriterion (name, instruction)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationDatasetCriterion</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="instruction" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="name"> Criterion name. </param>
-        <param name="instruction"> Criterion instruction / description. </param>
-        <summary> Evaluation criterion: a name + instruction pair used for per-item scoring. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationDatasetCriterion" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationDatasetInput">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationDatasetInput OptimizationDatasetInput (string type = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationDatasetInput OptimizationDatasetInput(string type) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationDatasetInput(System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationDatasetInput (Optional type As String = Nothing) As OptimizationDatasetInput" />
-      <MemberSignature Language="F#" Value="static member OptimizationDatasetInput : string -&gt; Azure.AI.Projects.Agents.OptimizationDatasetInput" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationDatasetInput type" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationDatasetInput</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="type" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="type"> Dataset input type discriminator. </param>
-        <summary>
-            Base discriminated model for dataset input. Either inline items or a registered reference.
-            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.OptimizationInlineDatasetInput" /> and <see cref="T:Azure.AI.Projects.Agents.OptimizationReferenceDatasetInput" />.
-            </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationDatasetInput" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationDatasetItem">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationDatasetItem OptimizationDatasetItem (string query = default, string groundTruth = default, int? desiredTurnCount = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationDatasetCriterion&gt; criteria = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationDatasetItem OptimizationDatasetItem(string query, string groundTruth, valuetype System.Nullable`1&lt;int32&gt; desiredTurnCount, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.OptimizationDatasetCriterion&gt; criteria) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationDatasetItem(System.String,System.String,System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.OptimizationDatasetCriterion})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationDatasetItem (Optional query As String = Nothing, Optional groundTruth As String = Nothing, Optional desiredTurnCount As Nullable(Of Integer) = Nothing, Optional criteria As IEnumerable(Of OptimizationDatasetCriterion) = Nothing) As OptimizationDatasetItem" />
-      <MemberSignature Language="F#" Value="static member OptimizationDatasetItem : string * string * Nullable&lt;int&gt; * seq&lt;Azure.AI.Projects.Agents.OptimizationDatasetCriterion&gt; -&gt; Azure.AI.Projects.Agents.OptimizationDatasetItem" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationDatasetItem (query, groundTruth, desiredTurnCount, criteria)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationDatasetItem</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="query" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="groundTruth" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="desiredTurnCount" Type="System.Nullable&lt;System.Int32&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="criteria" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationDatasetCriterion&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="query"> The user query / prompt. </param>
-        <param name="groundTruth"> Expected ground truth answer. </param>
-        <param name="desiredTurnCount"> Desired number of conversation turns for simulation mode (1-20). </param>
-        <param name="criteria"> Per-item evaluation criteria. </param>
-        <summary> A single item in an inline dataset. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationDatasetItem" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationEvaluatorRef">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationEvaluatorRef OptimizationEvaluatorRef (string name = default, string version = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationEvaluatorRef OptimizationEvaluatorRef(string name, string version) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationEvaluatorRef(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationEvaluatorRef (Optional name As String = Nothing, Optional version As String = Nothing) As OptimizationEvaluatorRef" />
-      <MemberSignature Language="F#" Value="static member OptimizationEvaluatorRef : string * string -&gt; Azure.AI.Projects.Agents.OptimizationEvaluatorRef" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationEvaluatorRef (name, version)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationEvaluatorRef</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="version" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="name"> Evaluator name. </param>
-        <param name="version"> Evaluator version. If not specified, the latest version is used. </param>
-        <summary> Reference to a named evaluator, optionally pinned to a version. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationEvaluatorRef" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationInlineDatasetInput">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationInlineDatasetInput OptimizationInlineDatasetInput (System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationDatasetItem&gt; items = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationInlineDatasetInput OptimizationInlineDatasetInput(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.OptimizationDatasetItem&gt; items) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationInlineDatasetInput(System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.OptimizationDatasetItem})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationInlineDatasetInput (Optional items As IEnumerable(Of OptimizationDatasetItem) = Nothing) As OptimizationInlineDatasetInput" />
-      <MemberSignature Language="F#" Value="static member OptimizationInlineDatasetInput : seq&lt;Azure.AI.Projects.Agents.OptimizationDatasetItem&gt; -&gt; Azure.AI.Projects.Agents.OptimizationInlineDatasetInput" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationInlineDatasetInput items" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationInlineDatasetInput</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationDatasetItem&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="items"> Dataset items. </param>
-        <summary> Inline dataset — items supplied directly in the request body. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationInlineDatasetInput" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationJobInputs">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationJobInputs OptimizationJobInputs (Azure.AI.Projects.Agents.OptimizationAgentIdentifier agent = default, Azure.AI.Projects.Agents.OptimizationDatasetInput trainDataset = default, Azure.AI.Projects.Agents.OptimizationDatasetInput validationDataset = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt; evaluators = default, Azure.AI.Projects.Agents.OptimizationOptions options = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationJobInputs OptimizationJobInputs(class Azure.AI.Projects.Agents.OptimizationAgentIdentifier agent, class Azure.AI.Projects.Agents.OptimizationDatasetInput trainDataset, class Azure.AI.Projects.Agents.OptimizationDatasetInput validationDataset, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt; evaluators, class Azure.AI.Projects.Agents.OptimizationOptions options) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationJobInputs(Azure.AI.Projects.Agents.OptimizationAgentIdentifier,Azure.AI.Projects.Agents.OptimizationDatasetInput,Azure.AI.Projects.Agents.OptimizationDatasetInput,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.OptimizationEvaluatorRef},Azure.AI.Projects.Agents.OptimizationOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationJobInputs (Optional agent As OptimizationAgentIdentifier = Nothing, Optional trainDataset As OptimizationDatasetInput = Nothing, Optional validationDataset As OptimizationDatasetInput = Nothing, Optional evaluators As IEnumerable(Of OptimizationEvaluatorRef) = Nothing, Optional options As OptimizationOptions = Nothing) As OptimizationJobInputs" />
-      <MemberSignature Language="F#" Value="static member OptimizationJobInputs : Azure.AI.Projects.Agents.OptimizationAgentIdentifier * Azure.AI.Projects.Agents.OptimizationDatasetInput * Azure.AI.Projects.Agents.OptimizationDatasetInput * seq&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt; * Azure.AI.Projects.Agents.OptimizationOptions -&gt; Azure.AI.Projects.Agents.OptimizationJobInputs" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationJobInputs (agent, trainDataset, validationDataset, evaluators, options)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationJobInputs</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="agent" Type="Azure.AI.Projects.Agents.OptimizationAgentIdentifier" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="trainDataset" Type="Azure.AI.Projects.Agents.OptimizationDatasetInput" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="validationDataset" Type="Azure.AI.Projects.Agents.OptimizationDatasetInput" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="evaluators" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationEvaluatorRef&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="options" Type="Azure.AI.Projects.Agents.OptimizationOptions" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="agent"> The agent (and pinned version) being optimized. </param>
-        <param name="trainDataset"> Training dataset — either inline items or a reference to a registered dataset. Required. </param>
-        <param name="validationDataset"> Optional held-out validation dataset for measuring generalization of the final candidate. </param>
-        <param name="evaluators"> Job-level evaluators referenced by name and optional version. Required; at least one must be provided. </param>
-        <param name="options"> Tuning knobs and run-mode. </param>
-        <summary> Caller-supplied inputs for an optimization job. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationJobInputs" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationJobProgress">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationJobProgress OptimizationJobProgress (int candidatesCompleted = 0, double bestScore = 0, double elapsedSecondsInternal = 0);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationJobProgress OptimizationJobProgress(int32 candidatesCompleted, float64 bestScore, float64 elapsedSecondsInternal) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationJobProgress(System.Int32,System.Double,System.Double)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationJobProgress (Optional candidatesCompleted As Integer = 0, Optional bestScore As Double = 0, Optional elapsedSecondsInternal As Double = 0) As OptimizationJobProgress" />
-      <MemberSignature Language="F#" Value="static member OptimizationJobProgress : int * double * double -&gt; Azure.AI.Projects.Agents.OptimizationJobProgress" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationJobProgress (candidatesCompleted, bestScore, elapsedSecondsInternal)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationJobProgress</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="candidatesCompleted" Type="System.Int32" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="bestScore" Type="System.Double" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="elapsedSecondsInternal" Type="System.Double" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="candidatesCompleted"> Number of candidates whose evaluation has completed so far. </param>
-        <param name="bestScore"> Best score observed so far across all candidates. </param>
-        <param name="elapsedSecondsInternal"> Wall-clock time elapsed in seconds since the job began executing. </param>
-        <summary> In-flight progress; only populated while status is queued or in_progress. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationJobProgress" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationJobResult">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationJobResult OptimizationJobResult (string baseline = default, string best = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationCandidate&gt; candidates = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationJobResult OptimizationJobResult(string baseline, string best, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.OptimizationCandidate&gt; candidates) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationJobResult(System.String,System.String,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.OptimizationCandidate})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationJobResult (Optional baseline As String = Nothing, Optional best As String = Nothing, Optional candidates As IEnumerable(Of OptimizationCandidate) = Nothing) As OptimizationJobResult" />
-      <MemberSignature Language="F#" Value="static member OptimizationJobResult : string * string * seq&lt;Azure.AI.Projects.Agents.OptimizationCandidate&gt; -&gt; Azure.AI.Projects.Agents.OptimizationJobResult" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationJobResult (baseline, best, candidates)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationJobResult</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="baseline" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="best" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="candidates" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.OptimizationCandidate&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="baseline"> Candidate ID of the original (un-optimized) baseline evaluation. </param>
-        <param name="best"> Candidate ID of the highest-scoring candidate found during optimization. </param>
-        <param name="candidates"> All evaluated candidates including baseline. </param>
-        <summary> Terminal-state result body. Populated when status is succeeded or failed. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationJobResult" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationOptions">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationOptions OptimizationOptions (int? maxCandidates = default, System.Collections.Generic.IDictionary&lt;string,BinaryData&gt; optimizationConfig = default, string evalModel = default, string optimizationModel = default, Azure.AI.Projects.Agents.AgentsEvaluationLevel? evaluationLevel = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationOptions OptimizationOptions(valuetype System.Nullable`1&lt;int32&gt; maxCandidates, class System.Collections.Generic.IDictionary`2&lt;string, class System.BinaryData&gt; optimizationConfig, string evalModel, string optimizationModel, valuetype System.Nullable`1&lt;valuetype Azure.AI.Projects.Agents.AgentsEvaluationLevel&gt; evaluationLevel) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationOptions(System.Nullable{System.Int32},System.Collections.Generic.IDictionary{System.String,System.BinaryData},System.String,System.String,System.Nullable{Azure.AI.Projects.Agents.AgentsEvaluationLevel})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationOptions (Optional maxCandidates As Nullable(Of Integer) = Nothing, Optional optimizationConfig As IDictionary(Of String, BinaryData) = Nothing, Optional evalModel As String = Nothing, Optional optimizationModel As String = Nothing, Optional evaluationLevel As Nullable(Of AgentsEvaluationLevel) = Nothing) As OptimizationOptions" />
-      <MemberSignature Language="F#" Value="static member OptimizationOptions : Nullable&lt;int&gt; * System.Collections.Generic.IDictionary&lt;string, BinaryData&gt; * string * string * Nullable&lt;Azure.AI.Projects.Agents.AgentsEvaluationLevel&gt; -&gt; Azure.AI.Projects.Agents.OptimizationOptions" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationOptions (maxCandidates, optimizationConfig, evalModel, optimizationModel, evaluationLevel)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationOptions</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="maxCandidates" Type="System.Nullable&lt;System.Int32&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="optimizationConfig" Type="System.Collections.Generic.IDictionary&lt;System.String,System.BinaryData&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="evalModel" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="optimizationModel" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="evaluationLevel" Type="System.Nullable&lt;Azure.AI.Projects.Agents.AgentsEvaluationLevel&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="maxCandidates"> Maximum number of optimization candidates to generate. Must be &gt;= 1. Default: 5. </param>
-        <param name="optimizationConfig"> Per-target-attribute configuration overrides. Contains skills, tools, system_prompt for the agent, plus model space for model optimization. </param>
-        <param name="evalModel"> Model deployment used for evaluation. Defaults to server config (typically 'gpt-4o'). </param>
-        <param name="optimizationModel"> Model deployment for optimization reasoning (must be gpt-5 family). Falls back to the default eval model when not set. </param>
-        <param name="evaluationLevel"> Evaluation granularity. Null/omitted means per-item single-turn. Set to 'conversation' for per-conversation multi-turn simulation scoring. </param>
-        <summary> Tuning knobs and run-mode for an optimization job. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationOptions" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="OptimizationReferenceDatasetInput">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.OptimizationReferenceDatasetInput OptimizationReferenceDatasetInput (string name = default, string version = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.OptimizationReferenceDatasetInput OptimizationReferenceDatasetInput(string name, string version) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationReferenceDatasetInput(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function OptimizationReferenceDatasetInput (Optional name As String = Nothing, Optional version As String = Nothing) As OptimizationReferenceDatasetInput" />
-      <MemberSignature Language="F#" Value="static member OptimizationReferenceDatasetInput : string * string -&gt; Azure.AI.Projects.Agents.OptimizationReferenceDatasetInput" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.OptimizationReferenceDatasetInput (name, version)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.OptimizationReferenceDatasetInput</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="version" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="name"> Registered dataset name. </param>
-        <param name="version"> Dataset version. If not specified, the latest version is used. </param>
-        <summary> Reference to a registered Foundry dataset. </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizationReferenceDatasetInput" /> instance for mocking. </returns>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.OptimizedAgentIdentifier" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2704,7 +2813,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.OtlpTelemetryEndpoint</ReturnType>
@@ -2734,7 +2843,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.PatchAgentOptions</ReturnType>
@@ -2752,15 +2861,15 @@
       </Docs>
     </Member>
     <Member MemberName="ProjectAgentSession">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProjectAgentSession ProjectAgentSession (string agentSessionId = default, Azure.AI.Projects.Agents.VersionIndicator versionIndicator = default, Azure.AI.Projects.Agents.AgentSessionStatus status = default, DateTimeOffset createdAt = default, DateTimeOffset lastAccessedAt = default, DateTimeOffset expiresAt = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProjectAgentSession ProjectAgentSession(string agentSessionId, class Azure.AI.Projects.Agents.VersionIndicator versionIndicator, valuetype Azure.AI.Projects.Agents.AgentSessionStatus status, valuetype System.DateTimeOffset createdAt, valuetype System.DateTimeOffset lastAccessedAt, valuetype System.DateTimeOffset expiresAt) cil managed" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ProjectAgentSession ProjectAgentSession (string agentSessionId = default, Azure.AI.Projects.Agents.VersionIndicator versionIndicator = default, Azure.AI.Projects.Agents.AgentSessionStatus status = default, DateTimeOffset createdOn = default, DateTimeOffset lastAccessedOn = default, DateTimeOffset expiresOn = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ProjectAgentSession ProjectAgentSession(string agentSessionId, class Azure.AI.Projects.Agents.VersionIndicator versionIndicator, valuetype Azure.AI.Projects.Agents.AgentSessionStatus status, valuetype System.DateTimeOffset createdOn, valuetype System.DateTimeOffset lastAccessedOn, valuetype System.DateTimeOffset expiresOn) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectAgentSession(System.String,Azure.AI.Projects.Agents.VersionIndicator,Azure.AI.Projects.Agents.AgentSessionStatus,System.DateTimeOffset,System.DateTimeOffset,System.DateTimeOffset)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ProjectAgentSession (Optional agentSessionId As String = Nothing, Optional versionIndicator As VersionIndicator = Nothing, Optional status As AgentSessionStatus = Nothing, Optional createdAt As DateTimeOffset = Nothing, Optional lastAccessedAt As DateTimeOffset = Nothing, Optional expiresAt As DateTimeOffset = Nothing) As ProjectAgentSession" />
-      <MemberSignature Language="F#" Value="static member ProjectAgentSession : string * Azure.AI.Projects.Agents.VersionIndicator * Azure.AI.Projects.Agents.AgentSessionStatus * DateTimeOffset * DateTimeOffset * DateTimeOffset -&gt; Azure.AI.Projects.Agents.ProjectAgentSession" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectAgentSession (agentSessionId, versionIndicator, status, createdAt, lastAccessedAt, expiresAt)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProjectAgentSession (Optional agentSessionId As String = Nothing, Optional versionIndicator As VersionIndicator = Nothing, Optional status As AgentSessionStatus = Nothing, Optional createdOn As DateTimeOffset = Nothing, Optional lastAccessedOn As DateTimeOffset = Nothing, Optional expiresOn As DateTimeOffset = Nothing) As ProjectAgentSession" />
+      <MemberSignature Language="F#" Value="static member ProjectAgentSession : string * Azure.AI.Projects.Agents.VersionIndicator * Azure.AI.Projects.Agents.AgentSessionStatus * DateTimeOffset * DateTimeOffset * DateTimeOffset -&gt; Azure.AI.Projects.Agents.ProjectAgentSession" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ProjectAgentSession (agentSessionId, versionIndicator, status, createdOn, lastAccessedOn, expiresOn)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProjectAgentSession</ReturnType>
@@ -2769,17 +2878,17 @@
         <Parameter Name="agentSessionId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="versionIndicator" Type="Azure.AI.Projects.Agents.VersionIndicator" Index="1" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="status" Type="Azure.AI.Projects.Agents.AgentSessionStatus" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="createdAt" Type="System.DateTimeOffset" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="lastAccessedAt" Type="System.DateTimeOffset" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="expiresAt" Type="System.DateTimeOffset" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdOn" Type="System.DateTimeOffset" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="lastAccessedOn" Type="System.DateTimeOffset" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="expiresOn" Type="System.DateTimeOffset" Index="5" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="agentSessionId"> The session identifier. </param>
         <param name="versionIndicator"> The version indicator determining which agent version backs this session. </param>
         <param name="status"> The current status of the session. </param>
-        <param name="createdAt"> The Unix timestamp (in seconds) when the session was created. </param>
-        <param name="lastAccessedAt"> The Unix timestamp (in seconds) when the session was last accessed. </param>
-        <param name="expiresAt"> The Unix timestamp (in seconds) when the session expires (rolling, 30 days from last activity). </param>
+        <param name="createdOn"> The Unix timestamp (in seconds) when the session was created. </param>
+        <param name="lastAccessedOn"> The Unix timestamp (in seconds) when the session was last accessed. </param>
+        <param name="expiresOn"> The Unix timestamp (in seconds) when the session expires (rolling, 30 days from last activity). </param>
         <summary> An agent session providing a long-lived compute sandbox for hosted agent invocations. </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.ProjectAgentSession" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -2795,7 +2904,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentDefinition</ReturnType>
@@ -2827,7 +2936,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -2859,7 +2968,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentRecord</ReturnType>
@@ -2888,7 +2997,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentTool</ReturnType>
@@ -2900,7 +3009,7 @@
         <param name="type" />
         <summary>
             A tool that can be used to generate a response.
-            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.FabricIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.BingGroundingTool" />, <see cref="T:Azure.AI.Projects.Agents.MicrosoftFabricPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.SharepointPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureAISearchTool" />, <see cref="T:Azure.AI.Projects.Agents.OpenAPITool" />, <see cref="T:Azure.AI.Projects.Agents.BingCustomSearchPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.BrowserAutomationPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureFunctionTool" />, <see cref="T:Azure.AI.Projects.Agents.CaptureStructuredOutputsTool" />, <see cref="T:Azure.AI.Projects.Agents.A2APreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.WorkIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.MemorySearchPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.ReminderPreviewTool" />, and <see cref="T:Azure.AI.Projects.Agents.ToolSearchTool" />.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.FabricIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.BingGroundingTool" />, <see cref="T:Azure.AI.Projects.Agents.MicrosoftFabricPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.SharepointPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureAISearchTool" />, <see cref="T:Azure.AI.Projects.Agents.OpenAPITool" />, <see cref="T:Azure.AI.Projects.Agents.BingCustomSearchPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.BrowserAutomationPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureFunctionTool" />, <see cref="T:Azure.AI.Projects.Agents.CaptureStructuredOutputsTool" />, <see cref="T:Azure.AI.Projects.Agents.A2APreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.A2ATool" />, <see cref="T:Azure.AI.Projects.Agents.WorkIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.WebIQPreviewTool" />, <see cref="T:Azure.AI.Projects.Agents.MemorySearchPreviewTool" />, and <see cref="T:Azure.AI.Projects.Agents.ToolSearchTool" />.
             </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.ProjectsAgentTool" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -2918,7 +3027,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -2966,7 +3075,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentVersion</ReturnType>
@@ -3023,7 +3132,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="azure-dotnet-preview">
@@ -3063,7 +3172,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProjectsAgentVersionCreationOptions</ReturnType>
@@ -3102,7 +3211,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProjectWebSearchConfiguration</ReturnType>
@@ -3120,26 +3229,26 @@
       </Docs>
     </Member>
     <Member MemberName="PromotionInfo">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.PromotionInfo PromotionInfo (DateTimeOffset promotedAt = default, string agentName = default, string agentVersion = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.PromotionInfo PromotionInfo(valuetype System.DateTimeOffset promotedAt, string agentName, string agentVersion) cil managed" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.PromotionInfo PromotionInfo (DateTimeOffset promotedOn = default, string agentName = default, string agentVersion = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.PromotionInfo PromotionInfo(valuetype System.DateTimeOffset promotedOn, string agentName, string agentVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.PromotionInfo(System.DateTimeOffset,System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function PromotionInfo (Optional promotedAt As DateTimeOffset = Nothing, Optional agentName As String = Nothing, Optional agentVersion As String = Nothing) As PromotionInfo" />
-      <MemberSignature Language="F#" Value="static member PromotionInfo : DateTimeOffset * string * string -&gt; Azure.AI.Projects.Agents.PromotionInfo" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.PromotionInfo (promotedAt, agentName, agentVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function PromotionInfo (Optional promotedOn As DateTimeOffset = Nothing, Optional agentName As String = Nothing, Optional agentVersion As String = Nothing) As PromotionInfo" />
+      <MemberSignature Language="F#" Value="static member PromotionInfo : DateTimeOffset * string * string -&gt; Azure.AI.Projects.Agents.PromotionInfo" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.PromotionInfo (promotedOn, agentName, agentVersion)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.PromotionInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="promotedAt" Type="System.DateTimeOffset" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="promotedOn" Type="System.DateTimeOffset" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="agentName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="agentVersion" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="promotedAt"> Timestamp when promotion occurred, represented in Unix time. </param>
+        <param name="promotedOn"> Timestamp when promotion occurred, represented in Unix time. </param>
         <param name="agentName"> Name of the Foundry agent this candidate was promoted to. </param>
         <param name="agentVersion"> Version of the Foundry agent this candidate was promoted to. </param>
         <summary> Promotion metadata recorded when a candidate is deployed to a Foundry agent. </summary>
@@ -3156,7 +3265,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProtocolConfiguration</ReturnType>
@@ -3191,7 +3300,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ProtocolVersionRecord</ReturnType>
@@ -3208,38 +3317,6 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ReminderPreviewTool">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ReminderPreviewTool ReminderPreviewTool (string name = default, string description = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ReminderPreviewTool ReminderPreviewTool(string name, string description) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ReminderPreviewTool(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ReminderPreviewTool (Optional name As String = Nothing, Optional description As String = Nothing) As ReminderPreviewTool" />
-      <MemberSignature Language="F#" Value="static member ReminderPreviewTool : string * string -&gt; Azure.AI.Projects.Agents.ReminderPreviewTool" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ReminderPreviewTool (name, description)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.Projects.Agents.ReminderPreviewTool</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="name"> Optional user-defined name for this tool or configuration. </param>
-        <param name="description"> Optional user-defined description for this tool or configuration. </param>
-        <summary>
-            A built-in tool that schedules the agent to re-invoke itself after a delay.
-            The model passes a single `minutes` argument (positive integer) when calling
-            this tool. The service creates a one-shot timer routine that fires after the
-            specified delay and re-invokes the agent on the same conversation thread.
-            No pre-created routine is required.
-            </summary>
-        <returns> A new <see cref="T:Azure.AI.Projects.Agents.ReminderPreviewTool" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
     <Member MemberName="ReminderPreviewToolboxTool">
       <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ReminderPreviewToolboxTool ReminderPreviewToolboxTool (string name = default, string description = default, System.Collections.Generic.IDictionary&lt;string,Azure.AI.Projects.Agents.ToolConfig&gt; toolConfigs = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ReminderPreviewToolboxTool ReminderPreviewToolboxTool(string name, string description, class System.Collections.Generic.IDictionary`2&lt;string, class Azure.AI.Projects.Agents.ToolConfig&gt; toolConfigs) cil managed" />
@@ -3249,7 +3326,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ReminderPreviewToolboxTool</ReturnType>
@@ -3281,7 +3358,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ResponsesProtocolConfiguration</ReturnType>
@@ -3293,16 +3370,44 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="SessionDirectoryEntry">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.SessionDirectoryEntry SessionDirectoryEntry (string name = default, long sizeInBytes = 0, bool isDirectory = false, DateTimeOffset modifiedAt = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.SessionDirectoryEntry SessionDirectoryEntry(string name, int64 sizeInBytes, bool isDirectory, valuetype System.DateTimeOffset modifiedAt) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SessionDirectoryEntry(System.String,System.Int64,System.Boolean,System.DateTimeOffset)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function SessionDirectoryEntry (Optional name As String = Nothing, Optional sizeInBytes As Long = 0, Optional isDirectory As Boolean = false, Optional modifiedAt As DateTimeOffset = Nothing) As SessionDirectoryEntry" />
-      <MemberSignature Language="F#" Value="static member SessionDirectoryEntry : string * int64 * bool * DateTimeOffset -&gt; Azure.AI.Projects.Agents.SessionDirectoryEntry" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SessionDirectoryEntry (name, sizeInBytes, isDirectory, modifiedAt)" />
+    <Member MemberName="SessionConfiguration">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.SessionConfiguration SessionConfiguration (TimeSpan? idleTimeoutSeconds = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.SessionConfiguration SessionConfiguration(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; idleTimeoutSeconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SessionConfiguration(System.Nullable{System.TimeSpan})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SessionConfiguration (Optional idleTimeoutSeconds As Nullable(Of TimeSpan) = Nothing) As SessionConfiguration" />
+      <MemberSignature Language="F#" Value="static member SessionConfiguration : Nullable&lt;TimeSpan&gt; -&gt; Azure.AI.Projects.Agents.SessionConfiguration" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SessionConfiguration idleTimeoutSeconds" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.SessionConfiguration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="idleTimeoutSeconds" Type="System.Nullable&lt;System.TimeSpan&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="idleTimeoutSeconds">
+            The idle duration, in seconds, before a session's sandbox is suspended. Optional — when
+            unset, the server default of 900 seconds is used. Must be between 300 and 3600 seconds
+            (inclusive).
+            </param>
+        <summary> Session defaults applied to sessions created for a hosted agent version. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.SessionConfiguration" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionDirectoryEntry">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.SessionDirectoryEntry SessionDirectoryEntry (string name = default, long sizeInBytes = 0, bool isDirectory = false, DateTimeOffset modifiedOn = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.SessionDirectoryEntry SessionDirectoryEntry(string name, int64 sizeInBytes, bool isDirectory, valuetype System.DateTimeOffset modifiedOn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SessionDirectoryEntry(System.String,System.Int64,System.Boolean,System.DateTimeOffset)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SessionDirectoryEntry (Optional name As String = Nothing, Optional sizeInBytes As Long = 0, Optional isDirectory As Boolean = false, Optional modifiedOn As DateTimeOffset = Nothing) As SessionDirectoryEntry" />
+      <MemberSignature Language="F#" Value="static member SessionDirectoryEntry : string * int64 * bool * DateTimeOffset -&gt; Azure.AI.Projects.Agents.SessionDirectoryEntry" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SessionDirectoryEntry (name, sizeInBytes, isDirectory, modifiedOn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SessionDirectoryEntry</ReturnType>
@@ -3311,13 +3416,13 @@
         <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="sizeInBytes" Type="System.Int64" Index="1" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="isDirectory" Type="System.Boolean" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="modifiedAt" Type="System.DateTimeOffset" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="modifiedOn" Type="System.DateTimeOffset" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="name"> The name of the file or directory. </param>
         <param name="sizeInBytes"> The size in bytes (0 for directories). </param>
         <param name="isDirectory"> Whether this entry is a directory. </param>
-        <param name="modifiedAt"> The Unix timestamp (in seconds) when the file was last modified. </param>
+        <param name="modifiedOn"> The Unix timestamp (in seconds) when the file was last modified. </param>
         <summary> A single entry in a directory listing. </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.SessionDirectoryEntry" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -3332,7 +3437,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SessionFileWriteResponse</ReturnType>
@@ -3358,7 +3463,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SessionLogEvent</ReturnType>
@@ -3401,7 +3506,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SharePointGroundingToolOptions</ReturnType>
@@ -3429,7 +3534,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SharepointPreviewTool</ReturnType>
@@ -3453,7 +3558,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SkillDeletionResult</ReturnType>
@@ -3481,7 +3586,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SkillInlineContent</ReturnType>
@@ -3507,15 +3612,15 @@
       </Docs>
     </Member>
     <Member MemberName="SkillVersion">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.SkillVersion SkillVersion (string id = default, string skillId = default, string name = default, string version = default, string description = default, DateTimeOffset createdAt = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.SkillVersion SkillVersion(string id, string skillId, string name, string version, string description, valuetype System.DateTimeOffset createdAt) cil managed" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.SkillVersion SkillVersion (string id = default, string skillId = default, string name = default, string version = default, string description = default, DateTimeOffset createdOn = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.SkillVersion SkillVersion(string id, string skillId, string name, string version, string description, valuetype System.DateTimeOffset createdOn) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SkillVersion(System.String,System.String,System.String,System.String,System.String,System.DateTimeOffset)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function SkillVersion (Optional id As String = Nothing, Optional skillId As String = Nothing, Optional name As String = Nothing, Optional version As String = Nothing, Optional description As String = Nothing, Optional createdAt As DateTimeOffset = Nothing) As SkillVersion" />
-      <MemberSignature Language="F#" Value="static member SkillVersion : string * string * string * string * string * DateTimeOffset -&gt; Azure.AI.Projects.Agents.SkillVersion" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SkillVersion (id, skillId, name, version, description, createdAt)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SkillVersion (Optional id As String = Nothing, Optional skillId As String = Nothing, Optional name As String = Nothing, Optional version As String = Nothing, Optional description As String = Nothing, Optional createdOn As DateTimeOffset = Nothing) As SkillVersion" />
+      <MemberSignature Language="F#" Value="static member SkillVersion : string * string * string * string * string * DateTimeOffset -&gt; Azure.AI.Projects.Agents.SkillVersion" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.SkillVersion (id, skillId, name, version, description, createdOn)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SkillVersion</ReturnType>
@@ -3526,7 +3631,7 @@
         <Parameter Name="name" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="version" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="description" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="createdAt" Type="System.DateTimeOffset" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdOn" Type="System.DateTimeOffset" Index="5" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="id"> The unique identifier of the skill version. </param>
@@ -3534,7 +3639,7 @@
         <param name="name"> The name of the skill version. </param>
         <param name="version"> The version identifier. Skill versions are immutable. </param>
         <param name="description"> A human-readable description of the skill version. </param>
-        <param name="createdAt"> The Unix timestamp (seconds) when the skill version was created. </param>
+        <param name="createdOn"> The Unix timestamp (seconds) when the skill version was created. </param>
         <summary> A specific version of a skill. </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.SkillVersion" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -3549,7 +3654,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.SkillVersionDeletionResult</ReturnType>
@@ -3580,7 +3685,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.StructuredInputDefinition</ReturnType>
@@ -3611,7 +3716,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.StructuredOutputDefinition</ReturnType>
@@ -3641,7 +3746,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.TelemetryConfig</ReturnType>
@@ -3665,7 +3770,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.TelemetryEndpoint</ReturnType>
@@ -3696,7 +3801,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.TelemetryEndpointAuthentication</ReturnType>
@@ -3723,7 +3828,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolboxPolicies</ReturnType>
@@ -3747,7 +3852,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolboxRecord</ReturnType>
@@ -3775,7 +3880,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolboxSearchPreviewToolboxTool</ReturnType>
@@ -3807,7 +3912,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolboxSkill</ReturnType>
@@ -3834,7 +3939,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolboxSkillReference</ReturnType>
@@ -3860,7 +3965,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolboxTool</ReturnType>
@@ -3882,22 +3987,22 @@
             </param>
         <summary>
             An abstract representation of a tool stored in a toolbox.
-            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.FabricIQPreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.CodeInterpreterToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.FileSearchToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.WebSearchToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.MCPToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureAISearchToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.OpenApiToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.A2APreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.BrowserAutomationPreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.ReminderPreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.WorkIQPreviewToolboxTool" />, and <see cref="T:Azure.AI.Projects.Agents.ToolboxSearchPreviewToolboxTool" />.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.AI.Projects.Agents.FabricIQPreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.CodeInterpreterToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.FileSearchToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.WebSearchToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.MCPToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.AzureAISearchToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.OpenApiToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.A2AToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.A2APreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.BrowserAutomationPreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.ReminderPreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.WorkIQPreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.WebIQPreviewToolboxTool" />, <see cref="T:Azure.AI.Projects.Agents.ToolboxSearchPreviewToolboxTool" />, and <see cref="T:Azure.AI.Projects.Agents.ToolSearchToolboxTool" />.
             </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.ToolboxTool" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ToolboxVersion">
-      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ToolboxVersion ToolboxVersion (System.Collections.Generic.IDictionary&lt;string,string&gt; metadata = default, string id = default, string name = default, string version = default, string description = default, DateTimeOffset createdAt = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ToolboxTool&gt; tools = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ToolboxSkill&gt; skills = default, Azure.AI.Projects.Agents.ToolboxPolicies policies = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ToolboxVersion ToolboxVersion(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; metadata, string id, string name, string version, string description, valuetype System.DateTimeOffset createdAt, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.ToolboxTool&gt; tools, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.ToolboxSkill&gt; skills, class Azure.AI.Projects.Agents.ToolboxPolicies policies) cil managed" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ToolboxVersion ToolboxVersion (System.Collections.Generic.IDictionary&lt;string,string&gt; metadata = default, string id = default, string name = default, string version = default, string description = default, DateTimeOffset createdOn = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ToolboxTool&gt; tools = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ToolboxSkill&gt; skills = default, Azure.AI.Projects.Agents.ToolboxPolicies policies = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ToolboxVersion ToolboxVersion(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; metadata, string id, string name, string version, string description, valuetype System.DateTimeOffset createdOn, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.ToolboxTool&gt; tools, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.Projects.Agents.ToolboxSkill&gt; skills, class Azure.AI.Projects.Agents.ToolboxPolicies policies) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ToolboxVersion(System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.String,System.String,System.String,System.DateTimeOffset,System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.ToolboxTool},System.Collections.Generic.IEnumerable{Azure.AI.Projects.Agents.ToolboxSkill},Azure.AI.Projects.Agents.ToolboxPolicies)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ToolboxVersion (Optional metadata As IDictionary(Of String, String) = Nothing, Optional id As String = Nothing, Optional name As String = Nothing, Optional version As String = Nothing, Optional description As String = Nothing, Optional createdAt As DateTimeOffset = Nothing, Optional tools As IEnumerable(Of ToolboxTool) = Nothing, Optional skills As IEnumerable(Of ToolboxSkill) = Nothing, Optional policies As ToolboxPolicies = Nothing) As ToolboxVersion" />
-      <MemberSignature Language="F#" Value="static member ToolboxVersion : System.Collections.Generic.IDictionary&lt;string, string&gt; * string * string * string * string * DateTimeOffset * seq&lt;Azure.AI.Projects.Agents.ToolboxTool&gt; * seq&lt;Azure.AI.Projects.Agents.ToolboxSkill&gt; * Azure.AI.Projects.Agents.ToolboxPolicies -&gt; Azure.AI.Projects.Agents.ToolboxVersion" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ToolboxVersion (metadata, id, name, version, description, createdAt, tools, skills, policies)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ToolboxVersion (Optional metadata As IDictionary(Of String, String) = Nothing, Optional id As String = Nothing, Optional name As String = Nothing, Optional version As String = Nothing, Optional description As String = Nothing, Optional createdOn As DateTimeOffset = Nothing, Optional tools As IEnumerable(Of ToolboxTool) = Nothing, Optional skills As IEnumerable(Of ToolboxSkill) = Nothing, Optional policies As ToolboxPolicies = Nothing) As ToolboxVersion" />
+      <MemberSignature Language="F#" Value="static member ToolboxVersion : System.Collections.Generic.IDictionary&lt;string, string&gt; * string * string * string * string * DateTimeOffset * seq&lt;Azure.AI.Projects.Agents.ToolboxTool&gt; * seq&lt;Azure.AI.Projects.Agents.ToolboxSkill&gt; * Azure.AI.Projects.Agents.ToolboxPolicies -&gt; Azure.AI.Projects.Agents.ToolboxVersion" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ToolboxVersion (metadata, id, name, version, description, createdOn, tools, skills, policies)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolboxVersion</ReturnType>
@@ -3908,7 +4013,7 @@
         <Parameter Name="name" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="version" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="description" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="createdAt" Type="System.DateTimeOffset" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdOn" Type="System.DateTimeOffset" Index="5" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="tools" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ToolboxTool&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="skills" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.Projects.Agents.ToolboxSkill&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="policies" Type="Azure.AI.Projects.Agents.ToolboxPolicies" Index="8" FrameworkAlternate="azure-dotnet-preview" />
@@ -3925,7 +4030,7 @@
         <param name="name"> The name of the toolbox. </param>
         <param name="version"> The version identifier of the toolbox. Toolbox versions are immutable and every update creates a new version. </param>
         <param name="description"> A human-readable description of the toolbox. </param>
-        <param name="createdAt"> The Unix timestamp (seconds) when the toolbox version was created. </param>
+        <param name="createdOn"> The Unix timestamp (seconds) when the toolbox version was created. </param>
         <param name="tools"> The list of tools contained in this toolbox version. </param>
         <param name="skills"> The list of skill sources included in this toolbox version. </param>
         <param name="policies"> Policy configuration for the toolbox version. </param>
@@ -3943,7 +4048,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolConfig</ReturnType>
@@ -3976,7 +4081,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolProjectConnection</ReturnType>
@@ -4000,7 +4105,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.ToolSearchTool</ReturnType>
@@ -4019,6 +4124,38 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="ToolSearchToolboxTool">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.ToolSearchToolboxTool ToolSearchToolboxTool (string name = default, string description = default, System.Collections.Generic.IDictionary&lt;string,Azure.AI.Projects.Agents.ToolConfig&gt; toolConfigs = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.ToolSearchToolboxTool ToolSearchToolboxTool(string name, string description, class System.Collections.Generic.IDictionary`2&lt;string, class Azure.AI.Projects.Agents.ToolConfig&gt; toolConfigs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ToolSearchToolboxTool(System.String,System.String,System.Collections.Generic.IDictionary{System.String,Azure.AI.Projects.Agents.ToolConfig})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ToolSearchToolboxTool (Optional name As String = Nothing, Optional description As String = Nothing, Optional toolConfigs As IDictionary(Of String, ToolConfig) = Nothing) As ToolSearchToolboxTool" />
+      <MemberSignature Language="F#" Value="static member ToolSearchToolboxTool : string * string * System.Collections.Generic.IDictionary&lt;string, Azure.AI.Projects.Agents.ToolConfig&gt; -&gt; Azure.AI.Projects.Agents.ToolSearchToolboxTool" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.ToolSearchToolboxTool (name, description, toolConfigs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.ToolSearchToolboxTool</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="toolConfigs" Type="System.Collections.Generic.IDictionary&lt;System.String,Azure.AI.Projects.Agents.ToolConfig&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> Optional user-defined name for this tool or configuration. </param>
+        <param name="description"> Optional user-defined description for this tool or configuration. </param>
+        <param name="toolConfigs">
+            Per-tool configuration map. Keys are tool names or `*` (catch-all default).
+            Resolution order: exact tool name match takes priority over `*`.
+            Unknown tool names are silently ignored at runtime.
+            </param>
+        <summary> A toolbox search tool stored in a toolbox. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.ToolSearchToolboxTool" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="UpdateToolboxRequest">
       <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.UpdateToolboxRequest UpdateToolboxRequest (string name = default, string defaultVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.UpdateToolboxRequest UpdateToolboxRequest(string name, string defaultVersion) cil managed" />
@@ -4028,7 +4165,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.UpdateToolboxRequest</ReturnType>
@@ -4054,7 +4191,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.VersionIndicator</ReturnType>
@@ -4081,7 +4218,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.VersionRefIndicator</ReturnType>
@@ -4105,7 +4242,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.VersionSelectionRule</ReturnType>
@@ -4134,7 +4271,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.VersionSelector</ReturnType>
@@ -4149,6 +4286,72 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="WebIQPreviewTool">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.WebIQPreviewTool WebIQPreviewTool (string projectConnectionId = default, string serverLabel = default, BinaryData requireApproval = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.WebIQPreviewTool WebIQPreviewTool(string projectConnectionId, string serverLabel, class System.BinaryData requireApproval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.WebIQPreviewTool(System.String,System.String,System.BinaryData)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebIQPreviewTool (Optional projectConnectionId As String = Nothing, Optional serverLabel As String = Nothing, Optional requireApproval As BinaryData = Nothing) As WebIQPreviewTool" />
+      <MemberSignature Language="F#" Value="static member WebIQPreviewTool : string * string * BinaryData -&gt; Azure.AI.Projects.Agents.WebIQPreviewTool" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.WebIQPreviewTool (projectConnectionId, serverLabel, requireApproval)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.WebIQPreviewTool</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectConnectionId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="serverLabel" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="requireApproval" Type="System.BinaryData" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="projectConnectionId"> The ID of the WebIQ project connection. </param>
+        <param name="serverLabel"> The label of the WebIQ MCP server to connect to. When omitted, the service defaults to connection name extracted from project_connection_id. </param>
+        <param name="requireApproval"> Whether the agent requires approval before executing actions. When omitted, the service defaults to "always". </param>
+        <summary> A WebIQ server-side tool. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.WebIQPreviewTool" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebIQPreviewToolboxTool">
+      <MemberSignature Language="C#" Value="public static Azure.AI.Projects.Agents.WebIQPreviewToolboxTool WebIQPreviewToolboxTool (string name = default, string description = default, System.Collections.Generic.IDictionary&lt;string,Azure.AI.Projects.Agents.ToolConfig&gt; toolConfigs = default, string projectConnectionId = default, string serverLabel = default, BinaryData requireApproval = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.Projects.Agents.WebIQPreviewToolboxTool WebIQPreviewToolboxTool(string name, string description, class System.Collections.Generic.IDictionary`2&lt;string, class Azure.AI.Projects.Agents.ToolConfig&gt; toolConfigs, string projectConnectionId, string serverLabel, class System.BinaryData requireApproval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.WebIQPreviewToolboxTool(System.String,System.String,System.Collections.Generic.IDictionary{System.String,Azure.AI.Projects.Agents.ToolConfig},System.String,System.String,System.BinaryData)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function WebIQPreviewToolboxTool (Optional name As String = Nothing, Optional description As String = Nothing, Optional toolConfigs As IDictionary(Of String, ToolConfig) = Nothing, Optional projectConnectionId As String = Nothing, Optional serverLabel As String = Nothing, Optional requireApproval As BinaryData = Nothing) As WebIQPreviewToolboxTool" />
+      <MemberSignature Language="F#" Value="static member WebIQPreviewToolboxTool : string * string * System.Collections.Generic.IDictionary&lt;string, Azure.AI.Projects.Agents.ToolConfig&gt; * string * string * BinaryData -&gt; Azure.AI.Projects.Agents.WebIQPreviewToolboxTool" Usage="Azure.AI.Projects.Agents.ProjectsAgentsModelFactory.WebIQPreviewToolboxTool (name, description, toolConfigs, projectConnectionId, serverLabel, requireApproval)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.Projects.Agents.WebIQPreviewToolboxTool</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="toolConfigs" Type="System.Collections.Generic.IDictionary&lt;System.String,Azure.AI.Projects.Agents.ToolConfig&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="projectConnectionId" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="serverLabel" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="requireApproval" Type="System.BinaryData" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> Optional user-defined name for this tool or configuration. </param>
+        <param name="description"> Optional user-defined description for this tool or configuration. </param>
+        <param name="toolConfigs">
+            Per-tool configuration map. Keys are tool names or `*` (catch-all default).
+            Resolution order: exact tool name match takes priority over `*`.
+            Unknown tool names are silently ignored at runtime.
+            </param>
+        <param name="projectConnectionId"> The ID of the WebIQ project connection. </param>
+        <param name="serverLabel"> The label of the WebIQ MCP server to connect to. When omitted, the service defaults to connection name extracted from project_connection_id. </param>
+        <param name="requireApproval"> Whether the agent requires approval before executing actions. When omitted, the service defaults to "always". </param>
+        <summary> A WebIQ tool stored in a toolbox. </summary>
+        <returns> A new <see cref="T:Azure.AI.Projects.Agents.WebIQPreviewToolboxTool" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="WebSearchApproximateLocation">
       <MemberSignature Language="C#" Value="public static OpenAI.WebSearchApproximateLocation WebSearchApproximateLocation (string country = default, string region = default, string city = default, string timezone = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class OpenAI.WebSearchApproximateLocation WebSearchApproximateLocation(string country, string region, string city, string timezone) cil managed" />
@@ -4158,7 +4361,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>OpenAI.WebSearchApproximateLocation</ReturnType>
@@ -4188,7 +4391,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.WebSearchToolboxTool</ReturnType>
@@ -4231,7 +4434,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>OpenAI.WebSearchToolFilters</ReturnType>
@@ -4256,7 +4459,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.WorkflowAgentDefinition</ReturnType>
@@ -4268,7 +4471,11 @@
       <Docs>
         <param name="contentFilterConfiguration"> Configuration for Responsible AI (RAI) content filtering and safety features. </param>
         <param name="workflowYaml"> The CSDL YAML definition of the workflow. </param>
-        <summary> The workflow agent definition. </summary>
+        <summary>
+            The workflow agent definition. Microsoft Foundry is retiring workflows on December 1, 2026.
+            If you're looking to build new workflows, use Microsoft Agent Framework. To migrate existing workflows,
+            see the [Migration guide](https://learn.microsoft.com/azure/foundry/agents/concepts/workflow#migration-guide).
+            </summary>
         <returns> A new <see cref="T:Azure.AI.Projects.Agents.WorkflowAgentDefinition" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -4282,7 +4489,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.WorkIQPreviewTool</ReturnType>
@@ -4306,7 +4513,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Projects.Agents</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.Projects.Agents.WorkIQPreviewToolboxTool</ReturnType>

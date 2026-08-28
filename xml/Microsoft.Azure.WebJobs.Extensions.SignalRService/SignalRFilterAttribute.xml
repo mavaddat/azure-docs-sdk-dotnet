@@ -21,6 +21,7 @@
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <AssemblyVersion>2.0.1.0</AssemblyVersion>
     <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Azure.WebJobs.Host.FunctionInvocationFilterAttribute</BaseTypeName>
@@ -33,7 +34,9 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            A base attribute for filters that run before a SignalR trigger function is invoked.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -45,7 +48,7 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.WebJobs.Extensions.SignalRService</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>2.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -62,7 +65,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.WebJobs.Extensions.SignalRService</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>2.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -91,7 +94,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Azure.WebJobs.Extensions.SignalRService</AssemblyName>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>2.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -101,9 +104,12 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="executingContext">To be added.</param>
-        <param name="cancellationToken">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="executingContext">The context for the function that is about to be executed.</param>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> to cancel the operation.</param>
+        <summary>
+            Executed before the target function is invoked; extracts the <see cref="T:Microsoft.Azure.WebJobs.Extensions.SignalRService.InvocationContext" /> from the
+            executing arguments and dispatches to <see cref="M:Microsoft.Azure.WebJobs.Extensions.SignalRService.SignalRFilterAttribute.FilterAsync(Microsoft.Azure.WebJobs.Extensions.SignalRService.InvocationContext,System.Threading.CancellationToken)" />.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>

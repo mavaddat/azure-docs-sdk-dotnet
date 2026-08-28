@@ -43,6 +43,7 @@
     <AssemblyVersion>7.19.0.0</AssemblyVersion>
     <AssemblyVersion>7.20.1.0</AssemblyVersion>
     <AssemblyVersion>7.20.2.0</AssemblyVersion>
+    <AssemblyVersion>7.21.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.Messaging.ServiceBus.ServiceBusReceiver</BaseTypeName>
@@ -65,8 +66,8 @@
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -85,8 +86,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.BinaryData&gt;</ReturnType>
@@ -116,8 +117,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -136,6 +137,32 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="IsSessionExclusive">
+      <MemberSignature Language="C#" Value="public virtual bool IsSessionExclusive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSessionExclusive" />
+      <MemberSignature Language="DocId" Value="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiver.IsSessionExclusive" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsSessionExclusive As Boolean" />
+      <MemberSignature Language="F#" Value="member this.IsSessionExclusive : bool" Usage="Azure.Messaging.ServiceBus.ServiceBusSessionReceiver.IsSessionExclusive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a value indicating whether the session is locked exclusively by this receiver. This reports the mode the
+            session was established under, which is exclusive unless
+            <see cref="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiverOptions.EnableNonExclusiveSession" /> was set. A non-exclusive request the
+            endpoint declines throws when the session is accepted rather than falling back to an exclusive lock, so this
+            value always matches the mode that was requested.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="RenewSessionLockAsync">
       <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task RenewSessionLockAsync (System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task RenewSessionLockAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -145,8 +172,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -185,8 +212,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -208,8 +235,8 @@
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTimeOffset</ReturnType>
@@ -222,6 +249,39 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="SessionLockToken">
+      <MemberSignature Language="C#" Value="public virtual string SessionLockToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SessionLockToken" />
+      <MemberSignature Language="DocId" Value="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiver.SessionLockToken" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SessionLockToken As String" />
+      <MemberSignature Language="F#" Value="member this.SessionLockToken : string" Usage="Azure.Messaging.ServiceBus.ServiceBusSessionReceiver.SessionLockToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the session lock token assigned by the service when the session is locked non-exclusively, or <c>null</c>
+             when the session is locked exclusively (the default). Another receiver can present this token through
+             <see cref="P:Azure.Messaging.ServiceBus.ServiceBusSessionReceiverOptions.SessionLockToken" />, which takes it as a <see cref="T:System.Guid" />, to
+             cooperatively take over the session.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The token is assigned by the service when the session is acquired, or when this receiver takes over a session by
+             presenting an existing token, and this property reports that same value for the lifetime of this receiver. It is
+             not cleared when another receiver takes the session over, so a non-null value reports the token this receiver was
+             assigned rather than proof that this receiver still holds the session. A receiver that has been taken over
+             surfaces <see cref="F:Azure.Messaging.ServiceBus.ServiceBusFailureReason.SessionLockLost" /> on its next operation.
+            
+             <para>This token authorizes taking over the session lock for any caller with Listen rights on the entity, so treat
+             it as sensitive: do not log it, do not persist it unprotected, and transmit it only over a trusted channel.</para></remarks>
+      </Docs>
+    </Member>
     <Member MemberName="SetSessionStateAsync">
       <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task SetSessionStateAsync (BinaryData sessionState, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task SetSessionStateAsync(class System.BinaryData sessionState, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -231,8 +291,8 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Messaging.ServiceBus</AssemblyName>
-        <AssemblyVersion>7.18.0.0</AssemblyVersion>
         <AssemblyVersion>7.20.2.0</AssemblyVersion>
+        <AssemblyVersion>7.21.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>

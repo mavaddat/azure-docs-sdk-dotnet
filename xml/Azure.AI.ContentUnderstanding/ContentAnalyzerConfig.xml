@@ -48,6 +48,51 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="AllowInPageSegments">
+      <MemberSignature Language="C#" Value="public bool? AllowInPageSegments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; AllowInPageSegments" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.ContentUnderstanding.ContentAnalyzerConfig.AllowInPageSegments" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowInPageSegments As Nullable(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.AllowInPageSegments : Nullable&lt;bool&gt; with get, set" Usage="Azure.AI.ContentUnderstanding.ContentAnalyzerConfig.AllowInPageSegments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Enable sub-page segmentation. When true, segments may cover a portion of a page instead of full pages. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowInputTruncation">
+      <MemberSignature Language="C#" Value="public bool? AllowInputTruncation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; AllowInputTruncation" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.ContentUnderstanding.ContentAnalyzerConfig.AllowInputTruncation" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowInputTruncation As Nullable(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.AllowInputTruncation : Nullable&lt;bool&gt; with get, set" Usage="Azure.AI.ContentUnderstanding.ContentAnalyzerConfig.AllowInputTruncation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            When true, input that exceeds the service's processable-unit limit is truncated to the limit and returned as a
+            partial result with a warning, instead of failing. Field extraction and segmentation, where configured, run over
+            the processed content and may be inaccurate. Defaults to false. Overridable per request by the allowInputTruncation
+            query parameter.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="AnnotationFormat">
       <MemberSignature Language="C#" Value="public Azure.AI.ContentUnderstanding.AnnotationFormat? AnnotationFormat { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.AnnotationFormat&gt; AnnotationFormat" />
@@ -86,6 +131,26 @@
       </ReturnValue>
       <Docs>
         <summary> Representation format of charts in analyze result markdown. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChunkingStrategy">
+      <MemberSignature Language="C#" Value="public Azure.AI.ContentUnderstanding.ChunkingStrategy ChunkingStrategy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.ContentUnderstanding.ChunkingStrategy ChunkingStrategy" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.ContentUnderstanding.ContentAnalyzerConfig.ChunkingStrategy" />
+      <MemberSignature Language="VB.NET" Value="Public Property ChunkingStrategy As ChunkingStrategy" />
+      <MemberSignature Language="F#" Value="member this.ChunkingStrategy : Azure.AI.ContentUnderstanding.ChunkingStrategy with get, set" Usage="Azure.AI.ContentUnderstanding.ContentAnalyzerConfig.ChunkingStrategy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentUnderstanding.ChunkingStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Strategy for chunking document content into smaller units for RAG scenarios. When omitted, chunking is disabled. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -633,6 +698,26 @@
       </ReturnValue>
       <Docs>
         <summary> Representation format of tables in analyze result markdown. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Workflow">
+      <MemberSignature Language="C#" Value="public Azure.AI.ContentUnderstanding.ContentAnalyzerWorkflow? Workflow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentUnderstanding.ContentAnalyzerWorkflow&gt; Workflow" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.ContentUnderstanding.ContentAnalyzerConfig.Workflow" />
+      <MemberSignature Language="VB.NET" Value="Public Property Workflow As Nullable(Of ContentAnalyzerWorkflow)" />
+      <MemberSignature Language="F#" Value="member this.Workflow : Nullable&lt;Azure.AI.ContentUnderstanding.ContentAnalyzerWorkflow&gt; with get, set" Usage="Azure.AI.ContentUnderstanding.ContentAnalyzerConfig.Workflow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Azure.AI.ContentUnderstanding.ContentAnalyzerWorkflow&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Workflow used for content analysis. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

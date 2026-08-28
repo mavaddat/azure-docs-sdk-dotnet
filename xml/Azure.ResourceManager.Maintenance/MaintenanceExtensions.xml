@@ -45,10 +45,10 @@
       <Docs>
         <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
         <param name="scope"> The scope that the resource will apply against. </param>
-        <param name="scheduledEventId"> Scheduled Event Id. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). </param>
+        <param name="scheduledEventId"> ScheduledEvents Id. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Post Scheduled Event Acknowledgement
+            Post ScheduledEvents Acknowledgement
             <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.Acknowledge(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" /> instead. </description></item></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
@@ -79,11 +79,111 @@
       <Docs>
         <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
         <param name="scope"> The scope that the resource will apply against. </param>
-        <param name="scheduledEventId"> Scheduled Event Id. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). </param>
+        <param name="scheduledEventId"> ScheduledEvents Id. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). </param>
         <param name="cancellationToken"> The cancellation token to use. </param>
         <summary>
-            Post Scheduled Event Acknowledgement
+            Post ScheduledEvents Acknowledgement
             <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.AcknowledgeAsync(Azure.Core.ResourceIdentifier,System.String,System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="client" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcknowledgeList">
+      <MemberSignature Language="C#" Value="public static Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt; AcknowledgeList (this Azure.ResourceManager.ArmClient client, Azure.Core.ResourceIdentifier scope, Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList scheduledEventsIdList, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt; AcknowledgeList(class Azure.ResourceManager.ArmClient client, class Azure.Core.ResourceIdentifier scope, class Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList scheduledEventsIdList, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.MaintenanceExtensions.AcknowledgeList(Azure.ResourceManager.ArmClient,Azure.Core.ResourceIdentifier,Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AcknowledgeList (client As ArmClient, scope As ResourceIdentifier, scheduledEventsIdList As MaintenanceScheduledEventIdList, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MaintenanceScheduledEventApproveResult)" />
+      <MemberSignature Language="F#" Value="static member AcknowledgeList : Azure.ResourceManager.ArmClient * Azure.Core.ResourceIdentifier * Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;" Usage="Azure.ResourceManager.Maintenance.MaintenanceExtensions.AcknowledgeList (client, scope, scheduledEventsIdList, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="client" Type="Azure.ResourceManager.ArmClient" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="scheduledEventsIdList" Type="Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scheduledEventsIdList"> List of ScheduledEvents Id. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Post List of ScheduledEvents Acknowledgement
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.AcknowledgeList(Azure.Core.ResourceIdentifier,Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList,System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="client" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcknowledgeListAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt; AcknowledgeListAsync (this Azure.ResourceManager.ArmClient client, Azure.Core.ResourceIdentifier scope, Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList scheduledEventsIdList, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt; AcknowledgeListAsync(class Azure.ResourceManager.ArmClient client, class Azure.Core.ResourceIdentifier scope, class Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList scheduledEventsIdList, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.MaintenanceExtensions.AcknowledgeListAsync(Azure.ResourceManager.ArmClient,Azure.Core.ResourceIdentifier,Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function AcknowledgeListAsync (client As ArmClient, scope As ResourceIdentifier, scheduledEventsIdList As MaintenanceScheduledEventIdList, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MaintenanceScheduledEventApproveResult))" />
+      <MemberSignature Language="F#" Value="static member AcknowledgeListAsync : Azure.ResourceManager.ArmClient * Azure.Core.ResourceIdentifier * Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt;" Usage="Azure.ResourceManager.Maintenance.MaintenanceExtensions.AcknowledgeListAsync (client, scope, scheduledEventsIdList, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventApproveResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="client" Type="Azure.ResourceManager.ArmClient" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="scheduledEventsIdList" Type="Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="scheduledEventsIdList"> List of ScheduledEvents Id. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Post List of ScheduledEvents Acknowledgement
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.AcknowledgeListAsync(Azure.Core.ResourceIdentifier,Azure.ResourceManager.Maintenance.Models.MaintenanceScheduledEventIdList,System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="client" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdate">
+      <MemberSignature Language="C#" Value="public static Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt; CreateOrUpdate (this Azure.ResourceManager.ArmClient client, Azure.Core.ResourceIdentifier scope, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt; CreateOrUpdate(class Azure.ResourceManager.ArmClient client, class Azure.Core.ResourceIdentifier scope, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdate(Azure.ResourceManager.ArmClient,Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CreateOrUpdate (client As ArmClient, scope As ResourceIdentifier, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MaintenanceApplyUpdateData)" />
+      <MemberSignature Language="F#" Value="static member CreateOrUpdate : Azure.ResourceManager.ArmClient * Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;" Usage="Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdate (client, scope, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="client" Type="Azure.ResourceManager.ArmClient" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Apply maintenance updates to resource
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.CreateOrUpdate(Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" /> instead. </description></item></summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -165,6 +265,38 @@
       </Docs>
     </Member>
     <Member MemberName="CreateOrUpdateApplyUpdateByParent">
+      <MemberSignature Language="C#" Value="public static Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt; CreateOrUpdateApplyUpdateByParent (this Azure.ResourceManager.ArmClient client, Azure.Core.ResourceIdentifier scope, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt; CreateOrUpdateApplyUpdateByParent(class Azure.ResourceManager.ArmClient client, class Azure.Core.ResourceIdentifier scope, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdateApplyUpdateByParent(Azure.ResourceManager.ArmClient,Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CreateOrUpdateApplyUpdateByParent (client As ArmClient, scope As ResourceIdentifier, Optional cancellationToken As CancellationToken = Nothing) As Response(Of MaintenanceApplyUpdateData)" />
+      <MemberSignature Language="F#" Value="static member CreateOrUpdateApplyUpdateByParent : Azure.ResourceManager.ArmClient * Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;" Usage="Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdateApplyUpdateByParent (client, scope, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="client" Type="Azure.ResourceManager.ArmClient" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Apply maintenance updates to resource with parent
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.CreateOrUpdateApplyUpdateByParent(Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="client" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateApplyUpdateByParent">
       <MemberSignature Language="C#" Value="public static Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt; CreateOrUpdateApplyUpdateByParent (this Azure.ResourceManager.Resources.ResourceGroupResource resourceGroupResource, string providerName, string resourceParentType, string resourceParentName, string resourceType, string resourceName, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt; CreateOrUpdateApplyUpdateByParent(class Azure.ResourceManager.Resources.ResourceGroupResource resourceGroupResource, string providerName, string resourceParentType, string resourceParentName, string resourceType, string resourceName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdateApplyUpdateByParent(Azure.ResourceManager.Resources.ResourceGroupResource,System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
@@ -206,6 +338,38 @@
       </Docs>
     </Member>
     <Member MemberName="CreateOrUpdateApplyUpdateByParentAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;&gt; CreateOrUpdateApplyUpdateByParentAsync (this Azure.ResourceManager.ArmClient client, Azure.Core.ResourceIdentifier scope, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;&gt; CreateOrUpdateApplyUpdateByParentAsync(class Azure.ResourceManager.ArmClient client, class Azure.Core.ResourceIdentifier scope, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdateApplyUpdateByParentAsync(Azure.ResourceManager.ArmClient,Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CreateOrUpdateApplyUpdateByParentAsync (client As ArmClient, scope As ResourceIdentifier, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MaintenanceApplyUpdateData))" />
+      <MemberSignature Language="F#" Value="static member CreateOrUpdateApplyUpdateByParentAsync : Azure.ResourceManager.ArmClient * Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;&gt;" Usage="Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdateApplyUpdateByParentAsync (client, scope, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="client" Type="Azure.ResourceManager.ArmClient" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Apply maintenance updates to resource with parent
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.CreateOrUpdateApplyUpdateByParentAsync(Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="client" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateApplyUpdateByParentAsync">
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;&gt; CreateOrUpdateApplyUpdateByParentAsync (this Azure.ResourceManager.Resources.ResourceGroupResource resourceGroupResource, string providerName, string resourceParentType, string resourceParentName, string resourceType, string resourceName, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateResource&gt;&gt; CreateOrUpdateApplyUpdateByParentAsync(class Azure.ResourceManager.Resources.ResourceGroupResource resourceGroupResource, string providerName, string resourceParentType, string resourceParentName, string resourceType, string resourceName, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdateApplyUpdateByParentAsync(Azure.ResourceManager.Resources.ResourceGroupResource,System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)" />
@@ -244,6 +408,38 @@
           <paramref name="providerName" />, <paramref name="resourceParentType" />, <paramref name="resourceParentName" />, <paramref name="resourceType" /> or <paramref name="resourceName" /> is an empty string, and was expected to be non-empty. </exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="resourceGroupResource" />, <paramref name="providerName" />, <paramref name="resourceParentType" />, <paramref name="resourceParentName" />, <paramref name="resourceType" /> or <paramref name="resourceName" /> is null. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrUpdateAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;&gt; CreateOrUpdateAsync (this Azure.ResourceManager.ArmClient client, Azure.Core.ResourceIdentifier scope, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;&gt; CreateOrUpdateAsync(class Azure.ResourceManager.ArmClient client, class Azure.Core.ResourceIdentifier scope, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdateAsync(Azure.ResourceManager.ArmClient,Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function CreateOrUpdateAsync (client As ArmClient, scope As ResourceIdentifier, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of MaintenanceApplyUpdateData))" />
+      <MemberSignature Language="F#" Value="static member CreateOrUpdateAsync : Azure.ResourceManager.ArmClient * Azure.Core.ResourceIdentifier * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;&gt;" Usage="Azure.ResourceManager.Maintenance.MaintenanceExtensions.CreateOrUpdateAsync (client, scope, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Maintenance</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.ResourceManager.Maintenance.MaintenanceApplyUpdateData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="client" Type="Azure.ResourceManager.ArmClient" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+        <Parameter Name="scope" Type="Azure.Core.ResourceIdentifier" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="client"> The <see cref="T:Azure.ResourceManager.ArmClient" /> the method will execute against. </param>
+        <param name="scope"> The scope that the resource will apply against. </param>
+        <param name="cancellationToken"> The cancellation token to use. </param>
+        <summary>
+            Apply maintenance updates to resource
+            <item><term> Mocking. </term><description> To mock this method, please mock <see cref="M:Azure.ResourceManager.Maintenance.Mocking.MockableMaintenanceArmClient.CreateOrUpdateAsync(Azure.Core.ResourceIdentifier,System.Threading.CancellationToken)" /> instead. </description></item></summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="client" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateOrUpdateConfigurationAssignment">

@@ -1,0 +1,461 @@
+<Type Name="ManagedStorageSharedAccessSignatureClient" FullName="Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient">
+  <TypeSignature Language="C#" Value="public class ManagedStorageSharedAccessSignatureClient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManagedStorageSharedAccessSignatureClient extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient" />
+  <TypeSignature Language="VB.NET" Value="Public Class ManagedStorageSharedAccessSignatureClient" />
+  <TypeSignature Language="F#" Value="type ManagedStorageSharedAccessSignatureClient = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary> The ManagedStorageSharedAccessSignatureClient sub-client. </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ManagedStorageSharedAccessSignatureClient ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary> Initializes a new instance of ManagedStorageSharedAccessSignatureClient for mocking. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToken">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetToken (string collectionId, int? durationInMinutes, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetToken(string collectionId, valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.GetToken(System.String,System.Nullable{System.Int32},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetToken (collectionId As String, durationInMinutes As Nullable(Of Integer), context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member GetToken : string * Nullable&lt;int&gt; * Azure.RequestContext -&gt; Azure.Response&#xA;override this.GetToken : string * Nullable&lt;int&gt; * Azure.RequestContext -&gt; Azure.Response" Usage="managedStorageSharedAccessSignatureClient.GetToken (collectionId, durationInMinutes, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collectionId" Type="System.String" />
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="collectionId"> The name of the Collection that the SAS token will be issued for. </param>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Generate a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works)
+            for the given storage account and container. The storage account and container
+            must be associated with a Planetary Computer dataset indexed by the STAC API.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collectionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="collectionId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToken">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt; GetToken (string collectionId, int? durationInMinutes = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt; GetToken(string collectionId, valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.GetToken(System.String,System.Nullable{System.Int32},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetToken (collectionId As String, Optional durationInMinutes As Nullable(Of Integer) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Response(Of SharedAccessSignatureToken)" />
+      <MemberSignature Language="F#" Value="abstract member GetToken : string * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt;&#xA;override this.GetToken : string * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt;" Usage="managedStorageSharedAccessSignatureClient.GetToken (collectionId, durationInMinutes, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collectionId" Type="System.String" />
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="collectionId"> The name of the Collection that the SAS token will be issued for. </param>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Generate a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works)
+            for the given storage account and container. The storage account and container
+            must be associated with a Planetary Computer dataset indexed by the STAC API.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collectionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="collectionId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetTokenAsync (string collectionId, int? durationInMinutes, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetTokenAsync(string collectionId, valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.GetTokenAsync(System.String,System.Nullable{System.Int32},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetTokenAsync (collectionId As String, durationInMinutes As Nullable(Of Integer), context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member GetTokenAsync : string * Nullable&lt;int&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetTokenAsync : string * Nullable&lt;int&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="managedStorageSharedAccessSignatureClient.GetTokenAsync (collectionId, durationInMinutes, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collectionId" Type="System.String" />
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="collectionId"> The name of the Collection that the SAS token will be issued for. </param>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Generate a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works)
+            for the given storage account and container. The storage account and container
+            must be associated with a Planetary Computer dataset indexed by the STAC API.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collectionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="collectionId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt;&gt; GetTokenAsync (string collectionId, int? durationInMinutes = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt;&gt; GetTokenAsync(string collectionId, valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.GetTokenAsync(System.String,System.Nullable{System.Int32},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetTokenAsync (collectionId As String, Optional durationInMinutes As Nullable(Of Integer) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of SharedAccessSignatureToken))" />
+      <MemberSignature Language="F#" Value="abstract member GetTokenAsync : string * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt;&gt;&#xA;override this.GetTokenAsync : string * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt;&gt;" Usage="managedStorageSharedAccessSignatureClient.GetTokenAsync (collectionId, durationInMinutes, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureToken&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collectionId" Type="System.String" />
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="collectionId"> The name of the Collection that the SAS token will be issued for. </param>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Generate a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works)
+            for the given storage account and container. The storage account and container
+            must be associated with a Planetary Computer dataset indexed by the STAC API.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collectionId" /> is null. </exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="collectionId" /> is an empty string, and was expected to be non-empty. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrl">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response GetUrl (Uri href, int? durationInMinutes, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response GetUrl(class System.Uri href, valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.GetUrl(System.Uri,System.Nullable{System.Int32},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUrl (href As Uri, durationInMinutes As Nullable(Of Integer), context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member GetUrl : Uri * Nullable&lt;int&gt; * Azure.RequestContext -&gt; Azure.Response&#xA;override this.GetUrl : Uri * Nullable&lt;int&gt; * Azure.RequestContext -&gt; Azure.Response" Usage="managedStorageSharedAccessSignatureClient.GetUrl (href, durationInMinutes, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="href" Type="System.Uri" />
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="href"> HREF (URL) to sign. </param>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Signs a HREF (a link URL) by appending a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works).
+            If the HREF is not a Azure Blob Storage HREF, then pass back the HREF unsigned.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="href" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrl">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt; GetUrl (Uri href, int? durationInMinutes = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response`1&lt;class Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt; GetUrl(class System.Uri href, valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.GetUrl(System.Uri,System.Nullable{System.Int32},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUrl (href As Uri, Optional durationInMinutes As Nullable(Of Integer) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Response(Of SharedAccessSignatureSignedLink)" />
+      <MemberSignature Language="F#" Value="abstract member GetUrl : Uri * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt;&#xA;override this.GetUrl : Uri * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt;" Usage="managedStorageSharedAccessSignatureClient.GetUrl (href, durationInMinutes, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="href" Type="System.Uri" />
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="href"> HREF (URL) to sign. </param>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Signs a HREF (a link URL) by appending a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works).
+            If the HREF is not a Azure Blob Storage HREF, then pass back the HREF unsigned.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="href" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrlAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; GetUrlAsync (Uri href, int? durationInMinutes, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; GetUrlAsync(class System.Uri href, valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.GetUrlAsync(System.Uri,System.Nullable{System.Int32},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUrlAsync (href As Uri, durationInMinutes As Nullable(Of Integer), context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member GetUrlAsync : Uri * Nullable&lt;int&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.GetUrlAsync : Uri * Nullable&lt;int&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="managedStorageSharedAccessSignatureClient.GetUrlAsync (href, durationInMinutes, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="href" Type="System.Uri" />
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="href"> HREF (URL) to sign. </param>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Signs a HREF (a link URL) by appending a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works).
+            If the HREF is not a Azure Blob Storage HREF, then pass back the HREF unsigned.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="href" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrlAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt;&gt; GetUrlAsync (Uri href, int? durationInMinutes = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response`1&lt;class Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt;&gt; GetUrlAsync(class System.Uri href, valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.GetUrlAsync(System.Uri,System.Nullable{System.Int32},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetUrlAsync (href As Uri, Optional durationInMinutes As Nullable(Of Integer) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response(Of SharedAccessSignatureSignedLink))" />
+      <MemberSignature Language="F#" Value="abstract member GetUrlAsync : Uri * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt;&gt;&#xA;override this.GetUrlAsync : Uri * Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt;&gt;" Usage="managedStorageSharedAccessSignatureClient.GetUrlAsync (href, durationInMinutes, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&lt;Azure.Analytics.PlanetaryComputer.SharedAccessSignatureSignedLink&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="href" Type="System.Uri" />
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="href"> HREF (URL) to sign. </param>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Signs a HREF (a link URL) by appending a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works).
+            If the HREF is not a Azure Blob Storage HREF, then pass back the HREF unsigned.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="href" /> is null. </exception>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pipeline">
+      <MemberSignature Language="C#" Value="public virtual Azure.Core.Pipeline.HttpPipeline Pipeline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Core.Pipeline.HttpPipeline Pipeline" />
+      <MemberSignature Language="DocId" Value="P:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.Pipeline" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Pipeline As HttpPipeline" />
+      <MemberSignature Language="F#" Value="member this.Pipeline : Azure.Core.Pipeline.HttpPipeline" Usage="Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.Pipeline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Core.Pipeline.HttpPipeline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> The HTTP pipeline for sending and receiving REST requests and responses. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RevokeToken">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response RevokeToken (int? durationInMinutes, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response RevokeToken(valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.RevokeToken(System.Nullable{System.Int32},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function RevokeToken (durationInMinutes As Nullable(Of Integer), context As RequestContext) As Response" />
+      <MemberSignature Language="F#" Value="abstract member RevokeToken : Nullable&lt;int&gt; * Azure.RequestContext -&gt; Azure.Response&#xA;override this.RevokeToken : Nullable&lt;int&gt; * Azure.RequestContext -&gt; Azure.Response" Usage="managedStorageSharedAccessSignatureClient.RevokeToken (durationInMinutes, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Revoke a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works)
+            for managed storage account of this GeoCatalog.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevokeToken">
+      <MemberSignature Language="C#" Value="public virtual Azure.Response RevokeToken (int? durationInMinutes = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Response RevokeToken(valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.RevokeToken(System.Nullable{System.Int32},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function RevokeToken (Optional durationInMinutes As Nullable(Of Integer) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Response" />
+      <MemberSignature Language="F#" Value="abstract member RevokeToken : Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.Response&#xA;override this.RevokeToken : Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; Azure.Response" Usage="managedStorageSharedAccessSignatureClient.RevokeToken (durationInMinutes, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Response</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Revoke a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works)
+            for managed storage account of this GeoCatalog.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevokeTokenAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; RevokeTokenAsync (int? durationInMinutes, Azure.RequestContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; RevokeTokenAsync(valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, class Azure.RequestContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.RevokeTokenAsync(System.Nullable{System.Int32},Azure.RequestContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function RevokeTokenAsync (durationInMinutes As Nullable(Of Integer), context As RequestContext) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member RevokeTokenAsync : Nullable&lt;int&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.RevokeTokenAsync : Nullable&lt;int&gt; * Azure.RequestContext -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="managedStorageSharedAccessSignatureClient.RevokeTokenAsync (durationInMinutes, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="context" Type="Azure.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        <summary>
+            [Protocol Method] Revoke a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works)
+            for managed storage account of this GeoCatalog.
+            <list type="bullet"><item><description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description></item></list></summary>
+        <returns> The response returned from the service. </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevokeTokenAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;Azure.Response&gt; RevokeTokenAsync (int? durationInMinutes = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Azure.Response&gt; RevokeTokenAsync(valuetype System.Nullable`1&lt;int32&gt; durationInMinutes, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Analytics.PlanetaryComputer.ManagedStorageSharedAccessSignatureClient.RevokeTokenAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function RevokeTokenAsync (Optional durationInMinutes As Nullable(Of Integer) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of Response)" />
+      <MemberSignature Language="F#" Value="abstract member RevokeTokenAsync : Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;&#xA;override this.RevokeTokenAsync : Nullable&lt;int&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;Azure.Response&gt;" Usage="managedStorageSharedAccessSignatureClient.RevokeTokenAsync (durationInMinutes, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Analytics.PlanetaryComputer</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Azure.Response&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="durationInMinutes" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="durationInMinutes"> The duration, in minutes, that the SAS token will be valid. Only valid for approved users. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary>
+            Revoke a [SAS Token](https://docs.microsoft.com//azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works)
+            for managed storage account of this GeoCatalog.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code. </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

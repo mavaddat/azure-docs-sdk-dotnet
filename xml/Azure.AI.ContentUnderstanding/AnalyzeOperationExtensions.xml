@@ -15,9 +15,8 @@
   <Interfaces />
   <Docs>
     <summary>
-            Extension methods for <see cref="T:Azure.Operation`1" /> returned by
-            <see cref="M:Azure.AI.ContentUnderstanding.ContentUnderstandingClient.AnalyzeAsync(Azure.WaitUntil,System.String,System.Collections.Generic.IEnumerable{Azure.AI.ContentUnderstanding.AnalysisInput},System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{Azure.AI.ContentUnderstanding.ProcessingLocation},System.Threading.CancellationToken)" />
-            and related methods.
+            Extension methods for analyze LRO <see cref="T:Azure.Operation`1" /> and inline
+            <see cref="T:Azure.Response`1" /> values.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -34,6 +33,16 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("Use GetUsageDetails instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("Use GetUsageDetails instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentUnderstanding.AnalyzeUsageDetails</ReturnType>
       </ReturnValue>
@@ -55,6 +64,64 @@
             deserializes it into an <see cref="T:Azure.AI.ContentUnderstanding.AnalyzeUsageDetails" /> instance. The operation must have completed
             successfully before calling this method.
             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUsageDetails">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentUnderstanding.UsageDetails? GetUsageDetails (this Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; operation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentUnderstanding.UsageDetails GetUsageDetails(class Azure.Operation`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; operation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.AnalyzeOperationExtensions.GetUsageDetails(Azure.Operation{Azure.AI.ContentUnderstanding.AnalysisResult})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetUsageDetails (operation As Operation(Of AnalysisResult)) As UsageDetails" />
+      <MemberSignature Language="F#" Value="static member GetUsageDetails : Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; -&gt; Azure.AI.ContentUnderstanding.UsageDetails" Usage="Azure.AI.ContentUnderstanding.AnalyzeOperationExtensions.GetUsageDetails operation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentUnderstanding.UsageDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operation" Type="Azure.Operation&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="operation">The completed analyze operation.</param>
+        <summary>
+            Gets generated <see cref="T:Azure.AI.ContentUnderstanding.UsageDetails" /> from a completed analyze LRO.
+            </summary>
+        <returns>
+            The <see cref="T:Azure.AI.ContentUnderstanding.UsageDetails" /> if the operation has completed and usage information is available;
+            <c>null</c> if the operation has not completed or usage data is not present in the response.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUsageDetails">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentUnderstanding.UsageDetails? GetUsageDetails (this Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; response);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentUnderstanding.UsageDetails GetUsageDetails(class Azure.Response`1&lt;class Azure.AI.ContentUnderstanding.AnalysisResult&gt; response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentUnderstanding.AnalyzeOperationExtensions.GetUsageDetails(Azure.Response{Azure.AI.ContentUnderstanding.AnalysisResult})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetUsageDetails (response As Response(Of AnalysisResult)) As UsageDetails" />
+      <MemberSignature Language="F#" Value="static member GetUsageDetails : Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt; -&gt; Azure.AI.ContentUnderstanding.UsageDetails" Usage="Azure.AI.ContentUnderstanding.AnalyzeOperationExtensions.GetUsageDetails response" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentUnderstanding</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentUnderstanding.UsageDetails</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="Azure.Response&lt;Azure.AI.ContentUnderstanding.AnalysisResult&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="response">The inline <see cref="T:Azure.Response`1" /> returned by analyze inline APIs.</param>
+        <summary>
+            Gets generated <see cref="T:Azure.AI.ContentUnderstanding.UsageDetails" /> from a completed inline analyze response.
+            </summary>
+        <returns>
+            The <see cref="T:Azure.AI.ContentUnderstanding.UsageDetails" /> if usage information is available in the raw response;
+            <c>null</c> if the response or usage data is not present.
+            </returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
   </Members>

@@ -1,0 +1,158 @@
+<Type Name="AsyncStreamingClientResult&lt;T&gt;" FullName="System.ClientModel.AsyncStreamingClientResult&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public sealed class AsyncStreamingClientResult&lt;T&gt; : IAsyncDisposable, System.Collections.Generic.IAsyncEnumerable&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AsyncStreamingClientResult`1&lt;T&gt; extends System.Object implements class System.Collections.Generic.IAsyncEnumerable`1&lt;!T&gt;, class System.IAsyncDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ClientModel.AsyncStreamingClientResult`1" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class AsyncStreamingClientResult(Of T)&#xA;Implements IAsyncDisposable, IAsyncEnumerable(Of T)" />
+  <TypeSignature Language="F#" Value="type AsyncStreamingClientResult&lt;'T&gt; = class&#xA;    interface IAsyncEnumerable&lt;'T&gt;&#xA;    interface IAsyncDisposable" />
+  <AssemblyInfo>
+    <AssemblyName>System.ClientModel</AssemblyName>
+    <AssemblyVersion>1.15.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IAsyncEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IAsyncDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">The type of values in the response stream.</typeparam>
+    <summary>
+            Represents an asynchronous sequence of values read from a streaming service
+            response.
+            </summary>
+    <remarks>
+            An <see cref="T:System.ClientModel.AsyncStreamingClientResult`1" /> can be enumerated only once.
+            Disposing the enumerator or the result disposes the underlying response.
+            The operation cancellation token remains active for the lifetime of the
+            stream and is combined with the token supplied when enumeration begins.
+            Custom producers must observe cancellation or stream closure to terminate;
+            code that ignores both cannot be forcibly stopped by this abstraction.
+            Enumerating a disposed result throws <see cref="T:System.ObjectDisposedException" />;
+            requesting a second enumerator throws <see cref="T:System.InvalidOperationException" />.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DisposeAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.ValueTask DisposeAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask DisposeAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.AsyncStreamingClientResult`1.DisposeAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Function DisposeAsync () As ValueTask" />
+      <MemberSignature Language="F#" Value="abstract member DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask&#xA;override this.DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask" Usage="asyncStreamingClientResult.DisposeAsync " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IAsyncDisposable.DisposeAsync</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Asynchronously disposes the result and its response.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.ClientModel.Primitives.PipelineResponseHeaders Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ClientModel.Primitives.PipelineResponseHeaders Headers" />
+      <MemberSignature Language="DocId" Value="P:System.ClientModel.AsyncStreamingClientResult`1.Headers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Headers As PipelineResponseHeaders" />
+      <MemberSignature Language="F#" Value="member this.Headers : System.ClientModel.Primitives.PipelineResponseHeaders" Usage="System.ClientModel.AsyncStreamingClientResult&lt;'T&gt;.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.Primitives.PipelineResponseHeaders</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the headers of the service response.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">The result has been disposed.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReasonPhrase">
+      <MemberSignature Language="C#" Value="public string ReasonPhrase { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ReasonPhrase" />
+      <MemberSignature Language="DocId" Value="P:System.ClientModel.AsyncStreamingClientResult`1.ReasonPhrase" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ReasonPhrase As String" />
+      <MemberSignature Language="F#" Value="member this.ReasonPhrase : string" Usage="System.ClientModel.AsyncStreamingClientResult&lt;'T&gt;.ReasonPhrase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the reason phrase of the service response.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">The result has been disposed.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public int Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Status" />
+      <MemberSignature Language="DocId" Value="P:System.ClientModel.AsyncStreamingClientResult`1.Status" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Status As Integer" />
+      <MemberSignature Language="F#" Value="member this.Status : int" Usage="System.ClientModel.AsyncStreamingClientResult&lt;'T&gt;.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the status code of the service response.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">The result has been disposed.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IAsyncEnumerable&lt;T&gt;.GetAsyncEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IAsyncEnumerator&lt;T&gt; IAsyncEnumerable&lt;T&gt;.GetAsyncEnumerator (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IAsyncEnumerator`1&lt;!T&gt; System.Collections.Generic.IAsyncEnumerable&lt;T&gt;.GetAsyncEnumerator(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ClientModel.AsyncStreamingClientResult`1.System#Collections#Generic#IAsyncEnumerable&lt;T&gt;#GetAsyncEnumerator(System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Function GetAsyncEnumerator (cancellationToken As CancellationToken) As IAsyncEnumerator(Of T) Implements IAsyncEnumerable(Of T).GetAsyncEnumerator" />
+      <MemberSignature Language="F#" Value="abstract member System.Collections.Generic.IAsyncEnumerable&lt;T&gt;.GetAsyncEnumerator : System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerator&lt;'T&gt;&#xA;override this.System.Collections.Generic.IAsyncEnumerable&lt;T&gt;.GetAsyncEnumerator : System.Threading.CancellationToken -&gt; System.Collections.Generic.IAsyncEnumerator&lt;'T&gt;" Usage="asyncStreamingClientResult.System.Collections.Generic.IAsyncEnumerable&lt;T&gt;.GetAsyncEnumerator cancellationToken" />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.Generic.IAsyncEnumerable`1.GetAsyncEnumerator(System.Threading.CancellationToken)</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>System.ClientModel</AssemblyName>
+        <AssemblyVersion>1.15.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IAsyncEnumerator&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> that may be used to cancel the asynchronous iteration.</param>
+        <summary>Returns an enumerator that iterates asynchronously through the collection.</summary>
+        <returns>An enumerator that can be used to iterate asynchronously through the collection.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

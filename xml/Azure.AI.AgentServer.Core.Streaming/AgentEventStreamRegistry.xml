@@ -1,0 +1,147 @@
+<Type Name="AgentEventStreamRegistry" FullName="Azure.AI.AgentServer.Core.Streaming.AgentEventStreamRegistry">
+  <TypeSignature Language="C#" Value="public abstract class AgentEventStreamRegistry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AgentEventStreamRegistry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamRegistry" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class AgentEventStreamRegistry" />
+  <TypeSignature Language="F#" Value="type AgentEventStreamRegistry = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            The process-level registry that maps stream ids to <see cref="T:Azure.AI.AgentServer.Core.Streaming.AgentEventStream" />
+            instances. Mirrors Python's module-global <c>streams</c> registry.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AgentEventStreamRegistry ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamRegistry.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamRegistry" /> class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.ValueTask DeleteAsync (string id, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask DeleteAsync(string id, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamRegistry.DeleteAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function DeleteAsync (id As String, Optional cancellationToken As CancellationToken = Nothing) As ValueTask" />
+      <MemberSignature Language="F#" Value="abstract member DeleteAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask" Usage="agentEventStreamRegistry.DeleteAsync (id, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id">The stream id.</param>
+        <param name="cancellationToken">A token to cancel the operation.</param>
+        <summary>
+            Removes the stream and any backing resources for <paramref name="id" /> and
+            installs a tombstone (even for an id that was never registered). Idempotent.
+            </summary>
+        <returns>A task that completes when the id has been deleted.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.ValueTask&lt;Azure.AI.AgentServer.Core.Streaming.AgentEventStream&gt; GetAsync (string id, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask`1&lt;class Azure.AI.AgentServer.Core.Streaming.AgentEventStream&gt; GetAsync(string id, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamRegistry.GetAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetAsync (id As String, Optional cancellationToken As CancellationToken = Nothing) As ValueTask(Of AgentEventStream)" />
+      <MemberSignature Language="F#" Value="abstract member GetAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask&lt;Azure.AI.AgentServer.Core.Streaming.AgentEventStream&gt;" Usage="agentEventStreamRegistry.GetAsync (id, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask&lt;Azure.AI.AgentServer.Core.Streaming.AgentEventStream&gt;</ReturnType>
+        <Attributes>
+          <Attribute>
+            <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 1 })]</AttributeName>
+            <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 1 })&gt;]</AttributeName>
+          </Attribute>
+        </Attributes>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id">The stream id.</param>
+        <param name="cancellationToken">A token to cancel the operation.</param>
+        <summary>
+            Returns the live stream registered under <paramref name="id" />, or raises
+            <see cref="T:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamNotFoundException" /> for any id that is not currently
+            a live stream. Never installs a tombstone.
+            </summary>
+        <returns>The live stream.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrCreateAsync">
+      <MemberSignature Language="C#" Value="public abstract System.Threading.Tasks.ValueTask&lt;Azure.AI.AgentServer.Core.Streaming.AgentEventStream&gt; GetOrCreateAsync (string id, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask`1&lt;class Azure.AI.AgentServer.Core.Streaming.AgentEventStream&gt; GetOrCreateAsync(string id, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Streaming.AgentEventStreamRegistry.GetOrCreateAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetOrCreateAsync (id As String, Optional cancellationToken As CancellationToken = Nothing) As ValueTask(Of AgentEventStream)" />
+      <MemberSignature Language="F#" Value="abstract member GetOrCreateAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask&lt;Azure.AI.AgentServer.Core.Streaming.AgentEventStream&gt;" Usage="agentEventStreamRegistry.GetOrCreateAsync (id, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask&lt;Azure.AI.AgentServer.Core.Streaming.AgentEventStream&gt;</ReturnType>
+        <Attributes>
+          <Attribute>
+            <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 1 })]</AttributeName>
+            <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(new System.Byte[] { 0, 1 })&gt;]</AttributeName>
+          </Attribute>
+        </Attributes>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="id">The stream id.</param>
+        <param name="cancellationToken">A token to cancel the operation.</param>
+        <summary>
+            Returns the stream registered under <paramref name="id" />, creating a fresh
+            one if necessary. Idempotent — every caller using the same id gets the same
+            instance; clears any prior tombstone for the id.
+            </summary>
+        <returns>The registered or newly-created stream.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

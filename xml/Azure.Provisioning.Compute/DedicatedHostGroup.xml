@@ -13,14 +13,12 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            DedicatedHostGroup.
-            </summary>
+    <summary> Specifies information about the dedicated host group that the dedicated hosts should be assigned to. Currently, a dedicated host can only be added to a dedicated host group at creation time. An existing dedicated host cannot be added to another dedicated host group. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public DedicatedHostGroup (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public DedicatedHostGroup (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Compute.DedicatedHostGroup.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
@@ -35,37 +33,48 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the DedicatedHostGroup resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the DedicatedHostGroup.</param>
-        <summary>
-            Creates a new DedicatedHostGroup.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new DedicatedHostGroup. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="DedicatedHosts">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepList&lt;Azure.Provisioning.Resources.SubResource&gt; DedicatedHosts { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepList`1&lt;class Azure.Provisioning.Resources.SubResource&gt; DedicatedHosts" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Compute.DedicatedHostGroup.DedicatedHosts" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DedicatedHosts As BicepList(Of SubResource)" />
-      <MemberSignature Language="F#" Value="member this.DedicatedHosts : Azure.Provisioning.BicepList&lt;Azure.Provisioning.Resources.SubResource&gt;" Usage="Azure.Provisioning.Compute.DedicatedHostGroup.DedicatedHosts" />
+    <Member MemberName="AdditionalCapabilitiesUltraSsdEnabled">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;bool&gt; AdditionalCapabilitiesUltraSsdEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;bool&gt; AdditionalCapabilitiesUltraSsdEnabled" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Compute.DedicatedHostGroup.AdditionalCapabilitiesUltraSsdEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property AdditionalCapabilitiesUltraSsdEnabled As BicepValue(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.AdditionalCapabilitiesUltraSsdEnabled : Azure.Provisioning.BicepValue&lt;bool&gt; with get, set" Usage="Azure.Provisioning.Compute.DedicatedHostGroup.AdditionalCapabilitiesUltraSsdEnabled" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Compute</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.Resources.SubResource&gt;</ReturnType>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            A list of references to all dedicated hosts in the dedicated host group.
-            </summary>
+        <summary> Gets or sets the UltraSsdEnabled. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DedicatedHostResources">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.ComputeSubResourceData&gt; DedicatedHostResources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepList`1&lt;class Azure.Provisioning.Compute.ComputeSubResourceData&gt; DedicatedHostResources" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Compute.DedicatedHostGroup.DedicatedHostResources" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DedicatedHostResources As BicepList(Of ComputeSubResourceData)" />
+      <MemberSignature Language="F#" Value="member this.DedicatedHostResources : Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.ComputeSubResourceData&gt;" Usage="Azure.Provisioning.Compute.DedicatedHostGroup.DedicatedHostResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Compute</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.ComputeSubResourceData&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets the DedicatedHostResources. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -86,14 +95,12 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of DedicatedHostGroup.
-            </summary>
+        <summary> Define all the provisionable properties for DedicatedHostGroup. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Compute.DedicatedHostGroup FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Compute.DedicatedHostGroup FromExisting (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.Compute.DedicatedHostGroup FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Compute.DedicatedHostGroup.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As DedicatedHostGroup" />
@@ -111,16 +118,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the DedicatedHostGroup resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the DedicatedHostGroup.</param>
-        <summary>
-            Creates a reference to an existing DedicatedHostGroup.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing DedicatedHostGroup. </summary>
         <returns>The existing DedicatedHostGroup resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -140,9 +140,27 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceViewHosts">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.DedicatedHostInstanceViewWithName&gt; InstanceViewHosts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepList`1&lt;class Azure.Provisioning.Compute.DedicatedHostInstanceViewWithName&gt; InstanceViewHosts" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Compute.DedicatedHostGroup.InstanceViewHosts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InstanceViewHosts As BicepList(Of DedicatedHostInstanceViewWithName)" />
+      <MemberSignature Language="F#" Value="member this.InstanceViewHosts : Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.DedicatedHostInstanceViewWithName&gt;" Usage="Azure.Provisioning.Compute.DedicatedHostGroup.InstanceViewHosts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Compute</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.DedicatedHostInstanceViewWithName&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets the Hosts. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -162,9 +180,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -184,9 +200,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The name of the dedicated host group.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -206,9 +220,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Number of fault domains that the host group can span.
-            </summary>
+        <summary> Gets or sets the PlatformFaultDomainCount. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -228,13 +240,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Specifies whether virtual machines or virtual machine scale sets can be
-            placed automatically on the dedicated host group. Automatic placement
-            means resources are allocated on dedicated hosts, that are chosen by
-            Azure, under the dedicated host group. The value is defaulted to
-            'false' when not provided. Minimum api-version: 2020-06-01.
-            </summary>
+        <summary> Gets or sets the SupportAutomaticPlacement. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -254,9 +260,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -276,39 +280,7 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="UltraSsdEnabled">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;bool&gt; UltraSsdEnabled { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;bool&gt; UltraSsdEnabled" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Compute.DedicatedHostGroup.UltraSsdEnabled" />
-      <MemberSignature Language="VB.NET" Value="Public Property UltraSsdEnabled As BicepValue(Of Boolean)" />
-      <MemberSignature Language="F#" Value="member this.UltraSsdEnabled : Azure.Provisioning.BicepValue&lt;bool&gt; with get, set" Usage="Azure.Provisioning.Compute.DedicatedHostGroup.UltraSsdEnabled" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.Provisioning.Compute</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-            The flag that enables or disables a capability to have UltraSSD Enabled
-            Virtual Machines on Dedicated Hosts of the Dedicated Host Group. For
-            the Virtual Machines to be UltraSSD Enabled, UltraSSDEnabled flag for
-            the resource needs to be set true as well. The value is defaulted to
-            'false' when not provided. Please refer to
-            https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd
-            for more details on Ultra SSD feature. **Note:** The ultraSSDEnabled
-            setting can only be enabled for Host Groups that are created as zonal.
-            Minimum api-version: 2022-03-01.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -328,9 +300,7 @@
         <ReturnType>Azure.Provisioning.BicepList&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The availability zones.
-            </summary>
+        <summary> Gets or sets the Zones. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

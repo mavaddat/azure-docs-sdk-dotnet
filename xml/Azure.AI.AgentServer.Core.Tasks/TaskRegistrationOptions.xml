@@ -1,0 +1,120 @@
+<Type Name="TaskRegistrationOptions" FullName="Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions">
+  <TypeSignature Language="C#" Value="public sealed class TaskRegistrationOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TaskRegistrationOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class TaskRegistrationOptions" />
+  <TypeSignature Language="F#" Value="type TaskRegistrationOptions = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Per-task registration options. Maps the public keyword arguments of Python's
+            <c>@task(...)</c> minus <c>name</c>/<c>steerable</c> (which are method parameters).
+            Backend selection, lease durations, and the local state root are framework
+            internals, not options here (Python parity).
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskRegistrationOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Retry">
+      <MemberSignature Language="C#" Value="public Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy? Retry { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy Retry" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions.Retry" />
+      <MemberSignature Language="VB.NET" Value="Public Property Retry As TaskRetryPolicy" />
+      <MemberSignature Language="F#" Value="member this.Retry : Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy with get, set" Usage="Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions.Retry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.AgentServer.Core.Tasks.TaskRetryPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>The retry policy for handler failures. <see langword="null" /> uses the framework default.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public TimeSpan? Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; Timeout" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions.Timeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property Timeout As Nullable(Of TimeSpan)" />
+      <MemberSignature Language="F#" Value="member this.Timeout : Nullable&lt;TimeSpan&gt; with get, set" Usage="Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The cap on how long a <b>single turn</b> (one handler invocation) may run uninterrupted.
+            Defaults to <b>1 day</b> when unset, which is also a <b>hard ceiling</b>: a supplied value
+            lowers the budget but can never raise it above 1 day (larger values, and negative values, are
+            rejected at registration with <see cref="T:System.ArgumentOutOfRangeException" />). This is
+            <b>per turn, not per task</b> and does <b>not</b>
+            limit how long a multi-turn task can live — a multi-turn task may stay alive indefinitely
+            across many turns. A task's overall lifetime is governed separately by the platform's 30-day
+            sliding TTL (a task is cleaned up only after 30 days with no new turns).
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string? Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions.Title" />
+      <MemberSignature Language="VB.NET" Value="Public Property Title As String" />
+      <MemberSignature Language="F#" Value="member this.Title : string with get, set" Usage="Azure.AI.AgentServer.Core.Tasks.TaskRegistrationOptions.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Core</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            A static title for the task. Defaults to the task <c>name</c> when the record is
+            created. Only a constant string is supported (no factory).
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

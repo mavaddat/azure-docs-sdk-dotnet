@@ -8,6 +8,7 @@
     <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>OpenAI.Responses.ResponsesClient</BaseTypeName>
@@ -27,11 +28,33 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary> Initializes a new instance of <see cref="T:Azure.AI.Extensions.OpenAI.ProjectResponsesClient" /> for mocking. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (System.ClientModel.AuthenticationTokenProvider tokenProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ClientModel.AuthenticationTokenProvider tokenProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.#ctor(System.ClientModel.AuthenticationTokenProvider)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (tokenProvider As AuthenticationTokenProvider)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient : System.ClientModel.AuthenticationTokenProvider -&gt; Azure.AI.Extensions.OpenAI.ProjectResponsesClient" Usage="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient tokenProvider" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tokenProvider" Type="System.ClientModel.AuthenticationTokenProvider" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="tokenProvider"> The token provider used to authenticate requests. </param>
+        <summary>
+            Creates a new instance of <see cref="T:Azure.AI.Extensions.OpenAI.ProjectResponsesClient" /> with default options.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -45,7 +68,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="tokenProvider" Type="System.ClientModel.AuthenticationTokenProvider" />
@@ -58,22 +81,77 @@
             Creates a new instance of <see cref="T:Azure.AI.Extensions.OpenAI.ProjectResponsesClient" />.
             </summary>
         <remarks>
-            This constructor directly uses the supplied value from the provided <see cref="P:OpenAI.OpenAIClientOptions.Endpoint" />
-            and performs no additional automatic resolution.
+            This constructor directly uses the supplied value from the provided
+            <see cref="P:OpenAI.Responses.ResponsesClientOptions.Endpoint" /> and performs no additional automatic resolution.
             </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ProjectResponsesClient (Uri projectEndpoint, System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options = default);" />
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (Uri projectEndpoint, System.ClientModel.AuthenticationTokenProvider tokenProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri projectEndpoint, class System.ClientModel.AuthenticationTokenProvider tokenProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.#ctor(System.Uri,System.ClientModel.AuthenticationTokenProvider)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (projectEndpoint As Uri, tokenProvider As AuthenticationTokenProvider)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient : Uri * System.ClientModel.AuthenticationTokenProvider -&gt; Azure.AI.Extensions.OpenAI.ProjectResponsesClient" Usage="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient (projectEndpoint, tokenProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectEndpoint" Type="System.Uri" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="tokenProvider" Type="System.ClientModel.AuthenticationTokenProvider" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="projectEndpoint"> The Azure AI project endpoint. </param>
+        <param name="tokenProvider"> The token provider used to authenticate requests. </param>
+        <summary>
+            Creates a new instance of <see cref="T:Azure.AI.Extensions.OpenAI.ProjectResponsesClient" /> with default options.
+            </summary>
+        <remarks>
+            This constructor automatically constructs the base URI for requests from the supplied
+            <paramref name="projectEndpoint" /> value.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ClientModel.AuthenticationTokenProvider tokenProvider, class Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.#ctor(System.ClientModel.AuthenticationTokenProvider,Azure.AI.Extensions.OpenAI.AgentReference,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (tokenProvider As AuthenticationTokenProvider, defaultAgent As AgentReference, Optional defaultConversationId As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient : System.ClientModel.AuthenticationTokenProvider * Azure.AI.Extensions.OpenAI.AgentReference * string -&gt; Azure.AI.Extensions.OpenAI.ProjectResponsesClient" Usage="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient (tokenProvider, defaultAgent, defaultConversationId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tokenProvider" Type="System.ClientModel.AuthenticationTokenProvider" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="defaultAgent" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="defaultConversationId" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="tokenProvider"> The token provider used to authenticate requests. </param>
+        <param name="defaultAgent"> The default agent used for response requests. </param>
+        <param name="defaultConversationId"> The default conversation ID used for response requests. </param>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.AI.Extensions.OpenAI.ProjectResponsesClient" /> with default options.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (Uri projectEndpoint, System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri projectEndpoint, class System.ClientModel.AuthenticationTokenProvider tokenProvider, class Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.#ctor(System.Uri,System.ClientModel.AuthenticationTokenProvider,Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (projectEndpoint As Uri, tokenProvider As AuthenticationTokenProvider, Optional options As ProjectResponsesClientOptions = Nothing)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (projectEndpoint As Uri, tokenProvider As AuthenticationTokenProvider, Optional options As ProjectResponsesClientOptions = Nothing)" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient : Uri * System.ClientModel.AuthenticationTokenProvider * Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions -&gt; Azure.AI.Extensions.OpenAI.ProjectResponsesClient" Usage="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient (projectEndpoint, tokenProvider, options)" />
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (Uri projectEndpoint, System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (projectEndpoint As Uri, tokenProvider As AuthenticationTokenProvider, options As ProjectResponsesClientOptions)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="projectEndpoint" Type="System.Uri" />
@@ -89,22 +167,24 @@
             </summary>
         <remarks>
             This constructor automatically constructs the base URI for requests from the supplied <paramref name="projectEndpoint" />
-            value. To use a base URI directly, use the alternative constructor and set <see cref="P:OpenAI.OpenAIClientOptions.Endpoint" /> on the
-            supplied options.
+            value. To use a base URI directly, use the alternative constructor and set
+            <see cref="P:OpenAI.Responses.ResponsesClientOptions.Endpoint" /> on the supplied options.
             </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ProjectResponsesClient (System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options = default, Azure.AI.Extensions.OpenAI.AgentReference defaultAgent = default, string defaultConversationId = default);" />
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options = default, Azure.AI.Extensions.OpenAI.AgentReference defaultAgent = default, string defaultConversationId = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ClientModel.AuthenticationTokenProvider tokenProvider, class Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options, class Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.#ctor(System.ClientModel.AuthenticationTokenProvider,Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions,Azure.AI.Extensions.OpenAI.AgentReference,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (tokenProvider As AuthenticationTokenProvider, Optional options As ProjectResponsesClientOptions = Nothing, Optional defaultAgent As AgentReference = Nothing, Optional defaultConversationId As String = Nothing)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (tokenProvider As AuthenticationTokenProvider, Optional options As ProjectResponsesClientOptions = Nothing, Optional defaultAgent As AgentReference = Nothing, Optional defaultConversationId As String = Nothing)" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient : System.ClientModel.AuthenticationTokenProvider * Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions * Azure.AI.Extensions.OpenAI.AgentReference * string -&gt; Azure.AI.Extensions.OpenAI.ProjectResponsesClient" Usage="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient (tokenProvider, options, defaultAgent, defaultConversationId)" />
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options, Azure.AI.Extensions.OpenAI.AgentReference defaultAgent = default, string defaultConversationId = default);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (tokenProvider As AuthenticationTokenProvider, options As ProjectResponsesClientOptions, Optional defaultAgent As AgentReference = Nothing, Optional defaultConversationId As String = Nothing)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="tokenProvider" Type="System.ClientModel.AuthenticationTokenProvider" />
@@ -122,16 +202,47 @@
       </Docs>
     </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ProjectResponsesClient (Uri projectEndpoint, System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId = default, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options = default);" />
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (Uri projectEndpoint, System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri projectEndpoint, class System.ClientModel.AuthenticationTokenProvider tokenProvider, class Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.#ctor(System.Uri,System.ClientModel.AuthenticationTokenProvider,Azure.AI.Extensions.OpenAI.AgentReference,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (projectEndpoint As Uri, tokenProvider As AuthenticationTokenProvider, defaultAgent As AgentReference, Optional defaultConversationId As String = Nothing)" />
+      <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient : Uri * System.ClientModel.AuthenticationTokenProvider * Azure.AI.Extensions.OpenAI.AgentReference * string -&gt; Azure.AI.Extensions.OpenAI.ProjectResponsesClient" Usage="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient (projectEndpoint, tokenProvider, defaultAgent, defaultConversationId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectEndpoint" Type="System.Uri" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="tokenProvider" Type="System.ClientModel.AuthenticationTokenProvider" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="defaultAgent" Type="Azure.AI.Extensions.OpenAI.AgentReference" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="defaultConversationId" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="projectEndpoint"> The Azure AI project endpoint. </param>
+        <param name="tokenProvider"> The token provider used to authenticate requests. </param>
+        <param name="defaultAgent"> The default agent used for response requests. </param>
+        <param name="defaultConversationId"> The default conversation ID used for response requests. </param>
+        <summary>
+            Creates a new instance of <see cref="T:Azure.AI.Extensions.OpenAI.ProjectResponsesClient" /> with default agent settings
+            and default options.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (Uri projectEndpoint, System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId = default, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri projectEndpoint, class System.ClientModel.AuthenticationTokenProvider tokenProvider, class Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId, class Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.#ctor(System.Uri,System.ClientModel.AuthenticationTokenProvider,Azure.AI.Extensions.OpenAI.AgentReference,System.String,Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions)" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (projectEndpoint As Uri, tokenProvider As AuthenticationTokenProvider, defaultAgent As AgentReference, Optional defaultConversationId As String = Nothing, Optional options As ProjectResponsesClientOptions = Nothing)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (projectEndpoint As Uri, tokenProvider As AuthenticationTokenProvider, defaultAgent As AgentReference, Optional defaultConversationId As String = Nothing, Optional options As ProjectResponsesClientOptions = Nothing)" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient : Uri * System.ClientModel.AuthenticationTokenProvider * Azure.AI.Extensions.OpenAI.AgentReference * string * Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions -&gt; Azure.AI.Extensions.OpenAI.ProjectResponsesClient" Usage="new Azure.AI.Extensions.OpenAI.ProjectResponsesClient (projectEndpoint, tokenProvider, defaultAgent, defaultConversationId, options)" />
+      <MemberSignature Language="C#" Value="public ProjectResponsesClient (Uri projectEndpoint, System.ClientModel.AuthenticationTokenProvider tokenProvider, Azure.AI.Extensions.OpenAI.AgentReference defaultAgent, string defaultConversationId, Azure.AI.Extensions.OpenAI.ProjectResponsesClientOptions options);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (projectEndpoint As Uri, tokenProvider As AuthenticationTokenProvider, defaultAgent As AgentReference, defaultConversationId As String, options As ProjectResponsesClientOptions)" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="projectEndpoint" Type="System.Uri" />
@@ -163,7 +274,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
@@ -191,7 +302,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
@@ -221,7 +332,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
@@ -251,7 +362,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
@@ -283,7 +394,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
@@ -315,7 +426,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
@@ -343,7 +454,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
@@ -373,7 +484,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
@@ -403,7 +514,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
@@ -435,7 +546,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
@@ -467,7 +578,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.CollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -495,7 +606,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.CollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -525,7 +636,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.CollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -555,7 +666,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.CollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -587,7 +698,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.CollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -619,7 +730,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.AsyncCollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -647,7 +758,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.AsyncCollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -677,7 +788,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.AsyncCollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -707,7 +818,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.AsyncCollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -739,7 +850,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.AsyncCollectionResult&lt;OpenAI.Responses.StreamingResponseUpdate&gt;</ReturnType>
@@ -770,7 +881,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.CollectionResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
@@ -807,7 +918,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ClientModel.AsyncCollectionResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
@@ -831,6 +942,110 @@
         <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
         <summary> Asynchronously gets project responses, optionally filtered by agent or conversation. </summary>
         <returns> The project responses. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponse">
+      <MemberSignature Language="C#" Value="public override System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt; GetResponse (OpenAI.Responses.GetResponseOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ClientModel.ClientResult`1&lt;class OpenAI.Responses.ResponseResult&gt; GetResponse(class OpenAI.Responses.GetResponseOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.GetResponse(OpenAI.Responses.GetResponseOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResponse (options As GetResponseOptions, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ResponseResult)" />
+      <MemberSignature Language="F#" Value="abstract member GetResponse : OpenAI.Responses.GetResponseOptions * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&#xA;override this.GetResponse : OpenAI.Responses.GetResponseOptions * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;" Usage="projectResponsesClient.GetResponse (options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="OpenAI.Responses.GetResponseOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The options identifying the response to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Gets a previously created response by its ID. </summary>
+        <returns> The retrieved response result. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponse">
+      <MemberSignature Language="C#" Value="public override System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt; GetResponse (string responseId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ClientModel.ClientResult`1&lt;class OpenAI.Responses.ResponseResult&gt; GetResponse(string responseId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.GetResponse(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResponse (responseId As String, Optional cancellationToken As CancellationToken = Nothing) As ClientResult(Of ResponseResult)" />
+      <MemberSignature Language="F#" Value="abstract member GetResponse : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&#xA;override this.GetResponse : string * System.Threading.CancellationToken -&gt; System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;" Usage="projectResponsesClient.GetResponse (responseId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="responseId"> The ID of the response to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Gets a previously created response by its ID. </summary>
+        <returns> The retrieved response result. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt; GetResponseAsync (OpenAI.Responses.GetResponseOptions options, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class OpenAI.Responses.ResponseResult&gt;&gt; GetResponseAsync(class OpenAI.Responses.GetResponseOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.GetResponseAsync(OpenAI.Responses.GetResponseOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResponseAsync (options As GetResponseOptions, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ResponseResult))" />
+      <MemberSignature Language="F#" Value="abstract member GetResponseAsync : OpenAI.Responses.GetResponseOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;&#xA;override this.GetResponseAsync : OpenAI.Responses.GetResponseOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;" Usage="projectResponsesClient.GetResponseAsync (options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="OpenAI.Responses.GetResponseOptions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="options"> The options identifying the response to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Asynchronously gets a previously created response by its ID. </summary>
+        <returns> The retrieved response result. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt; GetResponseAsync (string responseId, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class System.ClientModel.ClientResult`1&lt;class OpenAI.Responses.ResponseResult&gt;&gt; GetResponseAsync(string responseId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Extensions.OpenAI.ProjectResponsesClient.GetResponseAsync(System.String,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResponseAsync (responseId As String, Optional cancellationToken As CancellationToken = Nothing) As Task(Of ClientResult(Of ResponseResult))" />
+      <MemberSignature Language="F#" Value="abstract member GetResponseAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;&#xA;override this.GetResponseAsync : string * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;" Usage="projectResponsesClient.GetResponseAsync (responseId, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Extensions.OpenAI</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ClientModel.ClientResult&lt;OpenAI.Responses.ResponseResult&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="responseId"> The ID of the response to retrieve. </param>
+        <param name="cancellationToken"> The cancellation token that can be used to cancel the operation. </param>
+        <summary> Asynchronously gets a previously created response by its ID. </summary>
+        <returns> The retrieved response result. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -13,14 +13,12 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            RestorePoint.
-            </summary>
+    <summary> Restore Point details. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public RestorePoint (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public RestorePoint (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Compute.RestorePoint.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
@@ -35,16 +33,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the RestorePoint resource.  This can
-            be used to refer to the resource in expressions, but is not the Azure
-            name of the resource.  This value can contain letters, numbers, and
-            underscores.
-            </param>
-        <param name="resourceVersion">Version of the RestorePoint.</param>
-        <summary>
-            Creates a new RestorePoint.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new RestorePoint. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,12 +54,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Compute.ConsistencyModeType&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            ConsistencyMode of the RestorePoint. Can be specified in the input
-            while creating a restore point. For now, only CrashConsistent is
-            accepted as a valid input. Please refer to
-            https://aka.ms/RestorePoints for more details.
-            </summary>
+        <summary> Gets or sets the ConsistencyMode. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -89,37 +75,32 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of RestorePoint.
-            </summary>
+        <summary> Define all the provisionable properties for RestorePoint. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ExcludeDisks">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepList&lt;Azure.Provisioning.Resources.WritableSubResource&gt; ExcludeDisks { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepList`1&lt;class Azure.Provisioning.Resources.WritableSubResource&gt; ExcludeDisks" />
-      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Compute.RestorePoint.ExcludeDisks" />
-      <MemberSignature Language="VB.NET" Value="Public Property ExcludeDisks As BicepList(Of WritableSubResource)" />
-      <MemberSignature Language="F#" Value="member this.ExcludeDisks : Azure.Provisioning.BicepList&lt;Azure.Provisioning.Resources.WritableSubResource&gt; with get, set" Usage="Azure.Provisioning.Compute.RestorePoint.ExcludeDisks" />
+    <Member MemberName="ExcludedDisks">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.ComputeApiEntityReference&gt; ExcludedDisks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepList`1&lt;class Azure.Provisioning.Compute.ComputeApiEntityReference&gt; ExcludedDisks" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Compute.RestorePoint.ExcludedDisks" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExcludedDisks As BicepList(Of ComputeApiEntityReference)" />
+      <MemberSignature Language="F#" Value="member this.ExcludedDisks : Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.ComputeApiEntityReference&gt; with get, set" Usage="Azure.Provisioning.Compute.RestorePoint.ExcludedDisks" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Compute</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.Resources.WritableSubResource&gt;</ReturnType>
+        <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.Compute.ComputeApiEntityReference&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            List of disk resource ids that the customer wishes to exclude from the
-            restore point. If no disks are specified, all disks will be included.
-            </summary>
+        <summary> Gets or sets the ExcludedDisks. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Compute.RestorePoint FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Compute.RestorePoint FromExisting (string bicepIdentifier, string resourceVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.Compute.RestorePoint FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Compute.RestorePoint.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As RestorePoint" />
@@ -137,16 +118,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the RestorePoint resource.  This can
-            be used to refer to the resource in expressions, but is not the Azure
-            name of the resource.  This value can contain letters, numbers, and
-            underscores.
-            </param>
-        <param name="resourceVersion">Version of the RestorePoint.</param>
-        <summary>
-            Creates a reference to an existing RestorePoint.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing RestorePoint. </summary>
         <returns>The existing RestorePoint resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -166,9 +140,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -188,9 +160,7 @@
         <ReturnType>Azure.Provisioning.Compute.RestorePointInstanceView</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The restore point instance view.
-            </summary>
+        <summary> Gets the InstanceView. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -210,11 +180,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            This property determines the time in minutes the snapshot is retained
-            as instant access for restoring Premium SSD v2 or Ultra disk with fast
-            restore performance in this restore point.
-            </summary>
+        <summary> Gets or sets the InstantAccessDurationMinutes. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -234,15 +200,13 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The name of the restore point.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Parent">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.Compute.RestorePointGroup? Parent { get; set; }" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Compute.RestorePointGroup Parent { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.Compute.RestorePointGroup Parent" />
       <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Compute.RestorePoint.Parent" />
       <MemberSignature Language="VB.NET" Value="Public Property Parent As RestorePointGroup" />
@@ -256,9 +220,7 @@
         <ReturnType>Azure.Provisioning.Compute.RestorePointGroup</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets a reference to the parent RestorePointGroup.
-            </summary>
+        <summary> Gets or sets the Parent. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -278,9 +240,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the provisioning state of the restore point.
-            </summary>
+        <summary> Gets the ProvisioningState. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -300,10 +260,7 @@
         <ReturnType>Azure.Provisioning.Compute.RestorePointSourceMetadata</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the details of the VM captured at the time of the restore point
-            creation.
-            </summary>
+        <summary> Gets or sets the SourceMetadata. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -323,9 +280,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets Id.
-            </summary>
+        <summary> Gets or sets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -345,9 +300,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -367,9 +320,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the creation time of the restore point.
-            </summary>
+        <summary> Gets or sets the TimeCreated. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

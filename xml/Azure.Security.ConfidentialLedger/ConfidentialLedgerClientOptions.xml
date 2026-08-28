@@ -11,6 +11,7 @@
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
     <AssemblyVersion>1.3.0.0</AssemblyVersion>
     <AssemblyVersion>1.4.1.0</AssemblyVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.Core.ClientOptions</BaseTypeName>
@@ -33,7 +34,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Security.ConfidentialLedger</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.4.1.0</AssemblyVersion>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="version" Type="Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions+ServiceVersion" />
@@ -54,7 +55,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Security.ConfidentialLedger</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.4.1.0</AssemblyVersion>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -67,6 +68,122 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="EnableArchivedCollectionFallback">
+      <MemberSignature Language="C#" Value="public bool EnableArchivedCollectionFallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableArchivedCollectionFallback" />
+      <MemberSignature Language="DocId" Value="P:Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.EnableArchivedCollectionFallback" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnableArchivedCollectionFallback As Boolean" />
+      <MemberSignature Language="F#" Value="member this.EnableArchivedCollectionFallback : bool with get, set" Usage="Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.EnableArchivedCollectionFallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.ConfidentialLedger</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Controls whether a current-entry read transparently falls back to ledger history when a
+            collection's live entry has been archived by collection pruning. Defaults to <c>false</c>.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This mirrors the service-side collection pruning feature: when a ledger is configured to prune (archive) old collections, the
+            <c>GetCurrentLedgerEntry</c> endpoint returns <c>404 Not Found</c> for a pruned collection. With this option enabled the client
+            transparently performs a historical query for the collection and returns its latest committed entry. Defaults to <c>false</c>
+            because the service returns the same 404 for a pruned collection and a collection that never existed, and a historical query
+            can be expensive on a ledger with a long transaction history. Set this option to <c>true</c> only when transparent access to
+            archived collections is required.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Failover">
+      <MemberSignature Language="C#" Value="public Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.FailoverSelection Failover { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions/FailoverSelection Failover" />
+      <MemberSignature Language="DocId" Value="P:Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.Failover" />
+      <MemberSignature Language="VB.NET" Value="Public Property Failover As ConfidentialLedgerClientOptions.FailoverSelection" />
+      <MemberSignature Language="F#" Value="member this.Failover : Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.FailoverSelection with get, set" Usage="Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.Failover" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.ConfidentialLedger</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions+FailoverSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Controls the order in which a read request is retried against the ledger's failover endpoints
+            when the primary ledger returns a transient failure. Defaults to <see cref="F:Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.FailoverSelection.Ordered" />,
+            which preserves the order reported by the identity service. Use <see cref="F:Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.FailoverSelection.Random" />
+            to shuffle the candidate endpoints and spread load across failover ledgers.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FailoverNetworkTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan? FailoverNetworkTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; FailoverNetworkTimeout" />
+      <MemberSignature Language="DocId" Value="P:Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.FailoverNetworkTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property FailoverNetworkTimeout As Nullable(Of TimeSpan)" />
+      <MemberSignature Language="F#" Value="member this.FailoverNetworkTimeout : Nullable&lt;TimeSpan&gt; with get, set" Usage="Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.FailoverNetworkTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.ConfidentialLedger</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Optional per-attempt network timeout applied to each failover request. When set, every failover
+            attempt is granted this network timeout, so that time already spent on the failed primary attempt
+            does not consume the failover budget. When <c>null</c> the normal
+            <see cref="P:Azure.Core.RetryOptions.NetworkTimeout" /> applies. Defaults to <c>null</c>.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseLedgerGateway">
+      <MemberSignature Language="C#" Value="public bool UseLedgerGateway { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseLedgerGateway" />
+      <MemberSignature Language="DocId" Value="P:Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.UseLedgerGateway" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseLedgerGateway As Boolean" />
+      <MemberSignature Language="F#" Value="member this.UseLedgerGateway : bool with get, set" Usage="Azure.Security.ConfidentialLedger.ConfidentialLedgerClientOptions.UseLedgerGateway" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.ConfidentialLedger</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Set to <c>true</c> when targeting the Confidential Ledger Gateway.
+            When enabled, the client skips the CCF identity-service TLS bootstrap (using standard
+            Azure PKI for TLS validation) and disables primary-node caching in the redirect policy
+            (the gateway may redirect to any healthy host, not a sticky primary). Authentication via
+            client certificate (mTLS) is not supported in this mode; only bearer-token authentication
+            is accepted by the gateway.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            In Ledger Gateway mode, <c>POST /app/transactions</c> may return <c>202 Accepted</c> when
+            the underlying CCF cluster is temporarily unreachable. The write is queued by the gateway
+            (retained for the gateway's operation-record retention period) and the SDK exposes the long-running operation via the gateway
+            operation id until it commits, at which point <see cref="P:Azure.Operation.Id" /> flips to
+            the CCF transaction id. Because a queued operation may take hours to complete, callers
+            are strongly encouraged to use <see cref="F:Azure.WaitUntil.Started" />, persist
+            <see cref="P:Azure.Operation.Id" />, and resume polling later via
+            <c>ConfidentialLedgerClient.RehydratePostLedgerEntryOperation</c>.
+            </remarks>
+      </Docs>
+    </Member>
     <Member MemberName="VerifyConnection">
       <MemberSignature Language="C#" Value="public bool VerifyConnection { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool VerifyConnection" />
@@ -77,7 +194,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Security.ConfidentialLedger</AssemblyName>
         <AssemblyVersion>1.3.0.0</AssemblyVersion>
-        <AssemblyVersion>1.4.1.0</AssemblyVersion>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
