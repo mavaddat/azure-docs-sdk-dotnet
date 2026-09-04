@@ -172,6 +172,42 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="ComputeSkuMixPlacementCapacityLimit">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit ComputeSkuMixPlacementCapacityLimit (string name = default, Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority priority = default, string zone = default, int limit = 0, Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementCapacityLimitReason reason = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit ComputeSkuMixPlacementCapacityLimit(string name, valuetype Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority priority, string zone, int32 limit, valuetype Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementCapacityLimitReason reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementCapacityLimit(System.String,Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority,System.String,System.Int32,Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementCapacityLimitReason)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeSkuMixPlacementCapacityLimit (Optional name As String = Nothing, Optional priority As SkuMixPlacementPriority = Nothing, Optional zone As String = Nothing, Optional limit As Integer = 0, Optional reason As SkuMixPlacementCapacityLimitReason = Nothing) As ComputeSkuMixPlacementCapacityLimit" />
+      <MemberSignature Language="F#" Value="static member ComputeSkuMixPlacementCapacityLimit : string * Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority * string * int * Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementCapacityLimitReason -&gt; Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit" Usage="Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementCapacityLimit (name, priority, zone, limit, reason)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.Compute.Recommender</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="priority" Type="Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="zone" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="limit" Type="System.Int32" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="reason" Type="Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementCapacityLimitReason" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> VM size name (e.g. Standard_D2s_v3). </param>
+        <param name="priority"> Priority of this entry (Regular or Spot). </param>
+        <param name="zone"> Logical zone (e.g. "1", "2", "3"). Omitted or empty for regional requests. </param>
+        <param name="limit">
+            Upper bound, in VMs, on how much capacity can be allocated for this (VM size, zone): the smallest of
+            the requested capacity, the available capacity, and the available quota, but never below the capacity
+            already recommended for the slot. 0 when nothing is available.
+            </param>
+        <param name="reason"> Why the limit is below the requested capacity, or None when the request is fully available. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ComputeSkuMixPlacementData">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Recommender.ComputeSkuMixPlacementData ComputeSkuMixPlacementData (Azure.Core.ResourceIdentifier id = default, string name = default, Azure.Core.ResourceType resourceType = default, Azure.ResourceManager.Models.SystemData systemData = default, System.Collections.Generic.IEnumerable&lt;string&gt; skuMixPlacementSupportedResourceTypes = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Compute.Recommender.ComputeSkuMixPlacementData ComputeSkuMixPlacementData(class Azure.Core.ResourceIdentifier id, string name, valuetype Azure.Core.ResourceType resourceType, class Azure.ResourceManager.Models.SystemData systemData, class System.Collections.Generic.IEnumerable`1&lt;string&gt; skuMixPlacementSupportedResourceTypes) cil managed" />
@@ -205,11 +241,11 @@
       </Docs>
     </Member>
     <Member MemberName="ComputeSkuMixPlacementDeploymentChoice">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice ComputeSkuMixPlacementDeploymentChoice (string id = default, int score = 0, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem&gt; skuSplit = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice ComputeSkuMixPlacementDeploymentChoice(string id, int32 score, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem&gt; skuSplit) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementDeploymentChoice(System.String,System.Int32,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeSkuMixPlacementDeploymentChoice (Optional id As String = Nothing, Optional score As Integer = 0, Optional skuSplit As IEnumerable(Of ComputeSkuMixPlacementItem) = Nothing) As ComputeSkuMixPlacementDeploymentChoice" />
-      <MemberSignature Language="F#" Value="static member ComputeSkuMixPlacementDeploymentChoice : string * int * seq&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem&gt; -&gt; Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice" Usage="Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementDeploymentChoice (id, score, skuSplit)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice ComputeSkuMixPlacementDeploymentChoice (int score = 0, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem&gt; skuSplit = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice ComputeSkuMixPlacementDeploymentChoice(int32 score, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem&gt; skuSplit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementDeploymentChoice(System.Int32,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeSkuMixPlacementDeploymentChoice (Optional score As Integer = 0, Optional skuSplit As IEnumerable(Of ComputeSkuMixPlacementItem) = Nothing) As ComputeSkuMixPlacementDeploymentChoice" />
+      <MemberSignature Language="F#" Value="static member ComputeSkuMixPlacementDeploymentChoice : int * seq&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem&gt; -&gt; Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice" Usage="Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementDeploymentChoice (score, skuSplit)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute.Recommender</AssemblyName>
@@ -219,12 +255,10 @@
         <ReturnType>Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="score" Type="System.Int32" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="skuSplit" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="score" Type="System.Int32" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="skuSplit" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="id"> Unique identifier for this deployment choice. </param>
         <param name="score"> Placement score from 0 to 9 (inclusive). Higher is better. </param>
         <param name="skuSplit"> The list of VM size / zone allocations that make up this deployment choice. </param>
         <summary>To be added.</summary>
@@ -263,11 +297,11 @@
       </Docs>
     </Member>
     <Member MemberName="ComputeSkuMixPlacementGenerateResult">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementGenerateResult ComputeSkuMixPlacementGenerateResult (System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice&gt; placementChoices = default, DateTimeOffset? validUntilOn = default, Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason partialFulfillmentReason = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementGenerateResult ComputeSkuMixPlacementGenerateResult(class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice&gt; placementChoices, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; validUntilOn, valuetype Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason partialFulfillmentReason) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementGenerateResult(System.Collections.Generic.IEnumerable{Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice},System.Nullable{System.DateTimeOffset},Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeSkuMixPlacementGenerateResult (Optional placementChoices As IEnumerable(Of ComputeSkuMixPlacementDeploymentChoice) = Nothing, Optional validUntilOn As Nullable(Of DateTimeOffset) = Nothing, Optional partialFulfillmentReason As SkuMixPlacementPartialFulfillmentReason = Nothing) As ComputeSkuMixPlacementGenerateResult" />
-      <MemberSignature Language="F#" Value="static member ComputeSkuMixPlacementGenerateResult : seq&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice&gt; * Nullable&lt;DateTimeOffset&gt; * Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason -&gt; Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementGenerateResult" Usage="Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementGenerateResult (placementChoices, validUntilOn, partialFulfillmentReason)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementGenerateResult ComputeSkuMixPlacementGenerateResult (string id = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice&gt; placementChoices = default, DateTimeOffset? validUntilOn = default, Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason partialFulfillmentReason = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit&gt; capacityLimits = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementGenerateResult ComputeSkuMixPlacementGenerateResult(string id, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice&gt; placementChoices, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; validUntilOn, valuetype Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason partialFulfillmentReason, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit&gt; capacityLimits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementGenerateResult(System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice},System.Nullable{System.DateTimeOffset},Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeSkuMixPlacementGenerateResult (Optional id As String = Nothing, Optional placementChoices As IEnumerable(Of ComputeSkuMixPlacementDeploymentChoice) = Nothing, Optional validUntilOn As Nullable(Of DateTimeOffset) = Nothing, Optional partialFulfillmentReason As SkuMixPlacementPartialFulfillmentReason = Nothing, Optional capacityLimits As IEnumerable(Of ComputeSkuMixPlacementCapacityLimit) = Nothing) As ComputeSkuMixPlacementGenerateResult" />
+      <MemberSignature Language="F#" Value="static member ComputeSkuMixPlacementGenerateResult : string * seq&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice&gt; * Nullable&lt;DateTimeOffset&gt; * Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason * seq&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit&gt; -&gt; Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementGenerateResult" Usage="Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementGenerateResult (id, placementChoices, validUntilOn, partialFulfillmentReason, capacityLimits)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute.Recommender</AssemblyName>
@@ -277,25 +311,36 @@
         <ReturnType>Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementGenerateResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="placementChoices" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="validUntilOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="partialFulfillmentReason" Type="Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="placementChoices" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementDeploymentChoice&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="validUntilOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="partialFulfillmentReason" Type="Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPartialFulfillmentReason" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="capacityLimits" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementCapacityLimit&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
+        <param name="id">
+            Unique identifier for this placement response, including responses that contain no placement choices.
+            Replaces the per-choice id that was present on placementChoices in earlier API versions.
+            </param>
         <param name="placementChoices"> List of placement choice recommendations. </param>
         <param name="validUntilOn"> Date/time until which the recommendations are valid. Callers should request fresh recommendations after this time. </param>
         <param name="partialFulfillmentReason"> Indicates whether the response is a complete or partial fulfillment. </param>
+        <param name="capacityLimits">
+            Capacity availability for each requested (VM size, zone) combination, independent of the recommended
+            placement. An entry is present for every requested combination, including those excluded by capacity
+            or quota. Only returned for requests that describe instances by VM sizes.
+            </param>
         <summary>To be added.</summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementGenerateResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ComputeSkuMixPlacementItem">
-      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem ComputeSkuMixPlacementItem (string name = default, Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority priority = default, int capacity = 0, int? capacityMax = default, string zone = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem ComputeSkuMixPlacementItem(string name, valuetype Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority priority, int32 capacity, valuetype System.Nullable`1&lt;int32&gt; capacityMax, string zone) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementItem(System.String,Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority,System.Int32,System.Nullable{System.Int32},System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeSkuMixPlacementItem (Optional name As String = Nothing, Optional priority As SkuMixPlacementPriority = Nothing, Optional capacity As Integer = 0, Optional capacityMax As Nullable(Of Integer) = Nothing, Optional zone As String = Nothing) As ComputeSkuMixPlacementItem" />
-      <MemberSignature Language="F#" Value="static member ComputeSkuMixPlacementItem : string * Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority * int * Nullable&lt;int&gt; * string -&gt; Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem" Usage="Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementItem (name, priority, capacity, capacityMax, zone)" />
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem ComputeSkuMixPlacementItem (string name = default, Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority priority = default, int capacity = 0, string zone = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem ComputeSkuMixPlacementItem(string name, valuetype Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority priority, int32 capacity, string zone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementItem(System.String,Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority,System.Int32,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ComputeSkuMixPlacementItem (Optional name As String = Nothing, Optional priority As SkuMixPlacementPriority = Nothing, Optional capacity As Integer = 0, Optional zone As String = Nothing) As ComputeSkuMixPlacementItem" />
+      <MemberSignature Language="F#" Value="static member ComputeSkuMixPlacementItem : string * Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority * int * string -&gt; Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem" Usage="Azure.ResourceManager.Compute.Recommender.Models.ArmComputeRecommenderModelFactory.ComputeSkuMixPlacementItem (name, priority, capacity, zone)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute.Recommender</AssemblyName>
@@ -308,14 +353,12 @@
         <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="priority" Type="Azure.ResourceManager.Compute.Recommender.Models.SkuMixPlacementPriority" Index="1" FrameworkAlternate="azure-dotnet-preview" />
         <Parameter Name="capacity" Type="System.Int32" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="capacityMax" Type="System.Nullable&lt;System.Int32&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="zone" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="zone" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="name"> VM size name (e.g. Standard_D2s_v3). </param>
         <param name="priority"> Priority of this allocation (Regular or Spot). </param>
         <param name="capacity"> Lower range of recommended allocation capacity. </param>
-        <param name="capacityMax"> Upper range of recommended allocation capacity. </param>
         <param name="zone"> Logical zone (e.g. "1", "2", "3"). Omitted or empty for regional deployments. </param>
         <summary>To be added.</summary>
         <returns> A new <see cref="T:Azure.ResourceManager.Compute.Recommender.Models.ComputeSkuMixPlacementItem" /> instance for mocking. </returns>
