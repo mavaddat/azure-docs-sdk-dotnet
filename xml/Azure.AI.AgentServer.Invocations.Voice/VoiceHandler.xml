@@ -1,0 +1,405 @@
+<Type Name="VoiceHandler" FullName="Azure.AI.AgentServer.Invocations.Voice.VoiceHandler">
+  <TypeSignature Language="C#" Value="public abstract class VoiceHandler : Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit VoiceHandler extends Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class VoiceHandler&#xA;Inherits InvocationWebSocketHandler" />
+  <TypeSignature Language="F#" Value="type VoiceHandler = class&#xA;    inherit InvocationWebSocketHandler" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Azure.AI.AgentServer.Invocations.InvocationWebSocketHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Diagnostics.CodeAnalysis.Experimental("AAAS001")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Diagnostics.CodeAnalysis.Experimental("AAAS001")&gt;]</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Thin typed event relay for Voice Live Bridge Protocol 1.0.</summary>
+    <remarks>
+            Callbacks are awaited in wire order. Applications that need work to outlive a callback
+            create, track, cancel, and observe their own tasks; the relay retains no application work
+            or cross-message protocol state.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected VoiceHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleWebSocketAsync">
+      <MemberSignature Language="C#" Value="public override sealed System.Threading.Tasks.Task HandleWebSocketAsync (System.Net.WebSockets.WebSocket webSocket, Azure.AI.AgentServer.Invocations.InvocationContext context, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task HandleWebSocketAsync(class System.Net.WebSockets.WebSocket webSocket, class Azure.AI.AgentServer.Invocations.InvocationContext context, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.HandleWebSocketAsync(System.Net.WebSockets.WebSocket,Azure.AI.AgentServer.Invocations.InvocationContext,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable Function HandleWebSocketAsync (webSocket As WebSocket, context As InvocationContext, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="override this.HandleWebSocketAsync : System.Net.WebSockets.WebSocket * Azure.AI.AgentServer.Invocations.InvocationContext * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.HandleWebSocketAsync (webSocket, context, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webSocket" Type="System.Net.WebSockets.WebSocket" />
+        <Parameter Name="context" Type="Azure.AI.AgentServer.Invocations.InvocationContext" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="webSocket">
+            The accepted <see cref="T:System.Net.WebSockets.WebSocket" />. The SDK has already called
+            <c>AcceptWebSocketAsync</c>; the handler owns the full-duplex
+            lifecycle from this point. On clean return the SDK closes the
+            connection with RFC 6455 code <c>1000</c> (<c>NormalClosure</c>);
+            an unhandled exception is mapped to code <c>1011</c>
+            (<c>InternalServerError</c>); a handler-initiated <c>CloseAsync</c>
+            is preserved unchanged.
+            </param>
+        <param name="context">
+            Per-connection context. The session ID honours
+            <c>FOUNDRY_AGENT_SESSION_ID</c> (matching the HTTP
+            <c>POST /invocations</c> precedence, minus the query-param override
+            which has no ergonomic equivalent on a long-lived WS connection).
+            The invocation ID is a generated UUID — WebSocket has no
+            per-message invocation ID.
+            </param>
+        <param name="cancellationToken">
+            Cancelled when the connection is aborted (client disconnect,
+            server shutdown, request aborted, etc.).
+            </param>
+        <summary>
+            Handles a <c>/invocations_ws</c> WebSocket connection. Required.
+            </summary>
+        <returns>A task representing the async lifetime of the connection.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBargeInAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnBargeInAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceBargeInEvent bargeIn, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnBargeInAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceBargeInEvent bargeIn, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnBargeInAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceBargeInEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnBargeInAsync (session As VoiceSession, bargeIn As VoiceBargeInEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnBargeInAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceBargeInEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnBargeInAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceBargeInEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnBargeInAsync (session, bargeIn, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="bargeIn" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceBargeInEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="bargeIn">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles caller interruption of a response.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnConnectionTerminating">
+      <MemberSignature Language="C#" Value="protected virtual void OnConnectionTerminating (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnConnectionTerminating(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnConnectionTerminating(Azure.AI.AgentServer.Invocations.Voice.VoiceSession)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnConnectionTerminating (session As VoiceSession)" />
+      <MemberSignature Language="F#" Value="abstract member OnConnectionTerminating : Azure.AI.AgentServer.Invocations.Voice.VoiceSession -&gt; unit&#xA;override this.OnConnectionTerminating : Azure.AI.AgentServer.Invocations.Voice.VoiceSession -&gt; unit" Usage="voiceHandler.OnConnectionTerminating session" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <summary>
+            Notifies the application once, after the session becomes unwritable and before transport close.
+            Cancel application-owned work here; do not block or send another Voice message.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResponseAcceptedAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnResponseAcceptedAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceResponseAcceptedEvent accepted, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnResponseAcceptedAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceResponseAcceptedEvent accepted, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnResponseAcceptedAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceResponseAcceptedEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnResponseAcceptedAsync (session As VoiceSession, accepted As VoiceResponseAcceptedEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnResponseAcceptedAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceResponseAcceptedEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnResponseAcceptedAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceResponseAcceptedEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnResponseAcceptedAsync (session, accepted, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="accepted" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceResponseAcceptedEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="accepted">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles proactive response acceptance.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResponseCancelledAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnResponseCancelledAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceResponseCancelledEvent cancelled, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnResponseCancelledAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceResponseCancelledEvent cancelled, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnResponseCancelledAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceResponseCancelledEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnResponseCancelledAsync (session As VoiceSession, cancelled As VoiceResponseCancelledEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnResponseCancelledAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceResponseCancelledEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnResponseCancelledAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceResponseCancelledEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnResponseCancelledAsync (session, cancelled, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="cancelled" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceResponseCancelledEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="cancelled">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles the winning response self-cancel outcome.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResponseDroppedAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnResponseDroppedAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceResponseDroppedEvent dropped, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnResponseDroppedAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceResponseDroppedEvent dropped, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnResponseDroppedAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceResponseDroppedEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnResponseDroppedAsync (session As VoiceSession, dropped As VoiceResponseDroppedEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnResponseDroppedAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceResponseDroppedEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnResponseDroppedAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceResponseDroppedEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnResponseDroppedAsync (session, dropped, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="dropped" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceResponseDroppedEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="dropped">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles proactive response rejection or expiry.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResponseTimeoutAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnResponseTimeoutAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceResponseTimeoutEvent timeout, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnResponseTimeoutAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceResponseTimeoutEvent timeout, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnResponseTimeoutAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceResponseTimeoutEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnResponseTimeoutAsync (session As VoiceSession, timeout As VoiceResponseTimeoutEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnResponseTimeoutAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceResponseTimeoutEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnResponseTimeoutAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceResponseTimeoutEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnResponseTimeoutAsync (session, timeout, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="timeout" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceResponseTimeoutEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="timeout">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles a response or pending-input timeout.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionEndAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnSessionEndAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceSessionEndEvent end, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnSessionEndAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceSessionEndEvent end, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnSessionEndAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceSessionEndEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnSessionEndAsync (session As VoiceSession, end As VoiceSessionEndEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnSessionEndAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceSessionEndEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnSessionEndAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceSessionEndEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnSessionEndAsync (session, end, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="end" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSessionEndEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="end">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles Bridge-initiated session termination.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionStartAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnSessionStartAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceSessionStartEvent start, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnSessionStartAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceSessionStartEvent start, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnSessionStartAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceSessionStartEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnSessionStartAsync (session As VoiceSession, start As VoiceSessionStartEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnSessionStartAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceSessionStartEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnSessionStartAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceSessionStartEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnSessionStartAsync (session, start, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="start" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSessionStartEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="start">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles an explicit application start event.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUserMessageAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnUserMessageAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceUserMessageEvent message, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnUserMessageAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceUserMessageEvent message, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnUserMessageAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceUserMessageEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnUserMessageAsync (session As VoiceSession, message As VoiceUserMessageEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnUserMessageAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceUserMessageEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnUserMessageAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceUserMessageEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnUserMessageAsync (session, message, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="message" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceUserMessageEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="message">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles a completed user text turn.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUserNoInputAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnUserNoInputAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceUserNoInputEvent noInput, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnUserNoInputAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceUserNoInputEvent noInput, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnUserNoInputAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceUserNoInputEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnUserNoInputAsync (session As VoiceSession, noInput As VoiceUserNoInputEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnUserNoInputAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceUserNoInputEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnUserNoInputAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceUserNoInputEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnUserNoInputAsync (session, noInput, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="noInput" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceUserNoInputEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="noInput">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles a Bridge-generated no-input turn.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUserSpeechStartedAsync">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.Tasks.Task OnUserSpeechStartedAsync (Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, Azure.AI.AgentServer.Invocations.Voice.VoiceUserSpeechStartedEvent speechStarted, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.Tasks.Task OnUserSpeechStartedAsync(class Azure.AI.AgentServer.Invocations.Voice.VoiceSession session, class Azure.AI.AgentServer.Invocations.Voice.VoiceUserSpeechStartedEvent speechStarted, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler.OnUserSpeechStartedAsync(Azure.AI.AgentServer.Invocations.Voice.VoiceSession,Azure.AI.AgentServer.Invocations.Voice.VoiceUserSpeechStartedEvent,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnUserSpeechStartedAsync (session As VoiceSession, speechStarted As VoiceUserSpeechStartedEvent, cancellationToken As CancellationToken) As Task" />
+      <MemberSignature Language="F#" Value="abstract member OnUserSpeechStartedAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceUserSpeechStartedEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.OnUserSpeechStartedAsync : Azure.AI.AgentServer.Invocations.Voice.VoiceSession * Azure.AI.AgentServer.Invocations.Voice.VoiceUserSpeechStartedEvent * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="voiceHandler.OnUserSpeechStartedAsync (session, speechStarted, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="session" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceSession" />
+        <Parameter Name="speechStarted" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceUserSpeechStartedEvent" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="session">To be added.</param>
+        <param name="speechStarted">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>Handles the advisory caller-speech-start signal.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

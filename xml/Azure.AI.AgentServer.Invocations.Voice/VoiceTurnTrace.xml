@@ -1,0 +1,130 @@
+<Type Name="VoiceTurnTrace" FullName="Azure.AI.AgentServer.Invocations.Voice.VoiceTurnTrace">
+  <TypeSignature Language="C#" Value="public class VoiceTurnTrace : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VoiceTurnTrace extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.AgentServer.Invocations.Voice.VoiceTurnTrace" />
+  <TypeSignature Language="VB.NET" Value="Public Class VoiceTurnTrace&#xA;Implements IDisposable" />
+  <TypeSignature Language="F#" Value="type VoiceTurnTrace = class&#xA;    interface IDisposable" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName Language="C#">[System.Diagnostics.CodeAnalysis.Experimental("AAAS001")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Diagnostics.CodeAnalysis.Experimental("AAAS001")&gt;]</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName Language="C#">[System.Runtime.CompilerServices.Nullable(0)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Runtime.CompilerServices.Nullable(0)&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Application-owned tracing handle for one target-agent decision.
+            </summary>
+    <remarks>
+            The application owns this handle, activates it around model/tool work, and supplies one
+            immutable terminal result. Voice transport termination does not complete the handle.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected VoiceTurnTrace ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceTurnTrace.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a mockable no-op turn trace.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate">
+      <MemberSignature Language="C#" Value="public virtual IDisposable Activate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IDisposable Activate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceTurnTrace.Activate" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Activate () As IDisposable" />
+      <MemberSignature Language="F#" Value="abstract member Activate : unit -&gt; IDisposable&#xA;override this.Activate : unit -&gt; IDisposable" Usage="voiceTurnTrace.Activate " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Activates this turn as the lexical parent for customer model, tool, retrieval, and custom spans.
+            </summary>
+        <returns>A scope that restores the exact previous ambient activity when disposed.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="public virtual void Complete (Azure.AI.AgentServer.Invocations.Voice.VoiceTurnResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Complete(class Azure.AI.AgentServer.Invocations.Voice.VoiceTurnResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceTurnTrace.Complete(Azure.AI.AgentServer.Invocations.Voice.VoiceTurnResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Complete (result As VoiceTurnResult)" />
+      <MemberSignature Language="F#" Value="abstract member Complete : Azure.AI.AgentServer.Invocations.Voice.VoiceTurnResult -&gt; unit&#xA;override this.Complete : Azure.AI.AgentServer.Invocations.Voice.VoiceTurnResult -&gt; unit" Usage="voiceTurnTrace.Complete result" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="Azure.AI.AgentServer.Invocations.Voice.VoiceTurnResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">The application-owned terminal facts.</param>
+        <summary>Completes the turn with the first immutable application-supplied result.</summary>
+        <remarks>
+            Completion rejects later activations and stops the turn after every active
+            scope returned by <see cref="M:Azure.AI.AgentServer.Invocations.Voice.VoiceTurnTrace.Activate" /> has been disposed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.AgentServer.Invocations.Voice.VoiceTurnTrace.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Dispose ()" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="voiceTurnTrace.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.AgentServer.Invocations</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Completes an unfinished turn as <see cref="F:Azure.AI.AgentServer.Invocations.Voice.VoiceTurnOutcome.Abandoned" />.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

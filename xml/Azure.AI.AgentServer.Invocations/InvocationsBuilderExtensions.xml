@@ -60,7 +60,13 @@
             Registers the Invocations protocol with a pre-constructed handler instance.
             </summary>
         <returns>The builder for chaining.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>
+          <see cref="T:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler" /> instances are not supported by this overload. Register a
+            concrete Voice handler type with <see cref="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHostingExtensions.AddVoice``1(Azure.AI.AgentServer.Core.AgentHostBuilder,System.Action{Azure.AI.AgentServer.Invocations.InvocationsServerOptions})" />.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="handler" /> is a <see cref="T:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler" />.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AddInvocations">
@@ -99,7 +105,15 @@
             while still having access to the <see cref="T:System.IServiceProvider" />.
             </summary>
         <returns>The builder for chaining.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The factory must not return a <see cref="T:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler" />. Register Voice handlers with
+            <see cref="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHostingExtensions.AddVoice``1(Azure.AI.AgentServer.Core.AgentHostBuilder,System.Action{Azure.AI.AgentServer.Invocations.InvocationsServerOptions})" />
+            so the host installs Voice-specific tracing.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The factory returns a <see cref="T:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler" /> and an Invocations endpoint attempts
+            to use it.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AddInvocations&lt;THandler&gt;">
@@ -151,7 +165,14 @@
             specified <typeparamref name="THandler" /> as the invocation handler.
             </summary>
         <returns>The builder for chaining.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>
+          <see cref="T:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler" /> implementations must be registered with
+            <see cref="M:Azure.AI.AgentServer.Invocations.Voice.VoiceHostingExtensions.AddVoice``1(Azure.AI.AgentServer.Core.AgentHostBuilder,System.Action{Azure.AI.AgentServer.Invocations.InvocationsServerOptions})" />
+            so the host installs Voice-specific tracing.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <typeparamref name="THandler" /> derives from <see cref="T:Azure.AI.AgentServer.Invocations.Voice.VoiceHandler" />.
+            </exception>
       </Docs>
     </Member>
   </Members>
