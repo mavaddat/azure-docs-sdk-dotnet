@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -17,6 +18,30 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
+    <Member MemberName="AutomaticResourcePredictionsProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.AutomaticResourcePredictionsProfile AutomaticResourcePredictionsProfile (Azure.ResourceManager.DevOpsInfrastructure.Models.PredictionPreference? predictionPreference = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.AutomaticResourcePredictionsProfile AutomaticResourcePredictionsProfile(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.PredictionPreference&gt; predictionPreference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.AutomaticResourcePredictionsProfile(System.Nullable{Azure.ResourceManager.DevOpsInfrastructure.Models.PredictionPreference})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AutomaticResourcePredictionsProfile (Optional predictionPreference As Nullable(Of PredictionPreference) = Nothing) As AutomaticResourcePredictionsProfile" />
+      <MemberSignature Language="F#" Value="static member AutomaticResourcePredictionsProfile : Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.PredictionPreference&gt; -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.AutomaticResourcePredictionsProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.AutomaticResourcePredictionsProfile predictionPreference" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.AutomaticResourcePredictionsProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="predictionPreference" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.PredictionPreference&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="predictionPreference"> Determines the balance between cost and performance. </param>
+        <summary> The stand-by agent scheme is determined based on historical demand. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.AutomaticResourcePredictionsProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="CheckNameAvailability">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.CheckNameAvailability CheckNameAvailability (string name = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureResourceType type = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.CheckNameAvailability CheckNameAvailability(string name, valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureResourceType type) cil managed" />
@@ -27,13 +52,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.CheckNameAvailability</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="type" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureResourceType" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureResourceType" />
       </Parameters>
       <Docs>
         <param name="name"> The name of the resource. </param>
@@ -53,16 +79,55 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureOrganizationProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="organizations" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization&gt;" />
+        <Parameter Name="permissionProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile" />
+        <Parameter Name="alias" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="organizations"> The list of Azure DevOps organizations the pool should be present in. </param>
+        <param name="permissionProfile"> The type of permission which determines which accounts are admins on the Azure DevOps pool. </param>
+        <param name="alias"> An alias to reference the Azure DevOps pool name. </param>
+        <summary> Azure DevOps organization profile. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureOrganizationProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsAzureOrganizationProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureOrganizationProfile DevOpsAzureOrganizationProfile (string description = default, bool? updateDescription = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization&gt; organizations = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile permissionProfile = default, string alias = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureOrganizationProfile DevOpsAzureOrganizationProfile(string description, valuetype System.Nullable`1&lt;bool&gt; updateDescription, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization&gt; organizations, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile permissionProfile, string alias) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsAzureOrganizationProfile(System.String,System.Nullable{System.Boolean},System.Collections.Generic.IEnumerable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization},Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsAzureOrganizationProfile (Optional description As String = Nothing, Optional updateDescription As Nullable(Of Boolean) = Nothing, Optional organizations As IEnumerable(Of DevOpsOrganization) = Nothing, Optional permissionProfile As DevOpsAzurePermissionProfile = Nothing, Optional alias As String = Nothing) As DevOpsAzureOrganizationProfile" />
+      <MemberSignature Language="F#" Value="static member DevOpsAzureOrganizationProfile : string * Nullable&lt;bool&gt; * seq&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization&gt; * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile * string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureOrganizationProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsAzureOrganizationProfile (description, updateDescription, organizations, permissionProfile, alias)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureOrganizationProfile</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="organizations" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="permissionProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="alias" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="description" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="updateDescription" Type="System.Nullable&lt;System.Boolean&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="organizations" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="permissionProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="alias" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
+        <param name="description"> An extra description to add to the Azure DevOps pool. </param>
+        <param name="updateDescription"> Determines whether the service updates the Azure DevOps pool description. </param>
         <param name="organizations"> The list of Azure DevOps organizations the pool should be present in. </param>
         <param name="permissionProfile"> The type of permission which determines which accounts are admins on the Azure DevOps pool. </param>
         <param name="alias"> An alias to reference the Azure DevOps pool name. </param>
@@ -81,14 +146,15 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="kind" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionType" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="users" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="groups" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="kind" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionType" />
+        <Parameter Name="users" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="groups" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
       </Parameters>
       <Docs>
         <param name="kind"> Determines who has admin permissions to the Azure DevOps pool. </param>
@@ -96,6 +162,36 @@
         <param name="groups"> Group email addresses. </param>
         <summary> Defines the type of Azure DevOps pool permission. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzurePermissionProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsAzureSku">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku DevOpsAzureSku (string name = default, string windowsNvmeDrive = default, string linuxNvmePath = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize&gt; vmSizes = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku DevOpsAzureSku(string name, string windowsNvmeDrive, string linuxNvmePath, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize&gt; vmSizes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsAzureSku(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsAzureSku (Optional name As String = Nothing, Optional windowsNvmeDrive As String = Nothing, Optional linuxNvmePath As String = Nothing, Optional vmSizes As IEnumerable(Of DevOpsVmSize) = Nothing) As DevOpsAzureSku" />
+      <MemberSignature Language="F#" Value="static member DevOpsAzureSku : string * string * string * seq&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize&gt; -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsAzureSku (name, windowsNvmeDrive, linuxNvmePath, vmSizes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="windowsNvmeDrive" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="linuxNvmePath" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="vmSizes" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> The Azure SKU name of the machines in the pool. </param>
+        <param name="windowsNvmeDrive"> The drive letter for the NVMe striped volume on Windows (e.g., 'N'). Defaults to 'N' when not specified. </param>
+        <param name="linuxNvmePath"> The mount path for the NVMe striped volume on Linux (e.g., '/mnt/azure_nvme_temp'). Defaults to '/mnt/azure_nvme_temp' when not specified. </param>
+        <param name="vmSizes"> Specifies VM sizes for instance-mix allocation. </param>
+        <summary> The Azure SKU of the machines in the pool. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -109,15 +205,16 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsCheckNameAvailabilityResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="available" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAvailabilityStatus" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="message" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="name" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="reason" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.CheckNameAvailabilityReason" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="available" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAvailabilityStatus" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="reason" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.CheckNameAvailabilityReason" />
       </Parameters>
       <Docs>
         <param name="available"> Availability status of the name. </param>
@@ -126,6 +223,36 @@
         <param name="reason"> The reason code explaining why the name is unavailable. Will be null if the name is available. </param>
         <summary> The CheckNameAvailability operation response. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsCheckNameAvailabilityResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsDataDisk">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk DevOpsDataDisk (Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDiskCachingType? caching = default, int? diskSizeGiB = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageAccountType? storageAccountType = default, string driveLetter = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk DevOpsDataDisk(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDiskCachingType&gt; caching, valuetype System.Nullable`1&lt;int32&gt; diskSizeGiB, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageAccountType&gt; storageAccountType, string driveLetter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsDataDisk(System.Nullable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDiskCachingType},System.Nullable{System.Int32},System.Nullable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageAccountType},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsDataDisk (Optional caching As Nullable(Of DevOpsDataDiskCachingType) = Nothing, Optional diskSizeGiB As Nullable(Of Integer) = Nothing, Optional storageAccountType As Nullable(Of DevOpsStorageAccountType) = Nothing, Optional driveLetter As String = Nothing) As DevOpsDataDisk" />
+      <MemberSignature Language="F#" Value="static member DevOpsDataDisk : Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDiskCachingType&gt; * Nullable&lt;int&gt; * Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageAccountType&gt; * string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsDataDisk (caching, diskSizeGiB, storageAccountType, driveLetter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="caching" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDiskCachingType&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="diskSizeGiB" Type="System.Nullable&lt;System.Int32&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="storageAccountType" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageAccountType&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="driveLetter" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="caching"> The type of caching to be enabled for the data disks. The default value for caching is readwrite. For information about the caching options see: https://blogs.msdn.microsoft.com/windowsazurestorage/2012/06/27/exploring-windows-azure-drives-disks-and-images/. </param>
+        <param name="diskSizeGiB"> The initial disk size in gigabytes. </param>
+        <param name="storageAccountType"> The storage Account type to be used for the data disk. If omitted, the default is "standard_lrs". </param>
+        <param name="driveLetter"> The drive letter for the empty data disk. If not specified, it will be the first available letter. </param>
+        <summary> The data disk of the VMSS. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -139,17 +266,45 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDeleteResourcesDetails</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="resourceIds" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceIds" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
       </Parameters>
       <Docs>
         <param name="resourceIds"> List of resource IDs to delete. </param>
         <summary> Request body for deleting many resources by their IDs. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDeleteResourcesDetails" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsFabricProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile DevOpsFabricProfile (string kind = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile DevOpsFabricProfile(string kind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsFabricProfile(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsFabricProfile (Optional kind As String = Nothing) As DevOpsFabricProfile" />
+      <MemberSignature Language="F#" Value="static member DevOpsFabricProfile : string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsFabricProfile kind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kind" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="kind"> Discriminator property for DevOpsFabricProfile. </param>
+        <summary>
+            Defines the type of fabric the agent will run on.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmssFabricProfile" />.
+            </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -163,13 +318,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsGitHubOrganization</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="uri" Type="System.Uri" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="repositories" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="repositories" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
       </Parameters>
       <Docs>
         <param name="uri"> The GitHub organization URL in which the pool should be created. </param>
@@ -189,12 +345,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsGitHubOrganizationProfile</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="organizations" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsGitHubOrganization&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="organizations" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsGitHubOrganization&gt;" />
       </Parameters>
       <Docs>
         <param name="organizations"> The list of GitHub organizations/repositories the pool should be present in. </param>
@@ -213,6 +370,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsImageVersion</ReturnType>
@@ -245,14 +403,15 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsNetworkProfile</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="subnetId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="staticIPAddressCount" Type="System.Nullable&lt;System.Int32&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="ipAddresses" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="subnetId" Type="System.String" />
+        <Parameter Name="staticIPAddressCount" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="ipAddresses" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
       </Parameters>
       <Docs>
         <param name="subnetId"> The subnet id on which to put all machines created in the pool. </param>
@@ -273,16 +432,17 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="uri" Type="System.Uri" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="projects" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="parallelism" Type="System.Nullable&lt;System.Int32&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="openAccess" Type="System.Nullable&lt;System.Boolean&gt;" Index="3" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="alias" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="projects" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="parallelism" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="openAccess" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="alias" Type="System.String" />
       </Parameters>
       <Docs>
         <param name="uri"> The Azure DevOps organization URL in which the pool should be created. </param>
@@ -292,6 +452,90 @@
         <param name="alias"> An alias to reference the Azure DevOps pool name. </param>
         <summary> Defines an Azure DevOps organization. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganization" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsOrganizationProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile DevOpsOrganizationProfile (string kind = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile DevOpsOrganizationProfile(string kind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsOrganizationProfile(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsOrganizationProfile (Optional kind As String = Nothing) As DevOpsOrganizationProfile" />
+      <MemberSignature Language="F#" Value="static member DevOpsOrganizationProfile : string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsOrganizationProfile kind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kind" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="kind"> Discriminator property for DevOpsOrganizationProfile. </param>
+        <summary>
+            Defines the organization in which the pool will be used.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsGitHubOrganizationProfile" /> and <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureOrganizationProfile" />.
+            </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsOSProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile DevOpsOSProfile (Azure.ResourceManager.DevOpsInfrastructure.Models.SecretsManagementSettings secretsManagementSettings = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsLogonType? logonType = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile DevOpsOSProfile(class Azure.ResourceManager.DevOpsInfrastructure.Models.SecretsManagementSettings secretsManagementSettings, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsLogonType&gt; logonType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsOSProfile(Azure.ResourceManager.DevOpsInfrastructure.Models.SecretsManagementSettings,System.Nullable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsLogonType})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsOSProfile (Optional secretsManagementSettings As SecretsManagementSettings = Nothing, Optional logonType As Nullable(Of DevOpsLogonType) = Nothing) As DevOpsOSProfile" />
+      <MemberSignature Language="F#" Value="static member DevOpsOSProfile : Azure.ResourceManager.DevOpsInfrastructure.Models.SecretsManagementSettings * Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsLogonType&gt; -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsOSProfile (secretsManagementSettings, logonType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="secretsManagementSettings" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.SecretsManagementSettings" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="logonType" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsLogonType&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="secretsManagementSettings"> The secret management settings of the machines in the pool. </param>
+        <param name="logonType"> Determines how the service should be run. By default, this will be set to Service. </param>
+        <summary> The OS profile of the machines in the pool. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsPoolAgentProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile DevOpsPoolAgentProfile (string kind = default, Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions resourcePredictions = default, Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile resourcePredictionsProfile = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile DevOpsPoolAgentProfile(string kind, class Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions resourcePredictions, class Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile resourcePredictionsProfile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsPoolAgentProfile(System.String,Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions,Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsPoolAgentProfile (Optional kind As String = Nothing, Optional resourcePredictions As ResourcePredictions = Nothing, Optional resourcePredictionsProfile As ResourcePredictionsProfile = Nothing) As DevOpsPoolAgentProfile" />
+      <MemberSignature Language="F#" Value="static member DevOpsPoolAgentProfile : string * Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions * Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsPoolAgentProfile (kind, resourcePredictions, resourcePredictionsProfile)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kind" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourcePredictions" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourcePredictionsProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="kind"> Discriminator property for DevOpsPoolAgentProfile. </param>
+        <param name="resourcePredictions"> Defines pool buffer/stand-by agents. </param>
+        <param name="resourcePredictionsProfile"> Defines how the pool buffer/stand-by agents is provided. </param>
+        <summary>
+            The agent profile of the machines in the pool.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStatelessAgentProfile" /> and <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStateful" />.
+            </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -305,6 +549,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.DevOpsPoolData</ReturnType>
@@ -343,14 +588,15 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolPatch</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="properties" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.PoolUpdateProperties" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="identity" Type="Azure.ResourceManager.Models.ManagedServiceIdentity" />
+        <Parameter Name="tags" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="properties" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.PoolUpdateProperties" />
       </Parameters>
       <Docs>
         <param name="identity"> The managed service identities assigned to this resource. </param>
@@ -358,6 +604,42 @@
         <param name="properties"> The resource-specific properties for this resource. </param>
         <summary> The type used for update operations of the Pool. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolPatch" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsPoolProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolProperties DevOpsPoolProperties (Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState? provisioningState = default, int maximumConcurrency = 0, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile organizationProfile = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile agentProfile = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile fabricProfile = default, string devCenterProjectResourceId = default, string runtimeWorkFolder = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolProperties DevOpsPoolProperties(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState&gt; provisioningState, int32 maximumConcurrency, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile organizationProfile, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile agentProfile, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile fabricProfile, string devCenterProjectResourceId, string runtimeWorkFolder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsPoolProperties(System.Nullable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState},System.Int32,Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile,Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile,Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsPoolProperties (Optional provisioningState As Nullable(Of DevOpsInfrastructureProvisioningState) = Nothing, Optional maximumConcurrency As Integer = 0, Optional organizationProfile As DevOpsOrganizationProfile = Nothing, Optional agentProfile As DevOpsPoolAgentProfile = Nothing, Optional fabricProfile As DevOpsFabricProfile = Nothing, Optional devCenterProjectResourceId As String = Nothing, Optional runtimeWorkFolder As String = Nothing) As DevOpsPoolProperties" />
+      <MemberSignature Language="F#" Value="static member DevOpsPoolProperties : Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState&gt; * int * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile * string * string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolProperties" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsPoolProperties (provisioningState, maximumConcurrency, organizationProfile, agentProfile, fabricProfile, devCenterProjectResourceId, runtimeWorkFolder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="maximumConcurrency" Type="System.Int32" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="organizationProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="fabricProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="devCenterProjectResourceId" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="runtimeWorkFolder" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="provisioningState"> The status of the current operation. </param>
+        <param name="maximumConcurrency"> Defines how many resources can there be created at any given time. </param>
+        <param name="organizationProfile"> Defines the organization in which the pool will be used. </param>
+        <param name="agentProfile"> Defines how the machine will be handled once it executed a job. </param>
+        <param name="fabricProfile"> Defines the type of fabric the agent will run on. </param>
+        <param name="devCenterProjectResourceId"> The resource id of the DevCenter Project the pool belongs to. </param>
+        <param name="runtimeWorkFolder"> The target work folder of the task agent on the machine. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolProperties" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -371,17 +653,24 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="resourceId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="wellKnownImageName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="aliases" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="buffer" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="ephemeralType" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsEphemeralType&gt;" Index="4" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="isEphemeral" Type="System.Nullable&lt;System.Boolean&gt;" Index="5" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="resourceId" Type="System.String" />
+        <Parameter Name="wellKnownImageName" Type="System.String" />
+        <Parameter Name="aliases" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="buffer" Type="System.String" />
+        <Parameter Name="ephemeralType" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsEphemeralType&gt;" />
+        <Parameter Name="isEphemeral" Type="System.Nullable&lt;System.Boolean&gt;" />
       </Parameters>
       <Docs>
         <param name="resourceId"> The resource id of the image. </param>
@@ -390,6 +679,48 @@
         <param name="buffer"> The percentage of the buffer to be allocated to this image. </param>
         <param name="ephemeralType"> The ephemeral type of the image. </param>
         <param name="isEphemeral"> Read only. Determines if the image is ephemeral. </param>
+        <summary> The VM image of the machines in the pool. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsPoolVmImage">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage DevOpsPoolVmImage (string resourceId = default, string wellKnownImageName = default, System.Collections.Generic.IEnumerable&lt;string&gt; aliases = default, string buffer = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsEphemeralType? ephemeralType = default, bool? isEphemeral = default, Azure.Core.ResourceIdentifier provisioningScriptStorageAccountResourceId = default, string provisioningScriptManagedIdentityClientId = default, bool? provisioningScriptShouldRestart = default, string provisioningScriptEntryPoint = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage DevOpsPoolVmImage(string resourceId, string wellKnownImageName, class System.Collections.Generic.IEnumerable`1&lt;string&gt; aliases, string buffer, valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsEphemeralType&gt; ephemeralType, valuetype System.Nullable`1&lt;bool&gt; isEphemeral, class Azure.Core.ResourceIdentifier provisioningScriptStorageAccountResourceId, string provisioningScriptManagedIdentityClientId, valuetype System.Nullable`1&lt;bool&gt; provisioningScriptShouldRestart, string provisioningScriptEntryPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsPoolVmImage(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsEphemeralType},System.Nullable{System.Boolean},Azure.Core.ResourceIdentifier,System.String,System.Nullable{System.Boolean},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsPoolVmImage (Optional resourceId As String = Nothing, Optional wellKnownImageName As String = Nothing, Optional aliases As IEnumerable(Of String) = Nothing, Optional buffer As String = Nothing, Optional ephemeralType As Nullable(Of DevOpsEphemeralType) = Nothing, Optional isEphemeral As Nullable(Of Boolean) = Nothing, Optional provisioningScriptStorageAccountResourceId As ResourceIdentifier = Nothing, Optional provisioningScriptManagedIdentityClientId As String = Nothing, Optional provisioningScriptShouldRestart As Nullable(Of Boolean) = Nothing, Optional provisioningScriptEntryPoint As String = Nothing) As DevOpsPoolVmImage" />
+      <MemberSignature Language="F#" Value="static member DevOpsPoolVmImage : string * string * seq&lt;string&gt; * string * Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsEphemeralType&gt; * Nullable&lt;bool&gt; * Azure.Core.ResourceIdentifier * string * Nullable&lt;bool&gt; * string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsPoolVmImage (resourceId, wellKnownImageName, aliases, buffer, ephemeralType, isEphemeral, provisioningScriptStorageAccountResourceId, provisioningScriptManagedIdentityClientId, provisioningScriptShouldRestart, provisioningScriptEntryPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="wellKnownImageName" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="aliases" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="buffer" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="ephemeralType" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsEphemeralType&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isEphemeral" Type="System.Nullable&lt;System.Boolean&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningScriptStorageAccountResourceId" Type="Azure.Core.ResourceIdentifier" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningScriptManagedIdentityClientId" Type="System.String" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningScriptShouldRestart" Type="System.Nullable&lt;System.Boolean&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provisioningScriptEntryPoint" Type="System.String" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="resourceId"> The resource id of the image. </param>
+        <param name="wellKnownImageName"> The image to use from a well-known set of images made available to customers. </param>
+        <param name="aliases"> List of aliases to reference the image by. </param>
+        <param name="buffer"> The percentage of the buffer to be allocated to this image. </param>
+        <param name="ephemeralType"> The ephemeral type of the image. </param>
+        <param name="isEphemeral"> Read only. Determines if the image is ephemeral. </param>
+        <param name="provisioningScriptStorageAccountResourceId"> The ARM resource ID of the storage account hosting provisioning scripts for this image. </param>
+        <param name="provisioningScriptManagedIdentityClientId"> The managed identity client ID used to access provisioning script content for this image. </param>
+        <param name="provisioningScriptShouldRestart"> Determines whether the machine should be restarted after provisioning script execution for this image. </param>
+        <param name="provisioningScriptEntryPoint"> The provisioning script entry point for this image. </param>
         <summary> The VM image of the machines in the pool. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
@@ -405,6 +736,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsResourceDetails</ReturnType>
@@ -437,6 +769,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsResourceDetailsProperties</ReturnType>
@@ -465,6 +798,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsResourceQuota</ReturnType>
@@ -497,6 +831,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsResourceQuotaName</ReturnType>
@@ -523,6 +858,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsResourceSku</ReturnType>
@@ -555,6 +891,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsResourceSkuProperties</ReturnType>
@@ -583,6 +920,62 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="DevOpsStateful">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStateful DevOpsStateful (Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions resourcePredictions = default, Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile resourcePredictionsProfile = default, string maxAgentLifetime = default, string gracePeriodTimeSpan = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStateful DevOpsStateful(class Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions resourcePredictions, class Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile resourcePredictionsProfile, string maxAgentLifetime, string gracePeriodTimeSpan) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsStateful(Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions,Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsStateful (Optional resourcePredictions As ResourcePredictions = Nothing, Optional resourcePredictionsProfile As ResourcePredictionsProfile = Nothing, Optional maxAgentLifetime As String = Nothing, Optional gracePeriodTimeSpan As String = Nothing) As DevOpsStateful" />
+      <MemberSignature Language="F#" Value="static member DevOpsStateful : Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions * Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile * string * string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStateful" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsStateful (resourcePredictions, resourcePredictionsProfile, maxAgentLifetime, gracePeriodTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStateful</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourcePredictions" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourcePredictionsProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="maxAgentLifetime" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="gracePeriodTimeSpan" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="resourcePredictions"> Defines pool buffer/stand-by agents. </param>
+        <param name="resourcePredictionsProfile"> Defines how the pool buffer/stand-by agents is provided. </param>
+        <param name="maxAgentLifetime"> How long should stateful machines be kept around. The maximum is one week. </param>
+        <param name="gracePeriodTimeSpan"> How long should the machine be kept around after it ran a workload when there are no stand-by agents. The maximum is one week. </param>
+        <summary> Stateful profile meaning that the machines will be returned to the pool after running a job. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStateful" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsStatelessAgentProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStatelessAgentProfile DevOpsStatelessAgentProfile (Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions resourcePredictions = default, Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile resourcePredictionsProfile = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStatelessAgentProfile DevOpsStatelessAgentProfile(class Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions resourcePredictions, class Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile resourcePredictionsProfile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsStatelessAgentProfile(Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions,Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsStatelessAgentProfile (Optional resourcePredictions As ResourcePredictions = Nothing, Optional resourcePredictionsProfile As ResourcePredictionsProfile = Nothing) As DevOpsStatelessAgentProfile" />
+      <MemberSignature Language="F#" Value="static member DevOpsStatelessAgentProfile : Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions * Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStatelessAgentProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsStatelessAgentProfile (resourcePredictions, resourcePredictionsProfile)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStatelessAgentProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourcePredictions" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="resourcePredictionsProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="resourcePredictions"> Defines pool buffer/stand-by agents. </param>
+        <param name="resourcePredictionsProfile"> Defines how the pool buffer/stand-by agents is provided. </param>
+        <summary> Stateless profile meaning that the machines will be cleaned up after running a job. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStatelessAgentProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="DevOpsStorageProfile">
       <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile DevOpsStorageProfile (Azure.ResourceManager.DevOpsInfrastructure.Models.OSDiskStorageAccountType? osDiskStorageAccountType = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk&gt; dataDisks = default);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile DevOpsStorageProfile(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.OSDiskStorageAccountType&gt; osDiskStorageAccountType, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk&gt; dataDisks) cil managed" />
@@ -593,19 +986,76 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="osDiskStorageAccountType" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.OSDiskStorageAccountType&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="dataDisks" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="osDiskStorageAccountType" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.OSDiskStorageAccountType&gt;" />
+        <Parameter Name="dataDisks" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsDataDisk&gt;" />
       </Parameters>
       <Docs>
         <param name="osDiskStorageAccountType"> The Azure SKU name of the machines in the pool. </param>
         <param name="dataDisks"> A list of empty data disks to attach. </param>
         <summary> The storage profile of the VMSS. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsVmSize">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize DevOpsVmSize (string name = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize DevOpsVmSize(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsVmSize(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsVmSize (Optional name As String = Nothing) As DevOpsVmSize" />
+      <MemberSignature Language="F#" Value="static member DevOpsVmSize : string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsVmSize name" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="name"> Specifies the name of the VM Size. </param>
+        <summary> Specifies the VM Size. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmSize" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevOpsVmssFabricProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmssFabricProfile DevOpsVmssFabricProfile (Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku sku = default, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage&gt; images = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile osProfile = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile storageProfile = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsNetworkProfile networkProfile = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmssFabricProfile DevOpsVmssFabricProfile(class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku sku, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage&gt; images, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile osProfile, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile storageProfile, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsNetworkProfile networkProfile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsVmssFabricProfile(Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku,System.Collections.Generic.IEnumerable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage},Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile,Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile,Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsNetworkProfile)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DevOpsVmssFabricProfile (Optional sku As DevOpsAzureSku = Nothing, Optional images As IEnumerable(Of DevOpsPoolVmImage) = Nothing, Optional osProfile As DevOpsOSProfile = Nothing, Optional storageProfile As DevOpsStorageProfile = Nothing, Optional networkProfile As DevOpsNetworkProfile = Nothing) As DevOpsVmssFabricProfile" />
+      <MemberSignature Language="F#" Value="static member DevOpsVmssFabricProfile : Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku * seq&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage&gt; * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsNetworkProfile -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmssFabricProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.DevOpsVmssFabricProfile (sku, images, osProfile, storageProfile, networkProfile)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmssFabricProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sku" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsAzureSku" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="images" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="osProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="storageProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="networkProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsNetworkProfile" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="sku"> The Azure SKU of the machines in the pool. </param>
+        <param name="images"> The VM images of the machines in the pool. </param>
+        <param name="osProfile"> The OS profile of the machines in the pool. </param>
+        <param name="storageProfile"> The storage profile of the machines in the pool. </param>
+        <param name="networkProfile"> The network profile of the machines in the pool. </param>
+        <summary> The agents will run on Virtual Machine Scale Sets. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmssFabricProfile" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -619,16 +1069,23 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmssFabricProfile</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="skuName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="images" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="osProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="storageProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile" Index="3" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="networkProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsNetworkProfile" Index="4" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="skuName" Type="System.String" />
+        <Parameter Name="images" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolVmImage&gt;" />
+        <Parameter Name="osProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOSProfile" />
+        <Parameter Name="storageProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsStorageProfile" />
+        <Parameter Name="networkProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsNetworkProfile" />
       </Parameters>
       <Docs>
         <param name="skuName"> The Azure SKU name of the machines in the pool. </param>
@@ -636,8 +1093,113 @@
         <param name="osProfile"> The OS profile of the machines in the pool. </param>
         <param name="storageProfile"> The storage profile of the machines in the pool. </param>
         <param name="networkProfile"> The network profile of the machines in the pool. </param>
-        <summary>To be added.</summary>
+        <summary> The agents will run on Virtual Machine Scale Sets. </summary>
         <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsVmssFabricProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManualResourcePredictionsProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.ManualResourcePredictionsProfile ManualResourcePredictionsProfile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.ManualResourcePredictionsProfile ManualResourcePredictionsProfile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.ManualResourcePredictionsProfile" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ManualResourcePredictionsProfile () As ManualResourcePredictionsProfile" />
+      <MemberSignature Language="F#" Value="static member ManualResourcePredictionsProfile : unit -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.ManualResourcePredictionsProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.ManualResourcePredictionsProfile " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.ManualResourcePredictionsProfile</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Customer provides the stand-by agent scheme. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.ManualResourcePredictionsProfile" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PoolUpdateProperties">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.PoolUpdateProperties PoolUpdateProperties (Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState? provisioningState = default, int? maximumConcurrency = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile organizationProfile = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile agentProfile = default, Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile fabricProfile = default, string devCenterProjectResourceId = default, string runtimeWorkFolder = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.PoolUpdateProperties PoolUpdateProperties(valuetype System.Nullable`1&lt;valuetype Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState&gt; provisioningState, valuetype System.Nullable`1&lt;int32&gt; maximumConcurrency, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile organizationProfile, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile agentProfile, class Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile fabricProfile, string devCenterProjectResourceId, string runtimeWorkFolder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.PoolUpdateProperties(System.Nullable{Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState},System.Nullable{System.Int32},Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile,Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile,Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function PoolUpdateProperties (Optional provisioningState As Nullable(Of DevOpsInfrastructureProvisioningState) = Nothing, Optional maximumConcurrency As Nullable(Of Integer) = Nothing, Optional organizationProfile As DevOpsOrganizationProfile = Nothing, Optional agentProfile As DevOpsPoolAgentProfile = Nothing, Optional fabricProfile As DevOpsFabricProfile = Nothing, Optional devCenterProjectResourceId As String = Nothing, Optional runtimeWorkFolder As String = Nothing) As PoolUpdateProperties" />
+      <MemberSignature Language="F#" Value="static member PoolUpdateProperties : Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState&gt; * Nullable&lt;int&gt; * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile * Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile * string * string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.PoolUpdateProperties" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.PoolUpdateProperties (provisioningState, maximumConcurrency, organizationProfile, agentProfile, fabricProfile, devCenterProjectResourceId, runtimeWorkFolder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.PoolUpdateProperties</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provisioningState" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsInfrastructureProvisioningState&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="maximumConcurrency" Type="System.Nullable&lt;System.Int32&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="organizationProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsOrganizationProfile" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="agentProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsPoolAgentProfile" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="fabricProfile" Type="Azure.ResourceManager.DevOpsInfrastructure.Models.DevOpsFabricProfile" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="devCenterProjectResourceId" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="runtimeWorkFolder" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="provisioningState"> The status of the current operation. </param>
+        <param name="maximumConcurrency"> Defines how many resources can there be created at any given time. </param>
+        <param name="organizationProfile"> Defines the organization in which the pool will be used. </param>
+        <param name="agentProfile"> Defines how the machine will be handled once it executed a job. </param>
+        <param name="fabricProfile"> Defines the type of fabric the agent will run on. </param>
+        <param name="devCenterProjectResourceId"> The resource id of the DevCenter Project the pool belongs to. </param>
+        <param name="runtimeWorkFolder"> The target work folder of the task agent on the machine. </param>
+        <summary>To be added.</summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.PoolUpdateProperties" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourcePredictions">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions ResourcePredictions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions ResourcePredictions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.ResourcePredictions" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResourcePredictions () As ResourcePredictions" />
+      <MemberSignature Language="F#" Value="static member ResourcePredictions : unit -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.ResourcePredictions " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Defines pool buffer. </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictions" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourcePredictionsProfile">
+      <MemberSignature Language="C#" Value="public static Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile ResourcePredictionsProfile (string kind = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile ResourcePredictionsProfile(string kind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.ResourcePredictionsProfile(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResourcePredictionsProfile (Optional kind As String = Nothing) As ResourcePredictionsProfile" />
+      <MemberSignature Language="F#" Value="static member ResourcePredictionsProfile : string -&gt; Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile" Usage="Azure.ResourceManager.DevOpsInfrastructure.Models.ArmDevOpsInfrastructureModelFactory.ResourcePredictionsProfile kind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kind" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="kind"> Determines how the stand-by scheme should be provided. </param>
+        <summary>
+            Determines how the stand-by scheme should be provided.
+            Please note this is the abstract base class. The derived classes available for instantiation are: <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.ManualResourcePredictionsProfile" /> and <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.AutomaticResourcePredictionsProfile" />.
+            </summary>
+        <returns> A new <see cref="T:Azure.ResourceManager.DevOpsInfrastructure.Models.ResourcePredictionsProfile" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -651,6 +1213,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.ResourceSkuCapabilities</ReturnType>
@@ -677,6 +1240,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.ResourceSkuLocationInfo</ReturnType>
@@ -705,6 +1269,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.ResourceSkuRestrictionInfo</ReturnType>
@@ -731,6 +1296,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.ResourceSkuRestrictions</ReturnType>
@@ -761,6 +1327,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.ResourceSkuZoneDetails</ReturnType>
@@ -787,15 +1354,16 @@
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.DevOpsInfrastructure</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.ResourceManager.DevOpsInfrastructure.Models.SecretsManagementSettings</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="certificateStoreLocation" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="certificateStoreName" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.CertificateStoreNameOption&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="observedCertificates" Type="System.Collections.Generic.IEnumerable&lt;System.Uri&gt;" Index="2" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="keyExportable" Type="System.Boolean" Index="3" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="certificateStoreLocation" Type="System.String" />
+        <Parameter Name="certificateStoreName" Type="System.Nullable&lt;Azure.ResourceManager.DevOpsInfrastructure.Models.CertificateStoreNameOption&gt;" />
+        <Parameter Name="observedCertificates" Type="System.Collections.Generic.IEnumerable&lt;System.Uri&gt;" />
+        <Parameter Name="keyExportable" Type="System.Boolean" />
       </Parameters>
       <Docs>
         <param name="certificateStoreLocation"> Where to store certificates on the machine. </param>
