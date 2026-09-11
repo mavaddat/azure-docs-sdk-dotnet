@@ -4,7 +4,7 @@ description: Reference for Azure Search SDK for .NET
 ms.date: 09/11/2026
 ms.topic: reference
 ms.devlang: dotnet
-ms.service: cognitive-search
+ms.service: search
 ---
 # Azure AI Search libraries for .NET
 
