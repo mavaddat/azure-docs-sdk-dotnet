@@ -15,18 +15,17 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            ManagedDatabase.
-            </summary>
+    <summary> A managed database resource. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ManagedDatabase (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public ManagedDatabase (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Sql.ManagedDatabase.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
       <MemberSignature Language="F#" Value="new Azure.Provisioning.Sql.ManagedDatabase : string * string -&gt; Azure.Provisioning.Sql.ManagedDatabase" Usage="new Azure.Provisioning.Sql.ManagedDatabase (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public ManagedDatabase (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -38,16 +37,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the ManagedDatabase resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the ManagedDatabase.</param>
-        <summary>
-            Creates a new ManagedDatabase.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new ManagedDatabase. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,9 +59,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Whether to auto complete restore of this managed database.
-            </summary>
+        <summary> Gets or sets the AllowAutoCompleteRestore. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -90,9 +80,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.CatalogCollationType&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Collation of the metadata catalog.
-            </summary>
+        <summary> Gets or sets the CatalogCollation. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -113,9 +101,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Collation of the managed database.
-            </summary>
+        <summary> Gets or sets the Collation. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -136,9 +122,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Creation date of the database.
-            </summary>
+        <summary> Gets the CreatedOn. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -159,19 +143,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.ManagedDatabaseCreateMode&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Managed database create mode. PointInTimeRestore: Create a database by
-            restoring a point in time backup of an existing database.
-            SourceDatabaseName, SourceManagedInstanceName and PointInTime must be
-            specified. RestoreExternalBackup: Create a database by restoring from
-            external backup files. Collation, StorageContainerUri and
-            StorageContainerSasToken must be specified. Recovery: Creates a
-            database by restoring a geo-replicated backup. RecoverableDatabaseId
-            must be specified as the recoverable database resource ID to restore.
-            RestoreLongTermRetentionBackup: Create a database by restoring from a
-            long term retention backup (longTermRetentionBackupResourceId
-            required).
-            </summary>
+        <summary> Gets or sets the CreateMode. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -192,10 +164,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The restorable cross-subscription dropped database resource id to
-            restore when creating this database.
-            </summary>
+        <summary> Gets or sets the CrossSubscriptionRestorableDroppedDatabaseId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -216,10 +185,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The resource identifier of the cross-subscription source database
-            associated with create operation of this database.
-            </summary>
+        <summary> Gets or sets the CrossSubscriptionSourceDatabaseId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -240,9 +206,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Target managed instance id used in cross-subscription restore.
-            </summary>
+        <summary> Gets or sets the CrossSubscriptionTargetManagedInstanceId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -263,9 +227,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Geo paired region.
-            </summary>
+        <summary> Gets the DefaultSecondaryLocation. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -287,9 +249,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of ManagedDatabase.
-            </summary>
+        <summary> Define all the provisionable properties for ManagedDatabase. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -309,9 +269,27 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Earliest restore point in time for point in time restore.
-            </summary>
+        <summary> Gets the EarliestRestorePoint. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedAccessibilityInfo">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Sql.ManagedDatabaseExtendedAccessibilityInfo ExtendedAccessibilityInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.Sql.ManagedDatabaseExtendedAccessibilityInfo ExtendedAccessibilityInfo" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.ManagedDatabase.ExtendedAccessibilityInfo" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ExtendedAccessibilityInfo As ManagedDatabaseExtendedAccessibilityInfo" />
+      <MemberSignature Language="F#" Value="member this.ExtendedAccessibilityInfo : Azure.Provisioning.Sql.ManagedDatabaseExtendedAccessibilityInfo" Usage="Azure.Provisioning.Sql.ManagedDatabase.ExtendedAccessibilityInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.Sql.ManagedDatabaseExtendedAccessibilityInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets the ExtendedAccessibilityInfo. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -332,20 +310,18 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Instance Failover Group resource identifier that this managed database
-            belongs to.
-            </summary>
+        <summary> Gets the FailoverGroupId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.ManagedDatabase FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.ManagedDatabase FromExisting (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.Sql.ManagedDatabase FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Sql.ManagedDatabase.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As ManagedDatabase" />
       <MemberSignature Language="F#" Value="static member FromExisting : string * string -&gt; Azure.Provisioning.Sql.ManagedDatabase" Usage="Azure.Provisioning.Sql.ManagedDatabase.FromExisting (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.ManagedDatabase FromExisting (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -360,16 +336,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the ManagedDatabase resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the ManagedDatabase.</param>
-        <summary>
-            Creates a reference to an existing ManagedDatabase.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing ManagedDatabase. </summary>
         <returns>The existing ManagedDatabase resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -390,9 +359,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -413,11 +380,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Whether or not this database is a ledger database, which means all
-            tables in the database are ledger tables. Note: the value of this
-            property cannot be changed after the database has been created.
-            </summary>
+        <summary> Gets or sets the IsLedgerOn. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -438,9 +401,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Last backup file name for restore of this managed database.
-            </summary>
+        <summary> Gets or sets the LastBackupName. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -461,9 +422,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -484,10 +443,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The name of the Long Term Retention backup to be used for restore of
-            this managed database.
-            </summary>
+        <summary> Gets or sets the LongTermRetentionBackupResourceId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -508,19 +464,18 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The name of the database.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Parent">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.Sql.ManagedInstance? Parent { get; set; }" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Sql.ManagedInstance? Parent { get; set; }" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.Sql.ManagedInstance Parent" />
       <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.ManagedDatabase.Parent" />
       <MemberSignature Language="VB.NET" Value="Public Property Parent As ManagedInstance" />
       <MemberSignature Language="F#" Value="member this.Parent : Azure.Provisioning.Sql.ManagedInstance with get, set" Usage="Azure.Provisioning.Sql.ManagedDatabase.Parent" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Sql.ManagedInstance Parent { get; set; }" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -531,9 +486,7 @@
         <ReturnType>Azure.Provisioning.Sql.ManagedInstance</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets a reference to the parent ManagedInstance.
-            </summary>
+        <summary> Gets or sets the Parent. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -554,10 +507,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The resource identifier of the recoverable database associated with
-            create operation of this database.
-            </summary>
+        <summary> Gets or sets the RecoverableDatabaseId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -578,10 +528,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The restorable dropped database resource id to restore when creating
-            this database.
-            </summary>
+        <summary> Gets or sets the RestorableDroppedDatabaseId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -602,11 +549,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Conditional. If createMode is PointInTimeRestore, this value is
-            required. Specifies the point in time (ISO8601 format) of the source
-            database that will be restored to create the new database.
-            </summary>
+        <summary> Gets or sets the RestorePointInTime. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -627,10 +570,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The resource identifier of the source database associated with create
-            operation of this database.
-            </summary>
+        <summary> Gets or sets the SourceDatabaseId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -651,9 +591,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.ManagedDatabaseStatus&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Status of the database.
-            </summary>
+        <summary> Gets the Status. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -674,13 +612,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Conditional. If createMode is RestoreExternalBackup, this value is
-            used. Specifies the identity used for storage container
-            authentication. Can be 'SharedAccessSignature' or
-            'ManagedIdentity'; if not specified
-            'SharedAccessSignature' is assumed.
-            </summary>
+        <summary> Gets or sets the StorageContainerIdentity. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -701,11 +633,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Conditional. If createMode is RestoreExternalBackup and
-            storageContainerIdentity is not ManagedIdentity, this value is
-            required. Specifies the storage container sas token.
-            </summary>
+        <summary> Gets or sets the StorageContainerSasToken. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -726,11 +654,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Uri&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Conditional. If createMode is RestoreExternalBackup, this value is
-            required. Specifies the uri of the storage container where backups for
-            this restore are stored.
-            </summary>
+        <summary> Gets or sets the StorageContainerUri. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -751,9 +675,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -774,9 +696,7 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

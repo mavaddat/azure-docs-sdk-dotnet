@@ -15,18 +15,17 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            ManagedInstance.
-            </summary>
+    <summary> An Azure SQL managed instance. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ManagedInstance (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public ManagedInstance (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Sql.ManagedInstance.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
       <MemberSignature Language="F#" Value="new Azure.Provisioning.Sql.ManagedInstance : string * string -&gt; Azure.Provisioning.Sql.ManagedInstance" Usage="new Azure.Provisioning.Sql.ManagedInstance (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public ManagedInstance (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -38,16 +37,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the ManagedInstance resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the ManagedInstance.</param>
-        <summary>
-            Creates a new ManagedInstance.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new ManagedInstance. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,11 +59,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Administrator username for the managed instance. Can only be specified
-            when the managed instance is being created (and is required for
-            creation).
-            </summary>
+        <summary> Gets or sets the AdministratorLogin. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -92,10 +80,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The administrator login password (required for managed instance
-            creation).
-            </summary>
+        <summary> Gets or sets the AdministratorLoginPassword. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -116,12 +101,7 @@
         <ReturnType>Azure.Provisioning.Sql.ManagedInstanceExternalAdministrator</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The Azure Active Directory administrator of the instance. This can only
-            be used at instance create time. If used for instance update, it will
-            be ignored or it will result in an error. For updates individual APIs
-            will need to be used.
-            </summary>
+        <summary> Gets or sets the Administrators. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -142,9 +122,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.AuthMetadataLookupMode&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The managed instance's authentication metadata lookup mode.
-            </summary>
+        <summary> Gets or sets the AuthenticationMetadata. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -165,9 +143,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Collation of the managed instance.
-            </summary>
+        <summary> Gets or sets the Collation. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -188,10 +164,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Specifies the point in time (ISO8601 format) of the Managed Instance
-            creation.
-            </summary>
+        <summary> Gets the CreateOn. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -212,12 +185,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.SqlBackupStorageRedundancy&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The storage account type used to store backups for this instance. The
-            options are Local (LocallyRedundantStorage), Zone
-            (ZoneRedundantStorage), Geo (GeoRedundantStorage) and
-            GeoZone(GeoZoneRedundantStorage).
-            </summary>
+        <summary> Gets the CurrentBackupStorageRedundancy. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -238,10 +206,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.ManagedInstanceDatabaseFormat&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Specifies the internal format of instance databases specific to the SQL
-            engine version.
-            </summary>
+        <summary> Gets or sets the DatabaseFormat. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -263,9 +228,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of ManagedInstance.
-            </summary>
+        <summary> Define all the provisionable properties for ManagedInstance. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -285,9 +248,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The Dns Zone that the managed instance is in.
-            </summary>
+        <summary> Gets the DnsZone. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -308,19 +269,18 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.ExternalGovernanceStatus&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Status of external governance.
-            </summary>
+        <summary> Gets the ExternalGovernanceStatus. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.ManagedInstance FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.ManagedInstance FromExisting (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.Sql.ManagedInstance FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Sql.ManagedInstance.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As ManagedInstance" />
       <MemberSignature Language="F#" Value="static member FromExisting : string * string -&gt; Azure.Provisioning.Sql.ManagedInstance" Usage="Azure.Provisioning.Sql.ManagedInstance.FromExisting (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.ManagedInstance FromExisting (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -335,16 +295,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the ManagedInstance resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the ManagedInstance.</param>
-        <summary>
-            Creates a reference to an existing ManagedInstance.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing ManagedInstance. </summary>
         <returns>The existing ManagedInstance resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -365,9 +318,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The fully qualified domain name of the managed instance.
-            </summary>
+        <summary> Gets the FullyQualifiedDomainName. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -382,10 +333,9 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet">
           <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
           <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
         </Attribute>
@@ -418,11 +368,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.HybridSecondaryUsage&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Hybrid secondary usage. Possible values are 'Active' (default
-            value) and 'Passive' (customer uses the secondary as Passive
-            DR).
-            </summary>
+        <summary> Gets or sets the HybridSecondaryUsage. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -443,12 +389,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.HybridSecondaryUsageDetected&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Hybrid secondary usage detected. Possible values are 'Active'
-            (customer does not meet the requirements to use the secondary as
-            Passive DR) and 'Passive' (customer meets the requirements
-            to use the secondary as Passive DR).
-            </summary>
+        <summary> Gets the HybridSecondaryUsageDetected. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -469,9 +410,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -492,9 +431,7 @@
         <ReturnType>Azure.Provisioning.Resources.ManagedServiceIdentity</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The Azure Active Directory identity of the managed instance.
-            </summary>
+        <summary> Gets or sets the Identity. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -515,9 +452,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The Id of the instance pool this managed server belongs to.
-            </summary>
+        <summary> Gets or sets the InstancePoolId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -538,9 +473,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Whether or not this is a GPv2 variant of General Purpose edition.
-            </summary>
+        <summary> Gets or sets the IsGeneralPurposeV2. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -561,9 +494,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Whether or not the public data endpoint is enabled.
-            </summary>
+        <summary> Gets or sets the IsPublicDataEndpointEnabled. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -584,9 +515,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Whether or not the multi-az is enabled.
-            </summary>
+        <summary> Gets or sets the IsZoneRedundant. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -607,9 +536,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Uri&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            A CMK URI of the key to use for encryption.
-            </summary>
+        <summary> Gets or sets the KeyId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -630,12 +557,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.ManagedInstanceLicenseType&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The license type. Possible values are 'LicenseIncluded'
-            (regular price inclusive of a new SQL license) and
-            'BasePrice' (discounted AHB price for bringing your own SQL
-            licenses).
-            </summary>
+        <summary> Gets or sets the LicenseType. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -656,9 +578,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -679,10 +599,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Specifies maintenance configuration id to apply to this managed
-            instance.
-            </summary>
+        <summary> Gets or sets the MaintenanceConfigurationId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -703,10 +620,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The resource id of another managed instance whose DNS zone this managed
-            instance will share after creation.
-            </summary>
+        <summary> Gets or sets the ManagedDnsZonePartner. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -727,13 +641,27 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.ManagedServerCreateMode&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Specifies the mode of database creation.
-            Default: Regular instance creation.
-            Restore: Creates an instance by restoring a
-            set of backups to specific point in time. RestorePointInTime and
-            SourceManagedInstanceId must be specified.
-            </summary>
+        <summary> Gets or sets the ManagedInstanceCreateMode. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemorySizeInGB">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;int&gt; MemorySizeInGB { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;int32&gt; MemorySizeInGB" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.ManagedInstance.MemorySizeInGB" />
+      <MemberSignature Language="VB.NET" Value="Public Property MemorySizeInGB As BicepValue(Of Integer)" />
+      <MemberSignature Language="F#" Value="member this.MemorySizeInGB : Azure.Provisioning.BicepValue&lt;int&gt; with get, set" Usage="Azure.Provisioning.Sql.ManagedInstance.MemorySizeInGB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the MemorySizeInGB. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -754,10 +682,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Minimal TLS version. Allowed values: 'None', '1.0',
-            '1.1', '1.2'.
-            </summary>
+        <summary> Gets or sets the MinimalTlsVersion. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -778,9 +703,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The name of the managed instance.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -801,9 +724,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.SqlManagedInstancePricingModel&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Pricing model of Managed Instance.
-            </summary>
+        <summary> Gets or sets the PricingModel. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -824,9 +745,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The resource id of a user assigned identity to be used by default.
-            </summary>
+        <summary> Gets or sets the PrimaryUserAssignedIdentityId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -847,9 +766,7 @@
         <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.Sql.ManagedInstancePecProperty&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            List of private endpoint connections on a managed instance.
-            </summary>
+        <summary> Gets the PrivateEndpointConnections. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -870,9 +787,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.ManagedInstancePropertiesProvisioningState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Provisioning state of managed instance.
-            </summary>
+        <summary> Gets the ProvisioningState. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -893,9 +808,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.ManagedInstanceProxyOverride&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Connection type used for connecting to the instance.
-            </summary>
+        <summary> Gets or sets the ProxyOverride. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -916,12 +829,27 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.SqlBackupStorageRedundancy&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The storage account type to be used to store backups for this instance.
-            The options are Local (LocallyRedundantStorage), Zone
-            (ZoneRedundantStorage), Geo (GeoRedundantStorage) and
-            GeoZone(GeoZoneRedundantStorage).
-            </summary>
+        <summary> Gets or sets the RequestedBackupStorageRedundancy. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedLogicalAvailabilityZone">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.SqlAvailabilityZoneType&gt; RequestedLogicalAvailabilityZone { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.Sql.SqlAvailabilityZoneType&gt; RequestedLogicalAvailabilityZone" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.ManagedInstance.RequestedLogicalAvailabilityZone" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequestedLogicalAvailabilityZone As BicepValue(Of SqlAvailabilityZoneType)" />
+      <MemberSignature Language="F#" Value="member this.RequestedLogicalAvailabilityZone : Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.SqlAvailabilityZoneType&gt; with get, set" Usage="Azure.Provisioning.Sql.ManagedInstance.RequestedLogicalAvailabilityZone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.SqlAvailabilityZoneType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the RequestedLogicalAvailabilityZone. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -942,10 +870,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Specifies the point in time (ISO8601 format) of the source database
-            that will be restored to create the new database.
-            </summary>
+        <summary> Gets or sets the RestorePointInTime. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -966,9 +891,7 @@
         <ReturnType>Azure.Provisioning.Sql.SqlServicePrincipal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The managed instance's service principal.
-            </summary>
+        <summary> Gets or sets the ServicePrincipal. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -989,10 +912,7 @@
         <ReturnType>Azure.Provisioning.Sql.SqlSku</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Managed instance SKU. Allowed values for sku.name: GP_Gen5, GP_G8IM,
-            GP_G8IH, BC_Gen5, BC_G8IM, BC_G8IH.
-            </summary>
+        <summary> Gets or sets the Sku. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1013,10 +933,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The resource identifier of the source managed instance associated with
-            create operation of this instance.
-            </summary>
+        <summary> Gets or sets the SourceManagedInstanceId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1037,9 +954,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The state of the managed instance.
-            </summary>
+        <summary> Gets the State. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1060,11 +975,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Storage IOps. Minimum value: 300. Maximum value: 80000. Increments of 1
-            IOps allowed only. Maximum value depends on the selected hardware
-            family and number of vCores.
-            </summary>
+        <summary> Gets or sets the StorageIOps. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1085,11 +996,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Storage size in GB. Minimum value: 32. Maximum value: 16384. Increments
-            of 32 GB allowed only. Maximum value depends on the selected hardware
-            family and number of vCores.
-            </summary>
+        <summary> Gets or sets the StorageSizeInGB. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1110,10 +1017,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Storage throughput MBps parameter is not supported in the instance
-            create/update operation.
-            </summary>
+        <summary> Gets or sets the StorageThroughputMBps. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1134,9 +1038,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Subnet resource ID for the managed instance.
-            </summary>
+        <summary> Gets or sets the SubnetId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1157,9 +1059,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1180,9 +1080,7 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1203,18 +1101,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Id of the timezone. Allowed values are timezones supported by Windows.
-            Windows keeps details on supported timezones, including
-            the id, in registry under
-            KEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
-            NT\CurrentVersion\Time Zones.             You can get those registry
-            values via SQL Server by querying SELECT name AS timezone_id FROM
-            sys.time_zone_info.             List of Ids can also be obtained by
-            executing [System.TimeZoneInfo]::GetSystemTimeZones() in PowerShell.
-            An example of valid timezone id is "Pacific Standard
-            Time" or "W. Europe Standard Time".
-            </summary>
+        <summary> Gets or sets the TimezoneId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1235,9 +1122,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The number of vCores. Allowed values: 8, 16, 24, 32, 40, 64, 80.
-            </summary>
+        <summary> Gets or sets the VCores. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1258,9 +1143,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Virtual cluster resource id for the Managed Instance.
-            </summary>
+        <summary> Gets the VirtualClusterId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

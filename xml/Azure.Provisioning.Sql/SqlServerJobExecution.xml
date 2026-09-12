@@ -15,18 +15,17 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            SqlServerJobExecution.
-            </summary>
+    <summary> An execution of a job. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public SqlServerJobExecution (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public SqlServerJobExecution (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Sql.SqlServerJobExecution.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
       <MemberSignature Language="F#" Value="new Azure.Provisioning.Sql.SqlServerJobExecution : string * string -&gt; Azure.Provisioning.Sql.SqlServerJobExecution" Usage="new Azure.Provisioning.Sql.SqlServerJobExecution (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public SqlServerJobExecution (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -38,16 +37,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the SqlServerJobExecution resource.
-            This can be used to refer to the resource in expressions, but is not
-            the Azure name of the resource.  This value can contain letters,
-            numbers, and underscores.
-            </param>
-        <param name="resourceVersion">Version of the SqlServerJobExecution.</param>
-        <summary>
-            Creates a new SqlServerJobExecution.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new SqlServerJobExecution. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,19 +59,20 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The time that the job execution was created.
-            </summary>
+        <summary> Gets the CreateOn. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CurrentAttempts">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;int&gt; CurrentAttempts { get; }" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;int&gt; CurrentAttempts { get; }" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;int32&gt; CurrentAttempts" />
       <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.SqlServerJobExecution.CurrentAttempts" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentAttempts As BicepValue(Of Integer)" />
-      <MemberSignature Language="F#" Value="member this.CurrentAttempts : Azure.Provisioning.BicepValue&lt;int&gt;" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.CurrentAttempts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentAttempts As BicepValue(Of Integer)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="member this.CurrentAttempts : Azure.Provisioning.BicepValue&lt;int&gt;" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.CurrentAttempts" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;int&gt; CurrentAttempts { get; set; }" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Property CurrentAttempts As BicepValue(Of Integer)" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="F#" Value="member this.CurrentAttempts : Azure.Provisioning.BicepValue&lt;int&gt; with get, set" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.CurrentAttempts" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -90,9 +83,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Number of times the job execution has been attempted.
-            </summary>
+        <summary> Gets or sets the CurrentAttempts. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -109,13 +100,44 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This property is obsolete and will be removed in a future release. Please use CurrentAttemptStartsOn instead.", false)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is obsolete and will be removed in a future release. Please use CurrentAttemptStartsOn instead.", false)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>
             Start time of the current attempt.
+            Please use <see cref="P:Azure.Provisioning.Sql.SqlServerJobExecution.CurrentAttemptStartsOn" /> instead.
             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentAttemptStartsOn">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt; CurrentAttemptStartsOn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype System.DateTimeOffset&gt; CurrentAttemptStartsOn" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.SqlServerJobExecution.CurrentAttemptStartsOn" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentAttemptStartsOn As BicepValue(Of DateTimeOffset)" />
+      <MemberSignature Language="F#" Value="member this.CurrentAttemptStartsOn : Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt;" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.CurrentAttemptStartsOn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets the CurrentAttemptStartsOn. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -137,9 +159,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of SqlServerJobExecution.
-            </summary>
+        <summary> Define all the provisionable properties for SqlServerJobExecution. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -155,23 +175,55 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This property is obsolete and will be removed in a future release. Please use EndsOn instead.", false)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is obsolete and will be removed in a future release. Please use EndsOn instead.", false)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>
             The time that the job execution completed.
+            Please use <see cref="P:Azure.Provisioning.Sql.SqlServerJobExecution.EndsOn" /> instead.
             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="EndsOn">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt; EndsOn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype System.DateTimeOffset&gt; EndsOn" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.SqlServerJobExecution.EndsOn" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EndsOn As BicepValue(Of DateTimeOffset)" />
+      <MemberSignature Language="F#" Value="member this.EndsOn : Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt;" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.EndsOn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets the EndsOn. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.SqlServerJobExecution FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.SqlServerJobExecution FromExisting (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.Sql.SqlServerJobExecution FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.Sql.SqlServerJobExecution.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As SqlServerJobExecution" />
       <MemberSignature Language="F#" Value="static member FromExisting : string * string -&gt; Azure.Provisioning.Sql.SqlServerJobExecution" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.FromExisting (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.Sql.SqlServerJobExecution FromExisting (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -186,16 +238,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the SqlServerJobExecution resource.
-            This can be used to refer to the resource in expressions, but is not
-            the Azure name of the resource.  This value can contain letters,
-            numbers, and underscores.
-            </param>
-        <param name="resourceVersion">Version of the SqlServerJobExecution.</param>
-        <summary>
-            Creates a reference to an existing SqlServerJobExecution.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing SqlServerJobExecution. </summary>
         <returns>The existing SqlServerJobExecution resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -216,9 +261,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -239,9 +282,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Guid&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The unique identifier of the job execution.
-            </summary>
+        <summary> Gets the JobExecutionId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -262,9 +303,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The job version number.
-            </summary>
+        <summary> Gets the JobVersion. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -285,9 +324,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The last status or error message.
-            </summary>
+        <summary> Gets the LastMessage. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -308,19 +345,20 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.JobExecutionLifecycle&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The detailed state of the job execution.
-            </summary>
+        <summary> Gets the Lifecycle. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; Name { get; }" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; Name { get; }" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; Name" />
       <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.SqlServerJobExecution.Name" />
-      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Name As BicepValue(Of String)" />
-      <MemberSignature Language="F#" Value="member this.Name : Azure.Provisioning.BicepValue&lt;string&gt;" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.Name" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Name As BicepValue(Of String)" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="F#" Value="member this.Name : Azure.Provisioning.BicepValue&lt;string&gt;" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.Name" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; Name { get; set; }" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As BicepValue(Of String)" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="F#" Value="member this.Name : Azure.Provisioning.BicepValue&lt;string&gt; with get, set" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.Name" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -331,19 +369,18 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Name.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Parent">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.Sql.SqlServerJob? Parent { get; set; }" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Sql.SqlServerJob? Parent { get; set; }" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.Sql.SqlServerJob Parent" />
       <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.SqlServerJobExecution.Parent" />
       <MemberSignature Language="VB.NET" Value="Public Property Parent As SqlServerJob" />
       <MemberSignature Language="F#" Value="member this.Parent : Azure.Provisioning.Sql.SqlServerJob with get, set" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.Parent" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Sql.SqlServerJob Parent { get; set; }" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
@@ -354,9 +391,7 @@
         <ReturnType>Azure.Provisioning.Sql.SqlServerJob</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets a reference to the parent SqlServerJob.
-            </summary>
+        <summary> Gets or sets the Parent. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -377,9 +412,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Sql.JobExecutionProvisioningState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The ARM provisioning state of the job execution.
-            </summary>
+        <summary> Gets the ProvisioningState. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -396,13 +429,44 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This property is obsolete and will be removed in a future release. Please use StartsOn instead.", false)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is obsolete and will be removed in a future release. Please use StartsOn instead.", false)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>
             The time that the job execution started.
+            Please use <see cref="P:Azure.Provisioning.Sql.SqlServerJobExecution.StartsOn" /> instead.
             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartsOn">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt; StartsOn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype System.DateTimeOffset&gt; StartsOn" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.Sql.SqlServerJobExecution.StartsOn" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StartsOn As BicepValue(Of DateTimeOffset)" />
+      <MemberSignature Language="F#" Value="member this.StartsOn : Azure.Provisioning.BicepValue&lt;DateTimeOffset&gt;" Usage="Azure.Provisioning.Sql.SqlServerJobExecution.StartsOn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.Sql</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets the StartsOn. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -423,9 +487,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The job step id.
-            </summary>
+        <summary> Gets the StepId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -446,9 +508,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The job step name.
-            </summary>
+        <summary> Gets the StepName. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -469,9 +529,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -492,9 +550,7 @@
         <ReturnType>Azure.Provisioning.Sql.JobExecutionTarget</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The target that this execution is executed on.
-            </summary>
+        <summary> Gets the Target. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
