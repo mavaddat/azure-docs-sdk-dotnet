@@ -21,18 +21,17 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            AppConfigurationStore.
-            </summary>
+    <summary> The configuration store along with all resource properties. The Configuration Store will have all information to begin utilizing it. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public AppConfigurationStore (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public AppConfigurationStore (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppConfiguration.AppConfigurationStore.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
       <MemberSignature Language="F#" Value="new Azure.Provisioning.AppConfiguration.AppConfigurationStore : string * string -&gt; Azure.Provisioning.AppConfiguration.AppConfigurationStore" Usage="new Azure.Provisioning.AppConfiguration.AppConfigurationStore (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public AppConfigurationStore (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppConfiguration</AssemblyName>
@@ -44,16 +43,29 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the AppConfigurationStore resource.
-            This can be used to refer to the resource in expressions, but is not
-            the Azure name of the resource.  This value can contain letters,
-            numbers, and underscores.
-            </param>
-        <param name="resourceVersion">Version of the AppConfigurationStore.</param>
-        <summary>
-            Creates a new AppConfigurationStore.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new AppConfigurationStore. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AzureFrontDoorResourceId">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt; AzureFrontDoorResourceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;class Azure.Core.ResourceIdentifier&gt; AzureFrontDoorResourceId" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppConfiguration.AppConfigurationStore.AzureFrontDoorResourceId" />
+      <MemberSignature Language="VB.NET" Value="Public Property AzureFrontDoorResourceId As BicepValue(Of ResourceIdentifier)" />
+      <MemberSignature Language="F#" Value="member this.AzureFrontDoorResourceId : Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt; with get, set" Usage="Azure.Provisioning.AppConfiguration.AppConfigurationStore.AzureFrontDoorResourceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppConfiguration</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the ResourceId. </summary>
+        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +85,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The creation date of configuration store.
-            </summary>
+        <summary> Gets the CreatedOn. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -96,9 +106,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppConfiguration.AppConfigurationCreateMode&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Indicates whether the configuration store need to be recovered.
-            </summary>
+        <summary> Gets or sets the CreateMode. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -123,22 +131,20 @@
         <Parameter Name="identity" Type="Azure.Provisioning.Roles.UserAssignedIdentity" />
       </Parameters>
       <Docs>
-        <param name="role">The role to grant.</param>
-        <param name="identity">The <see cref="T:Azure.Provisioning.Roles.UserAssignedIdentity" />.</param>
-        <summary>
-            Creates a role assignment for a user-assigned identity that grants
-            access to this AppConfigurationStore.
-            </summary>
-        <returns>The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />.</returns>
+        <param name="role"> The role to grant. </param>
+        <param name="identity"> The <see cref="T:Azure.Provisioning.Roles.UserAssignedIdentity" />. </param>
+        <summary> Creates a role assignment for a user-assigned identity that grants access to this AppConfigurationStore. </summary>
+        <returns> The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateRoleAssignment">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment (Azure.Provisioning.AppConfiguration.AppConfigurationBuiltInRole role, Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, Azure.Provisioning.BicepValue&lt;Guid&gt; principalId, string? bicepIdentifierSuffix = default);" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment (Azure.Provisioning.AppConfiguration.AppConfigurationBuiltInRole role, Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, Azure.Provisioning.BicepValue&lt;Guid&gt; principalId, string? bicepIdentifierSuffix = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment(valuetype Azure.Provisioning.AppConfiguration.AppConfigurationBuiltInRole role, class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, class Azure.Provisioning.BicepValue`1&lt;valuetype System.Guid&gt; principalId, string bicepIdentifierSuffix) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppConfiguration.AppConfigurationStore.CreateRoleAssignment(Azure.Provisioning.AppConfiguration.AppConfigurationBuiltInRole,Azure.Provisioning.BicepValue{Azure.Provisioning.Authorization.RoleManagementPrincipalType},Azure.Provisioning.BicepValue{System.Guid},System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Function CreateRoleAssignment (role As AppConfigurationBuiltInRole, principalType As BicepValue(Of RoleManagementPrincipalType), principalId As BicepValue(Of Guid), Optional bicepIdentifierSuffix As String = Nothing) As RoleAssignment" />
       <MemberSignature Language="F#" Value="member this.CreateRoleAssignment : Azure.Provisioning.AppConfiguration.AppConfigurationBuiltInRole * Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; * Azure.Provisioning.BicepValue&lt;Guid&gt; * string -&gt; Azure.Provisioning.Authorization.RoleAssignment" Usage="appConfigurationStore.CreateRoleAssignment (role, principalType, principalId, bicepIdentifierSuffix)" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment (Azure.Provisioning.AppConfiguration.AppConfigurationBuiltInRole role, Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, Azure.Provisioning.BicepValue&lt;Guid&gt; principalId, string bicepIdentifierSuffix = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppConfiguration</AssemblyName>
@@ -155,15 +161,12 @@
         <Parameter Name="bicepIdentifierSuffix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="role">The role to grant.</param>
-        <param name="principalType">The type of the principal to assign to.</param>
-        <param name="principalId">The principal to assign to.</param>
-        <param name="bicepIdentifierSuffix">Optional role assignment identifier name suffix.</param>
-        <summary>
-            Creates a role assignment for a principal that grants access to this
-            AppConfigurationStore.
-            </summary>
-        <returns>The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />.</returns>
+        <param name="role"> The role to grant. </param>
+        <param name="principalType"> The type of the principal to assign to. </param>
+        <param name="principalId"> The principal to assign to. </param>
+        <param name="bicepIdentifierSuffix"> Optional role assignment identifier name suffix. </param>
+        <summary> Creates a role assignment for a principal that grants access to this AppConfigurationStore. </summary>
+        <returns> The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -183,10 +186,27 @@
         <ReturnType>Azure.Provisioning.AppConfiguration.AppConfigurationDataPlaneProxyProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Property specifying the configuration of data plane proxy for Azure
-            Resource Manager (ARM).
-            </summary>
+        <summary> Gets or sets the DataPlaneProxy. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultKeyValueRevisionRetentionPeriodInSeconds">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;long&gt; DefaultKeyValueRevisionRetentionPeriodInSeconds { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;int64&gt; DefaultKeyValueRevisionRetentionPeriodInSeconds" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppConfiguration.AppConfigurationStore.DefaultKeyValueRevisionRetentionPeriodInSeconds" />
+      <MemberSignature Language="VB.NET" Value="Public Property DefaultKeyValueRevisionRetentionPeriodInSeconds As BicepValue(Of Long)" />
+      <MemberSignature Language="F#" Value="member this.DefaultKeyValueRevisionRetentionPeriodInSeconds : Azure.Provisioning.BicepValue&lt;int64&gt; with get, set" Usage="Azure.Provisioning.AppConfiguration.AppConfigurationStore.DefaultKeyValueRevisionRetentionPeriodInSeconds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppConfiguration</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int64&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the DefaultKeyValueRevisionRetentionPeriodInSeconds. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -208,9 +228,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of AppConfigurationStore.
-            </summary>
+        <summary> Define all the provisionable properties for AppConfigurationStore. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -230,9 +248,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Disables all authentication methods other than AAD authentication.
-            </summary>
+        <summary> Gets or sets the DisableLocalAuth. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -253,10 +269,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Property specifying whether protection against purge is enabled for
-            this configuration store.
-            </summary>
+        <summary> Gets or sets the EnablePurgeProtection. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -277,9 +290,7 @@
         <ReturnType>Azure.Provisioning.AppConfiguration.AppConfigurationKeyVaultProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Key vault properties.
-            </summary>
+        <summary> Gets or sets the KeyVaultProperties. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -300,19 +311,18 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The DNS endpoint where the configuration store API will be available.
-            </summary>
+        <summary> Gets the Endpoint. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppConfiguration.AppConfigurationStore FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppConfiguration.AppConfigurationStore FromExisting (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.AppConfiguration.AppConfigurationStore FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppConfiguration.AppConfigurationStore.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As AppConfigurationStore" />
       <MemberSignature Language="F#" Value="static member FromExisting : string * string -&gt; Azure.Provisioning.AppConfiguration.AppConfigurationStore" Usage="Azure.Provisioning.AppConfiguration.AppConfigurationStore.FromExisting (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppConfiguration.AppConfigurationStore FromExisting (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppConfiguration</AssemblyName>
@@ -327,16 +337,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the AppConfigurationStore resource.
-            This can be used to refer to the resource in expressions, but is not
-            the Azure name of the resource.  This value can contain letters,
-            numbers, and underscores.
-            </param>
-        <param name="resourceVersion">Version of the AppConfigurationStore.</param>
-        <summary>
-            Creates a reference to an existing AppConfigurationStore.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing AppConfigurationStore. </summary>
         <returns>The existing AppConfigurationStore resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -358,9 +361,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Get access keys for this AppConfigurationStore resource.
-            </summary>
+        <summary> Gets access keys for this App Configuration store. </summary>
         <returns>The keys for this AppConfigurationStore resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -388,10 +389,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Get the requirements for naming this AppConfigurationStore resource.
-            </summary>
-        <returns>Naming requirements.</returns>
+        <summary> Get the requirements for naming this resource. </summary>
+        <returns> Naming requirements. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -411,9 +410,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -434,9 +431,7 @@
         <ReturnType>Azure.Provisioning.Resources.ManagedServiceIdentity</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The managed identity information, if configured.
-            </summary>
+        <summary> Gets or sets the Identity. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -457,9 +452,27 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManagedOnBehalfOfMoboBrokerResources">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppConfiguration.AppConfigurationMoboBrokerResourceInfo&gt; ManagedOnBehalfOfMoboBrokerResources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepList`1&lt;class Azure.Provisioning.AppConfiguration.AppConfigurationMoboBrokerResourceInfo&gt; ManagedOnBehalfOfMoboBrokerResources" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppConfiguration.AppConfigurationStore.ManagedOnBehalfOfMoboBrokerResources" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ManagedOnBehalfOfMoboBrokerResources As BicepList(Of AppConfigurationMoboBrokerResourceInfo)" />
+      <MemberSignature Language="F#" Value="member this.ManagedOnBehalfOfMoboBrokerResources : Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppConfiguration.AppConfigurationMoboBrokerResourceInfo&gt;" Usage="Azure.Provisioning.AppConfiguration.AppConfigurationStore.ManagedOnBehalfOfMoboBrokerResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppConfiguration</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppConfiguration.AppConfigurationMoboBrokerResourceInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets the MoboBrokerResources. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -480,9 +493,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The name of the configuration store.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -503,10 +514,7 @@
         <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppConfiguration.AppConfigurationPrivateEndpointConnectionReference&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The list of private endpoint connections that are set up for this
-            resource.
-            </summary>
+        <summary> Gets the PrivateEndpointConnections. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -527,9 +535,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppConfiguration.AppConfigurationProvisioningState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The provisioning state of the configuration store.
-            </summary>
+        <summary> Gets the ProvisioningState. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -550,10 +556,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppConfiguration.AppConfigurationPublicNetworkAccess&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Control permission for data plane traffic coming from public networks
-            while private endpoint is enabled.
-            </summary>
+        <summary> Gets or sets the PublicNetworkAccess. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -574,9 +577,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The SKU name of the configuration store.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -597,10 +598,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The amount of time in days that the configuration store will be
-            retained when it is soft deleted.
-            </summary>
+        <summary> Gets or sets the SoftDeleteRetentionInDays. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -621,9 +619,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -644,9 +640,27 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TelemetryResourceId">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt; TelemetryResourceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;class Azure.Core.ResourceIdentifier&gt; TelemetryResourceId" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppConfiguration.AppConfigurationStore.TelemetryResourceId" />
+      <MemberSignature Language="VB.NET" Value="Public Property TelemetryResourceId As BicepValue(Of ResourceIdentifier)" />
+      <MemberSignature Language="F#" Value="member this.TelemetryResourceId : Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt; with get, set" Usage="Azure.Provisioning.AppConfiguration.AppConfigurationStore.TelemetryResourceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppConfiguration</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the ResourceId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
