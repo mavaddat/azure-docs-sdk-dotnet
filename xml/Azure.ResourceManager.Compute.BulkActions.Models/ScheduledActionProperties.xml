@@ -23,16 +23,16 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary> Scheduled action properties. </summary>
+    <summary> Configuration and status of a scheduled action. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ScheduledActionProperties (Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType resourceType, Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType actionType, DateTimeOffset startOn, Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule schedule, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties&gt; notificationSettings);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType resourceType, valuetype Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType actionType, valuetype System.DateTimeOffset startOn, class Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule schedule, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties&gt; notificationSettings) cil managed" />
+      <MemberSignature Language="C#" Value="public ScheduledActionProperties (Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType resourceType, Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType actionType, DateTimeOffset startsOn, Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule schedule, System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties&gt; notificationSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType resourceType, valuetype Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType actionType, valuetype System.DateTimeOffset startsOn, class Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule schedule, class System.Collections.Generic.IEnumerable`1&lt;class Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties&gt; notificationSettings) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.#ctor(Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType,Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType,System.DateTimeOffset,Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule,System.Collections.Generic.IEnumerable{Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties})" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (resourceType As ScheduledActionsResourceType, actionType As ScheduledActionType, startOn As DateTimeOffset, schedule As ScheduledActionsSchedule, notificationSettings As IEnumerable(Of NotificationProperties))" />
-      <MemberSignature Language="F#" Value="new Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties : Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType * Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType * DateTimeOffset * Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule * seq&lt;Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties&gt; -&gt; Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties" Usage="new Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties (resourceType, actionType, startOn, schedule, notificationSettings)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (resourceType As ScheduledActionsResourceType, actionType As ScheduledActionType, startsOn As DateTimeOffset, schedule As ScheduledActionsSchedule, notificationSettings As IEnumerable(Of NotificationProperties))" />
+      <MemberSignature Language="F#" Value="new Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties : Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType * Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType * DateTimeOffset * Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule * seq&lt;Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties&gt; -&gt; Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties" Usage="new Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties (resourceType, actionType, startsOn, schedule, notificationSettings)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute.BulkActions</AssemblyName>
@@ -41,16 +41,16 @@
       <Parameters>
         <Parameter Name="resourceType" Type="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType" />
         <Parameter Name="actionType" Type="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType" />
-        <Parameter Name="startOn" Type="System.DateTimeOffset" />
+        <Parameter Name="startsOn" Type="System.DateTimeOffset" />
         <Parameter Name="schedule" Type="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule" />
         <Parameter Name="notificationSettings" Type="System.Collections.Generic.IEnumerable&lt;Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties&gt;" />
       </Parameters>
       <Docs>
-        <param name="resourceType"> The type of resource the scheduled action is targeting. </param>
-        <param name="actionType"> The action the scheduled action should perform in the resources. </param>
-        <param name="startOn"> The time which the scheduled action is supposed to start running. </param>
-        <param name="schedule"> The schedule the scheduled action is supposed to follow. </param>
-        <param name="notificationSettings"> The notification settings for the scheduled action. </param>
+        <param name="resourceType"> The type of compute resource targeted by the action. </param>
+        <param name="actionType"> The operation performed on the targeted resources. </param>
+        <param name="startsOn"> The date and time, including UTC offset, when the schedule becomes active. </param>
+        <param name="schedule"> The recurring schedule. </param>
+        <param name="notificationSettings"> Notification settings that apply to the scheduled action. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -72,7 +72,7 @@
         <ReturnType>Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The action the scheduled action should perform in the resources. </summary>
+        <summary> The operation performed on the targeted resources. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -92,17 +92,17 @@
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> Tell if the scheduled action is disabled or not. </summary>
+        <summary> Indicates whether new occurrences are disabled. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="EndOn">
-      <MemberSignature Language="C#" Value="public DateTimeOffset? EndOn { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; EndOn" />
-      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.EndOn" />
-      <MemberSignature Language="VB.NET" Value="Public Property EndOn As Nullable(Of DateTimeOffset)" />
-      <MemberSignature Language="F#" Value="member this.EndOn : Nullable&lt;DateTimeOffset&gt; with get, set" Usage="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.EndOn" />
+    <Member MemberName="EndsOn">
+      <MemberSignature Language="C#" Value="public DateTimeOffset? EndsOn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; EndsOn" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.EndsOn" />
+      <MemberSignature Language="VB.NET" Value="Public Property EndsOn As Nullable(Of DateTimeOffset)" />
+      <MemberSignature Language="F#" Value="member this.EndsOn : Nullable&lt;DateTimeOffset&gt; with get, set" Usage="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.EndsOn" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute.BulkActions</AssemblyName>
@@ -112,7 +112,7 @@
         <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The time when the scheduled action is supposed to stop scheduling. </summary>
+        <summary> The date and time, including UTC offset, after which no new occurrences are scheduled. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -183,7 +183,7 @@
         <ReturnType>System.Collections.Generic.IList&lt;Azure.ResourceManager.Compute.BulkActions.Models.NotificationProperties&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The notification settings for the scheduled action. </summary>
+        <summary> Notification settings that apply to the scheduled action. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -253,7 +253,7 @@
         <ReturnType>System.Nullable&lt;Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsProvisioningState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The status of the last provisioning operation performed on the resource. </summary>
+        <summary> Read-only. The provisioning state of the scheduled action. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -273,7 +273,7 @@
         <ReturnType>Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsResourceType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The type of resource the scheduled action is targeting. </summary>
+        <summary> The type of compute resource targeted by the action. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -293,17 +293,17 @@
         <ReturnType>Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The schedule the scheduled action is supposed to follow. </summary>
+        <summary> The recurring schedule. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="StartOn">
-      <MemberSignature Language="C#" Value="public DateTimeOffset StartOn { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset StartOn" />
-      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.StartOn" />
-      <MemberSignature Language="VB.NET" Value="Public Property StartOn As DateTimeOffset" />
-      <MemberSignature Language="F#" Value="member this.StartOn : DateTimeOffset with get, set" Usage="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.StartOn" />
+    <Member MemberName="StartsOn">
+      <MemberSignature Language="C#" Value="public DateTimeOffset StartsOn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset StartsOn" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.StartsOn" />
+      <MemberSignature Language="VB.NET" Value="Public Property StartsOn As DateTimeOffset" />
+      <MemberSignature Language="F#" Value="member this.StartsOn : DateTimeOffset with get, set" Usage="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionProperties.StartsOn" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute.BulkActions</AssemblyName>
@@ -313,7 +313,7 @@
         <ReturnType>System.DateTimeOffset</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The time which the scheduled action is supposed to start running. </summary>
+        <summary> The date and time, including UTC offset, when the schedule becomes active. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -23,7 +23,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary> Request to ask for a delay in an occurrence, delay should be set to client local time eg (PST) 2025-05-30T06:35:00-07:00. </summary>
+    <summary> Request body for delaying a scheduled action occurrence. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -43,8 +43,8 @@
         <Parameter Name="resourceIds" Type="System.Collections.Generic.IEnumerable&lt;Azure.Core.ResourceIdentifier&gt;" />
       </Parameters>
       <Docs>
-        <param name="scheduleOn"> The exact time to delay the operations to. </param>
-        <param name="resourceIds"> The resources that should be delayed. If empty, the delay will apply to the all resources in the occurrence. </param>
+        <param name="scheduleOn"> The new date and time for the occurrence, including the UTC offset. </param>
+        <param name="resourceIds"> The resources to delay. An empty array delays all resources in the occurrence. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Compute.BulkActions.Models.DelayRequestContent" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -167,7 +167,7 @@
         <ReturnType>System.Collections.Generic.IList&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The resources that should be delayed. If empty, the delay will apply to the all resources in the occurrence. </summary>
+        <summary> The resources to delay. An empty array delays all resources in the occurrence. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -187,7 +187,7 @@
         <ReturnType>System.DateTimeOffset</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The exact time to delay the operations to. </summary>
+        <summary> The new date and time for the occurrence, including the UTC offset. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

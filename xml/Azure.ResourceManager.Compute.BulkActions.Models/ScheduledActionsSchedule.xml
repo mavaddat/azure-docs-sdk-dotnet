@@ -23,7 +23,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary> Specify the schedule in which the scheduled action is supposed to follow. </summary>
+    <summary> The recurring schedule for a scheduled action. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -43,8 +43,8 @@
         <Parameter Name="timeZone" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="scheduledTime"> The time the scheduled action is supposed to run on. </param>
-        <param name="timeZone"> The timezone the scheduled time is specified on. </param>
+        <param name="scheduledTime"> The local time of day when the scheduled action runs. </param>
+        <param name="timeZone"> The time zone used to interpret the scheduled time. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule" />. </summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -66,27 +66,27 @@
         <ReturnType>System.Nullable&lt;Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsDeadlineType&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The type of deadline the scheduled action is supposed to follow for the schedule. If no value is passed, it will default to InitiateAt. </summary>
+        <summary> How the scheduled time is interpreted. The default is `InitiateAt`. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ExecutionParameters">
-      <MemberSignature Language="C#" Value="public Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsExecutionParametersContent ExecutionParameters { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsExecutionParametersContent ExecutionParameters" />
-      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule.ExecutionParameters" />
-      <MemberSignature Language="VB.NET" Value="Public Property ExecutionParameters As ScheduledActionsExecutionParametersContent" />
-      <MemberSignature Language="F#" Value="member this.ExecutionParameters : Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsExecutionParametersContent with get, set" Usage="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule.ExecutionParameters" />
+    <Member MemberName="ExecutionParametersRetryPolicy">
+      <MemberSignature Language="C#" Value="public Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsRetryPolicy ExecutionParametersRetryPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsRetryPolicy ExecutionParametersRetryPolicy" />
+      <MemberSignature Language="DocId" Value="P:Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule.ExecutionParametersRetryPolicy" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExecutionParametersRetryPolicy As ScheduledActionsRetryPolicy" />
+      <MemberSignature Language="F#" Value="member this.ExecutionParametersRetryPolicy : Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsRetryPolicy with get, set" Usage="Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsSchedule.ExecutionParametersRetryPolicy" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.ResourceManager.Compute.BulkActions</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsExecutionParametersContent</ReturnType>
+        <ReturnType>Azure.ResourceManager.Compute.BulkActions.Models.ScheduledActionsRetryPolicy</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The execution parameters the scheduled action is supposed to follow. </summary>
+        <summary> The retry settings for failed resource operations. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -207,7 +207,7 @@
         <ReturnType>System.Collections.Generic.IList&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The days of the month the scheduled action is supposed to run on. If empty, it means it will run on every day of the month. </summary>
+        <summary> The calendar days when the action runs. An empty array means every day of the month. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -227,7 +227,7 @@
         <ReturnType>System.Collections.Generic.IList&lt;Azure.ResourceManager.Compute.BulkActions.Models.Month&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The months the scheduled action is supposed to run on. If empty, it means it will run on every month. </summary>
+        <summary> The months when the action runs. An empty array means every month. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -247,7 +247,7 @@
         <ReturnType>System.Collections.Generic.IList&lt;Azure.ResourceManager.Compute.BulkActions.Models.WeekDay&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The week days the scheduled action is supposed to run on. If empty, it means it will run on every week day. </summary>
+        <summary> The days of the week when the action runs. An empty array means every day of the week. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -267,7 +267,7 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The time the scheduled action is supposed to run on. </summary>
+        <summary> The local time of day when the scheduled action runs. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -427,7 +427,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary> The timezone the scheduled time is specified on. </summary>
+        <summary> The time zone used to interpret the scheduled time. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
