@@ -1,0 +1,211 @@
+<Type Name="CodeTransparencyTrustStore" FullName="Azure.Security.CodeTransparency.CodeTransparencyTrustStore">
+  <TypeSignature Language="C#" Value="public sealed class CodeTransparencyTrustStore" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CodeTransparencyTrustStore extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.Security.CodeTransparency.CodeTransparencyTrustStore" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class CodeTransparencyTrustStore" />
+  <TypeSignature Language="F#" Value="type CodeTransparencyTrustStore = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            A store of receipt-verification keys, keyed by issuer domain, for offline verification.
+            <para>
+            The store can be populated from either the JSON JWK Set (<c>/jwks</c>) or the CBOR COSE_Key_Set
+            (<c>/.well-known/scitt-keys</c>) representation because both are normalized to
+            <see cref="T:Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet" /> before being added.
+            </para><para><see cref="M:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.ToBinaryData" /> serializes to an SDK-owned, versioned JSON format that persists only
+            public key parameters. Private key material is never stored.
+            </para></summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTransparencyTrustStore ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Initializes a new, empty <see cref="T:Azure.Security.CodeTransparency.CodeTransparencyTrustStore" />.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromBinaryData">
+      <MemberSignature Language="C#" Value="public static Azure.Security.CodeTransparency.CodeTransparencyTrustStore FromBinaryData (BinaryData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Security.CodeTransparency.CodeTransparencyTrustStore FromBinaryData(class System.BinaryData data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.FromBinaryData(System.BinaryData)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FromBinaryData (data As BinaryData) As CodeTransparencyTrustStore" />
+      <MemberSignature Language="F#" Value="static member FromBinaryData : BinaryData -&gt; Azure.Security.CodeTransparency.CodeTransparencyTrustStore" Usage="Azure.Security.CodeTransparency.CodeTransparencyTrustStore.FromBinaryData data" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Security.CodeTransparency.CodeTransparencyTrustStore</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.BinaryData" />
+      </Parameters>
+      <Docs>
+        <param name="data">The serialized trust store.</param>
+        <summary>
+            Creates a <see cref="T:Azure.Security.CodeTransparency.CodeTransparencyTrustStore" /> from data previously produced by
+            <see cref="M:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.ToBinaryData" />.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> is null.</exception>
+        <exception cref="T:System.FormatException">The data is not a valid serialized trust store.</exception>
+        <exception cref="T:System.NotSupportedException">The serialized format version is not supported.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeysByIssuer">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IReadOnlyDictionary&lt;string,Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet&gt; KeysByIssuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IReadOnlyDictionary`2&lt;string, class Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet&gt; KeysByIssuer" />
+      <MemberSignature Language="DocId" Value="P:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.KeysByIssuer" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property KeysByIssuer As IReadOnlyDictionary(Of String, CodeTransparencyVerificationKeySet)" />
+      <MemberSignature Language="F#" Value="member this.KeysByIssuer : System.Collections.Generic.IReadOnlyDictionary&lt;string, Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet&gt;" Usage="Azure.Security.CodeTransparency.CodeTransparencyTrustStore.KeysByIssuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IReadOnlyDictionary&lt;System.String,Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the verification key sets, keyed by issuer domain.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveKeys">
+      <MemberSignature Language="C#" Value="public bool RemoveKeys (string issuerDomain);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveKeys(string issuerDomain) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.RemoveKeys(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function RemoveKeys (issuerDomain As String) As Boolean" />
+      <MemberSignature Language="F#" Value="member this.RemoveKeys : string -&gt; bool" Usage="codeTransparencyTrustStore.RemoveKeys issuerDomain" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuerDomain" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="issuerDomain">The issuer domain (hostname) to remove.</param>
+        <summary>
+            Removes the keys for the specified issuer domain.
+            </summary>
+        <returns>
+          <c>true</c> if keys were removed; otherwise, <c>false</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetKeys">
+      <MemberSignature Language="C#" Value="public void SetKeys (string issuerDomain, Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet keys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetKeys(string issuerDomain, class Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet keys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.SetKeys(System.String,Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetKeys (issuerDomain As String, keys As CodeTransparencyVerificationKeySet)" />
+      <MemberSignature Language="F#" Value="member this.SetKeys : string * Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet -&gt; unit" Usage="codeTransparencyTrustStore.SetKeys (issuerDomain, keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuerDomain" Type="System.String" />
+        <Parameter Name="keys" Type="Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet" />
+      </Parameters>
+      <Docs>
+        <param name="issuerDomain">The issuer domain (hostname) the keys belong to.</param>
+        <param name="keys">The verification keys for the issuer.</param>
+        <summary>
+            Adds or replaces the verification keys for the specified issuer domain.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="issuerDomain" /> is null or empty.</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keys" /> is null.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToBinaryData">
+      <MemberSignature Language="C#" Value="public BinaryData ToBinaryData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.BinaryData ToBinaryData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.ToBinaryData" />
+      <MemberSignature Language="VB.NET" Value="Public Function ToBinaryData () As BinaryData" />
+      <MemberSignature Language="F#" Value="member this.ToBinaryData : unit -&gt; BinaryData" Usage="codeTransparencyTrustStore.ToBinaryData " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.BinaryData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Serializes the trust store to an SDK-owned, versioned JSON format containing only public key
+            parameters.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetKeys">
+      <MemberSignature Language="C#" Value="public bool TryGetKeys (string issuerDomain, out Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet keys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetKeys(string issuerDomain, [out] class Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet&amp; keys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyTrustStore.TryGetKeys(System.String,Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TryGetKeys (issuerDomain As String, ByRef keys As CodeTransparencyVerificationKeySet) As Boolean" />
+      <MemberSignature Language="F#" Value="member this.TryGetKeys : string * CodeTransparencyVerificationKeySet -&gt; bool" Usage="codeTransparencyTrustStore.TryGetKeys (issuerDomain, keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuerDomain" Type="System.String" />
+        <Parameter Name="keys" Type="Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="issuerDomain">The issuer domain (hostname) to look up.</param>
+        <param name="keys">When this method returns, the keys for the issuer if present; otherwise null.</param>
+        <summary>
+            Gets the verification keys for the specified issuer domain.
+            </summary>
+        <returns>
+          <c>true</c> if keys were found for the issuer; otherwise, <c>false</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

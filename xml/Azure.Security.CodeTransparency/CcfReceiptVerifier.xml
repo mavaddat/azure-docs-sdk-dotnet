@@ -14,15 +14,10 @@
   <Interfaces />
   <Docs>
     <summary>
-            CcfReceiptVerifier class contains the methods to verify the CCF SCITT receipt
-            integrity and the inclusion in the Signing Transparency Service. The verification
-            requires the receipt, the COSE_Sign1 envelope and the service certificate. The
-            COSE_Sign1 envelope is the payload that was submitted to the Signing Transparency
-            Service. The receipt is a cryptographic proof issued by the Signing Transparency
-            Service after the successful submission of the signature. The service certificate
-            is the public key of the Signing Transparency Service that was used to endorse the
-            receipt.
-            The receipt can also be embedded in the COSE_Sign1 envelope.
+            CcfReceiptVerifier contains the methods to verify a CCF SCITT receipt's integrity and its
+            inclusion in the Signing Transparency Service. Verification requires the receipt, the
+            COSE_Sign1 signed statement that was submitted to the service, and the service's public
+            receipt-verification key. The receipt can also be embedded in the COSE_Sign1 envelope.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
@@ -39,8 +34,115 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.Security.CodeTransparency.CcfReceiptVerifier" />.
+            </summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verify">
+      <MemberSignature Language="C#" Value="public static void Verify (byte[] receiptCoseSign1Bytes, byte[] signedStatementCoseSign1Bytes, Azure.Security.CodeTransparency.CodeTransparencyVerificationKey verificationKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Verify(unsigned int8[] receiptCoseSign1Bytes, unsigned int8[] signedStatementCoseSign1Bytes, class Azure.Security.CodeTransparency.CodeTransparencyVerificationKey verificationKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CcfReceiptVerifier.Verify(System.Byte[],System.Byte[],Azure.Security.CodeTransparency.CodeTransparencyVerificationKey)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Verify (receiptCoseSign1Bytes As Byte(), signedStatementCoseSign1Bytes As Byte(), verificationKey As CodeTransparencyVerificationKey)" />
+      <MemberSignature Language="F#" Value="static member Verify : byte[] * byte[] * Azure.Security.CodeTransparency.CodeTransparencyVerificationKey -&gt; unit" Usage="Azure.Security.CodeTransparency.CcfReceiptVerifier.Verify (receiptCoseSign1Bytes, signedStatementCoseSign1Bytes, verificationKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="receiptCoseSign1Bytes" Type="System.Byte[]" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="signedStatementCoseSign1Bytes" Type="System.Byte[]" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="verificationKey" Type="Azure.Security.CodeTransparency.CodeTransparencyVerificationKey" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="receiptCoseSign1Bytes">Receipt in COSE_Sign1 CBOR bytes.</param>
+        <param name="signedStatementCoseSign1Bytes">The input signed statement bytes.</param>
+        <param name="verificationKey">The service public key used to verify the receipt.</param>
+        <summary>
+            Verifies a CCF SCITT receipt against a signed statement using the supplied verification key.
+            If verification fails, an exception is thrown explaining which step failed.
+            #1 Reference: https://datatracker.ietf.org/doc/draft-ietf-scitt-architecture/
+            #2 Reference: https://datatracker.ietf.org/doc/draft-birkholz-cose-receipts-ccf-profile/
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="verificationKey" /> is null.</exception>
+        <exception cref="T:System.InvalidOperationException">Thrown when the verification fails.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Verify">
+      <MemberSignature Language="C#" Value="public static void Verify (byte[] receiptCoseSign1Bytes, byte[] signedStatementCoseSign1Bytes, Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet verificationKeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Verify(unsigned int8[] receiptCoseSign1Bytes, unsigned int8[] signedStatementCoseSign1Bytes, class Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet verificationKeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CcfReceiptVerifier.Verify(System.Byte[],System.Byte[],Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Verify (receiptCoseSign1Bytes As Byte(), signedStatementCoseSign1Bytes As Byte(), verificationKeys As CodeTransparencyVerificationKeySet)" />
+      <MemberSignature Language="F#" Value="static member Verify : byte[] * byte[] * Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet -&gt; unit" Usage="Azure.Security.CodeTransparency.CcfReceiptVerifier.Verify (receiptCoseSign1Bytes, signedStatementCoseSign1Bytes, verificationKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="receiptCoseSign1Bytes" Type="System.Byte[]" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="signedStatementCoseSign1Bytes" Type="System.Byte[]" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="verificationKeys" Type="Azure.Security.CodeTransparency.CodeTransparencyVerificationKeySet" Index="2" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="receiptCoseSign1Bytes">Receipt in COSE_Sign1 CBOR bytes.</param>
+        <param name="signedStatementCoseSign1Bytes">The input signed statement bytes.</param>
+        <param name="verificationKeys">The service public keys used to verify the receipt.</param>
+        <summary>
+            Verifies a CCF SCITT receipt against a signed statement. The key ID is extracted from the receipt
+            and matched, case-sensitively, against the supplied key set.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="verificationKeys" /> is null.</exception>
+        <exception cref="T:System.InvalidOperationException">Thrown when the verification fails or no matching key is found.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Verify">
+      <MemberSignature Language="C#" Value="public static void Verify (byte[] receiptCoseSign1Bytes, byte[] signedStatementCoseSign1Bytes, string keyId, System.Security.Cryptography.ECDsa publicKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Verify(unsigned int8[] receiptCoseSign1Bytes, unsigned int8[] signedStatementCoseSign1Bytes, string keyId, class System.Security.Cryptography.ECDsa publicKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CcfReceiptVerifier.Verify(System.Byte[],System.Byte[],System.String,System.Security.Cryptography.ECDsa)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Verify (receiptCoseSign1Bytes As Byte(), signedStatementCoseSign1Bytes As Byte(), keyId As String, publicKey As ECDsa)" />
+      <MemberSignature Language="F#" Value="static member Verify : byte[] * byte[] * string * System.Security.Cryptography.ECDsa -&gt; unit" Usage="Azure.Security.CodeTransparency.CcfReceiptVerifier.Verify (receiptCoseSign1Bytes, signedStatementCoseSign1Bytes, keyId, publicKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="receiptCoseSign1Bytes" Type="System.Byte[]" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="signedStatementCoseSign1Bytes" Type="System.Byte[]" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="keyId" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="publicKey" Type="System.Security.Cryptography.ECDsa" Index="3" FrameworkAlternate="azure-dotnet" />
+      </Parameters>
+      <Docs>
+        <param name="receiptCoseSign1Bytes">Receipt in COSE_Sign1 CBOR bytes.</param>
+        <param name="signedStatementCoseSign1Bytes">The input signed statement bytes.</param>
+        <param name="keyId">The case-sensitive key ID that identifies <paramref name="publicKey" />.</param>
+        <param name="publicKey">The caller-owned ECDSA public key used to verify the receipt.</param>
+        <summary>
+            Verifies a CCF SCITT receipt against a signed statement using a caller-owned <see cref="T:System.Security.Cryptography.ECDsa" /> key.
+            The supplied key ID must match the key ID in the receipt.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyId" /> is null or empty.</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="publicKey" /> is null.</exception>
+        <exception cref="T:System.InvalidOperationException">Thrown when the verification fails.</exception>
       </Docs>
     </Member>
     <Member MemberName="VerifyTransparentStatementReceipt">
@@ -58,9 +160,9 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="jsonWebKey" Type="Azure.Security.CodeTransparency.JsonWebKey" />
-        <Parameter Name="receiptBytes" Type="System.Byte[]" />
-        <Parameter Name="signedStatementBytes" Type="System.Byte[]" />
+        <Parameter Name="jsonWebKey" Type="Azure.Security.CodeTransparency.JsonWebKey" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="receiptBytes" Type="System.Byte[]" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="signedStatementBytes" Type="System.Byte[]" Index="2" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
         <param name="jsonWebKey">The service certificate key (JWK).</param>

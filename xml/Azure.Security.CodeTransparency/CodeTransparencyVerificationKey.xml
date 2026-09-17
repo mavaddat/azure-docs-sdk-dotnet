@@ -1,0 +1,101 @@
+<Type Name="CodeTransparencyVerificationKey" FullName="Azure.Security.CodeTransparency.CodeTransparencyVerificationKey">
+  <TypeSignature Language="C#" Value="public sealed class CodeTransparencyVerificationKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CodeTransparencyVerificationKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Azure.Security.CodeTransparency.CodeTransparencyVerificationKey" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class CodeTransparencyVerificationKey" />
+  <TypeSignature Language="F#" Value="type CodeTransparencyVerificationKey = class" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            A single public receipt-verification key exposed by a Code Transparency service.
+            The key stores only public asymmetric key material and is decoupled from the JSON Web Key
+            (JWK) and CBOR COSE_Key wire encodings used by the service.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTransparencyVerificationKey (string keyId, System.Security.Cryptography.ECDsa publicKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string keyId, class System.Security.Cryptography.ECDsa publicKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyVerificationKey.#ctor(System.String,System.Security.Cryptography.ECDsa)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (keyId As String, publicKey As ECDsa)" />
+      <MemberSignature Language="F#" Value="new Azure.Security.CodeTransparency.CodeTransparencyVerificationKey : string * System.Security.Cryptography.ECDsa -&gt; Azure.Security.CodeTransparency.CodeTransparencyVerificationKey" Usage="new Azure.Security.CodeTransparency.CodeTransparencyVerificationKey (keyId, publicKey)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyId" Type="System.String" />
+        <Parameter Name="publicKey" Type="System.Security.Cryptography.ECDsa" />
+      </Parameters>
+      <Docs>
+        <param name="keyId">The case-sensitive key ID that identifies this key within a key set.</param>
+        <param name="publicKey">The ECDSA key whose public parameters are copied.</param>
+        <summary>
+            Initializes a new instance of <see cref="T:Azure.Security.CodeTransparency.CodeTransparencyVerificationKey" /> by copying only the
+            public parameters from <paramref name="publicKey" />. Any private key material is discarded.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyId" /> is null or empty.</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="publicKey" /> is null.</exception>
+        <exception cref="T:System.NotSupportedException">The key uses an unsupported curve/size.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyId">
+      <MemberSignature Language="C#" Value="public string KeyId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyId" />
+      <MemberSignature Language="DocId" Value="P:Azure.Security.CodeTransparency.CodeTransparencyVerificationKey.KeyId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property KeyId As String" />
+      <MemberSignature Language="F#" Value="member this.KeyId : string" Usage="Azure.Security.CodeTransparency.CodeTransparencyVerificationKey.KeyId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the case-sensitive key ID.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToECDsa">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.ECDsa ToECDsa ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.ECDsa ToECDsa() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.CodeTransparency.CodeTransparencyVerificationKey.ToECDsa" />
+      <MemberSignature Language="VB.NET" Value="Public Function ToECDsa () As ECDsa" />
+      <MemberSignature Language="F#" Value="member this.ToECDsa : unit -&gt; System.Security.Cryptography.ECDsa" Usage="codeTransparencyVerificationKey.ToECDsa " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.CodeTransparency</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDsa</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new caller-owned <see cref="T:System.Security.Cryptography.ECDsa" /> instance containing this public key.
+            The returned instance is independent of this key and of any other returned instance.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

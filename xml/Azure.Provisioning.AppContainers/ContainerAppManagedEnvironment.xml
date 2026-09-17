@@ -9,44 +9,58 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.Provisioning.Primitives.ProvisionableResource</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            ContainerAppManagedEnvironment.
-            </summary>
+    <summary> An environment for hosting container apps. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ContainerAppManagedEnvironment (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public ContainerAppManagedEnvironment (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
       <MemberSignature Language="F#" Value="new Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment : string * string -&gt; Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment" Usage="new Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public ContainerAppManagedEnvironment (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="bicepIdentifier" Type="System.String" />
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the ContainerAppManagedEnvironment
-            resource.  This can be used to refer to the resource in expressions,
-            but is not the Azure name of the resource.  This value can contain
-            letters, numbers, and underscores.
-            </param>
-        <param name="resourceVersion">Version of the ContainerAppManagedEnvironment.</param>
-        <summary>
-            Creates a new ContainerAppManagedEnvironment.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new ContainerAppManagedEnvironment. </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppInsightsConnectionString">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;string&gt; AppInsightsConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;string&gt; AppInsightsConnectionString" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.AppInsightsConnectionString" />
+      <MemberSignature Language="VB.NET" Value="Public Property AppInsightsConnectionString As BicepValue(Of String)" />
+      <MemberSignature Language="F#" Value="member this.AppInsightsConnectionString : Azure.Provisioning.BicepValue&lt;string&gt; with get, set" Usage="Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.AppInsightsConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the ConnectionString. </summary>
+        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -60,15 +74,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppContainers.ContainerAppLogsConfiguration</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Cluster configuration which enables the log daemon to export app logs
-            to configured destination.
-            </summary>
+        <summary> Gets or sets the AppLogsConfiguration. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -83,6 +95,7 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.Authorization.RoleAssignment</ReturnType>
@@ -92,26 +105,25 @@
         <Parameter Name="identity" Type="Azure.Provisioning.Roles.UserAssignedIdentity" />
       </Parameters>
       <Docs>
-        <param name="role">The role to grant.</param>
-        <param name="identity">The <see cref="T:Azure.Provisioning.Roles.UserAssignedIdentity" />.</param>
-        <summary>
-            Creates a role assignment for a user-assigned identity that grants
-            access to this ContainerAppManagedEnvironment.
-            </summary>
-        <returns>The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />.</returns>
+        <param name="role"> The role to grant. </param>
+        <param name="identity"> The <see cref="T:Azure.Provisioning.Roles.UserAssignedIdentity" />. </param>
+        <summary> Creates a role assignment for a user-assigned identity that grants access to this ContainerAppManagedEnvironment. </summary>
+        <returns> The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateRoleAssignment">
-      <MemberSignature Language="C#" Value="public Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment (Azure.Provisioning.AppContainers.AppContainersBuiltInRole role, Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, Azure.Provisioning.BicepValue&lt;Guid&gt; principalId, string? bicepIdentifierSuffix = default);" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment (Azure.Provisioning.AppContainers.AppContainersBuiltInRole role, Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, Azure.Provisioning.BicepValue&lt;Guid&gt; principalId, string? bicepIdentifierSuffix = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment(valuetype Azure.Provisioning.AppContainers.AppContainersBuiltInRole role, class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, class Azure.Provisioning.BicepValue`1&lt;valuetype System.Guid&gt; principalId, string bicepIdentifierSuffix) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.CreateRoleAssignment(Azure.Provisioning.AppContainers.AppContainersBuiltInRole,Azure.Provisioning.BicepValue{Azure.Provisioning.Authorization.RoleManagementPrincipalType},Azure.Provisioning.BicepValue{System.Guid},System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Function CreateRoleAssignment (role As AppContainersBuiltInRole, principalType As BicepValue(Of RoleManagementPrincipalType), principalId As BicepValue(Of Guid), Optional bicepIdentifierSuffix As String = Nothing) As RoleAssignment" />
       <MemberSignature Language="F#" Value="member this.CreateRoleAssignment : Azure.Provisioning.AppContainers.AppContainersBuiltInRole * Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; * Azure.Provisioning.BicepValue&lt;Guid&gt; * string -&gt; Azure.Provisioning.Authorization.RoleAssignment" Usage="containerAppManagedEnvironment.CreateRoleAssignment (role, principalType, principalId, bicepIdentifierSuffix)" />
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.Authorization.RoleAssignment CreateRoleAssignment (Azure.Provisioning.AppContainers.AppContainersBuiltInRole role, Azure.Provisioning.BicepValue&lt;Azure.Provisioning.Authorization.RoleManagementPrincipalType&gt; principalType, Azure.Provisioning.BicepValue&lt;Guid&gt; principalId, string bicepIdentifierSuffix = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.Authorization.RoleAssignment</ReturnType>
@@ -123,15 +135,12 @@
         <Parameter Name="bicepIdentifierSuffix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="role">The role to grant.</param>
-        <param name="principalType">The type of the principal to assign to.</param>
-        <param name="principalId">The principal to assign to.</param>
-        <param name="bicepIdentifierSuffix">Optional role assignment identifier name suffix.</param>
-        <summary>
-            Creates a role assignment for a principal that grants access to this
-            ContainerAppManagedEnvironment.
-            </summary>
-        <returns>The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />.</returns>
+        <param name="role"> The role to grant. </param>
+        <param name="principalType"> The type of the principal to assign to. </param>
+        <param name="principalId"> The principal to assign to. </param>
+        <param name="bicepIdentifierSuffix"> Optional role assignment identifier name suffix. </param>
+        <summary> Creates a role assignment for a principal that grants access to this ContainerAppManagedEnvironment. </summary>
+        <returns> The <see cref="T:Azure.Provisioning.Authorization.RoleAssignment" />. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,14 +154,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppContainers.ContainerAppCustomDomainConfiguration</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Custom domain configuration for the environment.
-            </summary>
+        <summary> Gets or sets the CustomDomainConfiguration. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -167,15 +175,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Application Insights connection string used by Dapr to export Service
-            to Service communication telemetry.
-            </summary>
+        <summary> Gets or sets the DaprAIConnectionString. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -190,15 +196,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Azure Monitor instrumentation key used by Dapr to export Service to
-            Service communication telemetry.
-            </summary>
+        <summary> Gets or sets the DaprAIInstrumentationKey. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -213,14 +217,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The version of Dapr.
-            </summary>
+        <summary> Gets the Version. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -235,14 +238,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Default Domain Name for the cluster.
-            </summary>
+        <summary> Gets the DefaultDomain. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -257,16 +259,14 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of
-            ContainerAppManagedEnvironment.
-            </summary>
+        <summary> Define all the provisionable properties for ContainerAppManagedEnvironment. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -280,14 +280,33 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Any errors that occurred during deployment or deployment validation.
-            </summary>
+        <summary> Gets the DeploymentErrors. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnvironmentMode">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppContainers.ManagedEnvironmentMode&gt; EnvironmentMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;valuetype Azure.Provisioning.AppContainers.ManagedEnvironmentMode&gt; EnvironmentMode" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.EnvironmentMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnvironmentMode As BicepValue(Of ManagedEnvironmentMode)" />
+      <MemberSignature Language="F#" Value="member this.EnvironmentMode : Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppContainers.ManagedEnvironmentMode&gt; with get, set" Usage="Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.EnvironmentMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppContainers.ManagedEnvironmentMode&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the EnvironmentMode. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -302,28 +321,29 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The endpoint of the eventstream of the Environment.
-            </summary>
+        <summary> Gets the EventStreamEndpoint. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment FromExisting (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As ContainerAppManagedEnvironment" />
       <MemberSignature Language="F#" Value="static member FromExisting : string * string -&gt; Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment" Usage="Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.FromExisting (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment FromExisting (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment</ReturnType>
@@ -333,17 +353,37 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the ContainerAppManagedEnvironment
-            resource.  This can be used to refer to the resource in expressions,
-            but is not the Azure name of the resource.  This value can contain
-            letters, numbers, and underscores.
-            </param>
-        <param name="resourceVersion">Version of the ContainerAppManagedEnvironment.</param>
-        <summary>
-            Creates a reference to an existing ContainerAppManagedEnvironment.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing ContainerAppManagedEnvironment. </summary>
         <returns>The existing ContainerAppManagedEnvironment resource.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResourceNameRequirements">
+      <MemberSignature Language="C#" Value="public override Azure.Provisioning.Primitives.ResourceNameRequirements GetResourceNameRequirements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype Azure.Provisioning.Primitives.ResourceNameRequirements GetResourceNameRequirements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.GetResourceNameRequirements" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResourceNameRequirements () As ResourceNameRequirements" />
+      <MemberSignature Language="F#" Value="override this.GetResourceNameRequirements : unit -&gt; Azure.Provisioning.Primitives.ResourceNameRequirements" Usage="containerAppManagedEnvironment.GetResourceNameRequirements " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.Primitives.ResourceNameRequirements</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary> Get the requirements for naming this resource. </summary>
+        <returns> Naming requirements. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -357,14 +397,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -379,15 +418,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.Resources.ManagedServiceIdentity</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Managed identities for the Managed Environment to interact with other
-            Azure services without maintaining any secrets or credentials in code.
-            </summary>
+        <summary> Gets or sets the Identity. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -402,17 +439,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Name of the platform-managed resource group created for the Managed
-            Environment to host infrastructure resources. If a subnet ID is
-            provided, this resource group will be created in the same subscription
-            as the subnet.
-            </summary>
+        <summary> Gets or sets the InfrastructureResourceGroup. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -427,14 +460,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppContainers.ManagedEnvironmentIngressConfiguration</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Ingress configuration for the Managed Environment.
-            </summary>
+        <summary> Gets or sets the IngressConfiguration. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -449,14 +481,23 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated and it will be removed in a future version. Please use PeerTrafficEncryptionIsEnabled instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated and it will be removed in a future version. Please use PeerTrafficEncryptionIsEnabled instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Boolean indicating whether the peer traffic encryption is enabled.
-            </summary>
+        <summary> Gets or sets whether peer traffic encryption is enabled. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -471,14 +512,23 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated and it will be removed in a future version. Please use PeerAuthenticationIsMtlsEnabled instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated and it will be removed in a future version. Please use PeerAuthenticationIsMtlsEnabled instead.")&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Boolean indicating whether the mutual TLS authentication is enabled.
-            </summary>
+        <summary> Gets or sets whether mutual TLS authentication is enabled. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -493,14 +543,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Whether or not this Managed Environment is zone-redundant.
-            </summary>
+        <summary> Gets or sets the IsZoneRedundant. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -515,14 +564,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The version of Keda.
-            </summary>
+        <summary> Gets the Version. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -537,14 +585,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Kind of the Environment.
-            </summary>
+        <summary> Gets or sets the Kind. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -559,14 +606,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -581,14 +627,73 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Name of the Environment.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTelemetryConfiguration">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.AppContainers.OpenTelemetryConfiguration OpenTelemetryConfiguration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.AppContainers.OpenTelemetryConfiguration OpenTelemetryConfiguration" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.OpenTelemetryConfiguration" />
+      <MemberSignature Language="VB.NET" Value="Public Property OpenTelemetryConfiguration As OpenTelemetryConfiguration" />
+      <MemberSignature Language="F#" Value="member this.OpenTelemetryConfiguration : Azure.Provisioning.AppContainers.OpenTelemetryConfiguration with get, set" Usage="Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.OpenTelemetryConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.AppContainers.OpenTelemetryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the OpenTelemetryConfiguration. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerAuthenticationIsMtlsEnabled">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;bool&gt; PeerAuthenticationIsMtlsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;bool&gt; PeerAuthenticationIsMtlsEnabled" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.PeerAuthenticationIsMtlsEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property PeerAuthenticationIsMtlsEnabled As BicepValue(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.PeerAuthenticationIsMtlsEnabled : Azure.Provisioning.BicepValue&lt;bool&gt; with get, set" Usage="Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.PeerAuthenticationIsMtlsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the IsMtlsEnabled. </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerTrafficEncryptionIsEnabled">
+      <MemberSignature Language="C#" Value="public Azure.Provisioning.BicepValue&lt;bool&gt; PeerTrafficEncryptionIsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Azure.Provisioning.BicepValue`1&lt;bool&gt; PeerTrafficEncryptionIsEnabled" />
+      <MemberSignature Language="DocId" Value="P:Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.PeerTrafficEncryptionIsEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property PeerTrafficEncryptionIsEnabled As BicepValue(Of Boolean)" />
+      <MemberSignature Language="F#" Value="member this.PeerTrafficEncryptionIsEnabled : Azure.Provisioning.BicepValue&lt;bool&gt; with get, set" Usage="Azure.Provisioning.AppContainers.ContainerAppManagedEnvironment.PeerTrafficEncryptionIsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> Gets or sets the IsEnabled. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -603,14 +708,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppContainers.ContainerAppPrivateEndpointConnection&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Private endpoint connections to the resource.
-            </summary>
+        <summary> Gets the PrivateEndpointConnections. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -625,14 +729,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppContainers.ContainerAppEnvironmentProvisioningState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Provisioning state of the Environment.
-            </summary>
+        <summary> Gets the ProvisioningState. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -647,15 +750,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppContainers.ContainerAppPublicNetworkAccess&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Property to allow or block all public traffic. Allowed Values:
-            'Enabled', 'Disabled'.
-            </summary>
+        <summary> Gets or sets the PublicNetworkAccess. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -670,14 +771,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Net.IPAddress&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Static IP of the Environment.
-            </summary>
+        <summary> Gets the StaticIP. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -692,14 +792,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -714,14 +813,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -736,14 +834,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppContainers.ContainerAppVnetConfiguration</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Vnet configuration for the environment.
-            </summary>
+        <summary> Gets or sets the VnetConfiguration. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -758,14 +855,13 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppContainers</AssemblyName>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppContainers.ContainerAppWorkloadProfile&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Workload profiles configured for the Managed Environment.
-            </summary>
+        <summary> Gets or sets the WorkloadProfiles. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
