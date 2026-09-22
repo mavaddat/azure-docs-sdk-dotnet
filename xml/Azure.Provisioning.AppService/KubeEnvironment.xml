@@ -17,18 +17,17 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            KubeEnvironment.
-            </summary>
+    <summary> A Kubernetes cluster specialized for web workloads by Azure App Service. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public KubeEnvironment (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public KubeEnvironment (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppService.KubeEnvironment.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
       <MemberSignature Language="F#" Value="new Azure.Provisioning.AppService.KubeEnvironment : string * string -&gt; Azure.Provisioning.AppService.KubeEnvironment" Usage="new Azure.Provisioning.AppService.KubeEnvironment (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public KubeEnvironment (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
@@ -40,16 +39,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the KubeEnvironment resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the KubeEnvironment.</param>
-        <summary>
-            Creates a new KubeEnvironment.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new KubeEnvironment. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,9 +61,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the aks resource id.
-            </summary>
+        <summary> Gets or sets the AksResourceId. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -92,11 +82,7 @@
         <ReturnType>Azure.Provisioning.AppService.AppLogsConfiguration</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Cluster configuration which enables the log daemon to export
-            app logs to a destination. Currently only
-            "log-analytics" is             supported
-            </summary>
+        <summary> Gets or sets the AppLogsConfiguration. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -117,11 +103,7 @@
         <ReturnType>Azure.Provisioning.AppService.ArcConfiguration</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Cluster configuration which determines the ARC cluster
-            components types. Eg: Choosing between BuildService kind,
-            FrontEnd Service ArtifactsStorageType etc.
-            </summary>
+        <summary> Gets or sets the ArcConfiguration. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -142,10 +124,7 @@
         <ReturnType>Azure.Provisioning.AppService.ContainerAppsConfiguration</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Cluster configuration for Container Apps Environments to configure Dapr
-            Instrumentation Key and VNET Configuration.
-            </summary>
+        <summary> Gets or sets the ContainerAppsConfiguration. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -166,9 +145,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Default Domain Name for the cluster.
-            </summary>
+        <summary> Gets the DefaultDomain. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -190,9 +167,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of KubeEnvironment.
-            </summary>
+        <summary> Define all the provisionable properties for KubeEnvironment. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -212,9 +187,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Any errors that occurred during deployment or deployment validation.
-            </summary>
+        <summary> Gets the DeploymentErrors. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -235,10 +208,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Type of Kubernetes Environment. Only supported for Container App
-            Environments with value as Managed.
-            </summary>
+        <summary> Gets or sets the EnvironmentType. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -259,19 +229,18 @@
         <ReturnType>Azure.Provisioning.Resources.ExtendedAzureLocation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Extended Location.
-            </summary>
+        <summary> Gets or sets the ExtendedLocation. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.KubeEnvironment FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.KubeEnvironment FromExisting (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.AppService.KubeEnvironment FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppService.KubeEnvironment.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As KubeEnvironment" />
       <MemberSignature Language="F#" Value="static member FromExisting : string * string -&gt; Azure.Provisioning.AppService.KubeEnvironment" Usage="Azure.Provisioning.AppService.KubeEnvironment.FromExisting (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.KubeEnvironment FromExisting (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
@@ -286,16 +255,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the KubeEnvironment resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the KubeEnvironment.</param>
-        <summary>
-            Creates a reference to an existing KubeEnvironment.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing KubeEnvironment. </summary>
         <returns>The existing KubeEnvironment resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -316,9 +278,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -339,9 +299,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Only visible within Vnet/Subnet.
-            </summary>
+        <summary> Gets or sets the IsInternalLoadBalancerEnabled. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -362,11 +320,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Kind of resource. If the resource is an app, you can refer to
-            https://github.com/Azure/app-service-linux-docs/blob/master/Things_You_Should_Know/kind_property.md#app-service-resource-kind-reference
-            for details supported values for kind.
-            </summary>
+        <summary> Gets or sets the Kind. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -387,9 +341,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -410,9 +362,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Name of the Kubernetes Environment.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -433,9 +383,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppService.KubeEnvironmentProvisioningState&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Provisioning state of the Kubernetes Environment.
-            </summary>
+        <summary> Gets the ProvisioningState. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -456,9 +404,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Static IP of the KubeEnvironment.
-            </summary>
+        <summary> Gets or sets the StaticIP. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -479,9 +425,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -502,9 +446,7 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

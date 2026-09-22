@@ -1,9 +1,13 @@
 <Type Name="SiteAuthSettingsV2" FullName="Azure.Provisioning.AppService.SiteAuthSettingsV2">
-  <TypeSignature Language="C#" Value="public class SiteAuthSettingsV2 : Azure.Provisioning.Primitives.ProvisionableResource" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteAuthSettingsV2 extends Azure.Provisioning.Primitives.ProvisionableResource" />
+  <TypeSignature Language="C#" Value="public class SiteAuthSettingsV2 : Azure.Provisioning.Primitives.ProvisionableResource" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteAuthSettingsV2 extends Azure.Provisioning.Primitives.ProvisionableResource" FrameworkAlternate="azure-dotnet" />
   <TypeSignature Language="DocId" Value="T:Azure.Provisioning.AppService.SiteAuthSettingsV2" />
-  <TypeSignature Language="VB.NET" Value="Public Class SiteAuthSettingsV2&#xA;Inherits ProvisionableResource" />
-  <TypeSignature Language="F#" Value="type SiteAuthSettingsV2 = class&#xA;    inherit ProvisionableResource" />
+  <TypeSignature Language="VB.NET" Value="Public Class SiteAuthSettingsV2&#xA;Inherits ProvisionableResource" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="F#" Value="type SiteAuthSettingsV2 = class&#xA;    inherit ProvisionableResource" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="C#" Value="public class SiteAuthSettingsV2 : Azure.Provisioning.AppService.WebSiteAuthSettingsV2" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteAuthSettingsV2 extends Azure.Provisioning.AppService.WebSiteAuthSettingsV2" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="VB.NET" Value="Public Class SiteAuthSettingsV2&#xA;Inherits WebSiteAuthSettingsV2" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="F#" Value="type SiteAuthSettingsV2 = class&#xA;    inherit WebSiteAuthSettingsV2" FrameworkAlternate="azure-dotnet-preview" />
   <AssemblyInfo>
     <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
@@ -13,21 +17,33 @@
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Azure.Provisioning.Primitives.ProvisionableResource</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="azure-dotnet-preview">Azure.Provisioning.AppService.WebSiteAuthSettingsV2</BaseTypeName>
   </Base>
   <Interfaces />
+  <Attributes>
+    <Attribute FrameworkAlternate="azure-dotnet-preview">
+      <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="azure-dotnet-preview">
+      <AttributeName Language="C#">[System.Obsolete("This class is deprecated and it will be removed in a future version. Please use WebSiteAuthSettingsV2 instead.")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Obsolete("This class is deprecated and it will be removed in a future version. Please use WebSiteAuthSettingsV2 instead.")&gt;]</AttributeName>
+    </Attribute>
+  </Attributes>
   <Docs>
     <summary>
-            SiteAuthSettingsV2.
+            Configuration settings for the Azure App Service Authentication / Authorization V2 feature.
             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public SiteAuthSettingsV2 (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public SiteAuthSettingsV2 (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppService.SiteAuthSettingsV2.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
       <MemberSignature Language="F#" Value="new Azure.Provisioning.AppService.SiteAuthSettingsV2 : string * string -&gt; Azure.Provisioning.AppService.SiteAuthSettingsV2" Usage="new Azure.Provisioning.AppService.SiteAuthSettingsV2 (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public SiteAuthSettingsV2 (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
@@ -39,16 +55,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the SiteAuthSettingsV2 resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the SiteAuthSettingsV2.</param>
-        <summary>
-            Creates a new SiteAuthSettingsV2.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new SiteAuthSettingsV2. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -62,7 +71,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -76,11 +84,12 @@
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.SiteAuthSettingsV2 FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.SiteAuthSettingsV2 FromExisting (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.AppService.SiteAuthSettingsV2 FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppService.SiteAuthSettingsV2.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As SiteAuthSettingsV2" />
       <MemberSignature Language="F#" Value="static member FromExisting : string * string -&gt; Azure.Provisioning.AppService.SiteAuthSettingsV2" Usage="Azure.Provisioning.AppService.SiteAuthSettingsV2.FromExisting (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.SiteAuthSettingsV2 FromExisting (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
@@ -95,16 +104,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the SiteAuthSettingsV2 resource.  This
-            can be used to refer to the resource in expressions, but is not the
-            Azure name of the resource.  This value can contain letters, numbers,
-            and underscores.
-            </param>
-        <param name="resourceVersion">Version of the SiteAuthSettingsV2.</param>
-        <summary>
-            Creates a reference to an existing SiteAuthSettingsV2.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing SiteAuthSettingsV2. </summary>
         <returns>The existing SiteAuthSettingsV2 resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -119,7 +121,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppService.GlobalValidation</ReturnType>
@@ -143,7 +144,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppService.AppServiceHttpSettings</ReturnType>
@@ -168,7 +168,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
@@ -191,7 +190,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppService.AppServiceIdentityProviders</ReturnType>
@@ -215,7 +213,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
@@ -238,7 +235,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppService.WebAppLoginInfo</ReturnType>
@@ -262,7 +258,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.AppService.AuthPlatform</ReturnType>
@@ -286,7 +281,6 @@
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>

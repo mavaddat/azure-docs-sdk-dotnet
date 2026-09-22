@@ -17,18 +17,17 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            StaticSite.
-            </summary>
+    <summary> Concrete tracked resource types can be created by aliasing this type using a specific property type. </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public StaticSite (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public StaticSite (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppService.StaticSite.#ctor(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (bicepIdentifier As String, Optional resourceVersion As String = Nothing)" />
       <MemberSignature Language="F#" Value="new Azure.Provisioning.AppService.StaticSite : string * string -&gt; Azure.Provisioning.AppService.StaticSite" Usage="new Azure.Provisioning.AppService.StaticSite (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public StaticSite (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
@@ -40,16 +39,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the StaticSite resource.  This can be
-            used to refer to the resource in expressions, but is not the Azure
-            name of the resource.  This value can contain letters, numbers, and
-            underscores.
-            </param>
-        <param name="resourceVersion">Version of the StaticSite.</param>
-        <summary>
-            Creates a new StaticSite.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a new StaticSite. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,10 +61,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            &lt;code&gt;false&lt;/code&gt; if config file is locked for this static
-            web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
-            </summary>
+        <summary> Gets or sets the AllowConfigFileUpdates. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -93,9 +82,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The target branch in the repository.
-            </summary>
+        <summary> Gets or sets the Branch. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -116,9 +103,7 @@
         <ReturnType>Azure.Provisioning.AppService.StaticSiteBuildProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Build properties to configure on the repository.
-            </summary>
+        <summary> Gets or sets the BuildProperties. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -139,9 +124,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The content distribution endpoint for the static site.
-            </summary>
+        <summary> Gets the ContentDistributionEndpoint. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -162,9 +145,7 @@
         <ReturnType>Azure.Provisioning.BicepList&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The custom domains associated with this static site.
-            </summary>
+        <summary> Gets the CustomDomains. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -185,9 +166,7 @@
         <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppService.StaticSiteDatabaseConnectionOverview&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Database connections for the static site.
-            </summary>
+        <summary> Gets the DatabaseConnections. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -208,9 +187,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The default autogenerated hostname for the static site.
-            </summary>
+        <summary> Gets the DefaultHostname. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -232,9 +209,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Define all the provisionable properties of StaticSite.
-            </summary>
+        <summary> Define all the provisionable properties for StaticSite. </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -254,20 +229,18 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppService.EnterpriseGradeCdnStatus&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            State indicating the status of the enterprise grade CDN serving traffic
-            to the static web app.
-            </summary>
+        <summary> Gets or sets the EnterpriseGradeCdnStatus. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromExisting">
-      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.StaticSite FromExisting (string bicepIdentifier, string? resourceVersion = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.StaticSite FromExisting (string bicepIdentifier, string? resourceVersion = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.Provisioning.AppService.StaticSite FromExisting(string bicepIdentifier, string resourceVersion) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.Provisioning.AppService.StaticSite.FromExisting(System.String,System.String)" />
       <MemberSignature Language="VB.NET" Value="Public Shared Function FromExisting (bicepIdentifier As String, Optional resourceVersion As String = Nothing) As StaticSite" />
       <MemberSignature Language="F#" Value="static member FromExisting : string * string -&gt; Azure.Provisioning.AppService.StaticSite" Usage="Azure.Provisioning.AppService.StaticSite.FromExisting (bicepIdentifier, resourceVersion)" />
+      <MemberSignature Language="C#" Value="public static Azure.Provisioning.AppService.StaticSite FromExisting (string bicepIdentifier, string resourceVersion = default);" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.Provisioning.AppService</AssemblyName>
@@ -282,16 +255,9 @@
         <Parameter Name="resourceVersion" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="bicepIdentifier">
-            The the Bicep identifier name of the StaticSite resource.  This can be
-            used to refer to the resource in expressions, but is not the Azure
-            name of the resource.  This value can contain letters, numbers, and
-            underscores.
-            </param>
-        <param name="resourceVersion">Version of the StaticSite.</param>
-        <summary>
-            Creates a reference to an existing StaticSite.
-            </summary>
+        <param name="bicepIdentifier"> The bicep identifier name. </param>
+        <param name="resourceVersion"> The resource API version. </param>
+        <summary> Creates a reference to an existing StaticSite. </summary>
         <returns>The existing StaticSite resource.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -312,9 +278,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.ResourceIdentifier&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the Id.
-            </summary>
+        <summary> Gets the Id. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -335,9 +299,7 @@
         <ReturnType>Azure.Provisioning.Resources.ManagedServiceIdentity</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Managed service identity.
-            </summary>
+        <summary> Gets or sets the Identity. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -358,9 +320,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Identity to use for Key Vault Reference authentication.
-            </summary>
+        <summary> Gets the KeyVaultReferenceIdentity. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -381,11 +341,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Kind of resource. If the resource is an app, you can refer to
-            https://github.com/Azure/app-service-linux-docs/blob/master/Things_You_Should_Know/kind_property.md#app-service-resource-kind-reference
-            for details supported values for kind.
-            </summary>
+        <summary> Gets or sets the Kind. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -406,9 +362,7 @@
         <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppService.StaticSiteLinkedBackendInfo&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Backends linked to the static side.
-            </summary>
+        <summary> Gets the LinkedBackends. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -429,9 +383,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Core.AzureLocation&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Location.
-            </summary>
+        <summary> Gets or sets the Location. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -452,9 +404,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Name of the static site to create or update.
-            </summary>
+        <summary> Gets or sets the Name. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -475,9 +425,7 @@
         <ReturnType>Azure.Provisioning.BicepList&lt;Azure.Provisioning.AppService.ResponseMessageEnvelopeRemotePrivateEndpointConnection&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Private endpoint connections.
-            </summary>
+        <summary> Gets the PrivateEndpointConnections. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -498,10 +446,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            The provider that submitted the last deployment to the primary
-            environment of the static site.
-            </summary>
+        <summary> Gets or sets the Provider. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -522,11 +467,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            State indicating whether public traffic are allowed or not for a static
-            web app. Allowed Values: 'Enabled', 'Disabled' or
-            an empty string.
-            </summary>
+        <summary> Gets or sets the PublicNetworkAccess. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -547,10 +488,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            A user's github repository token. This is used to setup the Github
-            Actions workflow file and API secrets.
-            </summary>
+        <summary> Gets or sets the RepositoryToken. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -571,9 +509,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;System.Uri&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            URL for the repository of the static site.
-            </summary>
+        <summary> Gets or sets the RepositoryUri. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -594,9 +530,7 @@
         <ReturnType>Azure.Provisioning.AppService.AppServiceSkuDescription</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Description of a SKU for a scalable resource.
-            </summary>
+        <summary> Gets or sets the Sku. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -617,10 +551,7 @@
         <ReturnType>Azure.Provisioning.BicepValue&lt;Azure.Provisioning.AppService.StagingEnvironmentPolicy&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            State indicating whether staging environments are allowed or not
-            allowed for a static web app.
-            </summary>
+        <summary> Gets or sets the StagingEnvironmentPolicy. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -641,9 +572,7 @@
         <ReturnType>Azure.Provisioning.Resources.SystemData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SystemData.
-            </summary>
+        <summary> Gets the SystemData. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -664,9 +593,7 @@
         <ReturnType>Azure.Provisioning.BicepDictionary&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the Tags.
-            </summary>
+        <summary> Gets or sets the Tags. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -687,9 +614,7 @@
         <ReturnType>Azure.Provisioning.AppService.StaticSiteTemplate</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Template options for generating a new repository.
-            </summary>
+        <summary> Gets or sets the TemplateProperties. </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -733,6 +658,10 @@
         <Attribute>
           <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
           <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.Obsolete("This property is deprecated and it will be removed in a future version. Please use UserFunctionApps instead.")]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This property is deprecated and it will be removed in a future version. Please use UserFunctionApps instead.")&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>

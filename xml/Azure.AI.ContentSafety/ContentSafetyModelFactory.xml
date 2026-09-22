@@ -7,6 +7,7 @@
   <AssemblyInfo>
     <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -17,27 +18,205 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
-    <Member MemberName="AddBlockItemsResult">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AddBlockItemsResult AddBlockItemsResult (System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlockItem&gt; value = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AddBlockItemsResult AddBlockItemsResult(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentSafety.TextBlockItem&gt; value) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AddBlockItemsResult(System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.TextBlockItem})" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function AddBlockItemsResult (Optional value As IEnumerable(Of TextBlockItem) = Nothing) As AddBlockItemsResult" />
-      <MemberSignature Language="F#" Value="static member AddBlockItemsResult : seq&lt;Azure.AI.ContentSafety.TextBlockItem&gt; -&gt; Azure.AI.ContentSafety.AddBlockItemsResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AddBlockItemsResult value" />
+    <Member MemberName="AcsApproval">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AcsApproval AcsApproval (string type = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AcsApproval AcsApproval(string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsApproval(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AcsApproval (Optional type As String = Nothing) As AcsApproval" />
+      <MemberSignature Language="F#" Value="static member AcsApproval : string -&gt; Azure.AI.ContentSafety.AcsApproval" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsApproval type" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.ContentSafety.AddBlockItemsResult</ReturnType>
+        <ReturnType>Azure.AI.ContentSafety.AcsApproval</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlockItem&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="type" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="value"> Array of blockItems added. </param>
-        <summary> Initializes a new instance of AddBlockItemsResult. </summary>
-        <returns> A new <see cref="T:Azure.AI.ContentSafety.AddBlockItemsResult" /> instance for mocking. </returns>
+        <param name="type"> The type of approval required by the policy. </param>
+        <summary> Approval metadata returned by an ACS deny decision. Unified Moderate does not invoke an approval workflow. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AcsApproval" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcsEvidence">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AcsEvidence AcsEvidence (string id = default, string type = default, Uri uri = default, string description = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AcsEvidence AcsEvidence(string id, string type, class System.Uri uri, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsEvidence(System.String,System.String,System.Uri,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AcsEvidence (Optional id As String = Nothing, Optional type As String = Nothing, Optional uri As Uri = Nothing, Optional description As String = Nothing) As AcsEvidence" />
+      <MemberSignature Language="F#" Value="static member AcsEvidence : string * string * Uri * string -&gt; Azure.AI.ContentSafety.AcsEvidence" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsEvidence (id, type, uri, description)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.AcsEvidence</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="type" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="uri" Type="System.Uri" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="id"> An optional evidence identifier. </param>
+        <param name="type"> An optional evidence type. </param>
+        <param name="uri"> An optional location containing or describing the evidence. </param>
+        <param name="description"> An optional human-readable evidence description. </param>
+        <summary> Evidence or a verification pointer returned by policy evaluation. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AcsEvidence" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcsHarmDetail">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AcsHarmDetail AcsHarmDetail (bool detected = false, string id = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AcsHarmDetail AcsHarmDetail(bool detected, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsHarmDetail(System.Boolean,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AcsHarmDetail (Optional detected As Boolean = false, Optional id As String = Nothing) As AcsHarmDetail" />
+      <MemberSignature Language="F#" Value="static member AcsHarmDetail : bool * string -&gt; Azure.AI.ContentSafety.AcsHarmDetail" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsHarmDetail (detected, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.AcsHarmDetail</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="detected" Type="System.Boolean" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="id" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="detected"> Whether the blocklist was detected. </param>
+        <param name="id"> The identifier of the evaluated blocklist. </param>
+        <summary> The detection result for one blocklist evaluated as part of a harm result. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AcsHarmDetail" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcsHarmResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AcsHarmResult AcsHarmResult (bool blocked = false, bool detected = false, string severity = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.AcsHarmDetail&gt; details = default, Uri url = default, string license = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AcsHarmResult AcsHarmResult(bool blocked, bool detected, string severity, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentSafety.AcsHarmDetail&gt; details, class System.Uri url, string license) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsHarmResult(System.Boolean,System.Boolean,System.String,System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.AcsHarmDetail},System.Uri,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AcsHarmResult (Optional blocked As Boolean = false, Optional detected As Boolean = false, Optional severity As String = Nothing, Optional details As IEnumerable(Of AcsHarmDetail) = Nothing, Optional url As Uri = Nothing, Optional license As String = Nothing) As AcsHarmResult" />
+      <MemberSignature Language="F#" Value="static member AcsHarmResult : bool * bool * string * seq&lt;Azure.AI.ContentSafety.AcsHarmDetail&gt; * Uri * string -&gt; Azure.AI.ContentSafety.AcsHarmResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsHarmResult (blocked, detected, severity, details, url, license)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.AcsHarmResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="blocked" Type="System.Boolean" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="detected" Type="System.Boolean" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="severity" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="details" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.AcsHarmDetail&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="url" Type="System.Uri" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="license" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="blocked"> Whether this harm contributed to the overall ACS verdict blocking the content. </param>
+        <param name="detected"> Whether this harm was detected, regardless of whether it caused the overall verdict to block. </param>
+        <param name="severity"> An optional harm-specific severity value. The value is defined by the moderation model or policy that produced the result. </param>
+        <param name="details"> Optional blocklist results. Each item identifies one evaluated blocklist and whether it was detected. </param>
+        <param name="url"> An optional internet location associated with detected protected material. </param>
+        <param name="license"> An optional license description associated with detected protected material. </param>
+        <summary> The moderation and policy-attribution result for one harm category. The category name is the key in the harmResults map and is not restricted to a predefined set. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AcsHarmResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcsTransform">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AcsTransform AcsTransform (string path = default, string value = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AcsTransform AcsTransform(string path, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsTransform(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AcsTransform (Optional path As String = Nothing, Optional value As String = Nothing) As AcsTransform" />
+      <MemberSignature Language="F#" Value="static member AcsTransform : string * string -&gt; Azure.AI.ContentSafety.AcsTransform" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsTransform (path, value)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.AcsTransform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="value" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="path"> The transformation target path. For input and output sources, the allowed path is `$target.content`. For tool sources, `$target` replaces the complete value and a path rooted at `$target` replaces an individual member. </param>
+        <param name="value"> A string containing the JSON-encoded replacement value applied at the target path. </param>
+        <summary> A canonical ACS transform applied by Unified Moderate. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AcsTransform" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcsVerdict">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AcsVerdict AcsVerdict (Azure.AI.ContentSafety.AcsDecision decision = default, string reason = default, string message = default, System.Collections.Generic.IEnumerable&lt;string&gt; warnings = default, Azure.AI.ContentSafety.AcsApproval approval = default, Azure.AI.ContentSafety.AcsTransform transform = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.AcsEvidence&gt; evidence = default, System.Collections.Generic.IDictionary&lt;string,Azure.AI.ContentSafety.AcsHarmResult&gt; harmResults = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AcsVerdict AcsVerdict(valuetype Azure.AI.ContentSafety.AcsDecision decision, string reason, string message, class System.Collections.Generic.IEnumerable`1&lt;string&gt; warnings, class Azure.AI.ContentSafety.AcsApproval approval, class Azure.AI.ContentSafety.AcsTransform transform, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentSafety.AcsEvidence&gt; evidence, class System.Collections.Generic.IDictionary`2&lt;string, class Azure.AI.ContentSafety.AcsHarmResult&gt; harmResults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsVerdict(Azure.AI.ContentSafety.AcsDecision,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Azure.AI.ContentSafety.AcsApproval,Azure.AI.ContentSafety.AcsTransform,System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.AcsEvidence},System.Collections.Generic.IDictionary{System.String,Azure.AI.ContentSafety.AcsHarmResult})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AcsVerdict (Optional decision As AcsDecision = Nothing, Optional reason As String = Nothing, Optional message As String = Nothing, Optional warnings As IEnumerable(Of String) = Nothing, Optional approval As AcsApproval = Nothing, Optional transform As AcsTransform = Nothing, Optional evidence As IEnumerable(Of AcsEvidence) = Nothing, Optional harmResults As IDictionary(Of String, AcsHarmResult) = Nothing) As AcsVerdict" />
+      <MemberSignature Language="F#" Value="static member AcsVerdict : Azure.AI.ContentSafety.AcsDecision * string * string * seq&lt;string&gt; * Azure.AI.ContentSafety.AcsApproval * Azure.AI.ContentSafety.AcsTransform * seq&lt;Azure.AI.ContentSafety.AcsEvidence&gt; * System.Collections.Generic.IDictionary&lt;string, Azure.AI.ContentSafety.AcsHarmResult&gt; -&gt; Azure.AI.ContentSafety.AcsVerdict" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AcsVerdict (decision, reason, message, warnings, approval, transform, evidence, harmResults)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.AcsVerdict</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="decision" Type="Azure.AI.ContentSafety.AcsDecision" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="reason" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="message" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="warnings" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="approval" Type="Azure.AI.ContentSafety.AcsApproval" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="transform" Type="Azure.AI.ContentSafety.AcsTransform" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="evidence" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.AcsEvidence&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="harmResults" Type="System.Collections.Generic.IDictionary&lt;System.String,Azure.AI.ContentSafety.AcsHarmResult&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="decision"> The canonical policy decision. </param>
+        <param name="reason"> An optional machine-readable reason for the decision. </param>
+        <param name="message"> An optional human-readable message for the decision. </param>
+        <param name="warnings"> Optional non-blocking warnings produced by policy evaluation. </param>
+        <param name="approval"> Optional approval metadata for a deny decision. Unified Moderate does not invoke an approval workflow, so the content remains blocked. </param>
+        <param name="transform"> Canonical transform metadata. Required when the decision is transform. </param>
+        <param name="evidence"> Optional policy evidence and verification pointers. </param>
+        <param name="harmResults"> Optional moderation results keyed by harm category. Category names come from the policy harm configuration and are not restricted to a predefined set. A policy deny that is unrelated to a configured harm can omit this property. </param>
+        <summary> The complete Agent Control Specification policy verdict. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AcsVerdict" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOrUpdateTextBlocklistItemsOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AddOrUpdateTextBlocklistItemsOptions AddOrUpdateTextBlocklistItemsOptions (System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlocklistItem&gt; blocklistItems = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AddOrUpdateTextBlocklistItemsOptions AddOrUpdateTextBlocklistItemsOptions(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentSafety.TextBlocklistItem&gt; blocklistItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AddOrUpdateTextBlocklistItemsOptions(System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.TextBlocklistItem})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AddOrUpdateTextBlocklistItemsOptions (Optional blocklistItems As IEnumerable(Of TextBlocklistItem) = Nothing) As AddOrUpdateTextBlocklistItemsOptions" />
+      <MemberSignature Language="F#" Value="static member AddOrUpdateTextBlocklistItemsOptions : seq&lt;Azure.AI.ContentSafety.TextBlocklistItem&gt; -&gt; Azure.AI.ContentSafety.AddOrUpdateTextBlocklistItemsOptions" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AddOrUpdateTextBlocklistItemsOptions blocklistItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.AddOrUpdateTextBlocklistItemsOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="blocklistItems" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlocklistItem&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="blocklistItems"> Array of blocklistItems to add. </param>
+        <summary> The request to add blocklistItems to a text blocklist. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AddOrUpdateTextBlocklistItemsOptions" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -51,17 +230,46 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentSafety.AddOrUpdateTextBlocklistItemsResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="blocklistItems" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlocklistItem&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="blocklistItems" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlocklistItem&gt;" />
       </Parameters>
       <Docs>
         <param name="blocklistItems"> Array of blocklistItems have been added. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.AI.ContentSafety.AddOrUpdateTextBlocklistItemsResult" />. </summary>
+        <summary> The response of adding blocklistItems to the text blocklist. </summary>
         <returns> A new <see cref="T:Azure.AI.ContentSafety.AddOrUpdateTextBlocklistItemsResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnalyzeImageOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AnalyzeImageOptions AnalyzeImageOptions (Azure.AI.ContentSafety.ContentSafetyImageData image = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.ImageCategory&gt; categories = default, Azure.AI.ContentSafety.AnalyzeImageOutputType? outputType = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AnalyzeImageOptions AnalyzeImageOptions(class Azure.AI.ContentSafety.ContentSafetyImageData image, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.AI.ContentSafety.ImageCategory&gt; categories, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentSafety.AnalyzeImageOutputType&gt; outputType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AnalyzeImageOptions(Azure.AI.ContentSafety.ContentSafetyImageData,System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.ImageCategory},System.Nullable{Azure.AI.ContentSafety.AnalyzeImageOutputType})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AnalyzeImageOptions (Optional image As ContentSafetyImageData = Nothing, Optional categories As IEnumerable(Of ImageCategory) = Nothing, Optional outputType As Nullable(Of AnalyzeImageOutputType) = Nothing) As AnalyzeImageOptions" />
+      <MemberSignature Language="F#" Value="static member AnalyzeImageOptions : Azure.AI.ContentSafety.ContentSafetyImageData * seq&lt;Azure.AI.ContentSafety.ImageCategory&gt; * Nullable&lt;Azure.AI.ContentSafety.AnalyzeImageOutputType&gt; -&gt; Azure.AI.ContentSafety.AnalyzeImageOptions" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AnalyzeImageOptions (image, categories, outputType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.AnalyzeImageOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="Azure.AI.ContentSafety.ContentSafetyImageData" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="categories" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.ImageCategory&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="outputType" Type="System.Nullable&lt;Azure.AI.ContentSafety.AnalyzeImageOutputType&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="image"> The image to be analyzed. </param>
+        <param name="categories"> The categories will be analyzed. If they are not assigned, a default set of analysis results for the categories will be returned. </param>
+        <param name="outputType"> This refers to the type of image analysis output. If no value is assigned, the default value will be "FourSeverityLevels". </param>
+        <summary> The image analysis request. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AnalyzeImageOptions" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -75,47 +283,50 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentSafety.AnalyzeImageResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="categoriesAnalysis" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.ImageCategoriesAnalysis&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="categoriesAnalysis" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.ImageCategoriesAnalysis&gt;" />
       </Parameters>
       <Docs>
         <param name="categoriesAnalysis"> Analysis result for categories. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.AI.ContentSafety.AnalyzeImageResult" />. </summary>
+        <summary> The image analysis response. </summary>
         <returns> A new <see cref="T:Azure.AI.ContentSafety.AnalyzeImageResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="AnalyzeImageResult">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AnalyzeImageResult AnalyzeImageResult (Azure.AI.ContentSafety.ImageAnalyzeSeverityResult hateResult = default, Azure.AI.ContentSafety.ImageAnalyzeSeverityResult selfHarmResult = default, Azure.AI.ContentSafety.ImageAnalyzeSeverityResult sexualResult = default, Azure.AI.ContentSafety.ImageAnalyzeSeverityResult violenceResult = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AnalyzeImageResult AnalyzeImageResult(class Azure.AI.ContentSafety.ImageAnalyzeSeverityResult hateResult, class Azure.AI.ContentSafety.ImageAnalyzeSeverityResult selfHarmResult, class Azure.AI.ContentSafety.ImageAnalyzeSeverityResult sexualResult, class Azure.AI.ContentSafety.ImageAnalyzeSeverityResult violenceResult) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AnalyzeImageResult(Azure.AI.ContentSafety.ImageAnalyzeSeverityResult,Azure.AI.ContentSafety.ImageAnalyzeSeverityResult,Azure.AI.ContentSafety.ImageAnalyzeSeverityResult,Azure.AI.ContentSafety.ImageAnalyzeSeverityResult)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function AnalyzeImageResult (Optional hateResult As ImageAnalyzeSeverityResult = Nothing, Optional selfHarmResult As ImageAnalyzeSeverityResult = Nothing, Optional sexualResult As ImageAnalyzeSeverityResult = Nothing, Optional violenceResult As ImageAnalyzeSeverityResult = Nothing) As AnalyzeImageResult" />
-      <MemberSignature Language="F#" Value="static member AnalyzeImageResult : Azure.AI.ContentSafety.ImageAnalyzeSeverityResult * Azure.AI.ContentSafety.ImageAnalyzeSeverityResult * Azure.AI.ContentSafety.ImageAnalyzeSeverityResult * Azure.AI.ContentSafety.ImageAnalyzeSeverityResult -&gt; Azure.AI.ContentSafety.AnalyzeImageResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AnalyzeImageResult (hateResult, selfHarmResult, sexualResult, violenceResult)" />
+    <Member MemberName="AnalyzeTextOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AnalyzeTextOptions AnalyzeTextOptions (string text = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextCategory&gt; categories = default, System.Collections.Generic.IEnumerable&lt;string&gt; blocklistNames = default, bool? haltOnBlocklistHit = default, Azure.AI.ContentSafety.AnalyzeTextOutputType? outputType = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AnalyzeTextOptions AnalyzeTextOptions(string text, class System.Collections.Generic.IEnumerable`1&lt;valuetype Azure.AI.ContentSafety.TextCategory&gt; categories, class System.Collections.Generic.IEnumerable`1&lt;string&gt; blocklistNames, valuetype System.Nullable`1&lt;bool&gt; haltOnBlocklistHit, valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentSafety.AnalyzeTextOutputType&gt; outputType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AnalyzeTextOptions(System.String,System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.TextCategory},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Boolean},System.Nullable{Azure.AI.ContentSafety.AnalyzeTextOutputType})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AnalyzeTextOptions (Optional text As String = Nothing, Optional categories As IEnumerable(Of TextCategory) = Nothing, Optional blocklistNames As IEnumerable(Of String) = Nothing, Optional haltOnBlocklistHit As Nullable(Of Boolean) = Nothing, Optional outputType As Nullable(Of AnalyzeTextOutputType) = Nothing) As AnalyzeTextOptions" />
+      <MemberSignature Language="F#" Value="static member AnalyzeTextOptions : string * seq&lt;Azure.AI.ContentSafety.TextCategory&gt; * seq&lt;string&gt; * Nullable&lt;bool&gt; * Nullable&lt;Azure.AI.ContentSafety.AnalyzeTextOutputType&gt; -&gt; Azure.AI.ContentSafety.AnalyzeTextOptions" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AnalyzeTextOptions (text, categories, blocklistNames, haltOnBlocklistHit, outputType)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.ContentSafety.AnalyzeImageResult</ReturnType>
+        <ReturnType>Azure.AI.ContentSafety.AnalyzeTextOptions</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="hateResult" Type="Azure.AI.ContentSafety.ImageAnalyzeSeverityResult" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="selfHarmResult" Type="Azure.AI.ContentSafety.ImageAnalyzeSeverityResult" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="sexualResult" Type="Azure.AI.ContentSafety.ImageAnalyzeSeverityResult" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="violenceResult" Type="Azure.AI.ContentSafety.ImageAnalyzeSeverityResult" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="text" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="categories" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextCategory&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="blocklistNames" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="haltOnBlocklistHit" Type="System.Nullable&lt;System.Boolean&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="outputType" Type="System.Nullable&lt;Azure.AI.ContentSafety.AnalyzeTextOutputType&gt;" Index="4" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="hateResult"> Analysis result for Hate category. </param>
-        <param name="selfHarmResult"> Analysis result for SelfHarm category. </param>
-        <param name="sexualResult"> Analysis result for Sexual category. </param>
-        <param name="violenceResult"> Analysis result for Violence category. </param>
-        <summary> Initializes a new instance of AnalyzeImageResult. </summary>
-        <returns> A new <see cref="T:Azure.AI.ContentSafety.AnalyzeImageResult" /> instance for mocking. </returns>
+        <param name="text"> The text to be analyzed. We support a maximum of 10k Unicode characters (Unicode code points) in the text of one request. </param>
+        <param name="categories"> The categories will be analyzed. If they are not assigned, a default set of analysis results for the categories will be returned. </param>
+        <param name="blocklistNames"> The names of blocklists. </param>
+        <param name="haltOnBlocklistHit"> When set to true, further analyses of harmful content will not be performed in cases where blocklists are hit. When set to false, all analyses of harmful content will be performed, whether or not blocklists are hit. </param>
+        <param name="outputType"> This refers to the type of text analysis output. If no value is assigned, the default value will be "FourSeverityLevels". </param>
+        <summary> The text analysis request. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.AnalyzeTextOptions" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,77 +340,198 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentSafety.AnalyzeTextResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="blocklistsMatch" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlocklistMatch&gt;" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="categoriesAnalysis" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextCategoriesAnalysis&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="blocklistsMatch" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlocklistMatch&gt;" />
+        <Parameter Name="categoriesAnalysis" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextCategoriesAnalysis&gt;" />
       </Parameters>
       <Docs>
         <param name="blocklistsMatch"> The blocklist match details. </param>
         <param name="categoriesAnalysis"> Analysis result for categories. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.AI.ContentSafety.AnalyzeTextResult" />. </summary>
+        <summary> The text analysis response. </summary>
         <returns> A new <see cref="T:Azure.AI.ContentSafety.AnalyzeTextResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="AnalyzeTextResult">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.AnalyzeTextResult AnalyzeTextResult (System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlocklistMatchResult&gt; blocklistsMatchResults = default, Azure.AI.ContentSafety.TextAnalyzeSeverityResult hateResult = default, Azure.AI.ContentSafety.TextAnalyzeSeverityResult selfHarmResult = default, Azure.AI.ContentSafety.TextAnalyzeSeverityResult sexualResult = default, Azure.AI.ContentSafety.TextAnalyzeSeverityResult violenceResult = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.AnalyzeTextResult AnalyzeTextResult(class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentSafety.TextBlocklistMatchResult&gt; blocklistsMatchResults, class Azure.AI.ContentSafety.TextAnalyzeSeverityResult hateResult, class Azure.AI.ContentSafety.TextAnalyzeSeverityResult selfHarmResult, class Azure.AI.ContentSafety.TextAnalyzeSeverityResult sexualResult, class Azure.AI.ContentSafety.TextAnalyzeSeverityResult violenceResult) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.AnalyzeTextResult(System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.TextBlocklistMatchResult},Azure.AI.ContentSafety.TextAnalyzeSeverityResult,Azure.AI.ContentSafety.TextAnalyzeSeverityResult,Azure.AI.ContentSafety.TextAnalyzeSeverityResult,Azure.AI.ContentSafety.TextAnalyzeSeverityResult)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function AnalyzeTextResult (Optional blocklistsMatchResults As IEnumerable(Of TextBlocklistMatchResult) = Nothing, Optional hateResult As TextAnalyzeSeverityResult = Nothing, Optional selfHarmResult As TextAnalyzeSeverityResult = Nothing, Optional sexualResult As TextAnalyzeSeverityResult = Nothing, Optional violenceResult As TextAnalyzeSeverityResult = Nothing) As AnalyzeTextResult" />
-      <MemberSignature Language="F#" Value="static member AnalyzeTextResult : seq&lt;Azure.AI.ContentSafety.TextBlocklistMatchResult&gt; * Azure.AI.ContentSafety.TextAnalyzeSeverityResult * Azure.AI.ContentSafety.TextAnalyzeSeverityResult * Azure.AI.ContentSafety.TextAnalyzeSeverityResult * Azure.AI.ContentSafety.TextAnalyzeSeverityResult -&gt; Azure.AI.ContentSafety.AnalyzeTextResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.AnalyzeTextResult (blocklistsMatchResults, hateResult, selfHarmResult, sexualResult, violenceResult)" />
+    <Member MemberName="ContentSafetyImageData">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.ContentSafetyImageData ContentSafetyImageData (BinaryData content = default, Uri blobUri = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.ContentSafetyImageData ContentSafetyImageData(class System.BinaryData content, class System.Uri blobUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.ContentSafetyImageData(System.BinaryData,System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ContentSafetyImageData (Optional content As BinaryData = Nothing, Optional blobUri As Uri = Nothing) As ContentSafetyImageData" />
+      <MemberSignature Language="F#" Value="static member ContentSafetyImageData : BinaryData * Uri -&gt; Azure.AI.ContentSafety.ContentSafetyImageData" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.ContentSafetyImageData (content, blobUri)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.ContentSafety.AnalyzeTextResult</ReturnType>
+        <ReturnType>Azure.AI.ContentSafety.ContentSafetyImageData</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="blocklistsMatchResults" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.TextBlocklistMatchResult&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="hateResult" Type="Azure.AI.ContentSafety.TextAnalyzeSeverityResult" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="selfHarmResult" Type="Azure.AI.ContentSafety.TextAnalyzeSeverityResult" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="sexualResult" Type="Azure.AI.ContentSafety.TextAnalyzeSeverityResult" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="violenceResult" Type="Azure.AI.ContentSafety.TextAnalyzeSeverityResult" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.BinaryData" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="blobUri" Type="System.Uri" Index="1" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="blocklistsMatchResults"> The details of blocklist match. </param>
-        <param name="hateResult"> Analysis result for Hate category. </param>
-        <param name="selfHarmResult"> Analysis result for SelfHarm category. </param>
-        <param name="sexualResult"> Analysis result for Sexual category. </param>
-        <param name="violenceResult"> Analysis result for Violence category. </param>
-        <summary> Initializes a new instance of AnalyzeTextResult. </summary>
-        <returns> A new <see cref="T:Azure.AI.ContentSafety.AnalyzeTextResult" /> instance for mocking. </returns>
+        <param name="content"> The Base64 encoding of the image. </param>
+        <param name="blobUri"> The blob url of the image. </param>
+        <summary> The image can be either base64 encoded bytes or a blob URL. You can choose only one of these options. If both are provided, the request will be refused. The maximum image size is 2048 x 2048 pixels and should not exceed 4 MB, while the minimum image size is 50 x 50 pixels. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.ContentSafetyImageData" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="ImageAnalyzeSeverityResult">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.ImageAnalyzeSeverityResult ImageAnalyzeSeverityResult (Azure.AI.ContentSafety.ImageCategory category = default, int severity = 0);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.ImageAnalyzeSeverityResult ImageAnalyzeSeverityResult(valuetype Azure.AI.ContentSafety.ImageCategory category, int32 severity) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.ImageAnalyzeSeverityResult(Azure.AI.ContentSafety.ImageCategory,System.Int32)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function ImageAnalyzeSeverityResult (Optional category As ImageCategory = Nothing, Optional severity As Integer = 0) As ImageAnalyzeSeverityResult" />
-      <MemberSignature Language="F#" Value="static member ImageAnalyzeSeverityResult : Azure.AI.ContentSafety.ImageCategory * int -&gt; Azure.AI.ContentSafety.ImageAnalyzeSeverityResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.ImageAnalyzeSeverityResult (category, severity)" />
+    <Member MemberName="DetectedProvenance">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.DetectedProvenance DetectedProvenance (Azure.AI.ContentSafety.DetectedProvenanceType? type = default, string provider = default, string modelName = default, DateTimeOffset? timestamp = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.DetectedProvenance DetectedProvenance(valuetype System.Nullable`1&lt;valuetype Azure.AI.ContentSafety.DetectedProvenanceType&gt; type, string provider, string modelName, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timestamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectedProvenance(System.Nullable{Azure.AI.ContentSafety.DetectedProvenanceType},System.String,System.String,System.Nullable{System.DateTimeOffset})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DetectedProvenance (Optional type As Nullable(Of DetectedProvenanceType) = Nothing, Optional provider As String = Nothing, Optional modelName As String = Nothing, Optional timestamp As Nullable(Of DateTimeOffset) = Nothing) As DetectedProvenance" />
+      <MemberSignature Language="F#" Value="static member DetectedProvenance : Nullable&lt;Azure.AI.ContentSafety.DetectedProvenanceType&gt; * string * string * Nullable&lt;DateTimeOffset&gt; -&gt; Azure.AI.ContentSafety.DetectedProvenance" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectedProvenance (type, provider, modelName, timestamp)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.ContentSafety.ImageAnalyzeSeverityResult</ReturnType>
+        <ReturnType>Azure.AI.ContentSafety.DetectedProvenance</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="category" Type="Azure.AI.ContentSafety.ImageCategory" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="severity" Type="System.Int32" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="type" Type="System.Nullable&lt;Azure.AI.ContentSafety.DetectedProvenanceType&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="provider" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="modelName" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="timestamp" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="category"> The image category. </param>
-        <param name="severity"> The higher the severity of input content, the larger this value, currently its value could be: 0,2,4,6. </param>
-        <summary> Initializes a new instance of ImageAnalyzeSeverityResult. </summary>
-        <returns> A new <see cref="T:Azure.AI.ContentSafety.ImageAnalyzeSeverityResult" /> instance for mocking. </returns>
+        <param name="type"> Detected provenance record type. </param>
+        <param name="provider"> Identifier of the Microsoft provider that generated the content. </param>
+        <param name="modelName"> Identifier of the generating AI model when available. </param>
+        <param name="timestamp"> Generation timestamp recorded in the provenance signal. </param>
+        <summary> A Microsoft-issued provenance signal indicating the media was created or modified using AI. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.DetectedProvenance" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectProvenanceOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.DetectProvenanceOptions DetectProvenanceOptions (Azure.AI.ContentSafety.ProvenanceContent content = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.DetectProvenanceOptions DetectProvenanceOptions(class Azure.AI.ContentSafety.ProvenanceContent content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectProvenanceOptions(Azure.AI.ContentSafety.ProvenanceContent)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DetectProvenanceOptions (Optional content As ProvenanceContent = Nothing) As DetectProvenanceOptions" />
+      <MemberSignature Language="F#" Value="static member DetectProvenanceOptions : Azure.AI.ContentSafety.ProvenanceContent -&gt; Azure.AI.ContentSafety.DetectProvenanceOptions" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectProvenanceOptions content" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.DetectProvenanceOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="Azure.AI.ContentSafety.ProvenanceContent" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="content"> Source content to inspect. </param>
+        <summary> Input describing the media to inspect using Content Provenance Detection. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.DetectProvenanceOptions" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectProvenanceResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.DetectProvenanceResult DetectProvenanceResult (Azure.AI.ContentSafety.DetectOutcome outcome = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.DetectedProvenance&gt; results = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.DetectProvenanceResult DetectProvenanceResult(valuetype Azure.AI.ContentSafety.DetectOutcome outcome, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentSafety.DetectedProvenance&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectProvenanceResult(Azure.AI.ContentSafety.DetectOutcome,System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.DetectedProvenance})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DetectProvenanceResult (Optional outcome As DetectOutcome = Nothing, Optional results As IEnumerable(Of DetectedProvenance) = Nothing) As DetectProvenanceResult" />
+      <MemberSignature Language="F#" Value="static member DetectProvenanceResult : Azure.AI.ContentSafety.DetectOutcome * seq&lt;Azure.AI.ContentSafety.DetectedProvenance&gt; -&gt; Azure.AI.ContentSafety.DetectProvenanceResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectProvenanceResult (outcome, results)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.DetectProvenanceResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outcome" Type="Azure.AI.ContentSafety.DetectOutcome" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="results" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.DetectedProvenance&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="outcome"> Top-level outcome of the Content Provenance Detection operation. </param>
+        <param name="results"> Detected provenance signals. Empty or omitted when `outcome` is `NoProvenanceDetected`. </param>
+        <summary> Result of a Content Provenance Detection operation. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.DetectProvenanceResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectTextProtectedMaterialOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.DetectTextProtectedMaterialOptions DetectTextProtectedMaterialOptions (string text = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.DetectTextProtectedMaterialOptions DetectTextProtectedMaterialOptions(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectTextProtectedMaterialOptions(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DetectTextProtectedMaterialOptions (Optional text As String = Nothing) As DetectTextProtectedMaterialOptions" />
+      <MemberSignature Language="F#" Value="static member DetectTextProtectedMaterialOptions : string -&gt; Azure.AI.ContentSafety.DetectTextProtectedMaterialOptions" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectTextProtectedMaterialOptions text" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.DetectTextProtectedMaterialOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="text"> The text to be analyzed, which may contain protected material. The characters will be counted in Unicode code points. </param>
+        <summary> The request of detecting potential protected material present in the given text. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.DetectTextProtectedMaterialOptions" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectTextProtectedMaterialResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.DetectTextProtectedMaterialResult DetectTextProtectedMaterialResult (Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult protectedMaterialAnalysis = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.DetectTextProtectedMaterialResult DetectTextProtectedMaterialResult(class Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult protectedMaterialAnalysis) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectTextProtectedMaterialResult(Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DetectTextProtectedMaterialResult (Optional protectedMaterialAnalysis As TextProtectedMaterialAnalysisResult = Nothing) As DetectTextProtectedMaterialResult" />
+      <MemberSignature Language="F#" Value="static member DetectTextProtectedMaterialResult : Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult -&gt; Azure.AI.ContentSafety.DetectTextProtectedMaterialResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.DetectTextProtectedMaterialResult protectedMaterialAnalysis" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.DetectTextProtectedMaterialResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protectedMaterialAnalysis" Type="Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="protectedMaterialAnalysis"> Analysis result for the given text. </param>
+        <summary> The combined detection results of potential protected material. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.DetectTextProtectedMaterialResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentInjectionAnalysisResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.DocumentInjectionAnalysisResult DocumentInjectionAnalysisResult (bool attackDetected = false);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.DocumentInjectionAnalysisResult DocumentInjectionAnalysisResult(bool attackDetected) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.DocumentInjectionAnalysisResult(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DocumentInjectionAnalysisResult (Optional attackDetected As Boolean = false) As DocumentInjectionAnalysisResult" />
+      <MemberSignature Language="F#" Value="static member DocumentInjectionAnalysisResult : bool -&gt; Azure.AI.ContentSafety.DocumentInjectionAnalysisResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.DocumentInjectionAnalysisResult attackDetected" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.DocumentInjectionAnalysisResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attackDetected" Type="System.Boolean" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="attackDetected"> Whether a potential injection attack is detected or not. </param>
+        <summary> The individual analysis result of potential injection attacks in the given documents. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.DocumentInjectionAnalysisResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -213,132 +545,249 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentSafety.ImageCategoriesAnalysis</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="category" Type="Azure.AI.ContentSafety.ImageCategory" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="severity" Type="System.Nullable&lt;System.Int32&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="category" Type="Azure.AI.ContentSafety.ImageCategory" />
+        <Parameter Name="severity" Type="System.Nullable&lt;System.Int32&gt;" />
       </Parameters>
       <Docs>
         <param name="category"> The image analysis category. </param>
         <param name="severity"> The value increases with the severity of the input content. The value of this field is determined by the output type specified in the request. The output type could be ‘FourSeverityLevels’, and the output value can be 0, 2, 4, 6. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.AI.ContentSafety.ImageCategoriesAnalysis" />. </summary>
+        <summary> Image analysis result. </summary>
         <returns> A new <see cref="T:Azure.AI.ContentSafety.ImageCategoriesAnalysis" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="TextAnalyzeSeverityResult">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextAnalyzeSeverityResult TextAnalyzeSeverityResult (Azure.AI.ContentSafety.TextCategory category = default, int severity = 0);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextAnalyzeSeverityResult TextAnalyzeSeverityResult(valuetype Azure.AI.ContentSafety.TextCategory category, int32 severity) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.TextAnalyzeSeverityResult(Azure.AI.ContentSafety.TextCategory,System.Int32)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function TextAnalyzeSeverityResult (Optional category As TextCategory = Nothing, Optional severity As Integer = 0) As TextAnalyzeSeverityResult" />
-      <MemberSignature Language="F#" Value="static member TextAnalyzeSeverityResult : Azure.AI.ContentSafety.TextCategory * int -&gt; Azure.AI.ContentSafety.TextAnalyzeSeverityResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextAnalyzeSeverityResult (category, severity)" />
+    <Member MemberName="ProvenanceContent">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.ProvenanceContent ProvenanceContent (Uri uri = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.ProvenanceContent ProvenanceContent(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.ProvenanceContent(System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProvenanceContent (Optional uri As Uri = Nothing) As ProvenanceContent" />
+      <MemberSignature Language="F#" Value="static member ProvenanceContent : Uri -&gt; Azure.AI.ContentSafety.ProvenanceContent" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.ProvenanceContent uri" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.ContentSafety.TextAnalyzeSeverityResult</ReturnType>
+        <ReturnType>Azure.AI.ContentSafety.ProvenanceContent</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="category" Type="Azure.AI.ContentSafety.TextCategory" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="severity" Type="System.Int32" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="uri" Type="System.Uri" Index="0" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="category"> The text category. </param>
-        <param name="severity"> The higher the severity of input content, the larger this value is. The values could be: 0,2,4,6. </param>
-        <summary> Initializes a new instance of TextAnalyzeSeverityResult. </summary>
-        <returns> A new <see cref="T:Azure.AI.ContentSafety.TextAnalyzeSeverityResult" /> instance for mocking. </returns>
+        <param name="uri"> Blob URI of the media to inspect. Media up to 100 MB is supported. Supported formats: image (JPEG, PNG, GIF, WebP), audio (MP3, WAV), and video (MP4). </param>
+        <summary> Source content descriptor for a Content Provenance Detection operation. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.ProvenanceContent" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="TextBlockItem">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlockItem TextBlockItem (string blockItemId = default, string description = default, string text = default);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextBlockItem TextBlockItem(string blockItemId, string description, string text) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlockItem(System.String,System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlockItem (Optional blockItemId As String = Nothing, Optional description As String = Nothing, Optional text As String = Nothing) As TextBlockItem" />
-      <MemberSignature Language="F#" Value="static member TextBlockItem : string * string * string -&gt; Azure.AI.ContentSafety.TextBlockItem" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlockItem (blockItemId, description, text)" />
+    <Member MemberName="ProvenanceDetectOperation">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.ProvenanceDetectOperation ProvenanceDetectOperation (string id = default, Azure.AI.ContentSafety.OperationState status = default, Azure.ResponseError error = default, Azure.AI.ContentSafety.DetectProvenanceResult result = default, Azure.AI.ContentSafety.ProvenanceOperationKind kind = default, DateTimeOffset? createdOn = default, DateTimeOffset? lastUpdatedOn = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.ProvenanceDetectOperation ProvenanceDetectOperation(string id, valuetype Azure.AI.ContentSafety.OperationState status, class Azure.ResponseError error, class Azure.AI.ContentSafety.DetectProvenanceResult result, valuetype Azure.AI.ContentSafety.ProvenanceOperationKind kind, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; createdOn, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; lastUpdatedOn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.ProvenanceDetectOperation(System.String,Azure.AI.ContentSafety.OperationState,Azure.ResponseError,Azure.AI.ContentSafety.DetectProvenanceResult,Azure.AI.ContentSafety.ProvenanceOperationKind,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ProvenanceDetectOperation (Optional id As String = Nothing, Optional status As OperationState = Nothing, Optional error As ResponseError = Nothing, Optional result As DetectProvenanceResult = Nothing, Optional kind As ProvenanceOperationKind = Nothing, Optional createdOn As Nullable(Of DateTimeOffset) = Nothing, Optional lastUpdatedOn As Nullable(Of DateTimeOffset) = Nothing) As ProvenanceDetectOperation" />
+      <MemberSignature Language="F#" Value="static member ProvenanceDetectOperation : string * Azure.AI.ContentSafety.OperationState * Azure.ResponseError * Azure.AI.ContentSafety.DetectProvenanceResult * Azure.AI.ContentSafety.ProvenanceOperationKind * Nullable&lt;DateTimeOffset&gt; * Nullable&lt;DateTimeOffset&gt; -&gt; Azure.AI.ContentSafety.ProvenanceDetectOperation" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.ProvenanceDetectOperation (id, status, error, result, kind, createdOn, lastUpdatedOn)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Azure.AI.ContentSafety.TextBlockItem</ReturnType>
+        <ReturnType>Azure.AI.ContentSafety.ProvenanceDetectOperation</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="blockItemId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="text" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="id" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="status" Type="Azure.AI.ContentSafety.OperationState" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="error" Type="Azure.ResponseError" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="result" Type="Azure.AI.ContentSafety.DetectProvenanceResult" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="kind" Type="Azure.AI.ContentSafety.ProvenanceOperationKind" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="createdOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="lastUpdatedOn" Type="System.Nullable&lt;System.DateTimeOffset&gt;" Index="6" FrameworkAlternate="azure-dotnet-preview" />
       </Parameters>
       <Docs>
-        <param name="blockItemId"> Block Item Id. It will be uuid. </param>
-        <param name="description"> Block item description. </param>
-        <param name="text"> Block item content. </param>
-        <summary> Initializes a new instance of TextBlockItem. </summary>
-        <returns> A new <see cref="T:Azure.AI.ContentSafety.TextBlockItem" /> instance for mocking. </returns>
+        <param name="id"> The unique ID of the operation. </param>
+        <param name="status"> The status of the operation. </param>
+        <param name="error"> Error object that describes the error when status is "Failed". </param>
+        <param name="result"> The result of the operation. </param>
+        <param name="kind"> Kind of Content Provenance Detection operation. </param>
+        <param name="createdOn"> Date and time (UTC) when the operation was created. </param>
+        <param name="lastUpdatedOn"> Date and time (UTC) when the status was last updated. </param>
+        <summary> Status and result of an asynchronous Content Provenance Detection operation. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.ProvenanceDetectOperation" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveTextBlocklistItemsOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.RemoveTextBlocklistItemsOptions RemoveTextBlocklistItemsOptions (System.Collections.Generic.IEnumerable&lt;string&gt; blocklistItemIds = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.RemoveTextBlocklistItemsOptions RemoveTextBlocklistItemsOptions(class System.Collections.Generic.IEnumerable`1&lt;string&gt; blocklistItemIds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.RemoveTextBlocklistItemsOptions(System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function RemoveTextBlocklistItemsOptions (Optional blocklistItemIds As IEnumerable(Of String) = Nothing) As RemoveTextBlocklistItemsOptions" />
+      <MemberSignature Language="F#" Value="static member RemoveTextBlocklistItemsOptions : seq&lt;string&gt; -&gt; Azure.AI.ContentSafety.RemoveTextBlocklistItemsOptions" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.RemoveTextBlocklistItemsOptions blocklistItemIds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.RemoveTextBlocklistItemsOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="blocklistItemIds" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="blocklistItemIds"> Array of blocklistItemIds to remove. </param>
+        <summary> The request to remove blocklistItems from a text blocklist. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.RemoveTextBlocklistItemsOptions" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShieldPromptOptions">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.ShieldPromptOptions ShieldPromptOptions (string userPrompt = default, System.Collections.Generic.IEnumerable&lt;string&gt; documents = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.ShieldPromptOptions ShieldPromptOptions(string userPrompt, class System.Collections.Generic.IEnumerable`1&lt;string&gt; documents) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.ShieldPromptOptions(System.String,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ShieldPromptOptions (Optional userPrompt As String = Nothing, Optional documents As IEnumerable(Of String) = Nothing) As ShieldPromptOptions" />
+      <MemberSignature Language="F#" Value="static member ShieldPromptOptions : string * seq&lt;string&gt; -&gt; Azure.AI.ContentSafety.ShieldPromptOptions" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.ShieldPromptOptions (userPrompt, documents)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.ShieldPromptOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userPrompt" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="documents" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="userPrompt"> The user prompt to be analyzed, which may contain direct injection attacks. </param>
+        <param name="documents"> The documents to be analyzed, which may contain direct or indirect injection attacks. </param>
+        <summary> The request of analyzing potential direct or indirect injection attacks. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.ShieldPromptOptions" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShieldPromptResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.ShieldPromptResult ShieldPromptResult (Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult userPromptAnalysis = default, System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.DocumentInjectionAnalysisResult&gt; documentsAnalysis = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.ShieldPromptResult ShieldPromptResult(class Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult userPromptAnalysis, class System.Collections.Generic.IEnumerable`1&lt;class Azure.AI.ContentSafety.DocumentInjectionAnalysisResult&gt; documentsAnalysis) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.ShieldPromptResult(Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult,System.Collections.Generic.IEnumerable{Azure.AI.ContentSafety.DocumentInjectionAnalysisResult})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ShieldPromptResult (Optional userPromptAnalysis As UserPromptInjectionAnalysisResult = Nothing, Optional documentsAnalysis As IEnumerable(Of DocumentInjectionAnalysisResult) = Nothing) As ShieldPromptResult" />
+      <MemberSignature Language="F#" Value="static member ShieldPromptResult : Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult * seq&lt;Azure.AI.ContentSafety.DocumentInjectionAnalysisResult&gt; -&gt; Azure.AI.ContentSafety.ShieldPromptResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.ShieldPromptResult (userPromptAnalysis, documentsAnalysis)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.ShieldPromptResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userPromptAnalysis" Type="Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="documentsAnalysis" Type="System.Collections.Generic.IEnumerable&lt;Azure.AI.ContentSafety.DocumentInjectionAnalysisResult&gt;" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="userPromptAnalysis"> Direct injection attacks analysis result for the given user prompt. </param>
+        <param name="documentsAnalysis"> Direct and indirect injection attacks analysis result for the given documents. </param>
+        <summary> The combined analysis results of potential direct or indirect injection attacks. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.ShieldPromptResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="TextBlocklist">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlocklist TextBlocklist (string name = default, string description = default);" FrameworkAlternate="azure-dotnet" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextBlocklist TextBlocklist(string name, string description) cil managed" FrameworkAlternate="azure-dotnet" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlocklist TextBlocklist (string name = default, string description = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextBlocklist TextBlocklist(string name, string description) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklist(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlocklist (Optional name As String = Nothing, Optional description As String = Nothing) As TextBlocklist" FrameworkAlternate="azure-dotnet" />
-      <MemberSignature Language="F#" Value="static member TextBlocklist : string * string -&gt; Azure.AI.ContentSafety.TextBlocklist" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklist (name, description)" FrameworkAlternate="azure-dotnet" />
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlocklist TextBlocklist (string blocklistName = default, string description = default);" FrameworkAlternate="azure-dotnet-preview" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextBlocklist TextBlocklist(string blocklistName, string description) cil managed" FrameworkAlternate="azure-dotnet-preview" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlocklist (Optional blocklistName As String = Nothing, Optional description As String = Nothing) As TextBlocklist" FrameworkAlternate="azure-dotnet-preview" />
-      <MemberSignature Language="F#" Value="static member TextBlocklist : string * string -&gt; Azure.AI.ContentSafety.TextBlocklist" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklist (blocklistName, description)" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlocklist (Optional name As String = Nothing, Optional description As String = Nothing) As TextBlocklist" />
+      <MemberSignature Language="F#" Value="static member TextBlocklist : string * string -&gt; Azure.AI.ContentSafety.TextBlocklist" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklist (name, description)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentSafety.TextBlocklist</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="blocklistName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="description" Type="System.String" Index="1" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
       </Parameters>
       <Docs>
         <param name="name"> Text blocklist name. </param>
-        <param name="blocklistName"> Text blocklist name. </param>
         <param name="description"> Text blocklist description. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.AI.ContentSafety.TextBlocklist" />. </summary>
+        <summary> Text Blocklist. </summary>
         <returns> A new <see cref="T:Azure.AI.ContentSafety.TextBlocklist" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="TextBlocklistItem">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlocklistItem TextBlocklistItem (string blocklistItemId = default, string description = default, string text = default);" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlocklistItem TextBlocklistItem (string blocklistItemId = default, string description = default, string text = default);" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextBlocklistItem TextBlocklistItem(string blocklistItemId, string description, string text) cil managed" />
       <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklistItem(System.String,System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlocklistItem (Optional blocklistItemId As String = Nothing, Optional description As String = Nothing, Optional text As String = Nothing) As TextBlocklistItem" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlocklistItem (Optional blocklistItemId As String = Nothing, Optional description As String = Nothing, Optional text As String = Nothing) As TextBlocklistItem" FrameworkAlternate="azure-dotnet" />
       <MemberSignature Language="F#" Value="static member TextBlocklistItem : string * string * string -&gt; Azure.AI.ContentSafety.TextBlocklistItem" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklistItem (blocklistItemId, description, text)" />
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlocklistItem TextBlocklistItem (string blocklistItemId, string description, string text);" FrameworkAlternate="azure-dotnet-preview" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlocklistItem (blocklistItemId As String, description As String, text As String) As TextBlocklistItem" FrameworkAlternate="azure-dotnet-preview" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute FrameworkAlternate="azure-dotnet-preview">
+          <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentSafety.TextBlocklistItem</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="blocklistItemId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="text" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="blocklistItemId" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
         <param name="blocklistItemId"> The service will generate a BlocklistItemId, which will be a UUID. </param>
         <param name="description"> BlocklistItem description. </param>
         <param name="text"> BlocklistItem content. </param>
         <summary> Initializes a new instance of <see cref="T:Azure.AI.ContentSafety.TextBlocklistItem" />. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.TextBlocklistItem" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextBlocklistItem">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlocklistItem TextBlocklistItem (string blocklistItemId = default, string description = default, string text = default, bool? isRegex = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextBlocklistItem TextBlocklistItem(string blocklistItemId, string description, string text, valuetype System.Nullable`1&lt;bool&gt; isRegex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklistItem(System.String,System.String,System.String,System.Nullable{System.Boolean})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlocklistItem (Optional blocklistItemId As String = Nothing, Optional description As String = Nothing, Optional text As String = Nothing, Optional isRegex As Nullable(Of Boolean) = Nothing) As TextBlocklistItem" />
+      <MemberSignature Language="F#" Value="static member TextBlocklistItem : string * string * string * Nullable&lt;bool&gt; -&gt; Azure.AI.ContentSafety.TextBlocklistItem" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklistItem (blocklistItemId, description, text, isRegex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.TextBlocklistItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="blocklistItemId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="description" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="text" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="isRegex" Type="System.Nullable&lt;System.Boolean&gt;" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="blocklistItemId"> The service will generate a BlocklistItemId, which will be a UUID. </param>
+        <param name="description"> BlocklistItem description. </param>
+        <param name="text"> BlocklistItem content. The length is counted using Unicode code point. </param>
+        <param name="isRegex"> An optional properties indicating whether this item is to be matched as a regular expression. </param>
+        <summary> Item in a TextBlocklist. </summary>
         <returns> A new <see cref="T:Azure.AI.ContentSafety.TextBlocklistItem" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -353,58 +802,25 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentSafety.TextBlocklistMatch</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="blocklistName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="blocklistItemId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="blocklistItemText" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="blocklistName" Type="System.String" />
+        <Parameter Name="blocklistItemId" Type="System.String" />
+        <Parameter Name="blocklistItemText" Type="System.String" />
       </Parameters>
       <Docs>
         <param name="blocklistName"> The name of the matched blocklist. </param>
         <param name="blocklistItemId"> The ID of the matched item. </param>
         <param name="blocklistItemText"> The content of the matched item. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.AI.ContentSafety.TextBlocklistMatch" />. </summary>
+        <summary> The result of blocklist match. </summary>
         <returns> A new <see cref="T:Azure.AI.ContentSafety.TextBlocklistMatch" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="blocklistName" />, <paramref name="blocklistItemId" /> or <paramref name="blocklistItemText" /> is null. </exception>
-      </Docs>
-    </Member>
-    <Member MemberName="TextBlocklistMatchResult">
-      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextBlocklistMatchResult TextBlocklistMatchResult (string blocklistName = default, string blockItemId = default, string blockItemText = default, int offset = 0, int length = 0);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextBlocklistMatchResult TextBlocklistMatchResult(string blocklistName, string blockItemId, string blockItemText, int32 offset, int32 length) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklistMatchResult(System.String,System.String,System.String,System.Int32,System.Int32)" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Function TextBlocklistMatchResult (Optional blocklistName As String = Nothing, Optional blockItemId As String = Nothing, Optional blockItemText As String = Nothing, Optional offset As Integer = 0, Optional length As Integer = 0) As TextBlocklistMatchResult" />
-      <MemberSignature Language="F#" Value="static member TextBlocklistMatchResult : string * string * string * int * int -&gt; Azure.AI.ContentSafety.TextBlocklistMatchResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextBlocklistMatchResult (blocklistName, blockItemId, blockItemText, offset, length)" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Azure.AI.ContentSafety.TextBlocklistMatchResult</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="blocklistName" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="blockItemId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="blockItemText" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="offset" Type="System.Int32" Index="3" FrameworkAlternate="azure-dotnet-preview" />
-        <Parameter Name="length" Type="System.Int32" Index="4" FrameworkAlternate="azure-dotnet-preview" />
-      </Parameters>
-      <Docs>
-        <param name="blocklistName"> The name of matched blocklist. </param>
-        <param name="blockItemId"> The id of matched item. </param>
-        <param name="blockItemText"> The content of matched item. </param>
-        <param name="offset"> The character offset of matched text in original input. </param>
-        <param name="length"> The length of matched text in original input. </param>
-        <summary> Initializes a new instance of TextBlocklistMatchResult. </summary>
-        <returns> A new <see cref="T:Azure.AI.ContentSafety.TextBlocklistMatchResult" /> instance for mocking. </returns>
-        <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="blocklistName" />, <paramref name="blockItemId" /> or <paramref name="blockItemText" /> is null. </exception>
       </Docs>
     </Member>
     <Member MemberName="TextCategoriesAnalysis">
@@ -417,19 +833,176 @@
       <AssemblyInfo>
         <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Azure.AI.ContentSafety.TextCategoriesAnalysis</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="category" Type="Azure.AI.ContentSafety.TextCategory" Index="0" FrameworkAlternate="azure-dotnet" />
-        <Parameter Name="severity" Type="System.Nullable&lt;System.Int32&gt;" Index="1" FrameworkAlternate="azure-dotnet" />
+        <Parameter Name="category" Type="Azure.AI.ContentSafety.TextCategory" />
+        <Parameter Name="severity" Type="System.Nullable&lt;System.Int32&gt;" />
       </Parameters>
       <Docs>
         <param name="category"> The text analysis category. </param>
         <param name="severity"> The value increases with the severity of the input content. The value of this field is determined by the output type specified in the request. The output type could be ‘FourSeverityLevels’ or ‘EightSeverity Levels’, and the output value can be 0, 2, 4, 6 or 0, 1, 2, 3, 4, 5, 6, or 7. </param>
-        <summary> Initializes a new instance of <see cref="T:Azure.AI.ContentSafety.TextCategoriesAnalysis" />. </summary>
+        <summary> Text analysis result. </summary>
         <returns> A new <see cref="T:Azure.AI.ContentSafety.TextCategoriesAnalysis" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextProtectedMaterialAnalysisResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult TextProtectedMaterialAnalysisResult (bool detected = false);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult TextProtectedMaterialAnalysisResult(bool detected) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.TextProtectedMaterialAnalysisResult(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TextProtectedMaterialAnalysisResult (Optional detected As Boolean = false) As TextProtectedMaterialAnalysisResult" />
+      <MemberSignature Language="F#" Value="static member TextProtectedMaterialAnalysisResult : bool -&gt; Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.TextProtectedMaterialAnalysisResult detected" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="detected" Type="System.Boolean" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="detected"> Whether potential protected material is detected or not. </param>
+        <summary> The individual detection result of potential protected material. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.TextProtectedMaterialAnalysisResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnifiedModerateConfig">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.UnifiedModerateConfig UnifiedModerateConfig (string policyId = default, string targetResourceId = default, Azure.AI.ContentSafety.UnifiedModerateSource source = default, string content = default, string toolName = default, string toolCallId = default, string toolArguments = default, bool? toolResultIsError = default, double? toolDurationMs = default, Azure.AI.ContentSafety.UnifiedModerateContext context = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.UnifiedModerateConfig UnifiedModerateConfig(string policyId, string targetResourceId, valuetype Azure.AI.ContentSafety.UnifiedModerateSource source, string content, string toolName, string toolCallId, string toolArguments, valuetype System.Nullable`1&lt;bool&gt; toolResultIsError, valuetype System.Nullable`1&lt;float64&gt; toolDurationMs, class Azure.AI.ContentSafety.UnifiedModerateContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.UnifiedModerateConfig(System.String,System.String,Azure.AI.ContentSafety.UnifiedModerateSource,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Double},Azure.AI.ContentSafety.UnifiedModerateContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function UnifiedModerateConfig (Optional policyId As String = Nothing, Optional targetResourceId As String = Nothing, Optional source As UnifiedModerateSource = Nothing, Optional content As String = Nothing, Optional toolName As String = Nothing, Optional toolCallId As String = Nothing, Optional toolArguments As String = Nothing, Optional toolResultIsError As Nullable(Of Boolean) = Nothing, Optional toolDurationMs As Nullable(Of Double) = Nothing, Optional context As UnifiedModerateContext = Nothing) As UnifiedModerateConfig" />
+      <MemberSignature Language="F#" Value="static member UnifiedModerateConfig : string * string * Azure.AI.ContentSafety.UnifiedModerateSource * string * string * string * string * Nullable&lt;bool&gt; * Nullable&lt;double&gt; * Azure.AI.ContentSafety.UnifiedModerateContext -&gt; Azure.AI.ContentSafety.UnifiedModerateConfig" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.UnifiedModerateConfig (policyId, targetResourceId, source, content, toolName, toolCallId, toolArguments, toolResultIsError, toolDurationMs, context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.UnifiedModerateConfig</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="policyId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="targetResourceId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="source" Type="Azure.AI.ContentSafety.UnifiedModerateSource" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="toolName" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="toolCallId" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="toolArguments" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="toolResultIsError" Type="System.Nullable&lt;System.Boolean&gt;" Index="7" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="toolDurationMs" Type="System.Nullable&lt;System.Double&gt;" Index="8" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="context" Type="Azure.AI.ContentSafety.UnifiedModerateContext" Index="9" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="policyId"> The identifier of a policy available to the Content Safety resource. When provided, the service attempts to resolve this policy before using the policy bound to targetResourceId. </param>
+        <param name="targetResourceId"> The Azure resource identifier whose policy binding is resolved if no policy is resolved from policyId. The target resource must already have a policy binding available to the Content Safety resource. </param>
+        <param name="source"> The workload event source. The source selects the policy intervention point. </param>
+        <param name="content"> The content to evaluate. For input and output sources, provide nonempty plain text. For pre_tool_call, provide a string containing a JSON-encoded object with the proposed tool arguments. For post_tool_call, provide a string containing the JSON-encoded tool result. </param>
+        <param name="toolName"> The tool name. Required and nonempty for tool-call sources and not allowed for input or output sources. </param>
+        <param name="toolCallId"> An optional caller-provided tool-call identifier. The service generates one when omitted for a tool-call source. </param>
+        <param name="toolArguments"> A string containing a JSON-encoded object with the original arguments for a completed tool call. This property applies only to post_tool_call. The service uses an empty object when omitted. </param>
+        <param name="toolResultIsError"> Whether the completed tool call returned an error. This property applies only to post_tool_call. </param>
+        <param name="toolDurationMs"> The non-negative duration of the completed tool call, in milliseconds. This property applies only to post_tool_call. </param>
+        <param name="context"> Optional agent, session, and request context supplied to policy evaluation. </param>
+        <summary> A request to evaluate and enforce an applicable policy for one workload event. The service uses the first policy it can resolve from policyId and then from the policy binding for targetResourceId, in that order. The request fails if neither selector resolves a policy. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.UnifiedModerateConfig" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnifiedModerateContext">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.UnifiedModerateContext UnifiedModerateContext (string agentId = default, string sessionId = default, long? sequence = default, string correlationId = default, string userId = default, string tenantId = default, string extensions = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.UnifiedModerateContext UnifiedModerateContext(string agentId, string sessionId, valuetype System.Nullable`1&lt;int64&gt; sequence, string correlationId, string userId, string tenantId, string extensions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.UnifiedModerateContext(System.String,System.String,System.Nullable{System.Int64},System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function UnifiedModerateContext (Optional agentId As String = Nothing, Optional sessionId As String = Nothing, Optional sequence As Nullable(Of Long) = Nothing, Optional correlationId As String = Nothing, Optional userId As String = Nothing, Optional tenantId As String = Nothing, Optional extensions As String = Nothing) As UnifiedModerateContext" />
+      <MemberSignature Language="F#" Value="static member UnifiedModerateContext : string * string * Nullable&lt;int64&gt; * string * string * string * string -&gt; Azure.AI.ContentSafety.UnifiedModerateContext" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.UnifiedModerateContext (agentId, sessionId, sequence, correlationId, userId, tenantId, extensions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.UnifiedModerateContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="agentId" Type="System.String" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sessionId" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="sequence" Type="System.Nullable&lt;System.Int64&gt;" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="correlationId" Type="System.String" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="userId" Type="System.String" Index="4" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="tenantId" Type="System.String" Index="5" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="extensions" Type="System.String" Index="6" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="agentId"> Caller-provided identifier of the agent associated with the event. </param>
+        <param name="sessionId"> Caller-provided identifier of the session associated with the event. </param>
+        <param name="sequence"> Zero-based event sequence within the session, when available. </param>
+        <param name="correlationId"> Caller-provided end-to-end correlation identifier. </param>
+        <param name="userId"> Caller-provided workload user identifier. </param>
+        <param name="tenantId"> Caller-provided workload tenant identifier. </param>
+        <param name="extensions"> A string containing a JSON-encoded object with validated host-specific context extensions. </param>
+        <summary> Optional agent, session, and request context supplied to policy evaluation. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.UnifiedModerateContext" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnifiedModerateResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.UnifiedModerateResult UnifiedModerateResult (Azure.AI.ContentSafety.UnifiedModerateVerdict verdict = default, string reason = default, string content = default, Azure.AI.ContentSafety.AcsVerdict acsVerdict = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.UnifiedModerateResult UnifiedModerateResult(valuetype Azure.AI.ContentSafety.UnifiedModerateVerdict verdict, string reason, string content, class Azure.AI.ContentSafety.AcsVerdict acsVerdict) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.UnifiedModerateResult(Azure.AI.ContentSafety.UnifiedModerateVerdict,System.String,System.String,Azure.AI.ContentSafety.AcsVerdict)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function UnifiedModerateResult (Optional verdict As UnifiedModerateVerdict = Nothing, Optional reason As String = Nothing, Optional content As String = Nothing, Optional acsVerdict As AcsVerdict = Nothing) As UnifiedModerateResult" />
+      <MemberSignature Language="F#" Value="static member UnifiedModerateResult : Azure.AI.ContentSafety.UnifiedModerateVerdict * string * string * Azure.AI.ContentSafety.AcsVerdict -&gt; Azure.AI.ContentSafety.UnifiedModerateResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.UnifiedModerateResult (verdict, reason, content, acsVerdict)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.UnifiedModerateResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="verdict" Type="Azure.AI.ContentSafety.UnifiedModerateVerdict" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="reason" Type="System.String" Index="1" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="content" Type="System.String" Index="2" FrameworkAlternate="azure-dotnet-preview" />
+        <Parameter Name="acsVerdict" Type="Azure.AI.ContentSafety.AcsVerdict" Index="3" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="verdict"> The caller-facing enforcement outcome. </param>
+        <param name="reason"> An optional machine-readable policy reason. </param>
+        <param name="content"> The original or transformed content when allowed, using the same source-specific representation as the request content. Structured content is returned as a string containing the JSON-encoded value. This property is omitted when blocked. </param>
+        <param name="acsVerdict"> The complete Agent Control Specification policy verdict. </param>
+        <summary> The enforced result of unified moderation. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.UnifiedModerateResult" /> instance for mocking. </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserPromptInjectionAnalysisResult">
+      <MemberSignature Language="C#" Value="public static Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult UserPromptInjectionAnalysisResult (bool attackDetected = false);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult UserPromptInjectionAnalysisResult(bool attackDetected) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.ContentSafety.ContentSafetyModelFactory.UserPromptInjectionAnalysisResult(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function UserPromptInjectionAnalysisResult (Optional attackDetected As Boolean = false) As UserPromptInjectionAnalysisResult" />
+      <MemberSignature Language="F#" Value="static member UserPromptInjectionAnalysisResult : bool -&gt; Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult" Usage="Azure.AI.ContentSafety.ContentSafetyModelFactory.UserPromptInjectionAnalysisResult attackDetected" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.ContentSafety</AssemblyName>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attackDetected" Type="System.Boolean" Index="0" FrameworkAlternate="azure-dotnet-preview" />
+      </Parameters>
+      <Docs>
+        <param name="attackDetected"> Whether a potential injection attack is detected or not. </param>
+        <summary> The individual analysis result of potential injection attacks in the given user prompt. </summary>
+        <returns> A new <see cref="T:Azure.AI.ContentSafety.UserPromptInjectionAnalysisResult" /> instance for mocking. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
