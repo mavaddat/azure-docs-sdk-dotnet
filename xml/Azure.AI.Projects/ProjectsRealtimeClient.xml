@@ -1,0 +1,87 @@
+<Type Name="ProjectsRealtimeClient" FullName="Azure.AI.Projects.ProjectsRealtimeClient">
+  <TypeSignature Language="C#" Value="public class ProjectsRealtimeClient : OpenAI.Realtime.RealtimeClient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProjectsRealtimeClient extends OpenAI.Realtime.RealtimeClient" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.Projects.ProjectsRealtimeClient" />
+  <TypeSignature Language="VB.NET" Value="Public Class ProjectsRealtimeClient&#xA;Inherits RealtimeClient" />
+  <TypeSignature Language="F#" Value="type ProjectsRealtimeClient = class&#xA;    inherit RealtimeClient" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.Projects</AssemblyName>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>OpenAI.Realtime.RealtimeClient</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            The extended real time client.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ProjectsRealtimeClient ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.ProjectsRealtimeClient.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Internal empty constructor for mocking.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartSessionAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;OpenAI.Realtime.RealtimeSessionClient&gt; StartSessionAsync (string model, string intent, OpenAI.Realtime.RealtimeSessionClientOptions options = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class OpenAI.Realtime.RealtimeSessionClient&gt; StartSessionAsync(string model, string intent, class OpenAI.Realtime.RealtimeSessionClientOptions options, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.ProjectsRealtimeClient.StartSessionAsync(System.String,System.String,OpenAI.Realtime.RealtimeSessionClientOptions,System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function StartSessionAsync (model As String, intent As String, Optional options As RealtimeSessionClientOptions = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task(Of RealtimeSessionClient)" />
+      <MemberSignature Language="F#" Value="abstract member StartSessionAsync : string * string * OpenAI.Realtime.RealtimeSessionClientOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;OpenAI.Realtime.RealtimeSessionClient&gt;&#xA;override this.StartSessionAsync : string * string * OpenAI.Realtime.RealtimeSessionClientOptions * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&lt;OpenAI.Realtime.RealtimeSessionClient&gt;" Usage="projectsRealtimeClient.StartSessionAsync (model, intent, options, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;OpenAI.Realtime.RealtimeSessionClient&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="model" Type="System.String" />
+        <Parameter Name="intent" Type="System.String" />
+        <Parameter Name="options" Type="OpenAI.Realtime.RealtimeSessionClientOptions" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="model">The name of the voice agent to connect to (used as the <c>{agentName}</c> path segment).</param>
+        <param name="intent">The client intent.</param>
+        <param name="options">
+            Additional connection options. <see cref="P:OpenAI.Realtime.RealtimeSessionClientOptions.QueryString" /> is
+            used to pass Foundry's "store" option (a Foundry-only concept with no equivalent on this
+            method's own signature) as <c>"store=true"</c> or <c>"store=false"</c>; see
+            <see cref="M:Azure.AI.Projects.ProjectsRealtimeSessionClient.ConnectAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />, which merges it with api-version.
+            </param>
+        <param name="cancellationToken" />
+        <summary>
+            Starts and connects a realtime session for the named voice agent. Overrides
+            <see cref="M:OpenAI.Realtime.RealtimeClient.StartSessionAsync(System.String,System.String,OpenAI.Realtime.RealtimeSessionClientOptions,System.Threading.CancellationToken)" />
+            rather than introducing a differently-named method: this is the public, documented way to
+            start a voice-agent session -- get a <see cref="T:Azure.AI.Projects.ProjectsRealtimeClient" /> from
+            <see cref="P:Azure.AI.Projects.AIProjectClient.ProjectsRealtimeClient" />, then call this (inherited/overridden)
+            method on it, the same way an OpenAI <see cref="T:OpenAI.Realtime.RealtimeClient" /> consumer would.
+            </summary>
+        <returns>
+            An already-connected <see cref="T:Azure.AI.Projects.ProjectsRealtimeSessionClient" /> (returned as the base
+            <see cref="T:OpenAI.Realtime.RealtimeSessionClient" /> type: <c>Task&lt;T&gt;</c> isn't covariant in <c>T</c>
+            even under C# 9+ override covariance, unlike a method's own direct return type).
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

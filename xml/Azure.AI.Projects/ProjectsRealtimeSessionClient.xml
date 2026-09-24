@@ -1,0 +1,91 @@
+<Type Name="ProjectsRealtimeSessionClient" FullName="Azure.AI.Projects.ProjectsRealtimeSessionClient">
+  <TypeSignature Language="C#" Value="public class ProjectsRealtimeSessionClient : OpenAI.Realtime.RealtimeSessionClient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProjectsRealtimeSessionClient extends OpenAI.Realtime.RealtimeSessionClient" />
+  <TypeSignature Language="DocId" Value="T:Azure.AI.Projects.ProjectsRealtimeSessionClient" />
+  <TypeSignature Language="VB.NET" Value="Public Class ProjectsRealtimeSessionClient&#xA;Inherits RealtimeSessionClient" />
+  <TypeSignature Language="F#" Value="type ProjectsRealtimeSessionClient = class&#xA;    inherit RealtimeSessionClient" />
+  <AssemblyInfo>
+    <AssemblyName>Azure.AI.Projects</AssemblyName>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>OpenAI.Realtime.RealtimeSessionClient</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Realtime session client, using bearer token authentication.
+            </summary>
+    <remarks>
+            This type extends OpenAI's <see cref="T:OpenAI.Realtime.RealtimeSessionClient" /> so that voice-agent sessions
+            reuse its command and event model (for example
+            <see cref="M:OpenAI.Realtime.RealtimeSessionClient.SendInputAudioAsync(System.BinaryData,System.Threading.CancellationToken)" />,
+            <see cref="M:OpenAI.Realtime.RealtimeSessionClient.AddItemAsync(OpenAI.Realtime.RealtimeItem,System.String,System.Threading.CancellationToken)" />, or
+            <see cref="M:OpenAI.Realtime.RealtimeSessionClient.ReceiveUpdatesAsync(System.Threading.CancellationToken)" /> for OpenAI's
+            strongly-typed <see cref="T:OpenAI.Realtime.RealtimeServerUpdate" /> sequence). Only the query string/header
+            values are Foundry-specific here (see the <see cref="M:Azure.AI.Projects.ProjectsRealtimeSessionClient.ConnectAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" /> override below); the
+            WebSocket handshake itself is performed by the base <see cref="M:OpenAI.Realtime.RealtimeSessionClient.ConnectAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />
+            implementation, targeting the Foundry voice-agent endpoint
+            (<c>/agents/{agentName}/endpoint/protocols/voice</c>) this instance was constructed with instead
+            of OpenAI's generic <c>/realtime</c> endpoint. Use
+            <see cref="M:Azure.AI.Projects.ProjectsRealtimeClient.StartSessionAsync(System.String,System.String,OpenAI.Realtime.RealtimeSessionClientOptions,System.Threading.CancellationToken)" /> (via <see cref="P:Azure.AI.Projects.AIProjectClient.ProjectsRealtimeClient" />)
+            to obtain an already-connected instance.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ProjectsRealtimeSessionClient ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.ProjectsRealtimeSessionClient.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Internal empty constructor for mocking.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task ConnectAsync (string queryString = default, System.Collections.Generic.IDictionary&lt;string,string&gt; headers = default, System.Threading.CancellationToken cancellationToken = default);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Threading.Tasks.Task ConnectAsync(string queryString, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; headers, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.AI.Projects.ProjectsRealtimeSessionClient.ConnectAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function ConnectAsync (Optional queryString As String = Nothing, Optional headers As IDictionary(Of String, String) = Nothing, Optional cancellationToken As CancellationToken = Nothing) As Task" />
+      <MemberSignature Language="F#" Value="abstract member ConnectAsync : string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.ConnectAsync : string * System.Collections.Generic.IDictionary&lt;string, string&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="projectsRealtimeSessionClient.ConnectAsync (queryString, headers, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Azure.AI.Projects</AssemblyName>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queryString" Type="System.String" />
+        <Parameter Name="headers" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="queryString">An additional query string merged in after api-version.</param>
+        <param name="headers">Additional headers to merge with the ones this override computes.</param>
+        <param name="cancellationToken" />
+        <summary>
+            Connects to the Foundry voice-agent endpoint this instance was constructed with. Only the
+            Foundry-specific query string (api-version, merged with any caller-supplied query string --
+            see <paramref name="queryString" /> -- such as ProjectsRealtimeClient.StartSessionAsync's
+            "store" option) and headers (Foundry-Features, bearer Authorization) are computed here; the
+            WebSocket handshake itself (subprotocol negotiation, applying the headers, connecting,
+            assigning <see cref="P:OpenAI.Realtime.RealtimeSessionClient.WebSocket" />) is entirely delegated to
+            <see cref="M:OpenAI.Realtime.RealtimeSessionClient.ConnectAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)" />.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
