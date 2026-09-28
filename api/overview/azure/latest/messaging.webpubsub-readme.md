@@ -1,12 +1,12 @@
 ---
 title: Azure Web PubSub service client library for .NET
 keywords: Azure, dotnet, SDK, API, Azure.Messaging.WebPubSub, webpubsub
-ms.date: 05/08/2025
+ms.date: 09/28/2026
 ms.topic: reference
 ms.devlang: dotnet
 ms.service: webpubsub
 ---
-# Azure Web PubSub service client library for .NET - version 1.6.0 
+# Azure Web PubSub service client library for .NET - version 1.7.0 
 
 
 [Azure Web PubSub Service](https://aka.ms/awps/doc) is an Azure-managed service that helps developers easily build web applications with real-time features and publish-subscribe pattern. Any scenario that requires real-time publish-subscribe messaging between server and clients or among clients can use Azure Web PubSub service. Traditional real-time features that often require polling from server or submitting HTTP requests can also use Azure Web PubSub service.
@@ -25,7 +25,7 @@ Use this library to:
 
 Details about the terms used here are described in [Key concepts](#key-concepts) section.
 
-[Source code](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.WebPubSub_1.6.0/sdk/webpubsub/Azure.Messaging.WebPubSub/src) |
+[Source code](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.WebPubSub_1.7.0/sdk/webpubsub/Azure.Messaging.WebPubSub/src) |
 [Package](https://www.nuget.org/packages/Azure.Messaging.WebPubSub) |
 [API reference documentation](https://aka.ms/awps/sdk/csharp) |
 [Product documentation](https://aka.ms/awps/doc) |
@@ -191,7 +191,7 @@ await foreach (WebPubSubGroupMember member in client.ListConnectionsInGroupAsync
 
 ### Setting up console logging
 
-You can also easily [enable console logging](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.WebPubSub_1.6.0/sdk/core/Azure.Core/samples/Diagnostics.md#logging) if you want to dig deeper into the requests you're making against the service.
+You can also easily [enable console logging](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.WebPubSub_1.7.0/sdk/core/Azure.Core/samples/Diagnostics.md#logging) if you want to dig deeper into the requests you're making against the service.
 
 ## Next steps
 
@@ -215,6 +215,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 [azure_sub]: https://azure.microsoft.com/free/dotnet/
-[samples_ref]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.WebPubSub_1.6.0/sdk/webpubsub/Azure.Messaging.WebPubSub/tests/Samples/
+[samples_ref]: https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.WebPubSub_1.7.0/sdk/webpubsub/Azure.Messaging.WebPubSub/tests/Samples/
 [awps_sample]: https://github.com/Azure/azure-webpubsub/tree/main/samples/csharp
 
