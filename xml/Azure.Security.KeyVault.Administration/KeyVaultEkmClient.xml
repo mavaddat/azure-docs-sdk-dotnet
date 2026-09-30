@@ -1,9 +1,9 @@
 <Type Name="KeyVaultEkmClient" FullName="Azure.Security.KeyVault.Administration.KeyVaultEkmClient">
-  <TypeSignature Language="C#" Value="public class KeyVaultEkmClient" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyVaultEkmClient extends System.Object" />
+  <TypeSignature Language="C#" Value="public class KeyVaultEkmClient : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyVaultEkmClient extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:Azure.Security.KeyVault.Administration.KeyVaultEkmClient" />
-  <TypeSignature Language="VB.NET" Value="Public Class KeyVaultEkmClient" />
-  <TypeSignature Language="F#" Value="type KeyVaultEkmClient = class" />
+  <TypeSignature Language="VB.NET" Value="Public Class KeyVaultEkmClient&#xA;Implements IDisposable" />
+  <TypeSignature Language="F#" Value="type KeyVaultEkmClient = class&#xA;    interface IDisposable" />
   <AssemblyInfo>
     <AssemblyName>Azure.Security.KeyVault.Administration</AssemblyName>
     <AssemblyVersion>4.9.0.0</AssemblyVersion>
@@ -11,7 +11,11 @@
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
-  <Interfaces />
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
   <Docs>
     <summary> The KeyVaultEkmClient. </summary>
     <remarks>To be added.</remarks>
@@ -271,6 +275,34 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:Azure.RequestFailedException"> Service returned a non-success status code.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Administration.KeyVaultEkmClient.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Dispose ()" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="keyVaultEkmClient.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Administration</AssemblyName>
+        <AssemblyVersion>4.9.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Releases the HTTP pipeline resources owned by this client.
+            </summary>
+        <remarks>
+            Reuse the client and dispose it after its operations have completed.
+            Caller-provided transports and credentials are not disposed.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetEkmCertificate">

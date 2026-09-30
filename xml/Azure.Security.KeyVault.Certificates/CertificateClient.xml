@@ -1,9 +1,13 @@
 <Type Name="CertificateClient" FullName="Azure.Security.KeyVault.Certificates.CertificateClient">
-  <TypeSignature Language="C#" Value="public class CertificateClient" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CertificateClient extends System.Object" />
+  <TypeSignature Language="C#" Value="public class CertificateClient" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CertificateClient extends System.Object" FrameworkAlternate="azure-dotnet" />
   <TypeSignature Language="DocId" Value="T:Azure.Security.KeyVault.Certificates.CertificateClient" />
-  <TypeSignature Language="VB.NET" Value="Public Class CertificateClient" />
-  <TypeSignature Language="F#" Value="type CertificateClient = class" />
+  <TypeSignature Language="VB.NET" Value="Public Class CertificateClient" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="F#" Value="type CertificateClient = class" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="C#" Value="public class CertificateClient : IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CertificateClient extends System.Object implements class System.IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="VB.NET" Value="Public Class CertificateClient&#xA;Implements IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="F#" Value="type CertificateClient = class&#xA;    interface IDisposable" FrameworkAlternate="azure-dotnet-preview" />
   <AssemblyInfo>
     <AssemblyName>Azure.Security.KeyVault.Certificates</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
@@ -23,7 +27,11 @@
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
-  <Interfaces />
+  <Interfaces>
+    <Interface FrameworkAlternate="azure-dotnet-preview">
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
   <Docs>
     <summary>
             The CertificateClient provides synchronous and asynchronous methods to manage <see cref="T:Azure.Security.KeyVault.Certificates.KeyVaultCertificate" />s in Azure Key Vault. The client
@@ -31,7 +39,20 @@
             certificate <see cref="T:Azure.Security.KeyVault.Certificates.CertificateIssuer" />s and <see cref="T:Azure.Security.KeyVault.Certificates.CertificateContact" />s. The client also supports listing <see cref="T:Azure.Security.KeyVault.Certificates.DeletedCertificate" /> for a soft delete
             enabled key vault.
             </summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+            Internally, request building, transport, paging continuation, and LRO
+            polling for the Certificates endpoint are delegated to the TypeSpec-
+            generated <c>KeyVaultCertificatesClient</c> (internal). Request-body
+            composition and public model (de)serialization continue to be performed
+            by <c>CertificateMapper</c> and the handwritten model types, so the
+            wire payload shapes and public model surfaces are unchanged. Public
+            method signatures, return types, exception contracts and recorded HTTP
+            traffic match every previously shipped 4.x version of this package.
+            Reuse clients and call <see cref="M:Azure.Security.KeyVault.Certificates.CertificateClient.Dispose" /> when their lifetime ends. The legacy
+            hand-written transport layer (KeyVaultPipeline.SendRequest&lt;T&gt;)
+            is retained only for DownloadCertificate because that API hits the
+            Secrets endpoint, not the Certificates endpoint.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -370,6 +391,34 @@
           <paramref name="issuerName" /> is empty.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="issuerName" /> is null.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Certificates.CertificateClient.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Dispose ()" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="certificateClient.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Certificates</AssemblyName>
+        <AssemblyVersion>4.10.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Releases the HTTP pipeline resources owned by this client.
+            </summary>
+        <remarks>
+            Reuse the client for its intended lifetime and dispose it after its operations, including long-running
+            operations and pageable enumeration, have completed. Caller-provided transports and credentials are not disposed.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DownloadCertificate">

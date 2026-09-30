@@ -1,9 +1,13 @@
 <Type Name="KeyClient" FullName="Azure.Security.KeyVault.Keys.KeyClient">
-  <TypeSignature Language="C#" Value="public class KeyClient" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyClient extends System.Object" />
+  <TypeSignature Language="C#" Value="public class KeyClient" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyClient extends System.Object" FrameworkAlternate="azure-dotnet" />
   <TypeSignature Language="DocId" Value="T:Azure.Security.KeyVault.Keys.KeyClient" />
-  <TypeSignature Language="VB.NET" Value="Public Class KeyClient" />
-  <TypeSignature Language="F#" Value="type KeyClient = class" />
+  <TypeSignature Language="VB.NET" Value="Public Class KeyClient" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="F#" Value="type KeyClient = class" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="C#" Value="public class KeyClient : IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyClient extends System.Object implements class System.IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="VB.NET" Value="Public Class KeyClient&#xA;Implements IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="F#" Value="type KeyClient = class&#xA;    interface IDisposable" FrameworkAlternate="azure-dotnet-preview" />
   <AssemblyInfo>
     <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
@@ -23,7 +27,11 @@
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
-  <Interfaces />
+  <Interfaces>
+    <Interface FrameworkAlternate="azure-dotnet-preview">
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
   <Docs>
     <summary>
             The KeyClient provides synchronous and asynchronous methods to manage <see cref="T:Azure.Security.KeyVault.Keys.KeyVaultKey" /> in the Azure Key Vault. The client
@@ -555,6 +563,36 @@
         <exception cref="T:Azure.RequestFailedException">The server returned an error. See <see cref="P:System.Exception.Message" /> for details returned from the server.</exception>
       </Docs>
     </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Keys.KeyClient.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Dispose ()" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="keyClient.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Releases the HTTP pipeline resources owned by this client.
+            </summary>
+        <remarks>
+            Reuse the client for its intended lifetime and dispose it after its operations, including long-running
+            operations and pageable enumeration, have completed. Cryptography clients created by
+            <see cref="M:Azure.Security.KeyVault.Keys.KeyClient.GetCryptographyClient(System.String,System.String)" /> share this client's pipeline and must no longer be used after disposal.
+            Caller-provided transports and credentials are not disposed.
+            </remarks>
+      </Docs>
+    </Member>
     <Member MemberName="GetCryptographyClient">
       <MemberSignature Language="C#" Value="public virtual Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient GetCryptographyClient (string keyName, string keyVersion = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient GetCryptographyClient(string keyName, string keyVersion) cil managed" />
@@ -586,6 +624,8 @@
             Given a key <paramref name="keyName" /> and optional <paramref name="keyVersion" />, a new <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient" /> will be created
             using the same <see cref="P:Azure.Security.KeyVault.Keys.KeyClient.VaultUri" /> and options passed to this <see cref="T:Azure.Security.KeyVault.Keys.KeyClient" />, including the <see cref="T:Azure.Security.KeyVault.Keys.KeyClientOptions.ServiceVersion" />,
             <see cref="P:Azure.Core.ClientOptions.Diagnostics" />, <see cref="P:Azure.Core.ClientOptions.Retry" />, and other options.
+            Keep this <see cref="T:Azure.Security.KeyVault.Keys.KeyClient" /> alive until you have finished using the returned client.
+            Disposing the returned client does not dispose this client's shared pipeline.
             </para>
           <para>
             If you want to create a <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient" /> using a different Key Vault or Managed HSM endpoint, with different options, or even with a

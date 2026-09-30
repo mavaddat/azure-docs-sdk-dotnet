@@ -1,9 +1,13 @@
 <Type Name="CryptographyClient" FullName="Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient">
-  <TypeSignature Language="C#" Value="public class CryptographyClient : Azure.Core.Cryptography.IKeyEncryptionKey" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CryptographyClient extends System.Object implements class Azure.Core.Cryptography.IKeyEncryptionKey" />
+  <TypeSignature Language="C#" Value="public class CryptographyClient : Azure.Core.Cryptography.IKeyEncryptionKey" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CryptographyClient extends System.Object implements class Azure.Core.Cryptography.IKeyEncryptionKey" FrameworkAlternate="azure-dotnet" />
   <TypeSignature Language="DocId" Value="T:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient" />
-  <TypeSignature Language="VB.NET" Value="Public Class CryptographyClient&#xA;Implements IKeyEncryptionKey" />
-  <TypeSignature Language="F#" Value="type CryptographyClient = class&#xA;    interface IKeyEncryptionKey" />
+  <TypeSignature Language="VB.NET" Value="Public Class CryptographyClient&#xA;Implements IKeyEncryptionKey" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="F#" Value="type CryptographyClient = class&#xA;    interface IKeyEncryptionKey" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="C#" Value="public class CryptographyClient : Azure.Core.Cryptography.IKeyEncryptionKey, IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CryptographyClient extends System.Object implements class Azure.Core.Cryptography.IKeyEncryptionKey, class System.IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="VB.NET" Value="Public Class CryptographyClient&#xA;Implements IDisposable, IKeyEncryptionKey" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="F#" Value="type CryptographyClient = class&#xA;    interface IKeyEncryptionKey&#xA;    interface IDisposable" FrameworkAlternate="azure-dotnet-preview" />
   <AssemblyInfo>
     <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
@@ -26,6 +30,9 @@
   <Interfaces>
     <Interface>
       <InterfaceName>Azure.Core.Cryptography.IKeyEncryptionKey</InterfaceName>
+    </Interface>
+    <Interface FrameworkAlternate="azure-dotnet-preview">
+      <InterfaceName>System.IDisposable</InterfaceName>
     </Interface>
   </Interfaces>
   <Docs>
@@ -533,6 +540,36 @@
         <exception cref="T:System.InvalidOperationException">The key is invalid for the current operation.</exception>
         <exception cref="T:System.NotSupportedException">The operation is not supported with the specified key.</exception>
         <exception cref="T:Azure.RequestFailedException">The server returned an error. See <see cref="P:System.Exception.Message" /> for details returned from the server.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Dispose ()" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="cryptographyClient.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Releases the HTTP pipeline resources owned by this client.
+            </summary>
+        <remarks>
+            Dispose the client after its operations have completed. Clients created by a <see cref="T:Azure.Security.KeyVault.Keys.KeyClient" />
+            or <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.KeyResolver" /> borrow their creator's pipeline and do not dispose it. Keep the creator
+            alive until all use of the returned client has completed. Caller-provided transports and credentials
+            are not disposed. Local-only clients do not own an HTTP pipeline.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Encrypt">

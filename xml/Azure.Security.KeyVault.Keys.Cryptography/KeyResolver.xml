@@ -1,9 +1,13 @@
 <Type Name="KeyResolver" FullName="Azure.Security.KeyVault.Keys.Cryptography.KeyResolver">
-  <TypeSignature Language="C#" Value="public class KeyResolver : Azure.Core.Cryptography.IKeyEncryptionKeyResolver" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyResolver extends System.Object implements class Azure.Core.Cryptography.IKeyEncryptionKeyResolver" />
+  <TypeSignature Language="C#" Value="public class KeyResolver : Azure.Core.Cryptography.IKeyEncryptionKeyResolver" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyResolver extends System.Object implements class Azure.Core.Cryptography.IKeyEncryptionKeyResolver" FrameworkAlternate="azure-dotnet" />
   <TypeSignature Language="DocId" Value="T:Azure.Security.KeyVault.Keys.Cryptography.KeyResolver" />
-  <TypeSignature Language="VB.NET" Value="Public Class KeyResolver&#xA;Implements IKeyEncryptionKeyResolver" />
-  <TypeSignature Language="F#" Value="type KeyResolver = class&#xA;    interface IKeyEncryptionKeyResolver" />
+  <TypeSignature Language="VB.NET" Value="Public Class KeyResolver&#xA;Implements IKeyEncryptionKeyResolver" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="F#" Value="type KeyResolver = class&#xA;    interface IKeyEncryptionKeyResolver" FrameworkAlternate="azure-dotnet" />
+  <TypeSignature Language="C#" Value="public class KeyResolver : Azure.Core.Cryptography.IKeyEncryptionKeyResolver, IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyResolver extends System.Object implements class Azure.Core.Cryptography.IKeyEncryptionKeyResolver, class System.IDisposable" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="VB.NET" Value="Public Class KeyResolver&#xA;Implements IDisposable, IKeyEncryptionKeyResolver" FrameworkAlternate="azure-dotnet-preview" />
+  <TypeSignature Language="F#" Value="type KeyResolver = class&#xA;    interface IKeyEncryptionKeyResolver&#xA;    interface IDisposable" FrameworkAlternate="azure-dotnet-preview" />
   <AssemblyInfo>
     <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
@@ -26,6 +30,9 @@
   <Interfaces>
     <Interface>
       <InterfaceName>Azure.Core.Cryptography.IKeyEncryptionKeyResolver</InterfaceName>
+    </Interface>
+    <Interface FrameworkAlternate="azure-dotnet-preview">
+      <InterfaceName>System.IDisposable</InterfaceName>
     </Interface>
   </Interfaces>
   <Docs>
@@ -176,6 +183,35 @@
         <inheritdoc />
       </Docs>
     </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Azure.Security.KeyVault.Keys.Cryptography.KeyResolver.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Dispose ()" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="keyResolver.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>Azure.Security.KeyVault.Keys</AssemblyName>
+        <AssemblyVersion>4.11.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Releases the HTTP pipeline resources owned by this resolver.
+            </summary>
+        <remarks>
+            Reuse the resolver and dispose it only after all operations and use of resolved cryptography clients
+            have completed. Resolved clients share this resolver's pipeline; disposing them does not dispose the
+            shared pipeline. Caller-provided transports and credentials are not disposed.
+            </remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Resolve">
       <MemberSignature Language="C#" Value="public virtual Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient Resolve (Uri keyId, System.Threading.CancellationToken cancellationToken = default);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient Resolve(class System.Uri keyId, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
@@ -202,7 +238,7 @@
             Retrieves a <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient" /> capable of performing cryptographic operations with the key represented by the specified <paramref name="keyId" />.
             </summary>
         <returns>A new <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient" /> capable of performing cryptographic operations with the key represented by the specified <paramref name="keyId" />.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>Keep this resolver alive until you have finished using the returned client.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="keyId" /> is null.</exception>
       </Docs>
@@ -233,7 +269,7 @@
             Retrieves a <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient" /> capable of performing cryptographic operations with the key represented by the specified <paramref name="keyId" />.
             </summary>
         <returns>A new <see cref="T:Azure.Security.KeyVault.Keys.Cryptography.CryptographyClient" /> capable of performing cryptographic operations with the key represented by the specified <paramref name="keyId" />.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>Keep this resolver alive until you have finished using the returned client.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="keyId" /> is null.</exception>
       </Docs>
